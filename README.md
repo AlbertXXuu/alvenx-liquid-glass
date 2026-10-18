@@ -129,6 +129,6 @@ playwright-cli -s=glass-qa close
 
 ## License and attribution
 
-Copyright © 2026 AlvenX. Source and design are publicly viewable with **all rights reserved** while the owner selects a reuse license; `license: UNLICENSED` and `private: true` prevent accidental npm publication. This is not an MIT-licensed project. Brand assets and fonts retain their separate terms. Instrument Sans uses SIL OFL 1.1; MiSans uses its own bundled agreement. Preserve all notices. See [LICENSE-NOTICE.md](LICENSE-NOTICE.md).
+Copyright © 2026 AlvenX. Source and design are publicly viewable with **all rights reserved**, as explicitly confirmed by the owner on 2026-10-18; no open-source reuse license is granted; `license: UNLICENSED` and `private: true` prevent accidental npm publication. This is not an MIT-licensed project. Brand assets and fonts retain their separate terms. Instrument Sans uses SIL OFL 1.1; MiSans uses its own bundled agreement. Preserve all notices. See [LICENSE-NOTICE.md](LICENSE-NOTICE.md).
 
 The optical studies by [Kube](https://kube.io/blog/liquid-glass-css-svg/) and [Apple's Liquid Glass design session](https://developer.apple.com/videos/play/wwdc2025/219/) informed the research. This is AlvenX's implementation and design language; it does not use Apple's native renderer.

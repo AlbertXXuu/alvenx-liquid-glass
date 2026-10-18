@@ -18,7 +18,7 @@ Current release decisions and continuing validation:
 1. Publish the independent kit and interactive showcase as a public design preview (authorized 2026-10-18).
 2. Public GitHub and alvenx.com showcase authorized 2026-10-18; repository: AlbertXXuu/alvenx-liquid-glass.
 3. Future products use components from this library for a new implementation. Existing-main-page integration has been removed from the route by the owner.
-4. External reuse license remains an owner decision. Source is publicly viewable with all rights reserved; fonts and brand retain separate terms.
+4. Confirmed 2026-10-18: source is publicly viewable with all rights reserved; no open-source reuse license is granted. Fonts and brand retain separate terms. Any future licensing change requires a new explicit owner decision.
 
 1.1.0 quality scope:
 
