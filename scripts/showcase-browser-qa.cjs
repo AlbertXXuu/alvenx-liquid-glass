@@ -20,9 +20,17 @@ async page => {
   const home = page.getByRole('button', { name:'AlvenX — Back to top' });
   const navigation = [];
   for (const activation of ['click','Enter','Space']) {
-    await page.evaluate(() => scrollTo({top:1200,behavior:'instant'}));
+    // Present the test's forced scroll before sending a new smooth-scroll
+    // command. DOM scrollY can update before the previous animation settles.
+    await page.evaluate(async () => {
+      scrollTo({top:1200,behavior:'instant'});
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    });
+    assert(await page.evaluate(() => Math.abs(scrollY - 1200) < 1), 'initial scroll position presented');
     if (activation === 'click') await home.click(); else { await home.focus(); await home.press(activation); }
     await page.waitForFunction(() => scrollY === 0);
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+    assert(await page.evaluate(() => scrollY === 0), 'home return remains settled');
     const after = await page.evaluate(() => ({url:location.href, history:history.length}));
     assert(after.url === original.url && after.history === original.history, 'home preserves URL/history');
     assert(await input.inputValue() === 'A clear thought. 清晰的文字。' && await sliderValue.inputValue() === '0.71', 'home preserves inputs');
