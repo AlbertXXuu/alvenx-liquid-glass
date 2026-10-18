@@ -1,0 +1,11 @@
+node_modules/
+dist/
+site-dist/
+releases/
+.playwright-cli/
+docs/validation/
+KIT-MANIFEST.json
+*.tsbuildinfo
+.env
+.env.*
+!.env.example

@@ -1,0 +1,29 @@
+AlvenX uses MiSans for Chinese text in its website and product interfaces.
+
+MiSans font software:
+Copyright © 2020-2023 Beijing Xiaomi Mobile Software Co.,Ltd. All Rights Reserved.
+Copyright © 2020-2025 Beijing Xiaomi Mobile Software Co.,Ltd. All Rights Reserved.
+
+The accompanying WOFF2 files are unchanged official MiSans web font shards
+(version 4.003) and full fonts (version 4.009) from the official MiSans ZIP.
+Their embedded copyright notices are preserved. Each redistributed embedded
+copy must retain this notice and MiSans-License-Agreement.pdf. The agreement
+is a custom MiSans license, not the SIL Open Font License.
+
+Official sources reviewed on 2026-10-13:
+https://hyperos.mi.com/font/en/download/
+https://hyperos.mi.com/font/zh/faq/
+
+The official FAQ permits embedding fonts in applications/software and asks
+that the MiSans software be identified. The agreement, page 2 section 2,
+requires attribution and retention of copyright/license notices, prohibits
+adaptation/redevelopment and standalone font resale/relicensing, and permits
+distribution as part of a work. See the original agreement for full terms.
+
+AlvenX localizes CSS resource URLs and selects the official static web weights
+400, 500, 600 and 700. Original web-shard Unicode ranges are preserved. Four
+additional CSS font faces select the full fonts only for codepoints absent
+from effective web-shard coverage, including full-width Chinese punctuation.
+This changes CSS selection descriptors, not the full font files. No glyphs
+or font binaries are modified; no local font format conversion or new binary
+subsetting is performed.

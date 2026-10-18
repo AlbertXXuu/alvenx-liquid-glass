@@ -1,0 +1,71 @@
+{
+  "name": "@alvenx/liquid-glass",
+  "version": "1.1.2",
+  "description": "AlvenX owner-approved blue-violet volume and interactive glass design kit",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./styles/glass.css",
+    "./fonts.css": "./assets/fonts.css",
+    "./tokens.json": "./tokens.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "styles",
+    "assets",
+    "tokens.json",
+    "docs/*.md",
+    "docs/hover-comparison.html",
+    "README.md",
+    "SKILL.md",
+    "TODO.md",
+    "LICENSE-NOTICE.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5174 --strictPort",
+    "check": "tsc --noEmit -p tsconfig.json && node scripts/check-docs.mjs",
+    "build:lib": "vite build --config vite.lib.config.mjs && tsc -p tsconfig.lib.json",
+    "build:showcase": "vite build && node scripts/copy-showcase-docs.mjs",
+    "build": "npm run build:lib && npm run build:showcase",
+    "test:contract": "node scripts/contract.mjs",
+    "test:runtime": "node scripts/clock-contract.mjs && node scripts/test-volume-budget.mjs && node scripts/test-optics-kernels.mjs",
+    "test:install": "node scripts/smoke-install.mjs",
+    "pack:kit": "node scripts/pack-kit.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0 <20",
+    "react-dom": ">=19.0.0 <20"
+  },
+  "devDependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass.git"
+  },
+  "homepage": "https://alvenx.com/ui/",
+  "bugs": {
+    "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/issues"
+  }
+}

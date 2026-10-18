@@ -1,0 +1,139 @@
+{
+  "version": 6,
+  "createdAt": "2026-10-16T05:32:35.837Z",
+  "scope": "Independent work preview only. Numeric controls/local optics changed by interaction reviewer; volume renderer range changes by root. No main-application integration in this preview task.",
+  "runtime": "Local repository Vite required; not standalone offline HTML",
+  "visualApproval": "Pending user confirmation",
+  "sources": {
+    "index.html": "c14a67d78fd4bead71c0291582d8c4d82da4ecd6215c98568ad5c04c2d1ba358",
+    "preview.tsx": "07e551ed94663ba3fa36ce09306e5374dda7bab22bcc9ef8ed08429d0e855266",
+    "preview.css": "bd94a41534b82b3d403b145399cc3879fc754ff2e7c3de9d69d94539f1cd82e0",
+    "LiquidControl.tsx": "7fa8e6ba050339221af725741de24f6923a1be06d02016666d126c7671da7b01",
+    "GlassSettingsControls.tsx": "df430426a791a9958078485ee32b7e59f89df4478eca2580c0a46105adf3aaf9",
+    "endpointGeometry.ts": "5a2551f50155a1c540131836043f63eaa7c4b186222eb69ec9f44bc6064711f5",
+    "PreviewClock.ts": "1ab5730e58d4af4c54aa6914b360db486bd1196826267e30bb98a1c8046f5b30",
+    "reviewSettings.ts": "2599e40104fe17689d2401d4aa3f89f9d2970defae9aaca4c94512959f4eca57",
+    "volume-renderer.js": "3663271e47169572e07c383d9249ce7567727ede34c0d8c2418d9cdb1b6711fd",
+    "README.md": "0124209fa1b8dbc969953428b4f2b7e05cede6c2e140e033bd43e659da33d591",
+    "qa-v6-focus.cjs": "b47a4ef7ae18f209445d2b1c6dbedaf4d086f360a5d51a62d3dd32cb9f96ea0a",
+    "qa-v6-input-edges.cjs": "84fce5abb63a6216f262147c396cfef9585e338d6a4afa0cf741317366f8ea80",
+    "qa-v6-inputs.cjs": "f84e70fcac84ad91d19d99204c327ea21462c6366084c27e417a30c97d4ca1d1",
+    "qa-v6-video-metadata.cjs": "c85b7d5b94d67faafbc759c679643df6a33fbe3bd9b2116138fa5642969d318f",
+    "qa-v6-video.cjs": "29cdc405e4200138c77428d82820d95d4921301c46b1ada3cfdc0dd1d9b5700a"
+  },
+  "readOnlySharedDependencies": {
+    "src/spatial/geometry.ts": "299d619ed6590453c7a95388c2ca60807a9091767d9848ac92673bbdc303a601",
+    "src/ui/backdropOptics.ts": "4a69d232341f006cf01876f01ec94ea32e02818e133910f656c83971625ea818",
+    "src/ui/GlassMaterial.tsx": "56bd0ca39f3faebf6f2c838b780a35f2f49016c2b136d22ab7ff2deb75032767"
+  },
+  "readOnlySharedAssets": {
+    "public/fonts/misans/misans.css": "e0d254d0d474d14579590e800ba01ad000a2feb442f6e5bca7d5b018aadeb087",
+    "public/fonts/InstrumentSans-wdth-wght.woff2": "aa72922aafcc0dc18f36ec1d805b0212057dabe8b9d5b8b57f67035aea1b826d",
+    "public/brand/alvenx-wordmark.svg": "6cc422fb2ed289bee723f1c6e6d19baec63c18d988616eb5b90d8332a30b7b1e",
+    "public/brand/alvenx-monogram.svg": "45367ec933c2ed8565cdf9e683fd4b856057d375435b46c62acb4fbb2cbeef16"
+  },
+  "evidence": {
+    "correction-visible-v6.png": {
+      "sha256": "a752a8e977ec9bdad4ee7c5bec54da45596bbbde597da11080977bcd796c1315",
+      "bytes": 9583,
+      "modifiedAt": "2026-10-16T05:31:31.829Z"
+    },
+    "default-v6.png": {
+      "sha256": "a5bc6dc7a8b0cfa3e7a1a7d531483264f6fa961f67746184ad254a0756350971",
+      "bytes": 296870,
+      "modifiedAt": "2026-10-16T05:31:32.880Z"
+    },
+    "focus-capture.json": {
+      "sha256": "858e6f8cbbe9178c30428175fb296358bcb1dcd2b2f603d1d5ac34f13fabe3d5",
+      "bytes": 171,
+      "modifiedAt": "2026-10-16T05:31:33.454Z"
+    },
+    "input-checks.json": {
+      "sha256": "b042271c22a1b804b0f716b638a1ad178b432d91f5e76c44c4c6c981b510de36",
+      "bytes": 2676,
+      "modifiedAt": "2026-10-16T05:25:48.576Z"
+    },
+    "input-edge-checks.json": {
+      "sha256": "5538d6c2c457f9011905cfe5b8ccb869a805d1afc50365356542c67f4f71d8ee",
+      "bytes": 328,
+      "modifiedAt": "2026-10-16T05:28:49.629Z"
+    },
+    "number-edit-focused-v6.png": {
+      "sha256": "be703e202688b3b391630324b2ab4b4c7d5ddbcf6c7b48e8c44214e01f85fc33",
+      "bytes": 9034,
+      "modifiedAt": "2026-10-16T05:31:32.117Z"
+    },
+    "numeric-editing-v6-original-speed.webm": {
+      "sha256": "aaebfdb4c9dc214cd2c585d1da8314df3a14233825c7fa7004e1afda2a09cd52",
+      "bytes": 1253109,
+      "modifiedAt": "2026-10-16T05:31:00.931Z"
+    },
+    "parameters-v6.png": {
+      "sha256": "aac3ee7c8b942fe6538e0608d2ef466bc212bded1388d3d1195233e71c4f9a5a",
+      "bytes": 62726,
+      "modifiedAt": "2026-10-16T05:31:32.939Z"
+    },
+    "QA.json": {
+      "sha256": "01c455edfca5cbb3cd03953ec417689dc9ce2472e34a3e6a53a1dcec20cd5389",
+      "bytes": 2500,
+      "modifiedAt": "2026-10-16T05:32:35.716Z"
+    },
+    "review-v6-b-regression.cjs": {
+      "sha256": "c2b627a3f8e46ad3ce86723cb0f77e2e1377169e3dd415ae7aaa15eec2a2046e",
+      "bytes": 9629,
+      "modifiedAt": "2026-10-16T05:28:21.359Z"
+    },
+    "review-v6-b-regression.json": {
+      "sha256": "31803a8a1b18f9145e208a43a8e3f2d4cf7a2538a71d1dffa9c61c6db9315c0d",
+      "bytes": 16290,
+      "modifiedAt": "2026-10-16T05:28:41.276Z"
+    },
+    "review-v6-b-regression.png": {
+      "sha256": "43114a9ee18d5b2c8fa49c4b607905dc57ce76049aaed673278169c2a7f32b1b",
+      "bytes": 143451,
+      "modifiedAt": "2026-10-16T05:28:40.659Z"
+    },
+    "review-v6-input-contract.cjs": {
+      "sha256": "2860f519c05365225523491ee5f107a70462a6eabd229de66a593f94bb0f5da3",
+      "bytes": 7119,
+      "modifiedAt": "2026-10-16T05:26:33.947Z"
+    },
+    "review-v6-input-contract.json": {
+      "sha256": "832b3c6fa9904151fa5d81c4a75d21d1f38bae47d6be7fd9899e6c57903e9337",
+      "bytes": 4521,
+      "modifiedAt": "2026-10-16T05:26:49.346Z"
+    },
+    "review-v6-input-contract.png": {
+      "sha256": "7a1bab319355ed13ec610bc92331529920b6e1ea693326643fcfef32b813e762",
+      "bytes": 145647,
+      "modifiedAt": "2026-10-16T05:26:48.717Z"
+    },
+    "review-v6-renderer.cjs": {
+      "sha256": "b9239b41746385231750ec3a562e71c684566c9c692a4ef729aa1e659291d438",
+      "bytes": 2817,
+      "modifiedAt": "2026-10-16T05:24:03.327Z"
+    },
+    "review-v6-renderer.json": {
+      "sha256": "71e51bc0bb99bda31fee2b349ba589d3dfe16c548a38fe881db9d9e445637d61",
+      "bytes": 649,
+      "modifiedAt": "2026-10-16T05:24:07.133Z"
+    },
+    "video-capture.json": {
+      "sha256": "d3f698bb7bd3cfb0254661c0c0dab11ef67aa2f3362f1e8fecc18d9a12f407a3",
+      "bytes": 228,
+      "modifiedAt": "2026-10-16T05:30:58.209Z"
+    },
+    "video-metadata.json": {
+      "sha256": "c0b5c17b87e746bcfdb6765226296d88f8c4d5dddb9e6b212ce9b4db39bd9a89",
+      "bytes": 112,
+      "modifiedAt": "2026-10-16T05:31:29.614Z"
+    }
+  },
+  "selectedMedia": [
+    "evidence-v6/default-v6.png",
+    "evidence-v6/parameters-v6.png",
+    "evidence-v6/number-edit-focused-v6.png",
+    "evidence-v6/correction-visible-v6.png",
+    "evidence-v6/numeric-editing-v6-original-speed.webm"
+  ]
+}

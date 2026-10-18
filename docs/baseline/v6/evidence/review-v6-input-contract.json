@@ -1,0 +1,211 @@
+{
+  "status": "passed",
+  "viewport": 390,
+  "legacyPreserved": {
+    "interactionStrength": 2.5,
+    "specularOpacity": 1,
+    "specularSaturation": 2,
+    "refractionLevel": 1.234567,
+    "blurLevel": 2,
+    "progressiveBlur": 2,
+    "glassOpacity": 0.2712345,
+    "ambient": false,
+    "reducedMotion": false
+  },
+  "tests": [
+    {
+      "label": "Glass background opacity",
+      "text": "2",
+      "expected": 1,
+      "display": "1"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "-.1",
+      "expected": 0,
+      "display": "0"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "０．３４５６",
+      "expected": 0.346,
+      "display": "0.346"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "3e-1",
+      "expected": 0.3,
+      "display": "0.3"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "1e-3",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "-",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": ".",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "1e-",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "1e999",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "NaN",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "Infinity",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "0.3px",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "0x1",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "0.2.3",
+      "expected": 0.001,
+      "display": "0.001"
+    },
+    {
+      "label": "Refraction level",
+      "text": "1.005",
+      "expected": 1.01,
+      "display": "1.01"
+    },
+    {
+      "label": "Refraction level",
+      "text": "1.235",
+      "expected": 1.24,
+      "display": "1.24"
+    },
+    {
+      "label": "Refraction level",
+      "text": "2.675",
+      "expected": 2.68,
+      "display": "2.68"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": ".3005",
+      "expected": 0.301,
+      "display": "0.301"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": ".9995",
+      "expected": 1,
+      "display": "1"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "-0",
+      "expected": 0,
+      "display": "0"
+    },
+    {
+      "label": "Blur level",
+      "text": "2.25",
+      "expected": 2.3,
+      "display": "2.3"
+    },
+    {
+      "label": "Progressive blur",
+      "text": "6.5",
+      "expected": 6,
+      "display": "6"
+    },
+    {
+      "label": "Refraction level",
+      "text": "2.5",
+      "expected": 2.5,
+      "display": "2.5"
+    },
+    {
+      "label": "Refraction level",
+      "text": "3",
+      "expected": 3,
+      "display": "3"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "0.81",
+      "expected": 0.81,
+      "display": "0.81"
+    },
+    {
+      "label": "Glass background opacity",
+      "text": "1",
+      "expected": 1,
+      "display": "1"
+    }
+  ],
+  "selection": {
+    "start": 0,
+    "end": 4
+  },
+  "paste": {
+    "prevented": true,
+    "value": "0.3"
+  },
+  "pasteNotice": "Max 32 characters · Paste ignored",
+  "local": [
+    {
+      "value": 2.5,
+      "scale": 15
+    },
+    {
+      "value": 3,
+      "scale": 18
+    }
+  ],
+  "style": {
+    "filter": "none",
+    "transform": "none",
+    "maxLength": 32,
+    "inputMode": "decimal",
+    "role": "spinbutton"
+  },
+  "overflow": {
+    "viewport": 390,
+    "document": 390
+  },
+  "errors": [],
+  "limits": "Native field typing/keyboard; clipboard paste and IME composition events are synthetic. No OS IME or assistive-technology certification claim."
+}

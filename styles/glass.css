@@ -1,0 +1,116 @@
+/* Opt-in scope. Fonts are supplied by the host or the optional fonts.css export. */
+.alvenx-design {
+  --ax-font-family: "Instrument Sans", MiSans, sans-serif;
+  --ax-text: #293451;
+  --ax-background: #F0F2FB;
+  --ax-stage-background: #E6E9FA;
+  --ax-content: #34405E;
+  --ax-label: #6E7A9A;
+  --ax-value: #53648F;
+  --ax-track-start: #CBD6ED;
+  --ax-track-end: #D3CFE8;
+  --ax-progress-start: #809FE6;
+  --ax-progress-end: #A092D8;
+  --ax-focus: #6F82BB;
+  --ax-selection: #929BCD;
+  --ax-glass-fill: #F0F2FF;
+  --ax-edge-dark: #7184B0;
+  --ax-shadow: #59699C;
+  font-family: var(--ax-font-family);
+  color: var(--ax-text);
+  background: var(--ax-background);
+  font-synthesis: none;
+  color-scheme: light;
+}
+.alvenx-design, .alvenx-design * { box-sizing: border-box; }
+.alvenx-design .glass-hit, .alvenx-design .glass-hit input, .alvenx-design .switch-native { font: inherit; }
+.alvenx-design button.glass-hit, .alvenx-design .switch-native { color: inherit; cursor: pointer; }
+.alvenx-design button.glass-hit:disabled, .alvenx-design .switch-native:disabled { cursor: default; }
+
+.alvenx-design .stage-scroll { width:105%; margin-left:-2.5%; overflow-x:auto; overflow-y:hidden; border-radius:22px; }
+.alvenx-design .stage { position:relative; min-width:760px; width:100%; aspect-ratio:1050/560; overflow:hidden; background:var(--ax-stage-background); }
+.alvenx-design .volume-canvas { display:block; position:absolute; inset:0; width:100%; height:100%; }
+.alvenx-design .foreground { position:absolute; left:55.5%; top:25.2%; width:31%; color:var(--ax-content); }
+.alvenx-design .eyebrow { font-size:12px; letter-spacing:.11em; font-weight:550; color:#7480A0; margin:0 0 12px; }
+.alvenx-design .foreground h1 { font-size:clamp(23px,2.3vw,29px); line-height:1.15; letter-spacing:-.035em; font-weight:550; margin:0 0 23px; }
+
+.alvenx-design .liquid-unit { position:relative; flex-shrink:0; }
+/* A sleeping shell may retain its previous raster size after a responsive
+ * resize. Bound that offscreen paint overflow until IO wakes its geometry. */
+.alvenx-design .liquid-unit[data-visible="false"] { overflow:hidden; overflow:clip; }
+.alvenx-design .local-optical-defs, .alvenx-design .local-shadow, .alvenx-design .local-edge, .alvenx-design .local-backdrop { position:absolute; inset:0; pointer-events:none; overflow:visible; }
+.alvenx-design .local-backdrop { background:transparent; }
+.alvenx-design .glass-hit { position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:0; outline:0; box-shadow:none; border-radius:0; background:transparent; padding:0; margin:0; }
+.alvenx-design .glass-hit:focus, .alvenx-design .glass-hit:focus-visible { outline:0; }
+.alvenx-design .glass-hit input { min-width:0; flex:1; border:0; outline:0; background:transparent; color:var(--ax-content); font-size:14px; line-height:1.55; }
+.alvenx-design .glass-hit input::placeholder { color:#8790AB; }
+.alvenx-design .idea-row, .alvenx-design .composer { display:flex; align-items:center; gap:8px; }
+.alvenx-design .idea-row { margin-bottom:12px; }
+.alvenx-design .idea { height:76px; width:auto; flex:1; min-width:0; margin-bottom:0; }
+.alvenx-design .idea>.glass-hit { gap:10px; padding:13px 20px 13px 24px; text-align:left; justify-content:flex-start; }
+.alvenx-design .idea-symbol { font-size:24px; color:#8C93C4; }
+.alvenx-design .idea strong { display:block; font-size:14px; font-weight:550; line-height:1.5; }
+.alvenx-design .idea small { display:block; font-size:12px; color:#7B85A3; line-height:1.5; }
+.alvenx-design .input-frame { width:auto; flex:1; min-width:0; height:64px; }
+.alvenx-design .input-frame>.field-hit { padding:7px 24px; gap:8px; }
+.alvenx-design .inline-action { width:48px; height:48px; }
+.alvenx-design .inline-action .glass-hit>svg { width:24px; height:24px; fill:none; stroke:#5F73A0; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.alvenx-design .feedback { font-size:12px; line-height:1.5; color:#6D7999; min-height:18px; margin:14px 0 0 6px; }
+.alvenx-design .error { position:absolute; left:20%; right:20%; top:20%; padding:20px; background:#FCF9FFFF; color:#714E87; font-size:14px; }
+.alvenx-design .replay { width:196px; height:48px; font-size:13px; }
+.alvenx-design .replay .glass-hit:disabled { color:#8B94AC; }
+
+.alvenx-design .parameters { margin-top:24px; padding-top:15px; border-top:1px solid #FFFFFFB3; }
+.alvenx-design .parameters-heading { display:flex; align-items:center; justify-content:space-between; margin-bottom:15px; }
+.alvenx-design .parameters-disclosure { width:205px; height:46px; font-size:14px; }
+.alvenx-design .parameters-disclosure .glass-hit { gap:15px; }
+.alvenx-design .reset { width:148px; height:44px; font-size:12px; }
+.alvenx-design .parameter-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px 30px; }
+.alvenx-design .parameter-row { min-width:0; }
+.alvenx-design .parameter-label { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; line-height:1.5; color:var(--ax-label); padding:0 0 12px 6px; min-height:52px; }
+.alvenx-design .range-rail { height:44px; position:relative; }
+/* Fixed rail insets are replaced by resting B geometry, never hover geometry. */
+.alvenx-design .range-track { position:absolute; left:14px; right:14px; top:17.5px; height:9px; border-radius:6px; background:linear-gradient(90deg,var(--ax-track-start),var(--ax-track-end)); overflow:hidden; }
+.alvenx-design .range-track span, .alvenx-design .switch-track span { display:block; height:100%; background:linear-gradient(90deg,var(--ax-progress-start),var(--ax-progress-end)); border-radius:inherit; }
+.alvenx-design .range-thumb-position { position:absolute; top:0; width:64px; height:44px; pointer-events:none; }
+.alvenx-design .range-thumb { width:64px; height:44px; }
+.alvenx-design .glass-range { position:absolute; inset:0; width:100%; height:44px; min-width:0; margin:0; padding:0; appearance:none; -webkit-appearance:none; background:transparent; border:0; outline:0; cursor:ew-resize; opacity:1; z-index:2; touch-action:none; }
+.alvenx-design .glass-range::-webkit-slider-runnable-track { height:3px; background:transparent; }
+.alvenx-design .glass-range::-webkit-slider-thumb { appearance:none; -webkit-appearance:none; width:64px; height:40px; margin-top:-18.5px; border:0; background:transparent; }
+.alvenx-design .glass-range::-moz-range-track { height:3px; background:transparent; }
+.alvenx-design .glass-range::-moz-range-thumb { width:64px; height:40px; border:0; background:transparent; }
+.alvenx-design .glass-range:focus { outline:0; }
+.alvenx-design .switches { display:flex; gap:24px; align-items:center; }
+.alvenx-design .switch-control { display:flex; align-items:center; gap:10px; color:var(--ax-label); font-size:12px; }
+.alvenx-design .switch-body { position:relative; width:98px; height:48px; }
+.alvenx-design .switch-native { position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; outline:0; background:transparent; border-radius:24px; touch-action:none; }
+.alvenx-design .switch-native:focus-visible { outline:0; }
+.alvenx-design .switch-visual { position:absolute; left:5.88px; top:2.88px; width:86.24px; height:42.24px; pointer-events:none; }
+.alvenx-design .switch-track { position:absolute; left:6.16px; right:6.16px; top:11.44px; height:19.36px; border-radius:30px; background:linear-gradient(90deg,var(--ax-track-start),var(--ax-track-end)); overflow:hidden; }
+.alvenx-design .switch-track span { opacity:.78; }
+.alvenx-design .switch-track[data-checked=true] span { opacity:1; }
+.alvenx-design .switch-thumb-position { position:absolute; top:0; width:63.36px; height:42.24px; pointer-events:none; }
+.alvenx-design .switch-thumb { width:63.36px; height:42.24px; }
+
+.alvenx-design .parameter-value { display:inline-flex; align-items:center; gap:3px; flex:none; position:relative; }
+.alvenx-design .parameter-number-glass { width:86px; height:34px; }
+.alvenx-design .parameter-number-glass>.field-hit { padding:5px 11px; display:flex; align-items:center; }
+.alvenx-design .glass-hit .parameter-number { width:100%; min-width:0; padding:0; border:0; outline:0; background:transparent; color:var(--ax-value); font:inherit; font-variant-numeric:tabular-nums; text-align:center; appearance:textfield; -moz-appearance:textfield; }
+.alvenx-design .parameter-unit { min-width:14px; font-size:11px; color:var(--ax-label); }
+.alvenx-design .visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+.alvenx-design .parameter-number-notice { position:absolute; right:0; top:33px; min-width:210px; text-align:right; white-space:nowrap; font-size:10px; line-height:13px; color:#665F91; pointer-events:none; }
+.alvenx-design .parameter-number-notice:empty { display:none; }
+
+@media(max-width:800px) {
+  .alvenx-design .stage-scroll { width:100%; margin-left:0; }
+  .alvenx-design .foreground { top:24%; }
+  .alvenx-design .foreground h1 { margin-bottom:15px; }
+  .alvenx-design .idea>.glass-hit { padding-top:10px; padding-bottom:10px; }
+  .alvenx-design .switches { gap:12px; }
+  .alvenx-design .parameter-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 18px; }
+}
+@media(max-width:520px) {
+  .alvenx-design .parameter-grid { grid-template-columns:1fr; }
+  .alvenx-design .switches { flex-wrap:wrap; }
+}
+@media(prefers-reduced-motion:reduce) { .alvenx-design * { transition:none!important; } }

@@ -1,0 +1,10 @@
+* text=auto eol=lf
+# Acceptance hashes are byte identities, including original line endings.
+docs/baseline/v6/** -text -whitespace
+assets/fonts/** -whitespace
+*.woff2 -text
+*.pdf -text
+*.png -text
+*.webm -text
+*.tgz -text
+*.zip -text

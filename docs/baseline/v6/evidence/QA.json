@@ -1,0 +1,92 @@
+{
+  "version": "6",
+  "status": "bounded checks passed; user visual approval pending",
+  "createdAt": "2026-10-16T05:32:35.715Z",
+  "runtime": "Local repository Vite required; not standalone offline HTML",
+  "scope": "Independent preview only. This task does not integrate the controls into the main application; separate production navigation work may occur concurrently.",
+  "settings": {
+    "glassOpacityDefault": 0.3,
+    "blurRanges": [
+      0,
+      6
+    ],
+    "interactionStrength": [
+      0,
+      4
+    ],
+    "specularOpacity": [
+      0,
+      1
+    ],
+    "specularSaturation": [
+      0,
+      3
+    ],
+    "refractionLevel": [
+      0,
+      3
+    ],
+    "glassOpacity": [
+      0,
+      1
+    ],
+    "storageKey": "alvenx-material-direction-v2",
+    "existingSavedValues": "preserved",
+    "manualPrecision": {
+      "interactionStrength": 2,
+      "specularOpacity": 3,
+      "specularSaturation": 2,
+      "refractionLevel": 2,
+      "blurLevel": 1,
+      "progressiveBlur": 1,
+      "glassOpacity": 3
+    }
+  },
+  "checks": {
+    "typescript": "passed: strict preview entry plus imports",
+    "vite": "passed: write:false entry build, 3 outputs",
+    "inputContract": "passed",
+    "inputEdges": "passed",
+    "independentInput": {
+      "status": "passed",
+      "viewport": 390,
+      "cases": 27,
+      "errors": []
+    },
+    "independentB": {
+      "status": "passed",
+      "viewport": 390,
+      "strength": 4,
+      "switchFootprint": 74.23400000000001,
+      "zeroStrength": {
+        "parentX": 1,
+        "parentY": 1,
+        "childX": 1,
+        "childY": 1,
+        "deformX": 310.25258155375695,
+        "deformY": 280,
+        "deformDX": 0,
+        "deformDY": 0,
+        "curvature": 3.2
+      },
+      "errors": []
+    },
+    "renderer": {
+      "status": "passed",
+      "evidence": "review-v6-renderer.json"
+    },
+    "video": {
+      "duration": 17.12,
+      "width": 1364,
+      "height": 1350,
+      "encoding": "Native Chromium recording, original speed, no edits"
+    }
+  },
+  "limits": [
+    "Clipboard and composition guards used synthetic DOM events; not an OS IME or clipboard compatibility claim.",
+    "Ordinary keyboard, text filling, focus and blur use isolated Chromium. The user in-app browser was not operated.",
+    "Large body samples an analytic 2.5D environment; local controls use actual browser backdrop pixels.",
+    "No universal frame-rate guarantee.",
+    "Visual approval and main-application integration remain pending."
+  ]
+}
