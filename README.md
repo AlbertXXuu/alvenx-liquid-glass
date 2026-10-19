@@ -8,9 +8,9 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-Version **1.1.2** is a public design preview. It preserves the owner-approved v6 material and the 1.1.1 optimized rendering kernels; this release prepares the public showcase, notices, documentation and reproducible checks. Authoring specifications are in Chinese; component labels and the showcase are in English.
+Version **1.2.0** is a public design preview. It carries the R3 explicit-scene refraction and touch-ownership work into the current showcase, with a canonical glass header, a layered blue/violet background, a gradient headline and a **50%** initial progress demonstration. Authoring specifications are in Chinese; component labels and the showcase are in English. The owner authorized this revision for the main `/ui/` route on 2026-10-19. See the [1.2.0 release record](docs/releases/1.2.0/README.md) for scope, verification status and remaining physical-device acceptance.
 
-The **19 October responsive/input revision is under owner review**, separate from the accepted showcase above. Its [review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, screenshots, source snapshots and remaining physical-device checks. It does not change the recorded v6 acceptance or grant a reuse license.
+The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 
 ## Try it locally
 
@@ -29,9 +29,10 @@ Open `http://127.0.0.1:5174/`. Drag the sliders beyond their endpoints, re-grab 
 - `GlassSlider`, `GlassSwitch`, `GlassNumber`: continuous gestures, bounded overdrag, release-only spring return and validated numeric drafts.
 - `VolumeStage`: mother form, soft connection and expanding content chamber, with slow budding and a canvas pixel budget.
 - `GlassClock` and `useGlassSettings`: shared activity scheduling, visibility handling, settings persistence and reduced motion.
+- `ControlledScene` and `ControlledSource`: opt-in shared SVG sources for displacement inside a lens, including engines where SVG backdrop displacement is unavailable.
 - Scoped CSS, blue/indigo/violet tokens, canonical AlvenX assets, Instrument Sans and MiSans with their individual licenses.
 
-Large forms use an analytic 2.5D environment approximation. Small glass controls refract the actual browser backdrop where supported. Text remains selectable native DOM content outside the optical filter.
+Large forms use an analytic 2.5D environment approximation. Small glass controls can refract the actual browser backdrop where supported. The current showcase instead demonstrates an explicitly registered SVG scene: the visible background and its lens share the same source. This is real displacement of that source, without arbitrary DOM backdrop capture. Text and native fields outside the lens remain clear and selectable. See the [compatibility contract](docs/compatibility.md).
 
 ## Use in another React project
 
@@ -41,7 +42,7 @@ Build and create a local package; the versioned tarball can be installed directl
 npm run build
 npm run pack:kit
 # In your React 19 project:
-npm install ./alvenx-liquid-glass-1.1.2.tgz
+npm install ./alvenx-liquid-glass-1.2.0.tgz
 ```
 
 ```tsx
@@ -103,7 +104,7 @@ The original v6 acceptance manifest is preserved with its 41 files. Contract tes
 
 The measured 1.1.0 → 1.1.1 sustained-hover case reduced median scripting occupancy **32.75% → 25.47%**, and total main-thread occupancy **57.64% → 54.96%**. Three settled-state image comparisons were pixel-identical. This is one documented desktop scenario, not a universal performance guarantee. See the [self-contained comparison](docs/hover-comparison.html) for the method, samples and visual evidence.
 
-Automatic rendering selects SVG backdrop refraction in validated Chromium environments and compatible native/flat appearances elsewhere. Windows Chromium, Firefox and Playwright WebKit have functional evidence; physical Safari/iOS, touch, OS IME, assistive technology and sustained mobile power use remain validation work. Alternate appearances preserve geometry and controls, with different optical fidelity. See [compatibility](docs/compatibility.md) and [runtime quality](docs/runtime-quality.md).
+Automatic backdrop rendering selects SVG backdrop refraction in validated Chromium environments and compatible native/flat appearances elsewhere. Explicit registered scenes use ordinary SVG source displacement independently of that backdrop policy. The versioned evidence covers Windows Chromium, Firefox and Playwright WebKit within its stated scenarios; physical Safari/iOS, Combo Touch, OS IME, assistive technology and sustained mobile power use remain validation work. The 1.2.0 scoped tap-highlight change targets the native grey overlay reported on iPad, while retaining authored press response, keyboard focus and text editing; Windows WebKit cannot certify the iOS-specific overlay's disappearance. See [compatibility](docs/compatibility.md) and [runtime quality](docs/runtime-quality.md).
 
 Raw machine-specific audit files stay local in ignored `docs/validation/`; the public comparison embeds its relevant screenshots and measurements. Source checks regenerate their own reports. Historical validation is identified by version rather than presented as a test of later changes.
 
@@ -124,6 +125,7 @@ playwright-cli -s=glass-qa close
 | [Runtime quality](docs/runtime-quality.md) | Scheduling, buffers, cache, pixel budgets and measured costs |
 | [Compatibility](docs/compatibility.md) | Rendering probes, automatic selection and validation boundaries |
 | [Baseline and checklist](docs/baseline-and-checklist.md) | Acceptance identity and versioned checks |
+| [1.2.0 release record](docs/releases/1.2.0/README.md) | Current showcase changes, publication identities and device acceptance boundaries |
 | [Attribution](docs/attribution.md) | References and individual asset notices |
 | `src/`, `styles/`, `tokens.json` | Library implementation and scoped styles |
 | `showcase/` | Editable public playground; build emits `site-dist/` |

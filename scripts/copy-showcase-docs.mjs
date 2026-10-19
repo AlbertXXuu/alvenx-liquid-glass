@@ -4,7 +4,7 @@ for (const file of await readdir('docs')) if (file.endsWith('.md')) await copyFi
 await copyFile('docs/hover-comparison.html', 'site-dist/docs/hover-comparison.html');
 // Reviewed records are public/sanitized. Do not copy local docs/validation,
 // which can contain machine-specific install paths and unreviewed raw logs.
-for(const directory of ['reviews','baseline'])await cp(`docs/${directory}`,`site-dist/docs/${directory}`,{recursive:true});
+for(const directory of ['reviews','baseline','releases'])await cp(`docs/${directory}`,`site-dist/docs/${directory}`,{recursive:true});
 // Font agreements travel with every hosted build, not just the source package.
 await mkdir('site-dist/licenses', { recursive: true });
 await copyFile('LICENSE-NOTICE.md', 'site-dist/licenses/LICENSE-NOTICE.md');

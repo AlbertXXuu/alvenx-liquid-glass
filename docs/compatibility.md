@@ -2,6 +2,8 @@
 
 The kit retains one blue/indigo/violet contour and interaction family across its optical tiers. Native DOM text, actions, keyboard input, endpoint geometry, bounded overdrag and release remain independent of backdrop-filter support. The large volume remains an analytic 2.5D WebGL scene; it is not the same renderer as the small controls.
 
+The current 1.2.0 showcase uses opt-in **explicit registered scenes** for its refraction demonstration. The tier policy below still governs arbitrary browser-backdrop rendering; a shared scene does not change that policy or capture arbitrary DOM pixels. The [1.2.0 release record](releases/1.2.0/README.md) separates the current publication from the historical engine results below.
+
 ## Tier selection
 
 `useGlassSettings({ optics: 'auto' })` is the default. `GlassClock` also accepts an `optics` constructor option. The resolved tier is visible as `data-optical-mode` on each `.liquid-unit`.
@@ -65,15 +67,25 @@ playwright-cli -s=compat-webkit close
 
 `playwright-cli` is a verification tool, not a runtime dependency of the kit. A production-build URL can replace the development URL; the callback uses the current page's origin. Do not run multiple benchmark browsers simultaneously when collecting CPU/memory comparisons.
 
+## Current 1.2.0 input and optical contract (2026-10-19)
+
+`ControlledScene` / `ControlledSource` let a host supply one SVG source for both the visible scene and its displaced image inside a glass lens. The current showcase uses this path for the editable word, source line and controls. It provides displacement in the explicit source without relying on a browser's SVG backdrop-filter implementation. Native fields and text outside the lens stay outside the optical filter. A host must register its scene; arbitrary content behind the component does not automatically become that source.
+
+The reusable `.alvenx-design` scope now sets `-webkit-tap-highlight-color: transparent`. Apple's Safari CSS reference describes the translucent platform overlay shown on tapped interactive elements, and specifies zero alpha to suppress it. The owner's iPad screenshots show a grey pill matching the switch hit area and a grey rectangle matching the native range area; this shape and tap-only timing support identifying that overlay as the cause. [Apple Safari CSS Reference](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html)
+
+The change inherits only within the kit's scope. It retains native hit targets, touch-action, authored pressure/deformation, contour keyboard focus, numeric editing and text selection. Targeted local Chrome tests found a zero-alpha tap color on all sampled kit targets, while a button outside the kit retained the platform default. Local Chrome and Windows Playwright WebKit tests retained touch taps, mouse drags, Tab/ArrowRight focus feedback and Latin/CJK field selection at 393px and 1180px widths, with no page errors in those cases. These are the tap-highlight change's targeted checks, not a complete certification of the later final showcase build.
+
+Windows Playwright WebKit does not expose this iOS-specific CSS property: the declaration probe is false and its computed value is empty. Its functional checks therefore cannot verify that iPad's actual platform overlay has disappeared. After publication, physical iPhone/iPad review must check the overlay, cold first activation and Combo Touch capture. The current showcase begins its separate Progress demonstration at **50%**; this does not change saved material settings or establish any device-performance result.
+
 ## Still requires physical-device acceptance
 
-### R3 explicit scene refraction (2026-10-19, experimental review)
+### R3 explicit scene refraction (2026-10-19 historical review)
 
 R3 adds an opt-in `ControlledScene` / `ControlledSource` path: the visible SVG background and the lens reference the same registered source, and ordinary SVG `feDisplacementMap` filters that source. This avoids the unsupported SVG **backdrop** filter reference; it is not an arbitrary DOM screenshot or a claim that WebKit issue 245510 is fixed. The issue was rechecked on 2026-10-19 and remained NEW. Editable source text and track values are part of the shared scene. Native form text stays outside optical filters. Details, before/after evidence and pending physical acceptance are in the [R3 review](reviews/2026-10-19/r3-mobile/README.md).
 
 The asynchronous PNG serialization path is limited to registered scenes during mouse interaction and idle preparation. Active direct-touch deformation and its release settling retain the synchronous exact-map path: a rejected all-async candidate showed over 100ms of first-response delay while Chromium deferred native serialization/FileReader tasks during pending touch. Both routes use the same full normal-map pixels and commit matching contour/map frames together, with bounded encoder jobs and caching; stale results are invalidated on route changes and visibility loss. Local browser tests compare displacement on/off while holding blur and opacity constant, plus source edits, resize, drag and cleanup. Windows Playwright WebKit results establish behavior in that test engine; only the owner's iPhone/iPad test can establish physical Safari composition and Combo Touch behavior.
 
-### 2026-10-19 input and studio review (not an accepted release)
+### 2026-10-19 input and studio review (historical review scope)
 
 The owner supplied physical iPad screenshots showing text selection during a lens drag and rectangular paint behind range lenses, and reported that the first interaction stalls on iPhone 15 Pro and iPad Air M4 (2026), including a Combo Touch trackpad drag failure. These reports supersede any inference that earlier viewport/tap checks established mobile acceptance.
 

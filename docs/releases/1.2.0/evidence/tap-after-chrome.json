@@ -1,0 +1,288 @@
+{
+  "engine": "chromium",
+  "browserVersion": "155.0.8059.84",
+  "physicalIOS": false,
+  "cases": [
+    {
+      "width": 393,
+      "style": {
+        "supported": true,
+        "rootInlineTouchAction": "",
+        "outsideTap": "rgba(0, 0, 0, 0.18)",
+        "controls": [
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "INPUT",
+            "className": "parameter-number",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "INPUT",
+            "className": "glass-range",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          }
+        ]
+      },
+      "switchTap": {
+        "beforeSwitch": "true",
+        "afterSwitch": "false"
+      },
+      "heldPressure": 0.8672,
+      "afterRangeTap": 0.790482964825273,
+      "afterRangeDrag": 0.244688546793382,
+      "keyboard": {
+        "focusVisible": true,
+        "value": 0.25,
+        "contourFocus": true
+      },
+      "selection": {
+        "value": "Clear text 文字",
+        "start": 6,
+        "end": 10,
+        "userSelect": "auto"
+      }
+    },
+    {
+      "width": 1180,
+      "style": {
+        "supported": true,
+        "rootInlineTouchAction": "",
+        "outsideTap": "rgba(0, 0, 0, 0.18)",
+        "controls": [
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "INPUT",
+            "className": "parameter-number",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "INPUT",
+            "className": "glass-range",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "pan-y pinch-zoom",
+            "userSelect": "none"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "rgba(0, 0, 0, 0)",
+            "touchAction": "manipulation",
+            "userSelect": "auto"
+          }
+        ]
+      },
+      "switchTap": {
+        "beforeSwitch": "true",
+        "afterSwitch": "false"
+      },
+      "heldPressure": 0.9133,
+      "afterRangeTap": 0.781650490219643,
+      "afterRangeDrag": 0.260158202329202,
+      "keyboard": {
+        "focusVisible": true,
+        "value": 0.27,
+        "contourFocus": true
+      },
+      "selection": {
+        "value": "Clear text 文字",
+        "start": 6,
+        "end": 10,
+        "userSelect": "auto"
+      }
+    }
+  ],
+  "errors": []
+}

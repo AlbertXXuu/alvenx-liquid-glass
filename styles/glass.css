@@ -21,6 +21,9 @@
   background: var(--ax-background);
   font-synthesis: none;
   color-scheme: light;
+  /* Glass supplies its own press and contour focus feedback. Suppress the
+   * browser's separate tap overlay without changing selection or hit testing. */
+  -webkit-tap-highlight-color: transparent;
 }
 .alvenx-design, .alvenx-design * { box-sizing: border-box; }
 .alvenx-design .glass-hit, .alvenx-design .glass-hit input, .alvenx-design .switch-native { font: inherit; }

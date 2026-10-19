@@ -1,0 +1,254 @@
+{
+  "engine": "webkit",
+  "browserVersion": "26.5",
+  "physicalIOS": false,
+  "cases": [
+    {
+      "width": 393,
+      "style": {
+        "supported": false,
+        "rootInlineTouchAction": "",
+        "outsideTap": "",
+        "controls": [
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "pinch-zoom"
+          },
+          {
+            "tag": "INPUT",
+            "className": "parameter-number",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "INPUT",
+            "className": "glass-range",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          }
+        ]
+      },
+      "switchTap": {
+        "beforeSwitch": "true",
+        "afterSwitch": "false"
+      },
+      "heldPressure": 0.9068,
+      "afterRangeTap": 0.791285732890079,
+      "afterRangeDrag": 0.251790711237595,
+      "keyboard": {
+        "focusVisible": true,
+        "value": 0.26,
+        "contourFocus": true
+      },
+      "selection": {
+        "value": "Clear text 文字",
+        "start": 6,
+        "end": 10
+      }
+    },
+    {
+      "width": 1180,
+      "style": {
+        "supported": false,
+        "rootInlineTouchAction": "",
+        "outsideTap": "",
+        "controls": [
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "pinch-zoom"
+          },
+          {
+            "tag": "INPUT",
+            "className": "parameter-number",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "INPUT",
+            "className": "glass-range",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "switch-native",
+            "tap": "",
+            "touchAction": "pan-y pinch-zoom"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "INPUT",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "BUTTON",
+            "className": "glass-hit",
+            "tap": "",
+            "touchAction": "manipulation"
+          },
+          {
+            "tag": "A",
+            "className": "",
+            "tap": "",
+            "touchAction": "manipulation"
+          }
+        ]
+      },
+      "switchTap": {
+        "beforeSwitch": "true",
+        "afterSwitch": "false"
+      },
+      "heldPressure": 0.9185,
+      "afterRangeTap": 0.78030019325593,
+      "afterRangeDrag": 0.264202517141528,
+      "keyboard": {
+        "focusVisible": true,
+        "value": 0.27,
+        "contourFocus": true
+      },
+      "selection": {
+        "value": "Clear text 文字",
+        "start": 6,
+        "end": 10
+      }
+    }
+  ],
+  "errors": []
+}

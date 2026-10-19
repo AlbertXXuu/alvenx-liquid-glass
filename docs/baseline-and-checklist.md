@@ -54,14 +54,15 @@ manifest 与 QA 在用户确认前生成，其原文可能仍写 `visual approva
 
 移植过程中修复了动态范围变化不同步与 WebGL 恢复后错误遮层未清除的问题；仅新包代码改变，v6 原件保持不变。新 renderer 在 context 恢复时丢弃旧 GPU 句柄以消除失效对象删除警告；其 shader 与原始基线相同，不再宣称整个新 renderer 文件字节相同。
 
-## 当前公开范围（2026-10-18 更新）
+## 公开范围与授权
 
 本节承接用户最新授权；冻结 v6 与历史验证记录保持原件。
 
-- v6 效果已确认；独立库当前按 public design preview 展示，1.1.2 主要更新公开展示与交付。
+- v6 效果已确认；独立库按 public design preview 展示。1.1.2 的公开交付与 1.2.0 的更新范围分别记录在下方，不把后续代码自动视为新的效果验收。
 - 公开 GitHub 独立项目与 alvenx.com 展示页：**authorized 2026-10-18**。
 - 接入已有 AlvenX 主页面：**removed from route by owner**；后续从库中取组件重新开发。
-- 复用许可证尚未选择，维持 UNLICENSED／保留版权；npm registry 发布仍需独立指示。
+- 用户于 2026-10-18 明确选择公开代码、保留版权、暂不授予开源复用许可；维持 UNLICENSED，npm registry 发布仍需独立指示。
+- 用户于 2026-10-19 授权本轮修改完成并自行检查后直接部署到 `/ui/`；历史审查页和旧正式版记录保留。此授权承接最新要求，不再沿用早期“只发布独立审查页”的限制。
 
 ## 1.1.0 运行时质量验证
 
@@ -99,3 +100,13 @@ manifest 与 QA 在用户确认前生成，其原文可能仍写 `visual approva
 - [x] 静态 `/ui/` 本地 Worker 响应包含 CSP 与安全头，五项许可证地址均 200；玻璃图像就绪，资源无失败响应。
 
 公开源码包含复现检查脚本；本机浏览器原始证据位于父工程 `output/playwright/public-showcase-2026-10-18/` 与 `public-release-2026-10-18/`，不作为公开 Git 依赖。线上提交与部署身份由 GitHub release 和官网 `ui/showcase-manifest.json` 记录。
+
+## 1.2.0 当前展示版（2026-10-19）
+
+本轮采用 R3 的注册场景折射与手势归属实现，加入规范玻璃导航、多层蓝紫背景和渐变标题 “Glass that follows your hand.”。Progress 小样初始值改为 50%，以 0–100 百分数编辑和显示；显示精度不量化连续拖动位置。七项材质参数沿用原契约、保存值与 Reset 行为，glass opacity 默认 0.3，两个 blur 范围维持 0–6 px。水平大形体与文本原生渲染继续保留。
+
+`.alvenx-design` 范围内新增透明 `-webkit-tap-highlight-color`，针对用户实机截图中的原生点击灰黑遮罩。此属性不删除控件按压形变、键盘轮廓焦点或原生文本选择。其识别依据、局部回归与物理平台边界见 [兼容性说明](compatibility.md)。
+
+当前可核对的定向证据：Chrome 与 Windows Playwright WebKit 在 393／1180px 通过点击、鼠标拖动、Tab／ArrowRight、按压形变及 Latin／CJK 字段选择检查；Chrome 核对 kit 内零 alpha 与外部按钮隔离，测试场景无页面错误。Windows WebKit 不支持读取这个 iOS 专有属性，不能代替真实 iPad 点击遮罩验收。这些记录属于该局部修改，不自动代表最终展示构建的全部检查。
+
+版本身份、最终截图、构建／安装检查和线上部署回执由 [1.2.0 发布记录](releases/1.2.0/README.md) 承接；只按已产生的结果更新。历史 v6、1.0.0、1.1.x 和 R1／R2／R3 原件不改写。物理 iPhone 15 Pro／iPad Air M4 的首次点击、Combo Touch、实际 Safari 合成与交互手感继续由用户真机确认；不因允许部署而标成技术验收通过。

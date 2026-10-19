@@ -1,0 +1,515 @@
+{
+  "engine": "chromium",
+  "version": "155.0.8059.84",
+  "physicalDevice": false,
+  "layouts": [
+    {
+      "width": 320,
+      "height": 852,
+      "geometry": {
+        "viewport": 320,
+        "documentWidth": 320,
+        "header": {
+          "top": 14,
+          "width": 284,
+          "height": 74.484375,
+          "padding": "12px 18px 12px 22px",
+          "radius": "26px",
+          "wordmark": 160,
+          "navDisplay": "none"
+        },
+        "hero": {
+          "rect": {
+            "x": 18,
+            "y": 171.296875,
+            "width": 284,
+            "height": 137.59375,
+            "top": 171.296875,
+            "right": 302,
+            "bottom": 308.890625,
+            "left": 18
+          },
+          "gradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+          "color": "rgba(0, 0, 0, 0)",
+          "overflow": "visible"
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))"
+      },
+      "volume": {
+        "layout": "overview",
+        "frame": {
+          "x": 18,
+          "y": 243.546875,
+          "width": 284,
+          "height": 364.65625,
+          "top": 243.546875,
+          "right": 302,
+          "bottom": 608.203125,
+          "left": 18
+        },
+        "stage": {
+          "x": 18,
+          "y": 243.546875,
+          "width": 284,
+          "height": 200,
+          "top": 243.546875,
+          "right": 302,
+          "bottom": 443.546875,
+          "left": 18
+        },
+        "foreground": {
+          "x": 18,
+          "y": 443.546875,
+          "width": 284,
+          "height": 164.65625,
+          "top": 443.546875,
+          "right": 302,
+          "bottom": 608.203125,
+          "left": 18
+        },
+        "text": "YOUR SPACE\n\nA little room to grow.\n\nMother. Connection. Possibility.",
+        "internalOverflow": false,
+        "error": null
+      },
+      "parameters": {
+        "rect": {
+          "x": 18,
+          "y": 227.578125,
+          "width": 284,
+          "height": 826,
+          "top": 227.578125,
+          "right": 302,
+          "bottom": 1053.578125,
+          "left": 18
+        },
+        "scrollWidth": 282,
+        "clientWidth": 282,
+        "rows": 7
+      }
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "geometry": {
+        "viewport": 393,
+        "documentWidth": 393,
+        "header": {
+          "top": 14,
+          "width": 353.6875,
+          "height": 74.484375,
+          "padding": "12px 18px 12px 22px",
+          "radius": "26px",
+          "wordmark": 160,
+          "navDisplay": "none"
+        },
+        "hero": {
+          "rect": {
+            "x": 18,
+            "y": 171.296875,
+            "width": 308.640625,
+            "height": 92.875,
+            "top": 171.296875,
+            "right": 326.640625,
+            "bottom": 264.171875,
+            "left": 18
+          },
+          "gradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+          "color": "rgba(0, 0, 0, 0)",
+          "overflow": "visible"
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))"
+      },
+      "volume": {
+        "layout": "overview",
+        "frame": {
+          "x": 18,
+          "y": 257.4375,
+          "width": 357,
+          "height": 334.421875,
+          "top": 257.4375,
+          "right": 375,
+          "bottom": 591.859375,
+          "left": 18
+        },
+        "stage": {
+          "x": 18,
+          "y": 257.4375,
+          "width": 357,
+          "height": 200,
+          "top": 257.4375,
+          "right": 375,
+          "bottom": 457.4375,
+          "left": 18
+        },
+        "foreground": {
+          "x": 18,
+          "y": 457.4375,
+          "width": 357,
+          "height": 134.421875,
+          "top": 457.4375,
+          "right": 375,
+          "bottom": 591.859375,
+          "left": 18
+        },
+        "text": "YOUR SPACE\n\nA little room to grow.\n\nMother. Connection. Possibility.",
+        "internalOverflow": false,
+        "error": null
+      },
+      "parameters": {
+        "rect": {
+          "x": 18,
+          "y": 227.734375,
+          "width": 357,
+          "height": 826,
+          "top": 227.734375,
+          "right": 375,
+          "bottom": 1053.734375,
+          "left": 18
+        },
+        "scrollWidth": 355,
+        "clientWidth": 355,
+        "rows": 7
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "geometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "header": {
+          "top": 14,
+          "width": 691.1875,
+          "height": 74.484375,
+          "padding": "12px 18px 12px 22px",
+          "radius": "26px",
+          "wordmark": 160,
+          "navDisplay": "flex"
+        },
+        "hero": {
+          "rect": {
+            "x": 40,
+            "y": 211,
+            "width": 369.28125,
+            "height": 111.109375,
+            "top": 211,
+            "right": 409.28125,
+            "bottom": 322.109375,
+            "left": 40
+          },
+          "gradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+          "color": "rgba(0, 0, 0, 0)",
+          "overflow": "visible"
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))"
+      },
+      "volume": {
+        "layout": "compact-integrated",
+        "frame": {
+          "x": 40,
+          "y": 328.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 328.078125,
+          "right": 728,
+          "bottom": 695,
+          "left": 40
+        },
+        "stage": {
+          "x": 40,
+          "y": 328.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 328.078125,
+          "right": 728,
+          "bottom": 695,
+          "left": 40
+        },
+        "foreground": {
+          "x": 404.625,
+          "y": 416.125,
+          "width": 247.671875,
+          "height": 113.8125,
+          "top": 416.125,
+          "right": 652.296875,
+          "bottom": 529.9375,
+          "left": 404.625
+        },
+        "text": "YOUR SPACE\n\nA little room\nto grow.\n\nMother. Connection. Possibility.",
+        "internalOverflow": false,
+        "error": null
+      },
+      "parameters": {
+        "rect": {
+          "x": 40,
+          "y": 239.6875,
+          "width": 688,
+          "height": 502,
+          "top": 239.6875,
+          "right": 728,
+          "bottom": 741.6875,
+          "left": 40
+        },
+        "scrollWidth": 686,
+        "clientWidth": 686,
+        "rows": 7
+      }
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "geometry": {
+        "viewport": 1180,
+        "documentWidth": 1180,
+        "header": {
+          "top": 14,
+          "width": 1062,
+          "height": 74.484375,
+          "padding": "12px 18px 12px 22px",
+          "radius": "26px",
+          "wordmark": 160,
+          "navDisplay": "flex"
+        },
+        "hero": {
+          "rect": {
+            "x": 40,
+            "y": 211,
+            "width": 567.453125,
+            "height": 170.75,
+            "top": 211,
+            "right": 607.453125,
+            "bottom": 381.75,
+            "left": 40
+          },
+          "gradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+          "color": "rgba(0, 0, 0, 0)",
+          "overflow": "visible"
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))"
+      },
+      "volume": {
+        "layout": "wide-integrated",
+        "frame": {
+          "x": 40,
+          "y": 116.921875,
+          "width": 1100,
+          "height": 586.65625,
+          "top": 116.921875,
+          "right": 1140,
+          "bottom": 703.578125,
+          "left": 40
+        },
+        "stage": {
+          "x": 40,
+          "y": 116.921875,
+          "width": 1100,
+          "height": 586.65625,
+          "top": 116.921875,
+          "right": 1140,
+          "bottom": 703.578125,
+          "left": 40
+        },
+        "foreground": {
+          "x": 650.5,
+          "y": 275.3125,
+          "width": 341,
+          "height": 141.46875,
+          "top": 275.3125,
+          "right": 991.5,
+          "bottom": 416.78125,
+          "left": 650.5
+        },
+        "text": "YOUR SPACE\n\nA little room\nto grow.\n\nMother. Connection. Possibility.",
+        "internalOverflow": false,
+        "error": null
+      },
+      "parameters": {
+        "rect": {
+          "x": 40,
+          "y": 240.265625,
+          "width": 1100,
+          "height": 384,
+          "top": 240.265625,
+          "right": 1140,
+          "bottom": 624.265625,
+          "left": 40
+        },
+        "scrollWidth": 1098,
+        "clientWidth": 1098,
+        "rows": 7
+      }
+    },
+    {
+      "width": 1366,
+      "height": 900,
+      "geometry": {
+        "viewport": 1366,
+        "documentWidth": 1366,
+        "header": {
+          "top": 14,
+          "width": 1229.390625,
+          "height": 74.484375,
+          "padding": "12px 18px 12px 22px",
+          "radius": "26px",
+          "wordmark": 160,
+          "navDisplay": "flex"
+        },
+        "hero": {
+          "rect": {
+            "x": 123,
+            "y": 211,
+            "width": 617.265625,
+            "height": 185.75,
+            "top": 211,
+            "right": 740.265625,
+            "bottom": 396.75,
+            "left": 123
+          },
+          "gradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+          "color": "rgba(0, 0, 0, 0)",
+          "overflow": "visible"
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))"
+      },
+      "volume": {
+        "layout": "wide-integrated",
+        "frame": {
+          "x": 123,
+          "y": 150.921875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 150.921875,
+          "right": 1243,
+          "bottom": 748.25,
+          "left": 123
+        },
+        "stage": {
+          "x": 123,
+          "y": 150.921875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 150.921875,
+          "right": 1243,
+          "bottom": 748.25,
+          "left": 123
+        },
+        "foreground": {
+          "x": 744.59375,
+          "y": 312.1875,
+          "width": 347.1875,
+          "height": 142.8125,
+          "top": 312.1875,
+          "right": 1091.78125,
+          "bottom": 455,
+          "left": 744.59375
+        },
+        "text": "YOUR SPACE\n\nA little room\nto grow.\n\nMother. Connection. Possibility.",
+        "internalOverflow": false,
+        "error": null
+      },
+      "parameters": {
+        "rect": {
+          "x": 123,
+          "y": 239.9375,
+          "width": 1120,
+          "height": 384,
+          "top": 239.9375,
+          "right": 1243,
+          "bottom": 623.9375,
+          "left": 123
+        },
+        "scrollWidth": 1118,
+        "clientWidth": 1118,
+        "rows": 7
+      }
+    }
+  ],
+  "checks": [
+    "no horizontal overflow 320",
+    "canonical header 320",
+    "visible gradient headline 320",
+    "varied blue-violet canvas 320",
+    "initial percentage 50 320",
+    "menu opens 320",
+    "Escape restores menu focus 320",
+    "outside closes menu 320",
+    "section closes menu 320",
+    "horizontal form without internal overflow 320",
+    "foreground text contained 320",
+    "material parameters contain seven rows 320",
+    "no horizontal overflow 393",
+    "canonical header 393",
+    "visible gradient headline 393",
+    "varied blue-violet canvas 393",
+    "initial percentage 50 393",
+    "menu opens 393",
+    "Escape restores menu focus 393",
+    "outside closes menu 393",
+    "section closes menu 393",
+    "horizontal form without internal overflow 393",
+    "foreground text contained 393",
+    "material parameters contain seven rows 393",
+    "percentage upper clamp 393",
+    "percentage lower clamp 393",
+    "percentage edit precision 393",
+    "percentage Escape 393",
+    "keyboard percentage step 393",
+    "keyboard percentage End 393",
+    "range pointer tap 393",
+    "range continuous mouse drag 393",
+    "switch pointer click 393",
+    "switch keyboard Space 393",
+    "live optical source text 393",
+    "free lens mouse drag 393",
+    "native text Enter submit 393",
+    "actual stored nondefault setting 393",
+    "home click preserves state 393",
+    "home Enter preserves state 393",
+    "home Space preserves state 393",
+    "reduced motion immediate home 393",
+    "no horizontal overflow 768",
+    "canonical header 768",
+    "visible gradient headline 768",
+    "varied blue-violet canvas 768",
+    "initial percentage 50 768",
+    "horizontal form without internal overflow 768",
+    "foreground text contained 768",
+    "material parameters contain seven rows 768",
+    "no horizontal overflow 1180",
+    "canonical header 1180",
+    "visible gradient headline 1180",
+    "varied blue-violet canvas 1180",
+    "initial percentage 50 1180",
+    "horizontal form without internal overflow 1180",
+    "foreground text contained 1180",
+    "material parameters contain seven rows 1180",
+    "percentage upper clamp 1180",
+    "percentage lower clamp 1180",
+    "percentage edit precision 1180",
+    "percentage Escape 1180",
+    "keyboard percentage step 1180",
+    "keyboard percentage End 1180",
+    "range pointer tap 1180",
+    "range continuous mouse drag 1180",
+    "switch pointer click 1180",
+    "switch keyboard Space 1180",
+    "live optical source text 1180",
+    "free lens mouse drag 1180",
+    "native text Enter submit 1180",
+    "actual stored nondefault setting 1180",
+    "home click preserves state 1180",
+    "home Enter preserves state 1180",
+    "home Space preserves state 1180",
+    "reduced motion immediate home 1180",
+    "no horizontal overflow 1366",
+    "canonical header 1366",
+    "visible gradient headline 1366",
+    "varied blue-violet canvas 1366",
+    "initial percentage 50 1366",
+    "horizontal form without internal overflow 1366",
+    "foreground text contained 1366",
+    "material parameters contain seven rows 1366",
+    "no page errors"
+  ],
+  "errors": []
+}

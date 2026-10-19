@@ -1,7 +1,7 @@
 node_modules/
 dist/
 site-dist/
-releases/
+/releases/
 .playwright-cli/
 /output/
 docs/validation/

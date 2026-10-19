@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-19",
+  "version": "1.2.0",
+  "sourceBase": "e3f048d09b63567bfdbbcccf66e147e8dc93344d",
+  "status": "self-reviewed-before-publication",
+  "ownerDeploymentAuthorized": true,
+  "ownerPhysicalDeviceAccepted": false,
+  "checks": {
+    "typecheckDocs": {
+      "passed": true,
+      "documents": 10,
+      "localLinks": 44
+    },
+    "productionBuild": {
+      "passed": true,
+      "note": "Portable base build; fresh release namespace build repeats after source tag."
+    },
+    "contract": {
+      "passed": true,
+      "checks": 28,
+      "geometryCases": 15
+    },
+    "clock": {
+      "passed": true,
+      "checks": 16
+    },
+    "pixelBudget": {
+      "passed": true,
+      "cases": 180
+    },
+    "opticalKernels": {
+      "passed": true,
+      "exactFloat32Cases": 5800
+    },
+    "frozenBaseline": {
+      "passed": true,
+      "files": 41,
+      "fontUrls": 228
+    },
+    "installedTarball": {
+      "passed": true,
+      "version": "1.2.0",
+      "consumer": "Unrelated temporary React 19 project; actual local npm tarball installed, TypeScript/build passed."
+    },
+    "browserLayouts": {
+      "passed": true,
+      "engines": [
+        "Chromium 155.0.8059.84",
+        "Windows Playwright WebKit 26.5"
+      ],
+      "widths": [
+        320,
+        393,
+        768,
+        1180,
+        1366
+      ],
+      "checksPerEngine": 85,
+      "pageErrors": 0
+    },
+    "brandWorkspace": {
+      "passed": true,
+      "headerSource": "showcase/mobile-review/main.tsx",
+      "registry": "Private canonical brand registry updated; existing unrelated changes preserved."
+    }
+  },
+  "limits": [
+    "Windows WebKit is not physical Safari/iOS.",
+    "The iOS-specific tap highlight overlay is not rendered by Windows WebKit.",
+    "Physical iPhone 15 Pro/iPad Air M4, first touch and Combo Touch acceptance require owner feedback after deployment.",
+    "This visual/CSS release does not claim a new latency or FPS benchmark."
+  ]
+}

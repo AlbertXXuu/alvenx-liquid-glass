@@ -1,0 +1,85 @@
+{
+  "scope": "Prepublication self-review evidence; excludes this manifest and later publication receipt.",
+  "files": [
+    {
+      "path": "evidence/production-chromium-1180-parameters.png",
+      "bytes": 299078,
+      "sha256": "b9c6e5fe1915ce6bbb1979ec8c1ce90f46a32fc824a281bc5ed804bc63033790"
+    },
+    {
+      "path": "evidence/production-chromium-1180-volume.png",
+      "bytes": 162651,
+      "sha256": "8b8f27e1af0036aa980d89a16c7da0c04c11ca6124385742600c520a5e7229e3"
+    },
+    {
+      "path": "evidence/production-chromium-320-hero.png",
+      "bytes": 209637,
+      "sha256": "2b76528b2ee65eb8d9eb252550b60d06337cea68e5f4f851aa5351ae45ff659b"
+    },
+    {
+      "path": "evidence/production-chromium-393-components.png",
+      "bytes": 192294,
+      "sha256": "c1f4399fc3adb7f0f7ff7f6e4b359ea53378c0552951ff8b4c077456624fbbc4"
+    },
+    {
+      "path": "evidence/production-chromium-qa.json",
+      "bytes": 16047,
+      "sha256": "a1a08b872be2cfa01149027070c21aa32c81c82715d9686ecc34c085bd6d9a78"
+    },
+    {
+      "path": "evidence/production-webkit-1180-components.png",
+      "bytes": 230535,
+      "sha256": "ffb626a62f0d177e85a71534f5afcec2184ab33a4c54063e6b9e4dbcf3f89f60"
+    },
+    {
+      "path": "evidence/production-webkit-393-components.png",
+      "bytes": 114429,
+      "sha256": "e53a482a9d943be4d51209f5c6cf96864faa3ac924b2312e53bfbbca6ca64888"
+    },
+    {
+      "path": "evidence/production-webkit-qa.json",
+      "bytes": 16049,
+      "sha256": "161e0acce1da5452534b04487c4cf2f213df812ff93c354d312f971a3357d68c"
+    },
+    {
+      "path": "evidence/self-desktop.png",
+      "bytes": 666455,
+      "sha256": "d239be033fb2fd243680fa297bb190332dcdae677c7077412b45cea7e6f78843"
+    },
+    {
+      "path": "evidence/self-phone.png",
+      "bytes": 234351,
+      "sha256": "433c67438d5dc382d208d20787103ebc4f46e4c687be150976772a09c6228e64"
+    },
+    {
+      "path": "evidence/tap-after-chrome.json",
+      "bytes": 8282,
+      "sha256": "4a49222d17597deb68a3e608f0906668fece5ff8eea938593826878a540d46d4"
+    },
+    {
+      "path": "evidence/tap-after-webkit.json",
+      "bytes": 6540,
+      "sha256": "af3a0173b17e71e52608c93a83eef1f77f5d10eccd05413e0cf3e2bec1cbb311"
+    },
+    {
+      "path": "evidence/tap-chromium-1180-range-keyboard-focus.png",
+      "bytes": 5444,
+      "sha256": "a01f997bca029cb1417b92c30db4a1d242d2793ac12c9fda41c114cc6719ba14"
+    },
+    {
+      "path": "evidence/tap-chromium-393-switch-held.png",
+      "bytes": 3234,
+      "sha256": "43186860d71cb01a310bb270d1f29eed12f5625f6db408ee235014253bf59f19"
+    },
+    {
+      "path": "evidence/tap-highlight-findings.md",
+      "bytes": 3360,
+      "sha256": "edfb927796a463c313e37db97b4ab57052d01436cf3f1bddfda3f909c1ccfa3d"
+    },
+    {
+      "path": "evidence/tap-highlight-qa.cjs",
+      "bytes": 5783,
+      "sha256": "cbd6e60d2d59adf81125c52f11c0b2afb7030597babeabf37da98d15e88a194f"
+    }
+  ]
+}
