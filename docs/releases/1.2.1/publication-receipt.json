@@ -1,0 +1,75 @@
+{
+  "version": "1.2.1",
+  "date": "2026-10-19",
+  "status": "published-awaiting-physical-device-feedback",
+  "productionUrl": "https://alvenx.com/ui/",
+  "source": {
+    "tag": "v1.2.1",
+    "commit": "17a47f4cd67cbed9176582cb2d6809a3dffabc9d",
+    "tagMoved": false,
+    "ci": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39250030569",
+    "ciPassed": true
+  },
+  "publicationRecordsTag": "v1.2.1-published",
+  "website": {
+    "sourceCommit": "bdfa51d1e5614beed0ba8627756d3f84516858b6",
+    "sourceTag": "ui-v1.2.1",
+    "branch": "codex/ui-production-1.2.1",
+    "currentContentBasePreserved": "ae99d587398dc48e86182f126b09a2c68c101a79",
+    "pullRequest": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/39",
+    "mainMerge": "bf64f7738fcb06b57c718667f0c0098db84aa651",
+    "ci": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39250692873",
+    "ciPassed": true,
+    "workerVersion": "2f460e2c-93da-4e57-8fbc-8a5c45683584",
+    "previousWorker": "d6c3db07-d65c-493a-ac86-75f10ff64220",
+    "validation": "npm run validate passed; fresh build and Wrangler dry-run completed; published assets reflect current engineering-content baseline.",
+    "productionFileCount": 603,
+    "productionIndexSha256": "9ccbe72484ab77229438dbf06f995f1dcc5ee96962482fdef033462c388919ca",
+    "homepageCssUnchanged": [
+      {
+        "path": "/_next/static/css/index.CjIW4VPp.css",
+        "sha256": "20e2a557560ef95244dfbd29aa892b5ce8c9bf9ef702c5dce193bd7207bb5166",
+        "bytes": 564309
+      },
+      {
+        "path": "/_next/static/css/home-content.DyKEujSV.css",
+        "sha256": "248d8a54d4de4e3b52e31f84763098671f5b225c74bb5c73928d73b4b20fdd4a",
+        "bytes": 9402
+      }
+    ]
+  },
+  "history": {
+    "previousProductionVersion": "1.2.0",
+    "archiveUrl": "https://alvenx.com/ui/archive/production-1.2.0-20261019/",
+    "previousAssetNamespacePreserved": "/ui/releases/1.2.0/",
+    "allHistoricalReviewsPreserved": true,
+    "previous112ArchivePreserved": true
+  },
+  "checks": {
+    "localFontAssertions": 70,
+    "localWorkbenchAssertions": 183,
+    "localPageErrors": 0,
+    "onlineChromiumAssertions": 29,
+    "onlineWindowsWebKitAssertions": 28,
+    "onlinePageErrors": 0,
+    "onlineNetworkHttpErrors": 0,
+    "onlineConsoleCspErrors": 0,
+    "onlineActualDelayedCjkPublication": true,
+    "onlineSingleCanvasMaterialEditing": true,
+    "onlineExactByteChecks": 15,
+    "actualInstalledTarball": true,
+    "fullKitPackVerification": "Recorded after final pack; source package was installed and built in an unrelated React consumer."
+  },
+  "sourceArtifacts": {
+    "zipSha256": "f96ccd51afd49458fa260c688829d680db987e7f97fe2b338ba477a533c8b592",
+    "tgzSha256": "061e31eccad715290fc0e4d5fd35ac091c54ad641f1ec66971ccc7dc90ef53cc"
+  },
+  "knownLimits": [
+    "Physical iOS keyboard/first-paint/Safari/Combo Touch are owner-device acceptance items.",
+    "Windows WebKit has a separately reproduced non-composited WebGL resize/capture issue; no product redraw/buffer workaround added.",
+    "Windows WebKit native focus scroll leaves final input border up to2px beyond viewport; center stays visible and operable, matching prerelease tolerance.",
+    "Transparent navbar compositing on Windows WebKit is not physical Safari fidelity.",
+    "No new FPS/latency benchmark or change to the accepted material/gesture/default contracts."
+  ],
+  "license": "All rights reserved / UNLICENSED; no npm registry publication."
+}

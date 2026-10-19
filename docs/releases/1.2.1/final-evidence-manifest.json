@@ -1,0 +1,54 @@
+{
+  "files": [
+    {
+      "path": "final-verification/online-chromium-1180-material-last.png",
+      "bytes": 277702,
+      "sha256": "c598cfe8c5cfa546bd53c3ad04f570f65b1fe7b5d7226941a385f4bfce8f71bf"
+    },
+    {
+      "path": "final-verification/online-chromium-393-font.png",
+      "bytes": 194839,
+      "sha256": "3acd92e0401d92acda6133174ad3592b9329f05d8a764a7cde78da9bbaf75b6a"
+    },
+    {
+      "path": "final-verification/online-chromium-393-material-first.png",
+      "bytes": 173515,
+      "sha256": "95dd2393b9d6718f8d5bb63f92752e8274b8bce34bdf2b7ed78d6f4e09c0a3ab"
+    },
+    {
+      "path": "final-verification/online-chromium-393-material-last.png",
+      "bytes": 124413,
+      "sha256": "8468fb87a16d2afa32749cc7d1c01bc24a6c993e41fb2c8404f0f05ae2dc11d3"
+    },
+    {
+      "path": "final-verification/online-chromium.json",
+      "bytes": 6778,
+      "sha256": "76cbfa37fa75188b066a8c08e80c57e69b726257f7c06536602a91eeb98bcb95"
+    },
+    {
+      "path": "final-verification/online-curation-notes.json",
+      "bytes": 1908,
+      "sha256": "e099b4ef6d0cdfb04953b075570f5b001445c8f7dfabf046d84b2313d6ab4cf9"
+    },
+    {
+      "path": "final-verification/online-http-verification.json",
+      "bytes": 3067,
+      "sha256": "35576dccc7239a11da3abad9564d70c37790e08355e9771760838cbe86ffbf41"
+    },
+    {
+      "path": "final-verification/online-qa.cjs",
+      "bytes": 11995,
+      "sha256": "a59b35a960954ffce0704375c76e72a84ceb8003bf5a0cfd3588f333da64b7b8"
+    },
+    {
+      "path": "final-verification/online-webkit-393-font.png",
+      "bytes": 123260,
+      "sha256": "f60935f1ffd55638df2bf365cf9debe1bae2d745c83b3be9dae7d524bdccaac9"
+    },
+    {
+      "path": "final-verification/online-webkit.json",
+      "bytes": 7361,
+      "sha256": "07ee958b43669b1a93949b2448b710de3e3a08b7215e58442439280b584f73fd"
+    }
+  ]
+}

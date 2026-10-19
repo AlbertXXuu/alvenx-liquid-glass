@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-19",
+  "url": "https://alvenx.com/ui/",
+  "worker": "2f460e2c-93da-4e57-8fbc-8a5c45683584",
+  "source": "17a47f4cd67cbed9176582cb2d6809a3dffabc9d",
+  "version": "1.2.1",
+  "chromiumChecks": 29,
+  "windowsWebKitChecks": 28,
+  "errors": {
+    "page": 0,
+    "network": 0,
+    "consoleCsp": 0
+  },
+  "inspected": [
+    "online-chromium-393-font.png",
+    "online-chromium-393-material-first.png",
+    "online-chromium-393-material-last.png",
+    "online-chromium-1180-material-last.png",
+    "online-webkit-393-font.png",
+    "online-webkit-393-material-last.png"
+  ],
+  "findings": [
+    "Chinese publishes only once after the actual two 600-weight shards finish; native draft remains usable while font requests are deliberately held.",
+    "Fresh Progress is 50% and Glass background opacity is 0.3.",
+    "Same single horizontal canvas remains above first and final material controls; short viewport undocks without enlargement.",
+    "Specular opacity 0 to 1 changes the real Chromium canvas PNG after ambient motion is stopped.",
+    "The Windows WebKit native minimum focus scroll leaves the last numeric input bottom 2px below a 852px viewport at 393px width, and 1.484375px below at 1180px width. Center is visible and operable; matches existing prerelease 2px tolerance.",
+    "Windows WebKit screenshot shows prior section text behind the transparent fixed header more clearly than Chromium. This port evidence does not establish the same compositing on physical iOS."
+  ],
+  "limits": [
+    "Viewport resize is not physical software-keyboard certification. Synthetic composition is not physical iOS IME acceptance.",
+    "Known Windows WebKit canvas resize/compositor retention limitation remains; no WebKit pixel-response pass is claimed.",
+    "No new source edits were made during online acceptance. Only output evidence was written."
+  ]
+}
