@@ -1,5 +1,5 @@
 from pathlib import Path
-import json,hashlib,re,subprocess,concurrent.futures,sys
+import json,hashlib,re,subprocess,concurrent.futures,sys,datetime
 w=Path(sys.argv[1]); out=Path(__file__).parent; data=out/'http'; data.mkdir(exist_ok=True)
 html=(w/'public/ui/index.html').read_text(encoding='utf-8')
 review='/ui/field-sizing-review-20261019/'
@@ -17,9 +17,10 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: checks=list(p
 assert '<meta name="robots" content="noindex' not in html
 assert 'noindex,nofollow' in rh
 m=json.loads((w/'public/ui/showcase-manifest.json').read_text(encoding='utf-8'))
-assert m['version']=='1.3.1' and m['sourceCommit']=='08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da'
+assert m['version']=='1.3.1' and m['sourceRef']=='v1.3.1' and m['sourceCommit']=='08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da'
 entry=json.loads((w/'public/ui/homepage-entry-manifest.json').read_text(encoding='utf-8-sig'))
 assert entry['kitVersion']=='1.3.0' and entry['packageSha256']=='3acd90283037d999406d322c385f36570582191b1194f999c6a149c484c470f4'
-report={'status':'passed','unchangedShowcaseVersion':m['version'],'homepageKitVersion':entry['kitVersion'],'sourceCommit':entry['sourceCommit'],'productionIndexable':True,'reviewNoindex':True,'checks':checks,'historyPreserved':True}
+assert entry['sourceRef']=='v1.3.0' and entry['sourceCommit']=='7f202150b2e95f744d90eab39eaf5e2d18d40bd8'
+report={'status':'passed','verifiedAtUtc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'showcaseVersion':m['version'],'showcaseSourceRef':m['sourceRef'],'showcaseSourceCommit':m['sourceCommit'],'homepageKitVersion':entry['kitVersion'],'homepageSourceRef':entry['sourceRef'],'homepageSourceCommit':entry['sourceCommit'],'productionIndexable':True,'reviewNoindex':True,'checks':checks,'historyPreserved':True}
 (out/'online-http-verification-1.3.1.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'status':'passed','byteChecks':len(checks),'showcaseVersion':m['version'],'homepageKitVersion':entry['kitVersion']}))

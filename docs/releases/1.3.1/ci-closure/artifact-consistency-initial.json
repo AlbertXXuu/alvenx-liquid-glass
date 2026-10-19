@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "checkedAtUtc": "2026-10-19T16:17:47.139198+00:00",
+  "scope": "Read-only release artifact/source identity audit; no build, install, deployment, ref mutation or archive repacking",
+  "issues": [
+    {
+      "scope": "historicalHttpReceipt.provenance",
+      "severity": "record-clarification",
+      "detail": "docs/releases/1.3.1/online-http-verification.json sourceCommit is homepage1.3.0 commit7f202150\u2026 while showcaseVersion is1.3.1; verify-live.py first asserts correct showcase08aa8ed\u2026 then reports entry[sourceCommit]. Runtime identity assertions and byte checks remain valid, field name requires disambiguation in follow-up records."
+    }
+  ],
+  "release": {
+    "isDraft": false,
+    "isPrerelease": false,
+    "publishedAt": "2026-10-19T16:09:00Z",
+    "tagName": "v1.3.1",
+    "targetCommitish": "main",
+    "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.3.1"
+  },
+  "refs": {
+    "kit": {
+      "remote": {
+        "refs/heads/main": "18341427aea5124724e90c4b8a8c82a99acce42e",
+        "refs/tags/v1.3.1^{}": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+        "refs/tags/v1.3.1-published^{}": "18341427aea5124724e90c4b8a8c82a99acce42e"
+      },
+      "expectedMatch": true,
+      "localHead": "18341427aea5124724e90c4b8a8c82a99acce42e",
+      "workingTreeClean": false
+    },
+    "website": {
+      "remote": {
+        "refs/heads/main": "909cee105a83402c14ef7b8e40d0bb3d90403ff0",
+        "refs/tags/ui-v1.3.1^{}": "242be6814526ec4586df37e2ba78add1200a3fc2"
+      },
+      "expectedMatch": true,
+      "localHead": "242be6814526ec4586df37e2ba78add1200a3fc2",
+      "workingTreeClean": true
+    }
+  },
+  "assets": [
+    {
+      "name": "alvenx-design-kit-1.3.1.zip",
+      "githubBytes": 130248865,
+      "githubDigest": "sha256:cd10ef1eabb264700e1423b91aadf5c13054312baa2e65f8bce743e5ea5f5d24",
+      "localBytes": 130248865,
+      "localSha256": "cd10ef1eabb264700e1423b91aadf5c13054312baa2e65f8bce743e5ea5f5d24",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.1/alvenx-design-kit-1.3.1.zip",
+      "state": "uploaded",
+      "serverMetadataMatchesLocal": true,
+      "expectedMatches": true
+    },
+    {
+      "name": "alvenx-liquid-glass-1.3.1.tgz",
+      "githubBytes": 28913428,
+      "githubDigest": "sha256:69fe336c6b5e5f4b4a4ebade2550d2963724aa129b0c931ca7e46131c5ed2ab7",
+      "localBytes": 28913428,
+      "localSha256": "69fe336c6b5e5f4b4a4ebade2550d2963724aa129b0c931ca7e46131c5ed2ab7",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.1/alvenx-liquid-glass-1.3.1.tgz",
+      "state": "uploaded",
+      "serverMetadataMatchesLocal": true,
+      "expectedMatches": true
+    },
+    {
+      "name": "installed-consumer.json",
+      "githubBytes": 659,
+      "githubDigest": "sha256:18c88db1ad18ab169f36f4e7f62788eb5127815c9740592737996612915ded84",
+      "localBytes": 659,
+      "localSha256": "18c88db1ad18ab169f36f4e7f62788eb5127815c9740592737996612915ded84",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.1/installed-consumer.json",
+      "state": "uploaded",
+      "serverMetadataMatchesLocal": true,
+      "smallServerAssetDownloadedBytes": 659,
+      "downloadedBytesMatchLocal": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "githubBytes": 190,
+      "githubDigest": "sha256:d4b8f6e969e236827bddbddae3a3dff2c4436e5fa936d861d5c9e5eea25b8ea5",
+      "localBytes": 190,
+      "localSha256": "d4b8f6e969e236827bddbddae3a3dff2c4436e5fa936d861d5c9e5eea25b8ea5",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.1/SHA256SUMS.txt",
+      "state": "uploaded",
+      "serverMetadataMatchesLocal": true,
+      "smallServerAssetDownloadedBytes": 190,
+      "downloadedBytesMatchLocal": true
+    }
+  ],
+  "largeAssetDownloadPolicy": "Large ZIP/TGZ not re-downloaded; fresh GitHub server-computed SHA-256 and size compared with independently rehashed existing local files. Small JSON/checksum assets fetched and compared byte-for-byte.",
+  "zip": {
+    "entryCount": 1010,
+    "manifestVersion": "1.3.1",
+    "manifestEntries": 1008,
+    "verifiedManifestEntries": 1008,
+    "manifestErrors": [],
+    "sourceTagTrackedFilesExactMatched": 886,
+    "sourceTagTrackedSemanticDifferences": [
+      "docs/releases/1.3.0/publication.md"
+    ],
+    "sourceTagCRLFtoLFOnly": [
+      "README.md",
+      "SKILL.md",
+      "TODO.md",
+      "docs/attribution.md",
+      "docs/baseline-and-checklist.md",
+      "docs/hover-comparison.html",
+      "docs/integration.md",
+      "package.json",
+      "scripts/contract.mjs",
+      "scripts/control-input-regression.cjs",
+      "scripts/control-pointer-webkit-regression.cjs",
+      "scripts/fixtures/backdropOptics-1.1.0.ts",
+      "scripts/material-workbench-qa.cjs",
+      "scripts/qa-optics-speed.cjs",
+      "scripts/qa-optics.cjs",
+      "scripts/smoke-install.mjs",
+      "showcase/main.tsx",
+      "showcase/mobile-review/main.tsx",
+      "showcase/showcase.css",
+      "src/GlassClock.ts",
+      "src/GlassSettingsControls.tsx",
+      "src/endpointGeometry.ts",
+      "src/reviewSettings.ts",
+      "src/useGlassSettings.ts",
+      "work/r3-controlled-proof/backdropOptics-pre-async.ts"
+    ],
+    "publicationTagTrackedFilesExactMatched": 903,
+    "publicationTagTrackedSemanticDifferences": [],
+    "publicationTagCRLFtoLFOnly": [
+      "README.md",
+      "SKILL.md",
+      "TODO.md",
+      "docs/attribution.md",
+      "docs/baseline-and-checklist.md",
+      "docs/hover-comparison.html",
+      "docs/integration.md",
+      "package.json",
+      "scripts/contract.mjs",
+      "scripts/control-input-regression.cjs",
+      "scripts/control-pointer-webkit-regression.cjs",
+      "scripts/fixtures/backdropOptics-1.1.0.ts",
+      "scripts/material-workbench-qa.cjs",
+      "scripts/qa-optics-speed.cjs",
+      "scripts/qa-optics.cjs",
+      "scripts/smoke-install.mjs",
+      "showcase/main.tsx",
+      "showcase/mobile-review/main.tsx",
+      "showcase/showcase.css",
+      "src/GlassClock.ts",
+      "src/GlassSettingsControls.tsx",
+      "src/endpointGeometry.ts",
+      "src/reviewSettings.ts",
+      "src/useGlassSettings.ts",
+      "work/r3-controlled-proof/backdropOptics-pre-async.ts"
+    ],
+    "normalization": "25 packaged files preserve checkout CRLF whereas canonical Git blobs use LF; all content is identical after only CRLF-to-LF normalization. Recorded archive/TGZ checksums are exact raw-byte identities.",
+    "manifestMatchesLocalManifest": true,
+    "embeddedTarballMatches": true
+  },
+  "tarball": {
+    "entries": 292,
+    "packageName": "@alvenx/liquid-glass",
+    "version": "1.3.1",
+    "license": "UNLICENSED",
+    "private": true,
+    "sourceTagSemanticMismatches": [],
+    "sourceTagCRLFtoLFOnly": [
+      "docs/hover-comparison.html",
+      "package.json",
+      "docs/attribution.md",
+      "docs/baseline-and-checklist.md",
+      "docs/integration.md",
+      "README.md",
+      "SKILL.md",
+      "TODO.md",
+      "src/endpointGeometry.ts",
+      "src/GlassClock.ts",
+      "src/reviewSettings.ts",
+      "src/useGlassSettings.ts",
+      "src/GlassSettingsControls.tsx"
+    ],
+    "zipByteMismatches": [],
+    "localByteMismatches": [],
+    "runtimeComparedWith130": 279,
+    "runtime130ByteMismatches": [],
+    "srcStylesGitDiff130to131": ""
+  },
+  "website": {
+    "showcaseVersion": "1.3.1",
+    "showcaseSourceCommit": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+    "showcaseSourceRef": "v1.3.1",
+    "manifestFiles": 837,
+    "manifestErrors": [],
+    "homepageKitVersion": "1.3.0",
+    "homepageSourceCommit": "7f202150b2e95f744d90eab39eaf5e2d18d40bd8",
+    "homepageManifestPackageSha256": "3acd90283037d999406d322c385f36570582191b1194f999c6a149c484c470f4",
+    "vendorSha256": "3acd90283037d999406d322c385f36570582191b1194f999c6a149c484c470f4",
+    "installedEntries": 292,
+    "installedFileMismatches": [],
+    "vendorSourceTagSemanticMismatches": [],
+    "vendorSourceTagCRLFtoLFOnly": [
+      "docs/hover-comparison.html",
+      "package.json",
+      "docs/attribution.md",
+      "docs/baseline-and-checklist.md",
+      "docs/integration.md",
+      "README.md",
+      "SKILL.md",
+      "TODO.md",
+      "src/endpointGeometry.ts",
+      "src/GlassClock.ts",
+      "src/reviewSettings.ts",
+      "src/useGlassSettings.ts",
+      "src/GlassSettingsControls.tsx"
+    ],
+    "vendorMatchesKit130Tarball": true,
+    "rights": "UNLICENSED"
+  },
+  "frozenBaseline": {
+    "manifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+    "expectedManifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+    "entries": 41,
+    "failed": []
+  },
+  "fonts": {
+    "cssUrlCount": 228,
+    "uniqueUrlCount": 228,
+    "missingUrls": [],
+    "licenseFilesPresent": [
+      [
+        "assets\\fonts\\InstrumentSans-OFL.txt",
+        true
+      ],
+      [
+        "assets\\fonts\\misans\\MiSans-License-Agreement.pdf",
+        true
+      ]
+    ]
+  },
+  "evidenceIndexes": [
+    {
+      "path": "docs\\releases\\1.3.1\\text-inset-evidence.sha256.json",
+      "entries": 13,
+      "mismatches": []
+    },
+    {
+      "path": "docs\\releases\\1.3.1\\online\\sha256.json",
+      "entries": 8,
+      "mismatches": []
+    }
+  ],
+  "textInset": {
+    "cssSha256": "f5a925d5528d318417f009c2c22ca80f8f86a66e7fc203981975c5f6bb4a5178",
+    "desktopWrapper58px": true,
+    "phoneWrapper36px": true,
+    "recordedCssMatches": true
+  },
+  "historicalHttpReceipt": {
+    "showcaseVersion": "1.3.1",
+    "ambiguousSourceCommit": "7f202150b2e95f744d90eab39eaf5e2d18d40bd8",
+    "actualSourceCommitMeaning": "homepage1.3.0 source, because verify-live.py serializes entry[sourceCommit]",
+    "expectedShowcaseSourceCommit": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+    "byteChecks": 21,
+    "allRecordedMatches": true
+  },
+  "status": "passed-with-record-clarification"
+}

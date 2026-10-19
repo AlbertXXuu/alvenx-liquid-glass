@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": {
+    "exactPublicationAccepted": true,
+    "RecordOnlyDescendantAccepted": true,
+    "runtimeDescendantRejected": true,
+    "otherDocumentationRejected": true,
+    "unrelatedHistoryRejected": true,
+    "supplementRecordedSeparately": true,
+    "missingOriginalRejected": true
+  }
+}

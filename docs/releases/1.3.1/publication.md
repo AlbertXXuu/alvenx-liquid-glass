@@ -1,5 +1,7 @@
 # Publication — native text inset correction
 
+Follow-up CI and identity verification is recorded in the [2026-10-20 closure](ci-closure/README.md). The queued CI observations below describe the original delivery time; the follow-up retains their final run conclusions separately.
+
 Published at [alvenx.com/ui](https://alvenx.com/ui/), with final verification continuing across midnight into 2026-10-20 Asia/Shanghai. Only the typed-text start moves right. The field's width, height, contour and placement, send control, font, vertical text position and other padding remain unchanged. No A/B/C sizing variant was selected.
 
 The native content starts at 38 px on phones and 60 px on desktop/tablet layouts. Compared with the previous production page, it moved right by 11.1875 px at 393 px viewport width, 17.078125 px at 768 px and 12.75 px at 1366 px. The unchanged input and send bounds were measured directly. Chinese, long English, ordinary message feedback and the literal `<3` response pass.
