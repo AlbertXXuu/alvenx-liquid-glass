@@ -1,0 +1,47 @@
+{
+  "engine": "webkit",
+  "before": [
+    {
+      "preserve": false,
+      "pixel": [
+        64,
+        96,
+        239,
+        255
+      ],
+      "error": 0
+    },
+    {
+      "preserve": true,
+      "pixel": [
+        64,
+        96,
+        239,
+        255
+      ],
+      "error": 0
+    }
+  ],
+  "resized": [
+    {
+      "preserve": false,
+      "pixel": [
+        64,
+        96,
+        239,
+        255
+      ],
+      "error": 0
+    },
+    {
+      "preserve": true,
+      "pixel": [
+        64,
+        96,
+        239,
+        255
+      ],
+      "error": 0
+    }
+  ]
+}

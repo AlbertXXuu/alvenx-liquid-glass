@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-19",
+  "baseline": "https://alvenx.com/ui/ at 1.2.0 before this fix",
+  "rootCause": "A newly entered Chinese SVG sample immediately used MiSans 600 before its Unicode shards loaded; font-display:swap then replaced fallback glyphs. Input composition also published candidates.",
+  "beforeEvidence": "font-repro.json",
+  "beforeWidthPx": [
+    154,
+    153
+  ],
+  "fix": "Keep the native input draft immediate. Publish the committed SVG sample only after exact-weight FontFaceSet.load(text) resolves. Ignore obsolete requests, defer composition candidates, retain the last sample on font failure, and cap committed text at 18 grapheme clusters.",
+  "cache": "64 promise entries; native browser cache owns fetched/decoded fonts; no global font assets or preload changes",
+  "contracts": {
+    "chromium": 35,
+    "windowsWebKit": 35,
+    "viewports": [
+      393,
+      1180
+    ],
+    "pageErrors": 0
+  },
+  "screenshotMethod": "Isolated font-ready crops temporarily hide the fixed header only; lens is moved below text through normal arrow-key input. Final screenshots are ordinary full viewports.",
+  "references": [
+    "https://drafts.csswg.org/css-font-loading/#dom-fontfaceset-load",
+    "https://w3c.github.io/uievents/#event-type-compositionend"
+  ],
+  "limits": "Synthetic composition events test application behavior. Physical iOS IME, native editor fallback painting and Combo Touch are not certified by this Windows test."
+}

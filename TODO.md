@@ -42,3 +42,10 @@ The reusable `.alvenx-design` scope suppresses the platform tap highlight with `
 Release evidence and remaining work are maintained in the [1.2.0 release record](docs/releases/1.2.0/README.md). Historical production and review versions remain archived. Continue physical iPhone 15 Pro / iPad Air M4 checks for the first tap, touch and Combo Touch drag, overdrag/re-grab, scroll ownership and the platform overlay. Desktop emulation does not close those acceptance items. The public source remains all rights reserved / UNLICENSED.
 
 1.1.1 hover optimization keeps the existing contour, material settings, normal resolution, native PNG compression and 60Hz work budget. The blur implementation uses contiguous access, bounded column sums and zero-support regions with floating-point tail preservation. Exact normal-map comparisons and settled-state screenshots accompany the measured production-build comparison; transient physics and continuous pointer precision are not quantized to save work.
+
+
+## 1.2.1 follow-up
+
+- Restore Surface parameters to the volume section and preserve the same live preview while editing where the viewport permits.
+- Keep Chinese sample publication separate from native composition and exact-weight font loading, with bounded request reuse and stale-completion protection.
+- Retain physical-device validation boundaries and the source/history identities in [the 1.2.1 record](docs/releases/1.2.1/README.md).

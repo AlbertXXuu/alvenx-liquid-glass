@@ -1,0 +1,1687 @@
+{
+  "engine": "webkit",
+  "version": "26.5",
+  "physicalDevice": false,
+  "checks": [
+    "collapsed preview undocked 320",
+    "one horizontal canvas without overflow 320",
+    "collapsed text contained 320",
+    "single existing canvas docks 320",
+    "preview aligns below header 320",
+    "preview leaves controls room 320",
+    "expanded text and width contained 320",
+    "all seven material controls beside preview 320",
+    "native focus is visible and unobscured 320 Interaction strength",
+    "native focus is visible and unobscured 320 Specular opacity",
+    "native focus is visible and unobscured 320 Specular saturation",
+    "native focus is visible and unobscured 320 Refraction level",
+    "native focus is visible and unobscured 320 Blur level",
+    "native focus is visible and unobscured 320 Progressive blur",
+    "native focus is visible and unobscured 320 Glass background opacity",
+    "last slider operable below preview 320",
+    "last slider drag updates material 320",
+    "collapsed preview undocked 393",
+    "one horizontal canvas without overflow 393",
+    "collapsed text contained 393",
+    "single existing canvas docks 393",
+    "preview aligns below header 393",
+    "preview leaves controls room 393",
+    "expanded text and width contained 393",
+    "all seven material controls beside preview 393",
+    "native focus is visible and unobscured 393 Interaction strength",
+    "native focus is visible and unobscured 393 Specular opacity",
+    "native focus is visible and unobscured 393 Specular saturation",
+    "native focus is visible and unobscured 393 Refraction level",
+    "native focus is visible and unobscured 393 Blur level",
+    "native focus is visible and unobscured 393 Progressive blur",
+    "native focus is visible and unobscured 393 Glass background opacity",
+    "last slider operable below preview 393",
+    "last slider drag updates material 393",
+    "short viewport undocks without expanding canvas",
+    "system reduced motion retained",
+    "collapsed preview undocked 768",
+    "one horizontal canvas without overflow 768",
+    "collapsed text contained 768",
+    "single existing canvas docks 768",
+    "preview aligns below header 768",
+    "preview leaves controls room 768",
+    "expanded text and width contained 768",
+    "all seven material controls beside preview 768",
+    "native focus is visible and unobscured 768 Interaction strength",
+    "native focus is visible and unobscured 768 Specular opacity",
+    "native focus is visible and unobscured 768 Specular saturation",
+    "native focus is visible and unobscured 768 Refraction level",
+    "native focus is visible and unobscured 768 Blur level",
+    "native focus is visible and unobscured 768 Progressive blur",
+    "native focus is visible and unobscured 768 Glass background opacity",
+    "last slider operable below preview 768",
+    "last slider drag updates material 768",
+    "collapsed preview undocked 1180",
+    "one horizontal canvas without overflow 1180",
+    "collapsed text contained 1180",
+    "single existing canvas docks 1180",
+    "preview aligns below header 1180",
+    "preview leaves controls room 1180",
+    "expanded text and width contained 1180",
+    "all seven material controls beside preview 1180",
+    "native focus is visible and unobscured 1180 Interaction strength",
+    "native focus is visible and unobscured 1180 Specular opacity",
+    "native focus is visible and unobscured 1180 Specular saturation",
+    "native focus is visible and unobscured 1180 Refraction level",
+    "native focus is visible and unobscured 1180 Blur level",
+    "native focus is visible and unobscured 1180 Progressive blur",
+    "native focus is visible and unobscured 1180 Glass background opacity",
+    "last slider operable below preview 1180",
+    "last slider drag updates material 1180",
+    "collapsed preview undocked 1366",
+    "one horizontal canvas without overflow 1366",
+    "collapsed text contained 1366",
+    "single existing canvas docks 1366",
+    "preview aligns below header 1366",
+    "preview leaves controls room 1366",
+    "expanded text and width contained 1366",
+    "all seven material controls beside preview 1366",
+    "native focus is visible and unobscured 1366 Interaction strength",
+    "native focus is visible and unobscured 1366 Specular opacity",
+    "native focus is visible and unobscured 1366 Specular saturation",
+    "native focus is visible and unobscured 1366 Refraction level",
+    "native focus is visible and unobscured 1366 Blur level",
+    "native focus is visible and unobscured 1366 Progressive blur",
+    "native focus is visible and unobscured 1366 Glass background opacity",
+    "last slider operable below preview 1366",
+    "last slider drag updates material 1366",
+    "no page errors"
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "height": 852,
+      "collapsed": {
+        "header": {
+          "x": 18,
+          "y": 14,
+          "width": 284,
+          "height": 74.484375,
+          "top": 14,
+          "right": 302,
+          "bottom": 88.484375,
+          "left": 18
+        },
+        "preview": {
+          "x": 18,
+          "y": 324.546875,
+          "width": 284,
+          "height": 364.65625,
+          "top": 324.546875,
+          "right": 302,
+          "bottom": 689.203125,
+          "left": 18
+        },
+        "group": {
+          "x": 18,
+          "y": 324.546875,
+          "width": 284,
+          "height": 693.84375,
+          "top": 324.546875,
+          "right": 302,
+          "bottom": 1018.390625,
+          "left": 18
+        },
+        "dock": "true",
+        "editing": "false",
+        "position": "relative",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 18,
+          "y": 524.546875,
+          "width": 284,
+          "height": 164.65625,
+          "top": 524.546875,
+          "right": 302,
+          "bottom": 689.203125,
+          "left": 18
+        },
+        "frame": {
+          "x": 18,
+          "y": 324.546875,
+          "width": 284,
+          "height": 364.65625,
+          "top": 324.546875,
+          "right": 302,
+          "bottom": 689.203125,
+          "left": 18
+        },
+        "stage": {
+          "x": 18,
+          "y": 324.546875,
+          "width": 284,
+          "height": 200,
+          "top": 324.546875,
+          "right": 302,
+          "bottom": 524.546875,
+          "left": 18
+        },
+        "visualHeight": 852
+      },
+      "expanded": {
+        "header": {
+          "x": 18,
+          "y": 14,
+          "width": 284,
+          "height": 74.484375,
+          "top": 14,
+          "right": 302,
+          "bottom": 88.484375,
+          "left": 18
+        },
+        "preview": {
+          "x": 18,
+          "y": 100.546875,
+          "width": 284,
+          "height": 272.1875,
+          "top": 100.546875,
+          "right": 302,
+          "bottom": 372.734375,
+          "left": 18
+        },
+        "group": {
+          "x": 18,
+          "y": 100.546875,
+          "width": 284,
+          "height": 1507.5625,
+          "top": 100.546875,
+          "right": 302,
+          "bottom": 1608.109375,
+          "left": 18
+        },
+        "dock": "true",
+        "editing": "true",
+        "position": "sticky",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 18,
+          "y": 300.546875,
+          "width": 284,
+          "height": 72.1875,
+          "top": 300.546875,
+          "right": 302,
+          "bottom": 372.734375,
+          "left": 18
+        },
+        "frame": {
+          "x": 18,
+          "y": 100.546875,
+          "width": 284,
+          "height": 272.1875,
+          "top": 100.546875,
+          "right": 302,
+          "bottom": 372.734375,
+          "left": 18
+        },
+        "stage": {
+          "x": 18,
+          "y": 100.546875,
+          "width": 284,
+          "height": 200,
+          "top": 100.546875,
+          "right": 302,
+          "bottom": 300.546875,
+          "left": 18
+        },
+        "visualHeight": 852
+      },
+      "fields": [
+        {
+          "label": "Interaction strength",
+          "rect": {
+            "x": 191,
+            "y": 816.109375,
+            "width": 64,
+            "height": 18,
+            "top": 816.109375,
+            "right": 255,
+            "bottom": 834.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.546875,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.546875,
+            "right": 302,
+            "bottom": 372.734375,
+            "left": 18
+          },
+          "point": "Interaction strength value"
+        },
+        {
+          "label": "Specular opacity",
+          "rect": {
+            "x": 191,
+            "y": 835.109375,
+            "width": 64,
+            "height": 18,
+            "top": 835.109375,
+            "right": 255,
+            "bottom": 853.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 302,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Specular opacity value"
+        },
+        {
+          "label": "Specular saturation",
+          "rect": {
+            "x": 191,
+            "y": 835.109375,
+            "width": 64,
+            "height": 18,
+            "top": 835.109375,
+            "right": 255,
+            "bottom": 853.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 302,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Specular saturation value"
+        },
+        {
+          "label": "Refraction level",
+          "rect": {
+            "x": 191,
+            "y": 835.109375,
+            "width": 64,
+            "height": 18,
+            "top": 835.109375,
+            "right": 255,
+            "bottom": 853.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 302,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Refraction level value"
+        },
+        {
+          "label": "Blur level",
+          "rect": {
+            "x": 191,
+            "y": 835.109375,
+            "width": 64,
+            "height": 18,
+            "top": 835.109375,
+            "right": 255,
+            "bottom": 853.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 302,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Blur level value"
+        },
+        {
+          "label": "Progressive blur",
+          "rect": {
+            "x": 191,
+            "y": 835.109375,
+            "width": 64,
+            "height": 18,
+            "top": 835.109375,
+            "right": 255,
+            "bottom": 853.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 302,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Progressive blur value"
+        },
+        {
+          "label": "Glass background opacity",
+          "rect": {
+            "x": 191,
+            "y": 835.109375,
+            "width": 64,
+            "height": 18,
+            "top": 835.109375,
+            "right": 255,
+            "bottom": 853.109375,
+            "left": 191
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 284,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 302,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Glass background opacity value"
+        }
+      ]
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "collapsed": {
+        "header": {
+          "x": 19.5,
+          "y": 14,
+          "width": 353.6875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 373.1875,
+          "bottom": 88.484375,
+          "left": 19.5
+        },
+        "preview": {
+          "x": 18,
+          "y": 324.4375,
+          "width": 357,
+          "height": 334.421875,
+          "top": 324.4375,
+          "right": 375,
+          "bottom": 658.859375,
+          "left": 18
+        },
+        "group": {
+          "x": 18,
+          "y": 324.4375,
+          "width": 357,
+          "height": 663.609375,
+          "top": 324.4375,
+          "right": 375,
+          "bottom": 988.046875,
+          "left": 18
+        },
+        "dock": "true",
+        "editing": "false",
+        "position": "relative",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 18,
+          "y": 524.4375,
+          "width": 357,
+          "height": 134.421875,
+          "top": 524.4375,
+          "right": 375,
+          "bottom": 658.859375,
+          "left": 18
+        },
+        "frame": {
+          "x": 18,
+          "y": 324.4375,
+          "width": 357,
+          "height": 334.421875,
+          "top": 324.4375,
+          "right": 375,
+          "bottom": 658.859375,
+          "left": 18
+        },
+        "stage": {
+          "x": 18,
+          "y": 324.4375,
+          "width": 357,
+          "height": 200,
+          "top": 324.4375,
+          "right": 375,
+          "bottom": 524.4375,
+          "left": 18
+        },
+        "visualHeight": 852
+      },
+      "expanded": {
+        "header": {
+          "x": 19.5,
+          "y": 14,
+          "width": 353.6875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 373.1875,
+          "bottom": 88.484375,
+          "left": 19.5
+        },
+        "preview": {
+          "x": 18,
+          "y": 101.4375,
+          "width": 357,
+          "height": 272.1875,
+          "top": 101.4375,
+          "right": 375,
+          "bottom": 373.625,
+          "left": 18
+        },
+        "group": {
+          "x": 18,
+          "y": 101.4375,
+          "width": 357,
+          "height": 1507.5625,
+          "top": 101.4375,
+          "right": 375,
+          "bottom": 1609,
+          "left": 18
+        },
+        "dock": "true",
+        "editing": "true",
+        "position": "sticky",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 18,
+          "y": 301.4375,
+          "width": 357,
+          "height": 72.1875,
+          "top": 301.4375,
+          "right": 375,
+          "bottom": 373.625,
+          "left": 18
+        },
+        "frame": {
+          "x": 18,
+          "y": 101.4375,
+          "width": 357,
+          "height": 272.1875,
+          "top": 101.4375,
+          "right": 375,
+          "bottom": 373.625,
+          "left": 18
+        },
+        "stage": {
+          "x": 18,
+          "y": 101.4375,
+          "width": 357,
+          "height": 200,
+          "top": 101.4375,
+          "right": 375,
+          "bottom": 301.4375,
+          "left": 18
+        },
+        "visualHeight": 852
+      },
+      "fields": [
+        {
+          "label": "Interaction strength",
+          "rect": {
+            "x": 264,
+            "y": 817,
+            "width": 64,
+            "height": 18,
+            "top": 817,
+            "right": 328,
+            "bottom": 835,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 101.4375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 101.4375,
+            "right": 375,
+            "bottom": 373.625,
+            "left": 18
+          },
+          "point": "Interaction strength value"
+        },
+        {
+          "label": "Specular opacity",
+          "rect": {
+            "x": 264,
+            "y": 836,
+            "width": 64,
+            "height": 18,
+            "top": 836,
+            "right": 328,
+            "bottom": 854,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 375,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Specular opacity value"
+        },
+        {
+          "label": "Specular saturation",
+          "rect": {
+            "x": 264,
+            "y": 836,
+            "width": 64,
+            "height": 18,
+            "top": 836,
+            "right": 328,
+            "bottom": 854,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 375,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Specular saturation value"
+        },
+        {
+          "label": "Refraction level",
+          "rect": {
+            "x": 264,
+            "y": 836,
+            "width": 64,
+            "height": 18,
+            "top": 836,
+            "right": 328,
+            "bottom": 854,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 375,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Refraction level value"
+        },
+        {
+          "label": "Blur level",
+          "rect": {
+            "x": 264,
+            "y": 836,
+            "width": 64,
+            "height": 18,
+            "top": 836,
+            "right": 328,
+            "bottom": 854,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 375,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Blur level value"
+        },
+        {
+          "label": "Progressive blur",
+          "rect": {
+            "x": 264,
+            "y": 836,
+            "width": 64,
+            "height": 18,
+            "top": 836,
+            "right": 328,
+            "bottom": 854,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 375,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Progressive blur value"
+        },
+        {
+          "label": "Glass background opacity",
+          "rect": {
+            "x": 264,
+            "y": 836,
+            "width": 64,
+            "height": 18,
+            "top": 836,
+            "right": 328,
+            "bottom": 854,
+            "left": 264
+          },
+          "focused": true,
+          "preview": {
+            "x": 18,
+            "y": 100.484375,
+            "width": 357,
+            "height": 272.1875,
+            "top": 100.484375,
+            "right": 375,
+            "bottom": 372.671875,
+            "left": 18
+          },
+          "point": "Glass background opacity value"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "collapsed": {
+        "header": {
+          "x": 38.5,
+          "y": 14,
+          "width": 691.1875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 729.6875,
+          "bottom": 88.484375,
+          "left": 38.5
+        },
+        "preview": {
+          "x": 40,
+          "y": 284.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 284.078125,
+          "right": 728,
+          "bottom": 651,
+          "left": 40
+        },
+        "group": {
+          "x": 40,
+          "y": 284.078125,
+          "width": 688,
+          "height": 623.921875,
+          "top": 284.078125,
+          "right": 728,
+          "bottom": 908,
+          "left": 40
+        },
+        "dock": "true",
+        "editing": "false",
+        "position": "relative",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 404.625,
+          "y": 372.125,
+          "width": 247.671875,
+          "height": 113.75,
+          "top": 372.125,
+          "right": 652.296875,
+          "bottom": 485.875,
+          "left": 404.625
+        },
+        "frame": {
+          "x": 40,
+          "y": 284.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 284.078125,
+          "right": 728,
+          "bottom": 651,
+          "left": 40
+        },
+        "stage": {
+          "x": 40,
+          "y": 284.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 284.078125,
+          "right": 728,
+          "bottom": 651,
+          "left": 40
+        },
+        "visualHeight": 1024
+      },
+      "expanded": {
+        "header": {
+          "x": 38.5,
+          "y": 14,
+          "width": 691.1875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 729.6875,
+          "bottom": 88.484375,
+          "left": 38.5
+        },
+        "preview": {
+          "x": 40,
+          "y": 101.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 101.078125,
+          "right": 728,
+          "bottom": 468,
+          "left": 40
+        },
+        "group": {
+          "x": 40,
+          "y": 101.078125,
+          "width": 688,
+          "height": 1184.015625,
+          "top": 101.078125,
+          "right": 728,
+          "bottom": 1285.09375,
+          "left": 40
+        },
+        "dock": "true",
+        "editing": "true",
+        "position": "sticky",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 404.625,
+          "y": 189.125,
+          "width": 247.671875,
+          "height": 113.75,
+          "top": 189.125,
+          "right": 652.296875,
+          "bottom": 302.875,
+          "left": 404.625
+        },
+        "frame": {
+          "x": 40,
+          "y": 101.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 101.078125,
+          "right": 728,
+          "bottom": 468,
+          "left": 40
+        },
+        "stage": {
+          "x": 40,
+          "y": 101.078125,
+          "width": 688,
+          "height": 366.921875,
+          "top": 101.078125,
+          "right": 728,
+          "bottom": 468,
+          "left": 40
+        },
+        "visualHeight": 1024
+      },
+      "fields": [
+        {
+          "label": "Interaction strength",
+          "rect": {
+            "x": 278,
+            "y": 820.09375,
+            "width": 64,
+            "height": 18,
+            "top": 820.09375,
+            "right": 342,
+            "bottom": 838.09375,
+            "left": 278
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 101.078125,
+            "width": 688,
+            "height": 366.921875,
+            "top": 101.078125,
+            "right": 728,
+            "bottom": 468,
+            "left": 40
+          },
+          "point": "Interaction strength value"
+        },
+        {
+          "label": "Specular opacity",
+          "rect": {
+            "x": 610,
+            "y": 820.09375,
+            "width": 64,
+            "height": 18,
+            "top": 820.09375,
+            "right": 674,
+            "bottom": 838.09375,
+            "left": 610
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 101.078125,
+            "width": 688,
+            "height": 366.921875,
+            "top": 101.078125,
+            "right": 728,
+            "bottom": 468,
+            "left": 40
+          },
+          "point": "Specular opacity value"
+        },
+        {
+          "label": "Specular saturation",
+          "rect": {
+            "x": 278,
+            "y": 938.09375,
+            "width": 64,
+            "height": 18,
+            "top": 938.09375,
+            "right": 342,
+            "bottom": 956.09375,
+            "left": 278
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 101.078125,
+            "width": 688,
+            "height": 366.921875,
+            "top": 101.078125,
+            "right": 728,
+            "bottom": 468,
+            "left": 40
+          },
+          "point": "Specular saturation value"
+        },
+        {
+          "label": "Refraction level",
+          "rect": {
+            "x": 610,
+            "y": 909.09375,
+            "width": 64,
+            "height": 18,
+            "top": 909.09375,
+            "right": 674,
+            "bottom": 927.09375,
+            "left": 610
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 688,
+            "height": 366.921875,
+            "top": 100.484375,
+            "right": 728,
+            "bottom": 467.40625,
+            "left": 40
+          },
+          "point": "Refraction level value"
+        },
+        {
+          "label": "Blur level",
+          "rect": {
+            "x": 278,
+            "y": 1007.09375,
+            "width": 64,
+            "height": 18,
+            "top": 1007.09375,
+            "right": 342,
+            "bottom": 1025.09375,
+            "left": 278
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 688,
+            "height": 366.921875,
+            "top": 100.484375,
+            "right": 728,
+            "bottom": 467.40625,
+            "left": 40
+          },
+          "point": "Blur level value"
+        },
+        {
+          "label": "Progressive blur",
+          "rect": {
+            "x": 610,
+            "y": 909.09375,
+            "width": 64,
+            "height": 18,
+            "top": 909.09375,
+            "right": 674,
+            "bottom": 927.09375,
+            "left": 610
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 688,
+            "height": 366.921875,
+            "top": 100.484375,
+            "right": 728,
+            "bottom": 467.40625,
+            "left": 40
+          },
+          "point": "Progressive blur value"
+        },
+        {
+          "label": "Glass background opacity",
+          "rect": {
+            "x": 278,
+            "y": 1007.09375,
+            "width": 64,
+            "height": 18,
+            "top": 1007.09375,
+            "right": 342,
+            "bottom": 1025.09375,
+            "left": 278
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 688,
+            "height": 366.921875,
+            "top": 100.484375,
+            "right": 728,
+            "bottom": 467.40625,
+            "left": 40
+          },
+          "point": "Glass background opacity value"
+        }
+      ]
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "collapsed": {
+        "header": {
+          "x": 59,
+          "y": 14,
+          "width": 1061.984375,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1120.984375,
+          "bottom": 88.484375,
+          "left": 59
+        },
+        "preview": {
+          "x": 40,
+          "y": 246.890625,
+          "width": 1100,
+          "height": 586.65625,
+          "top": 246.890625,
+          "right": 1140,
+          "bottom": 833.546875,
+          "left": 40
+        },
+        "group": {
+          "x": 40,
+          "y": 246.890625,
+          "width": 1100,
+          "height": 787.65625,
+          "top": 246.890625,
+          "right": 1140,
+          "bottom": 1034.546875,
+          "left": 40
+        },
+        "dock": "true",
+        "editing": "false",
+        "position": "relative",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 650.5,
+          "y": 405.28125,
+          "width": 341,
+          "height": 141.4375,
+          "top": 405.28125,
+          "right": 991.5,
+          "bottom": 546.71875,
+          "left": 650.5
+        },
+        "frame": {
+          "x": 40,
+          "y": 246.890625,
+          "width": 1100,
+          "height": 586.65625,
+          "top": 246.890625,
+          "right": 1140,
+          "bottom": 833.546875,
+          "left": 40
+        },
+        "stage": {
+          "x": 40,
+          "y": 246.890625,
+          "width": 1100,
+          "height": 586.65625,
+          "top": 246.890625,
+          "right": 1140,
+          "bottom": 833.546875,
+          "left": 40
+        },
+        "visualHeight": 820
+      },
+      "expanded": {
+        "header": {
+          "x": 59,
+          "y": 14,
+          "width": 1061.984375,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1120.984375,
+          "bottom": 88.484375,
+          "left": 59
+        },
+        "preview": {
+          "x": 40,
+          "y": 100.484375,
+          "width": 1100,
+          "height": 479.5,
+          "top": 100.484375,
+          "right": 1140,
+          "bottom": 579.984375,
+          "left": 40
+        },
+        "group": {
+          "x": 40,
+          "y": 27.890625,
+          "width": 1100,
+          "height": 1122.59375,
+          "top": 27.890625,
+          "right": 1140,
+          "bottom": 1150.484375,
+          "left": 40
+        },
+        "dock": "true",
+        "editing": "true",
+        "position": "sticky",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 616.953125,
+          "y": 215.5625,
+          "width": 323.65625,
+          "height": 141.4375,
+          "top": 215.5625,
+          "right": 940.609375,
+          "bottom": 357,
+          "left": 616.953125
+        },
+        "frame": {
+          "x": 140.453125,
+          "y": 100.484375,
+          "width": 899.078125,
+          "height": 479.5,
+          "top": 100.484375,
+          "right": 1039.53125,
+          "bottom": 579.984375,
+          "left": 140.453125
+        },
+        "stage": {
+          "x": 140.453125,
+          "y": 100.484375,
+          "width": 899.078125,
+          "height": 479.5,
+          "top": 100.484375,
+          "right": 1039.53125,
+          "bottom": 579.984375,
+          "left": 140.453125
+        },
+        "visualHeight": 820
+      },
+      "fields": [
+        {
+          "label": "Interaction strength",
+          "rect": {
+            "x": 304.65625,
+            "y": 803.484375,
+            "width": 64,
+            "height": 18,
+            "top": 803.484375,
+            "right": 368.65625,
+            "bottom": 821.484375,
+            "left": 304.65625
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Interaction strength value"
+        },
+        {
+          "label": "Specular opacity",
+          "rect": {
+            "x": 663.328125,
+            "y": 705.484375,
+            "width": 64,
+            "height": 18,
+            "top": 705.484375,
+            "right": 727.328125,
+            "bottom": 723.484375,
+            "left": 663.328125
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Specular opacity value"
+        },
+        {
+          "label": "Specular saturation",
+          "rect": {
+            "x": 1022,
+            "y": 705.484375,
+            "width": 64,
+            "height": 18,
+            "top": 705.484375,
+            "right": 1086,
+            "bottom": 723.484375,
+            "left": 1022
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Specular saturation value"
+        },
+        {
+          "label": "Refraction level",
+          "rect": {
+            "x": 304.65625,
+            "y": 803.484375,
+            "width": 64,
+            "height": 18,
+            "top": 803.484375,
+            "right": 368.65625,
+            "bottom": 821.484375,
+            "left": 304.65625
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Refraction level value"
+        },
+        {
+          "label": "Blur level",
+          "rect": {
+            "x": 663.328125,
+            "y": 705.484375,
+            "width": 64,
+            "height": 18,
+            "top": 705.484375,
+            "right": 727.328125,
+            "bottom": 723.484375,
+            "left": 663.328125
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Blur level value"
+        },
+        {
+          "label": "Progressive blur",
+          "rect": {
+            "x": 1022,
+            "y": 705.484375,
+            "width": 64,
+            "height": 18,
+            "top": 705.484375,
+            "right": 1086,
+            "bottom": 723.484375,
+            "left": 1022
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Progressive blur value"
+        },
+        {
+          "label": "Glass background opacity",
+          "rect": {
+            "x": 304.65625,
+            "y": 803.484375,
+            "width": 64,
+            "height": 18,
+            "top": 803.484375,
+            "right": 368.65625,
+            "bottom": 821.484375,
+            "left": 304.65625
+          },
+          "focused": true,
+          "preview": {
+            "x": 40,
+            "y": 100.484375,
+            "width": 1100,
+            "height": 479.5,
+            "top": 100.484375,
+            "right": 1140,
+            "bottom": 579.984375,
+            "left": 40
+          },
+          "point": "Glass background opacity value"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "height": 900,
+      "collapsed": {
+        "header": {
+          "x": 68.5,
+          "y": 14,
+          "width": 1229.390625,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1297.890625,
+          "bottom": 88.484375,
+          "left": 68.5
+        },
+        "preview": {
+          "x": 123,
+          "y": 246.921875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 246.921875,
+          "right": 1243,
+          "bottom": 844.25,
+          "left": 123
+        },
+        "group": {
+          "x": 123,
+          "y": 246.921875,
+          "width": 1120,
+          "height": 798.328125,
+          "top": 246.921875,
+          "right": 1243,
+          "bottom": 1045.25,
+          "left": 123
+        },
+        "dock": "true",
+        "editing": "false",
+        "position": "relative",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 744.59375,
+          "y": 408.1875,
+          "width": 347.1875,
+          "height": 142.8125,
+          "top": 408.1875,
+          "right": 1091.78125,
+          "bottom": 551,
+          "left": 744.59375
+        },
+        "frame": {
+          "x": 123,
+          "y": 246.921875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 246.921875,
+          "right": 1243,
+          "bottom": 844.25,
+          "left": 123
+        },
+        "stage": {
+          "x": 123,
+          "y": 246.921875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 246.921875,
+          "right": 1243,
+          "bottom": 844.25,
+          "left": 123
+        },
+        "visualHeight": 900
+      },
+      "expanded": {
+        "header": {
+          "x": 68.5,
+          "y": 14,
+          "width": 1229.390625,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1297.890625,
+          "bottom": 88.484375,
+          "left": 68.5
+        },
+        "preview": {
+          "x": 123,
+          "y": 100.484375,
+          "width": 1120,
+          "height": 559.5,
+          "top": 100.484375,
+          "right": 1243,
+          "bottom": 659.984375,
+          "left": 123
+        },
+        "group": {
+          "x": 123,
+          "y": 27.921875,
+          "width": 1120,
+          "height": 1202.59375,
+          "top": 27.921875,
+          "right": 1243,
+          "bottom": 1230.515625,
+          "left": 123
+        },
+        "dock": "true",
+        "editing": "true",
+        "position": "sticky",
+        "canvas": 1,
+        "overflow": false,
+        "foreground": {
+          "x": 740.6875,
+          "y": 251.546875,
+          "width": 325.203125,
+          "height": 142.8125,
+          "top": 251.546875,
+          "right": 1065.890625,
+          "bottom": 394.359375,
+          "left": 740.6875
+        },
+        "frame": {
+          "x": 158.453125,
+          "y": 100.484375,
+          "width": 1049.078125,
+          "height": 559.5,
+          "top": 100.484375,
+          "right": 1207.53125,
+          "bottom": 659.984375,
+          "left": 158.453125
+        },
+        "stage": {
+          "x": 158.453125,
+          "y": 100.484375,
+          "width": 1049.078125,
+          "height": 559.5,
+          "top": 100.484375,
+          "right": 1207.53125,
+          "bottom": 659.984375,
+          "left": 158.453125
+        },
+        "visualHeight": 900
+      },
+      "fields": [
+        {
+          "label": "Interaction strength",
+          "rect": {
+            "x": 394.328125,
+            "y": 883.515625,
+            "width": 64,
+            "height": 18,
+            "top": 883.515625,
+            "right": 458.328125,
+            "bottom": 901.515625,
+            "left": 394.328125
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Interaction strength value"
+        },
+        {
+          "label": "Specular opacity",
+          "rect": {
+            "x": 759.65625,
+            "y": 784.515625,
+            "width": 64,
+            "height": 18,
+            "top": 784.515625,
+            "right": 823.65625,
+            "bottom": 802.515625,
+            "left": 759.65625
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Specular opacity value"
+        },
+        {
+          "label": "Specular saturation",
+          "rect": {
+            "x": 1124.984375,
+            "y": 784.515625,
+            "width": 64,
+            "height": 18,
+            "top": 784.515625,
+            "right": 1188.984375,
+            "bottom": 802.515625,
+            "left": 1124.984375
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Specular saturation value"
+        },
+        {
+          "label": "Refraction level",
+          "rect": {
+            "x": 394.328125,
+            "y": 883.515625,
+            "width": 64,
+            "height": 18,
+            "top": 883.515625,
+            "right": 458.328125,
+            "bottom": 901.515625,
+            "left": 394.328125
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Refraction level value"
+        },
+        {
+          "label": "Blur level",
+          "rect": {
+            "x": 759.65625,
+            "y": 784.515625,
+            "width": 64,
+            "height": 18,
+            "top": 784.515625,
+            "right": 823.65625,
+            "bottom": 802.515625,
+            "left": 759.65625
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Blur level value"
+        },
+        {
+          "label": "Progressive blur",
+          "rect": {
+            "x": 1124.984375,
+            "y": 784.515625,
+            "width": 64,
+            "height": 18,
+            "top": 784.515625,
+            "right": 1188.984375,
+            "bottom": 802.515625,
+            "left": 1124.984375
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Progressive blur value"
+        },
+        {
+          "label": "Glass background opacity",
+          "rect": {
+            "x": 394.328125,
+            "y": 883.515625,
+            "width": 64,
+            "height": 18,
+            "top": 883.515625,
+            "right": 458.328125,
+            "bottom": 901.515625,
+            "left": 394.328125
+          },
+          "focused": true,
+          "preview": {
+            "x": 123,
+            "y": 100.484375,
+            "width": 1120,
+            "height": 559.5,
+            "top": 100.484375,
+            "right": 1243,
+            "bottom": 659.984375,
+            "left": 123
+          },
+          "point": "Glass background opacity value"
+        }
+      ]
+    }
+  ],
+  "pixels": [],
+  "errors": [],
+  "limitations": [
+    "Windows WebKit port canvas resize / compositor retention issue prevents this port from certifying idle WebGL pixels. Reproduced in production 1.2.0 as well. Pixel-response assertions run in Chromium; WebKit checks controls, layout, focus and input only. Physical iOS acceptance remains separate."
+  ]
+}

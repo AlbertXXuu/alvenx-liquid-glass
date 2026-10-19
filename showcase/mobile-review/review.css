@@ -195,6 +195,25 @@ button,input,a,pre{touch-action:manipulation}
 }
 @media(forced-colors:active){.lab h1{background:none;color:CanvasText}}
 
+/* Material and its controls are one workbench. Keep the original single
+   canvas visible while editing, bounded by this section and viewport space. */
+.lab-material-workbench{--lab-preview-top:104px;--lab-preview-height:300px;--lab-preview-width:100%;position:relative}
+.lab-material-preview{position:relative;max-width:100%;margin-inline:auto;border-radius:24px}
+.lab-material-workbench[data-editing=true] .lab-material-preview{z-index:20;background:#F0F2FB;box-shadow:0 12px 30px #596D9F12}
+.lab-material-workbench[data-editing=true] .lab-material-preview>.stage-scroll{max-width:min(100%,var(--lab-preview-width));margin-inline:auto}
+.lab-material-workbench[data-editing=true][data-preview-dock=true] .lab-material-preview{position:sticky;top:var(--lab-preview-top)}
+.lab-material-workbench[data-editing=true][data-preview-dock=true] .lab-material-preview::before{content:"";position:absolute;inset-inline:0;top:-12px;height:12px;background:#F0F2FB;pointer-events:none}
+.lab-material-workbench .lab-parameters{margin-top:28px;padding-top:26px;border-top:1px solid #CCD4EB}
+.lab-material-workbench .lab-parameter-grid{margin-top:20px}
+.lab-material-workbench .lab-parameter-note{font-size:13px;line-height:1.7;color:#596C90;max-width:650px;margin:16px 0 0}
+.lab-material-workbench[data-editing=true][data-preview-dock=true] .lab-parameters :is(input,button){scroll-margin-top:calc(var(--lab-preview-top) + var(--lab-preview-height) + 18px);scroll-margin-bottom:30px}
+.lab-material-workbench[data-editing=true] .stage-scroll[data-layout=overview]>.foreground{padding:14px 18px 16px}
+.lab-material-workbench[data-editing=true] .stage-scroll[data-layout=overview] .eyebrow{font-size:9px;margin-bottom:6px}
+.lab-material-workbench[data-editing=true] .stage-scroll[data-layout=overview] h3{font-size:21px;margin:0;line-height:1.2}
+.lab-material-workbench[data-editing=true] .stage-scroll[data-layout=overview] .volume-caption{display:none}
+.sample-text-status{display:block;min-height:20px;margin-top:6px;font-size:11px;line-height:1.6;color:#5D7098}
+@media(max-height:699px){.lab-material-workbench[data-editing=true] .lab-material-preview{position:relative;top:auto}}
+
 
 .lab .stage-scroll[data-layout="overview"] .stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:linear-gradient(transparent,#E7E5FA);pointer-events:none}
 @media(max-width:600px){.lab-parameters-heading{gap:4px}

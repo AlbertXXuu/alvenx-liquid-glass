@@ -101,3 +101,10 @@ Physical Combo Touch, first-activation latency, Safari compositor artifacts and 
 - Physical high-density screens, browser zoom and thermal/battery measurements on intended devices.
 
 Mobile emulation can exercise viewport, user agent and synthetic touch events. It cannot reproduce the device GPU driver, Safari's platform compositor, thermal limits, battery use or physical touch ergonomics. No local desktop test should be described as a physical iOS/Safari pass.
+
+
+## 1.2.1 sample typography and Windows WebKit capture limit
+
+The sample editor retains its native draft while composition is in progress. It publishes committed SVG text only after the exact font-weight/glyph font-loading promises resolve. This avoids displaying a fallback glyph run and then replacing it with MiSans. It is a showcase behavior; the underlying native input remains editable and selectable. The [1.2.1 release record](releases/1.2.1/README.md) retains delayed-font, composition-contract, race and screenshot evidence.
+
+Windows Playwright WebKit can lose its non-composited WebGL canvas image after a drawing-buffer resize, including in screenshots. The maintainer identified a Windows-port problem; the report distinguishes it from macOS WebKit. See [Playwright issue 42885](https://github.com/microsoft/playwright/issues/42885) and [WebKit issue 326421](https://bugs.webkit.org/show_bug.cgi?id=326421). This limitation was also observed in the old 1.2.0 production page. It prevents treating this Windows port's affected still-frame captures as a Safari visual pass; Chromium supplies the deterministic material pixel-response checks. No keep-drawing loop, context-loss cycle or preserveDrawingBuffer change is added to the product to satisfy this capture path. Physical Safari still-frame acceptance remains separate.

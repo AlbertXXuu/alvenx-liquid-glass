@@ -1,0 +1,47 @@
+{
+  "before": {
+    "text": "你好世界",
+    "font": "\"Instrument Sans\", MiSans, sans-serif",
+    "weight": "600",
+    "ready": true,
+    "loaded": null,
+    "pending": [
+      {
+        "family": "MiSans",
+        "weight": "600",
+        "status": "loading"
+      },
+      {
+        "family": "MiSans",
+        "weight": "600",
+        "status": "loading"
+      }
+    ],
+    "width": 154
+  },
+  "after": {
+    "text": "你好世界",
+    "font": "\"Instrument Sans\", MiSans, sans-serif",
+    "weight": "600",
+    "ready": true,
+    "loaded": [
+      {
+        "family": "MiSans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "MiSans",
+        "weight": "600",
+        "status": "loaded"
+      }
+    ],
+    "pending": [],
+    "width": 153
+  },
+  "requests": [
+    "misans-600-cs.9d94f8221d93f686.1-CZYAFTo4.woff2",
+    "misans-600-cs.56f6e9e9ecb6662a.0-BFUdoYIc.woff2"
+  ],
+  "reproduced": true
+}

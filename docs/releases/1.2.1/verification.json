@@ -1,0 +1,68 @@
+{
+  "version": "1.2.1",
+  "date": "2026-10-19",
+  "status": "self-reviewed-before-publication",
+  "checks": {
+    "typecheckDocs": {
+      "passed": true,
+      "documents": 10,
+      "localLinks": 48
+    },
+    "build": {
+      "passed": true,
+      "namespaceBuild": "Repeated from frozen source for production."
+    },
+    "contract": {
+      "passed": true,
+      "checks": 28,
+      "geometryCases": 15
+    },
+    "clock": {
+      "passed": true,
+      "checks": 16
+    },
+    "volumeBudget": {
+      "passed": true,
+      "cases": 180
+    },
+    "kernels": {
+      "passed": true,
+      "exactFloat32Cases": 5800
+    },
+    "baseline": {
+      "passed": true,
+      "files": 41,
+      "fontUrls": 228
+    },
+    "font": {
+      "chromiumAssertions": 35,
+      "windowsWebKitAssertions": 35,
+      "pageErrors": 0,
+      "coldActualNetworkReproducedBefore": true,
+      "coldAfterSinglePublication": true
+    },
+    "materialWorkbench": {
+      "chromiumAssertions": 95,
+      "windowsWebKitAssertions": 88,
+      "pageErrors": 0,
+      "widths": [
+        320,
+        393,
+        768,
+        1180,
+        1366
+      ],
+      "singleCanvas": true,
+      "chromiumSixMaterialPixelResponses": true,
+      "strengthChangesSurface": true,
+      "shortViewportUndocks": true,
+      "windowsWebKitPixelResponseCertified": false
+    }
+  },
+  "scopeLimits": [
+    "Windows WebKit non-composited WebGL resize/capture bug independently reproduced in minimal fixture and old1.2.0; not patched in product.",
+    "Physical iPhone/iPad keyboard, Safari still frames and Combo Touch remain owner-device acceptance.",
+    "No new latency/FPS benchmark.",
+    "Material defaults, B endpoints, continuous gestures, fonts and licenses retained."
+  ]
+}
