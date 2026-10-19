@@ -1,6 +1,8 @@
 * text=auto eol=lf
 # Acceptance hashes are byte identities, including original line endings.
 docs/baseline/v6/** -text -whitespace
+# Review evidence and source patches also preserve their recorded byte hashes.
+docs/reviews/** -text -whitespace
 assets/fonts/** -whitespace
 *.woff2 -text
 *.pdf -text
