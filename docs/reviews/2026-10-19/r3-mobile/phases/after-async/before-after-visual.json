@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-19",
+  "method": "Compare actual integrated R3 settled screenshots before vs after native async PNG encoding; separate from exact decoded normal-field RGBA comparisons.",
+  "results": [
+    {
+      "engine": "chromium",
+      "kind": "text",
+      "pixels": 214148,
+      "changedAbove2": 0,
+      "maxChannelDelta": 0,
+      "notes": "Same fixed source and reduced-motion geometry; compare recorded lens bounds in the corresponding integration result."
+    },
+    {
+      "engine": "chromium",
+      "kind": "track",
+      "pixels": 214148,
+      "changedAbove2": 0,
+      "maxChannelDelta": 0,
+      "notes": "Same fixed source and reduced-motion geometry; compare recorded lens bounds in the corresponding integration result."
+    },
+    {
+      "engine": "webkit",
+      "kind": "text",
+      "pixels": 214148,
+      "changedAbove2": 0,
+      "maxChannelDelta": 0,
+      "notes": "Same fixed source and reduced-motion geometry; compare recorded lens bounds in the corresponding integration result."
+    },
+    {
+      "engine": "webkit",
+      "kind": "track",
+      "pixels": 214148,
+      "changedAbove2": 0,
+      "maxChannelDelta": 0,
+      "notes": "Same fixed source and reduced-motion geometry; compare recorded lens bounds in the corresponding integration result."
+    }
+  ]
+}

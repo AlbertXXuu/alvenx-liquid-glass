@@ -3,6 +3,7 @@ import type { GlassClock } from './GlassClock';
 import type { ReviewSettings } from './reviewSettings';
 import { createGlassPreview } from './volume-renderer.js';
 import { volumeFallbackPath } from './volume-fallback';
+import { volumeHitContour } from './volume-hit-geometry';
 
 type Renderer = { render(options: Record<string, unknown>, budget?: { maxPixels?: number; maxDpr?: number }): void; destroy(): void };
 const resting = () => ({ parentX: 1, parentY: 1, childX: 1, childY: 1, deformX: 500, deformY: 280, deformDX: 0, deformDY: 0, curvature: 3.2 });
@@ -33,9 +34,10 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   { clock, settings, children, className = '', ariaLabel = 'AlvenX volume stage', onPlayingChange, renderBudget, studioMotion = false, responsive = false }, ref,
 ) {
   const canvas = useRef<HTMLCanvasElement>(null), stage = useRef<HTMLElement>(null), foreground = useRef<HTMLDivElement>(null);
+  const hitSurface = useRef<HTMLDivElement>(null), hitKey = useRef('');
   const renderer = useRef<Renderer | null>(null);
   const simulation = useRef({ current: resting(), target: resting(), growth: 1, playing: false, ambient: true, time: 0, dirty: true, visible: false, failed: false });
-  const drag = useRef<{ x: number; y: number; clientX: number; clientY: number; parent: boolean; pointerId: number; pendingTouch: boolean } | null>(null);
+  const drag = useRef<{ x: number; y: number; parent: boolean; pointerId: number } | null>(null);
   const callback = useRef(onPlayingChange); callback.current = onPlayingChange;
   const budget = useRef(renderBudget); budget.current = renderBudget;
   const studio = useRef(studioMotion); studio.current = studioMotion;
@@ -54,6 +56,25 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     if (active && stage.current?.hasPointerCapture(active.pointerId)) stage.current.releasePointerCapture(active.pointerId);
   }
   function cancelDrag() { releaseDrag(); settleSurface(); }
+  function syncHitSurface() {
+    const surface = hitSurface.current, state = simulation.current;
+    if (!surface) return;
+    const interactive = !state.failed && !clock.reduced && state.growth === 1;
+    // touch-action is known by the browser from the hit path before contact.
+    // The rectangle outside this CSS-clipped HTML box keeps native page panning.
+    const pointerEvents = interactive ? 'auto' : 'none';
+    if (surface.style.pointerEvents !== pointerEvents) surface.style.pointerEvents = pointerEvents;
+    // Budding is temporarily noninteractive; do not spend contour work on
+    // frames whose hit surface is disabled. Rebuild at completion/recovery.
+    if (!interactive) { hitKey.current = ''; return; }
+    const key = JSON.stringify([state.growth, ...Object.values(state.current)]);
+    if (hitKey.current === key) return;
+    hitKey.current = key;
+    surface.style.clipPath = `path('${volumeHitContour(state.current, state.growth).path}')`;
+  }
+  function syncHitCamera(width: number, height: number) {
+    if (hitSurface.current && width > 0 && height > 0) hitSurface.current.style.transform = `translate(-50%, -50%) scale(${Math.min(width / 1000, height / 560)})`;
+  }
   function syncForeground() {
     const element = foreground.current;
     if (!element) return;
@@ -85,7 +106,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
         if (foreground.current) { foreground.current.style.visibility = 'visible'; foreground.current.setAttribute('aria-hidden', 'false'); }
       }
       // Avoid scheduling a React state update on every ambient/drag frame.
-      if (reportedError.current !== nextError) { reportedError.current = nextError; setError(nextError); }
+      if (reportedError.current !== nextError) { reportedError.current = nextError; setError(nextError); syncHitSurface(); }
     };
     syncError();
     const draw = (delta: number, elapsed: number) => {
@@ -117,6 +138,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
         state.current[key] = Math.abs(difference) < .0005 ? state.target[key] : state.current[key] + difference * blend;
       }
       if (changed) {
+        syncHitSurface();
         const angle = clock.reduced ? 0 : state.time * Math.PI * 2 / 48;
         const lightX = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.cos(angle) + .25 * Math.sin(angle))) : .22;
         const lightY = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.sin(angle) - .42 * Math.cos(angle))) : .08;
@@ -135,7 +157,8 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     };
     const unsubscribe = clock.subscribe(draw);
     const observer = new ResizeObserver(entries => {
-      measureLayout(entries[entries.length - 1].contentRect.width); cancelDrag();
+      const { width, height } = entries[entries.length - 1].contentRect;
+      measureLayout(width); syncHitCamera(width, height); cancelDrag();
     });
     if (stage.current) observer.observe(stage.current);
     const visibility = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(entries => {
@@ -174,7 +197,10 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   }, [clock]);
 
   useLayoutEffect(() => {
-    if (stage.current) measureLayout(stage.current.getBoundingClientRect().width);
+    if (stage.current) {
+      const { width, height } = stage.current.getBoundingClientRect();
+      measureLayout(width); syncHitCamera(width, height);
+    }
     simulation.current.dirty = true; clock.wake();
   }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive]);
 
@@ -190,6 +216,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       state.playing = false;
     }
     syncForeground();
+    syncHitSurface();
     state.dirty = true; clock.wake();
   }, [clock, settings, clock.reduced]);
 
@@ -210,15 +237,6 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     if (!active && nativeTarget(event.target)) { settleSurface(); return; }
     if (active && !pressed) {
       if (event.pointerType !== 'touch' && !(event.buttons & 1)) { cancelDrag(); return; }
-      if (active.pendingTouch) {
-        const dx = event.clientX - active.clientX, dy = event.clientY - active.clientY;
-        if (Math.max(Math.abs(dx), Math.abs(dy)) < 6) return;
-        // CSS pan-y/pinch-zoom keeps browser scrolling available from contact.
-        // Do not turn a vertical page swipe into a shape drag.
-        if (Math.abs(dy) >= Math.abs(dx)) { cancelDrag(); return; }
-        active.pendingTouch = false;
-        event.currentTarget.setPointerCapture(event.pointerId);
-      }
     }
     const rect = stage.current.getBoundingClientRect();
     // Match the renderer's uniform camera scale, including any letterbox.
@@ -228,10 +246,13 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     const parent = drag.current?.parent ?? x < 450;
     const nx = (x - (parent ? 230 : 690)) / (parent ? 150 : 255), ny = (y - 280) / (parent ? 150 : 210);
     const proximity = Math.max(0, Math.min(1, (1.25 - Math.hypot(nx, ny)) * 2));
-    if (!drag.current && proximity === 0) { settleSurface(); return; }
+    if (!drag.current && !pressed && proximity === 0) { settleSurface(); return; }
     if (pressed) {
-      drag.current = { x, y, clientX: event.clientX, clientY: event.clientY, parent, pointerId: event.pointerId, pendingTouch: event.pointerType === 'touch' };
-      if (event.pointerType !== 'touch') { event.currentTarget.setPointerCapture(event.pointerId); event.preventDefault(); }
+      // The contour supplies actual native hit testing, rather than the old
+      // elliptical proximity heuristic around a rectangular stage.
+      if (event.target !== hitSurface.current) return;
+      drag.current = { x, y, parent, pointerId: event.pointerId };
+      event.currentTarget.setPointerCapture(event.pointerId); event.preventDefault();
     }
     const dx = (drag.current ? Math.max(-7.425, Math.min(7.425, (x - drag.current.x) * .2145)) : nx * 5.28 * proximity) * clock.strength;
     const dy = (drag.current ? Math.max(-7.425, Math.min(7.425, (y - drag.current.y) * .2145)) : ny * 5.28 * proximity) * clock.strength;
@@ -245,7 +266,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   useImperativeHandle(ref, () => ({ replay() {
     if (clock.reduced || simulation.current.failed) return;
     releaseDrag(); settleSurface();
-    simulation.current.growth = 0; simulation.current.playing = true; syncForeground(); callback.current?.(true); clock.wake();
+    simulation.current.growth = 0; simulation.current.playing = true; syncForeground(); syncHitSurface(); callback.current?.(true); clock.wake();
   } }), [clock]);
 
   return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
@@ -255,6 +276,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     onLostPointerCapture={event => { if (event.target === event.currentTarget && drag.current?.pointerId === event.pointerId) cancelDrag(); }}
     onPointerLeave={() => { if (!drag.current) settleSurface(); }}>
     <canvas ref={canvas} className="volume-canvas" aria-hidden="true"/>
+    <div ref={hitSurface} className="volume-hit-surface" data-volume-hit="contour" aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', width: 1000, height: 560, transformOrigin: 'center', touchAction: 'pinch-zoom', pointerEvents: 'none' }}/>
     {error && <svg viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true" data-renderer="static-pearl-fallback" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
       <defs>
         <linearGradient id={`${fallbackId}-environment`} x2="1" y2="1"><stop stopColor="#D7E6FC"/><stop offset=".52" stopColor="#EBEDFD"/><stop offset="1" stopColor="#D8CEF0"/></linearGradient>

@@ -17,6 +17,7 @@
 | `SETTINGS_KEY`、`readSettings(storageKey?)` | 默认存储 key 与读取归界；新产品应选自己的 key |
 | `useGlassSettings({ storageKey?, optics?, maxFps? })` | 返回 clock、settings、setSettings、updateSettings、reset、reduced、systemReduced，管理设置与时钟生命周期；optics 默认为 auto，计算频率预算默认 60 次/秒 |
 | `VolumeStage` | 大母体／膜颈／内容腔展示，接收 clock、settings、children、className、ariaLabel、可选 onPlayingChange／renderBudget；ref 提供 `replay()` |
+| `ControlledScene`／`ControlledSource` | R3 实验性受控 SVG 场景；背景与镜内共用同一源，仅对显式登记内容折射，见下文 |
 | `resolveGlassOptics`／`GlassOpticsMode` | auto／svg／native／flat 渲染策略，具体能力和验证边界见兼容文档 |
 | `endpointGeometry`、`contourShape`、`shellPath` | 未舍入端部关系与 C2 轮廓的移植入口；几何类型也随包导出 |
 
@@ -133,3 +134,29 @@ AlvenX 模式复用正式 wordmark／AX 资产和 Instrument Sans／MiSans，不
 在消费项目里检查 CSS 作用域、资源路径、实际字体、background/filter 支持、resize、scroll、卸载和多个实例。用短文及中英长文检验安全区，至少覆盖默认、最大强度、减少动效、数值非法输入、Reset 竞态和保存值恢复。
 
 既有桌面 Chromium 证据可作为回归参照，不能替代新宿主的运行结果。尚未验证的平台需记录限制；未确认支持时保留清晰 DOM 与可操作状态，不把功能不可用静默伪装成同等材质。
+
+## R3 受控场景折射与触摸所有权（待所有者实机验收）
+
+`ControlledScene` 将 `paint({width,height})` 返回的 SVG 内容同时用于可见背景与镜内 `SourceGraphic`。它使用普通 SVG 位移过滤器，不依赖 Safari 尚未验证的 `backdrop-filter: url(...)`。源文字、路径、进度值可由 React 状态更新；镜内引用同一个源节点，不通过截图、克隆任意 DOM 或画一张假折射图片。`paint` 应提供完整背景；透明区域不会自动采集网页。每个场景应使用 `useId` 等方式给渐变、pattern 和其他 SVG 引用分配唯一 id。
+
+```tsx
+<ControlledScene
+  className="sample-scene"
+  paint={({width,height}) => <>
+    <rect width={width} height={height} fill="#DCE2FA" />
+    <path d="M0 80H500" stroke="#8C8BD3" strokeWidth="12" />
+  </>}
+>
+  <LiquidControl id="sample-lens" clock={clock} className="sample-lens">
+    Explore
+  </LiquidControl>
+</ControlledScene>
+```
+
+宿主给 `.sample-scene` 明确尺寸和 `position:relative`，给 `.sample-lens` 安排尺寸、位置。表单文字、标签和业务内容仍作为原生 DOM children 位于滤镜外。`ControlledSource` 是已有容器的低层版本，通过 `container` ref 登记该容器的 SVG 源。避免把完全不同的 React renderer/root 混用而产生重复 SVG id；多个独立 root 需要各自的 `identifierPrefix`。
+
+`GlassSlider` 和 `GlassSwitch` 可传 `controlledRefraction`，让轨道按当前实际端点、进度和蓝紫 CSS 变量登记为 SVG 源。默认 `false`，现有宿主不自动切换渲染路径。登记轨道的底色采用 `--ax-background`，应与宿主底色一致；复杂背景需自行登记完整源，而不是期待这个局部轨道包含场景外的任意元素。`optics="flat"` 仍明确关闭采样，`optics="native"` 保留原生背景模糊兼容模式；auto／svg 在就绪的登记场景内使用 `data-optical-mode="scene"`。该场景模式是显式组合能力，不表示所有 Safari 网页获得了任意 DOM 折射。
+
+场景模式按输入方式提交法线 PNG，保留同一法线算法、分辨率和材质参数；轮廓、裁剪、边缘和法线图作为完整帧共同提交。鼠标与空闲准备采用异步编码，每控件保留一个活动请求及一个最新待处理帧，全局最多两项原生编码。手指按住及松手形变收敛期间保留原同步路径，因为本地 Chromium 的待决触摸会延后原生 PNG／FileReader 回调，首个全异步方案出现超过 100ms 的画面延迟而被自检否决。输入方式变化和离屏会使旧队列失效，迟到结果不能覆盖新画面。指针值和宿主平移不等待 PNG，镜内源坐标在布局阶段重新对齐。异步工作仍可能延后一帧视觉交付，不能仅凭减少同步编码就宣称零卡顿；具体测量与限制记录在 R3 审查资料。未登记的原有 SVG 背景路径继续使用既有同步接口。
+
+`VolumeStage` 的单指命中区域现在沿当前可见轮廓裁剪。触摸从形体内开始时，两个方向均保留形变交互，拖出轮廓仍保持本次捕获；从背景开始时保持原生滚页，之后划入形体不会抢夺滚动。浏览器在接触开始前决定 `touch-action`，因此不能到 `pointerdown` 后才改样式决定纵向交互。R3 示例的腔内装饰标题透传给形体；宿主自己的输入框、链接和按钮仍应保留独立语义与命中，不能将整个前景统一禁用。系统减少动态设置仍优先。

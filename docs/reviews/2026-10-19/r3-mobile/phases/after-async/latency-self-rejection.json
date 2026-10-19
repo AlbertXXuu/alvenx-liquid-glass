@@ -1,0 +1,1319 @@
+{
+  "date": "2026-10-19",
+  "phase": "first native toBlob/FileReader async encoder candidate",
+  "status": "self-rejected-latency",
+  "decisionBy": "root engineering review, not owner rejection",
+  "profiles": {
+    "r3-async-touch-chrome.json": {
+      "engine": "155.0.8059.84",
+      "physicalDevice": false,
+      "directNativeTouch": true,
+      "prePointerDownHoverMs": 0,
+      "runs": [
+        {
+          "viewportWidth": 393,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.880520016983408,
+              "pressDOMLatencyMs": 169.10000000149012,
+              "maxRafGapMs": 30.100000000000136,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 34,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 34,
+                "total": 28.00000000372529,
+                "max": 2.799999998882413
+              },
+              "fileReads": {
+                "count": 34,
+                "total": 3.0000000074505806,
+                "max": 0.19999999925494194
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.880520016983408,
+              "valueHeld": 0.111227171710508,
+              "pressDOMLatencyMs": 158.2000000011176,
+              "maxRafGapMs": 33.29999999999973,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 33,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 33,
+                "total": 32.5,
+                "max": 2.599999999627471
+              },
+              "fileReads": {
+                "count": 33,
+                "total": 3.7999999970197678,
+                "max": 0.2000000011175871
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.880423982768017,
+              "pressDOMLatencyMs": 170.7000000011176,
+              "maxRafGapMs": 30,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 32,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 32,
+                "total": 28.500000001862645,
+                "max": 2.5
+              },
+              "fileReads": {
+                "count": 32,
+                "total": 2.7999999951571226,
+                "max": 0.2000000011175871
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.880423982768017,
+              "valueHeld": 0.107764494245014,
+              "pressDOMLatencyMs": 109.59999999962747,
+              "maxRafGapMs": 23.40000000000009,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 34,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 35,
+                "total": 23.5,
+                "max": 2.099999999627471
+              },
+              "fileReads": {
+                "count": 34,
+                "total": 2.599999997764826,
+                "max": 0.19999999925494194
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.878269934181495,
+              "pressDOMLatencyMs": 167.40000000037253,
+              "maxRafGapMs": 30,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 31,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 31,
+                "total": 18.60000000335276,
+                "max": 1.5
+              },
+              "fileReads": {
+                "count": 31,
+                "total": 2.9999999944120646,
+                "max": 0.19999999925494194
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.878269934181495,
+              "valueHeld": 0.109693043145231,
+              "pressDOMLatencyMs": 134.40000000037253,
+              "maxRafGapMs": 23.300000000000182,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 31,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 32,
+                "total": 18.199999999254942,
+                "max": 0.900000000372529
+              },
+              "fileReads": {
+                "count": 31,
+                "total": 2.8000000063329935,
+                "max": 0.2000000011175871
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.864393965272786,
+              "pressDOMLatencyMs": 139.7000000011176,
+              "maxRafGapMs": 23.399999999999864,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 31,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 32,
+                "total": 19.399999998509884,
+                "max": 1.199999999254942
+              },
+              "fileReads": {
+                "count": 31,
+                "total": 2.199999997392297,
+                "max": 0.19999999925494194
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.864393965272786,
+              "valueHeld": 0.127301190152418,
+              "pressDOMLatencyMs": 109.09999999962747,
+              "maxRafGapMs": 20.09999999999991,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 33,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 34,
+                "total": 18.300000000745058,
+                "max": 0.900000000372529
+              },
+              "fileReads": {
+                "count": 33,
+                "total": 2.500000001862645,
+                "max": 0.19999999925494194
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.864941377465152,
+              "pressDOMLatencyMs": 111.40000000037253,
+              "maxRafGapMs": 26.700000000000045,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 35,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 35,
+                "total": 24.50000001117587,
+                "max": 1.200000001117587
+              },
+              "fileReads": {
+                "count": 35,
+                "total": 3.3999999929219484,
+                "max": 0.2999999988824129
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.864941377465152,
+              "valueHeld": 0.126385803822255,
+              "pressDOMLatencyMs": 108.40000000037253,
+              "maxRafGapMs": 20,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 34,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 35,
+                "total": 18.600000001490116,
+                "max": 0.8999999985098839
+              },
+              "fileReads": {
+                "count": 34,
+                "total": 2.5999999940395355,
+                "max": 0.19999999925494194
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.864972920964455,
+              "pressDOMLatencyMs": 112.39999999850988,
+              "maxRafGapMs": 26.799999999999955,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 32,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 32,
+                "total": 27.300000002607703,
+                "max": 2.599999999627471
+              },
+              "fileReads": {
+                "count": 32,
+                "total": 3.199999999254942,
+                "max": 0.2000000011175871
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.864972920964455,
+              "valueHeld": 0.126474577282081,
+              "pressDOMLatencyMs": 107.90000000037253,
+              "maxRafGapMs": 16.700000000000273,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "pressureUpdateCount": 36,
+              "progressUpdateCount": 15,
+              "countersBefore": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "countersAfter": {
+                "renders": 0,
+                "previousHits": 0,
+                "sharedHits": 0,
+                "computations": 0,
+                "encodes": 0,
+                "asyncRequests": 0,
+                "asyncEncodes": 0,
+                "asyncCacheHits": 0,
+                "asyncDropped": 0,
+                "asyncEncodeWallMs": 0,
+                "owners": 0,
+                "workspaceBytes": 0,
+                "cacheEntries": 0,
+                "cacheBytes": 0,
+                "maxCacheEntries": 48,
+                "maxCacheBytes": 2097152,
+                "activeAsyncJobs": 0,
+                "queuedAsyncJobs": 0,
+                "maxAsyncJobs": 2
+              },
+              "blobSubmissions": {
+                "count": 36,
+                "total": 25.19999999180436,
+                "max": 1.400000000372529
+              },
+              "fileReads": {
+                "count": 36,
+                "total": 3.099999999627471,
+                "max": 0.2000000011175871
+              },
+              "synchronousPngEncodes": {
+                "count": 0,
+                "total": 0,
+                "max": 0
+              }
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    },
+    "r3-async-hybrid-chrome.json": {
+      "engine": "155.0.8059.84",
+      "physicalDevice": false,
+      "directNativeTouch": false,
+      "prePointerDownHoverMs": 80,
+      "runs": [
+        {
+          "viewportWidth": 393,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.946618371512296,
+              "pressDOMLatencyMs": 24.90000000037253,
+              "maxRafGapMs": 23.40000000000009,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.946618371512296,
+              "valueHeld": 0.040013318847799,
+              "pressDOMLatencyMs": 24.5,
+              "maxRafGapMs": 23.40000000000009,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.946514433087088,
+              "pressDOMLatencyMs": 19.09999999962747,
+              "maxRafGapMs": 26.700000000000045,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.946514433087088,
+              "valueHeld": 0.0403296475311996,
+              "pressDOMLatencyMs": 15.300000000745058,
+              "maxRafGapMs": 16.699999999999818,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.946496526013841,
+              "pressDOMLatencyMs": 17.40000000037253,
+              "maxRafGapMs": 23.5,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.946496526013841,
+              "valueHeld": 0.0395886378053631,
+              "pressDOMLatencyMs": 16.59999999962747,
+              "maxRafGapMs": 23.299999999999727,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.926023005321848,
+              "pressDOMLatencyMs": 21.09999999962747,
+              "maxRafGapMs": 30.200000000000045,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.926023005321848,
+              "valueHeld": 0.0638654824783945,
+              "pressDOMLatencyMs": 14.300000000745058,
+              "maxRafGapMs": 6.599999999999909,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.926031351683838,
+              "pressDOMLatencyMs": 21.299999998882413,
+              "maxRafGapMs": 33.299999999999955,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.926031351683838,
+              "valueHeld": 0.0638679178043018,
+              "pressDOMLatencyMs": 15.5,
+              "maxRafGapMs": 13.400000000000091,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.926221236489322,
+              "pressDOMLatencyMs": 17.90000000037253,
+              "maxRafGapMs": 46.700000000000045,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 1
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.926221236489322,
+              "valueHeld": 0.0642857250240274,
+              "pressDOMLatencyMs": 14.800000000745058,
+              "maxRafGapMs": 10,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    },
+    "r3-async-hybrid-webkit.json": {
+      "engine": "26.5",
+      "physicalDevice": false,
+      "directNativeTouch": false,
+      "prePointerDownHoverMs": 80,
+      "runs": [
+        {
+          "viewportWidth": 393,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.943667069905759,
+              "pressDOMLatencyMs": 17,
+              "maxRafGapMs": 43,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 5
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.943667069905759,
+              "valueHeld": 0.0410320404566837,
+              "pressDOMLatencyMs": 25,
+              "maxRafGapMs": 38,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 3
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.942703070228428,
+              "pressDOMLatencyMs": 36,
+              "maxRafGapMs": 32,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.942703070228428,
+              "valueHeld": 0.0427101008542178,
+              "pressDOMLatencyMs": 26,
+              "maxRafGapMs": 30,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.941833845401471,
+              "pressDOMLatencyMs": 21,
+              "maxRafGapMs": 25,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.941833845401471,
+              "valueHeld": 0.0464138392933758,
+              "pressDOMLatencyMs": 21,
+              "maxRafGapMs": 27,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.924371221077265,
+              "pressDOMLatencyMs": 22,
+              "maxRafGapMs": 37,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 3
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.924371221077265,
+              "valueHeld": 0.0652820593862612,
+              "pressDOMLatencyMs": 25,
+              "maxRafGapMs": 39,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 5
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.924774796824166,
+              "pressDOMLatencyMs": 16,
+              "maxRafGapMs": 38,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 5
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.924774796824166,
+              "valueHeld": 0.0653391469743554,
+              "pressDOMLatencyMs": 25,
+              "maxRafGapMs": 38,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 5
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.923829966390726,
+              "pressDOMLatencyMs": 21,
+              "maxRafGapMs": 36,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 1
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.923829966390726,
+              "valueHeld": 0.0672537034696183,
+              "pressDOMLatencyMs": 24,
+              "maxRafGapMs": 37,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "selectedTextEmpty": true,
+              "gapsOver34Ms": 5
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "sameR3RegisteredScene": true,
+    "method": "Fresh contexts, 393/1180px, six cold and six warm native Chromium direct-touch gestures per candidate; no pre-contact hover.",
+    "beforeSyncDirectTouchDOMMs": {
+      "cold": [
+        16.9,
+        40.2
+      ],
+      "warm": [
+        15.7,
+        47.9
+      ]
+    },
+    "firstAsyncDirectTouchDOMMs": {
+      "cold": [
+        111.4,
+        170.7
+      ],
+      "warm": [
+        107.9,
+        158.2
+      ]
+    }
+  },
+  "functionalOutcome": "Gestures changed values, captured and released, no page errors; visual-field exactness tests remain valid.",
+  "rejectionReason": "First visible pressure DOM acknowledgement regressed materially despite removal of synchronous PNG calls; the first async strategy is not accepted as a performance improvement.",
+  "cause": "Not yet established; native toBlob idle completion versus queued visual-frame work is being isolated.",
+  "limits": [
+    "DOM acknowledgement is not physical display latency.",
+    "The async strategy total CPU work is not zero.",
+    "No physical iPhone/iPad/Safari/Combo Touch fix is established.",
+    "Do not overwrite the before-async profile or label this failed candidate as final optimized performance."
+  ]
+}

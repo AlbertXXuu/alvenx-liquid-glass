@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-19",
+  "status": "scoped measurement complete; parent R3 technically self-reviewed, publication and owner acceptance pending",
+  "physicalDevice": false,
+  "method": {
+    "viewports": [
+      393,
+      1180
+    ],
+    "freshContextsPerWidth": 3,
+    "phases": [
+      "cold",
+      "warm"
+    ],
+    "touch": "Chromium native CDP touch; no preceding hover; fifteen continuous moves",
+    "mouse": "Trusted mouse drag in touch-enabled Safari-UA context; 80ms hover before down",
+    "measurement": "Pointerdown to first nonzero coherent pressure DOM mutation, not a presented display frame",
+    "serial": true
+  },
+  "r3BeforeSynchronous": {
+    "mouseChrome": {
+      "source": "r3-cold-hybrid-chrome.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 16.4,
+        "medianMs": 17.05,
+        "maxMs": 28.1
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 13.7,
+        "medianMs": 15.7,
+        "maxMs": 58.4
+      },
+      "largestObservedRAfGapMs": 73.3
+    },
+    "mouseWebKit": {
+      "source": "r3-cold-hybrid-webkit.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 14,
+        "medianMs": 19.0,
+        "maxMs": 22
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 13,
+        "medianMs": 22.0,
+        "maxMs": 29
+      },
+      "largestObservedRAfGapMs": 45
+    },
+    "touchChrome": {
+      "source": "r3-cold-touch-chrome.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 16.9,
+        "medianMs": 19.45,
+        "maxMs": 40.2
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 15.7,
+        "medianMs": 21.7,
+        "maxMs": 47.9
+      },
+      "largestObservedRAfGapMs": 50.1
+    }
+  },
+  "r3AllAsyncRejected": {
+    "decision": "self-rejected for direct-touch optical latency despite pixel/functional correctness",
+    "mouseChrome": {
+      "source": "r3-async-hybrid-chrome.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 17.4,
+        "medianMs": 20.1,
+        "maxMs": 24.9
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 14.3,
+        "medianMs": 15.4,
+        "maxMs": 24.5
+      },
+      "largestObservedRAfGapMs": 46.7
+    },
+    "mouseWebKit": {
+      "source": "r3-async-hybrid-webkit.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 16,
+        "medianMs": 21.0,
+        "maxMs": 36
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 21,
+        "medianMs": 25.0,
+        "maxMs": 26
+      },
+      "largestObservedRAfGapMs": 43
+    },
+    "touchChrome": {
+      "source": "r3-async-touch-chrome.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 111.4,
+        "medianMs": 153.55,
+        "maxMs": 170.7
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 107.9,
+        "medianMs": 109.35,
+        "maxMs": 158.2
+      },
+      "largestObservedRAfGapMs": 33.3
+    },
+    "invalidFields": [
+      "countersBefore",
+      "countersAfter"
+    ],
+    "invalidCounterReason": "Unversioned dynamic import created a separate Vite HMR diagnostics module. Native API wrappers and DOM timings remain valid.",
+    "isolationTrace": "async-touch-debug.json",
+    "traceConclusion": "HTML toBlob and Offscreen convertToBlob both completed around112.9ms after native touch; a later FileReader load also deferred about97ms. React coherent commit followed shortly after native IO completion."
+  },
+  "r3FinalHybrid": {
+    "policy": "Direct touch and its visual settling use the exact synchronous coherent map pipeline; mouse/trackpad and idle scene updates use bounded asynchronous encoding. Strategy epochs cancel queued maps and prevent stale async commits.",
+    "mouseChrome": {
+      "source": "r3-hybrid-final-mouse-chrome.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 16.7,
+        "medianMs": 20.6,
+        "maxMs": 33.6
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 16.5,
+        "medianMs": 17.75,
+        "maxMs": 23.9
+      },
+      "largestObservedRAfGapMs": 36.7
+    },
+    "mouseWebKit": {
+      "source": "r3-hybrid-final-mouse-webkit.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 17,
+        "medianMs": 26.5,
+        "maxMs": 52
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 19,
+        "medianMs": 20.5,
+        "maxMs": 32
+      },
+      "largestObservedRAfGapMs": 67
+    },
+    "touchChrome": {
+      "source": "r3-hybrid-final-touch-chrome.json",
+      "contexts": 6,
+      "gestures": 12,
+      "errors": 0,
+      "coldPressureDOM": {
+        "samples": 6,
+        "minMs": 14.5,
+        "medianMs": 18.7,
+        "maxMs": 21.5
+      },
+      "warmPressureDOM": {
+        "samples": 6,
+        "minMs": 10.5,
+        "medianMs": 15.6,
+        "maxMs": 20.4
+      },
+      "largestObservedRAfGapMs": 43.1
+    },
+    "touchEvidence": {
+      "nativeProgressUpdatesEachGesture": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "syncPNGCountRange": [
+        40,
+        44
+      ],
+      "maxSingleSyncPNGMs": 23.6,
+      "asyncPNGSubmissionsDuringTouchWindow": 0,
+      "validActiveModuleOwners": [
+        3,
+        5
+      ],
+      "normalMapComputationsRange": [
+        40,
+        45
+      ]
+    },
+    "mouseEncoderSentinel": {
+      "status": "passed",
+      "physicalDevice": false,
+      "countsOnly": true,
+      "engine": "155.0.8059.84",
+      "syncDataURLCalls": 0,
+      "asyncToBlobCalls": 26,
+      "value": 0.92417641464645,
+      "mode": "scene",
+      "note": "Counts only during a separate functional drag while build work ran; not a timing sample."
+    }
+  },
+  "verification": {
+    "asyncEncoderBrowserContracts": {
+      "Chrome": 117,
+      "WindowsWebKit": 117
+    },
+    "exactDecodedRGBAInputsPerEngine": 16,
+    "kernelFloat32Cases": 5800,
+    "existingContracts": 28,
+    "existingGeometryCases": 15
+  },
+  "limits": [
+    "These are Windows browser-engine contexts, not physical iPhone/iPad/Safari/Combo Touch.",
+    "No stable FPS or presented-frame latency claim.",
+    "The final hybrid deliberately retains synchronous touch PNG cost rather than shipping 100–170ms async touch response.",
+    "Small sample tails and differing instrumentation do not establish a general speedup percentage.",
+    "WebKit native continuous touch is not provided by the public automation API; it has hybrid mouse plus native touch tap coverage."
+  ]
+}

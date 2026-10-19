@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-19",
+  "phase": "hybrid candidate functional/lifecycle checks",
+  "physicalDevice": false,
+  "actualPageInput": {
+    "status": "passed",
+    "scope": "Actual R3 Chromium hybrid mouse/keyboard DOM editing; not physical Combo Touch or OS IME certification",
+    "checks": [
+      "mouse lens drag",
+      "local input report move/capture",
+      "native CJK/Latin editing + Enter",
+      "numeric upper clamp",
+      "nonfinite reverts",
+      "numeric decimal precision",
+      "numeric Escape",
+      "slider Home/ArrowRight/End",
+      "switch Space",
+      "live canonical source edit"
+    ],
+    "finalValues": {
+      "message": "清晰的文字 AlvenX 你好",
+      "number": "1",
+      "switch": "false",
+      "source": "光与形 AlvenX"
+    },
+    "inputReportMoves": 10,
+    "captureEvents": [
+      "gotpointercapture",
+      "lostpointercapture"
+    ],
+    "pageErrorCount": 0
+  },
+  "localDiagnosticsCleanup": {
+    "status": "passed",
+    "scope": "Direct diagnostics lifecycle fixture",
+    "clearedRecords": 0,
+    "destroyedRecords": 0,
+    "pendingFramesAfterDestroy": 0
+  },
+  "focusedQueueAndOptOut": {
+    "status": "passed",
+    "scope": "Focused Chromium actual LiquidControl/ControlledScene fixture; native encoder callback intentionally delayed450ms to force queue/cancellation",
+    "nativeInitialModes": [
+      "native",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native",
+      "native"
+    ],
+    "queueBeforeHide": {
+      "active": 2,
+      "queued": 6,
+      "computations": 2
+    },
+    "queueAfterHide": {
+      "active": 2,
+      "queued": 0,
+      "computations": 2,
+      "dropped": 6
+    },
+    "afterDispatchedJobsSettle": {
+      "active": 0,
+      "queued": 0,
+      "computations": 2,
+      "hiddenVersionsStable": true
+    },
+    "reentered": [
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      },
+      {
+        "mode": "scene",
+        "ready": "true",
+        "error": null
+      }
+    ],
+    "overrides": [
+      {
+        "mode": "native",
+        "transmission": false,
+        "backdrop": true
+      },
+      {
+        "mode": "flat",
+        "transmission": false,
+        "backdrop": false
+      }
+    ],
+    "destroyed": {
+      "renders": 0,
+      "previousHits": 0,
+      "sharedHits": 0,
+      "computations": 8,
+      "encodes": 0,
+      "asyncRequests": 16,
+      "asyncEncodes": 8,
+      "asyncCacheHits": 2,
+      "asyncDropped": 6,
+      "asyncEncodeWallMs": 3745.9000000003725,
+      "owners": 0,
+      "workspaceBytes": 0,
+      "cacheEntries": 0,
+      "cacheBytes": 0,
+      "maxCacheEntries": 48,
+      "maxCacheBytes": 2097152,
+      "activeAsyncJobs": 0,
+      "queuedAsyncJobs": 0,
+      "maxAsyncJobs": 2
+    }
+  },
+  "limits": [
+    "Forced450ms callback delays isolate queue/cancellation behavior; they are not normal device performance.",
+    "Browser text editing is not OS IME/physical keyboard certification.",
+    "A dispatched native PNG job may finish after hiding; queued offscreen computations must not start."
+  ]
+}

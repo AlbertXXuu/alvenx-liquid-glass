@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-19",
+  "phase": "failure isolation for the rejected all-async touch strategy",
+  "parentR3Status": "draft",
+  "physicalDevice": false,
+  "method": "Chromium native touch, hybrid iPad-like UA, same-thread HTML canvas PNG plus a diagnostic OffscreenCanvas convertToBlob request. Times are relative to pointerdown.",
+  "measuredMs": {
+    "firstHtmlSubmit": 8.599999999627471,
+    "firstHtmlCallback": 112.90000000037253,
+    "offscreenSubmit": 0.2000000011175871,
+    "offscreenCallback": 112.90000000037253,
+    "firstFileReaderSubmit": 112.90000000037253,
+    "firstFileReaderComplete": 117.80000000074506,
+    "firstPressureDOM": 122.5,
+    "secondFileReaderSubmit": 124.09999999962747,
+    "secondFileReaderComplete": 221.2000000011176,
+    "secondFileReaderElapsed": 97.10000000149012
+  },
+  "findings": [
+    "Both the real HTML PNG callback and the diagnostic OffscreenCanvas callback were deferred to about112.9ms after contact.",
+    "The first pressure DOM update at122.5ms followed encoding and reading; the delay was not merely a React pressure-metadata update.",
+    "A later FileReader operation within the same gesture was deferred by about97.1ms.",
+    "A simple same-thread swap to OffscreenCanvas convertToBlob did not remove this local deferral; that alternative is ruled out for this tested path, not every engine or worker architecture."
+  ],
+  "counterValidity": {
+    "rejectedAsyncTouchSourceCacheCounters": "invalid: a separate HMR module import observed a duplicate diagnostics instance",
+    "doNotUseZeroCountersToInferZeroWork": true,
+    "nativeEncodeTimingsAndPressureDomTimings": "remain valid independent observations",
+    "historicalRawCounterValuesPreserved": "The earlier after-async phase is unchanged; this note corrects how those values may be interpreted."
+  },
+  "currentEngineeringChoice": {
+    "strategy": "hybrid",
+    "activeTouchAndReleaseSettlement": "synchronous exact normal maps",
+    "mouseAndIdle": "asynchronous encoding",
+    "guards": "pointer-type selection, epoch guards and pending-work cancellation when offscreen",
+    "status": "implemented/typecheck reported passed; final matched profiles and functional checks pending",
+    "ownerAccepted": false
+  },
+  "limits": [
+    "Not physical Safari/iPad/Combo Touch certification.",
+    "No root cause claim for the owner hardware first-click stall.",
+    "No statement that total encoding CPU becomes zero."
+  ]
+}

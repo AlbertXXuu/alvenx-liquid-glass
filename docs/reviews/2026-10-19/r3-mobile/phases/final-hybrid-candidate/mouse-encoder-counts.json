@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "physicalDevice": false,
+  "countsOnly": true,
+  "engine": "155.0.8059.84",
+  "syncDataURLCalls": 0,
+  "asyncToBlobCalls": 26,
+  "value": 0.92417641464645,
+  "mode": "scene",
+  "timingEvidence": false,
+  "scope": "Separate actual R3 drag while build work ran; call counts only."
+}

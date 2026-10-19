@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-19",
+  "status": "self-reviewed; source and website publication pending",
+  "sourceTag": "planned review-20261019-r3, not published in this receipt",
+  "published": false,
+  "ownerAccepted": false,
+  "physicalDevice": false,
+  "rootReportedChecks": {
+    "typescript": "passed",
+    "documentationLinks": 37,
+    "contract": 28,
+    "geometry": 15,
+    "clock": 16,
+    "budget": 180,
+    "kernels": 5800,
+    "baselineFiles": 41,
+    "fontUrls": 228,
+    "libraryBuildBytesApprox": 106350,
+    "libraryGzipBytesApprox": 32470,
+    "asyncBrowserContracts": {
+      "Chromium": 117,
+      "WindowsWebKit": 117
+    }
+  },
+  "tarball": {
+    "baseVersion": "1.1.2",
+    "sha256": "941b4a1c944f8cb1009c99cbe59b315b82d93b30429abeaba88750dcec9f0525",
+    "externalConsumerInstall": "passed",
+    "externalConsumerTypeScriptAndBuild": "passed",
+    "externalConsumerBrowserChecks": 10
+  },
+  "visualProvenance": "Root personally viewed final393volume/768refraction and320params; heading spacing failure was fixed, production rebuilt and QA rerun. Current screenshots here are the rerun; earlier after-async screenshots are historical.",
+  "limits": [
+    "Physical iPhone/iPad/Safari/Combo Touch and actual displayed first-contact latency remain unverified.",
+    "A fresh external tarball consumer is evidence of portability in its stated environment, not every application.",
+    "No source tag push or website publication is claimed here."
+  ],
+  "rootFinalSelfReviewSignOff": true
+}

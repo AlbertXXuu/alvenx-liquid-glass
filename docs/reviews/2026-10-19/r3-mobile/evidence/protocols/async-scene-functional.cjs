@@ -1,0 +1,17 @@
+async page=>{
+ const browser=page.context().browser(),c=await browser.newContext({viewport:{width:393,height:852}}),p=await c.newPage();
+ try{
+  await p.goto('http://127.0.0.1:5174/mobile-review.html');await p.evaluate(()=>document.fonts.ready);
+  const lens=p.locator('[data-local-glass="r3-free-lens"]'),board=p.locator('.lab-optical-scene');await board.evaluate(e=>e.scrollIntoView({block:'center',behavior:'instant'}));await p.waitForFunction(()=>document.querySelector('[data-local-glass="r3-free-lens"]')?.dataset.opticalMode==='scene');
+  await p.evaluate(()=>{window.r3Modes=[];const e=document.querySelector('[data-local-glass="r3-free-lens"]');window.r3Observer=new MutationObserver(()=>window.r3Modes.push({mode:e.dataset.opticalMode,version:e.dataset.geometryVersion,pending:e.dataset.opticalPending}));window.r3Observer.observe(e,{attributes:true,attributeFilter:['data-optical-mode','data-geometry-version']});});
+  const l=await lens.boundingBox(),b=await board.boundingBox();await p.mouse.move(l.x+l.width/2,l.y+l.height/2);await p.mouse.down();for(let i=1;i<=32;i++)await p.mouse.move(b.x+b.width*(.32+.32*i/32),b.y+b.height*(.31+.4*i/32));await p.mouse.up();await p.mouse.move(2,2);await p.waitForTimeout(550);
+  const check=await p.evaluate(()=>{const e=document.querySelector('[data-local-glass="r3-free-lens"]'),trans=e.querySelector('[data-controlled-transmission]'),source=document.querySelector(`[data-controlled-source="${trans.dataset.controlledTransmission}"]`),rect=e.getBoundingClientRect(),origin=source.getBoundingClientRect(),v=trans.querySelector('use').getAttribute('transform').match(/-?[\d.]+/g).map(Number);return{mode:e.dataset.opticalMode,pending:e.dataset.opticalPending,frames:window.r3Modes.length,modes:[...new Set(window.r3Modes.map(x=>x.mode))],registrationError:Math.max(Math.abs(v[0]+rect.left-origin.left),Math.abs(v[1]+rect.top-origin.top)),geometryVersions:[...new Set(window.r3Modes.map(x=>x.version))].length};});
+  if(check.mode!=='scene'||check.pending!=='false'||check.modes.some(x=>x!=='scene')||check.registrationError>.05||check.geometryVersions<2)throw Error(JSON.stringify(check));
+  const numeric=p.getByRole('spinbutton',{name:'Source line value',exact:true});await numeric.fill('0');await numeric.press('Enter');await p.waitForTimeout(300);
+  const a=await p.locator('[data-local-glass="r3-sample-thumb"]').evaluate(e=>{const r=e.getBoundingClientRect(),rail=e.closest('.range-rail').getBoundingClientRect(),s=e.querySelector('[data-controlled-transmission] use');return{mode:e.dataset.opticalMode,left:r.left-rail.left,progress:e.closest('.range-rail').dataset.progress,sourceTransform:s.getAttribute('transform')};});
+  await numeric.fill('1');await numeric.press('Enter');await p.waitForTimeout(300);
+  const z=await p.locator('[data-local-glass="r3-sample-thumb"]').evaluate(e=>{const r=e.getBoundingClientRect(),rail=e.closest('.range-rail').getBoundingClientRect(),s=e.querySelector('[data-controlled-transmission] use');return{mode:e.dataset.opticalMode,left:r.left-rail.left,progress:e.closest('.range-rail').dataset.progress,sourceTransform:s.getAttribute('transform')};});
+  if(a.mode!=='scene'||z.mode!=='scene'||a.progress!=='0.000000'||z.progress!=='1.000000'||z.left<=a.left)throw Error(JSON.stringify({a,z}));
+  return{engine:browser.browserType().name(),version:browser.version(),continuousFreeLens:check,endpoints:{min:a,max:z},physicalDevice:false,pass:true};
+ }finally{await c.close();}
+}

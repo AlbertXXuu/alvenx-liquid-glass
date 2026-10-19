@@ -67,6 +67,12 @@ playwright-cli -s=compat-webkit close
 
 ## Still requires physical-device acceptance
 
+### R3 explicit scene refraction (2026-10-19, experimental review)
+
+R3 adds an opt-in `ControlledScene` / `ControlledSource` path: the visible SVG background and the lens reference the same registered source, and ordinary SVG `feDisplacementMap` filters that source. This avoids the unsupported SVG **backdrop** filter reference; it is not an arbitrary DOM screenshot or a claim that WebKit issue 245510 is fixed. The issue was rechecked on 2026-10-19 and remained NEW. Editable source text and track values are part of the shared scene. Native form text stays outside optical filters. Details, before/after evidence and pending physical acceptance are in the [R3 review](reviews/2026-10-19/r3-mobile/README.md).
+
+The asynchronous PNG serialization path is limited to registered scenes during mouse interaction and idle preparation. Active direct-touch deformation and its release settling retain the synchronous exact-map path: a rejected all-async candidate showed over 100ms of first-response delay while Chromium deferred native serialization/FileReader tasks during pending touch. Both routes use the same full normal-map pixels and commit matching contour/map frames together, with bounded encoder jobs and caching; stale results are invalidated on route changes and visibility loss. Local browser tests compare displacement on/off while holding blur and opacity constant, plus source edits, resize, drag and cleanup. Windows Playwright WebKit results establish behavior in that test engine; only the owner's iPhone/iPad test can establish physical Safari composition and Combo Touch behavior.
+
 ### 2026-10-19 input and studio review (not an accepted release)
 
 The owner supplied physical iPad screenshots showing text selection during a lens drag and rectangular paint behind range lenses, and reported that the first interaction stalls on iPhone 15 Pro and iPad Air M4 (2026), including a Combo Touch trackpad drag failure. These reports supersede any inference that earlier viewport/tap checks established mobile acceptance.

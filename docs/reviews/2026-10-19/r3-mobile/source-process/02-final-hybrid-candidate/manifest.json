@@ -1,0 +1,107 @@
+{
+  "reviewId": "R3",
+  "kind": "final hybrid candidate uncommitted working source capture",
+  "capturedAtUtc": "2026-10-19T10:34:58.591015+00:00",
+  "baseCommit": "3f62f90debbb79e8318e6ce44c5070febe750068",
+  "baseRef": "review-20261019-r2-published",
+  "branch": "codex/mobile-optics-review-r3",
+  "trackedPatch": "source-from-r2.patch",
+  "trackedScopes": [
+    "src",
+    "styles",
+    "showcase",
+    "scripts",
+    "vite.config.mjs",
+    "mobile-review.html"
+  ],
+  "untrackedSourceFiles": [
+    "mobile-review.html",
+    "scripts/async-optics-qa.cjs",
+    "scripts/fixtures/async-optics-browser.html",
+    "showcase/mobile-review/diagnostics.ts",
+    "showcase/mobile-review/main.tsx",
+    "showcase/mobile-review/review.css",
+    "src/ControlledScene.tsx",
+    "src/volume-hit-geometry.ts",
+    "work/r3-controlled-proof/README.md",
+    "work/r3-controlled-proof/backdropOptics-pre-async.ts",
+    "work/r3-controlled-proof/component.html",
+    "work/r3-controlled-proof/index.html",
+    "work/r3-controlled-proof/proof.ts"
+  ],
+  "snapshotAtomic": false,
+  "sourceAuthority": "The later frozen Git commit/tag, not this working interval capture.",
+  "finalBuildAndInstallOfArchivedCapture": "not claimed",
+  "files": [
+    {
+      "file": "new-files/mobile-review.html",
+      "bytes": 457,
+      "sha256": "603e605b105f89a0f2bd2e2a98db03f66d34606f3b6c7975dd38045576613fab"
+    },
+    {
+      "file": "new-files/scripts/async-optics-qa.cjs",
+      "bytes": 6895,
+      "sha256": "25c49e23c058e4491ba301964f707e2fe4b749e1a2d612c75b9454200d1c9c1f"
+    },
+    {
+      "file": "new-files/scripts/fixtures/async-optics-browser.html",
+      "bytes": 210,
+      "sha256": "31074685a966307c3e9432b15c92e3bba9b14615b65abb73eba9ab4393026c15"
+    },
+    {
+      "file": "new-files/showcase/mobile-review/diagnostics.ts",
+      "bytes": 3346,
+      "sha256": "b7a1d29fceb1cfe11a5d46f0cba2341146a8d69537d05aa6223fc2aedf0dd3aa"
+    },
+    {
+      "file": "new-files/showcase/mobile-review/main.tsx",
+      "bytes": 12984,
+      "sha256": "95e3b6a9495ba357893f368e1f0119b3069eb3b8be81fe76c41571bb1da4a251"
+    },
+    {
+      "file": "new-files/showcase/mobile-review/review.css",
+      "bytes": 7278,
+      "sha256": "21705c7e80810612d1d69e698133de18a891fc6511345922bf2943f2a33adff6"
+    },
+    {
+      "file": "new-files/src/ControlledScene.tsx",
+      "bytes": 5019,
+      "sha256": "7e0a31fe2e058f3b31dc68e91f60c6ce98667720a2962f2d64c78f281d5b466b"
+    },
+    {
+      "file": "new-files/src/volume-hit-geometry.ts",
+      "bytes": 4369,
+      "sha256": "43f4fd493390226993bdb84cf53941f86cd7d526c43567911f357f39c3d61a54"
+    },
+    {
+      "file": "new-files/work/r3-controlled-proof/backdropOptics-pre-async.ts",
+      "bytes": 17681,
+      "sha256": "d76cc168bbebcdf61d0f3ae13c62c68ce6435ba342e20222e01ca4fdaba16805"
+    },
+    {
+      "file": "new-files/work/r3-controlled-proof/component.html",
+      "bytes": 1699,
+      "sha256": "4689f5b8d19b184d921964f19d5b015e5690222d14ef66bd2f5da71154ceee1a"
+    },
+    {
+      "file": "new-files/work/r3-controlled-proof/index.html",
+      "bytes": 857,
+      "sha256": "0b411bc711c1b230035e4dba3eead5b74c7953bc7e3508b7573bd712862d5588"
+    },
+    {
+      "file": "new-files/work/r3-controlled-proof/proof.ts",
+      "bytes": 3927,
+      "sha256": "e4abbfb74bfa32f1a2b7cb5e2c1ccacec3dce606a6d2e6c803fce9c5e35808a7"
+    },
+    {
+      "file": "new-files/work/r3-controlled-proof/README.md",
+      "bytes": 5899,
+      "sha256": "e4ebb9879587b5ad763aba71da1708a29377969c03fa13b011be071c6d88715a"
+    },
+    {
+      "file": "source-from-r2.patch",
+      "bytes": 65839,
+      "sha256": "ea5032344d6a49fc678af92eeadac6180ffaea9e8c5cd330289956a43a91b50c"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "scope": "Fresh unrelated installed npm tarball consumer; Chromium mouse/keyboard and native DOM typography, not physical device certification",
+  "checks": [
+    "scoped CSS preserves outside host",
+    "Instrument Sans / MiSans and native Chinese",
+    "original slider keyboard",
+    "original slider mouse drag",
+    "original switch keyboard",
+    "controlled switch scene / mouse click / drag",
+    "ControlledScene installed dist and normal map",
+    "original reset action",
+    "installed package/font resource requests",
+    "original VolumeStage and new contour hit helper bundled"
+  ],
+  "fonts": {
+    "text": "清晰的中文排版。",
+    "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+    "opticalAncestor": false,
+    "latinLoaded": true,
+    "cjkLoaded": true
+  },
+  "hostBefore": {
+    "fontFamily": "serif",
+    "fontSize": "20px",
+    "color": "rgb(80, 40, 100)",
+    "insideKit": false
+  },
+  "hostAfter": {
+    "fontFamily": "serif",
+    "fontSize": "20px",
+    "color": "rgb(80, 40, 100)",
+    "insideKit": false
+  },
+  "draggedValue": 2.44625380975918,
+  "scene": {
+    "mode": "scene",
+    "ready": "true",
+    "transmission": true,
+    "hasMap": true,
+    "path": "[current nonempty C2 path]"
+  },
+  "volume": {
+    "error": null,
+    "visible": "true",
+    "growth": "1.0000",
+    "hit": true
+  },
+  "packageResources": [
+    "/node_modules/@alvenx/liquid-glass/styles/glass.css",
+    "/node_modules/.vite/deps/@alvenx_liquid-glass.js",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts.css",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts/InstrumentSans-wdth-wght.woff2",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts/misans/misans-400-cs.8ee276e30de7c0fd.11.woff2",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts/misans/misans-400-cs.b3063c48c56d5c40.4.woff2",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts/misans/misans-400-cs.1656bbfbf2b66170.3.woff2",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts/misans/misans-400-cs.e37f98eab1bffea9.1.woff2",
+    "/node_modules/@alvenx/liquid-glass/assets/fonts/misans/misans-400-cs.5dd139a4b434052f.0.woff2"
+  ],
+  "errors": []
+}

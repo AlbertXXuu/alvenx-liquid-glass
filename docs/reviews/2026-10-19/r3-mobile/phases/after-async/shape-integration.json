@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "page": "mobile-review.html",
+  "scope": "Actual R3 page in Chromium native CDP touch; not physical Safari or Combo Touch certification",
+  "results": [
+    {
+      "width": 320,
+      "holds": [
+        {
+          "name": "mother",
+          "scrollDelta": 0,
+          "deformDY": -18.279005409489358
+        },
+        {
+          "name": "neck",
+          "scrollDelta": 0,
+          "deformDY": -18.279535184284967
+        },
+        {
+          "name": "cavity",
+          "scrollDelta": 0,
+          "deformDY": -18.278808511996864
+        }
+      ],
+      "insideToOutsideScrollDelta": 0,
+      "outsideToInsideScrollDelta": 87,
+      "endsInsideShape": true,
+      "belowOverviewTextScrollDelta": 91,
+      "errors": []
+    },
+    {
+      "width": 393,
+      "holds": [
+        {
+          "name": "mother",
+          "scrollDelta": 0,
+          "deformDY": -18.26724607495022
+        },
+        {
+          "name": "neck",
+          "scrollDelta": 0,
+          "deformDY": -18.22544496448141
+        },
+        {
+          "name": "cavity",
+          "scrollDelta": 0,
+          "deformDY": -18.32417475301534
+        }
+      ],
+      "insideToOutsideScrollDelta": 0,
+      "outsideToInsideScrollDelta": 87,
+      "endsInsideShape": true,
+      "belowOverviewTextScrollDelta": 94,
+      "errors": []
+    },
+    {
+      "width": 768,
+      "holds": [
+        {
+          "name": "mother",
+          "scrollDelta": 0,
+          "deformDY": -18.108858711941117
+        },
+        {
+          "name": "neck",
+          "scrollDelta": 0,
+          "deformDY": -18.195869076989933
+        },
+        {
+          "name": "cavity",
+          "scrollDelta": 0,
+          "deformDY": -18.195943178870174
+        },
+        {
+          "name": "heading-glyph",
+          "scrollDelta": 0,
+          "deformDY": -18.119310625315205
+        }
+      ],
+      "insideToOutsideScrollDelta": 0,
+      "outsideToInsideScrollDelta": 92,
+      "endsInsideShape": true,
+      "belowOverviewTextScrollDelta": null,
+      "errors": []
+    },
+    {
+      "width": 1180,
+      "holds": [
+        {
+          "name": "mother",
+          "scrollDelta": 0,
+          "deformDY": -17.960636599268348
+        },
+        {
+          "name": "neck",
+          "scrollDelta": 0,
+          "deformDY": -17.98183909882415
+        },
+        {
+          "name": "cavity",
+          "scrollDelta": 0,
+          "deformDY": -17.95944709882301
+        },
+        {
+          "name": "heading-glyph",
+          "scrollDelta": 0,
+          "deformDY": -17.92949510341944
+        }
+      ],
+      "insideToOutsideScrollDelta": 0,
+      "outsideToInsideScrollDelta": 85,
+      "endsInsideShape": true,
+      "belowOverviewTextScrollDelta": null,
+      "errors": []
+    }
+  ],
+  "visualInspection": [
+    "r3-integrated-768-heading-held.png",
+    "r3-integrated-1180-heading-held.png"
+  ]
+}

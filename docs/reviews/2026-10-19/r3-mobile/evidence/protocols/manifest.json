@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-19",
+  "capturedAtUtc": "2026-10-19T10:24:54.565657+00:00",
+  "kind": "portable replay copies of R3 verification callbacks",
+  "runFrom": "parent directory containing the kit checkout",
+  "outputDirectory": "output/playwright/r3-protocol-replay/",
+  "originalEvidenceBundle": "mobile-r3-2026-10-19",
+  "executionBoundary": "These copies were not rerun merely to archive them. Original hashes identify the callback bytes read at archive time; recorded phase outputs remain separate historical results.",
+  "changesAllowed": "Only logging, screenshot or analysis input/output paths changed; measurement logic and local Vite URLs were preserved.",
+  "protocols": [
+    {
+      "file": "integration-pixel.cjs",
+      "originalEvidenceFile": "integration-pixel.cjs",
+      "originalSha256": "31059c90d97006ede384727831b7fe8f0124e2f16891723e5fafe4bbfc39baef",
+      "archivedSha256": "540341f9060fdbfd5c801e497b86a32d2f03d04f0f62dfb842ea329cb09f3e10",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "absolute output prefix to relative replay output directory",
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "lab-screens.cjs",
+      "originalEvidenceFile": "lab-screens.cjs",
+      "originalSha256": "28df081f1f405d87837a352d33755cc943f445ac5dcda7becfef0e59a2371810",
+      "archivedSha256": "7323c5ef37f00d4993f1b40aecec98915134627aa93d2f9c1895d911a4e09f64",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "existing relative output prefix to separate replay directory",
+          "occurrences": 3
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "shape-integration-r3.cjs",
+      "originalEvidenceFile": "shape-integration-r3.cjs",
+      "originalSha256": "58b00aa326d989f52ba11592e001216eebba3f3c0c31fae55fba236d6c0fe97d",
+      "archivedSha256": "88e74d4b7bba85463506654109622fcfb94972115d20b8a87a2e342f1dc33f30",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "absolute output prefix to relative replay output directory",
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "normal-extraction.cjs",
+      "originalEvidenceFile": "normal-extraction.cjs",
+      "originalSha256": "ba801d1481111f673afb55c86c0ace69ff049b871f94bd00a43a0953d1f7ca7d",
+      "archivedSha256": "ba801d1481111f673afb55c86c0ace69ff049b871f94bd00a43a0953d1f7ca7d",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "async-scene-functional.cjs",
+      "originalEvidenceFile": "async-scene-functional.cjs",
+      "originalSha256": "7cdc304bd279d7a70b394843104223192f66e32110238a913d222f5a76b92480",
+      "archivedSha256": "7cdc304bd279d7a70b394843104223192f66e32110238a913d222f5a76b92480",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-cold-hybrid-input.cjs",
+      "originalEvidenceFile": "r3-cold-hybrid-input.cjs",
+      "originalSha256": "1a5ffcbb7b05a0169b2cbb42f59b13e38408ffe7d96758a1323711cee74367ba",
+      "archivedSha256": "1a5ffcbb7b05a0169b2cbb42f59b13e38408ffe7d96758a1323711cee74367ba",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-cold-touch.cjs",
+      "originalEvidenceFile": "r3-cold-touch.cjs",
+      "originalSha256": "7b98abdb373297ee32fce48647137361c47d7457796d9b353eb2831a6fbdfb9a",
+      "archivedSha256": "7b98abdb373297ee32fce48647137361c47d7457796d9b353eb2831a6fbdfb9a",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-async-touch.cjs",
+      "originalEvidenceFile": "r3-async-touch.cjs",
+      "originalSha256": "3ee0d97496a41672e16fb9a87c24e7aeffb04115fa02a53483e0ee46b78fc4a0",
+      "archivedSha256": "3ee0d97496a41672e16fb9a87c24e7aeffb04115fa02a53483e0ee46b78fc4a0",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "integration-compare.py",
+      "originalEvidenceFile": "integration-compare.py",
+      "originalSha256": "613b83ef325606ef076ae542657d3fa4538c27259a0b96553fb15ccc340a2c02",
+      "archivedSha256": "57c5277c3314e4cf18a3f23886645cbbe57ed1c89208b1d9e65f99c80abf13e5",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "analysis input/output directory to the replay output directory",
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "compare-before-after.py",
+      "originalEvidenceFile": "compare-before-after.py",
+      "originalSha256": "42c7475b0241b5000661467718934c5b9c89f45e15a65f22365fb68d75ba473f",
+      "archivedSha256": "956519785135d546450eb2e488c8485fc56ddcccdaeab8451101fa36bc85346a",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "analysis input/output directory to the replay output directory",
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-hybrid-final-touch.cjs",
+      "originalEvidenceFile": "r3-hybrid-final-touch.cjs",
+      "originalSha256": "8935abf0227ed84904a890c4e87c3aba01295da27760a2036394557d55f7c3d4",
+      "archivedSha256": "8935abf0227ed84904a890c4e87c3aba01295da27760a2036394557d55f7c3d4",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-functional-inputs.cjs",
+      "originalEvidenceFile": "r3-functional-inputs.cjs",
+      "originalSha256": "4c0837213ad9257ad5f4d23cece7f7f5574323aa56581b93d526de42f0520106",
+      "archivedSha256": "4c0837213ad9257ad5f4d23cece7f7f5574323aa56581b93d526de42f0520106",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-diagnostics-cleanup.cjs",
+      "originalEvidenceFile": "r3-diagnostics-cleanup.cjs",
+      "originalSha256": "da6324526dd99a47946e5430cd6fb52c19f909b7b316966856af3133027e5b41",
+      "archivedSha256": "da6324526dd99a47946e5430cd6fb52c19f909b7b316966856af3133027e5b41",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "async-io-focused.cjs",
+      "originalEvidenceFile": "async-io-focused.cjs",
+      "originalSha256": "8ac08b9d10c330a8e3b69625d2ab36e1e7b42533cc924d20dbf0a0f45b9f585b",
+      "archivedSha256": "8ac08b9d10c330a8e3b69625d2ab36e1e7b42533cc924d20dbf0a0f45b9f585b",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "r3-mouse-encoder-sentinel.cjs",
+      "originalEvidenceFile": "r3-mouse-encoder-sentinel.cjs",
+      "originalSha256": "1780eb19619107549d2576f4329e75f0f9e7430665d4d33524763a7e29aaaa70",
+      "archivedSha256": "1780eb19619107549d2576f4329e75f0f9e7430665d4d33524763a7e29aaaa70",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "delivery-qa.cjs",
+      "originalEvidenceFile": "delivery-qa.cjs",
+      "originalSha256": "e44e594f50e2fb5ad88909bacbe3d58c77e81f558de239034cc2d83f6ab6e0cb",
+      "archivedSha256": "85f277209c699d6aa77f92876266e7b4484ad46638529accdb0dfc2844301247",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "relative output prefix to separate replay directory",
+          "occurrences": 3
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    },
+    {
+      "file": "installed-r3-consumer-smoke.cjs",
+      "originalEvidenceFile": "installed-r3-consumer-smoke.cjs",
+      "originalSha256": "cf1e2da181ba0d277856a3abe3c9003a48471e22ce8f47917f8240e6d693f344",
+      "archivedSha256": "617200ec9b227ff25d7dec2706f407f32409e614eb520e38f9489019e865f99b",
+      "portableCopy": true,
+      "outputPathOnlyChanges": [
+        {
+          "change": "absolute output prefix to separate replay directory",
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false,
+      "additionalArchiveTimeExecution": false
+    }
+  ]
+}

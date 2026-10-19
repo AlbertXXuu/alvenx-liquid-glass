@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-19",
+  "task": "Volume silhouette owns one-finger drag; outside keeps page pan",
+  "status": "scoped technical checks recorded; final R3 integration review pending",
+  "sourceFiles": [
+    "src/VolumeStage.tsx",
+    "src/volume-hit-geometry.ts"
+  ],
+  "approach": "CSS-clipped transparent HTML hit box matches the renderer camera and coverage field; touch-action pinch-zoom before contact; native capture immediately; no whole-stage scroll lock",
+  "baseline": {
+    "insideVerticalIncorrectScrollPx": [
+      182,
+      138,
+      154
+    ],
+    "evidence": "shape-before-result.txt"
+  },
+  "nativeChromium": {
+    "widths": [
+      393,
+      768,
+      1180
+    ],
+    "insideVerticalScrollDeltaPx": [
+      0,
+      0,
+      0
+    ],
+    "insideVerticalDeformationDyApprox": -18,
+    "outsideVerticalScrollPx": [
+      101,
+      115,
+      122
+    ],
+    "passed": [
+      "native clipped hit",
+      "vertical drag",
+      "horizontal drag",
+      "pointercancel",
+      "re-grab",
+      "resize cleanup",
+      "outside native page pan"
+    ],
+    "evidence": "shape-gestures-result.txt"
+  },
+  "webkit": {
+    "widths": [
+      393,
+      768,
+      1180
+    ],
+    "passed": [
+      "native CSS clip hit",
+      "outside clip exclusion",
+      "mouse diagonal drag",
+      "release settlement",
+      "zero hit-style writes during ambient-only frames"
+    ],
+    "evidence": "shape-webkit-mouse-result.txt"
+  },
+  "contour": {
+    "samplesPerSide": 129,
+    "maxDeviationLogicalPx": 0.162,
+    "desktopMedianBuildMs": 0.6,
+    "desktopP95BuildMs": 0.7,
+    "evidence": "shape-contour-cost-result.txt",
+    "scope": "Desktop microbenchmark, not physical phone CPU timing"
+  },
+  "visualInspection": [
+    "shape-393-vertical-held.png",
+    "shape-768-vertical-held.png",
+    "webkit-shape-768-diagonal-held.png"
+  ],
+  "technicalCheck": "npx tsc --noEmit -p tsconfig.json passed",
+  "limitations": [
+    "Physical Safari touch and Combo Touch remain owner device review",
+    "Budding and reduced-motion volumes remain noninteractive as before",
+    "Native foreground text and controls retain their separate semantics"
+  ],
+  "rejectedApproach": "SVG-only transparent hit path failed native pan arbitration despite computed touch-action none; final uses a real clipped HTML CSS box"
+}

@@ -1,0 +1,1234 @@
+{
+  "date": "2026-10-19",
+  "phase": "after-async implementation, before final cold/lifecycle/build validation",
+  "status": "scoped technical and visual evidence recorded; overall R3 remains draft",
+  "engineProofs": {
+    "chromium": {
+      "physicalDevice": false,
+      "normalFieldProof": {
+        "reference": "review-20261019-r2-published:src/backdropOptics.ts",
+        "scope": "Decoded RGBA of exact pre-refactor synchronous field versus current synchronous and native toBlob async PNG paths.",
+        "rows": [
+          {
+            "kind": "thumb",
+            "mode": "sync",
+            "width": 211,
+            "height": 121,
+            "channels": 102124,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "thumb",
+            "mode": "async",
+            "width": 211,
+            "height": 121,
+            "channels": 102124,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "lens",
+            "mode": "sync",
+            "width": 224,
+            "height": 141,
+            "channels": 126336,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "lens",
+            "mode": "async",
+            "width": 224,
+            "height": 141,
+            "channels": 126336,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "field",
+            "mode": "sync",
+            "width": 224,
+            "height": 48,
+            "channels": 43008,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "field",
+            "mode": "async",
+            "width": 224,
+            "height": 48,
+            "channels": 43008,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "circle",
+            "mode": "sync",
+            "width": 132,
+            "height": 132,
+            "channels": 69696,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "circle",
+            "mode": "async",
+            "width": 133,
+            "height": 132,
+            "channels": 70224,
+            "differingChannels": 0,
+            "maxDelta": 0
+          }
+        ],
+        "pass": true,
+        "diagnostics": {
+          "renders": 4,
+          "previousHits": 0,
+          "sharedHits": 0,
+          "computations": 8,
+          "encodes": 4,
+          "asyncRequests": 4,
+          "asyncEncodes": 4,
+          "asyncCacheHits": 0,
+          "asyncDropped": 0,
+          "asyncEncodeWallMs": 6.099999999627471,
+          "owners": 1,
+          "workspaceBytes": 2302780,
+          "cacheEntries": 8,
+          "cacheBytes": 288330,
+          "maxCacheEntries": 48,
+          "maxCacheBytes": 2097152,
+          "activeAsyncJobs": 0,
+          "queuedAsyncJobs": 0,
+          "maxAsyncJobs": 2
+        }
+      },
+      "sceneMotionProof": {
+        "engine": "chromium",
+        "version": "155.0.8059.84",
+        "continuousFreeLens": {
+          "mode": "scene",
+          "pending": "false",
+          "frames": 54,
+          "modes": [
+            "scene"
+          ],
+          "registrationError": 0,
+          "geometryVersions": 54
+        },
+        "endpoints": {
+          "min": {
+            "mode": "scene",
+            "left": 0,
+            "progress": "0.000000",
+            "sourceTransform": "translate(0 0)"
+          },
+          "max": {
+            "mode": "scene",
+            "left": 293,
+            "progress": "1.000000",
+            "sourceTransform": "translate(-293 0)"
+          }
+        },
+        "physicalDevice": false,
+        "pass": true
+      }
+    },
+    "webkit": {
+      "physicalDevice": false,
+      "normalFieldProof": {
+        "reference": "review-20261019-r2-published:src/backdropOptics.ts",
+        "scope": "Decoded RGBA of exact pre-refactor synchronous field versus current synchronous and native toBlob async PNG paths.",
+        "rows": [
+          {
+            "kind": "thumb",
+            "mode": "sync",
+            "width": 211,
+            "height": 121,
+            "channels": 102124,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "thumb",
+            "mode": "async",
+            "width": 211,
+            "height": 121,
+            "channels": 102124,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "lens",
+            "mode": "sync",
+            "width": 224,
+            "height": 141,
+            "channels": 126336,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "lens",
+            "mode": "async",
+            "width": 224,
+            "height": 141,
+            "channels": 126336,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "field",
+            "mode": "sync",
+            "width": 224,
+            "height": 48,
+            "channels": 43008,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "field",
+            "mode": "async",
+            "width": 224,
+            "height": 48,
+            "channels": 43008,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "circle",
+            "mode": "sync",
+            "width": 132,
+            "height": 132,
+            "channels": 69696,
+            "differingChannels": 0,
+            "maxDelta": 0
+          },
+          {
+            "kind": "circle",
+            "mode": "async",
+            "width": 133,
+            "height": 132,
+            "channels": 70224,
+            "differingChannels": 0,
+            "maxDelta": 0
+          }
+        ],
+        "pass": true,
+        "diagnostics": {
+          "renders": 4,
+          "previousHits": 0,
+          "sharedHits": 0,
+          "computations": 8,
+          "encodes": 4,
+          "asyncRequests": 4,
+          "asyncEncodes": 4,
+          "asyncCacheHits": 0,
+          "asyncDropped": 0,
+          "asyncEncodeWallMs": 15,
+          "owners": 1,
+          "workspaceBytes": 2302780,
+          "cacheEntries": 8,
+          "cacheBytes": 188442,
+          "maxCacheEntries": 48,
+          "maxCacheBytes": 2097152,
+          "activeAsyncJobs": 0,
+          "queuedAsyncJobs": 0,
+          "maxAsyncJobs": 2
+        }
+      },
+      "sceneMotionProof": {
+        "engine": "webkit",
+        "version": "26.5",
+        "continuousFreeLens": {
+          "mode": "scene",
+          "pending": "false",
+          "frames": 40,
+          "modes": [
+            "scene"
+          ],
+          "registrationError": 0,
+          "geometryVersions": 40
+        },
+        "endpoints": {
+          "min": {
+            "mode": "scene",
+            "left": 0,
+            "progress": "0.000000",
+            "sourceTransform": "translate(0 0)"
+          },
+          "max": {
+            "mode": "scene",
+            "left": 293,
+            "progress": "1.000000",
+            "sourceTransform": "translate(-293 0)"
+          }
+        },
+        "physicalDevice": false,
+        "pass": true
+      }
+    }
+  },
+  "initialAsyncContracts": {
+    "chrome": {
+      "physicalDevice": false,
+      "status": "passed",
+      "checks": [
+        {
+          "name": "isolated sync owner cleanup clears its cache",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 0",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 0",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 0",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 1",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 1",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 2",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 2",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 2",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 3",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 3",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 4",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 4",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 4",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 5",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 5",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 6",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 6",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 6",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 7",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 7",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 8",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 8",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 8",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 9",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 9",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 10",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 10",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 10",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 11",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 11",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 12",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 12",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 12",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 13",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 13",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 14",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 14",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 14",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 15",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 15",
+          "passed": true
+        },
+        {
+          "name": "async requests never call synchronous toDataURL",
+          "passed": true
+        },
+        {
+          "name": "each uncached map encodes once without duplicate field calculation",
+          "passed": true
+        },
+        {
+          "name": "shared async cache reuses exact map with fresh version",
+          "passed": true
+        },
+        {
+          "name": "superseded queued map rejects before doing pixel work",
+          "passed": true
+        },
+        {
+          "name": "destroy removes a queued map before doing pixel work",
+          "passed": true
+        },
+        {
+          "name": "cancelPending drops queued offscreen work",
+          "passed": true
+        },
+        {
+          "name": "global work stays at two active plus one latest queued map",
+          "passed": true
+        },
+        {
+          "name": "destroy guards stale results while cancelPending preserves active work",
+          "passed": true
+        },
+        {
+          "name": "latest queued frame eventually completes",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 0",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 1",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 2",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 3",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 4",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 5",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 6",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 7",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 8",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 9",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 10",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 11",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 12",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 13",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 14",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 15",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 16",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 17",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 18",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 19",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 20",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 21",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 22",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 23",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 24",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 25",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 26",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 27",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 28",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 29",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 30",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 31",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 32",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 33",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 34",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 35",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 36",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 37",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 38",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 39",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 40",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 41",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 42",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 43",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 44",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 45",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 46",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 47",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 48",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 49",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 50",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 51",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 52",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 53",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 54",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 55",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 56",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 57",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 58",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 59",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 60",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 61",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 62",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 63",
+          "passed": true
+        },
+        {
+          "name": "async LRU actually evicts old maps",
+          "passed": true
+        },
+        {
+          "name": "native null PNG failure rejects instead of hanging",
+          "passed": true
+        },
+        {
+          "name": "last-owner cleanup releases cache, buffers and queued jobs",
+          "passed": true
+        }
+      ]
+    },
+    "webkit": {
+      "physicalDevice": false,
+      "status": "passed",
+      "checks": [
+        {
+          "name": "isolated sync owner cleanup clears its cache",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 0",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 0",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 0",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 1",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 1",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 2",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 2",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 2",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 3",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 3",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 4",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 4",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 4",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 5",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 5",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 6",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 6",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 6",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 7",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 7",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 8",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 8",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 8",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 9",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 9",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 10",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 10",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 10",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 11",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 11",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 12",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 12",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 12",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 13",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 13",
+          "passed": true
+        },
+        {
+          "name": "native encoder concurrency is bounded 14",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 14",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 14",
+          "passed": true
+        },
+        {
+          "name": "async map dimensions match sync 15",
+          "passed": true
+        },
+        {
+          "name": "decoded RGBA is byte exact after shared-canvas overwrite 15",
+          "passed": true
+        },
+        {
+          "name": "async requests never call synchronous toDataURL",
+          "passed": true
+        },
+        {
+          "name": "each uncached map encodes once without duplicate field calculation",
+          "passed": true
+        },
+        {
+          "name": "shared async cache reuses exact map with fresh version",
+          "passed": true
+        },
+        {
+          "name": "superseded queued map rejects before doing pixel work",
+          "passed": true
+        },
+        {
+          "name": "destroy removes a queued map before doing pixel work",
+          "passed": true
+        },
+        {
+          "name": "cancelPending drops queued offscreen work",
+          "passed": true
+        },
+        {
+          "name": "global work stays at two active plus one latest queued map",
+          "passed": true
+        },
+        {
+          "name": "destroy guards stale results while cancelPending preserves active work",
+          "passed": true
+        },
+        {
+          "name": "latest queued frame eventually completes",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 0",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 1",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 2",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 3",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 4",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 5",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 6",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 7",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 8",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 9",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 10",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 11",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 12",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 13",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 14",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 15",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 16",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 17",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 18",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 19",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 20",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 21",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 22",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 23",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 24",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 25",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 26",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 27",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 28",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 29",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 30",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 31",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 32",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 33",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 34",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 35",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 36",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 37",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 38",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 39",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 40",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 41",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 42",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 43",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 44",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 45",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 46",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 47",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 48",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 49",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 50",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 51",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 52",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 53",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 54",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 55",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 56",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 57",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 58",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 59",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 60",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 61",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 62",
+          "passed": true
+        },
+        {
+          "name": "async LRU stays within entry and byte budgets 63",
+          "passed": true
+        },
+        {
+          "name": "async LRU actually evicts old maps",
+          "passed": true
+        },
+        {
+          "name": "native null PNG failure rejects instead of hanging",
+          "passed": true
+        },
+        {
+          "name": "last-owner cleanup releases cache, buffers and queued jobs",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "remainingValidation": [
+    "Matched final same-R3 serial cold/warm measurements.",
+    "Final offscreen queued-work cancellation and native-mode opt-out checks.",
+    "Full build, actual packed-consumer installation, frozen source identity and publication.",
+    "Physical owner review after an accessible independent URL."
+  ],
+  "limits": [
+    "Exact decoded RGBA rows compare each sampled input with the independent pre-refactor Git source; do not generalize to every possible map.",
+    "Four settled integrated screenshots were exact in their fixed source/reduced-motion states; this is not a motion-frame-rate or every-frame registration benchmark.",
+    "Desktop WebKit and Chromium are not physical Safari/Combo Touch certification."
+  ]
+}

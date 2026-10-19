@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-19",
+  "scope": "Opt-in component fixtures, not final R3 showcase visual acceptance",
+  "engines": {
+    "chrome": {
+      "engine": "155.0.8059.84",
+      "physicalDevice": false,
+      "checks": [
+        {
+          "name": "393: default does not create controlled source",
+          "passed": true
+        },
+        {
+          "name": "393: consumer SVG identifiers are unique",
+          "passed": true
+        },
+        {
+          "name": "393: slider and switch each register one source",
+          "passed": true
+        },
+        {
+          "name": "393: optical source preserves resting B placement",
+          "passed": true
+        },
+        {
+          "name": "393: original tracks remain measured without duplicate paint",
+          "passed": true
+        },
+        {
+          "name": "393: registered SVG exactly matches measured canonical track",
+          "passed": true
+        },
+        {
+          "name": "393: hybrid mouse overdrag works with live SVG source",
+          "passed": true
+        },
+        {
+          "name": "393: switch reports midpoint while held with SVG source",
+          "passed": true
+        },
+        {
+          "name": "393: live source stays ready throughout continuous drag",
+          "passed": true
+        },
+        {
+          "name": "393: no page errors",
+          "passed": true
+        },
+        {
+          "name": "1180: default does not create controlled source",
+          "passed": true
+        },
+        {
+          "name": "1180: consumer SVG identifiers are unique",
+          "passed": true
+        },
+        {
+          "name": "1180: slider and switch each register one source",
+          "passed": true
+        },
+        {
+          "name": "1180: optical source preserves resting B placement",
+          "passed": true
+        },
+        {
+          "name": "1180: original tracks remain measured without duplicate paint",
+          "passed": true
+        },
+        {
+          "name": "1180: registered SVG exactly matches measured canonical track",
+          "passed": true
+        },
+        {
+          "name": "1180: hybrid mouse overdrag works with live SVG source",
+          "passed": true
+        },
+        {
+          "name": "1180: switch reports midpoint while held with SVG source",
+          "passed": true
+        },
+        {
+          "name": "1180: live source stays ready throughout continuous drag",
+          "passed": true
+        },
+        {
+          "name": "1180: no page errors",
+          "passed": true
+        }
+      ],
+      "runs": [
+        {
+          "width": 393,
+          "canonicalTrackMatchesMeasuredDOM": true,
+          "ready": [
+            "true",
+            "true"
+          ],
+          "mode": [
+            {
+              "id": "r3-slider-thumb",
+              "mode": "scene"
+            },
+            {
+              "id": "r3-switch-thumb",
+              "mode": "scene"
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "width": 1180,
+          "canonicalTrackMatchesMeasuredDOM": true,
+          "ready": [
+            "true",
+            "true"
+          ],
+          "mode": [
+            {
+              "id": "r3-slider-thumb",
+              "mode": "scene"
+            },
+            {
+              "id": "r3-switch-thumb",
+              "mode": "scene"
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    },
+    "webkit": {
+      "engine": "26.5",
+      "physicalDevice": false,
+      "checks": [
+        {
+          "name": "393: default does not create controlled source",
+          "passed": true
+        },
+        {
+          "name": "393: consumer SVG identifiers are unique",
+          "passed": true
+        },
+        {
+          "name": "393: slider and switch each register one source",
+          "passed": true
+        },
+        {
+          "name": "393: optical source preserves resting B placement",
+          "passed": true
+        },
+        {
+          "name": "393: original tracks remain measured without duplicate paint",
+          "passed": true
+        },
+        {
+          "name": "393: registered SVG exactly matches measured canonical track",
+          "passed": true
+        },
+        {
+          "name": "393: hybrid mouse overdrag works with live SVG source",
+          "passed": true
+        },
+        {
+          "name": "393: switch reports midpoint while held with SVG source",
+          "passed": true
+        },
+        {
+          "name": "393: live source stays ready throughout continuous drag",
+          "passed": true
+        },
+        {
+          "name": "393: no page errors",
+          "passed": true
+        },
+        {
+          "name": "1180: default does not create controlled source",
+          "passed": true
+        },
+        {
+          "name": "1180: consumer SVG identifiers are unique",
+          "passed": true
+        },
+        {
+          "name": "1180: slider and switch each register one source",
+          "passed": true
+        },
+        {
+          "name": "1180: optical source preserves resting B placement",
+          "passed": true
+        },
+        {
+          "name": "1180: original tracks remain measured without duplicate paint",
+          "passed": true
+        },
+        {
+          "name": "1180: registered SVG exactly matches measured canonical track",
+          "passed": true
+        },
+        {
+          "name": "1180: hybrid mouse overdrag works with live SVG source",
+          "passed": true
+        },
+        {
+          "name": "1180: switch reports midpoint while held with SVG source",
+          "passed": true
+        },
+        {
+          "name": "1180: live source stays ready throughout continuous drag",
+          "passed": true
+        },
+        {
+          "name": "1180: no page errors",
+          "passed": true
+        }
+      ],
+      "runs": [
+        {
+          "width": 393,
+          "canonicalTrackMatchesMeasuredDOM": true,
+          "ready": [
+            "true",
+            "true"
+          ],
+          "mode": [
+            {
+              "id": "r3-slider-thumb",
+              "mode": "scene"
+            },
+            {
+              "id": "r3-switch-thumb",
+              "mode": "scene"
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "width": 1180,
+          "canonicalTrackMatchesMeasuredDOM": true,
+          "ready": [
+            "true",
+            "true"
+          ],
+          "mode": [
+            {
+              "id": "r3-slider-thumb",
+              "mode": "scene"
+            },
+            {
+              "id": "r3-switch-thumb",
+              "mode": "scene"
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    }
+  },
+  "invalidEarlierFixture": "An earlier test mounted a second unversioned ReactDOM renderer and duplicated filter ids. Its black outlines were a fixture/protocol error, not a demonstrated runtime failure. Corrected tests reuse the loaded Vite renderer and verify unique ids."
+}

@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-19",
+  "scope": "Native desktop Chrome and local Playwright WebKit; not physical iOS/Safari",
+  "source": "Explicit shared SVG scene; same rendered source pixels for base and filtered use. Not arbitrary DOM capture.",
+  "method": "Compare SVG screenshots at scale0 and28. Blur remains absent; same RG normal field as current kit. Outside control region remains pixel-identical. Change source track/text and recheck displaced output.",
+  "pass": true,
+  "results": [
+    {
+      "engine": "chromium",
+      "imageSize": [
+        780,
+        403
+      ],
+      "tests": {
+        "trackRefraction": {
+          "pixels": 22932,
+          "changedAbove2": 3899,
+          "percent": 17.002,
+          "maxChannelDelta": 99
+        },
+        "trackOutsideStable": {
+          "pixels": 103168,
+          "changedAbove2": 0,
+          "percent": 0.0,
+          "maxChannelDelta": 0
+        },
+        "trackLiveSourceUpdate": {
+          "pixels": 22932,
+          "changedAbove2": 2441,
+          "percent": 10.645,
+          "maxChannelDelta": 65
+        },
+        "trackUpdatedRefraction": {
+          "pixels": 22932,
+          "changedAbove2": 3851,
+          "percent": 16.793,
+          "maxChannelDelta": 41
+        },
+        "textRefraction": {
+          "pixels": 22815,
+          "changedAbove2": 6400,
+          "percent": 28.052,
+          "maxChannelDelta": 146
+        },
+        "textOutsideStable": {
+          "pixels": 103168,
+          "changedAbove2": 0,
+          "percent": 0.0,
+          "maxChannelDelta": 0
+        },
+        "textLiveSourceUpdate": {
+          "pixels": 22815,
+          "changedAbove2": 1345,
+          "percent": 5.895,
+          "maxChannelDelta": 146
+        },
+        "textUpdatedRefraction": {
+          "pixels": 22815,
+          "changedAbove2": 6764,
+          "percent": 29.647,
+          "maxChannelDelta": 146
+        }
+      }
+    },
+    {
+      "engine": "webkit",
+      "imageSize": [
+        780,
+        403
+      ],
+      "tests": {
+        "trackRefraction": {
+          "pixels": 22932,
+          "changedAbove2": 4076,
+          "percent": 17.774,
+          "maxChannelDelta": 99
+        },
+        "trackOutsideStable": {
+          "pixels": 103168,
+          "changedAbove2": 0,
+          "percent": 0.0,
+          "maxChannelDelta": 0
+        },
+        "trackLiveSourceUpdate": {
+          "pixels": 22932,
+          "changedAbove2": 2527,
+          "percent": 11.02,
+          "maxChannelDelta": 65
+        },
+        "trackUpdatedRefraction": {
+          "pixels": 22932,
+          "changedAbove2": 4016,
+          "percent": 17.513,
+          "maxChannelDelta": 40
+        },
+        "textRefraction": {
+          "pixels": 22815,
+          "changedAbove2": 6610,
+          "percent": 28.972,
+          "maxChannelDelta": 146
+        },
+        "textOutsideStable": {
+          "pixels": 103168,
+          "changedAbove2": 0,
+          "percent": 0.0,
+          "maxChannelDelta": 0
+        },
+        "textLiveSourceUpdate": {
+          "pixels": 22815,
+          "changedAbove2": 1496,
+          "percent": 6.557,
+          "maxChannelDelta": 146
+        },
+        "textUpdatedRefraction": {
+          "pixels": 22815,
+          "changedAbove2": 6980,
+          "percent": 30.594,
+          "maxChannelDelta": 146
+        }
+      }
+    }
+  ]
+}

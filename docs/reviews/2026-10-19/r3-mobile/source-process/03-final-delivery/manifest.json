@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-19",
+  "capturedAtUtc": "2026-10-19T10:40:20.607631+00:00",
+  "kind": "uncommitted final delivery working interval capture after heading space fix",
+  "baseRef": "review-20261019-r2-published",
+  "baseCommit": "3f62f90debbb79e8318e6ce44c5070febe750068",
+  "trackedScopes": [
+    "src",
+    "styles",
+    "showcase",
+    "scripts",
+    "vite.config.mjs",
+    "mobile-review.html",
+    "work/r3-controlled-proof"
+  ],
+  "snapshotAtomic": false,
+  "authority": "Later frozen Git commit/tag; this interval capture is not an independent build or exact atomic source assertion.",
+  "files": [
+    {
+      "file": "source-from-r2.patch",
+      "bytes": 140553,
+      "sha256": "137847d5ed39af01bec1ef8cd58543af1396923d0c8628d456ad24e38f8473e5"
+    }
+  ],
+  "newFileCaptureNote": "Files already staged are included as additions in the base-to-working-tree patch; untracked files are copied separately."
+}

@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-19",
+  "scope": "Actual R3 mobile-review.html integration; cross-SVG source use with current LiquidControl C2 map/material. No physical iOS device claim.",
+  "method": "UI Reduced motion stabilizes geometry; filter scale zero vs original, then change real Source word and Source line. Source pixels outside lens show no changes above 2/255 for each scale comparison; inspect reported maxDelta for exact-zero versus low-level raster variance. No CSS blur settings change.",
+  "pass": true,
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "155.0.8059.84",
+      "cases": [
+        {
+          "kind": "text",
+          "mode": "scene",
+          "originalScale": "26",
+          "refraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 5016,
+              "percent": 27.32,
+              "maxDelta": 73
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "updatedRefraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 6603,
+              "percent": 35.964,
+              "maxDelta": 77
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "liveSourceUpdate": {
+            "pixels": 18360,
+            "changedAbove2": 7443,
+            "percent": 40.539,
+            "maxDelta": 149
+          }
+        },
+        {
+          "kind": "track",
+          "mode": "scene",
+          "originalScale": "26",
+          "refraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 2815,
+              "percent": 15.332,
+              "maxDelta": 16
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "updatedRefraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 3497,
+              "percent": 19.047,
+              "maxDelta": 19
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "liveSourceUpdate": {
+            "pixels": 18360,
+            "changedAbove2": 4526,
+            "percent": 24.651,
+            "maxDelta": 61
+          }
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "26.5",
+      "cases": [
+        {
+          "kind": "text",
+          "mode": "scene",
+          "originalScale": "26",
+          "refraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 4340,
+              "percent": 23.638,
+              "maxDelta": 55
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "updatedRefraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 5808,
+              "percent": 31.634,
+              "maxDelta": 54
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "liveSourceUpdate": {
+            "pixels": 18360,
+            "changedAbove2": 6812,
+            "percent": 37.102,
+            "maxDelta": 149
+          }
+        },
+        {
+          "kind": "track",
+          "mode": "scene",
+          "originalScale": "26",
+          "refraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 1957,
+              "percent": 10.659,
+              "maxDelta": 16
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "updatedRefraction": {
+            "inside": {
+              "pixels": 18360,
+              "changedAbove2": 2918,
+              "percent": 15.893,
+              "maxDelta": 17
+            },
+            "outside": {
+              "pixels": 195788,
+              "changedAbove2": 0,
+              "maxDelta": 0
+            }
+          },
+          "liveSourceUpdate": {
+            "pixels": 18360,
+            "changedAbove2": 4443,
+            "percent": 24.199,
+            "maxDelta": 61
+          }
+        }
+      ]
+    }
+  ]
+}

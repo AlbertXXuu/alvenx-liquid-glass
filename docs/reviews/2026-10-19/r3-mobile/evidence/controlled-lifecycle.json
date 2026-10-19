@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-19",
+  "physicalDevice": false,
+  "fixture": "explicit shared SVG scene, component proof rather than the final lab",
+  "result": {
+    "engine": "26.5",
+    "continuousSourceUpdates": {
+      "wrapper": {
+        "ready": true,
+        "revision": 62,
+        "bounds": {
+          "x": 8,
+          "y": 8,
+          "width": 500,
+          "height": 160,
+          "top": 8,
+          "right": 508,
+          "bottom": 168,
+          "left": 8
+        }
+      },
+      "existing": {
+        "ready": true,
+        "revision": 62,
+        "bounds": {
+          "x": 8,
+          "y": 168,
+          "width": 500,
+          "height": 80,
+          "top": 168,
+          "right": 508,
+          "bottom": 248,
+          "left": 8
+        }
+      },
+      "uniqueIds": true,
+      "readyDuringContinuousUpdates": true,
+      "readyLostAfterInitial": false
+    },
+    "resizeAndNativeDOM": {
+      "width": 320,
+      "svgWidth": 320,
+      "ready": true,
+      "focused": true,
+      "value": "Native focus / 中文",
+      "sourceText": "Scene 60",
+      "sourceHasSingleLiveDefinition": true
+    },
+    "pass": true
+  }
+}

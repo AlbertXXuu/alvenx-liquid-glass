@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { LiquidControl, type ThumbGeometry } from './LiquidControl';
+import { ControlledSource, type ControlledSceneSize } from './ControlledScene';
 import type { PreviewClock } from './GlassClock';
 import { endpointGeometry } from './endpointGeometry';
 import { PARAMETER_ROWS } from './reviewSettings';
@@ -19,6 +20,26 @@ function resolveIntent(drag:ControlDrag,x:number,y:number):PointerIntent {
   return drag.intent;
 }
 type RailGeometry = {left:number;right:number;cy:number;radius:number};
+/** An explicit canonical rail source. Its original DOM track remains measurable,
+ * while both the visible track and the refracted pixels reference this one SVG.
+ * This path intentionally samples registered scene items, not arbitrary DOM. */
+function ControlledRail({container,geometry,progress,fillOpacity=1,children}:{container:RefObject<HTMLDivElement|null>;geometry:RailGeometry;progress:number;fillOpacity?:number;children:ReactNode}) {
+  const key=`ax-controlled-rail-${useId().replace(/[^a-z0-9]/gi,'')}`;
+  const {left,right,cy,radius}=geometry;
+  const paint=useCallback(({width,height}:ControlledSceneSize)=>{
+    const trackWidth=Math.max(0,right-left),trackHeight=radius*2;
+    return <>
+      <defs>
+        <linearGradient id={`${key}-track`} x1="0" y1="0" x2="1" y2="0"><stop stopColor="var(--ax-track-start,#CBD6ED)"/><stop offset="1" stopColor="var(--ax-track-end,#D3CFE8)"/></linearGradient>
+        <linearGradient id={`${key}-progress`} x1="0" y1="0" x2="1" y2="0"><stop stopColor="var(--ax-progress-start,#809FE6)"/><stop offset="1" stopColor="var(--ax-progress-end,#A092D8)"/></linearGradient>
+      </defs>
+      <rect width={width} height={height} fill="var(--ax-background,#F0F2FB)"/>
+      <rect x={left} y={cy-radius} width={trackWidth} height={trackHeight} rx={radius} fill={`url(#${key}-track)`}/>
+      <rect x={left} y={cy-radius} width={trackWidth*clamp(progress)} height={trackHeight} rx={radius} fill={`url(#${key}-progress)`} opacity={fillOpacity}/>
+    </>;
+  },[key,left,right,cy,radius,progress,fillOpacity]);
+  return <ControlledSource container={container} paint={paint}>{children}</ControlledSource>;
+}
 const restShape = (width:number,height:number):ThumbGeometry => ({hostWidth:width,hostHeight:height,width:width-12,height:height-8,centerX:width/2,centerY:height/2});
 function placement(rail:RailGeometry,shape:ThumbGeometry,progress:number,offset=0) {
   const geometry=endpointGeometry(shape.width,shape.height,rail.radius);
@@ -56,7 +77,7 @@ function useLensAnchor(hostWidth:number,hostHeight:number,progress:number,offset
   // depend only on resting host dimensions, never animated shell width/height.
   const rest=restShape(shape.hostWidth,shape.hostHeight);
   const trackInset=6+endpointGeometry(rest.width,rest.height,layout.radius).gap;
-  return {rail,track,shape,onGeometry,bounds,getPlacement,trackInset,...placement(layout,shape,progress,offset)};
+  return {rail,track,shape,onGeometry,bounds,getPlacement,trackInset,railGeometry:layout,...placement(layout,shape,progress,offset)};
 }
 function spring(s:{offset:number;velocity:number},delta:number,reduced:boolean) {
   if(reduced||Math.abs(s.offset)<.01){s.offset=0;s.velocity=0;return;}
@@ -143,8 +164,8 @@ export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommi
 
 /** Pointer input is continuous; configured steps belong only to keyboard input.
  * Deltas preserve the grab point during shell morphs. Only release uses a spring. */
-export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void};
-export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange }: GlassSliderProps) {
+export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void;controlledRefraction?:boolean};
+export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange,controlledRefraction=false }: GlassSliderProps) {
   if (![min,max,step,value].every(Number.isFinite) || min>=max || step<=0) {
     throw new RangeError('GlassSlider requires finite value/min/max, min < max, and a finite positive keyboard step.');
   }
@@ -201,10 +222,8 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
   // may choose a readable 0–6 digit decimal field without quantizing dragging.
   const precision=PARAMETER_ROWS.find(row=>row.key===id)?.precision??(Number.isFinite(customPrecision)?Math.max(0,Math.min(6,Math.trunc(customPrecision))):2);
   const progress=displayPosition.progress,display=unit==='×'?`${value.toFixed(1)}×`:`${Number(value.toFixed(3))}${unit?` ${unit}`:''}`;
-  return <div className="parameter-row">
-    <div className="parameter-label"><label htmlFor={`number-${id}`}>{label}</label><GlassNumber id={id} label={label} value={value} min={min} max={max} precision={precision} unit={unit} clock={clock} onCommit={commitNumber}/></div>
-    <div ref={anchor.rail} className="range-rail" data-progress={progress.toFixed(6)} data-overshoot={displayPosition.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
-      <div ref={anchor.track} className="range-track" style={{left:anchor.trackInset,right:anchor.trackInset}} aria-hidden="true"><span style={{width:`${progress*100}%`}}/></div>
+  const railChildren=<>
+      <div ref={anchor.track} className="range-track" style={{left:anchor.trackInset,right:anchor.trackInset,opacity:controlledRefraction?0:undefined}} aria-hidden="true"><span style={{width:`${progress*100}%`}}/></div>
       <div className="range-thumb-position" style={{left:anchor.left,top:anchor.top}}>
         <LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="range-thumb" interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl>
       </div>
@@ -240,13 +259,18 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
           const index=up?Math.floor((current-min)/step+1e-8)+count:Math.ceil((current-min)/step-1e-8)-count;
           queueValue(key==='Home'?min:key==='End'?max:Number((min+index*step).toFixed(12)));
         }} onKeyUp={()=>setPressed(false)}/>
+  </>;
+  return <div className="parameter-row">
+    <div className="parameter-label"><label htmlFor={`number-${id}`}>{label}</label><GlassNumber id={id} label={label} value={value} min={min} max={max} precision={precision} unit={unit} clock={clock} onCommit={commitNumber}/></div>
+    <div ref={anchor.rail} className="range-rail" data-progress={progress.toFixed(6)} data-overshoot={displayPosition.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
+      {controlledRefraction?<ControlledRail container={anchor.rail} geometry={anchor.railGeometry} progress={progress}>{railChildren}</ControlledRail>:railChildren}
     </div>
   </div>;
 }
 
 /** The legal value is discrete; display position and elastic overscroll are not. */
-export type GlassSwitchProps = {id:string;label:string;checked:boolean;clock:PreviewClock;onChange:(checked:boolean)=>void;disabled?:boolean};
-export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:GlassSwitchProps) {
+export type GlassSwitchProps = {id:string;label:string;checked:boolean;clock:PreviewClock;onChange:(checked:boolean)=>void;disabled?:boolean;controlledRefraction?:boolean};
+export function GlassSwitch({id,label,checked,clock,onChange,disabled=false,controlledRefraction=false}:GlassSwitchProps) {
   const [pressed,setPressed]=useState(false),[focused,setFocused]=useState(false),[display,setDisplay]=useState({position:checked?1:0,offset:0});
   const anchor=useLensAnchor(63.36,42.24,display.position,display.offset);
   const native=useRef<HTMLButtonElement>(null);
@@ -288,9 +312,12 @@ export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:Gla
     const {span}=anchor.getPlacement(),legal=clamp(d.rawProgress);d.rawProgress=legal+(d.rawProgress-legal)*d.span/span+(x-d.lastX)/span;d.span=span;d.lastX=x;d.maxDistance=Math.max(d.maxDistance,Math.abs(x-d.startX));
     const position=clamp(d.rawProgress);s.pending={position,offset:resistance((d.rawProgress-position)*span,clock.reduced)};clock.wake();
   };
+  const railChildren=<>
+    <div ref={anchor.track} className="switch-track" style={{left:anchor.trackInset,right:anchor.trackInset,opacity:controlledRefraction?0:undefined}} data-checked={checked} aria-hidden="true"><span style={{width:`${display.position*100}%`}}/></div>
+    <div className="switch-thumb-position" style={{left:anchor.left,top:anchor.top}}><LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="switch-thumb" disabled={disabled} interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl></div>
+  </>;
   return <div className="switch-control"><span>{label}{disabled&&<small> · System</small>}</span><div className="switch-body" data-position={display.position.toFixed(6)} data-overshoot={display.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
-    <div ref={anchor.rail} className="switch-visual"><div ref={anchor.track} className="switch-track" style={{left:anchor.trackInset,right:anchor.trackInset}} data-checked={checked} aria-hidden="true"><span style={{width:`${display.position*100}%`}}/></div>
-    <div className="switch-thumb-position" style={{left:anchor.left,top:anchor.top}}><LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="switch-thumb" disabled={disabled} interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl></div></div>
+    <div ref={anchor.rail} className="switch-visual">{controlledRefraction?<ControlledRail container={anchor.rail} geometry={anchor.railGeometry} progress={display.position} fillOpacity={checked?1:.78}>{railChildren}</ControlledRail>:railChildren}</div>
     <button ref={native} type="button" className="switch-native" role="switch" aria-label={label} aria-checked={checked} disabled={disabled}
       onPointerDown={e=>{
         if(e.button!==0||e.isPrimary===false||state.current.drag||disabled)return;

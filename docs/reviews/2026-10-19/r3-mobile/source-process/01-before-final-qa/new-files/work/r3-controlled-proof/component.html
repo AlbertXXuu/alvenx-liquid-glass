@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Controlled scene lifecycle contract</title></head><body><div id="app"></div><script type="module">
+import React,{useContext,useEffect,useRef,useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import {ControlledScene,ControlledSource,ControlledSceneContext} from '../../src/ControlledScene';
+const h=React.createElement,api={samples:[]};window.controlledSceneTest=api;
+function Probe({name}){const scene=useContext(ControlledSceneContext);useEffect(()=>{api[name]=scene;api.samples.push({name,ready:scene.ready,revision:scene.revision,time:performance.now()});},[scene]);return h('input',{'aria-label':name,defaultValue:'Preserved text'});}
+function App(){const[tick,setTick]=useState(0),[width,setWidth]=useState(500),rail=useRef(null);api.setWidth=setWidth;api.setTick=setTick;const paint=({width,height})=>[h('rect',{key:'bg',width,height,fill:'#EEF0FC'}),h('text',{key:'text',x:20,y:40,fill:'#4A568B'},'Scene '+tick)];return h('main',null,h(ControlledScene,{paint,style:{width,height:160}},h(Probe,{name:'wrapper'})),h('div',{ref:rail,style:{position:'relative',width,height:80}},h(ControlledSource,{container:rail,paint},h(Probe,{name:'existing'}))));}
+createRoot(document.querySelector('#app')).render(h(App));
+// Change source from the first painted frame onward. This intentionally tests
+// that source revisions cannot starve the separate initial readiness gate.
+let count=0;function update(){api.setTick?.(++count);if(count<60)requestAnimationFrame(update);else api.updatesDone=true;}requestAnimationFrame(update);
+</script></body></html>

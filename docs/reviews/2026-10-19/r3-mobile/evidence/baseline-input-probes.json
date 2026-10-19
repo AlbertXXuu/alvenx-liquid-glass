@@ -1,0 +1,525 @@
+{
+  "date": "2026-10-19",
+  "baselineRef": "review-20261019-r2",
+  "coldWarmHybrid": {
+    "chrome": {
+      "engine": "155.0.8059.84",
+      "physicalDevice": false,
+      "baselineReviewUrl": "https://alvenx.com/ui/review-20261019-r2/",
+      "method": "Fresh hybrid touch-enabled browser contexts; cold/warm trusted mouse drags. DOM mutation latency is not presented-frame latency.",
+      "hoverBeforePointerDownMs": 80,
+      "notDirectColdTouch": true,
+      "runs": [
+        {
+          "viewportWidth": 393,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.945232490266354,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 13.200000000186265,
+              "maxRafGapMs": 26.59999999999991,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.30000000074505806
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.945232490266354,
+              "valueHeld": 0.0407846621461469,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 2.7000000001862645,
+              "maxRafGapMs": 3.5,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.944639173825964,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 2.5,
+              "maxRafGapMs": 3.5,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.30000000074505806
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.944639173825964,
+              "valueHeld": 0.0423427949949561,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 3.2000000001862645,
+              "maxRafGapMs": 3.4000000000005457,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.10000000055879354
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.944640554477103,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 3,
+              "maxRafGapMs": 3.5,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.20000000018626451
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.944640554477103,
+              "valueHeld": 0.0428484373465927,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 14.099999999627471,
+              "maxRafGapMs": 6.600000000000364,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.917220282130765,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 16.299999999813735,
+              "maxRafGapMs": 23.199999999999818,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.6000000005587935
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.917220282130765,
+              "valueHeld": 0.0749952713797034,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 4.2999999998137355,
+              "maxRafGapMs": 6.699999999999818,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.918072158689392,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 15.700000000186265,
+              "maxRafGapMs": 93.30000000000018,
+              "gapsOver34Ms": 2,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.40000000037252903
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.918072158689392,
+              "valueHeld": 0.0749530123234598,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 3,
+              "maxRafGapMs": 3.5,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.917329184429589,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 12.600000000558794,
+              "maxRafGapMs": 9.899999999999636,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0.2999999998137355
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.917329184429589,
+              "valueHeld": 0.0737528988534679,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 4.2000000001862645,
+              "maxRafGapMs": 6.600000000000364,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": true,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    },
+    "webkit": {
+      "engine": "26.5",
+      "physicalDevice": false,
+      "baselineReviewUrl": "https://alvenx.com/ui/review-20261019-r2/",
+      "method": "Fresh hybrid touch-enabled browser contexts; cold/warm trusted mouse drags. DOM mutation latency is not presented-frame latency.",
+      "hoverBeforePointerDownMs": 80,
+      "notDirectColdTouch": true,
+      "runs": [
+        {
+          "viewportWidth": 393,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.943456242861247,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 28,
+              "maxRafGapMs": 25,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 14
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.943456242861247,
+              "valueHeld": 0.0430017498033492,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 9,
+              "maxRafGapMs": 17,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.942054211408411,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 10,
+              "maxRafGapMs": 21,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.942054211408411,
+              "valueHeld": 0.0848376287596936,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 8,
+              "maxRafGapMs": 79,
+              "gapsOver34Ms": 3,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 393,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.942234963460735,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 14,
+              "maxRafGapMs": 17,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.942234963460735,
+              "valueHeld": 0.0435934675988292,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 12,
+              "maxRafGapMs": 16,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 0,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.917282687149108,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 20,
+              "maxRafGapMs": 38,
+              "gapsOver34Ms": 6,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 1
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.917282687149108,
+              "valueHeld": 0.0780597212180925,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 29,
+              "maxRafGapMs": 37,
+              "gapsOver34Ms": 1,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 1,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.916569172456878,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 12,
+              "maxRafGapMs": 24,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 1
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.916569172456878,
+              "valueHeld": 0.0780132988464649,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 11,
+              "maxRafGapMs": 27,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        },
+        {
+          "viewportWidth": 1180,
+          "repeat": 2,
+          "phases": [
+            {
+              "phase": "cold",
+              "valueBefore": 0.42,
+              "valueHeld": 0.916564224558342,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 18,
+              "maxRafGapMs": 20,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            },
+            {
+              "phase": "warm",
+              "valueBefore": 0.916564224558342,
+              "valueHeld": 0.0787778929395454,
+              "selectedTextEmpty": true,
+              "pressDOMLatencyMs": 21,
+              "maxRafGapMs": 24,
+              "gapsOver34Ms": 0,
+              "longTaskApiSupported": false,
+              "longTaskCount": 0,
+              "pointerCaptureObserved": true,
+              "pointerReleaseObserved": true,
+              "maximumMeasuredFocusCallMs": 0
+            }
+          ],
+          "pageErrorCount": 0
+        }
+      ]
+    }
+  },
+  "mixedInputRecovery": {
+    "chrome": {
+      "engine": "155.0.8059.84",
+      "physicalDevice": false,
+      "checks": [
+        {
+          "name": "native touch drag release immediately permits mouse drag",
+          "passed": true
+        },
+        {
+          "name": "window blur releases ownership for next mouse drag",
+          "passed": true
+        },
+        {
+          "name": "pointercancel releases ownership for next mouse drag",
+          "passed": true
+        },
+        {
+          "name": "switch accepts mouse drag immediately after touch tap",
+          "passed": true
+        },
+        {
+          "name": "mixed input does not select text",
+          "passed": true
+        },
+        {
+          "name": "mixed input produces no page errors",
+          "passed": true
+        }
+      ],
+      "pageErrorCount": 0,
+      "limitations": [
+        "Windows engine automation does not establish physical Safari/iPad/Combo Touch behavior."
+      ]
+    },
+    "webkit": {
+      "engine": "26.5",
+      "physicalDevice": false,
+      "checks": [
+        {
+          "name": "native touch tap immediately permits mouse drag",
+          "passed": true
+        },
+        {
+          "name": "window blur releases ownership for next mouse drag",
+          "passed": true
+        },
+        {
+          "name": "pointercancel releases ownership for next mouse drag",
+          "passed": true
+        },
+        {
+          "name": "switch accepts mouse drag immediately after touch tap",
+          "passed": true
+        },
+        {
+          "name": "mixed input does not select text",
+          "passed": true
+        },
+        {
+          "name": "mixed input produces no page errors",
+          "passed": true
+        }
+      ],
+      "pageErrorCount": 0,
+      "limitations": [
+        "Windows engine automation does not establish physical Safari/iPad/Combo Touch behavior.",
+        "WebKit public Playwright API offers touch tap, not continuous native touch drag; touch-drag-to-mouse is not certified here."
+      ]
+    }
+  },
+  "measurementLimits": [
+    "Cold/warm probe included 80ms hover; it is not a direct touch first-activation measurement.",
+    "The two engine batches partially overlapped; do not use as a controlled performance-improvement comparison.",
+    "Pressure DOM mutation latency is not presented-frame latency.",
+    "WebKit mixed recovery used touch tap then mouse; native continuous WebKit touch drag was not available through this API.",
+    "No physical iPhone/iPad/Combo Touch certification or stable FPS claim."
+  ],
+  "resultScope": "The 24 baseline mouse gestures worked; a consistent first-activation hardware stall was not reproduced. This does not establish that the owner device issue is fixed."
+}

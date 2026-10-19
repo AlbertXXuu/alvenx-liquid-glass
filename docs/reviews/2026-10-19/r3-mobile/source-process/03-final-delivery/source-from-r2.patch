@@ -1,0 +1,1765 @@
+diff --git a/mobile-review.html b/mobile-review.html
+new file mode 100644
+index 0000000..9c885cf
+--- /dev/null
++++ b/mobile-review.html
+@@ -0,0 +1 @@
++<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="robots" content="noindex,nofollow"/><meta name="theme-color" content="#F0F2FB"/><link rel="icon" href="./assets/brand/alvenx-monogram.svg"/><title>AlvenX — R3 Touch &amp; Refraction Review</title></head><body><div id="root"></div><script type="module" src="/showcase/mobile-review/main.tsx"></script></body></html>
+diff --git a/scripts/async-optics-qa.cjs b/scripts/async-optics-qa.cjs
+new file mode 100644
+index 0000000..df46cc1
+--- /dev/null
++++ b/scripts/async-optics-qa.cjs
+@@ -0,0 +1,82 @@
++// Playwright CLI callback; real Canvas/PNG decoders exercise the optional
++// asynchronous path. Not a physical iOS/Safari or presented-frame benchmark.
++async page=>{
++ const browser=page.context().browser(),context=await browser.newContext(),p=await context.newPage();
++ try{
++  await p.goto('http://127.0.0.1:5174/scripts/fixtures/async-optics-browser.html');
++  return await p.evaluate(async()=>{
++   const {createBackdropOptics,getBackdropOpticsDiagnostics:stats}=await import('/src/backdropOptics.ts');
++   const {contourShape,shellPath}=await import('/src/geometry.ts');
++   const checks=[],assert=(ok,name,detail)=>{checks.push({name,passed:!!ok,detail});if(!ok)throw Error(name+': '+JSON.stringify(detail));};
++   const decode=href=>new Promise((resolve,reject)=>{const image=new Image();image.onerror=reject;image.onload=()=>{const c=document.createElement('canvas');c.width=image.naturalWidth;c.height=image.naturalHeight;const ctx=c.getContext('2d');ctx.drawImage(image,0,0);resolve({width:c.width,height:c.height,pixels:Array.from(ctx.getImageData(0,0,c.width,c.height).data)});};image.src=href;});
++   const inputs=Array.from({length:16},(_,i)=>{
++    const w=56+i*8.37,h=30+(i%5)*9.23,zoom=3+(i%3)*1.5;
++    const shape={...contourShape(w-12,h-8,2.4),x:w/2+(i%3-1)*.371,y:h/2+(i%5-2)*.217};
++    return {path:shellPath(shape),width:w*zoom,height:h*zoom,camera:{x:w/2,y:h/2+8/zoom,zoom},light:{x:-43+i*2.1,y:-92,z:620},channels:i%2?'rg':'rgb',version:i};
++   });
++   const sync=createBackdropOptics(),expected=[];
++   for(const input of inputs)expected.push(await decode(sync.render(input).href));
++   sync.destroy();assert(stats().cacheEntries===0,'isolated sync owner cleanup clears its cache');
++   let syncEncodes=0;const originalURL=HTMLCanvasElement.prototype.toDataURL;
++   HTMLCanvasElement.prototype.toDataURL=function(...args){syncEncodes++;return originalURL.apply(this,args);};
++   const a=createBackdropOptics(),b=createBackdropOptics(),before=stats();
++   try{
++    for(let i=0;i<inputs.length;i+=2){
++     // Both fields overwrite the one shared map canvas before native encoder
++     // callbacks resolve. This detects cross-request bitmap corruption.
++     const pending=[a.renderAsync(inputs[i]),b.renderAsync(inputs[i+1])];
++     assert(stats().activeAsyncJobs<=2,'native encoder concurrency is bounded '+i);
++     const result=await Promise.all(pending);
++     for(let j=0;j<2;j++){
++      const actual=await decode(result[j].href),e=expected[i+j];
++      assert(actual.width===e.width&&actual.height===e.height,'async map dimensions match sync '+(i+j));
++      assert(actual.pixels.length===e.pixels.length&&actual.pixels.every((v,k)=>v===e.pixels[k]),'decoded RGBA is byte exact after shared-canvas overwrite '+(i+j));
++     }
++    }
++    assert(syncEncodes===0,'async requests never call synchronous toDataURL',syncEncodes);
++    assert(stats().asyncEncodes-before.asyncEncodes===inputs.length,'each uncached map encodes once without duplicate field calculation');
++    const count=stats().computations,hit=await a.renderAsync({...inputs[inputs.length-1],version:999});
++    assert(hit.version===999&&hit.computeMs===0&&stats().computations===count,'shared async cache reuses exact map with fresh version');
++   }finally{a.destroy();b.destroy();HTMLCanvasElement.prototype.toDataURL=originalURL;}
++
++   // Hold real native encoder callbacks to test a saturated queue deterministically.
++   const originalBlob=HTMLCanvasElement.prototype.toBlob,held=[];
++   HTMLCanvasElement.prototype.toBlob=function(callback,...args){return originalBlob.call(this,blob=>held.push(()=>callback(blob)),...args);};
++   const one=createBackdropOptics(),two=createBackdropOptics(),latest=createBackdropOptics(),cancelled=createBackdropOptics();
++   const wait=async condition=>{const start=performance.now();while(!condition()){if(performance.now()-start>5000)throw Error('native encoding did not finish');await new Promise(r=>setTimeout(r,1));}};
++   const settled=promise=>promise.then(value=>({status:'fulfilled',value}),error=>({status:'rejected',name:error.name}));
++   try{
++    const first=settled(one.renderAsync({...inputs[0],version:101})),second=settled(two.renderAsync({...inputs[1],version:102}));
++    const old=settled(latest.renderAsync({...inputs[2],version:103}));let newest=settled(latest.renderAsync({...inputs[3],version:104}));
++    const abandoned=settled(cancelled.renderAsync({...inputs[4],version:105}));cancelled.destroy();
++    assert((await old).name==='AbortError','superseded queued map rejects before doing pixel work');
++    assert((await abandoned).name==='AbortError','destroy removes a queued map before doing pixel work');
++    latest.cancelPending();assert((await newest).name==='AbortError','cancelPending drops queued offscreen work');
++    newest=settled(latest.renderAsync({...inputs[3],version:106}));two.cancelPending();
++    assert(stats().activeAsyncJobs===2&&stats().queuedAsyncJobs===1,'global work stays at two active plus one latest queued map',stats());
++    await wait(()=>held.length===2);one.destroy();held.splice(0).forEach(f=>f());
++    const firstResult=await first,secondResult=await second;
++    assert(firstResult.name==='AbortError'&&secondResult.status==='fulfilled','destroy guards stale results while cancelPending preserves active work');
++    await wait(()=>held.length===1);held.splice(0).forEach(f=>f());
++    const final=await newest;assert(final.status==='fulfilled'&&final.value.version===106,'latest queued frame eventually completes');
++   }finally{one.destroy();two.destroy();latest.destroy();cancelled.destroy();HTMLCanvasElement.prototype.toBlob=originalBlob;}
++   const pressure=createBackdropOptics();
++   try{
++    for(let i=0;i<64;i++){
++     await pressure.renderAsync({...inputs[7],camera:{...inputs[7].camera,x:inputs[7].camera.x+i*.1237},version:200+i});
++     const current=stats();assert(current.cacheEntries<=current.maxCacheEntries&&current.cacheBytes<=current.maxCacheBytes,'async LRU stays within entry and byte budgets '+i);
++    }
++    assert(stats().cacheEntries<64,'async LRU actually evicts old maps');
++   }finally{pressure.destroy();}
++   HTMLCanvasElement.prototype.toBlob=function(callback){queueMicrotask(()=>callback(null));};
++   const failing=createBackdropOptics();
++   try{
++    const failed=await settled(failing.renderAsync({...inputs[0],version:400}));
++    assert(failed.status==='rejected','native null PNG failure rejects instead of hanging');
++   }finally{failing.destroy();HTMLCanvasElement.prototype.toBlob=originalBlob;}
++   await new Promise(r=>setTimeout(r,0));
++   const released=stats();assert(released.owners===0&&released.cacheEntries===0&&released.cacheBytes===0&&released.workspaceBytes===0&&released.queuedAsyncJobs===0&&released.activeAsyncJobs===0,'last-owner cleanup releases cache, buffers and queued jobs',released);
++   return {physicalDevice:false,status:'passed',checks,released};
++  });
++ }finally{await context.close();}
++}
+diff --git a/scripts/copy-showcase-docs.mjs b/scripts/copy-showcase-docs.mjs
+index d620ed0..643f51e 100644
+--- a/scripts/copy-showcase-docs.mjs
++++ b/scripts/copy-showcase-docs.mjs
+@@ -1,7 +1,10 @@
+-import { mkdir, readdir, copyFile, readFile, writeFile } from 'node:fs/promises';
++import { mkdir, readdir, copyFile, readFile, writeFile, cp } from 'node:fs/promises';
+ await mkdir('site-dist/docs', { recursive: true });
+ for (const file of await readdir('docs')) if (file.endsWith('.md')) await copyFile(`docs/${file}`, `site-dist/docs/${file}`);
+ await copyFile('docs/hover-comparison.html', 'site-dist/docs/hover-comparison.html');
++// Reviewed records are public/sanitized. Do not copy local docs/validation,
++// which can contain machine-specific install paths and unreviewed raw logs.
++for(const directory of ['reviews','baseline'])await cp(`docs/${directory}`,`site-dist/docs/${directory}`,{recursive:true});
+ // Font agreements travel with every hosted build, not just the source package.
+ await mkdir('site-dist/licenses', { recursive: true });
+ await copyFile('LICENSE-NOTICE.md', 'site-dist/licenses/LICENSE-NOTICE.md');
+diff --git a/scripts/fixtures/async-optics-browser.html b/scripts/fixtures/async-optics-browser.html
+new file mode 100644
+index 0000000..afa5eed
+--- /dev/null
++++ b/scripts/fixtures/async-optics-browser.html
+@@ -0,0 +1,2 @@
++<!doctype html>
++<html lang="en"><head><meta charset="utf-8"><title>Isolated normal-map serialization check</title></head><body><p>Browser-only verification fixture; no application is mounted.</p></body></html>
+diff --git a/scripts/pack-kit.mjs b/scripts/pack-kit.mjs
+index a1a74dd..430665d 100644
+--- a/scripts/pack-kit.mjs
++++ b/scripts/pack-kit.mjs
+@@ -8,8 +8,8 @@ import path from 'node:path';
+ const root = process.cwd(), release = path.join(root, 'releases');
+ const pkg = JSON.parse(await readFile('package.json', 'utf8'));
+ await mkdir(release, { recursive: true });
+-const roots = ['src','styles','assets','docs','showcase','scripts','dist','public'];
+-const files = ['package.json','package-lock.json','tsconfig.json','tsconfig.lib.json','vite.config.mjs','vite.lib.config.mjs','index.html','tokens.json','README.md','SKILL.md','TODO.md','LICENSE-NOTICE.md','.gitignore','.gitattributes','.github/workflows/verify.yml'];
++const roots = ['src','styles','assets','docs','showcase','scripts','dist','public','work'];
++const files = ['package.json','package-lock.json','tsconfig.json','tsconfig.lib.json','vite.config.mjs','vite.lib.config.mjs','index.html','mobile-review.html','tokens.json','README.md','SKILL.md','TODO.md','LICENSE-NOTICE.md','.gitignore','.gitattributes','.github/workflows/verify.yml'];
+ async function walk(dir) {
+   for (const item of await readdir(dir, { withFileTypes: true })) {
+     const name = `${dir}/${item.name}`;
+diff --git a/scripts/smoke-install.mjs b/scripts/smoke-install.mjs
+index a7e693c..3216e89 100644
+--- a/scripts/smoke-install.mjs
++++ b/scripts/smoke-install.mjs
+@@ -18,13 +18,13 @@ await writeFile(path.join(consumer,'tsconfig.json'),JSON.stringify({compilerOpti
+ const readmeExample=(await readFile('README.md','utf8')).match(/```tsx\r?\n([\s\S]*?)```/);
+ if(!readmeExample)throw new Error('README React example is missing.');
+ await writeFile(path.join(consumer,'README-example.tsx'),readmeExample[1]);
+-await writeFile(path.join(consumer,'index.html'),'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Installed AlvenX consumer</title><div id="root"></div><script type="module" src="/main.tsx"></script></html>');
++await writeFile(path.join(consumer,'index.html'),'<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:,"><title>Installed AlvenX consumer</title><style>.alvenx-design .scene-lens{position:absolute;left:24px;top:30px;width:180px;height:70px}</style><div id="root"></div><script type="module" src="/main.tsx"></script></html>');
+ await writeFile(path.join(consumer,'main.tsx'),`import { StrictMode, useState } from 'react';
+ import { createRoot } from 'react-dom/client';
+-import { LiquidControl, GlassSlider, GlassSwitch, VolumeStage, useGlassSettings } from '@alvenx/liquid-glass';
++import { ControlledScene, LiquidControl, GlassSlider, GlassSwitch, VolumeStage, useGlassSettings } from '@alvenx/liquid-glass';
+ import '@alvenx/liquid-glass/styles.css';
+ import '@alvenx/liquid-glass/fonts.css';
+-function App(){const {clock,settings,updateSettings,reset}=useGlassSettings({storageKey:'fresh-consumer'});const [on,setOn]=useState(true);return <><button id="outside" style={{fontFamily:'serif',fontSize:20,color:'rgb(80, 40, 100)'}}>Host page</button><main className="alvenx-design" style={{padding:32,maxWidth:900}}><h1>Installed, independent.</h1><p lang="zh-CN">清晰的中文排版。</p><GlassSlider id="interactionStrength" label="Interaction strength" value={settings.interactionStrength} min={0} max={4} step={.1} clock={clock} onChange={interactionStrength=>updateSettings({interactionStrength})}/><GlassSwitch id="consumer-switch" label="Consumer switch" checked={on} onChange={setOn} clock={clock}/><LiquidControl id="consumer-reset" className="reset" clock={clock} onClick={reset}>Reset defaults</LiquidControl><VolumeStage clock={clock} settings={settings}><h1>Room to grow.</h1></VolumeStage></main></>};createRoot(document.getElementById('root')!).render(<StrictMode><App/></StrictMode>);`);
++function App(){const {clock,settings,updateSettings,reset}=useGlassSettings({storageKey:'fresh-consumer'});const [on,setOn]=useState(true);return <><button id="outside" style={{fontFamily:'serif',fontSize:20,color:'rgb(80, 40, 100)'}}>Host page</button><main className="alvenx-design" style={{padding:32,maxWidth:900}}><h1>Installed, independent.</h1><p lang="zh-CN">清晰的中文排版。</p><GlassSlider id="interactionStrength" label="Interaction strength" value={settings.interactionStrength} min={0} max={4} step={.1} clock={clock} onChange={interactionStrength=>updateSettings({interactionStrength})}/><GlassSwitch id="consumer-switch" label="Consumer switch" checked={on} onChange={setOn} clock={clock}/><LiquidControl id="consumer-reset" className="reset" clock={clock} onClick={reset}>Reset defaults</LiquidControl><ControlledScene className="consumer-scene" style={{position:'relative',height:130}} paint={({width,height})=><><rect width={width} height={height} fill="#DCE2FA"/><path d="M0 65H1000" stroke="#8C8BD3" strokeWidth="14"/></>}><LiquidControl id="consumer-scene-lens" clock={clock} className="scene-lens"><span>Shared scene</span></LiquidControl></ControlledScene><GlassSwitch id="consumer-scene-switch" label="Registered track" checked={on} onChange={setOn} clock={clock} controlledRefraction/><VolumeStage clock={clock} settings={settings}><h1>Room to grow.</h1></VolumeStage></main></>};createRoot(document.getElementById('root')!).render(<StrictMode><App/></StrictMode>);`);
+ const log=[];
+ for(const args of [['install','--ignore-scripts','--no-audit','--no-fund'],['run','check'],['run','build']]){
+   const run=spawnSync(process.execPath,[process.env.npm_execpath,...args],{cwd:consumer,encoding:'utf8'});log.push({command:['npm',...args].join(' '),exitCode:run.status,output:run.stdout+run.stderr});
+diff --git a/showcase/mobile-review/diagnostics.ts b/showcase/mobile-review/diagnostics.ts
+new file mode 100644
+index 0000000..fab19f6
+--- /dev/null
++++ b/showcase/mobile-review/diagnostics.ts
+@@ -0,0 +1,29 @@
++export type InputRecord={event:string;time:number;pointer?:string;pointerId?:number;button?:number;buttons?:number;target:string;capture?:boolean;nextFrameMs?:number;secondFrameMs?:number;moves?:number;firstMoveMs?:number;lastX?:number;lastY?:number};
++/** Local-only bounded trace. RAF timing is scheduling evidence, not paint latency. */
++export function observeDeviceInput(){
++ const records:InputRecord[]=[],frames=new Set<number>(),active=new Map<string,InputRecord>();
++ const append=(item:InputRecord)=>{records.push(item);if(records.length>80)records.shift();};
++ const record=(event:Event)=>{
++  const target=event.target instanceof Element?event.target:null;
++  if(!target?.closest('.lab'))return;
++  const pointer=event instanceof PointerEvent?event:undefined,mouse=event instanceof MouseEvent?event:undefined;
++  const key=pointer?`pointer:${pointer.pointerId}`:'mouse';
++  if(event.type==='pointermove'||event.type==='mousemove'){
++   const start=active.get(key);if(!start||!mouse)return;
++   start.moves=(start.moves||0)+1;start.firstMoveMs??=performance.now()-start.time;
++   start.lastX=mouse.clientX;start.lastY=mouse.clientY;start.buttons=mouse.buttons;return;
++  }
++  const item:InputRecord={event:event.type,time:performance.now(),pointer:pointer?.pointerType,pointerId:pointer?.pointerId,button:mouse?.button,buttons:mouse?.buttons,target:target.closest('[aria-label]')?.getAttribute('aria-label')||target.closest('[data-local-glass]')?.getAttribute('data-local-glass')||target.tagName};
++  if(pointer)item.capture=target.hasPointerCapture(pointer.pointerId);
++  append(item);
++  if(event.type==='pointerdown'||event.type==='mousedown'){
++   item.moves=0;active.set(key,item);
++   let first=0,second=0;first=requestAnimationFrame(()=>{frames.delete(first);item.nextFrameMs=performance.now()-item.time;second=requestAnimationFrame(()=>{frames.delete(second);item.secondFrameMs=performance.now()-item.time;});frames.add(second);});frames.add(first);
++  }else if(event.type==='pointerup'||event.type==='pointercancel'||event.type==='mouseup')active.delete(key);
++ };
++ const stop=(event:Event)=>{if(records.length)append({event:event.type,time:performance.now(),target:event.type==='visibilitychange'?document.visibilityState:'window'});active.clear();};
++ const names=['pointerdown','pointermove','pointerup','pointercancel','gotpointercapture','lostpointercapture','mousedown','mousemove','mouseup'];
++ for(const name of names)document.addEventListener(name,record,{capture:true,passive:true});
++ window.addEventListener('blur',stop);document.addEventListener('visibilitychange',stop);
++ return{snapshot:()=>({userAgent:navigator.userAgent,dpr:devicePixelRatio,coarse:matchMedia('(pointer:coarse)').matches,hover:matchMedia('(any-hover:hover)').matches,records:records.map(x=>({...x,time:+x.time.toFixed(2),firstMoveMs:x.firstMoveMs===undefined?undefined:+x.firstMoveMs.toFixed(2),nextFrameMs:x.nextFrameMs===undefined?undefined:+x.nextFrameMs.toFixed(2),secondFrameMs:x.secondFrameMs===undefined?undefined:+x.secondFrameMs.toFixed(2)}))}),clear:()=>{records.length=0;active.clear();},destroy:()=>{for(const name of names)document.removeEventListener(name,record,true);window.removeEventListener('blur',stop);document.removeEventListener('visibilitychange',stop);for(const frame of frames)cancelAnimationFrame(frame);frames.clear();active.clear();}};
++}
+diff --git a/showcase/mobile-review/main.tsx b/showcase/mobile-review/main.tsx
+new file mode 100644
+index 0000000..e15099b
+--- /dev/null
++++ b/showcase/mobile-review/main.tsx
+@@ -0,0 +1,74 @@
++import { StrictMode, useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type PointerEvent } from 'react';
++import {createRoot} from 'react-dom/client';
++import {ControlledScene,GlassSlider,GlassSwitch,LiquidControl,PARAMETER_ROWS,VolumeStage,useGlassSettings,type ControlledSceneSize,type VolumeStageHandle} from '../../src';
++import {observeDeviceInput} from './diagnostics';
++import '../../styles/glass.css';
++import '../../assets/fonts.css';
++import './review.css';
++import wordmark from '../../assets/brand/alvenx-wordmark.svg';
++
++const REPO='https://github.com/AlbertXXuu/alvenx-liquid-glass';
++const Arrow=()=> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18V6m-5 5 5-5 5 5"/></svg>;
++
++function MobileReview(){
++ const controller=useGlassSettings({storageKey:'alvenx-mobile-review-r3-20261019'}),{clock,settings,updateSettings,reduced,systemReduced}=controller;
++ const stage=useRef<VolumeStageHandle>(null),[playing,setPlaying]=useState(false);
++ const [position,setPosition]=useState({x:.32,y:.31}),pending=useRef<typeof position|null>(null),lastPosition=useRef(position);lastPosition.current=position;
++ const [lensHeld,setLensHeld]=useState(false),[lensFocus,setLensFocus]=useState(false),lens=useRef<HTMLDivElement>(null);
++ const drag=useRef<null|{id:number;startX:number;startY:number;x:number;y:number;width:number;height:number;lensWidth:number;lensHeight:number}>(null);
++ const [sourceText,setSourceText]=useState('Clarity'),[sample,setSample]=useState(.42),[on,setOn]=useState(true),[message,setMessage]=useState(''),[feedback,setFeedback]=useState('');
++ const [parameters,setParameters]=useState(false),[deviceOpen,setDeviceOpen]=useState(false),[deviceText,setDeviceText]=useState(''),[copyStatus,setCopyStatus]=useState('');
++ const trace=useRef<ReturnType<typeof observeDeviceInput>|null>(null);
++ const uid=useId().replace(/[^a-z0-9]/gi,'');
++ useEffect(()=>{const observer=observeDeviceInput();trace.current=observer;return()=>{observer.destroy();trace.current=null;};},[]);
++ useLayoutEffect(()=>clock.subscribe(()=>{if(!pending.current)return false;setPosition(pending.current);pending.current=null;return false;}),[clock]);
++ const release=()=>{const id=drag.current?.id;drag.current=null;setLensHeld(false);if(id!==undefined&&lens.current?.hasPointerCapture(id))lens.current.releasePointerCapture(id);};
++ useEffect(()=>{const stop=()=>release();window.addEventListener('blur',stop);window.addEventListener('resize',stop);return()=>{window.removeEventListener('blur',stop);window.removeEventListener('resize',stop);};},[]);
++ const moveLens=(event:PointerEvent<HTMLDivElement>)=>{const d=drag.current;if(!d||event.pointerId!==d.id)return;pending.current={x:Math.max(d.lensWidth/2,Math.min(d.width-d.lensWidth/2,d.x*d.width+event.clientX-d.startX))/d.width,y:Math.max(d.lensHeight/2,Math.min(d.height-d.lensHeight/2,d.y*d.height+event.clientY-d.startY))/d.height};clock.wake();};
++ const paint=useCallback(({width,height}:ControlledSceneSize)=>{
++  const small=width<450;
++  return <>
++   <defs><linearGradient id={`${uid}-board`} x2="1" y2="1"><stop stopColor="#CDDEFF"/><stop offset=".52" stopColor="#E1E8FC"/><stop offset="1" stopColor="#DCCCF5"/></linearGradient><pattern id={`${uid}-grid`} width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7F8DBB" strokeWidth=".65" opacity=".33"/></pattern><linearGradient id={`${uid}-stripe`}><stop stopColor="#658CE4"/><stop offset="1" stopColor="#A28ADC"/></linearGradient></defs>
++   <rect width={width} height={height} fill={`url(#${uid}-board)`}/><rect width={width} height={height} fill={`url(#${uid}-grid)`}/>
++   <text x={width*.085} y={height*.31} fill="#425990" fontSize={small?40:60} fontWeight="600" letterSpacing="-2" style={{pointerEvents:'auto',userSelect:'text'}}>{sourceText.slice(0,18)}</text>
++   <text x={width*.085} y={height*.47} fill="#7865AE" fontFamily="MiSans,sans-serif" fontSize={small?25:32} fontWeight="500" style={{pointerEvents:'auto',userSelect:'text'}}>光与形</text>
++   <text x={width*.085} y={height*.61} fill="#596C92" fontSize={small?15:19}>A clear view. A living edge.</text>
++   <rect x={width*.085} y={height*.76} width={width*.83} height="15" rx="7.5" fill="#BFC7E2"/><rect x={width*.085} y={height*.76} width={width*.83*sample} height="15" rx="7.5" fill={`url(#${uid}-stripe)`}/>
++  </>;
++ },[sourceText,sample,uid]);
++ const fieldPaint=useCallback(({width,height}:ControlledSceneSize)=><><defs><linearGradient id={`${uid}-field`} x2="1" y2="1"><stop stopColor="#CDDEFC"/><stop offset="1" stopColor="#D9CEF1"/></linearGradient><pattern id={`${uid}-field-grid`} width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#8995BE" strokeWidth=".7" opacity=".35"/></pattern></defs><rect width={width} height={height} fill={`url(#${uid}-field)`}/><rect width={width} height={height} fill={`url(#${uid}-field-grid)`}/></>,[uid]);
++ const showDevice=()=>{setDeviceText(JSON.stringify(trace.current?.snapshot(),null,2));setDeviceOpen(true);setCopyStatus('');};
++ return <div className="alvenx-design lab">
++  <header className="lab-header"><img src={wordmark} alt="AlvenX" width="150"/><span>R3 / MOBILE REVIEW</span><a href={`${REPO}/tree/review-20261019-r3`} target="_blank" rel="noreferrer">Source ↗</a></header>
++  <main>
++   <section className="lab-intro"><p className="eyebrow">TOUCH · TRACKPAD · REFRACTION</p><h1>Glass that follows<br/>your hand.</h1><p>Touch the form to shape it. Swipe the surrounding space to scroll. Explore live refraction with your finger or trackpad.</p><a href="https://alvenx.com/ui/review-20261019-r2/">Compare the previous review ↗</a></section>
++   <section id="volume" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">01 / A CONTINUOUS FORM</p><h2>Hold the form.<br className="phone-break"/> Move in any direction.</h2></div><LiquidControl id="r3-replay" clock={clock} className="lab-replay" disabled={playing||reduced} onClick={()=>stage.current?.replay()}>{playing?'Budding…':'Replay slow budding'} ↗</LiquidControl></div>
++    <VolumeStage ref={stage} clock={clock} settings={settings} responsive studioMotion onPlayingChange={setPlaying} ariaLabel="Touch the pearl form; swipe its surrounding background to scroll"><p className="eyebrow">YOUR SPACE</p><h3>A little room<br/>{' '}to grow.</h3><p className="volume-caption">Mother. Connection. Possibility.</p></VolumeStage>
++    <div className="lab-volume-footer"><p>On the pearl: pull, hold, release.<br/>Outside the pearl: scroll freely.</p><div className="lab-switches"><GlassSwitch id="r3-ambient" label="Background motion" checked={settings.ambient} clock={clock} controlledRefraction onChange={ambient=>updateSettings({ambient})}/><GlassSwitch id="r3-reduced" label="Reduced motion" checked={reduced} disabled={systemReduced} clock={clock} controlledRefraction onChange={reducedMotion=>updateSettings({reducedMotion})}/></div></div>
++   </section>
++   <section id="refraction" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">02 / LOOK THROUGH IT</p><h2>A source. A lens.<br/>Real displacement.</h2></div><p className="section-copy">Drag the lens over the letters or the line. The scene is shared by the background and the glass.</p></div>
++    <div className="lab-study-grid"><ControlledScene className="lab-optical-scene" paint={paint}>
++     <div ref={lens} className="lab-moving-lens" style={{left:`${position.x*100}%`,top:`${position.y*100}%`}}
++      onPointerDown={e=>{if(e.button!==0||e.isPrimary===false||drag.current||!(e.target as Element).closest('.glass-hit'))return;e.preventDefault();const rect=e.currentTarget.parentElement!.getBoundingClientRect(),box=e.currentTarget.getBoundingClientRect();drag.current={id:e.pointerId,startX:e.clientX,startY:e.clientY,...lastPosition.current,width:rect.width,height:rect.height,lensWidth:box.width,lensHeight:box.height};e.currentTarget.setPointerCapture(e.pointerId);setLensHeld(true);}}
++      onPointerMove={moveLens} onPointerUp={e=>{if(drag.current?.id===e.pointerId){moveLens(e);release();}}} onPointerCancel={e=>{if(drag.current?.id===e.pointerId)release();}} onLostPointerCapture={e=>{if(e.target===e.currentTarget&&drag.current?.id===e.pointerId)release();}}
++      onFocus={()=>setLensFocus(true)} onBlur={()=>{setLensFocus(false);release();}}
++      onKeyDown={e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(e.key))return;e.preventDefault();pending.current=null;setPosition(p=>e.key==='Home'?{x:.32,y:.31}:{x:Math.max(.25,Math.min(.75,p.x+(e.key==='ArrowLeft'?-.025:e.key==='ArrowRight'?.025:0))),y:Math.max(.2,Math.min(.8,p.y+(e.key==='ArrowUp'?-.025:e.key==='ArrowDown'?.025:0)))});}}>
++      <LiquidControl id="r3-free-lens" clock={clock} className="lab-lens-glass" label="Drag the refractive lens, or use arrow keys" interaction={{pressed:lensHeld,focused:lensFocus,position:`${position.x}:${position.y}`}}>{null}</LiquidControl>
++     </div>
++    </ControlledScene><div className="lab-controls">
++     <GlassSlider id="r3-sample" label="Source line" value={sample} min={0} max={1} step={.01} clock={clock} controlledRefraction onChange={setSample}/>
++     <GlassSwitch id="r3-continuous" label="Continuous switch" checked={on} clock={clock} controlledRefraction onChange={setOn}/>
++     <p className="specimen-feedback">{on?'On':'Off'} <span>·</span> Source line {sample.toFixed(2)}</p>
++     <label className="source-editor">Source word<input aria-label="Source word" value={sourceText} maxLength={18} onChange={e=>setSourceText(e.target.value)}/></label>
++     <p className="section-copy">Change the word or line. Their refracted pixels update inside the lens. Text outside it stays untouched.</p>
++    </div></div>
++   </section>
++   <section id="fields" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">03 / TYPE CLEARLY</p><h2>The surface bends.<br/>Your words stay clear.</h2></div><p className="section-copy">Native text, selection and keyboard editing above the optical layer.</p></div>
++    <ControlledScene className="lab-field-scene" paint={fieldPaint}><form className="lab-composer" onSubmit={e=>{e.preventDefault();setFeedback(message.trim()?'Saved in this preview.':'Write a message before sending.');}}><LiquidControl id="r3-message" clock={clock} kind="field" className="lab-message"><input aria-label="Preview message" placeholder="Ask anything…" value={message} onChange={e=>{setMessage(e.target.value);setFeedback('');}}/></LiquidControl><LiquidControl id="r3-send" clock={clock} kind="circle" className="lab-send" label="Send preview message" type="submit"><Arrow/></LiquidControl></form><p className="lab-message-feedback" role="status">{feedback}</p></ControlledScene>
++   </section>
++   <section className="lab-section lab-parameters"><div className="lab-parameters-heading"><LiquidControl id="r3-parameters" clock={clock} className="lab-disclosure" expanded={parameters} onClick={()=>setParameters(!parameters)}>Surface parameters <span>{parameters?'−':'+'}</span></LiquidControl><LiquidControl id="r3-reset" clock={clock} className="lab-reset" onClick={controller.reset}>Reset defaults</LiquidControl></div>{parameters&&<div className="lab-parameter-grid">{PARAMETER_ROWS.map(row=><GlassSlider key={row.key} id={row.key} label={row.label} min={row.min} max={row.max} step={row.step} precision={row.precision} unit={row.unit} value={settings[row.key]} clock={clock} controlledRefraction onChange={value=>updateSettings({[row.key]:value})}/>)}</div>}</section>
++   <section className="lab-section lab-device"><div className="lab-section-heading"><div><p className="eyebrow">DEVICE REVIEW</p><h2>Try it on your device.</h2></div><LiquidControl id="r3-device-check" clock={clock} className="lab-disclosure" onClick={showDevice}>Show input report ↗</LiquidControl></div><p className="section-copy">If a touch or trackpad drag fails, the local report shows which input and capture events reached this page. Frame timings describe scheduling, not physical display latency.</p>{deviceOpen&&<><pre tabIndex={0} aria-label="Local input report">{deviceText}</pre><div className="device-actions"><LiquidControl id="r3-copy-report" clock={clock} className="lab-disclosure" onClick={()=>{navigator.clipboard.writeText(deviceText).then(()=>setCopyStatus('Report copied.'),()=>setCopyStatus('Select the report text to copy.'));}}>Copy input report ↗</LiquidControl><p role="status">{copyStatus}</p></div></>}</section>
++  </main><footer><img src={wordmark} alt="AlvenX" width="110"/><p>Independent R3 review · awaiting physical-device acceptance.<br/>Explicit scene refraction; arbitrary page capture is not provided.</p><a href={`${REPO}/tree/codex/mobile-optics-review-r3`}>Review source &amp; records ↗</a></footer>
++ </div>;
++}
++createRoot(document.getElementById('root')!).render(<StrictMode><MobileReview/></StrictMode>);
+diff --git a/showcase/mobile-review/review.css b/showcase/mobile-review/review.css
+new file mode 100644
+index 0000000..f7ceb72
+--- /dev/null
++++ b/showcase/mobile-review/review.css
+@@ -0,0 +1,3 @@
++:root{font-family:'Instrument Sans',MiSans,sans-serif;color:#293451;background:#F0F2FB;font-synthesis:none;color-scheme:light}body{margin:0}*{box-sizing:border-box}button,input{font:inherit}a{color:#5468A1;text-underline-offset:5px}button,input,a,pre{touch-action:manipulation}.lab{--ax-label:#5C6B8C;min-width:0}.lab-header{display:flex;align-items:center;gap:28px;max-width:1200px;margin:auto;padding:24px 40px;border-bottom:1px solid #CED5EA}.lab-header img{height:auto}.lab-header>span{font-size:11px;letter-spacing:.1em;color:#67779B}.lab-header>a{margin-left:auto;font-size:13px}.lab main{max-width:1200px;margin:auto;padding:0 40px}.lab-intro{max-width:710px;padding:72px 0 66px}.lab h1{font-size:clamp(44px,6.5vw,78px);font-weight:550;line-height:1.02;letter-spacing:-.055em;margin:0 0 25px}.lab-intro>p:not(.eyebrow){max-width:555px;font-size:18px;line-height:1.65;color:#5A6C90;margin:0 0 24px}.lab-intro>a{font-size:13px}.lab-section{padding:44px 0 48px;border-top:1px solid #CCD4EB;scroll-margin-top:24px}.lab-section-heading{display:flex;justify-content:space-between;align-items:center;gap:40px;margin-bottom:28px}.lab h2{font-size:32px;line-height:1.15;letter-spacing:-.035em;font-weight:500;margin:0;text-wrap:balance}.lab .eyebrow{font-size:10px;letter-spacing:.12em;color:#697A9F;margin-bottom:12px}.lab .section-copy{font-size:14px;line-height:1.75;color:#596C90;max-width:340px;margin:0}.lab .lab-replay{width:195px;height:48px;font-size:12px;flex:0 0 auto}.lab .stage-scroll{width:100%;margin-left:0;border-radius:24px}.lab .stage{min-width:0;background:#E6E9FA}.lab .foreground{left:55.5%;top:27%;width:31%}.lab .foreground h3{font-size:clamp(23px,3vw,36px);letter-spacing:-.035em;font-weight:500;line-height:1.12;margin:0 0 18px}.volume-caption{font-size:12px;line-height:1.6;color:#5D7096;margin:0}.lab .stage-scroll[data-layout=overview]{background:#E7E5FA}.lab .stage-scroll[data-layout=overview]>.foreground{padding:18px 24px 24px}.lab .stage-scroll[data-layout=overview] h3{font-size:27px}.lab .stage-scroll[data-layout=overview] h3 br{display:none}.lab .stage-scroll[data-layout=compact-integrated]>.foreground{left:53%;top:24%;width:36%}.lab-volume-footer{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:24px}.lab-volume-footer>p{font-size:13px;line-height:1.7;color:#596C90;margin:0}.lab-switches{display:flex;gap:24px}.lab .switch-control{font-size:12px}.lab-study-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center}.lab-optical-scene{width:100%;height:340px;border-radius:24px;overflow:hidden;touch-action:pan-y pinch-zoom}.lab-moving-lens{position:absolute;width:166px;height:104px;transform:translate(-50%,-50%)}.lab-lens-glass{width:100%;height:100%}.lab-moving-lens .glass-hit{touch-action:pinch-zoom;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}.lab-controls{min-width:0}.lab-controls .parameter-row{margin-bottom:20px}.lab-controls .switch-control{justify-content:space-between;margin:20px 0}.specimen-feedback{font-size:13px;color:#5C6D91}.specimen-feedback>span{padding:0 12px;color:#8491B2}.source-editor{display:block;margin:30px 0 15px;font-size:12px;color:#5C6B8C}.source-editor input{width:100%;margin-top:8px;border:1px solid #B5BFDD;border-radius:12px;color:#34445F;background:#F9FAFF;padding:11px 14px;font-size:16px}.source-editor input:focus{outline:2px solid #8B9DD4;outline-offset:3px}.lab-field-scene{padding:36px 32px 24px;border-radius:24px;overflow:hidden}.lab-composer{position:relative;display:flex;align-items:center;gap:12px;max-width:720px;margin:auto}.lab-message{height:74px;flex:1;min-width:0}.lab-message>.field-hit{padding:8px max(28px,calc(4.5% + 16px))}.lab .lab-message input{font-size:16px;line-height:1.5}.lab .lab-message input::placeholder{color:#647398}.lab-send{width:58px;height:58px}.lab-send svg{width:26px;height:26px;fill:none;stroke:#566FA3;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.lab-message-feedback{position:relative;max-width:720px;margin:12px auto 0;padding-left:24px;min-height:22px;color:#5B6D95;font-size:13px;line-height:1.7}.lab-parameters-heading{display:flex;justify-content:space-between;gap:16px}.lab-disclosure{width:210px;height:48px;font-size:13px}.lab-disclosure .glass-hit{gap:14px}.lab-reset{width:145px;height:46px;font-size:12px}.lab-parameter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 28px;margin-top:35px}.lab-device pre{font:12px/1.65 ui-monospace,monospace;max-height:330px;overflow:auto;padding:20px;border:1px solid #CCD3EB;border-radius:16px;background:#E9EDFA;margin:24px 0 18px;white-space:pre-wrap;word-break:break-word}.device-actions{display:flex;align-items:center;gap:20px}.device-actions p{font-size:12px;color:#596C90}.lab footer{max-width:1200px;margin:auto;padding:26px 40px 40px;border-top:1px solid #CCD4EB;display:flex;align-items:center;gap:30px}.lab footer img{height:auto}.lab footer p{font-size:12px;line-height:1.7;color:#5C6C91;margin:0}.lab footer a{font-size:12px;margin-left:auto}.phone-break{display:none}@media(max-width:1000px){.lab-header,.lab main{padding-left:30px;padding-right:30px}.lab-intro{padding-top:54px}.lab-switches{flex-direction:column;gap:8px}.lab-study-grid{grid-template-columns:1fr 1fr;gap:26px}.lab-optical-scene{height:320px}.lab-parameter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-section-heading{gap:28px}.lab .section-copy{max-width:300px}.lab footer{flex-wrap:wrap;padding:26px 30px}.lab footer a{margin-left:0}}@media(max-width:600px){.lab-header{padding:18px;gap:12px}.lab-header img{width:118px}.lab-header>span{font-size:9px;letter-spacing:.04em}.lab-header>a{font-size:12px}.lab main{padding:0 18px}.lab-intro{padding:42px 0}.lab h1{font-size:45px}.lab-intro>p:not(.eyebrow){font-size:16px}.lab-section{padding:32px 0}.lab h2{font-size:27px}.lab-section-heading{display:block;margin-bottom:24px}.lab-section-heading>.section-copy{margin-top:16px;max-width:none}.lab .lab-replay{margin-top:20px;width:180px}.lab-volume-footer{display:block}.lab-switches{margin-top:20px;gap:12px;max-width:300px}.lab-study-grid{display:block}.lab-optical-scene{height:300px}.lab-controls{margin-top:26px}.lab-moving-lens{width:142px;height:94px}.lab-field-scene{padding:24px 12px 18px}.lab-composer{gap:4px}.lab-message{height:68px}.lab-send{width:44px;height:44px}.lab-message>.field-hit{padding:8px max(24px,calc(4.5% + 12px))}.lab-message-feedback{padding-left:16px;font-size:12px}.lab-parameter-grid{grid-template-columns:1fr;gap:18px}.lab-disclosure{width:190px;font-size:12px}.lab-reset{width:126px;font-size:11px}.lab-device .lab-disclosure{margin-top:18px}.lab footer{padding:25px 18px;gap:20px}.lab footer p{width:100%}.lab footer a{margin-left:auto}.phone-break{display:initial}}
++.lab .stage-scroll:not([data-layout="overview"])>.foreground{pointer-events:none}
++.lab-header>a{white-space:nowrap}.lab .stage-scroll[data-layout="overview"] .stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:linear-gradient(transparent,#E7E5FA);pointer-events:none}@media(max-width:600px){.lab-parameters-heading{gap:4px}.lab-parameters-heading .lab-disclosure{width:170px}.lab-parameters-heading .lab-reset{width:110px}}
+diff --git a/src/ControlledScene.tsx b/src/ControlledScene.tsx
+new file mode 100644
+index 0000000..caa655b
+--- /dev/null
++++ b/src/ControlledScene.tsx
+@@ -0,0 +1,101 @@
++import { createContext, useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode, type RefObject } from 'react';
++
++export type ControlledSceneSize = { width: number; height: number };
++export type ControlledSceneValue = {
++  /** One live SVG source definition, shared by the base and optical consumers. */
++  id: string;
++  /** Current viewport coordinates; stable function identity, fresh scroll position. */
++  bounds: () => DOMRectReadOnly;
++  revision: number;
++  /** Source has positive measured dimensions and has reached a painted frame. */
++  ready: boolean;
++};
++
++export const ControlledSceneContext = createContext<ControlledSceneValue | null>(null);
++
++export type ControlledSourceProps = {
++  /** Existing positioned container; the source SVG occupies this element's box. */
++  container: RefObject<HTMLElement | null>;
++  /** Explicit shared scene, expressed in CSS pixels; include its required base fill. */
++  paint: (size: ControlledSceneSize) => ReactNode;
++  children?: ReactNode;
++};
++
++const emptyBounds: DOMRectReadOnly = {
++  x: 0, y: 0, width: 0, height: 0, left: 0, top: 0, right: 0, bottom: 0,
++  toJSON: () => ({ x: 0, y: 0, width: 0, height: 0, left: 0, top: 0, right: 0, bottom: 0 }),
++};
++
++/**
++ * Registers an explicit source inside an existing positioned container. This is
++ * ordinary SVG source filtering, not arbitrary DOM backdrop capture. Keep native
++ * semantic labels/editors in children; paint supplies only registered scene items.
++ * Paint may opt individual SVG text nodes into native selection with pointerEvents.
++ */
++export function ControlledSource({ container, paint, children }: ControlledSourceProps) {
++  const id = `alvenx-controlled-source-${useId().replace(/[^a-z0-9]/gi, '')}`;
++  const [size, setSize] = useState<ControlledSceneSize>({ width: 0, height: 0 });
++  const [state, setState] = useState({ ready: false, revision: 0 });
++  const currentContainer = useRef(container); currentContainer.current = container;
++  const bounds = useCallback(() => currentContainer.current.current?.getBoundingClientRect() ?? emptyBounds, []);
++
++  // A child's layout effects may run before the containing parent's ref is
++  // attached. Passive attachment sees both external and wrapper refs reliably.
++  useEffect(() => {
++    const element = container.current;
++    if (!element) return;
++    const measure = () => {
++      const rect = element.getBoundingClientRect();
++      const next = { width: rect.width, height: rect.height };
++      setSize(previous => previous.width === next.width && previous.height === next.height ? previous : next);
++    };
++    measure();
++    const observer = new ResizeObserver(measure);
++    observer.observe(element);
++    return () => observer.disconnect();
++  }, [container]);
++
++  const content = useMemo(() => size.width > 0 && size.height > 0 ? paint(size) : null, [paint, size]);
++  useLayoutEffect(() => {
++    // Source data changes are live edits, not a new loading cycle.
++    setState(previous => ({ ...previous, revision: previous.revision + 1 }));
++  }, [content, size]);
++
++  const valid = size.width > 0 && size.height > 0;
++  useLayoutEffect(() => {
++    if (!valid) { setState(previous => previous.ready ? { ...previous, ready: false } : previous); return; }
++    // Gate only the initial positive-size transition. Including content in
++    // this effect would postpone readiness forever for continuously changing
++    // scenes and would briefly blank the lens on every slider value edit.
++    let second = 0;
++    const first = requestAnimationFrame(() => {
++      second = requestAnimationFrame(() => setState(previous => ({ ...previous, ready: true })));
++    });
++    return () => { cancelAnimationFrame(first); cancelAnimationFrame(second); };
++  }, [valid]);
++
++  const value = useMemo<ControlledSceneValue>(() => ({ id, bounds, ...state }), [id, bounds, state]);
++  return <ControlledSceneContext.Provider value={value}>
++    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
++      width="100%" height="100%" viewBox={`0 0 ${Math.max(1, size.width)} ${Math.max(1, size.height)}`}
++      data-controlled-source={id} data-source-ready={state.ready} data-source-revision={state.revision}
++      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none' }}>
++      <defs><g id={id}>{content}</g></defs>
++      <use href={`#${id}`} />
++    </svg>
++    {children}
++  </ControlledSceneContext.Provider>;
++}
++
++export type ControlledSceneProps = Omit<ControlledSourceProps, 'container'> & {
++  className?: string;
++  style?: CSSProperties;
++};
++
++/** A positioned scene wrapper for a standalone specimen or freely movable lens. */
++export function ControlledScene({ children, paint, className, style }: ControlledSceneProps) {
++  const container = useRef<HTMLDivElement>(null);
++  return <div ref={container} className={className} style={{ ...style, position: 'relative' }}>
++    <ControlledSource container={container} paint={paint}>{children}</ControlledSource>
++  </div>;
++}
+diff --git a/src/GlassClock.ts b/src/GlassClock.ts
+index 6937416..b7ccf92 100644
+--- a/src/GlassClock.ts
++++ b/src/GlassClock.ts
+@@ -5,6 +5,8 @@ export const boundedFrameRate = (value?: number) => Number.isFinite(value) && va
+  * Construction is side-effect free; subscriptions own document listeners. */
+ export class GlassClock {
+   pointer = { x: -10000, y: -10000 };
++  /** Last primary input family; touch optics must not wait for idle IO tasks. */
++  pointerType = '';
+   pointerRevision = 0;
+   layoutRevision = 0;
+   optics: GlassOpticsMode;
+@@ -21,7 +23,7 @@ export class GlassClock {
+     this.optics = options.optics ?? 'auto';
+     this.maxFps = boundedFrameRate(options.maxFps);
+   }
+-  private move = (event: PointerEvent) => { if(event.isPrimary===false)return; this.pointer = { x: event.clientX, y: event.clientY }; this.pointerRevision++; this.wake(); };
++  private move = (event: PointerEvent) => { if(event.isPrimary===false)return; this.pointerType=event.pointerType; this.pointer = { x: event.clientX, y: event.clientY }; this.pointerRevision++; this.wake(); };
+   private leave = () => { this.pointer = { x: -10000, y: -10000 }; this.pointerRevision++; this.wake(); };
+   private releaseTouch = (event:PointerEvent) => { if(event.pointerType==='touch'&&event.isPrimary!==false)this.leave(); };
+   /** Call after host-driven positional layout changes without resize/scroll. */
+diff --git a/src/GlassSettingsControls.tsx b/src/GlassSettingsControls.tsx
+index 915db74..9ab75fb 100644
+--- a/src/GlassSettingsControls.tsx
++++ b/src/GlassSettingsControls.tsx
+@@ -1,5 +1,6 @@
+-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
++import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
+ import { LiquidControl, type ThumbGeometry } from './LiquidControl';
++import { ControlledSource, type ControlledSceneSize } from './ControlledScene';
+ import type { PreviewClock } from './GlassClock';
+ import { endpointGeometry } from './endpointGeometry';
+ import { PARAMETER_ROWS } from './reviewSettings';
+@@ -19,6 +20,26 @@ function resolveIntent(drag:ControlDrag,x:number,y:number):PointerIntent {
+   return drag.intent;
+ }
+ type RailGeometry = {left:number;right:number;cy:number;radius:number};
++/** An explicit canonical rail source. Its original DOM track remains measurable,
++ * while both the visible track and the refracted pixels reference this one SVG.
++ * This path intentionally samples registered scene items, not arbitrary DOM. */
++function ControlledRail({container,geometry,progress,fillOpacity=1,children}:{container:RefObject<HTMLDivElement|null>;geometry:RailGeometry;progress:number;fillOpacity?:number;children:ReactNode}) {
++  const key=`ax-controlled-rail-${useId().replace(/[^a-z0-9]/gi,'')}`;
++  const {left,right,cy,radius}=geometry;
++  const paint=useCallback(({width,height}:ControlledSceneSize)=>{
++    const trackWidth=Math.max(0,right-left),trackHeight=radius*2;
++    return <>
++      <defs>
++        <linearGradient id={`${key}-track`} x1="0" y1="0" x2="1" y2="0"><stop stopColor="var(--ax-track-start,#CBD6ED)"/><stop offset="1" stopColor="var(--ax-track-end,#D3CFE8)"/></linearGradient>
++        <linearGradient id={`${key}-progress`} x1="0" y1="0" x2="1" y2="0"><stop stopColor="var(--ax-progress-start,#809FE6)"/><stop offset="1" stopColor="var(--ax-progress-end,#A092D8)"/></linearGradient>
++      </defs>
++      <rect width={width} height={height} fill="var(--ax-background,#F0F2FB)"/>
++      <rect x={left} y={cy-radius} width={trackWidth} height={trackHeight} rx={radius} fill={`url(#${key}-track)`}/>
++      <rect x={left} y={cy-radius} width={trackWidth*clamp(progress)} height={trackHeight} rx={radius} fill={`url(#${key}-progress)`} opacity={fillOpacity}/>
++    </>;
++  },[key,left,right,cy,radius,progress,fillOpacity]);
++  return <ControlledSource container={container} paint={paint}>{children}</ControlledSource>;
++}
+ const restShape = (width:number,height:number):ThumbGeometry => ({hostWidth:width,hostHeight:height,width:width-12,height:height-8,centerX:width/2,centerY:height/2});
+ function placement(rail:RailGeometry,shape:ThumbGeometry,progress:number,offset=0) {
+   const geometry=endpointGeometry(shape.width,shape.height,rail.radius);
+@@ -56,7 +77,7 @@ function useLensAnchor(hostWidth:number,hostHeight:number,progress:number,offset
+   // depend only on resting host dimensions, never animated shell width/height.
+   const rest=restShape(shape.hostWidth,shape.hostHeight);
+   const trackInset=6+endpointGeometry(rest.width,rest.height,layout.radius).gap;
+-  return {rail,track,shape,onGeometry,bounds,getPlacement,trackInset,...placement(layout,shape,progress,offset)};
++  return {rail,track,shape,onGeometry,bounds,getPlacement,trackInset,railGeometry:layout,...placement(layout,shape,progress,offset)};
+ }
+ function spring(s:{offset:number;velocity:number},delta:number,reduced:boolean) {
+   if(reduced||Math.abs(s.offset)<.01){s.offset=0;s.velocity=0;return;}
+@@ -143,8 +164,8 @@ export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommi
+ 
+ /** Pointer input is continuous; configured steps belong only to keyboard input.
+  * Deltas preserve the grab point during shell morphs. Only release uses a spring. */
+-export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void};
+-export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange }: GlassSliderProps) {
++export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void;controlledRefraction?:boolean};
++export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange,controlledRefraction=false }: GlassSliderProps) {
+   if (![min,max,step,value].every(Number.isFinite) || min>=max || step<=0) {
+     throw new RangeError('GlassSlider requires finite value/min/max, min < max, and a finite positive keyboard step.');
+   }
+@@ -201,10 +222,8 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
+   // may choose a readable 0–6 digit decimal field without quantizing dragging.
+   const precision=PARAMETER_ROWS.find(row=>row.key===id)?.precision??(Number.isFinite(customPrecision)?Math.max(0,Math.min(6,Math.trunc(customPrecision))):2);
+   const progress=displayPosition.progress,display=unit==='×'?`${value.toFixed(1)}×`:`${Number(value.toFixed(3))}${unit?` ${unit}`:''}`;
+-  return <div className="parameter-row">
+-    <div className="parameter-label"><label htmlFor={`number-${id}`}>{label}</label><GlassNumber id={id} label={label} value={value} min={min} max={max} precision={precision} unit={unit} clock={clock} onCommit={commitNumber}/></div>
+-    <div ref={anchor.rail} className="range-rail" data-progress={progress.toFixed(6)} data-overshoot={displayPosition.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
+-      <div ref={anchor.track} className="range-track" style={{left:anchor.trackInset,right:anchor.trackInset}} aria-hidden="true"><span style={{width:`${progress*100}%`}}/></div>
++  const railChildren=<>
++      <div ref={anchor.track} className="range-track" style={{left:anchor.trackInset,right:anchor.trackInset,opacity:controlledRefraction?0:undefined}} aria-hidden="true"><span style={{width:`${progress*100}%`}}/></div>
+       <div className="range-thumb-position" style={{left:anchor.left,top:anchor.top}}>
+         <LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="range-thumb" interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl>
+       </div>
+@@ -240,13 +259,18 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
+           const index=up?Math.floor((current-min)/step+1e-8)+count:Math.ceil((current-min)/step-1e-8)-count;
+           queueValue(key==='Home'?min:key==='End'?max:Number((min+index*step).toFixed(12)));
+         }} onKeyUp={()=>setPressed(false)}/>
++  </>;
++  return <div className="parameter-row">
++    <div className="parameter-label"><label htmlFor={`number-${id}`}>{label}</label><GlassNumber id={id} label={label} value={value} min={min} max={max} precision={precision} unit={unit} clock={clock} onCommit={commitNumber}/></div>
++    <div ref={anchor.rail} className="range-rail" data-progress={progress.toFixed(6)} data-overshoot={displayPosition.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
++      {controlledRefraction?<ControlledRail container={anchor.rail} geometry={anchor.railGeometry} progress={progress}>{railChildren}</ControlledRail>:railChildren}
+     </div>
+   </div>;
+ }
+ 
+ /** The legal value is discrete; display position and elastic overscroll are not. */
+-export type GlassSwitchProps = {id:string;label:string;checked:boolean;clock:PreviewClock;onChange:(checked:boolean)=>void;disabled?:boolean};
+-export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:GlassSwitchProps) {
++export type GlassSwitchProps = {id:string;label:string;checked:boolean;clock:PreviewClock;onChange:(checked:boolean)=>void;disabled?:boolean;controlledRefraction?:boolean};
++export function GlassSwitch({id,label,checked,clock,onChange,disabled=false,controlledRefraction=false}:GlassSwitchProps) {
+   const [pressed,setPressed]=useState(false),[focused,setFocused]=useState(false),[display,setDisplay]=useState({position:checked?1:0,offset:0});
+   const anchor=useLensAnchor(63.36,42.24,display.position,display.offset);
+   const native=useRef<HTMLButtonElement>(null);
+@@ -288,9 +312,12 @@ export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:Gla
+     const {span}=anchor.getPlacement(),legal=clamp(d.rawProgress);d.rawProgress=legal+(d.rawProgress-legal)*d.span/span+(x-d.lastX)/span;d.span=span;d.lastX=x;d.maxDistance=Math.max(d.maxDistance,Math.abs(x-d.startX));
+     const position=clamp(d.rawProgress);s.pending={position,offset:resistance((d.rawProgress-position)*span,clock.reduced)};clock.wake();
+   };
++  const railChildren=<>
++    <div ref={anchor.track} className="switch-track" style={{left:anchor.trackInset,right:anchor.trackInset,opacity:controlledRefraction?0:undefined}} data-checked={checked} aria-hidden="true"><span style={{width:`${display.position*100}%`}}/></div>
++    <div className="switch-thumb-position" style={{left:anchor.left,top:anchor.top}}><LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="switch-thumb" disabled={disabled} interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl></div>
++  </>;
+   return <div className="switch-control"><span>{label}{disabled&&<small> · System</small>}</span><div className="switch-body" data-position={display.position.toFixed(6)} data-overshoot={display.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
+-    <div ref={anchor.rail} className="switch-visual"><div ref={anchor.track} className="switch-track" style={{left:anchor.trackInset,right:anchor.trackInset}} data-checked={checked} aria-hidden="true"><span style={{width:`${display.position*100}%`}}/></div>
+-    <div className="switch-thumb-position" style={{left:anchor.left,top:anchor.top}}><LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="switch-thumb" disabled={disabled} interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl></div></div>
++    <div ref={anchor.rail} className="switch-visual">{controlledRefraction?<ControlledRail container={anchor.rail} geometry={anchor.railGeometry} progress={display.position} fillOpacity={checked?1:.78}>{railChildren}</ControlledRail>:railChildren}</div>
+     <button ref={native} type="button" className="switch-native" role="switch" aria-label={label} aria-checked={checked} disabled={disabled}
+       onPointerDown={e=>{
+         if(e.button!==0||e.isPrimary===false||state.current.drag||disabled)return;
+diff --git a/src/LiquidControl.tsx b/src/LiquidControl.tsx
+index 08858e9..7d8f9e1 100644
+--- a/src/LiquidControl.tsx
++++ b/src/LiquidControl.tsx
+@@ -1,9 +1,10 @@
+-import { useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
++import { useContext, useId, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+ import { contourShape, shellPath } from './geometry';
+-import { createBackdropOptics } from './backdropOptics';
++import { createBackdropOptics, type BackdropOpticsInput } from './backdropOptics';
+ import type { PreviewClock } from './GlassClock';
+ import type { MaterialParameters } from './reviewSettings';
+ import { resolveGlassOptics, type GlassOpticsMode, type ResolvedGlassOptics } from './opticalSupport';
++import { ControlledSceneContext } from './ControlledScene';
+ 
+ export type ThumbGeometry = { hostWidth:number; hostHeight:number; width:number; height:number; centerX:number; centerY:number };
+ export type LiquidControlProps = {
+@@ -16,13 +17,15 @@ export type LiquidControlProps = {
+ };
+ type Motion = { near: number; press: number; x: number; y: number };
+ type Map = ReturnType<ReturnType<typeof createBackdropOptics>['render']>;
+-type Frame = { path: string; width: number; height: number; near: number; press: number; intensity: number; material:MaterialParameters; focus: boolean; version: number; mode: ResolvedGlassOptics; map?: Map; light: { x: number; y: number; z: number } };
++type Frame = { path: string; width: number; height: number; near: number; press: number; intensity: number; material:MaterialParameters; focus: boolean; version: number; mode: ResolvedGlassOptics | 'scene'; source?:{id:string;x:number;y:number}; map?: Map; light: { x: number; y: number; z: number } };
+ 
+ /** Review-only local optics. The exact same path clips pixels and pointer hits,
+  * supplies the normal map, and owns every visible edge/focus/selection stroke. */
+ export function LiquidControl({ id, clock, children, className = '', kind = 'button', type = 'button', label, disabled = false, selected, expanded, onClick, interaction, onGeometry, optics }: LiquidControlProps) {
++  const scene = useContext(ControlledSceneContext), sceneRef = useRef(scene); sceneRef.current = scene;
+   const key = `review-glass-${useId().replace(/[^a-z0-9]/gi, '')}`;
+   const host = useRef<HTMLDivElement>(null);
++  const transmitted = useRef<SVGUseElement>(null), committed = useRef<Frame|null>(null);
+   const hit = useRef<HTMLElement | null>(null);
+   const engine = useRef<ReturnType<typeof createBackdropOptics> | null>(null);
+   const motion = useRef<Motion>({ near: 0, press: 0, x: 0, y: 0 });
+@@ -41,6 +44,30 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+   useLayoutEffect(() => {
+     let animating = false, pointerRevision = -1, layoutRevision = -1, lastReduced = clock.reduced;
+     let lastOptics: GlassOpticsMode | undefined, failedOptics = false;
++    type SceneJob={frame:Frame;input:BackdropOpticsInput;scale:number;geometry?:ThumbGeometry;epoch:number};
++    let alive=true, encoding=false, queued:SceneJob|null=null;
++    let epoch=0,lastMode:Frame['mode']|undefined,lastImmediateScene=false;
++    const commit=(frame:Frame,geometry?:ThumbGeometry)=>{
++      if(geometry)geometryListener.current?.(geometry);
++      committed.current=frame;setVisual(frame);
++    };
++    const renderScene=(job:SceneJob)=>{
++      encoding=true;if(host.current)host.current.dataset.opticalPending='true';
++      const activeEngine=engine.current;
++      if(!activeEngine){encoding=false;return;}
++      activeEngine.renderAsync(job.input).then(raw=>{
++        if(!alive||job.epoch!==epoch||sceneRef.current?.id!==job.frame.source?.id)return;
++        // Complete coherent geometry/clip/rim/map frames even when a newer job
++        // is waiting. Pointer values and host translations never wait for PNG.
++        commit({...job.frame,map:{...raw,mapCssWidth:raw.mapCssWidth/job.scale,mapCssHeight:raw.mapCssHeight/job.scale}},job.geometry);
++      }).catch(reason=>{
++        if(!alive||job.epoch!==epoch||reason?.name==='AbortError')return;
++        failedOptics=true;dirty.current=true;setError(String(reason));clock.wake();
++      }).finally(()=>{
++        encoding=false;if(host.current)host.current.dataset.opticalPending='false';
++        const next=queued;queued=null;if(alive&&next&&next.epoch===epoch)renderScene(next);
++      });
++    };
+     const draw = (delta: number) => {
+       if (!host.current || !visible.current) return false;
+       const requestedOptics = opticsRef.current ?? clock.optics;
+@@ -54,7 +81,9 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+       if (opticsChanged && failedOptics) { failedOptics = false; setError(''); }
+       const rect = host.current.getBoundingClientRect();
+       if (!(rect.width > 0 && rect.height > 0)) return false;
+-      const mode = resolveGlassOptics(failedOptics ? 'native' : requestedOptics);
++      const registered = sceneRef.current;
++      const mode = !failedOptics && registered?.ready && requestedOptics !== 'flat' && requestedOptics !== 'native' ? 'scene' : resolveGlassOptics(failedOptics ? 'native' : requestedOptics);
++      if(lastMode!==mode){lastMode=mode;epoch++;queued=null;}
+       const x = clock.pointer.x, y = clock.pointer.y;
+       // Anchored thumbs use a resting reference box. Their hover deformation
+       // must not feed its own positional compensation back into proximity.
+@@ -78,6 +107,11 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+       // Commit the final snapped frame too, so the visible path/map returns exactly.
+       const moved = Math.abs(rect.x-lastPosition.current.x)>.05 || Math.abs(rect.y-lastPosition.current.y)>.05;
+       animating = remaining >= .0008;
++      // Browser native PNG/FileReader tasks can be deferred >100ms while a
++      // touch is pending. Keep direct-touch deformation on the exact existing
++      // synchronous path, including release settling; mouse/idle use async IO.
++      const immediateScene=mode==='scene'&&clock.pointerType==='touch'&&(pressed.current||animating);
++      if(immediateScene!==lastImmediateScene){lastImmediateScene=immediateScene;epoch++;queued=null;engine.current?.cancelPending();}
+       if (!dirty.current && remaining === 0 && !moved && !opticsChanged && lastStrength.current === clock.strength && lastMaterial.current === clock.material) return false;
+       dirty.current = false;
+       const m = motion.current, width = rect.width, height = rect.height;
+@@ -91,7 +125,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+       const h = Math.min(height - 2 * (2.5 + Math.abs(shiftY)), (height - insetY * 2) * (1 + (m.near * .025 - m.press * .055) * intensity));
+       const shape = { ...contourShape(w, h, kind === 'thumb' ? 2.4 : 3.4), x: width / 2 + shiftX, y: height / 2 + shiftY };
+       if (kind === 'circle') shape.r = Math.min(w, h) / 2;
+-      if(kind==='thumb')geometryListener.current?.({hostWidth:width,hostHeight:height,width:w,height:h,centerX:shape.x,centerY:shape.y});
++      const geometry=kind==='thumb'?{hostWidth:width,hostHeight:height,width:w,height:h,centerX:shape.x,centerY:shape.y}:undefined;
+       const path = shellPath(shape);
+       const stage = (host.current.closest('.stage') ?? host.current.closest('.alvenx-design')?.querySelector('.stage'))?.getBoundingClientRect();
+       const light = { x: (stage?.left ?? 0) + (stage?.width ?? 1000) * .22 - rect.left,
+@@ -102,11 +136,23 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+         // depend on light; keep the unused B-channel light constant to cache
+         // pure translations/material edits. Visible edge lighting still uses light.
+         const scale = Math.max(3, Math.min(6, 264 / height));
+-        if (mode === 'svg' && !engine.current) engine.current = createBackdropOptics();
+-        if (mode !== 'svg' && engine.current) { engine.current.destroy(); engine.current = null; }
+-        const raw = mode === 'svg' ? engine.current?.render({ path, width:width*scale, height:height*scale, camera: { x: width / 2, y: height / 2 + 8/scale, zoom: scale }, light: {x:0,y:0,z:620}, channels:'rg', version }) : undefined;
+-        const map = raw ? {...raw,mapCssWidth:raw.mapCssWidth/scale,mapCssHeight:raw.mapCssHeight/scale}:undefined;
+-        setVisual({ path, width, height, near: m.near, press: m.press, intensity, material:clock.material, focus: focused.current, version, mode, map, light });
++        const displaced = mode === 'svg' || mode === 'scene';
++        if (displaced && !engine.current) engine.current = createBackdropOptics();
++        if (!displaced && engine.current) { engine.current.destroy(); engine.current = null; }
++        const input:BackdropOpticsInput={ path, width:width*scale, height:height*scale, camera: { x: width / 2, y: height / 2 + 8/scale, zoom: scale }, light: {x:0,y:0,z:620}, channels:'rg', version };
++        const origin = mode === 'scene' ? registered?.bounds() : undefined;
++        const source = origin && registered ? {id:registered.id,x:rect.left-origin.left,y:rect.top-origin.top}:undefined;
++        const frame:Frame={ path, width, height, near: m.near, press: m.press, intensity, material:clock.material, focus: focused.current, version, mode, source, light };
++        if(mode==='scene'&&!immediateScene){
++          // Preparing optics must not delay native focus, editing or pointer
++          // ownership. The initial fallback already has the exact hit contour.
++          if(!committed.current||committed.current.mode!=='scene')commit({...frame,mode:'native',source:undefined},geometry);
++          const job={frame,input,scale,geometry,epoch};if(encoding)queued=job;else renderScene(job);
++        }else{
++          const raw=displaced?engine.current?.render(input):undefined;
++          const map=raw?{...raw,mapCssWidth:raw.mapCssWidth/scale,mapCssHeight:raw.mapCssHeight/scale}:undefined;
++          commit({...frame,map},geometry);
++        }
+       } catch (reason) { failedOptics = true; dirty.current = true; setError(String(reason)); return true; }
+       return animating;
+     };
+@@ -115,17 +161,30 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+     const intersection = typeof IntersectionObserver === 'undefined' ? undefined : new IntersectionObserver(entries => {
+       visible.current = entries.some(entry => entry.isIntersecting);
+       if (host.current) host.current.dataset.visible = String(visible.current);
++      if (!visible.current) {
++        // Keep the last displayed frame/cache. Already dispatched native PNG
++        // serialization can finish, but do not compute a queued offscreen map.
++        epoch++;queued=null;engine.current?.cancelPending();
++      }
+       if (visible.current) { dirty.current = true; clock.wake(); }
+     });
+     if (host.current) intersection?.observe(host.current);
+     const unsubscribe = clock.subscribe(draw);
+     const release = (event:Event) => { if('isPrimary' in event && event.isPrimary===false)return; if (pressed.current) { pressed.current = false; dirty.current = true; clock.wake(); } };
+     window.addEventListener('pointerup', release); window.addEventListener('pointercancel', release); window.addEventListener('blur', release);
+-    return () => { observer.disconnect(); intersection?.disconnect(); unsubscribe(); window.removeEventListener('pointerup', release); window.removeEventListener('pointercancel', release); window.removeEventListener('blur', release); engine.current?.destroy(); engine.current = null; };
++    return () => { alive=false;queued=null;observer.disconnect(); intersection?.disconnect(); unsubscribe(); window.removeEventListener('pointerup', release); window.removeEventListener('pointercancel', release); window.removeEventListener('blur', release); engine.current?.destroy(); engine.current = null; };
+   }, [clock, kind]);
+   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [disabled, selected, optics, clock]);
++  useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [scene?.revision, scene?.ready, scene?.id, clock]);
+   useLayoutEffect(() => { if (interaction) { pressed.current = interaction.pressed; focused.current = interaction.focused; dirty.current = true; clock.wake(); } }, [interaction?.pressed, interaction?.focused, clock]);
+   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [interaction?.position, clock]);
++  useLayoutEffect(()=>{
++    // Async normals may finish after the host has moved. Register the live
++    // source before paint, also after B endpoint compensation or a free drag.
++    if(visual.mode!=='scene'||!host.current||!transmitted.current||!scene||scene.id!==visual.source?.id)return;
++    const rect=host.current.getBoundingClientRect(),origin=scene.bounds();
++    transmitted.current.setAttribute('transform',`translate(${origin.left-rect.left} ${origin.top-rect.top})`);
++  },[visual.version,interaction?.position,scene?.revision,scene?.id]);
+ 
+   const own = (target: EventTarget) => (target as HTMLElement).closest('[data-local-glass]') === host.current;
+   const eventProps = {
+@@ -159,7 +218,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+   // An eroded and smoothed current silhouette supplies a spatial thickness mask.
+   // Progressive blur mixes a second blurred backdrop by this mask, not one uniform blur.
+   const depthMask = `data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${visual.width}" height="${visual.height}"><defs><filter id="d"><feMorphology in="SourceAlpha" operator="erode" radius="3"/><feGaussianBlur stdDeviation="${Math.max(2,visual.height*.08)}"/></filter></defs><path d="${visual.path}" fill="white" filter="url(#d)"/></svg>`)}`;
+-  const ready = !!visual.path && (visual.mode !== 'svg' || !!visual.map);
++  const ready = !!visual.path && (!(visual.mode === 'svg' || visual.mode === 'scene') || !!visual.map);
+   const backdrop = visual.mode === 'svg' ? `url(#${key}-refraction)` : visual.mode === 'native' ? `blur(${material.blurLevel + material.progressiveBlur * .35}px) saturate(${1 + material.specularSaturation * .08})` : 'none';
+   return <div ref={host} className={`liquid-unit ${className}`} data-local-glass={id} data-optical-ready={ready} data-optical-error={error || undefined}
+     data-optical-mode={visual.mode} data-optical-compute-ms={visual.map?.computeMs.toFixed(3)} data-geometry-version={visual.version} data-proximity={visual.near.toFixed(4)} data-pressure={visual.press.toFixed(4)} data-refraction-strength={strength.toFixed(3)} data-strength={visual.intensity}>
+@@ -204,9 +263,12 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
+       </defs>
+     </svg>
+     <svg className="local-shadow" width={visual.width} height={visual.height} aria-hidden="true"><path d={visual.path} fill="#FFFFFF" filter={`url(#${key}-shadow)`}/></svg>
+-    {ready && visual.mode !== 'flat' && <div className="local-backdrop" style={{ clipPath: `path('${visual.path}')`, backdropFilter: backdrop, WebkitBackdropFilter: backdrop }}/>}
++    {ready && visual.mode !== 'flat' && visual.mode !== 'scene' && <div className="local-backdrop" style={{ clipPath: `path('${visual.path}')`, backdropFilter: backdrop, WebkitBackdropFilter: backdrop }}/>}
++    {ready && visual.mode === 'scene' && visual.source && <svg data-controlled-transmission={visual.source.id} width={visual.width} height={visual.height} aria-hidden="true" style={{position:'absolute',inset:0,pointerEvents:'none',overflow:'hidden',clipPath:`path('${visual.path}')`}}>
++      <g filter={`url(#${key}-refraction)`}><use ref={transmitted} href={`#${visual.source.id}`} transform={`translate(${-visual.source.x} ${-visual.source.y})`}/></g>
++    </svg>}
+     <svg className="local-edge" width={visual.width} height={visual.height} aria-hidden="true">
+-      {visual.mode !== 'svg' && <path d={visual.path} fill={`url(#${key}-flat)`}/>}
++      {visual.mode !== 'svg' && visual.mode !== 'scene' && <path d={visual.path} fill={`url(#${key}-flat)`}/>}
+       <path d={visual.path} fill="var(--ax-glass-fill, #F0F2FF)" fillOpacity={Math.min(1,material.glassOpacity+(selected?.04:0))} stroke={mirrorTint} strokeOpacity={Math.min(1,mirrorGain*((kind==='thumb'?.65:.40) + near * .10))} strokeWidth={kind==='thumb'?1:'.7'}/>
+       <path d={visual.path} fill="#FFFFFF" filter={`url(#${key}-edge)`}/>
+       {(selected || visual.focus) && <path data-focus-outline={visual.focus} d={visual.path} fill="none" stroke={visual.focus ? 'var(--ax-focus, #6F82BB)' : 'var(--ax-selection, #929BCD)'} strokeWidth={visual.focus ? 1.6 : 1} strokeOpacity={visual.focus ? .8 : .48}/>}
+diff --git a/src/VolumeStage.tsx b/src/VolumeStage.tsx
+index a822517..21f8553 100644
+--- a/src/VolumeStage.tsx
++++ b/src/VolumeStage.tsx
+@@ -3,6 +3,7 @@ import type { GlassClock } from './GlassClock';
+ import type { ReviewSettings } from './reviewSettings';
+ import { createGlassPreview } from './volume-renderer.js';
+ import { volumeFallbackPath } from './volume-fallback';
++import { volumeHitContour } from './volume-hit-geometry';
+ 
+ type Renderer = { render(options: Record<string, unknown>, budget?: { maxPixels?: number; maxDpr?: number }): void; destroy(): void };
+ const resting = () => ({ parentX: 1, parentY: 1, childX: 1, childY: 1, deformX: 500, deformY: 280, deformDX: 0, deformDY: 0, curvature: 3.2 });
+@@ -33,9 +34,10 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+   { clock, settings, children, className = '', ariaLabel = 'AlvenX volume stage', onPlayingChange, renderBudget, studioMotion = false, responsive = false }, ref,
+ ) {
+   const canvas = useRef<HTMLCanvasElement>(null), stage = useRef<HTMLElement>(null), foreground = useRef<HTMLDivElement>(null);
++  const hitSurface = useRef<HTMLDivElement>(null), hitKey = useRef('');
+   const renderer = useRef<Renderer | null>(null);
+   const simulation = useRef({ current: resting(), target: resting(), growth: 1, playing: false, ambient: true, time: 0, dirty: true, visible: false, failed: false });
+-  const drag = useRef<{ x: number; y: number; clientX: number; clientY: number; parent: boolean; pointerId: number; pendingTouch: boolean } | null>(null);
++  const drag = useRef<{ x: number; y: number; parent: boolean; pointerId: number } | null>(null);
+   const callback = useRef(onPlayingChange); callback.current = onPlayingChange;
+   const budget = useRef(renderBudget); budget.current = renderBudget;
+   const studio = useRef(studioMotion); studio.current = studioMotion;
+@@ -54,6 +56,25 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     if (active && stage.current?.hasPointerCapture(active.pointerId)) stage.current.releasePointerCapture(active.pointerId);
+   }
+   function cancelDrag() { releaseDrag(); settleSurface(); }
++  function syncHitSurface() {
++    const surface = hitSurface.current, state = simulation.current;
++    if (!surface) return;
++    const interactive = !state.failed && !clock.reduced && state.growth === 1;
++    // touch-action is known by the browser from the hit path before contact.
++    // The rectangle outside this CSS-clipped HTML box keeps native page panning.
++    const pointerEvents = interactive ? 'auto' : 'none';
++    if (surface.style.pointerEvents !== pointerEvents) surface.style.pointerEvents = pointerEvents;
++    // Budding is temporarily noninteractive; do not spend contour work on
++    // frames whose hit surface is disabled. Rebuild at completion/recovery.
++    if (!interactive) { hitKey.current = ''; return; }
++    const key = JSON.stringify([state.growth, ...Object.values(state.current)]);
++    if (hitKey.current === key) return;
++    hitKey.current = key;
++    surface.style.clipPath = `path('${volumeHitContour(state.current, state.growth).path}')`;
++  }
++  function syncHitCamera(width: number, height: number) {
++    if (hitSurface.current && width > 0 && height > 0) hitSurface.current.style.transform = `translate(-50%, -50%) scale(${Math.min(width / 1000, height / 560)})`;
++  }
+   function syncForeground() {
+     const element = foreground.current;
+     if (!element) return;
+@@ -85,7 +106,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+         if (foreground.current) { foreground.current.style.visibility = 'visible'; foreground.current.setAttribute('aria-hidden', 'false'); }
+       }
+       // Avoid scheduling a React state update on every ambient/drag frame.
+-      if (reportedError.current !== nextError) { reportedError.current = nextError; setError(nextError); }
++      if (reportedError.current !== nextError) { reportedError.current = nextError; setError(nextError); syncHitSurface(); }
+     };
+     syncError();
+     const draw = (delta: number, elapsed: number) => {
+@@ -117,6 +138,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+         state.current[key] = Math.abs(difference) < .0005 ? state.target[key] : state.current[key] + difference * blend;
+       }
+       if (changed) {
++        syncHitSurface();
+         const angle = clock.reduced ? 0 : state.time * Math.PI * 2 / 48;
+         const lightX = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.cos(angle) + .25 * Math.sin(angle))) : .22;
+         const lightY = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.sin(angle) - .42 * Math.cos(angle))) : .08;
+@@ -135,7 +157,8 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     };
+     const unsubscribe = clock.subscribe(draw);
+     const observer = new ResizeObserver(entries => {
+-      measureLayout(entries[entries.length - 1].contentRect.width); cancelDrag();
++      const { width, height } = entries[entries.length - 1].contentRect;
++      measureLayout(width); syncHitCamera(width, height); cancelDrag();
+     });
+     if (stage.current) observer.observe(stage.current);
+     const visibility = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(entries => {
+@@ -174,7 +197,10 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+   }, [clock]);
+ 
+   useLayoutEffect(() => {
+-    if (stage.current) measureLayout(stage.current.getBoundingClientRect().width);
++    if (stage.current) {
++      const { width, height } = stage.current.getBoundingClientRect();
++      measureLayout(width); syncHitCamera(width, height);
++    }
+     simulation.current.dirty = true; clock.wake();
+   }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive]);
+ 
+@@ -190,6 +216,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+       state.playing = false;
+     }
+     syncForeground();
++    syncHitSurface();
+     state.dirty = true; clock.wake();
+   }, [clock, settings, clock.reduced]);
+ 
+@@ -210,15 +237,6 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     if (!active && nativeTarget(event.target)) { settleSurface(); return; }
+     if (active && !pressed) {
+       if (event.pointerType !== 'touch' && !(event.buttons & 1)) { cancelDrag(); return; }
+-      if (active.pendingTouch) {
+-        const dx = event.clientX - active.clientX, dy = event.clientY - active.clientY;
+-        if (Math.max(Math.abs(dx), Math.abs(dy)) < 6) return;
+-        // CSS pan-y/pinch-zoom keeps browser scrolling available from contact.
+-        // Do not turn a vertical page swipe into a shape drag.
+-        if (Math.abs(dy) >= Math.abs(dx)) { cancelDrag(); return; }
+-        active.pendingTouch = false;
+-        event.currentTarget.setPointerCapture(event.pointerId);
+-      }
+     }
+     const rect = stage.current.getBoundingClientRect();
+     // Match the renderer's uniform camera scale, including any letterbox.
+@@ -228,10 +246,13 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     const parent = drag.current?.parent ?? x < 450;
+     const nx = (x - (parent ? 230 : 690)) / (parent ? 150 : 255), ny = (y - 280) / (parent ? 150 : 210);
+     const proximity = Math.max(0, Math.min(1, (1.25 - Math.hypot(nx, ny)) * 2));
+-    if (!drag.current && proximity === 0) { settleSurface(); return; }
++    if (!drag.current && !pressed && proximity === 0) { settleSurface(); return; }
+     if (pressed) {
+-      drag.current = { x, y, clientX: event.clientX, clientY: event.clientY, parent, pointerId: event.pointerId, pendingTouch: event.pointerType === 'touch' };
+-      if (event.pointerType !== 'touch') { event.currentTarget.setPointerCapture(event.pointerId); event.preventDefault(); }
++      // The contour supplies actual native hit testing, rather than the old
++      // elliptical proximity heuristic around a rectangular stage.
++      if (event.target !== hitSurface.current) return;
++      drag.current = { x, y, parent, pointerId: event.pointerId };
++      event.currentTarget.setPointerCapture(event.pointerId); event.preventDefault();
+     }
+     const dx = (drag.current ? Math.max(-7.425, Math.min(7.425, (x - drag.current.x) * .2145)) : nx * 5.28 * proximity) * clock.strength;
+     const dy = (drag.current ? Math.max(-7.425, Math.min(7.425, (y - drag.current.y) * .2145)) : ny * 5.28 * proximity) * clock.strength;
+@@ -245,7 +266,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+   useImperativeHandle(ref, () => ({ replay() {
+     if (clock.reduced || simulation.current.failed) return;
+     releaseDrag(); settleSurface();
+-    simulation.current.growth = 0; simulation.current.playing = true; syncForeground(); callback.current?.(true); clock.wake();
++    simulation.current.growth = 0; simulation.current.playing = true; syncForeground(); syncHitSurface(); callback.current?.(true); clock.wake();
+   } }), [clock]);
+ 
+   return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
+@@ -255,6 +276,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     onLostPointerCapture={event => { if (event.target === event.currentTarget && drag.current?.pointerId === event.pointerId) cancelDrag(); }}
+     onPointerLeave={() => { if (!drag.current) settleSurface(); }}>
+     <canvas ref={canvas} className="volume-canvas" aria-hidden="true"/>
++    <div ref={hitSurface} className="volume-hit-surface" data-volume-hit="contour" aria-hidden="true" style={{ position: 'absolute', left: '50%', top: '50%', width: 1000, height: 560, transformOrigin: 'center', touchAction: 'pinch-zoom', pointerEvents: 'none' }}/>
+     {error && <svg viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true" data-renderer="static-pearl-fallback" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+       <defs>
+         <linearGradient id={`${fallbackId}-environment`} x2="1" y2="1"><stop stopColor="#D7E6FC"/><stop offset=".52" stopColor="#EBEDFD"/><stop offset="1" stopColor="#D8CEF0"/></linearGradient>
+diff --git a/src/backdropOptics.ts b/src/backdropOptics.ts
+index 57483bd..58d799f 100644
+--- a/src/backdropOptics.ts
++++ b/src/backdropOptics.ts
+@@ -18,6 +18,7 @@ export type BackdropOpticsResult = {
+   maskScale: number;
+   mapCssWidth: number;
+   mapCssHeight: number;
++  /** Synchronous raster/submission time; renderAsync excludes native PNG wait. */
+   computeMs: number;
+ };
+ 
+@@ -169,8 +170,9 @@ function blur(input: Float32Array, output: Float32Array, scratch: Float32Array,
+   }
+ }
+ 
+-// Every render is synchronous on one browser thread. Scratch pixels belong to
+-// this workspace, not to each mounted control; no caller receives these buffers.
++// Field calculation is synchronous on one browser thread. Scratch pixels belong
++// to this workspace, not each control; asynchronous PNG serialization snapshots
++// the completed canvas and no caller receives these shared mutable buffers.
+ // Dimensions remain bounded by the map limits and the existing padded kernel.
+ type Workspace = {
+   maskCanvas: HTMLCanvasElement; mapCanvas: HTMLCanvasElement;
+@@ -185,7 +187,38 @@ let workspace: Workspace | undefined;
+ let owners = 0;
+ let cacheBytes = 0;
+ const cache = new Map<string, { result: CachedMap; bytes: number }>();
+-const metrics = { renders: 0, previousHits: 0, sharedHits: 0, computations: 0, encodes: 0 };
++const metrics = { renders: 0, previousHits: 0, sharedHits: 0, computations: 0, encodes: 0, asyncRequests: 0, asyncEncodes: 0, asyncCacheHits: 0, asyncDropped: 0, asyncEncodeWallMs: 0 };
++
++type AsyncJob = { ready: () => boolean; run: () => Promise<void>; cancelled: boolean };
++const MAX_ASYNC_JOBS = 2;
++const asyncQueue: AsyncJob[] = [];
++let activeAsyncJobs = 0;
++function drainAsyncQueue() {
++  for (let i=asyncQueue.length-1;i>=0;i--) if(asyncQueue[i].cancelled)asyncQueue.splice(i,1);
++  while(activeAsyncJobs<MAX_ASYNC_JOBS){
++    const index=asyncQueue.findIndex(job=>job.ready());
++    if(index<0)return;
++    const [job]=asyncQueue.splice(index,1);activeAsyncJobs++;
++    // Rejection belongs to the requesting promise; the queue always releases
++    // its native encoder slot, including cancellation and serialization failure.
++    void job.run().finally(()=>{activeAsyncJobs--;drainAsyncQueue();});
++  }
++}
++const aborted=()=>new DOMException('Backdrop optics request was superseded or destroyed.','AbortError');
++/** Native asynchronous PNG serialization; no synchronous toDataURL or second
++ * field calculation. toBlob snapshots the current canvas bitmap at invocation. */
++function encodeAsync(canvas:HTMLCanvasElement):Promise<string>{
++  return new Promise((resolve,reject)=>{
++    canvas.toBlob(blob=>{
++      if(!blob){reject(new Error('Backdrop optics PNG serialization failed.'));return;}
++      const reader=new FileReader();
++      reader.onerror=()=>reject(reader.error??new Error('Backdrop optics PNG reading failed.'));
++      reader.onabort=()=>reject(aborted());
++      reader.onload=()=>typeof reader.result==='string'?resolve(reader.result):reject(new Error('Backdrop optics PNG data URL is unavailable.'));
++      try{reader.readAsDataURL(blob);}catch(error){reject(error);}
++    },'image/png');
++  });
++}
+ 
+ function getWorkspace(): Workspace {
+   if (!workspace) {
+@@ -202,6 +235,8 @@ function remember(key: string, result: CachedMap) {
+   // includes the retained key and image string, not just compressed PNG bytes.
+   const bytes = (key.length + result.href.length) * 2 + 128;
+   if (bytes > MAX_CACHE_BYTES) return;
++  const previous=cache.get(key);
++  if(previous){cacheBytes-=previous.bytes;cache.delete(key);}
+   while (cache.size >= MAX_CACHE_ENTRIES || cacheBytes + bytes > MAX_CACHE_BYTES) {
+     const oldest = cache.keys().next().value as string;
+     cacheBytes -= cache.get(oldest)!.bytes;
+@@ -213,7 +248,101 @@ function remember(key: string, result: CachedMap) {
+ /** Internal engineering counters, intentionally not re-exported by the kit API. */
+ export function getBackdropOpticsDiagnostics() {
+   return { ...metrics, owners, workspaceBytes: workspace ? workspace.field.byteLength + workspace.core.byteLength + workspace.scratch.byteLength + columnSums.byteLength : 0,
+-    cacheEntries: cache.size, cacheBytes, maxCacheEntries: MAX_CACHE_ENTRIES, maxCacheBytes: MAX_CACHE_BYTES };
++    cacheEntries: cache.size, cacheBytes, maxCacheEntries: MAX_CACHE_ENTRIES, maxCacheBytes: MAX_CACHE_BYTES,
++    activeAsyncJobs, queuedAsyncJobs:asyncQueue.length, maxAsyncJobs:MAX_ASYNC_JOBS };
++}
++
++/** Synchronous exact field calculation shared by both serialization paths.
++ * Canvas pixels are complete before either encoder snapshots the bitmap. */
++function rasterize(input: BackdropOpticsInput) {
++  const { path, width, height, camera } = input;
++  const light = input.light ?? SCENE_LIGHT, channels = input.channels ?? 'rgb';
++  const start = performance.now();
++  metrics.computations++;
++  const working = getWorkspace();
++  const { maskCanvas, mapCanvas, mask, map } = working;
++  const maskScale = Math.min(0.5, 224 / width, 160 / height);
++  const mapWidth = Math.max(1, Math.ceil(width * maskScale));
++  const mapHeight = Math.max(1, Math.ceil(height * maskScale));
++  // Padding keeps a shape continuing beyond the viewport from acquiring a
++  // false normal at the screen edge. Only the central map is encoded.
++  const padding = Math.ceil(270 * maskScale) + 2;
++  const rasterWidth = mapWidth + padding * 2;
++  const rasterHeight = mapHeight + padding * 2;
++  if (maskCanvas.width !== rasterWidth || maskCanvas.height !== rasterHeight) {
++    maskCanvas.width = rasterWidth; maskCanvas.height = rasterHeight;
++  }
++  const length = rasterWidth * rasterHeight;
++  if (working.field.length < length) {
++    working.field = new Float32Array(length);
++    working.core = new Float32Array(length);
++    working.scratch = new Float32Array(length);
++  }
++  const field = working.field.subarray(0, length), core = working.core.subarray(0, length), scratch = working.scratch.subarray(0, length);
++  if (!working.image || mapCanvas.width !== mapWidth || mapCanvas.height !== mapHeight) {
++    mapCanvas.width = mapWidth; mapCanvas.height = mapHeight;
++    working.image = map.createImageData(mapWidth, mapHeight);
++  }
++  const image = working.image;
++  mask.resetTransform();
++  mask.clearRect(0, 0, rasterWidth, rasterHeight);
++  // Keep this identical to the DOM/SVG world-to-screen transform.
++  mask.setTransform(maskScale * camera.zoom, 0, 0, maskScale * camera.zoom,
++    padding + maskScale * (width / 2 - camera.x * camera.zoom),
++    padding + maskScale * (height / 2 + 8 - camera.y * camera.zoom));
++  mask.fillStyle = '#fff';
++  mask.fill(new Path2D(path));
++  const alpha = mask.getImageData(0, 0, rasterWidth, rasterHeight).data;
++  const bounds: Bounds = { left:rasterWidth, top:rasterHeight, right:-1, bottom:-1 };
++  for (let y = 0; y < rasterHeight; y++) for (let x = 0; x < rasterWidth; x++) {
++    const i = y * rasterWidth + x, value = alpha[i * 4 + 3]; field[i] = value / 255;
++    if (value > 0) {
++      if (x < bounds.left) bounds.left = x; if (x > bounds.right) bounds.right = x;
++      if (y < bounds.top) bounds.top = y; bounds.bottom = y;
++    }
++  }
++  // Compute the broad field first, then reuse the original raw buffer for
++  // the narrow field. The retained alpha still supplies exact membership.
++  // Both blur results and the final Float32 rounding match the v6 pipeline.
++  blur(field, core, scratch, rasterWidth, rasterHeight, 90 * maskScale, bounds);
++  blur(field, field, scratch, rasterWidth, rasterHeight, 4 * maskScale, bounds);
++  for (let i = 0; i < length; i++) field[i] = field[i] * 12 + core[i] * 140;
++  const pixels = image.data;
++  for (let y = 0; y < mapHeight; y++) {
++    for (let x = 0; x < mapWidth; x++) {
++      const source = (y + padding) * rasterWidth + x + padding;
++      const target = (y * mapWidth + x) * 4;
++      let red = 128;
++      let green = 128;
++      let reflection = 0;
++      if (alpha[source * 4 + 3] > 0) {
++        // One raster pixel spans 1/maskScale CSS pixels.
++        const dx = (field[source + 1] - field[source - 1]) * maskScale / 2;
++        const dy = (field[source + rasterWidth] - field[source - rasterWidth]) * maskScale / 2;
++        const inverseLength = 1 / Math.sqrt(dx * dx + dy * dy + 1);
++        // N=(-dh/dx,-dh/dy,1). Inward sampling magnifies the live backdrop.
++        red = Math.round((0.5 + 0.5 * dx * inverseLength) * 255);
++        green = Math.round((0.5 + 0.5 * dy * inverseLength) * 255);
++        if (channels === 'rgb') {
++          const worldX=((x+.5)/maskScale-width/2)/camera.zoom+camera.x;
++          const worldY=((y+.5)/maskScale-height/2-8)/camera.zoom+camera.y;
++          const lx=light.x-worldX,ly=light.y-worldY,lz=light.z-field[source]/camera.zoom;
++          const lightLength=Math.sqrt(lx*lx+ly*ly+lz*lz),hx=lx/lightLength,hy=ly/lightLength,hz=lz/lightLength+1;
++          const halfLength=Math.sqrt(hx*hx+hy*hy+hz*hz);
++          const highlight=Math.max(0,(-dx*hx-dy*hy+hz)*inverseLength/halfLength);
++          // B is a narrow mirror response from the very same float normal.
++          // It never supplies the transmitted colour or a white body wash.
++          reflection=Math.round(255*(Math.pow(highlight,180)*.68+Math.pow(highlight,70)*.035));
++        }
++      }
++      pixels[target] = red;
++      pixels[target + 1] = green;
++      pixels[target + 2] = reflection;
++      pixels[target + 3] = 255;
++    }
++  }
++  map.putImageData(image, 0, 0);
++  return { mapCanvas, maskScale, mapWidth, mapHeight, start };
+ }
+ 
+ /**
+@@ -226,6 +355,8 @@ export function createBackdropOptics() {
+   let previousKey: string | undefined;
+   let previousResult: BackdropOpticsResult | undefined;
+   let destroyed = false;
++  let asyncActive=false;
++  let queued:{job:AsyncJob;reject:(reason:unknown)=>void}|undefined;
+ 
+   return {
+     render(input: BackdropOpticsInput): BackdropOpticsResult {
+@@ -250,91 +381,7 @@ export function createBackdropOptics() {
+         previousKey = key;
+         previousResult = { ...hit.result, version, computeMs: 0 }; return previousResult;
+       }
+-      const start = performance.now();
+-      metrics.computations++;
+-      const working = getWorkspace();
+-      const { maskCanvas, mapCanvas, mask, map } = working;
+-      const maskScale = Math.min(0.5, 224 / width, 160 / height);
+-      const mapWidth = Math.max(1, Math.ceil(width * maskScale));
+-      const mapHeight = Math.max(1, Math.ceil(height * maskScale));
+-      // Padding keeps a shape continuing beyond the viewport from acquiring a
+-      // false normal at the screen edge. Only the central map is encoded.
+-      const padding = Math.ceil(270 * maskScale) + 2;
+-      const rasterWidth = mapWidth + padding * 2;
+-      const rasterHeight = mapHeight + padding * 2;
+-      if (maskCanvas.width !== rasterWidth || maskCanvas.height !== rasterHeight) {
+-        maskCanvas.width = rasterWidth; maskCanvas.height = rasterHeight;
+-      }
+-      const length = rasterWidth * rasterHeight;
+-      if (working.field.length < length) {
+-        working.field = new Float32Array(length);
+-        working.core = new Float32Array(length);
+-        working.scratch = new Float32Array(length);
+-      }
+-      const field = working.field.subarray(0, length), core = working.core.subarray(0, length), scratch = working.scratch.subarray(0, length);
+-      if (!working.image || mapCanvas.width !== mapWidth || mapCanvas.height !== mapHeight) {
+-        mapCanvas.width = mapWidth; mapCanvas.height = mapHeight;
+-        working.image = map.createImageData(mapWidth, mapHeight);
+-      }
+-      const image = working.image;
+-      mask.resetTransform();
+-      mask.clearRect(0, 0, rasterWidth, rasterHeight);
+-      // Keep this identical to the DOM/SVG world-to-screen transform.
+-      mask.setTransform(maskScale * camera.zoom, 0, 0, maskScale * camera.zoom,
+-        padding + maskScale * (width / 2 - camera.x * camera.zoom),
+-        padding + maskScale * (height / 2 + 8 - camera.y * camera.zoom));
+-      mask.fillStyle = '#fff';
+-      mask.fill(new Path2D(path));
+-      const alpha = mask.getImageData(0, 0, rasterWidth, rasterHeight).data;
+-      const bounds: Bounds = { left:rasterWidth, top:rasterHeight, right:-1, bottom:-1 };
+-      for (let y = 0; y < rasterHeight; y++) for (let x = 0; x < rasterWidth; x++) {
+-        const i = y * rasterWidth + x, value = alpha[i * 4 + 3]; field[i] = value / 255;
+-        if (value > 0) {
+-          if (x < bounds.left) bounds.left = x; if (x > bounds.right) bounds.right = x;
+-          if (y < bounds.top) bounds.top = y; bounds.bottom = y;
+-        }
+-      }
+-      // Compute the broad field first, then reuse the original raw buffer for
+-      // the narrow field. The retained alpha still supplies exact membership.
+-      // Both blur results and the final Float32 rounding match the v6 pipeline.
+-      blur(field, core, scratch, rasterWidth, rasterHeight, 90 * maskScale, bounds);
+-      blur(field, field, scratch, rasterWidth, rasterHeight, 4 * maskScale, bounds);
+-      for (let i = 0; i < length; i++) field[i] = field[i] * 12 + core[i] * 140;
+-      const pixels = image.data;
+-      for (let y = 0; y < mapHeight; y++) {
+-        for (let x = 0; x < mapWidth; x++) {
+-          const source = (y + padding) * rasterWidth + x + padding;
+-          const target = (y * mapWidth + x) * 4;
+-          let red = 128;
+-          let green = 128;
+-          let reflection = 0;
+-          if (alpha[source * 4 + 3] > 0) {
+-            // One raster pixel spans 1/maskScale CSS pixels.
+-            const dx = (field[source + 1] - field[source - 1]) * maskScale / 2;
+-            const dy = (field[source + rasterWidth] - field[source - rasterWidth]) * maskScale / 2;
+-            const inverseLength = 1 / Math.sqrt(dx * dx + dy * dy + 1);
+-            // N=(-dh/dx,-dh/dy,1). Inward sampling magnifies the live backdrop.
+-            red = Math.round((0.5 + 0.5 * dx * inverseLength) * 255);
+-            green = Math.round((0.5 + 0.5 * dy * inverseLength) * 255);
+-            if (channels === 'rgb') {
+-              const worldX=((x+.5)/maskScale-width/2)/camera.zoom+camera.x;
+-              const worldY=((y+.5)/maskScale-height/2-8)/camera.zoom+camera.y;
+-              const lx=light.x-worldX,ly=light.y-worldY,lz=light.z-field[source]/camera.zoom;
+-              const lightLength=Math.sqrt(lx*lx+ly*ly+lz*lz),hx=lx/lightLength,hy=ly/lightLength,hz=lz/lightLength+1;
+-              const halfLength=Math.sqrt(hx*hx+hy*hy+hz*hz);
+-              const highlight=Math.max(0,(-dx*hx-dy*hy+hz)*inverseLength/halfLength);
+-              // B is a narrow mirror response from the very same float normal.
+-              // It never supplies the transmitted colour or a white body wash.
+-              reflection=Math.round(255*(Math.pow(highlight,180)*.68+Math.pow(highlight,70)*.035));
+-            }
+-          }
+-          pixels[target] = red;
+-          pixels[target + 1] = green;
+-          pixels[target + 2] = reflection;
+-          pixels[target + 3] = 255;
+-        }
+-      }
+-      map.putImageData(image, 0, 0);
++      const { mapCanvas, maskScale, mapWidth, mapHeight, start } = rasterize(input);
+       const href = mapCanvas.toDataURL('image/png'); metrics.encodes++;
+       const result: CachedMap = { href, maskScale, mapCssWidth: mapWidth / maskScale, mapCssHeight: mapHeight / maskScale };
+       remember(key, result);
+@@ -342,9 +389,62 @@ export function createBackdropOptics() {
+       previousResult = { ...result, version, computeMs: performance.now() - start };
+       return previousResult;
+     },
++    /** Exact same raster and shared LRU as render(), with asynchronous native
++     * PNG encoding. At most one request executes per owner; a queued request
++     * can be superseded before doing pixel work. The consumer commits the whole
++     * matching path/map frame together after this promise resolves. */
++    renderAsync(input:BackdropOpticsInput):Promise<BackdropOpticsResult>{
++      const {path,width,height,camera,version}=input,light=input.light??SCENE_LIGHT;
++      if(!(width>0&&height>0&&camera.zoom>0)||![width,height,camera.x,camera.y,camera.zoom,light.x,light.y,light.z].every(Number.isFinite))return Promise.reject(new Error('Backdrop optics requires finite viewport dimensions and a positive camera zoom.'));
++      if(destroyed)return Promise.reject(aborted());
++      const channels=input.channels??'rgb';
++      const key=JSON.stringify([path,width,height,camera.x,camera.y,camera.zoom,...(channels==='rgb'?[light.x,light.y,light.z]:[]),channels]);
++      metrics.asyncRequests++;
++      if(queued){queued.job.cancelled=true;queued.reject(aborted());queued=undefined;metrics.asyncDropped++;drainAsyncQueue();}
++      if(previousKey===key&&previousResult){metrics.asyncCacheHits++;return Promise.resolve({...previousResult,version,computeMs:0});}
++      const hit=cache.get(key);
++      if(hit){
++        metrics.asyncCacheHits++;cache.delete(key);cache.set(key,hit);previousKey=key;
++        previousResult={...hit.result,version,computeMs:0};return Promise.resolve(previousResult);
++      }
++      const snapshot={...input,camera:{...camera},light:{...light}};
++      return new Promise((resolve,reject)=>{
++        const job:AsyncJob={cancelled:false,ready:()=>!asyncActive,run:async()=>{
++          queued=undefined;asyncActive=true;
++          try{
++            if(destroyed)throw aborted();
++            // A different owner may have completed the same map while this
++            // request waited for an encoder slot. Reuse it without recomputing.
++            const cached=cache.get(key);
++            if(cached){
++              metrics.asyncCacheHits++;cache.delete(key);cache.set(key,cached);
++              previousKey=key;previousResult={...cached.result,version,computeMs:0};resolve(previousResult);return;
++            }
++            const {mapCanvas,maskScale,mapWidth,mapHeight,start}=rasterize(snapshot);
++            const encodeStart=performance.now(),pending=encodeAsync(mapCanvas);
++            const computeMs=performance.now()-start;
++            metrics.asyncEncodes++;
++            const href=await pending;
++            metrics.asyncEncodeWallMs+=performance.now()-encodeStart;
++            if(destroyed)throw aborted();
++            const result:CachedMap={href,maskScale,mapCssWidth:mapWidth/maskScale,mapCssHeight:mapHeight/maskScale};
++            remember(key,result);previousKey=key;previousResult={...result,version,computeMs};resolve(previousResult);
++          }catch(error){reject(error);}finally{asyncActive=false;}
++        }};
++        queued={job,reject};asyncQueue.push(job);drainAsyncQueue();
++      });
++    },
++    /** Stop unstarted offscreen work while retaining the displayed map/cache.
++     * A native encoder already in flight finishes normally; the view's epoch
++     * decides whether its completed frame is still eligible for presentation. */
++    cancelPending(){
++      if(!queued)return;
++      queued.job.cancelled=true;queued.reject(aborted());queued=undefined;metrics.asyncDropped++;drainAsyncQueue();
++    },
+     destroy() {
+       if (destroyed) return;
+       destroyed = true;
++      if(queued){queued.job.cancelled=true;queued.reject(aborted());queued=undefined;metrics.asyncDropped++;drainAsyncQueue();}
+       previousKey = previousResult = undefined;
+       if (--owners === 0) {
+         if (workspace) {
+diff --git a/src/index.ts b/src/index.ts
+index 7897442..5e37849 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -14,3 +14,5 @@ export type { VolumeStageProps, VolumeStageHandle } from './VolumeStage';
+ export { endpointGeometry } from './endpointGeometry';
+ export { contourShape, shellPath } from './geometry';
+ export type { Shape } from './geometry';
++export { ControlledScene, ControlledSource } from './ControlledScene';
++export type { ControlledSceneProps, ControlledSourceProps, ControlledSceneValue, ControlledSceneSize } from './ControlledScene';
+diff --git a/src/volume-hit-geometry.ts b/src/volume-hit-geometry.ts
+new file mode 100644
+index 0000000..0b23148
+--- /dev/null
++++ b/src/volume-hit-geometry.ts
+@@ -0,0 +1,73 @@
++/** CPU coverage counterpart of volume-renderer.js. This only supplies the
++ * browser's pre-contact hit surface; the renderer remains the visual source.
++ * Lighting/ambient changes do not rebuild this path. */
++export type VolumeGeometry = {
++  parentX: number; parentY: number; childX: number; childY: number;
++  deformX: number; deformY: number; deformDX: number; deformDY: number; curvature: number;
++};
++
++type Point = [number, number];
++const clamp = (value: number, minimum: number, maximum: number) => Math.min(maximum, Math.max(minimum, value));
++
++export function volumeCoverage(geometry: VolumeGeometry, growth: number) {
++  // Match the renderer's public bounds before evaluating its field.
++  const px = 150 * clamp(geometry.parentX, .85, 1.15), py = 150 * clamp(geometry.parentY, .85, 1.15);
++  const g = clamp(growth, 0, 1), ease = g * g * (3 - 2 * g), size = g ** .85;
++  const cx = 373 + 317 * ease, rx = Math.max(.1, 255 * clamp(geometry.childX, .85, 1.15) * size);
++  const ry = Math.max(.1, 210 * clamp(geometry.childY, .85, 1.15) * size), exponent = 2 + (clamp(geometry.curvature, 2, 5.2) - 2) * ease;
++  const union = 24 + 136 * Math.sqrt(g);
++  const dx = clamp(geometry.deformDX, -32, 32), dy = clamp(geometry.deformDY, -32, 32);
++  const deformX = clamp(geometry.deformX, -100, 1100), deformY = clamp(geometry.deformY, -100, 660);
++  function chamber(x: number, y: number, halfX: number, halfY: number, n: number) {
++    const qx = Math.max(Math.abs(x) / halfX, .00001), qy = Math.max(Math.abs(y) / halfY, .00001);
++    // The parent is always an ellipse; avoid general powers in that branch.
++    const powerX = n === 2 ? qx * qx : qx ** n, powerY = n === 2 ? qy * qy : qy ** n;
++    const sum = powerX + powerY, norm = n === 2 ? Math.sqrt(sum) : sum ** (1 / n), factor = norm / sum;
++    const gx = powerX / qx * factor / halfX, gy = powerY / qy * factor / halfY;
++    return Math.max((norm - 1) / Math.max(Math.sqrt(gx * gx + gy * gy), .0001), -Math.min(halfX, halfY));
++  }
++  const distance = (x: number, y: number) => {
++    if (dx || dy) {
++      const weight = Math.exp(-((x - deformX) ** 2 + (y - deformY) ** 2) / 11025);
++      x -= dx * weight; y -= dy * weight;
++    }
++    const parent = chamber(x - 230, y - 280, px, py, 2);
++    if (g < .0001) return parent;
++    const child = chamber(x - cx, y - 280, rx, ry, exponent);
++    const h = clamp(.5 + .5 * (child - parent) / union, 0, 1);
++    return child + (parent - child) * h - union * h * (1 - h);
++  };
++  // The approved bounded Gaussian deformation is injective. Find the
++  // preimage of the horizontal primitive centreline, including tip motion.
++  const centreY = (x: number) => {
++    let y = 280;
++    if (dy) for (let i = 0; i < 6; i++) y = 280 + dy * Math.exp(-((x - deformX) ** 2 + (y - deformY) ** 2) / 11025);
++    return y;
++  };
++  return { distance, centreY };
++}
++
++/** 128 cosine-spaced segments put extra samples at the high-curvature tips.
++ * Root refinement is below .04 logical px. The returned polygon follows the
++ * same coverage field, including the neck, budding and local deformation. */
++export function volumeHitContour(geometry: VolumeGeometry, growth: number, segments = 128): { path: string; points: Point[] } {
++  const { distance, centreY } = volumeCoverage(geometry, growth);
++  let low = -100, high = 230;
++  for (let i = 0; i < 16; i++) { const x = (low + high) / 2; if (distance(x, centreY(x)) > 0) low = x; else high = x; }
++  const left = (low + high) / 2;
++  low = 230; high = 1100;
++  for (let i = 0; i < 16; i++) { const x = (low + high) / 2; if (distance(x, centreY(x)) <= 0) low = x; else high = x; }
++  const right = (low + high) / 2;
++  const upper: Point[] = [], lower: Point[] = [];
++  for (let i = 0; i <= segments; i++) {
++    const x = left + (right - left) * (1 - Math.cos(Math.PI * i / segments)) / 2, cy = centreY(x);
++    let outer = -100, inner = cy;
++    for (let j = 0; j < 14; j++) { const y = (outer + inner) / 2; if (distance(x, y) > 0) outer = y; else inner = y; }
++    upper.push([x, (outer + inner) / 2]);
++    outer = 660; inner = cy;
++    for (let j = 0; j < 14; j++) { const y = (outer + inner) / 2; if (distance(x, y) > 0) outer = y; else inner = y; }
++    lower.push([x, (outer + inner) / 2]);
++  }
++  const points = [...upper, ...lower.reverse()];
++  return { points, path: points.map(([x, y], i) => `${i ? 'L' : 'M'}${x.toFixed(2)} ${y.toFixed(2)}`).join(' ') + ' Z' };
++}
+diff --git a/vite.config.mjs b/vite.config.mjs
+index 8bb3f31..56dae7e 100644
+--- a/vite.config.mjs
++++ b/vite.config.mjs
+@@ -1,2 +1,2 @@
+ import { defineConfig } from 'vite';
+-export default defineConfig({ base: './', build: { outDir: 'site-dist', emptyOutDir: true } });
++export default defineConfig({ base: './', build: { outDir: 'site-dist', emptyOutDir: true, rollupOptions:{input:{showcase:'index.html',mobileReview:'mobile-review.html'}} } });
+diff --git a/work/r3-controlled-proof/README.md b/work/r3-controlled-proof/README.md
+new file mode 100644
+index 0000000..b695d0c
+--- /dev/null
++++ b/work/r3-controlled-proof/README.md
+@@ -0,0 +1,37 @@
++# R3 controlled-scene refraction feasibility proof
++
++Date: 2026-10-19. Engineering proof only; not an owner-accepted visual or public release. No existing runtime source was edited by this proof.
++
++## Result
++
++Regular SVG `filter="url(#...)"` with `feDisplacementMap` can refract a shared explicit source scene in Chrome 155 and the installed Playwright WebKit 26.5. The existing kit C2 contour clips the lens; the existing `createBackdropOptics` RG normal field supplies displacement. The same `<g id="sourceScene">` is rendered once as the board and once inside the lens via `<use>`, so changing text or track value updates both from one definition. No blur is used in the proof, and the source is not a fixed decorative image.
++
++This is real spatial displacement of actual rendered source pixels. **It is not arbitrary DOM backdrop capture**, and it does not repair WebKit's backdrop-filter URL implementation. Production must expose an explicit source-scene contract and retain native semantic controls and readable DOM content outside optical layers. Source scene items can support gradient fields, grid/shape primitives, track endpoints/fill/value, same-origin/CORS-approved image textures, and an explicitly supplied typography specimen. Unregistered HTML behind the control will not be refracted by this path.
++
++## Reproduce and inspect
++
++Run the kit dev server, open `/work/r3-controlled-proof/index.html`, then run the callback at `output/playwright/r3-controlled-proof-2026-10-19/capture.cjs` from the parent workspace via Playwright CLI in a Chrome and WebKit session. The companion `compare.py` writes `pixel-summary.json` from actual SVG screenshots.
++
++Checks compare scale 0 and 28; then update source text and track fill independently and repeat. In WebKit the track region changes 17.774% of pixels and the text region changes 28.972%, with maximum channel deltas 99 and 146. The control-exterior comparison remains pixel-identical. New source data changes the displaced interior too. Chrome shows the same mechanism with small expected rasterization differences. Screenshots were opened and visually inspected; text magnification/curvature and track displacement are visible, not only asserted by metrics.
++
++The proof prepares one normal map before the ready marker. There are no shader compilation, WebGL context, or new normal-map work on subsequent source/position edits: diagnostics remain one computation and one encode. Cold normal generation measured about 128 ms in the initial Chrome load and 41 ms in WebKit on this host, so production should prepare on section approach/mount before interaction and make readiness explicit. Those desktop measurements do not establish first-touch latency on a physical device.
++
++The reusable `ControlledScene`/`ControlledSource` component was additionally exercised in an actual React WebKit page at `component.html`. Sixty consecutive source updates do not starve initial readiness or turn it false after it becomes true. Wrapper and existing-container providers have distinct IDs and both reach revision 62. Resizing 500 to 320 CSS pixels updates the SVG viewBox and source bounds without losing the native input's focus or bilingual value. The test caught and fixed a parent-ref attachment ordering bug: source observation must attach after the parent container ref is assigned. These lifecycle results are recorded in `lifecycle-webkit.txt`; they are distinct from the filter pixel proof.
++
++## Smallest integration recommendation
++
++1. Add an opt-in controlled scene adapter to the independent sample, not a browser-wide override of existing SVG/native behavior.
++2. Keep one shared scene definition per demonstration/track; render the same scene definition in the ordinary backdrop and the optical source. Move the optical source by the negative lens offset so track endpoints move correctly relative to the transparent lens.
++3. Apply the current RG normal field through a regular SVG filter to that explicit source. Clip and rim must continue using the same current C2 path. Existing native control labels and editing DOM remain above the optical output.
++4. Prepare source/normal resources on visibility approach or sample mount; subsequent dragging updates lens transforms and source state only. Avoid synchronous snapshotting, PNG encoding, or shader/program creation in pointerdown. Keep hidden sections paused and retain the existing material settings and reduced-motion behavior.
++5. First validate phone/iPad physical Safari, touch, trackpad, cancellation and a second drag/re-grab on the independent public review. Desktop WebKit is useful evidence, not a physical iPad certificate.
++
++If later products require arbitrary mixed DOM refraction on Safari, a controlled-scene adapter cannot supply it. A shared WebGL canvas can own registered scene/textures and refract them, but it still cannot directly sample arbitrary live DOM; use such a pipeline only if the explicit scene contract and shader/per-context cost are justified.
++
++## Direct sources checked
++
++- [WebKit bug 245510](https://bugs.webkit.org/show_bug.cgi?id=245510), checked 2026-10-19: status NEW; the reported missing/crashing path is `backdrop-filter: url(...)`. Latest visible comment is dated 2026-09-05. Proposed patches are not evidence of a shipped Safari fix.
++- [Filter Effects specification: feDisplacementMap](https://drafts.csswg.org/filter-effects/#feDisplacementMapElement): defines spatial sampling based on displacement channels. The proof uses this ordinary filtered-source route.
++- [WebGL 1.0 specification](https://registry.khronos.org/webgl/specs/latest/1.0/): canvas/image texture sources and origin restrictions apply to a possible GPU-owned controlled scene. WebGL is not a general DOM screenshot API.
++
++Native Safari/iOS hardware, Combo Touch, and first-contact response are pending owner device testing. This proof alone does not establish those outcomes.
+diff --git a/work/r3-controlled-proof/backdropOptics-pre-async.ts b/work/r3-controlled-proof/backdropOptics-pre-async.ts
+new file mode 100644
+index 0000000..57483bd
+--- /dev/null
++++ b/work/r3-controlled-proof/backdropOptics-pre-async.ts
+@@ -0,0 +1,358 @@
++const SCENE_LIGHT = { x: -450, y: -350, z: 950 };
++
++export type BackdropOpticsInput = {
++  /** The same world-space union path used by the visible shell. */
++  path: string;
++  width: number;
++  height: number;
++  camera: { x: number; y: number; zoom: number };
++  light?: { x:number;y:number;z:number };
++  version: number;
++  /** Omit unused mirror-channel work for displacement-only consumers. */
++  channels?: 'rg' | 'rgb';
++};
++
++export type BackdropOpticsResult = {
++  href: string;
++  version: number;
++  maskScale: number;
++  mapCssWidth: number;
++  mapCssHeight: number;
++  computeMs: number;
++};
++
++function boxHorizontal(input: Float32Array, output: Float32Array, width: number, height: number, radius: number) {
++  const divisor = radius * 2 + 1;
++  const innerEnd = width - radius - 1;
++  for (let y = 0; y < height; y++) {
++    const row = y * width;
++    let sum = 0;
++    for (let x = 0; x <= radius && x < width; x++) sum += input[row + x];
++    // The optical raster's padding keeps the actual kernels smaller than half
++    // its width. Retain the general case for a narrower future caller too.
++    if (width <= radius * 2 + 1) {
++      for (let x = 0; x < width; x++) {
++        output[row + x] = sum / divisor;
++        if (x - radius >= 0) sum -= input[row + x - radius];
++        if (x + radius + 1 < width) sum += input[row + x + radius + 1];
++      }
++      continue;
++    }
++    // Keep the old accumulation order (write, subtract, add). Splitting the
++    // padded boundaries removes edge tests from the large interior loop.
++    let x = 0;
++    for (; x < radius; x++) {
++      output[row + x] = sum / divisor;
++      sum += input[row + x + radius + 1];
++    }
++    for (; x < innerEnd; x++) {
++      output[row + x] = sum / divisor;
++      sum -= input[row + x - radius];
++      sum += input[row + x + radius + 1];
++    }
++    for (; x < width; x++) {
++      output[row + x] = sum / divisor;
++      sum -= input[row + x - radius];
++    }
++  }
++}
++
++// Width is bounded by the existing map and padding limits (< 500 columns).
++// Float64 stores the very same JS-number sum as the original scalar loop.
++let columnSums = new Float64Array(0);
++function boxVertical(input: Float32Array, output: Float32Array, width: number, height: number, radius: number) {
++  const divisor = radius * 2 + 1;
++  if (columnSums.length < width) columnSums = new Float64Array(width);
++  const sums = columnSums; sums.fill(0, 0, width);
++  for (let y = 0; y <= radius && y < height; y++) {
++    const row = y * width;
++    for (let x = 0; x < width; x++) sums[x] += input[row + x];
++  }
++  // Walk contiguous rows instead of revisiting a full strided column. Each
++  // column still performs exactly the original subtract/add sequence.
++  for (let y = 0; y < height; y++) {
++    const row = y * width, remove = (y - radius) * width, add = (y + radius + 1) * width;
++    if (y < radius) {
++      if (y + radius + 1 < height) {
++        for (let x = 0; x < width; x++) { output[row+x] = sums[x] / divisor; sums[x] += input[add+x]; }
++      } else {
++        for (let x = 0; x < width; x++) output[row+x] = sums[x] / divisor;
++      }
++    } else if (y + radius + 1 < height) {
++      for (let x = 0; x < width; x++) { const sum = sums[x]; output[row+x] = sum / divisor; sums[x] = sum - input[remove+x] + input[add+x]; }
++    } else {
++      for (let x = 0; x < width; x++) { output[row+x] = sums[x] / divisor; sums[x] -= input[remove+x]; }
++    }
++  }
++}
++
++type Bounds = { left: number; top: number; right: number; bottom: number };
++
++function boxHorizontalRegion(input: Float32Array, output: Float32Array, width: number, height: number, radius: number, bounds: Bounds): Bounds {
++  const left = Math.max(0, bounds.left - radius), right = Math.min(width - 1, bounds.right + radius);
++  output.fill(0);
++  if (bounds.right < bounds.left) return bounds;
++  const divisor = radius * 2 + 1;
++  let retainedRight = right;
++  for (let y = bounds.top; y <= bounds.bottom; y++) {
++    const row = y * width;
++    let sum = 0;
++    for (let x = Math.max(0, left - radius); x <= Math.min(width - 1, left + radius); x++) sum += input[row + x];
++    for (let x = left; x <= right; x++) {
++      output[row + x] = sum / divisor;
++      if (x - radius >= 0) sum -= input[row + x - radius];
++      if (x + radius + 1 < width) sum += input[row + x + radius + 1];
++    }
++    // A JS sliding sum may leave cancellation residue after its mathematically
++    // supported window. Preserve that exact tail rather than assuming zero.
++    if (sum !== 0 && right + 1 < width) {
++      output.fill(sum / divisor, row + right + 1, row + width);
++      retainedRight = width - 1;
++    }
++  }
++  return { ...bounds, left, right: retainedRight };
++}
++
++function boxVerticalRegion(input: Float32Array, output: Float32Array, width: number, height: number, radius: number, bounds: Bounds): Bounds {
++  const top = Math.max(0, bounds.top - radius), bottom = Math.min(height - 1, bounds.bottom + radius);
++  output.fill(0);
++  if (bounds.right < bounds.left) return bounds;
++  const divisor = radius * 2 + 1;
++  if (columnSums.length < width) columnSums = new Float64Array(width);
++  const sums = columnSums; sums.fill(0, bounds.left, bounds.right + 1);
++  for (let y = Math.max(0, top - radius); y <= Math.min(height - 1, top + radius); y++) {
++    const row = y * width;
++    for (let x = bounds.left; x <= bounds.right; x++) sums[x] += input[row + x];
++  }
++  for (let y = top; y <= bottom; y++) {
++    const row = y * width, remove = (y - radius) * width, add = (y + radius + 1) * width;
++    if (y < radius) {
++      if (y + radius + 1 < height) {
++        for (let x = bounds.left; x <= bounds.right; x++) { output[row+x] = sums[x] / divisor; sums[x] += input[add+x]; }
++      } else {
++        for (let x = bounds.left; x <= bounds.right; x++) output[row+x] = sums[x] / divisor;
++      }
++    } else if (y + radius + 1 < height) {
++      for (let x = bounds.left; x <= bounds.right; x++) { const sum = sums[x]; output[row+x] = sum / divisor; sums[x] = sum - input[remove+x] + input[add+x]; }
++    } else {
++      for (let x = bounds.left; x <= bounds.right; x++) { output[row+x] = sums[x] / divisor; sums[x] -= input[remove+x]; }
++    }
++  }
++  let retainedBottom = bottom;
++  for (let x = bounds.left; x <= bounds.right; x++) {
++    if (sums[x] !== 0 && bottom + 1 < height) {
++      const tail = sums[x] / divisor;
++      for (let y = bottom + 1; y < height; y++) output[y * width + x] = tail;
++      retainedBottom = height - 1;
++    }
++  }
++  return { ...bounds, top, bottom: retainedBottom };
++}
++
++/** Three sliding boxes approximate a Gaussian without quantizing the height field. */
++function blur(input: Float32Array, output: Float32Array, scratch: Float32Array, width: number, height: number, sigma: number, initialBounds?: Bounds) {
++  const ideal = Math.sqrt(4 * sigma * sigma + 1);
++  const lower = Math.max(1, Math.floor(ideal) - (Math.floor(ideal) % 2 === 0 ? 1 : 0));
++  const upper = lower + 2;
++  const lowerCount = Math.round((12 * sigma * sigma - 3 * lower * lower - 12 * lower - 9) / (-4 * lower - 4));
++  output.set(input);
++  let bounds = initialBounds;
++  for (let pass = 0; pass < 3; pass++) {
++    const radius = ((pass < lowerCount ? lower : upper) - 1) / 2;
++    if (bounds && !(bounds.left === 0 && bounds.top === 0 && bounds.right === width - 1 && bounds.bottom === height - 1)) {
++      const horizontal = boxHorizontalRegion(output, scratch, width, height, radius, bounds);
++      bounds = boxVerticalRegion(scratch, output, width, height, radius, horizontal);
++    } else {
++      boxHorizontal(output, scratch, width, height, radius);
++      boxVertical(scratch, output, width, height, radius);
++    }
++  }
++}
++
++// Every render is synchronous on one browser thread. Scratch pixels belong to
++// this workspace, not to each mounted control; no caller receives these buffers.
++// Dimensions remain bounded by the map limits and the existing padded kernel.
++type Workspace = {
++  maskCanvas: HTMLCanvasElement; mapCanvas: HTMLCanvasElement;
++  mask: CanvasRenderingContext2D; map: CanvasRenderingContext2D;
++  field: Float32Array; core: Float32Array; scratch: Float32Array;
++  image?: ImageData;
++};
++type CachedMap = Omit<BackdropOpticsResult, 'version' | 'computeMs'>;
++const MAX_CACHE_ENTRIES = 48;
++const MAX_CACHE_BYTES = 2 * 1024 * 1024;
++let workspace: Workspace | undefined;
++let owners = 0;
++let cacheBytes = 0;
++const cache = new Map<string, { result: CachedMap; bytes: number }>();
++const metrics = { renders: 0, previousHits: 0, sharedHits: 0, computations: 0, encodes: 0 };
++
++function getWorkspace(): Workspace {
++  if (!workspace) {
++    const maskCanvas = document.createElement('canvas'), mapCanvas = document.createElement('canvas');
++    const mask = maskCanvas.getContext('2d', { willReadFrequently: true }), map = mapCanvas.getContext('2d');
++    if (!mask || !map) throw new Error('Backdrop optics requires a 2D canvas context.');
++    workspace = { maskCanvas, mapCanvas, mask, map, field: new Float32Array(0), core: new Float32Array(0), scratch: new Float32Array(0) };
++  }
++  return workspace;
++}
++
++function remember(key: string, result: CachedMap) {
++  // UTF-16 is a conservative bound for the ASCII key/data URL. This budget
++  // includes the retained key and image string, not just compressed PNG bytes.
++  const bytes = (key.length + result.href.length) * 2 + 128;
++  if (bytes > MAX_CACHE_BYTES) return;
++  while (cache.size >= MAX_CACHE_ENTRIES || cacheBytes + bytes > MAX_CACHE_BYTES) {
++    const oldest = cache.keys().next().value as string;
++    cacheBytes -= cache.get(oldest)!.bytes;
++    cache.delete(oldest);
++  }
++  cache.set(key, { result, bytes }); cacheBytes += bytes;
++}
++
++/** Internal engineering counters, intentionally not re-exported by the kit API. */
++export function getBackdropOpticsDiagnostics() {
++  return { ...metrics, owners, workspaceBytes: workspace ? workspace.field.byteLength + workspace.core.byteLength + workspace.scratch.byteLength + columnSums.byteLength : 0,
++    cacheEntries: cache.size, cacheBytes, maxCacheEntries: MAX_CACHE_ENTRIES, maxCacheBytes: MAX_CACHE_BYTES };
++}
++
++/**
++ * Generates an RG normal map, never a copy of the page background. The native
++ * backdrop-filter consumes it and refracts its own live backdrop pixels.
++ * RGB remains the default for callers that also use the original mirror channel.
++ */
++export function createBackdropOptics() {
++  getWorkspace(); owners++;
++  let previousKey: string | undefined;
++  let previousResult: BackdropOpticsResult | undefined;
++  let destroyed = false;
++
++  return {
++    render(input: BackdropOpticsInput): BackdropOpticsResult {
++      const { path, width, height, camera, version } = input;
++      const light=input.light??SCENE_LIGHT;
++      if (!(width > 0 && height > 0 && camera.zoom > 0) || ![width, height, camera.x, camera.y, camera.zoom,light.x,light.y,light.z].every(Number.isFinite)) {
++        throw new Error('Backdrop optics requires finite viewport dimensions and a positive camera zoom.');
++      }
++      if (destroyed) throw new Error('Backdrop optics has been destroyed.');
++      const channels = input.channels ?? 'rgb';
++      const key = JSON.stringify([path, width, height, camera.x, camera.y, camera.zoom,
++        ...(channels === 'rgb' ? [light.x, light.y, light.z] : []), channels]);
++      metrics.renders++;
++      if (previousKey === key && previousResult) {
++        metrics.previousHits++;
++        previousResult = { ...previousResult, version, computeMs: 0 }; return previousResult;
++      }
++      const hit = cache.get(key);
++      if (hit) {
++        metrics.sharedHits++;
++        cache.delete(key); cache.set(key, hit);
++        previousKey = key;
++        previousResult = { ...hit.result, version, computeMs: 0 }; return previousResult;
++      }
++      const start = performance.now();
++      metrics.computations++;
++      const working = getWorkspace();
++      const { maskCanvas, mapCanvas, mask, map } = working;
++      const maskScale = Math.min(0.5, 224 / width, 160 / height);
++      const mapWidth = Math.max(1, Math.ceil(width * maskScale));
++      const mapHeight = Math.max(1, Math.ceil(height * maskScale));
++      // Padding keeps a shape continuing beyond the viewport from acquiring a
++      // false normal at the screen edge. Only the central map is encoded.
++      const padding = Math.ceil(270 * maskScale) + 2;
++      const rasterWidth = mapWidth + padding * 2;
++      const rasterHeight = mapHeight + padding * 2;
++      if (maskCanvas.width !== rasterWidth || maskCanvas.height !== rasterHeight) {
++        maskCanvas.width = rasterWidth; maskCanvas.height = rasterHeight;
++      }
++      const length = rasterWidth * rasterHeight;
++      if (working.field.length < length) {
++        working.field = new Float32Array(length);
++        working.core = new Float32Array(length);
++        working.scratch = new Float32Array(length);
++      }
++      const field = working.field.subarray(0, length), core = working.core.subarray(0, length), scratch = working.scratch.subarray(0, length);
++      if (!working.image || mapCanvas.width !== mapWidth || mapCanvas.height !== mapHeight) {
++        mapCanvas.width = mapWidth; mapCanvas.height = mapHeight;
++        working.image = map.createImageData(mapWidth, mapHeight);
++      }
++      const image = working.image;
++      mask.resetTransform();
++      mask.clearRect(0, 0, rasterWidth, rasterHeight);
++      // Keep this identical to the DOM/SVG world-to-screen transform.
++      mask.setTransform(maskScale * camera.zoom, 0, 0, maskScale * camera.zoom,
++        padding + maskScale * (width / 2 - camera.x * camera.zoom),
++        padding + maskScale * (height / 2 + 8 - camera.y * camera.zoom));
++      mask.fillStyle = '#fff';
++      mask.fill(new Path2D(path));
++      const alpha = mask.getImageData(0, 0, rasterWidth, rasterHeight).data;
++      const bounds: Bounds = { left:rasterWidth, top:rasterHeight, right:-1, bottom:-1 };
++      for (let y = 0; y < rasterHeight; y++) for (let x = 0; x < rasterWidth; x++) {
++        const i = y * rasterWidth + x, value = alpha[i * 4 + 3]; field[i] = value / 255;
++        if (value > 0) {
++          if (x < bounds.left) bounds.left = x; if (x > bounds.right) bounds.right = x;
++          if (y < bounds.top) bounds.top = y; bounds.bottom = y;
++        }
++      }
++      // Compute the broad field first, then reuse the original raw buffer for
++      // the narrow field. The retained alpha still supplies exact membership.
++      // Both blur results and the final Float32 rounding match the v6 pipeline.
++      blur(field, core, scratch, rasterWidth, rasterHeight, 90 * maskScale, bounds);
++      blur(field, field, scratch, rasterWidth, rasterHeight, 4 * maskScale, bounds);
++      for (let i = 0; i < length; i++) field[i] = field[i] * 12 + core[i] * 140;
++      const pixels = image.data;
++      for (let y = 0; y < mapHeight; y++) {
++        for (let x = 0; x < mapWidth; x++) {
++          const source = (y + padding) * rasterWidth + x + padding;
++          const target = (y * mapWidth + x) * 4;
++          let red = 128;
++          let green = 128;
++          let reflection = 0;
++          if (alpha[source * 4 + 3] > 0) {
++            // One raster pixel spans 1/maskScale CSS pixels.
++            const dx = (field[source + 1] - field[source - 1]) * maskScale / 2;
++            const dy = (field[source + rasterWidth] - field[source - rasterWidth]) * maskScale / 2;
++            const inverseLength = 1 / Math.sqrt(dx * dx + dy * dy + 1);
++            // N=(-dh/dx,-dh/dy,1). Inward sampling magnifies the live backdrop.
++            red = Math.round((0.5 + 0.5 * dx * inverseLength) * 255);
++            green = Math.round((0.5 + 0.5 * dy * inverseLength) * 255);
++            if (channels === 'rgb') {
++              const worldX=((x+.5)/maskScale-width/2)/camera.zoom+camera.x;
++              const worldY=((y+.5)/maskScale-height/2-8)/camera.zoom+camera.y;
++              const lx=light.x-worldX,ly=light.y-worldY,lz=light.z-field[source]/camera.zoom;
++              const lightLength=Math.sqrt(lx*lx+ly*ly+lz*lz),hx=lx/lightLength,hy=ly/lightLength,hz=lz/lightLength+1;
++              const halfLength=Math.sqrt(hx*hx+hy*hy+hz*hz);
++              const highlight=Math.max(0,(-dx*hx-dy*hy+hz)*inverseLength/halfLength);
++              // B is a narrow mirror response from the very same float normal.
++              // It never supplies the transmitted colour or a white body wash.
++              reflection=Math.round(255*(Math.pow(highlight,180)*.68+Math.pow(highlight,70)*.035));
++            }
++          }
++          pixels[target] = red;
++          pixels[target + 1] = green;
++          pixels[target + 2] = reflection;
++          pixels[target + 3] = 255;
++        }
++      }
++      map.putImageData(image, 0, 0);
++      const href = mapCanvas.toDataURL('image/png'); metrics.encodes++;
++      const result: CachedMap = { href, maskScale, mapCssWidth: mapWidth / maskScale, mapCssHeight: mapHeight / maskScale };
++      remember(key, result);
++      previousKey = key;
++      previousResult = { ...result, version, computeMs: performance.now() - start };
++      return previousResult;
++    },
++    destroy() {
++      if (destroyed) return;
++      destroyed = true;
++      previousKey = previousResult = undefined;
++      if (--owners === 0) {
++        if (workspace) {
++          workspace.maskCanvas.width = workspace.mapCanvas.width = 0;
++          workspace.maskCanvas.height = workspace.mapCanvas.height = 0;
++        }
++        workspace = undefined; columnSums = new Float64Array(0); cache.clear(); cacheBytes = 0;
++      }
++    },
++  };
++}
+diff --git a/work/r3-controlled-proof/component.html b/work/r3-controlled-proof/component.html
+new file mode 100644
+index 0000000..8e196ca
+--- /dev/null
++++ b/work/r3-controlled-proof/component.html
+@@ -0,0 +1,12 @@
++<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Controlled scene lifecycle contract</title></head><body><div id="app"></div><script type="module">
++import React,{useContext,useEffect,useRef,useState} from 'react';
++import {createRoot} from 'react-dom/client';
++import {ControlledScene,ControlledSource,ControlledSceneContext} from '../../src/ControlledScene';
++const h=React.createElement,api={samples:[]};window.controlledSceneTest=api;
++function Probe({name}){const scene=useContext(ControlledSceneContext);useEffect(()=>{api[name]=scene;api.samples.push({name,ready:scene.ready,revision:scene.revision,time:performance.now()});},[scene]);return h('input',{'aria-label':name,defaultValue:'Preserved text'});}
++function App(){const[tick,setTick]=useState(0),[width,setWidth]=useState(500),rail=useRef(null);api.setWidth=setWidth;api.setTick=setTick;const paint=({width,height})=>[h('rect',{key:'bg',width,height,fill:'#EEF0FC'}),h('text',{key:'text',x:20,y:40,fill:'#4A568B'},'Scene '+tick)];return h('main',null,h(ControlledScene,{paint,style:{width,height:160}},h(Probe,{name:'wrapper'})),h('div',{ref:rail,style:{position:'relative',width,height:80}},h(ControlledSource,{container:rail,paint},h(Probe,{name:'existing'}))));}
++createRoot(document.querySelector('#app')).render(h(App));
++// Change source from the first painted frame onward. This intentionally tests
++// that source revisions cannot starve the separate initial readiness gate.
++let count=0;function update(){api.setTick?.(++count);if(count<60)requestAnimationFrame(update);else api.updatesDone=true;}requestAnimationFrame(update);
++</script></body></html>
+diff --git a/work/r3-controlled-proof/index.html b/work/r3-controlled-proof/index.html
+new file mode 100644
+index 0000000..d761d9b
+--- /dev/null
++++ b/work/r3-controlled-proof/index.html
+@@ -0,0 +1,2 @@
++<!doctype html>
++<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Controlled scene refraction proof</title><style>body{margin:0;background:#f2f3ff;color:#293456;font:16px sans-serif}main{max-width:780px;margin:24px auto;padding:20px}h1{font-size:24px}svg{display:block;width:100%;height:auto;border-radius:24px}p{line-height:1.6}.status{font-size:13px}</style></head><body><main><h1>Controlled scene refraction proof</h1><p>The grid, source text and track share one explicit SVG scene. The lens displaces the scene's actual rendered pixels using the current kit normal field. This proof does not capture arbitrary DOM.</p><div id="mount"></div><p class="status" id="status">Preparing optical map before interaction.</p></main><script type="module" src="./proof.ts"></script></body></html>
+diff --git a/work/r3-controlled-proof/proof.ts b/work/r3-controlled-proof/proof.ts
+new file mode 100644
+index 0000000..68f01a3
+--- /dev/null
++++ b/work/r3-controlled-proof/proof.ts
+@@ -0,0 +1,43 @@
++import { contourShape, shellPath } from '../../src/geometry';
++import { createBackdropOptics, getBackdropOpticsDiagnostics } from '../../src/backdropOptics';
++
++// Isolated engineering proof: the supported source is an explicit shared scene,
++// never a pretend screen capture. No existing kit component is changed here.
++const width=640,height=330,lensWidth=160,lensHeight=96;
++const engine=createBackdropOptics(),scale=3;
++const shape={...contourShape(lensWidth-12,lensHeight-8,2.4),x:lensWidth/2,y:lensHeight/2};
++const path=shellPath(shape),start=performance.now();
++const map=engine.render({path,width:lensWidth*scale,height:lensHeight*scale,camera:{x:lensWidth/2,y:lensHeight/2+8/scale,zoom:scale},channels:'rg',version:1});
++document.querySelector('#mount')!.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" aria-label="Explicit scene and displaced lens">
++ <defs>
++  <linearGradient id="board" x2="1" y2="1"><stop stop-color="#CFE6FF"/><stop offset="1" stop-color="#DED2FA"/></linearGradient>
++  <linearGradient id="trackGradient"><stop stop-color="#668CE9"/><stop offset="1" stop-color="#9B78DE"/></linearGradient>
++  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7986B5" stroke-width=".8" opacity=".32"/></pattern>
++  <g id="sourceScene"><rect width="640" height="330" fill="url(#board)"/><rect width="640" height="330" fill="url(#grid)"/>
++   <text id="sourceText" x="56" y="104" font-family="sans-serif" font-size="46" font-weight="600" fill="#435790">Clarity 123</text>
++   <text x="56" y="146" font-family="sans-serif" font-size="20" fill="#68759E">Source pixels, continuously displaced.</text>
++   <rect x="56" y="224" width="528" height="16" rx="8" fill="#B6B9D4"/><rect id="sourceTrack" x="56" y="224" width="264" height="16" rx="8" fill="url(#trackGradient)"/>
++  </g>
++  <clipPath id="lensClip" clipPathUnits="userSpaceOnUse"><path d="${path}"/></clipPath>
++  <filter id="transmission" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" x="0" y="0" width="${lensWidth}" height="${lensHeight}" color-interpolation-filters="sRGB">
++   <feImage id="normal" href="${map.href}" width="${map.mapCssWidth/scale}" height="${map.mapCssHeight/scale}" preserveAspectRatio="none" result="normal"/>
++   <feDisplacementMap id="displacement" in="SourceGraphic" in2="normal" scale="28" xChannelSelector="R" yChannelSelector="G"/>
++  </filter>
++ </defs>
++ <use href="#sourceScene"/>
++ <g id="lens" transform="translate(240 184)">
++  <g clip-path="url(#lensClip)"><g filter="url(#transmission)"><use id="transmittedScene" href="#sourceScene" transform="translate(-240 -184)"/></g></g>
++  <path d="${path}" fill="none" stroke="#FAFCFF" stroke-width="1.6"/>
++ </g>
++</svg>`;
++const svg=document.querySelector('svg')!,lens=svg.querySelector('#lens')!,transmitted=svg.querySelector('#transmittedScene')!,displace=svg.querySelector('#displacement')!;
++let x=240,y=184,ready=false,preparationMs=0;
++const api={
++ setLens(nextX:number,nextY:number){x=nextX;y=nextY;lens.setAttribute('transform',`translate(${x} ${y})`);transmitted.setAttribute('transform',`translate(${-x} ${-y})`);},
++ setStrength(value:number){displace.setAttribute('scale',String(value));},
++ setTrackValue(value:number){svg.querySelector('#sourceTrack')!.setAttribute('width',String(528*value));},
++ setText(value:string){svg.querySelector('#sourceText')!.textContent=value;},
++ diagnostics(){return{ready,mapComputeMs:map.computeMs,preparationMs,...getBackdropOpticsDiagnostics()};},
++};
++(window as Window & {controlledProof?:typeof api}).controlledProof=api;
++requestAnimationFrame(()=>requestAnimationFrame(()=>{ready=true;preparationMs=performance.now()-start;document.querySelector('#status')!.textContent=`Ready · one cached normal map · ${map.computeMs.toFixed(2)} ms initial map preparation · no shader or map creation on first touch.`;svg.setAttribute('data-ready','true');}));

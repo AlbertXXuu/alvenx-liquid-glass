@@ -14,3 +14,5 @@ export type { VolumeStageProps, VolumeStageHandle } from './VolumeStage';
 export { endpointGeometry } from './endpointGeometry';
 export { contourShape, shellPath } from './geometry';
 export type { Shape } from './geometry';
+export { ControlledScene, ControlledSource } from './ControlledScene';
+export type { ControlledSceneProps, ControlledSourceProps, ControlledSceneValue, ControlledSceneSize } from './ControlledScene';

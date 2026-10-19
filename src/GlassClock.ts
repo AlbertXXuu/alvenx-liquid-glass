@@ -5,6 +5,8 @@ export const boundedFrameRate = (value?: number) => Number.isFinite(value) && va
  * Construction is side-effect free; subscriptions own document listeners. */
 export class GlassClock {
   pointer = { x: -10000, y: -10000 };
+  /** Last primary input family; touch optics must not wait for idle IO tasks. */
+  pointerType = '';
   pointerRevision = 0;
   layoutRevision = 0;
   optics: GlassOpticsMode;
@@ -21,7 +23,7 @@ export class GlassClock {
     this.optics = options.optics ?? 'auto';
     this.maxFps = boundedFrameRate(options.maxFps);
   }
-  private move = (event: PointerEvent) => { if(event.isPrimary===false)return; this.pointer = { x: event.clientX, y: event.clientY }; this.pointerRevision++; this.wake(); };
+  private move = (event: PointerEvent) => { if(event.isPrimary===false)return; this.pointerType=event.pointerType; this.pointer = { x: event.clientX, y: event.clientY }; this.pointerRevision++; this.wake(); };
   private leave = () => { this.pointer = { x: -10000, y: -10000 }; this.pointerRevision++; this.wake(); };
   private releaseTouch = (event:PointerEvent) => { if(event.pointerType==='touch'&&event.isPrimary!==false)this.leave(); };
   /** Call after host-driven positional layout changes without resize/scroll. */

@@ -1,0 +1,375 @@
+{
+  "reviewId": "R3",
+  "date": "2026-10-19",
+  "status": "self-reviewed",
+  "ownerAccepted": false,
+  "source": {
+    "baseRef": "review-20261019-r2-published",
+    "baseCommit": "3f62f90debbb79e8318e6ce44c5070febe750068",
+    "branch": "codex/mobile-optics-review-r3",
+    "branchUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/codex/mobile-optics-review-r3",
+    "plannedTag": "review-20261019-r3",
+    "plannedTagUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r3",
+    "sourceTagPublished": false,
+    "plannedReviewUrl": "https://alvenx.com/ui/review-20261019-r3/",
+    "reviewUrl": null
+  },
+  "ownerRequirements": [
+    "Actual visible refraction on phone/iPad, with explicit implementation limits.",
+    "Investigate first activation stalls and Combo Touch focus/drag failures without claiming a physical fix from emulation.",
+    "Finger contact starting on the current actual shape drags in any direction; contact starting on background/outside permits page pan.",
+    "Preserve original horizontal mother-connection-chamber geometry.",
+    "Complete screenshot self-review and targeted tests before independent website publication, then owner physical-device review.",
+    "Retain process evidence, checks and frozen versions locally and on GitHub."
+  ],
+  "implementationBoundary": {
+    "controlledScene": "One explicit SVG source is rendered as the backdrop and through ordinary SVG displacement in the lens. It does not capture arbitrary HTML DOM or establish Safari backdrop-filter support.",
+    "shapeInput": "Contour-clipped HTML hit surface matching current camera and shape coverage; browser touch arbitration is determined before contact.",
+    "controls": "Controlled rail refraction is opt-in; original default control and numeric/native semantics remain the baseline.",
+    "localInputReport": "Pointer/capture order and next-frame timing remain local until the visitor explicitly copies a report; these are not physical display-latency measurements.",
+    "encoding": "Synchronous exact maps for active touch and release settlement; bounded asynchronous encoding for mouse/idle; epoch guards and offscreen cancellation. Final serial profile measured36gestures; no physical-device certification."
+  },
+  "scopedTechnicalEvidence": {
+    "controlledPixelProof": "evidence/controlled-pixel-proof.json",
+    "controlledLifecycle": "evidence/controlled-lifecycle.json",
+    "controlledRailChecks": "evidence/controlled-rail-checks.json",
+    "shapeChecks": "evidence/shape-checks.json",
+    "r2BaselineInputProbes": "evidence/baseline-input-probes.json"
+  },
+  "finalLabVerification": {
+    "visualSelfReview": "Root explicit final technical self-review sign-off: final production393/768 viewed after heading fix;320params checked; earlier four-width engine views individually inspected.",
+    "coldAndNewLabMeasurements": "36/36 serial gestures passed. Native direct touch cold14.5–21.5ms/warm10.5–20.4ms; syncPNG40–44 remains. Mouse cold medians show delivery tradeoff, not uniform speedup.",
+    "build": "passed root check/build/contracts/baseline; see final-delivery/receipt.json",
+    "consumerInstall": "fresh unrelated tarball install/TypeScript/build and10browser checks passed; root verified tarballSHA and final sign-off",
+    "sourcePublication": "pending",
+    "websiteDeployment": "pending",
+    "physicalDevicesTestedByAgent": false,
+    "ownerDeviceAcceptance": "pending after an accessible R3 review URL",
+    "lifecycle": "input10,localdiagnosticclear/destroy,forced8controlqueue/opt-out checks passed; finalbuild/install/screens pending"
+  },
+  "historicalArtifacts": [
+    {
+      "kind": "working source process",
+      "record": "source-process/01-before-final-qa/README.md",
+      "manifest": "source-process/01-before-final-qa/manifest.json",
+      "notAtomicGitCommit": true,
+      "notEarlierScreenshotExactSource": true
+    },
+    {
+      "kind": "self-rejected local screenshot",
+      "record": "iterations/01-self-rejected/README.md",
+      "reason": "320px parameter header Reset defaults control clipped past right visible edge",
+      "ownerRejected": false,
+      "exactSourceSnapshotAvailable": false
+    },
+    {
+      "kind": "before async encoding",
+      "record": "phases/before-async/README.md",
+      "hashes": "phases/before-async/SHA256SUMS.txt",
+      "serialInput": "phases/before-async/serial-input-profile.json",
+      "integrationPixelProof": "phases/before-async/integration-pixel-summary.json",
+      "files": [
+        {
+          "file": "chromium-integration-text-refracted.png",
+          "bytes": 110540,
+          "sha256": "7fc01a0a503aa6589b617f32d7add7c9f77023c81335d93d3ea8543611ff3aa6",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "chromium-integration-text-zero.png",
+          "bytes": 110248,
+          "sha256": "e0fb7aae845904329eb3ed3b68e73849b5853b1efe569e06fce7b94dad223ee4",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "chromium-integration-track-refracted.png",
+          "bytes": 107448,
+          "sha256": "f8124cd88d81b373920c9039945b0c48e0a56433790980e4ad134a77448202af",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "chromium-integration-track-zero.png",
+          "bytes": 107062,
+          "sha256": "1a5468d353fe0270f4b8f2079aa736178740f4238ff0d0bd188f8a264a2cb4bb",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "ControlledScene-before-async.tsx",
+          "bytes": 5019,
+          "sha256": "7e0a31fe2e058f3b31dc68e91f60c6ce98667720a2962f2d64c78f281d5b466b"
+        },
+        {
+          "file": "integration-pixel-summary.json",
+          "bytes": 4734,
+          "sha256": "00bd228797ed38db97c0d5c00116a2cb3d40632f2d20e5e4a018d53cffdc43fe"
+        },
+        {
+          "file": "lab-chromium-320-refraction.png",
+          "bytes": 77506,
+          "sha256": "a3e6da12ce491f6078c89c2fc244ea1549b427ac31f64c5026e7d1ff40d4607e",
+          "widthPixels": 284,
+          "heightPixels": 712
+        },
+        {
+          "file": "lab-webkit-1180-refraction.png",
+          "bytes": 64695,
+          "sha256": "cd9735e0c731507751578828102fb6697ab9cbd241446b9c1866ead42691a66f",
+          "widthPixels": 1100,
+          "heightPixels": 386
+        },
+        {
+          "file": "lab-webkit-320-refraction.png",
+          "bytes": 45464,
+          "sha256": "3376e0c411a100080efa39501fc876719bbbcaa47f36f83e129efd64da1049c7",
+          "widthPixels": 284,
+          "heightPixels": 712
+        },
+        {
+          "file": "lab-webkit-393-field.png",
+          "bytes": 15045,
+          "sha256": "3e5e934b866427dd2ca7a0f32e5e44ca6cd0336bd24cc10c01abcb00d4b474cb",
+          "widthPixels": 357,
+          "heightPixels": 145
+        },
+        {
+          "file": "lab-webkit-768-volume.png",
+          "bytes": 95270,
+          "sha256": "55f6d16da35a6e48da65caea1f31200f0e04b547673166df2d115fe47e6585e4",
+          "widthPixels": 708,
+          "heightPixels": 378
+        },
+        {
+          "file": "LiquidControl-before-async.tsx",
+          "bytes": 20883,
+          "sha256": "b2eb756a0434776694b690a4e8ccbdbd78b6980efd5d9ad991dedf7089a10597"
+        },
+        {
+          "file": "serial-input-profile.json",
+          "bytes": 34884,
+          "sha256": "87eaf25d8f8e0b8220cba0840bd3a7018693554dc1d891ef025fa6be47f3e4fa"
+        },
+        {
+          "file": "webkit-integration-text-refracted.png",
+          "bytes": 39517,
+          "sha256": "67b732dea5cb00b637bc95816a2f38041e3bca939e6f4371654a4618a4635fa9",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "webkit-integration-text-zero.png",
+          "bytes": 39242,
+          "sha256": "dfad5c784af2babda199752522bf1ba412c9b0e8034a2782e0c20acc94b85867",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "webkit-integration-track-refracted.png",
+          "bytes": 36532,
+          "sha256": "96e55fbfd765bfbc076cc3ad7ae37356eaabc281fbbbf16908392848ea674c3e",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "webkit-integration-track-zero.png",
+          "bytes": 36095,
+          "sha256": "43258f16fd20b54c767aadbb2b801f3c3ea3410dc26ad7bb097473675dabc190",
+          "widthPixels": 628,
+          "heightPixels": 341
+        }
+      ]
+    },
+    {
+      "kind": "first async strategy, self-rejected for latency",
+      "record": "phases/after-async/README.md",
+      "hashes": "phases/after-async/SHA256SUMS.txt",
+      "files": [
+        {
+          "file": "before-after-visual.json",
+          "bytes": 1346,
+          "sha256": "68e69d18e614bc257e93d699451ea1c1ca1ee92e76ee0748a5d83ad2401cda0c"
+        },
+        {
+          "file": "chromium-integration-text-refracted.png",
+          "bytes": 110540,
+          "sha256": "7fc01a0a503aa6589b617f32d7add7c9f77023c81335d93d3ea8543611ff3aa6",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "chromium-integration-track-refracted.png",
+          "bytes": 107448,
+          "sha256": "f8124cd88d81b373920c9039945b0c48e0a56433790980e4ad134a77448202af",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "implementation-checks.json",
+          "bytes": 36516,
+          "sha256": "956b9d37b65bb32e19fa2fe4acb0cc753dd89ad7fafd5370526549eb81e606a0"
+        },
+        {
+          "file": "integration-pixel-summary.json",
+          "bytes": 4734,
+          "sha256": "5b14140181a08b8743e2e6e4a071d50405c14ba22992db021fffb3f2bfecac6d"
+        },
+        {
+          "file": "lab-webkit-1180-refraction.png",
+          "bytes": 64695,
+          "sha256": "cd9735e0c731507751578828102fb6697ab9cbd241446b9c1866ead42691a66f",
+          "widthPixels": 1100,
+          "heightPixels": 386
+        },
+        {
+          "file": "lab-webkit-1180-volume.png",
+          "bytes": 167364,
+          "sha256": "7c73ebcce0a877d50662ce1f049117b10144079fef20612d247d5238d1fec6e8",
+          "widthPixels": 1100,
+          "heightPixels": 587
+        },
+        {
+          "file": "lab-webkit-320-parameters.png",
+          "bytes": 57238,
+          "sha256": "6cffe9196360d2b7088d9e0eeea40da335df236b9c0f0935ef1316d880eb4803",
+          "widthPixels": 284,
+          "heightPixels": 929
+        },
+        {
+          "file": "lab-webkit-320-refraction.png",
+          "bytes": 45464,
+          "sha256": "3376e0c411a100080efa39501fc876719bbbcaa47f36f83e129efd64da1049c7",
+          "widthPixels": 284,
+          "heightPixels": 712
+        },
+        {
+          "file": "lab-webkit-393-field.png",
+          "bytes": 15045,
+          "sha256": "3e5e934b866427dd2ca7a0f32e5e44ca6cd0336bd24cc10c01abcb00d4b474cb",
+          "widthPixels": 357,
+          "heightPixels": 145
+        },
+        {
+          "file": "lab-webkit-768-volume.png",
+          "bytes": 95077,
+          "sha256": "b7fdcc6cbccf49ebd8039fbfc232a3950ab2c4ed21d3ab38df19e28907dd0c19",
+          "widthPixels": 708,
+          "heightPixels": 378
+        },
+        {
+          "file": "latency-self-rejection.json",
+          "bytes": 45266,
+          "sha256": "e4b7a305f8f982718173eacaf889e1dd9cb823200a3add0da82f6fe695df957c"
+        },
+        {
+          "file": "shape-integration.json",
+          "bytes": 3005,
+          "sha256": "8764657f917532199ce8a37d6358a7e89b219698d5684dbae19a8cc77d32a5fc"
+        },
+        {
+          "file": "source/backdropOptics.ts",
+          "bytes": 22778,
+          "sha256": "9c615e95e9e2466a84eb1cbdd3b4a20d4e5e3e333a0da706daa66cf7e3e425b0"
+        },
+        {
+          "file": "source/LiquidControl.tsx",
+          "bytes": 23608,
+          "sha256": "1f714ef7325fa0b087a8577c91998cea9afd7b3cf62791d08d116a2712955ee8"
+        },
+        {
+          "file": "visual-checks.json",
+          "bytes": 1257,
+          "sha256": "009de769d21ad6a8c17b9347c12683052cd3aa69f143f8c0276e500a304f5049"
+        },
+        {
+          "file": "webkit-integration-text-refracted.png",
+          "bytes": 39517,
+          "sha256": "67b732dea5cb00b637bc95816a2f38041e3bca939e6f4371654a4618a4635fa9",
+          "widthPixels": 628,
+          "heightPixels": 341
+        },
+        {
+          "file": "webkit-integration-track-refracted.png",
+          "bytes": 36532,
+          "sha256": "96e55fbfd765bfbc076cc3ad7ae37356eaabc281fbbbf16908392848ea674c3e",
+          "widthPixels": 628,
+          "heightPixels": 341
+        }
+      ],
+      "latencyDecision": "phases/after-async/latency-self-rejection.json"
+    },
+    {
+      "kind": "focused async failure isolation",
+      "record": "phases/async-failure-isolation/README.md",
+      "summary": "phases/async-failure-isolation/summary.json",
+      "hashes": "phases/async-failure-isolation/SHA256SUMS.txt"
+    },
+    {
+      "kind": "final hybrid candidate scoped profiles",
+      "record": "phases/final-hybrid-candidate/README.md",
+      "hashes": "phases/final-hybrid-candidate/SHA256SUMS.txt"
+    },
+    {
+      "kind": "final hybrid working source capture",
+      "record": "source-process/02-final-hybrid-candidate/README.md",
+      "atomic": false,
+      "authority": "later frozen Git commit/tag"
+    },
+    {
+      "kind": "second agent-rejected heading spacing screenshot",
+      "record": "iterations/02-self-rejected/README.md",
+      "ownerRejected": false,
+      "exactSourceSnapshotAvailable": false
+    },
+    {
+      "kind": "final delivery scoped evidence",
+      "record": "final-delivery/README.md",
+      "receipt": "final-delivery/receipt.json",
+      "hashes": "final-delivery/SHA256SUMS.txt"
+    },
+    {
+      "kind": "current final delivery working interval capture",
+      "record": "source-process/03-final-delivery/README.md",
+      "atomic": false
+    }
+  ],
+  "knownLimits": [
+    "No physical iPhone/iPad/Safari/Combo Touch testing performed by the agent.",
+    "The consistent hardware first-click stall was not reproduced on the R2 baseline; no fix certification follows.",
+    "A Windows WebKit explicit-SVG refraction proof does not establish all mobile Safari scenes or device performance.",
+    "Earlier controlled-rail black outlines were caused by an invalid duplicate ReactDOM/filter-id test mount, not established as a runtime defect.",
+    "An SVG-only transparent shape hit was rejected after native pan arbitration failed; current implementation uses a real CSS-clipped HTML hit box.",
+    "Initial 320px layout failure is retained; current final lab is technically self-reviewed, not owner accepted."
+  ],
+  "acceptedBaseline": {
+    "name": "material-direction-preview v6",
+    "sourceManifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+    "unchanged": true
+  },
+  "replayProtocols": {
+    "record": "evidence/protocols/README.md",
+    "manifest": "evidence/protocols/manifest.json",
+    "portableCopiesExecutedAtArchiveTime": false
+  },
+  "physicalDeviceProtocol": {
+    "status": "not yet performed",
+    "exactReviewUrl": "https://alvenx.com/ui/review-20261019-r3/",
+    "osVersion": "unknown",
+    "browserVersion": "unknown",
+    "requirements": [
+      "reload then direct first finger gesture without hover",
+      "compare second gesture",
+      "touch then Combo Touch drag/release/re-grab",
+      "actual-shape all-direction drag versus outside/background page pan",
+      "portrait/landscape and text/soft keyboard",
+      "local input report copied only when a problem occurs"
+    ]
+  },
+  "measurementCorrections": {
+    "afterAsyncTouchNormalMapCounters": "invalid duplicate HMR module instance; not normal-map cost evidence",
+    "nativeEncodeAndDomLatency": "valid separate measurements",
+    "rejectedPhaseBytesChanged": false
+  }
+}

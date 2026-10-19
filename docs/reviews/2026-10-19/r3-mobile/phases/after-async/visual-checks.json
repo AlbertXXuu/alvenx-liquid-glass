@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-19",
+  "phase": "after-async",
+  "engine": "26.5",
+  "physicalDevice": false,
+  "cases": [
+    {
+      "width": 320,
+      "overflow": false,
+      "registeredSceneCount": 13,
+      "pageErrorCount": 0
+    },
+    {
+      "width": 393,
+      "overflow": false,
+      "registeredSceneCount": 13,
+      "pageErrorCount": 0
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "registeredSceneCount": 14,
+      "pageErrorCount": 0
+    },
+    {
+      "width": 1180,
+      "overflow": false,
+      "registeredSceneCount": 14,
+      "pageErrorCount": 0
+    }
+  ],
+  "pageErrorCount": 0,
+  "actualScreenshotReview": {
+    "reportedBy": "root and independent research agent",
+    "viewed": [
+      "320px refraction",
+      "393px field",
+      "768px volume",
+      "1180px refraction",
+      "393px refraction and 1180px volume by root"
+    ],
+    "localConclusion": "specified views clean; no blocker identified",
+    "overallR3SelfReviewed": false,
+    "ownerAccepted": false
+  },
+  "captureNotes": [
+    "Initial parameter-header overflow was repaired before this after-phase capture.",
+    "These are local Windows WebKit views, not a public review or physical iOS test."
+  ]
+}
