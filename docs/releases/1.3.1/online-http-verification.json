@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "unchangedShowcaseVersion": "1.3.1",
+  "homepageKitVersion": "1.3.0",
+  "sourceCommit": "7f202150b2e95f744d90eab39eaf5e2d18d40bd8",
+  "productionIndexable": true,
+  "reviewNoindex": true,
+  "checks": [
+    {
+      "path": "/ui/index.html",
+      "sha256": "1523f1fe59d062fc6d29f097e116407c12e3f7d35319fb29e9a60b00c43a9232",
+      "bytes": 2365,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "sha256": "91db589a9301794edea7789b5fc866f3f300718001bdb70c8fb7df8ebc4f5c12",
+      "bytes": 186302,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.3.1/assets/alvenx-monogram-ByDqnbcO.svg",
+      "sha256": "45367ec933c2ed8565cdf9e683fd4b856057d375435b46c62acb4fbb2cbeef16",
+      "bytes": 1643,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.3.1/assets/fonts-BU4D-AXo.js",
+      "sha256": "3149f4553bba6d33dcfdbd660362166a7c12b897d9cb8c50eda4be240369e850",
+      "bytes": 255318,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.3.1/assets/main-DcqfsoxJ.js",
+      "sha256": "a2186a3f3e0f3aca810ca580f7f8b0ffd53a86ae5007040edc5cc9cb67c65f2e",
+      "bytes": 71894,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.3.1/assets/fonts-D2OvvflO.css",
+      "sha256": "d2134779ca192fbab504fdd4cfa6429dce5d84e2d0dc3abbb64a9eca36c133d9",
+      "bytes": 506893,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.3.1/assets/main-CHxRBEZW.css",
+      "sha256": "d93455499f0d2cfe4c5002d6839be2e96bc0bd9d17e88ff91dd5b0a608288fc9",
+      "bytes": 13383,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/review-20261019/index.html",
+      "sha256": "f6a9ca900817fd5141aecca75f7d698f2dc697c7f62107c90c2626d166e23310",
+      "bytes": 1068,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/review-20261019-r2/index.html",
+      "sha256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+      "bytes": 2019,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/review-20261019-r3/index.html",
+      "sha256": "8583a2c9ea195f246e6140b1a31143782b78fc6abf62e6c63b4b41722ba1fba7",
+      "bytes": 810,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.2.1/index.html",
+      "sha256": "155e7a195918ada7dabebe24ba1b0cb3f3d4d18504f01b9cefb36789aa4dae04",
+      "bytes": 1995,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/archive/production-1.2.1-20261019/index-original.html",
+      "sha256": "9ccbe72484ab77229438dbf06f995f1dcc5ee96962482fdef033462c388919ca",
+      "bytes": 2179,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/releases/1.2.2/licenses/LICENSE-NOTICE.md",
+      "sha256": "1e7e58fc191a4e8a521149f95136202af7bcf60ba7d727826f9cdd17e8c597ce",
+      "bytes": 1764,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/homepage-entry-manifest.json",
+      "sha256": "b16f11839e20c77d537c8f3b109bf8b94f1ff5b4a751edd6e9cfbffc3831c213",
+      "bytes": 411,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/index.html",
+      "sha256": "dcc97f29cfe98c669b4ebdecd6a7054118906e856d93c5a9c36a93db26383ec7",
+      "bytes": 702,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/review-manifest.json",
+      "sha256": "2a4745d0a4a23cb671c8e750a9fa7bbdec6206d270e2f2ea55a23d2b6a8c8fb7",
+      "bytes": 45504,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/assets/alvenx-monogram-ByDqnbcO.svg",
+      "sha256": "45367ec933c2ed8565cdf9e683fd4b856057d375435b46c62acb4fbb2cbeef16",
+      "bytes": 1643,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/assets/fieldSizingReview-BdS9jhMr.js",
+      "sha256": "cb21ff06f745cfb0b6ce2fbb6b563f095506e35247442cc9d07f6d4bf3909ff1",
+      "bytes": 5654,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/assets/fonts-v_lfCAUT.js",
+      "sha256": "3149f4553bba6d33dcfdbd660362166a7c12b897d9cb8c50eda4be240369e850",
+      "bytes": 255318,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/assets/fonts-DG42BWR2.css",
+      "sha256": "05508d725eeff6693d75710b1a61dca9fe0621aedf147b6eae22a5b201234fe9",
+      "bytes": 501397,
+      "matchesLocal": true,
+      "cspPresent": true
+    },
+    {
+      "path": "/ui/field-sizing-review-20261019/assets/fieldSizingReview-Cgid3J6s.css",
+      "sha256": "1bb0414ec9f415362ff93e21a46c8c597f5fd6b0ec492b679f5bf5d078eaf48d",
+      "bytes": 5954,
+      "matchesLocal": true,
+      "cspPresent": true
+    }
+  ],
+  "historyPreserved": true
+}

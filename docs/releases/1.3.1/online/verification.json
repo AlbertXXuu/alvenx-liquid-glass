@@ -1,0 +1,392 @@
+{
+  "url": "https://alvenx.com/ui/",
+  "deploymentIdentitySuppliedByPublisher": {
+    "worker": "eba97f87-43b2-45b1-8614-5da6dbb77105",
+    "kitSource": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+    "websiteSource": "242be6814526ec4586df37e2ba78add1200a3fc2"
+  },
+  "browser": "Installed Chrome on Windows through Playwright CLI",
+  "scope": "Targeted final online text-inset check; Windows viewport checks do not certify physical iPhone/iPad, Safari, IME or Combo Touch.",
+  "assertions": 30,
+  "passed": 30,
+  "widths": [
+    {
+      "width": 393,
+      "field": {
+        "x": 30,
+        "y": 2667.734375,
+        "width": 285,
+        "height": 68
+      },
+      "send": {
+        "x": 319,
+        "y": 2679.734375,
+        "width": 44,
+        "height": 44
+      },
+      "input": {
+        "x": 66,
+        "y": 2688.734375,
+        "width": 224.1875,
+        "height": 26,
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "padding": "1px 2px",
+        "contentStartWithinField": 38,
+        "centerOffset": 0
+      },
+      "hitPadding": {
+        "top": "8px",
+        "right": "24.8125px",
+        "bottom": "8px",
+        "left": "36px"
+      },
+      "value": "给想法一点生长的空间。",
+      "opticalReady": "true",
+      "opticalError": null
+    },
+    {
+      "width": 768,
+      "field": {
+        "x": 72,
+        "y": 2261.6875,
+        "width": 554,
+        "height": 74
+      },
+      "send": {
+        "x": 638,
+        "y": 2269.6875,
+        "width": 58,
+        "height": 58
+      },
+      "input": {
+        "x": 130,
+        "y": 2285.6875,
+        "width": 455.078125,
+        "height": 26,
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "padding": "1px 2px",
+        "contentStartWithinField": 60,
+        "centerOffset": 0
+      },
+      "hitPadding": {
+        "top": "8px",
+        "right": "40.9219px",
+        "bottom": "8px",
+        "left": "58px"
+      },
+      "value": "给想法一点生长的空间。",
+      "opticalReady": "true",
+      "opticalError": null
+    },
+    {
+      "width": 1366,
+      "field": {
+        "x": 323,
+        "y": 2483.9375,
+        "width": 650,
+        "height": 74
+      },
+      "send": {
+        "x": 985,
+        "y": 2491.9375,
+        "width": 58,
+        "height": 58
+      },
+      "input": {
+        "x": 381,
+        "y": 2507.9375,
+        "width": 546.75,
+        "height": 26,
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "padding": "1px 2px",
+        "contentStartWithinField": 60,
+        "centerOffset": 0
+      },
+      "hitPadding": {
+        "top": "8px",
+        "right": "45.25px",
+        "bottom": "8px",
+        "left": "58px"
+      },
+      "value": "给想法一点生长的空间。",
+      "opticalReady": "true",
+      "opticalError": null
+    }
+  ],
+  "pageErrors": [],
+  "consoleDiagnostics": [],
+  "appHttpErrors": [],
+  "failedRequests": [],
+  "checks": [
+    {
+      "name": "field bounds unchanged 393",
+      "pass": true,
+      "details": {
+        "before": {
+          "x": 30,
+          "y": 2667.734375,
+          "width": 285,
+          "height": 68
+        },
+        "after": {
+          "x": 30,
+          "y": 2667.734375,
+          "width": 285,
+          "height": 68
+        }
+      }
+    },
+    {
+      "name": "send bounds unchanged 393",
+      "pass": true,
+      "details": {
+        "before": {
+          "x": 319,
+          "y": 2679.734375,
+          "width": 44,
+          "height": 44
+        },
+        "after": {
+          "x": 319,
+          "y": 2679.734375,
+          "width": 44,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "native content inset 393",
+      "pass": true,
+      "details": 38
+    },
+    {
+      "name": "native vertical text and optics 393",
+      "pass": true,
+      "details": {
+        "x": 66,
+        "y": 2688.734375,
+        "width": 224.1875,
+        "height": 26,
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "padding": "1px 2px",
+        "contentStartWithinField": 38,
+        "centerOffset": 0
+      }
+    },
+    {
+      "name": "Chinese input 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no overflow 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "long native input 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "fluency Easter egg 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "ordinary Easter egg 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "field bounds unchanged 768",
+      "pass": true,
+      "details": {
+        "before": {
+          "x": 72,
+          "y": 2261.6875,
+          "width": 554,
+          "height": 74
+        },
+        "after": {
+          "x": 72,
+          "y": 2261.6875,
+          "width": 554,
+          "height": 74
+        }
+      }
+    },
+    {
+      "name": "send bounds unchanged 768",
+      "pass": true,
+      "details": {
+        "before": {
+          "x": 638,
+          "y": 2269.6875,
+          "width": 58,
+          "height": 58
+        },
+        "after": {
+          "x": 638,
+          "y": 2269.6875,
+          "width": 58,
+          "height": 58
+        }
+      }
+    },
+    {
+      "name": "native content inset 768",
+      "pass": true,
+      "details": 60
+    },
+    {
+      "name": "native vertical text and optics 768",
+      "pass": true,
+      "details": {
+        "x": 130,
+        "y": 2285.6875,
+        "width": 455.078125,
+        "height": 26,
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "padding": "1px 2px",
+        "contentStartWithinField": 60,
+        "centerOffset": 0
+      }
+    },
+    {
+      "name": "Chinese input 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no overflow 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "long native input 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "fluency Easter egg 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "ordinary Easter egg 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "field bounds unchanged 1366",
+      "pass": true,
+      "details": {
+        "before": {
+          "x": 323,
+          "y": 2483.9375,
+          "width": 650,
+          "height": 74
+        },
+        "after": {
+          "x": 323,
+          "y": 2483.9375,
+          "width": 650,
+          "height": 74
+        }
+      }
+    },
+    {
+      "name": "send bounds unchanged 1366",
+      "pass": true,
+      "details": {
+        "before": {
+          "x": 985,
+          "y": 2491.9375,
+          "width": 58,
+          "height": 58
+        },
+        "after": {
+          "x": 985,
+          "y": 2491.9375,
+          "width": 58,
+          "height": 58
+        }
+      }
+    },
+    {
+      "name": "native content inset 1366",
+      "pass": true,
+      "details": 60
+    },
+    {
+      "name": "native vertical text and optics 1366",
+      "pass": true,
+      "details": {
+        "x": 381,
+        "y": 2507.9375,
+        "width": 546.75,
+        "height": 26,
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "padding": "1px 2px",
+        "contentStartWithinField": 60,
+        "centerOffset": 0
+      }
+    },
+    {
+      "name": "Chinese input 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no overflow 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "long native input 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "fluency Easter egg 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "ordinary Easter egg 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "zero page errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "zero console warning/error/CSP diagnostics",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "zero application HTTP errors",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "timingEvidence": {
+    "source": "Preserved raw-cli.log file UTC timestamps; the raw CLI body contains no embedded absolute timestamp.",
+    "captureLogCreatedUtc": "2026-10-19T15:59:22.952Z",
+    "captureLogLastWrittenUtc": "2026-10-19T15:59:31.554Z",
+    "captureLogCreatedAsiaShanghai": "2026-10-19T23:59:22.952+08:00",
+    "captureLogLastWrittenAsiaShanghai": "2026-10-19T23:59:31.554+08:00",
+    "recordFinalizedLocalDate": "2026-10-20",
+    "note": "The browser capture finished on 2026-10-19 before Asia/Shanghai midnight. Documentation and metadata finalization continued on 2026-10-20. The original raw log retains the originally mislabeled kit source; this structured record corrects the source identities."
+  }
+}

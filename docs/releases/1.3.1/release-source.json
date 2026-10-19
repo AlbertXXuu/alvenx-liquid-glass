@@ -1,0 +1,21 @@
+{
+  "version": "1.3.1",
+  "sourceRef": "v1.3.1",
+  "sourceCommit": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+  "scope": "Only native message text left inset changes; field/send geometry, placement, font and vertical position are retained",
+  "homepagePackage": "1.3.0 (unchanged)",
+  "librarySourceAndScopedCss": "src/ and styles/ are byte-identical between v1.3.0 and v1.3.1",
+  "websiteSource": "242be6814526ec4586df37e2ba78add1200a3fc2",
+  "websitePr": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/42",
+  "sourceChecks": {
+    "typeAndDocs": "passed (10 documents, 49 local links)",
+    "libraryBuild": "passed",
+    "contract": "passed (28 checks, 15 inherited geometry cases, 410 budding cases)",
+    "sourceShowcaseBuild": "passed with /ui/releases/1.3.1/ base",
+    "textInsetBeforeAfter": "38 focused assertions passed",
+    "actualTarballInstallTypeBuild": "passed; see installed-consumer.json",
+    "priorRuntimeChecks": "Reused because src/ and styles/ are unchanged: 16 clock,180 canvas budget,5800 Float32 cases"
+  },
+  "rights": "All rights reserved / UNLICENSED",
+  "deviceBoundary": "Desktop browser viewports do not certify physical iOS, system IME or Combo Touch"
+}

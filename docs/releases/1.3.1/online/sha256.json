@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "SHA-256",
+  "captureLocalDate": "2026-10-19",
+  "recordDate": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "indexExcludesItself": true,
+  "files": [
+    {
+      "path": "check-text-inset.playwright.js",
+      "bytes": 5392,
+      "sha256": "895740f1cd498b9d42a307cb806a32328eff016fc99d1ac6e4c5dd58fd859d50"
+    },
+    {
+      "path": "homepage-retained-chromium-393.png",
+      "bytes": 329490,
+      "sha256": "cec2a73a5d0ff545602c3e2103abcec88c3111853694d1c99fd204547f09d3b4"
+    },
+    {
+      "path": "homepage-retained.json",
+      "bytes": 9908,
+      "sha256": "cb235a8a1637cbdf5ad4058972269198d19a6b9ba969bb2082cbf56f7ae87524"
+    },
+    {
+      "path": "production-after-1366.png",
+      "bytes": 220832,
+      "sha256": "3b99667312024c508948bd42dbd48242430a90ad3e2c15cd94340ce44d707ab0"
+    },
+    {
+      "path": "production-after-393.png",
+      "bytes": 96451,
+      "sha256": "c8d992caa008fbbd2a5564c72ab41adf2ba1d27d3608fe77dff51159c7aa6bb3"
+    },
+    {
+      "path": "raw-cli.log",
+      "bytes": 10302,
+      "sha256": "b9d362abe13a42176cc59ab9a0ecb24a0f936489f0998683cd09ea8e460cddcd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3592,
+      "sha256": "0486ba045fa2ee1bbd9bfcca1a31d2ce5bba4578d96077d364b534eb4f78bff6"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 9202,
+      "sha256": "9680cb82478a17e18ace851208c3884e8de0dd0242f6b3602ac6e1eb3431f97d"
+    }
+  ]
+}

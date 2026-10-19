@@ -1,0 +1,17 @@
+{
+  "status": "published-and-verified",
+  "localFinalRecordDate": "2026-10-20 Asia/Shanghai",
+  "version": "1.3.1",
+  "sourceRef": "v1.3.1",
+  "sourceCommit": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+  "publicationRef": "v1.3.1-published",
+  "websiteSource": "242be6814526ec4586df37e2ba78add1200a3fc2",
+  "websiteMerge": "909cee105a83402c14ef7b8e40d0bb3d90403ff0",
+  "websitePr": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/42",
+  "worker": "eba97f87-43b2-45b1-8614-5da6dbb77105",
+  "homepagePackage": "1.3.0 unchanged",
+  "tests": {"focusedBeforeAfter":38,"finalOnlineFieldAssertions":30,"httpByteChecks":21,"sourceTypeDocs":"passed","build":"passed","contract":"passed","actualFinalTarballInstallTypeBuild":"passed"},
+  "tarballSHA256": "69fe336c6b5e5f4b4a4ebade2550d2963724aa129b0c931ca7e46131c5ed2ab7",
+  "additionalGitHubCIAtRecordTime": {"websiteRun":39280884260,"kitRun":39280530824,"status":"queued, not counted as passed"},
+  "rights": "All rights reserved / UNLICENSED"
+}

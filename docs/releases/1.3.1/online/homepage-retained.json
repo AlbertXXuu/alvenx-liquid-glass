@@ -1,0 +1,337 @@
+{
+  "recordedAtUtc": "2026-10-19T16:04:29Z",
+  "recordedAtAsiaShanghai": "2026-10-20T00:04:29+08:00",
+  "dateNote": "Observed after midnight2026-10-20 Asia/Shanghai, while UTC date remains2026-10-19.",
+  "worker": "eba97f87-43b2-45b1-8614-5da6dbb77105",
+  "websiteSourcePrefix": "242be681",
+  "expectedUiSourceCommit": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da",
+  "scope": "One fresh retained homepage flow in each preserved browser; no repeated multi-width/reduced/keyboard suite and no overwrite of1.3.0 Worker79be evidence.",
+  "passed": 16,
+  "failed": 0,
+  "status": "passed_with_observation",
+  "telemetryObservation": "WebKit navigation cancelled one same-origin Cloudflare rum collector; retained separately, no app-resource failure or HTTP error.",
+  "screenshot": "homepage-retained-chromium-393.png",
+  "engines": [
+    {
+      "worker": "eba97f87-43b2-45b1-8614-5da6dbb77105",
+      "scope": "One fresh retained homepage flow per engine; this does not rerun the prior multi-width/reduced/keyboard suite.",
+      "engine": "chromium",
+      "browser": "155.0.8059.84",
+      "width": 393,
+      "passed": 8,
+      "failed": 0,
+      "results": [
+        {
+          "pass": true,
+          "label": "Fresh production homepage retains empty single optical mother",
+          "details": {
+            "growth": 0,
+            "ready": "false",
+            "text": "",
+            "width": 56,
+            "center": 48,
+            "bodies": 1
+          }
+        },
+        {
+          "pass": true,
+          "label": "Retained native activation reaches intermediate growth",
+          "details": {
+            "growth": 0.28843,
+            "ready": "false",
+            "text": "explore me!",
+            "width": 79.28125,
+            "center": 48,
+            "bodies": 1,
+            "href": "/ui/"
+          }
+        },
+        {
+          "pass": true,
+          "label": "Retained single body completes without mother drift",
+          "details": {
+            "growth": 1,
+            "ready": "true",
+            "text": "explore me!",
+            "width": 144.46875,
+            "center": 48,
+            "bodies": 1,
+            "href": "/ui/"
+          }
+        },
+        {
+          "pass": true,
+          "label": "Native retained link loads UI version1.3.1 metadata",
+          "details": [
+            {
+              "name": "alvenx-source-commit",
+              "content": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da"
+            },
+            {
+              "name": "alvenx-source-ref",
+              "content": "v1.3.1"
+            },
+            {
+              "name": "alvenx-kit-version",
+              "content": "1.3.1"
+            }
+          ]
+        },
+        {
+          "pass": true,
+          "label": "New UI publishes source metadata",
+          "details": [
+            {
+              "name": "alvenx-source-commit",
+              "content": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da"
+            },
+            {
+              "name": "alvenx-source-ref",
+              "content": "v1.3.1"
+            },
+            {
+              "name": "alvenx-kit-version",
+              "content": "1.3.1"
+            }
+          ]
+        },
+        {
+          "pass": true,
+          "label": "No page errors",
+          "details": []
+        },
+        {
+          "pass": true,
+          "label": "No console warnings/errors including CSP",
+          "details": []
+        },
+        {
+          "pass": true,
+          "label": "No application HTTP/request errors",
+          "details": {
+            "httpErrors": [],
+            "appResourceFailures": []
+          }
+        }
+      ],
+      "states": {
+        "start": {
+          "growth": 0,
+          "ready": "false",
+          "text": "",
+          "width": 56,
+          "center": 48,
+          "bodies": 1
+        },
+        "mid": {
+          "growth": 0.28843,
+          "ready": "false",
+          "text": "explore me!",
+          "width": 79.28125,
+          "center": 48,
+          "bodies": 1,
+          "href": "/ui/"
+        },
+        "end": {
+          "growth": 1,
+          "ready": "true",
+          "text": "explore me!",
+          "width": 144.46875,
+          "center": 48,
+          "bodies": 1,
+          "href": "/ui/"
+        }
+      },
+      "uiUrl": "https://alvenx.com/ui/",
+      "uiMeta": [
+        {
+          "name": "alvenx-source-commit",
+          "content": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da"
+        },
+        {
+          "name": "alvenx-source-ref",
+          "content": "v1.3.1"
+        },
+        {
+          "name": "alvenx-kit-version",
+          "content": "1.3.1"
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "httpErrors": [],
+      "appResourceFailures": [],
+      "telemetryCancellations": [],
+      "failedRequests": []
+    },
+    {
+      "worker": "eba97f87-43b2-45b1-8614-5da6dbb77105",
+      "scope": "One fresh retained homepage flow per engine; this does not rerun the prior multi-width/reduced/keyboard suite.",
+      "engine": "webkit",
+      "browser": "26.5",
+      "width": 1366,
+      "passed": 8,
+      "failed": 0,
+      "results": [
+        {
+          "pass": true,
+          "label": "Fresh production homepage retains empty single optical mother",
+          "details": {
+            "growth": 0,
+            "ready": "false",
+            "text": "",
+            "width": 66,
+            "center": 347.296875,
+            "bodies": 1
+          }
+        },
+        {
+          "pass": true,
+          "label": "Retained native activation reaches intermediate growth",
+          "details": {
+            "growth": 0.19176,
+            "ready": "false",
+            "text": "explore me!",
+            "width": 83.1875,
+            "center": 347.296875,
+            "bodies": 1,
+            "href": "/ui/"
+          }
+        },
+        {
+          "pass": true,
+          "label": "Retained single body completes without mother drift",
+          "details": {
+            "growth": 1,
+            "ready": "true",
+            "text": "explore me!",
+            "width": 174.578125,
+            "center": 347.296875,
+            "bodies": 1,
+            "href": "/ui/"
+          }
+        },
+        {
+          "pass": true,
+          "label": "Native retained link loads UI version1.3.1 metadata",
+          "details": [
+            {
+              "name": "alvenx-source-commit",
+              "content": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da"
+            },
+            {
+              "name": "alvenx-source-ref",
+              "content": "v1.3.1"
+            },
+            {
+              "name": "alvenx-kit-version",
+              "content": "1.3.1"
+            }
+          ]
+        },
+        {
+          "pass": true,
+          "label": "New UI publishes source metadata",
+          "details": [
+            {
+              "name": "alvenx-source-commit",
+              "content": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da"
+            },
+            {
+              "name": "alvenx-source-ref",
+              "content": "v1.3.1"
+            },
+            {
+              "name": "alvenx-kit-version",
+              "content": "1.3.1"
+            }
+          ]
+        },
+        {
+          "pass": true,
+          "label": "No page errors",
+          "details": []
+        },
+        {
+          "pass": true,
+          "label": "No console warnings/errors including CSP",
+          "details": []
+        },
+        {
+          "pass": true,
+          "label": "No application HTTP/request errors",
+          "details": {
+            "httpErrors": [],
+            "appResourceFailures": []
+          }
+        }
+      ],
+      "states": {
+        "start": {
+          "growth": 0,
+          "ready": "false",
+          "text": "",
+          "width": 66,
+          "center": 347.296875,
+          "bodies": 1
+        },
+        "mid": {
+          "growth": 0.19176,
+          "ready": "false",
+          "text": "explore me!",
+          "width": 83.1875,
+          "center": 347.296875,
+          "bodies": 1,
+          "href": "/ui/"
+        },
+        "end": {
+          "growth": 1,
+          "ready": "true",
+          "text": "explore me!",
+          "width": 174.578125,
+          "center": 347.296875,
+          "bodies": 1,
+          "href": "/ui/"
+        }
+      },
+      "uiUrl": "https://alvenx.com/ui/",
+      "uiMeta": [
+        {
+          "name": "alvenx-source-commit",
+          "content": "08aa8ed969f2aea0e7edfc09c6d0287ede1cb7da"
+        },
+        {
+          "name": "alvenx-source-ref",
+          "content": "v1.3.1"
+        },
+        {
+          "name": "alvenx-kit-version",
+          "content": "1.3.1"
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "httpErrors": [],
+      "appResourceFailures": [],
+      "telemetryCancellations": [
+        {
+          "url": "https://alvenx.com/cdn-cgi/rum?",
+          "error": "Load request cancelled",
+          "firstParty": true
+        }
+      ],
+      "failedRequests": [
+        {
+          "url": "https://alvenx.com/cdn-cgi/rum?",
+          "error": "Load request cancelled",
+          "firstParty": true
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Windows browser engines, not physical iPhone/iPad or Combo Touch certification.",
+    "Worker and website source identity are supplied by deployment receipts; UI version/ref/full source commit are observed directly from the page metadata.",
+    "This confirms the existing homepage flow still enters the new1.3.1 UI; the field-inset validation is owned by the field verification record."
+  ]
+}
