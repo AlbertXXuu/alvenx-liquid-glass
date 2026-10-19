@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "scope": "Text inset correction local verification",
+  "recordDate": "2026-10-19",
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "comparison.json",
+      "bytes": 2088,
+      "sha256": "1375d777a788a9f21e6992b5f60cb8902e437912cd2ad9ef9f69933364fa1c00"
+    },
+    {
+      "path": "local-after-1366.png",
+      "bytes": 220860,
+      "sha256": "4e457a8d4720faa1b629e24505e315c1c53231f2c8245d8b3e879f875942884a"
+    },
+    {
+      "path": "local-after-393.png",
+      "bytes": 96099,
+      "sha256": "fa47419c44f6cfea5b93e9f728724fdd518e2f636bbf43a9baf00f0b2a4a4b93"
+    },
+    {
+      "path": "local-after-768.png",
+      "bytes": 153551,
+      "sha256": "770ffc4a6276ccf06b97804f9f4539a3915fe8329a8c8137e4c3bb34b8860b59"
+    },
+    {
+      "path": "local-after.json",
+      "bytes": 10386,
+      "sha256": "7a33478dae740f0be3e1b53feb51f7d21430349853ad63f70d2f5978e0e906fa"
+    },
+    {
+      "path": "local-after.log",
+      "bytes": 11469,
+      "sha256": "aebf001c320cd9b850682abd5cdeafb954e982b729f13bfb1ec50e285c96389e"
+    },
+    {
+      "path": "measure-text-inset.playwright.js",
+      "bytes": 3402,
+      "sha256": "bf430cecf131e9d6c23386a2488b1de8b7fbf4af621166bab025bfeede8f150a"
+    },
+    {
+      "path": "production-before-1366.png",
+      "bytes": 220751,
+      "sha256": "abbc844f7d78122d52975c2f2cb66ad38c9cb47328de7870e48d0df0a378a228"
+    },
+    {
+      "path": "production-before-393.png",
+      "bytes": 96038,
+      "sha256": "bd210c71e2355c3dae12356d24d7b9033ee8e855bad44e1f9cf5db42397d1847"
+    },
+    {
+      "path": "production-before-768.png",
+      "bytes": 153527,
+      "sha256": "e103e8ed6f0b42ae6a0f631d8073adab991cf415b074f09cd9deee690eb9ea50"
+    },
+    {
+      "path": "production-before.json",
+      "bytes": 10441,
+      "sha256": "8edfc4a11afce443e466a8be658366a42f712d0b8317e4a63ecc3b5b166ebd17"
+    },
+    {
+      "path": "production-before.log",
+      "bytes": 11524,
+      "sha256": "2041b9a291dd3a3959c521ba0e650420cf4d658fe919dd9818044851a3a7f4a3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4995,
+      "sha256": "4bdb76d9fa320138cd615dc950277d1f74902eb72730d710ce462e48f1a01574"
+    }
+  ],
+  "sourceCss": {
+    "path": "showcase/mobile-review/review.css",
+    "bytes": 14073,
+    "sha256": "f5a925d5528d318417f009c2c22ca80f8f86a66e7fc203981975c5f6bb4a5178"
+  }
+}

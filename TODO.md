@@ -72,4 +72,4 @@ The owner accepted the other existing effects in this request. This records the 
 ## Text field sizing review (2026-10-19)
 
 - [x] Create three editable, real-material comparisons with responsive text safe areas; keep production field styles unchanged.
-- [ ] Apply a field size only after the owner chooses A, B or C from the independent review.
+- [x] Follow the owner's clarification: move only the typed-text start to the right; retain field width, height, contour and placement. No A/B/C sizing option was selected. See the 1.3.1 measurements and publication record.

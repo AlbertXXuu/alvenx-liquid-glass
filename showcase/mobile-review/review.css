@@ -51,6 +51,7 @@ button,input,a,pre{touch-action:manipulation}
 .lab-composer{position:relative;display:flex;align-items:center;gap:12px;max-width:720px;margin:auto}
 .lab-message{height:74px;flex:1;min-width:0}
 .lab-message>.field-hit{padding:8px max(28px,calc(4.5% + 16px))}
+.alvenx-design.lab .lab-message>.field-hit{padding-left:58px}
 .lab .lab-message input{font-size:16px;line-height:1.5}
 .lab .lab-message input::placeholder{color:#647398}
 .lab-send{width:58px;height:58px}
@@ -104,6 +105,7 @@ button,input,a,pre{touch-action:manipulation}
 .lab-message{height:68px}
 .lab-send{width:44px;height:44px}
 .lab-message>.field-hit{padding:8px max(24px,calc(4.5% + 12px))}
+.alvenx-design.lab .lab-message>.field-hit{padding-left:36px}
 .lab-message-feedback{padding-left:16px;font-size:12px}
 .lab-parameter-grid{grid-template-columns:1fr;gap:18px}
 .lab-disclosure{width:190px;font-size:12px}

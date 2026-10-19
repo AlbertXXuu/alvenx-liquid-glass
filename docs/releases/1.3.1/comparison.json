@@ -1,0 +1,89 @@
+{
+  "scope": "Same native field; change only left text inset",
+  "comparisons": [
+    {
+      "width": 393,
+      "contentStartBefore": 26.8125,
+      "contentStartAfter": 38,
+      "contentShift": 11.1875,
+      "field": {
+        "x": 0,
+        "y": 0.0,
+        "width": 0,
+        "height": 0
+      },
+      "send": {
+        "x": 0,
+        "y": 0.0,
+        "width": 0,
+        "height": 0
+      },
+      "rightUnchanged": true,
+      "topUnchanged": true,
+      "bottomUnchanged": true,
+      "fontUnchanged": true,
+      "inputYShift": 0.0,
+      "inputHeightShift": 0,
+      "inputUAPaddingUnchanged": true,
+      "shapePathUnchanged": true,
+      "gapUnchanged": true,
+      "maxWidthUnchanged": true
+    },
+    {
+      "width": 768,
+      "contentStartBefore": 42.921875,
+      "contentStartAfter": 60,
+      "contentShift": 17.078125,
+      "field": {
+        "x": 0,
+        "y": 0.0,
+        "width": 0,
+        "height": 0
+      },
+      "send": {
+        "x": 0,
+        "y": 0.0,
+        "width": 0,
+        "height": 0
+      },
+      "rightUnchanged": true,
+      "topUnchanged": true,
+      "bottomUnchanged": true,
+      "fontUnchanged": true,
+      "inputYShift": 0.0,
+      "inputHeightShift": 0,
+      "inputUAPaddingUnchanged": true,
+      "shapePathUnchanged": true,
+      "gapUnchanged": true,
+      "maxWidthUnchanged": true
+    },
+    {
+      "width": 1366,
+      "contentStartBefore": 47.25,
+      "contentStartAfter": 60,
+      "contentShift": 12.75,
+      "field": {
+        "x": 0,
+        "y": 0.0,
+        "width": 0,
+        "height": 0
+      },
+      "send": {
+        "x": 0,
+        "y": 0.0,
+        "width": 0,
+        "height": 0
+      },
+      "rightUnchanged": true,
+      "topUnchanged": true,
+      "bottomUnchanged": true,
+      "fontUnchanged": true,
+      "inputYShift": 0.0,
+      "inputHeightShift": 0,
+      "inputUAPaddingUnchanged": true,
+      "shapePathUnchanged": true,
+      "gapUnchanged": true,
+      "maxWidthUnchanged": true
+    }
+  ]
+}

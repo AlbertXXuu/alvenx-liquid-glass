@@ -10,7 +10,7 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 Version **1.3.0** adds a reusable `BuddingLink`: one empty mother form grows through a soft connection into a native link chamber, using the existing actual-backdrop glass material. Its real document width pushes neighboring content continuously. The [live homepage](https://alvenx.com/) uses it between Explore the work and GitHub. See [the 1.3.0 record](docs/releases/1.3.0/README.md).
 
-The accepted [UI showcase](https://alvenx.com/ui/) remains the 1.2.2 composition: canonical glass header, layered blue/violet background, gradient headline, horizontal volume, normal-flow material parameters, stable Chinese typography and a 50% initial Progress example. Authoring specifications are in Chinese; component labels and demonstrations are in English.
+Version **1.3.1** moves only the typed-text start inside the existing message field. The [UI showcase](https://alvenx.com/ui/) retains the accepted 1.2.2 composition, field dimensions, contour, send button and placement. Its native text gains a little left inset; none of the independent A/B/C sizing variants was selected. See [the measured correction](docs/releases/1.3.1/README.md). Authoring specifications are in Chinese; component labels and demonstrations are in English.
 
 The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 
@@ -47,7 +47,7 @@ Build and create a local package; the versioned tarball can be installed directl
 npm run build
 npm run pack:kit
 # In your React 19 project:
-npm install ./alvenx-liquid-glass-1.3.0.tgz
+npm install ./alvenx-liquid-glass-1.3.1.tgz
 ```
 
 ```tsx
