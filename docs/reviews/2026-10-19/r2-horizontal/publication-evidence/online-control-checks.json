@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-19",
+  "reviewUrl": "https://alvenx.com/ui/review-20261019-r2/",
+  "deployedSourceCommit": "9d37b9b7168d7276936ce5eac920b1d05e51b8e9",
+  "status": "passed",
+  "engine": "155.0.8059.84",
+  "physicalDevice": false,
+  "checks": [
+    "mouse drag reaches legal maximum with elastic overdrag",
+    "re-grab preserves the displayed position measured at pointerdown",
+    "primary mouse pointer remains draggable after re-grab",
+    "slider Home keyboard input",
+    "slider keyboard step remains discrete",
+    "queued keyboard edit survives same-task focus change",
+    "queued keyboard edit survives same-task window blur",
+    "numeric entry clamps to its range",
+    "switch reports midpoint crossing while held",
+    "keyboard switch activation travels continuously",
+    "keyboard switch finishes at its endpoint",
+    "keyboard-style switch activation survives immediate focus change",
+    "desktop controls produce no page errors",
+    "slider permits native vertical pan",
+    "vertical swipe from slider scrolls without editing",
+    "vertical swipe from switch scrolls without toggling",
+    "first touch tap toggles once",
+    "horizontal native touch drag updates the slider continuously",
+    "second touch cannot replace the active slider pointer",
+    "continuous settings drag does not write synchronous storage per frame",
+    "settings drag coalesces to one persisted update",
+    "pagehide flushes the latest committed settings",
+    "native touch controls produce no page errors"
+  ],
+  "checkCount": 23,
+  "observations": {
+    "overdrag": 11.686,
+    "keyboardAnimationPosition": 0.212248,
+    "verticalScroll": {
+      "slider": 120,
+      "switch": 120
+    },
+    "secondTouch": {
+      "first": 0.378864588498868,
+      "second": 0.378864588498868
+    },
+    "storageWrites": {
+      "during": 0,
+      "after": 1
+    },
+    "regrab": {
+      "staleSampleX": 1178.0625,
+      "atDown": {
+        "x": 1178.0625,
+        "time": 3351.199999999255,
+        "overshoot": 9.994,
+        "progress": 1
+      },
+      "heldX": 1177.9375,
+      "staleSampleDelta": -0.125,
+      "eventTimeDelta": -0.125
+    }
+  },
+  "verificationProtocol": "Re-grab compares the held position with the position captured synchronously at pointerdown.",
+  "afterFrozenTagChangeScope": "CJS verification callback and delivery documentation only; rendered UI source and delivery manifest remain unchanged.",
+  "limitations": [
+    "No physical iPhone/iPad/Combo Touch certification.",
+    "No stable FPS claim or certification that physical first-click stalls are resolved."
+  ]
+}

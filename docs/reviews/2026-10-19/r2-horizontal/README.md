@@ -1,6 +1,6 @@
 # R2 — horizontal composition / 横向构图修订
 
-**Status: self-reviewed. Recorded: 2026-10-19.** 本地技术检查、引擎回归、构建、截图自检及实际 tarball 的外部消费项目验证已通过；最终重打包哈希核对、源码标签推送及网页发布仍待登记。**未获用户真机验收，不标记 accepted。**
+**Status: published-awaiting-owner. Updated: 2026-10-19.** [R2 独立审查页](https://alvenx.com/ui/review-20261019-r2/)已发布；源码标签已推送，技术检查与用户验收分开记录。**未获用户真机验收，不标记 accepted。**
 
 ## Requirement and candidate / 要求与当前候选
 
@@ -25,9 +25,9 @@
 | Package base | 1.1.2，独立审查修订，并非新的正式验收版本 |
 | Working source | [codex/compact-horizontal-review](https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/codex/compact-horizontal-review)，内容会继续变化 |
 | Previous snapshot | [review-20261019-r1-rejected](https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r1-rejected)，`80eb02e` |
-| Planned R2 snapshot | [review-20261019-r2](https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r2)，尚未在本记录确认建立／推送 |
-| Planned new review URL | [独立 R2 审查入口](https://alvenx.com/ui/review-20261019-r2/)，尚未在本记录确认发布 |
-| Historical R1 URL | [原 R1 审查入口](https://alvenx.com/ui/review-20261019/)，不是本版 R2 的验收入口 |
+| Frozen R2 snapshot | [review-20261019-r2](https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r2)，`9d37b9b7168d7276936ce5eac920b1d05e51b8e9`；已推送，后续回执不移动此标签 |
+| Published review URL | [独立 R2 审查入口](https://alvenx.com/ui/review-20261019-r2/)，已上线并完成三宽度在线核查 |
+| Historical R1 URL | [原 R1 审查入口](https://alvenx.com/ui/review-20261019/)，现为退役说明页；原 R1 标签与证据仍保留 |
 
 新旧审查路径分开记录；网址以后变化也不覆盖已保存的截图、哈希与源标签。代码继续公开并保留版权，不因此授予开源复用许可。
 
@@ -74,12 +74,22 @@ Chromium 155.0.8059.84 的九组视窗为 **320、360、393、430、640、768、
 
 这里的 production build 指本地构建产物预览，不代表已向正式网站部署，也不代替用户真机审查。
 
+## Published delivery / 已发布交付
+
+[发布回执](publication-receipt.json)及其[SHA-256](publication-SHA256SUMS.txt)记录 R2 源码提交、固定标签、[成功的 CI](https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39228122136)与独立网页部署。在线 Chromium、Windows WebKit 各检查 393／768／1366px，页面响应为 200，无页面脚本或布局溢出错误，并完成消息提交；修正诊断字段名后，Chromium 三宽度均明确记录 SVG 模式。WebKit 的 Instrument Sans、MiSans 已加载，记录的字体请求均为 200、CSP 违规为 0；native 模式 ready 不代表 Safari 已有真实背景位移折射。
+
+选定在线外观：[393px stage](publication-evidence/online-393-stage.png) · [768px stage](publication-evidence/online-768-stage.png) · [1366px stage](publication-evidence/online-1366-stage.png) · [WebKit 393px focus](publication-evidence/online-webkit-393-focus.png) · [WebKit 768px focus](publication-evidence/online-webkit-768-focus.png)。这些是浏览器模拟核查，不是用户设备验收。[实际安装消费者的浏览器截图](publication-evidence/installed-consumer.png)另行记录了滑条、开关和可见前景的基本 smoke 检查。
+
+原 `/ui/` HTML 与清单的字节哈希没有变化。首页原始 HTML 的字节哈希发生变化；只归一生成的 JS 文件名哈希和 Vinext deploymentVersion UUID 后，前后归一化 HTML 完全一致，SHA-256 为 `21d963db2afb86dfe4c2e3422a891de93adea6978598cb8dfa24fe8f6e276ca2`。因此不声称整个首页原始字节不变。官网首页应用和 vendor 源码未改；具体范围见[线上身份摘要](publication-evidence/site-identity.json)。
+
+[线上 23 项控件回归](publication-evidence/online-control-checks.json)已全部通过。此前旧断言把重抓前较早的异步位置当作基准，动画正常回弹也会触发误报；[时序诊断](publication-evidence/regrab-timing.json)用真实 pointerdown 时刻的位置核对，最终重抓位移为 −0.125 CSS px。此次只修正 CJS 验证回调和回执，已部署 UI 源码、清单及固定 R2 标签不变。滑条／开关纵向滑动均滚页 120px 而不误改数值，调参期间同步存储 0 次、静置后 1 次。已有本地 30 项和本地生产构建 23 项记录与线上验证分开保留。
+
 ## Iterations and status / 中间版本与状态
 
 - [Iteration 01 — self-rejected](iterations/01-self-rejected/README.md)：紧凑比例与 C2 边缘文字留白未达标，改写前已保存源码补丁和截图；不是用户再次否决。
 - [Iteration 02 — intermediate](iterations/02-intermediate/README.md)：保存中间效果；初次控件空白与截图的可见性唤醒时序有关，不能据此判为代码失败。
 - [Iteration 03 — intermediate](iterations/03-intermediate/README.md)：保留下一次中间效果，没有补写验收结论。02／03 没有当时的精确源码快照，不提出完全复现声明。
 
-[主摘要](summary.json)跟踪局部证据与发布状态，[SHA-256 清单](evidence/SHA256SUMS.txt)覆盖选定截图和脱敏检查摘要。原始认证／部署日志、绝对用户目录和用户实机附件没有复制到这里。R1 历史和已确认 v6 原件不变。
+[发布前冻结摘要](summary.json)保留当时的 self-reviewed 状态和证据，最新交付状态以[发布回执](publication-receipt.json)为准；[SHA-256 清单](evidence/SHA256SUMS.txt)覆盖选定截图和脱敏检查摘要。原始认证／部署日志、绝对用户目录和用户实机附件没有复制到这里。R1 历史和已确认 v6 原件不变。
 
-根代理完成最终重打包哈希核对、源码标签推送和实际网址发布后更新记录，再将状态改为 `published-awaiting-owner`。用户只有在可访问的独立网址上体验手机、iPad 和 Combo Touch 后，才能明确确认或否决该版本；在此之前保持非 accepted 状态。
+源码标签和独立网址已发布，当前为 `published-awaiting-owner`。原标签中的发布前记录保持不变；后续文档和验证脚本修订由新提交记录。用户只有在可访问的独立网址上体验手机、iPad 和 Combo Touch 后，才能明确确认或否决该版本；在此之前保持非 accepted 状态。

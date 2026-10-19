@@ -1,0 +1,140 @@
+{
+  "reviewId": "R2",
+  "date": "2026-10-19",
+  "status": "published-awaiting-owner",
+  "ownerAccepted": false,
+  "reviewUrl": "https://alvenx.com/ui/review-20261019-r2/",
+  "source": {
+    "repository": "https://github.com/AlbertXXuu/alvenx-liquid-glass",
+    "branch": "codex/compact-horizontal-review",
+    "tag": "review-20261019-r2",
+    "commit": "9d37b9b7168d7276936ce5eac920b1d05e51b8e9",
+    "tagUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r2",
+    "tagPushed": true,
+    "frozenTagMovedByThisReceipt": false,
+    "ci": {
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39228122136",
+      "conclusion": "success"
+    }
+  },
+  "website": {
+    "sourceRepository": "AlbertXXuu/AlvenXWebsite (private)",
+    "sourceCommit": "b99a127b06c87659b411ca206a66248df0cb8326",
+    "sourceTag": "ui-review-20261019-r2",
+    "sourcePushed": true,
+    "workerVersion": "34e064f2-6e7f-49d4-be4a-79f48ed5de60",
+    "reviewRoutePublished": true,
+    "previousR1ReviewRoute": "retired page; original R1 source tag remains preserved",
+    "sourceChecksBuildCssAndDryRun": "passed",
+    "preparedSourceToBuildHashMatches": 494,
+    "originalUiHtmlAndManifestUnchanged": true,
+    "homepageRawHtmlUnchanged": false,
+    "homepageAfterLimitedBuildMetadataNormalization": {
+      "identical": true,
+      "sha256": "21d963db2afb86dfe4c2e3422a891de93adea6978598cb8dfa24fe8f6e276ca2",
+      "normalizedFields": [
+        "generated JS chunk filename hashes",
+        "Vinext deploymentVersion UUID"
+      ]
+    },
+    "homepageApplicationAndVendorSourcesChanged": false
+  },
+  "evidence": {
+    "checks": "publication-evidence/online-checks.json",
+    "siteIdentity": "publication-evidence/site-identity.json",
+    "hashes": "publication-evidence/SHA256SUMS.txt",
+    "files": [
+      {
+        "file": "installed-consumer.png",
+        "bytes": 152862,
+        "sha256": "1b8dc3e9c2e21844fd1a28989ef492d0966c5748a2d1d6ba66dfd53553701c80",
+        "widthPixels": 1280,
+        "heightPixels": 885
+      },
+      {
+        "file": "online-1366-stage.png",
+        "bytes": 208125,
+        "sha256": "ec05f9a9bfdc49d33965ebfe432b72099e3b2d09b9caee8c2a9e5c830f89545f",
+        "widthPixels": 1252,
+        "heightPixels": 669
+      },
+      {
+        "file": "online-393-stage.png",
+        "bytes": 58736,
+        "sha256": "34fcd4228ce2bb11ce5e1a7a29bce2b68aa622641d4a997b8cd507c441b0c939",
+        "widthPixels": 357,
+        "heightPixels": 485
+      },
+      {
+        "file": "online-768-stage.png",
+        "bytes": 105987,
+        "sha256": "7775fa97cda95e45dd03e755babb8130abfa87ba635632963fbba3d0591421c5",
+        "widthPixels": 708,
+        "heightPixels": 378
+      },
+      {
+        "file": "online-checks.json",
+        "bytes": 4311,
+        "sha256": "4254c93f5449efb15b3b43fd6c91d59298c999e1d370e0271a5586d3c67f47f5"
+      },
+      {
+        "file": "online-control-checks.json",
+        "bytes": 2663,
+        "sha256": "9eac86b0358f9ea2401ac23dded2a3639759b783f8ec0172d3188a3c12337fac"
+      },
+      {
+        "file": "online-webkit-393-focus.png",
+        "bytes": 62322,
+        "sha256": "802b54ee7ad684e98a888a57437f9e1747986b2d33dc17fdfab95512774dd87d",
+        "widthPixels": 357,
+        "heightPixels": 485
+      },
+      {
+        "file": "online-webkit-768-focus.png",
+        "bytes": 110964,
+        "sha256": "290db59e6609199f9db7b05c68dd81b77526d9d774389a6cb3bed6a2b621645e",
+        "widthPixels": 708,
+        "heightPixels": 378
+      },
+      {
+        "file": "regrab-timing.json",
+        "bytes": 1547,
+        "sha256": "4f0aeeb20d613943ce5aa2b41f4d18b5edfdb3fdf0d8030a128f49dbbb6298c2"
+      },
+      {
+        "file": "site-identity.json",
+        "bytes": 1952,
+        "sha256": "f93793da1421362f7cb2bf687bc214813c0bf7100d201867914b41e2e0f14c00"
+      }
+    ]
+  },
+  "controlTimingFollowup": "completed: stale pre-pointerdown sample protocol corrected in CJS verification only; online callback passed all 23 checks, pointerdown-relative re-grab displacement -0.125 CSS px",
+  "acceptanceBoundary": [
+    "Published review availability does not equal owner acceptance.",
+    "Physical iPhone 15 Pro / iPad / Combo Touch acceptance remains pending owner testing at the review URL.",
+    "Reported physical first-click stalls and Safari true-refraction quality remain unvalidated.",
+    "The frozen pre-publication summary and evidence remain unchanged; this separate receipt records the later delivery facts."
+  ],
+  "verificationProtocolChangeAfterFrozenTag": {
+    "scope": "CJS test callback and delivery documents only",
+    "renderedSourceCommitUnchanged": true,
+    "deliveryManifestUnchanged": true,
+    "diagnostic": "publication-evidence/regrab-timing.json",
+    "reason": "Compare against actual pointerdown-captured position rather than an earlier asynchronous animation sample.",
+    "onlineRerun": "passed"
+  },
+  "onlineControlChecks": {
+    "status": "passed",
+    "checkCount": 23,
+    "result": "publication-evidence/online-control-checks.json",
+    "eventTimeRegrabDeltaCssPx": -0.125,
+    "sliderAndSwitchVerticalScrollCssPx": {
+      "slider": 120,
+      "switch": 120
+    },
+    "settingsStorageWrites": {
+      "during": 0,
+      "after": 1
+    }
+  }
+}

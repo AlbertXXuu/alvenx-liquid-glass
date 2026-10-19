@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-19",
+  "sourceCommit": "9d37b9b7168d7276936ce5eac920b1d05e51b8e9",
+  "acceptedUiUnchanged": true,
+  "manifestMatchesPreparedSnapshot": true,
+  "homepageRawBytesUnchanged": false,
+  "files": [
+    {
+      "file": "accepted-ui-after.html",
+      "before": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+      "after": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+      "identical": true
+    },
+    {
+      "file": "manifest-after.json",
+      "before": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+      "after": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+      "identical": true
+    },
+    {
+      "file": "home-after.html",
+      "before": "d9faf077dddb5d5bebb101cc212bed15ed26f8d9c7ba4703f0cdbcff252f56b7",
+      "after": "910e91d492277e3f1d8f426ee7cd8d3dcde93f7afd70cbd31899781929de5fd8",
+      "identical": false
+    }
+  ],
+  "homepageContentAfterBuildMetadataNormalization": {
+    "identical": true,
+    "normalization": [
+      "Generated JS chunk filename hashes",
+      "Vinext deploymentVersion UUID"
+    ],
+    "beforeSha256": "21d963db2afb86dfe4c2e3422a891de93adea6978598cb8dfa24fe8f6e276ca2",
+    "afterSha256": "21d963db2afb86dfe4c2e3422a891de93adea6978598cb8dfa24fe8f6e276ca2"
+  },
+  "runtimeBundleIdentity": {
+    "status": "passed",
+    "files": [
+      {
+        "path": "assets/index-BtKmZWGT.js",
+        "sha256": "3e0f78e76700fa6798bc647332f0c8b013cca16a79b9e7df257fafcfae580916",
+        "matches": true
+      },
+      {
+        "path": "assets/index-GhbayAC0.css",
+        "sha256": "f63aa7af945b12eda20a0dd9d911da1a69481805fe9d3a79ec324ddcc205e841",
+        "matches": true
+      }
+    ]
+  },
+  "normalizationScope": "Only generated JS chunk filename hashes and the Vinext deploymentVersion UUID were normalized; this is not a raw-homepage byte-identity claim."
+}

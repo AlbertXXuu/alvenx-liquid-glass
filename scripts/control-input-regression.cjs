@@ -17,8 +17,17 @@ async page => {
     const over=await row.locator('.range-rail').getAttribute('data-overshoot');
     assert(Number(over)>3&&Number(await slider.inputValue())===1,'mouse drag reaches legal maximum with elastic overdrag');
     await p.mouse.up();await p.waitForTimeout(20);box=await thumb.boundingBox();const before=box.x;
+    // The spring keeps returning between a bounding-box query, mouse movement
+    // and pointerdown. Measure the re-grab invariant at the actual event, so a
+    // slow test runner cannot mistake legitimate pre-grab motion for a jump.
+    await p.evaluate(()=>document.addEventListener('pointerdown',event=>{
+      if(event.target.id!=='range-component-slider')return;
+      const rail=event.target.closest('.range-rail'),thumb=rail.querySelector('.range-thumb-position');
+      window.__regrabAtDown={x:thumb.getBoundingClientRect().x,time:performance.now(),overshoot:Number(rail.dataset.overshoot),progress:Number(rail.dataset.progress)};
+    },{capture:true,once:true}));
     await p.mouse.move(box.x+box.width/2,box.y+box.height/2);await p.mouse.down();await p.waitForTimeout(20);box=await thumb.boundingBox();
-    assert(Math.abs(box.x-before)<3,'re-grab preserves the displayed release position');
+    const regrabAtDown=await p.evaluate(()=>window.__regrabAtDown),regrabObservation={staleSampleX:before,atDown:regrabAtDown,heldX:box.x,staleSampleDelta:box.x-before,eventTimeDelta:box.x-regrabAtDown.x};
+    assert(Math.abs(regrabObservation.eventTimeDelta)<3,'re-grab preserves the displayed position measured at pointerdown');
     await p.mouse.move(rail.x+rail.width*.3,rail.y+rail.height/2,{steps:10});await p.mouse.up();await p.waitForTimeout(350);
     assert(Number(await slider.inputValue())<.6,'primary mouse pointer remains draggable after re-grab');
     await slider.focus();await slider.press('Home');await p.waitForTimeout(40);assert(Number(await slider.inputValue())===0,'slider Home keyboard input');
@@ -71,7 +80,7 @@ async page => {
     const saved=await m.evaluate(()=>{const last=window.__controlWrites.at(-1);return last?JSON.parse(localStorage.getItem(last.key)):null;});
     assert(saved.glassOpacity===.45,'pagehide flushes the latest committed settings');
     assert(errors.length===0,'native touch controls produce no page errors');
-    result.observations={overdrag:Number(over),keyboardAnimationPosition:Number(animation),verticalScroll:{slider:sliderDelta,switch:switchDelta},secondTouch:{first,second},storageWrites:{during,after:writes}};
+    result.observations={overdrag:Number(over),keyboardAnimationPosition:Number(animation),verticalScroll:{slider:sliderDelta,switch:switchDelta},secondTouch:{first,second},storageWrites:{during,after:writes},regrab:regrabObservation};
     return {status:'passed',...result};
   } finally {await desktop.close();await mobile.close();}
 }

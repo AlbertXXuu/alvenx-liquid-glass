@@ -5,9 +5,9 @@
 | Revision / 修订 | Status / 状态 | Scope and decision / 范围与结论 |
 | --- | --- | --- |
 | [R1](r1-rejected-vertical/README.md) | **rejected** | 横向形体直接改成竖向及文字排版被用户明确否决。保留截图和工程检查；输入修复仍可用于后续修订，不能自动视为已验收。 |
-| [R2](r2-horizontal/README.md) | **self-reviewed** | Decision B 保留原横向几何，九宽度截图自检及局部技术检查已记录。跨引擎／构建和实际 tarball 消费项目验证已通过；最终哈希核对、源码标签及独立网址发布待登记，用户真机验收未完成。 |
+| [R2](r2-horizontal/README.md) | **published-awaiting-owner** | Decision B 保留原横向几何；已记录截图自检、跨引擎／构建与 tarball 消费验证，固定源码标签及独立审查页已发布。线上 23 项控件回归通过；真机用户验收未完成，时序验证修正单独记录。 |
 
-[原 R1 公开审查入口](https://alvenx.com/ui/review-20261019/)是历史来源；页面内容可能以后变化。以对应目录的截图、哈希、来源记录和 Git 代码快照核对当时版本。当前没有在本目录登记任何已获用户接受的新修订。R2 已记录本地截图自检和局部技术证据，尚未登记正式发布或用户真机验收。
+[原 R1 公开审查入口](https://alvenx.com/ui/review-20261019/)是历史来源；页面内容可能以后变化。以对应目录的截图、哈希、来源记录和 Git 代码快照核对当时版本。当前没有在本目录登记任何已获用户接受的新修订。R2 已发布[独立审查页](https://alvenx.com/ui/review-20261019-r2/)，当前等待用户在实际手机、iPad 和 Combo Touch 上确认；最新交付事实见[发布回执](r2-horizontal/publication-receipt.json)。
 
 本轮仅使用以下有限状态，避免把进度写成验收：
 

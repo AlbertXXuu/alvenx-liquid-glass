@@ -1,0 +1,163 @@
+{
+  "date": "2026-10-19",
+  "url": "https://alvenx.com/ui/review-20261019-r2/",
+  "physicalDevice": false,
+  "chrome": {
+    "cases": [
+      {
+        "width": 393,
+        "status": 200,
+        "layout": "overview",
+        "overflow": false,
+        "error": null,
+        "mode": "svg",
+        "submitted": true,
+        "noindex": "noindex, nofollow"
+      },
+      {
+        "width": 768,
+        "status": 200,
+        "layout": "compact-integrated",
+        "overflow": false,
+        "error": null,
+        "mode": "svg",
+        "submitted": true,
+        "noindex": "noindex, nofollow"
+      },
+      {
+        "width": 1366,
+        "status": 200,
+        "layout": "wide-integrated",
+        "overflow": false,
+        "error": null,
+        "mode": "svg",
+        "submitted": true,
+        "noindex": "noindex, nofollow"
+      }
+    ],
+    "pageErrorCount": 0,
+    "sourceLinks": "fixed R2 tag link checked by root",
+    "screenshotsActuallyViewedByRoot": [
+      "393px stage",
+      "768px stage",
+      "1366px stage"
+    ]
+  },
+  "webkit": {
+    "engine": "26.5",
+    "cases": [
+      {
+        "width": 393,
+        "status": 200,
+        "layout": "overview",
+        "overflow": false,
+        "internalOverflow": false,
+        "canvasError": null,
+        "mode": "native",
+        "opticalReady": "true",
+        "loadedFontFamilies": [
+          "Instrument Sans",
+          "MiSans"
+        ],
+        "fontRequestStatuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "cspViolations": [],
+        "cspHeaderPresent": true,
+        "submitted": true,
+        "noindex": "noindex, nofollow"
+      },
+      {
+        "width": 768,
+        "status": 200,
+        "layout": "compact-integrated",
+        "overflow": false,
+        "internalOverflow": false,
+        "canvasError": null,
+        "mode": "native",
+        "opticalReady": "true",
+        "loadedFontFamilies": [
+          "Instrument Sans",
+          "MiSans"
+        ],
+        "fontRequestStatuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "cspViolations": [],
+        "cspHeaderPresent": true,
+        "submitted": true,
+        "noindex": "noindex, nofollow"
+      },
+      {
+        "width": 1366,
+        "status": 200,
+        "layout": "wide-integrated",
+        "overflow": false,
+        "internalOverflow": false,
+        "canvasError": null,
+        "mode": "native",
+        "opticalReady": "true",
+        "loadedFontFamilies": [
+          "Instrument Sans",
+          "MiSans"
+        ],
+        "fontRequestStatuses": [
+          200,
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "cspViolations": [],
+        "cspHeaderPresent": true,
+        "submitted": true,
+        "noindex": "noindex, nofollow"
+      }
+    ],
+    "pageErrorCount": 0,
+    "actuallyViewed": [
+      "online-webkit-393-normal.png",
+      "online-webkit-393-focus.png",
+      "online-webkit-768-normal.png",
+      "online-webkit-768-focus.png"
+    ],
+    "physicalDevice": false
+  },
+  "installedConsumerBrowser": {
+    "target": "fresh consumer installed from the tested tarball, locally served outside the source repository",
+    "status": "passed",
+    "sliderValue": "0.1",
+    "switchChanged": true,
+    "foregroundVisible": true,
+    "layout": "wide-integrated",
+    "pageErrorCount": 0,
+    "screenshotActuallyViewedByRoot": true,
+    "physicalDevice": false,
+    "assertionCount": 3
+  },
+  "onlineControlCallback": {
+    "status": "passed",
+    "checkCount": 23,
+    "result": "online-control-checks.json",
+    "diagnostic": "regrab-timing.json",
+    "local30ChecksAndProductionBuild23ChecksRemainPassed": true,
+    "verificationProtocolUpdatedAfterFrozenTag": true,
+    "runtimeOrManifestChanged": false
+  },
+  "limitations": [
+    "Browser tests do not certify physical iPhone/iPad/Safari/Combo Touch behavior.",
+    "Native optical ready=true does not establish real background displacement/refraction.",
+    "No stable FPS or physical first-activation-stall fix claim."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-19",
+  "engine": "155.0.8059.84",
+  "physicalDevice": false,
+  "status": "diagnostic completed; corrected callback rerun passed",
+  "deployedSourceCommit": "9d37b9b7168d7276936ce5eac920b1d05e51b8e9",
+  "runtimeChangedForDiagnostic": false,
+  "finding": "An asynchronous bounding-box sample taken before pointerdown can become stale while the spring legitimately continues returning. Compare actual pointerdown-captured position and held elastic displacement.",
+  "observations": [
+    {
+      "insertedDelayMs": 0,
+      "staleSampleToHeldDeltaCssPx": -0.828125,
+      "pointerDownCaptureToNextFrameDeltaCssPx": 1.0625,
+      "heldOvershootDeltaCssPx": 0
+    },
+    {
+      "insertedDelayMs": 80,
+      "staleSampleToHeldDeltaCssPx": -6.6875,
+      "pointerDownCaptureToNextFrameDeltaCssPx": -0.625,
+      "heldOvershootDeltaCssPx": 0
+    },
+    {
+      "insertedDelayMs": 120,
+      "staleSampleToHeldDeltaCssPx": -8.046875,
+      "pointerDownCaptureToNextFrameDeltaCssPx": -0.859375,
+      "heldOvershootDeltaCssPx": 0
+    }
+  ],
+  "conclusion": "The inserted 80/120ms delays can make the previous stale-sample assertion fail; actual capture-relative movement remained below 3px in these diagnostics, with the held overshoot preserved.",
+  "verificationProtocolFollowup": "Only the CJS verification callback was corrected after the frozen R2 tag; online 23 checks then passed. The deployed runtime and manifest were not modified.",
+  "correctedCallbackResult": "online-control-checks.json"
+}
