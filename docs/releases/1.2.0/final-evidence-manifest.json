@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "path": "final-verification/online-chromium-1180-hero.png",
+      "bytes": 537678,
+      "sha256": "479763eb229f673bdf5da1ef9aa3cf1d11a6adf67b9a21dbe7e6da32d272e7f9"
+    },
+    {
+      "path": "final-verification/online-chromium-393-components.png",
+      "bytes": 193957,
+      "sha256": "119cd8244bbe921af8958c0fbbbb70a2ffe53bd91d4cb3987e9db292573572ea"
+    },
+    {
+      "path": "final-verification/online-chromium-393-hero.png",
+      "bytes": 234885,
+      "sha256": "433878464ef9434f0a1baec49556aeef00e32f2068f7ac87e202bce78c6b09c0"
+    },
+    {
+      "path": "final-verification/online-chromium-qa.json",
+      "bytes": 8836,
+      "sha256": "610669851b243635eb3330d38b62cfdd60127965ea068d1fc6218e38867cc67b"
+    },
+    {
+      "path": "final-verification/online-findings.md",
+      "bytes": 3137,
+      "sha256": "1481312cddf696a4fc8f44360afbac58b15342a8bda3a43d9fd0c1def93ccce7"
+    },
+    {
+      "path": "final-verification/online-http-verification.json",
+      "bytes": 3052,
+      "sha256": "9850cbe652af8dbd3ab508ce0a0abd11121f31a8e242767decd78cc33e39d709"
+    },
+    {
+      "path": "final-verification/online-showcase-qa.cjs",
+      "bytes": 9060,
+      "sha256": "aa9b0b8d5d47ab46b21788a4e06e674e4503169bb652f4926963f0f8924aa126"
+    },
+    {
+      "path": "final-verification/online-webkit-1180-volume.png",
+      "bytes": 172062,
+      "sha256": "1428bf4f4e8117e8966394e8163397bd91519b0bcb04912a0c7f98f481f30e67"
+    },
+    {
+      "path": "final-verification/online-webkit-qa.json",
+      "bytes": 5447,
+      "sha256": "a94b60c3a68c117bd93292a33fa5f07e110619817ea65393b62249c4a8262d7a"
+    },
+    {
+      "path": "final-verification/production-native-touch.json",
+      "bytes": 14780,
+      "sha256": "ecd6e08b7c4145d82b2fe8dafdcd0b03a4473fd340415b6de52f5b062889760a"
+    },
+    {
+      "path": "final-verification/production-optics-modes-chromium.json",
+      "bytes": 2258,
+      "sha256": "64191d7d43e68ac3daf08ccd4c58c72050c7c65e9789847962839ef02c61ef3c"
+    },
+    {
+      "path": "final-verification/production-optics-modes-webkit.json",
+      "bytes": 2256,
+      "sha256": "6a8ceb39e47541a68d2b6c8c750f866d6a36598311bec03289b8f0697cb42c01"
+    },
+    {
+      "path": "final-verification/production-visual-findings.md",
+      "bytes": 4327,
+      "sha256": "a6a8423c3a4d3cc8e28e73c7c6363b30562e9215f31155361774ab9f1847c868"
+    }
+  ]
+}

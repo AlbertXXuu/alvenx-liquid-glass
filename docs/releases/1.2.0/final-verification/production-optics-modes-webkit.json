@@ -1,0 +1,113 @@
+{
+  "engine": "webkit",
+  "status": "passed",
+  "results": [
+    {
+      "requested": "native",
+      "modes": [
+        {
+          "id": "r3-replay",
+          "mode": "native"
+        },
+        {
+          "id": "r3-ambient-thumb",
+          "mode": "native"
+        },
+        {
+          "id": "r3-reduced-thumb",
+          "mode": "native"
+        },
+        {
+          "id": "r3-free-lens",
+          "mode": "native"
+        },
+        {
+          "id": "r3-sample-number",
+          "mode": "native"
+        },
+        {
+          "id": "r3-sample-thumb",
+          "mode": "native"
+        },
+        {
+          "id": "r3-continuous-thumb",
+          "mode": "native"
+        },
+        {
+          "id": "r3-message",
+          "mode": "native"
+        },
+        {
+          "id": "r3-send",
+          "mode": "native"
+        },
+        {
+          "id": "r3-parameters",
+          "mode": "native"
+        },
+        {
+          "id": "r3-reset",
+          "mode": "native"
+        },
+        {
+          "id": "r3-device-check",
+          "mode": "native"
+        }
+      ]
+    },
+    {
+      "requested": "flat",
+      "modes": [
+        {
+          "id": "r3-replay",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-ambient-thumb",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-reduced-thumb",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-free-lens",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-sample-number",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-sample-thumb",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-continuous-thumb",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-message",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-send",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-parameters",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-reset",
+          "mode": "flat"
+        },
+        {
+          "id": "r3-device-check",
+          "mode": "flat"
+        }
+      ]
+    }
+  ],
+  "physicalDevice": false
+}

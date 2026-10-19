@@ -1,0 +1,121 @@
+{
+  "version": "1.2.0",
+  "date": "2026-10-19",
+  "status": "published-awaiting-physical-device-feedback",
+  "ownerDeploymentAuthorized": true,
+  "ownerPhysicalDeviceAccepted": false,
+  "productionUrl": "https://alvenx.com/ui/",
+  "githubRelease": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.2.0",
+  "source": {
+    "tag": "v1.2.0",
+    "commit": "9539291f27b39b596d1a92f52fc7462f7f76ad1f",
+    "tagMoved": false,
+    "defaultBranchUpdated": true,
+    "ci": {
+      "status": "success",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39245316029"
+    }
+  },
+  "publicationRecords": {
+    "tag": "v1.2.0-published",
+    "scope": "Later receipts and bounded online checks; no runtime change. One browser callback EOF is normalized."
+  },
+  "website": {
+    "repository": "Private AlvenXWebsite",
+    "branch": "codex/ui-production-1.2.0",
+    "tag": "ui-v1.2.0",
+    "commit": "19985664f81c5778f3079a1ffc357f13b3914f8e",
+    "workerVersion": "7078b93f-2618-47f3-a17d-eff45efe1d1a",
+    "previousWorker": "c3f2fdda-e55d-4335-928a-5c9fe30b6b3e",
+    "validation": "npm run validate passed through Wrangler dry-run; 2566 static files.",
+    "showcaseFiles": 564,
+    "sourceBuild": {
+      "files": 563,
+      "bytes": 44981116,
+      "sha256": "fd31a74ddabaebe03f470b359c42237b177175799ca5217d0eb47950cc47f94f"
+    },
+    "productionIndexSha256": "156e5e668e1b5dbc4917e5cf92b2ba9034f2a77846c7d979919b50f0f27af160",
+    "homepageEntranceDependency": "1.1.2; preserved independently",
+    "homepageCssUnchanged": [
+      {
+        "file": "index.CjIW4VPp.css",
+        "sha256": "20e2a557560ef95244dfbd29aa892b5ce8c9bf9ef702c5dce193bd7207bb5166"
+      },
+      {
+        "file": "home-content.DyKEujSV.css",
+        "sha256": "248d8a54d4de4e3b52e31f84763098671f5b225c74bb5c73928d73b4b20fdd4a"
+      }
+    ]
+  },
+  "previousProduction": {
+    "version": "1.1.2",
+    "url": "https://alvenx.com/ui/archive/production-20261018/",
+    "manifestSha256": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+    "indexSha256": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b"
+  },
+  "historicalReviewsPreserved": [
+    {
+      "path": "review-20261019",
+      "files": 251,
+      "bytes": 30038886,
+      "sha256": "b636f94aa43b3c2ecf1dbfde645761fb449e14bfacb5921b206f898727d9b111"
+    },
+    {
+      "path": "review-20261019-r2",
+      "files": 248,
+      "bytes": 29214642,
+      "sha256": "1039efa7d18368c966715f421ad98b2bb4788c4f943c10ce6f96fcd91c740f9a"
+    },
+    {
+      "path": "review-20261019-r3",
+      "files": 516,
+      "bytes": 41914794,
+      "sha256": "9436cad5dda8f160e16d2e8be696b3b87aac17ea57358ca2313841899259e4dc"
+    }
+  ],
+  "validation": {
+    "localBrowserAssertions": 170,
+    "localWidths": [
+      320,
+      393,
+      768,
+      1180,
+      1366
+    ],
+    "localNativeTouchStreams": 12,
+    "onlineBrowserAssertions": 66,
+    "onlineNativeTouchStreams": 4,
+    "onlineWidths": [
+      393,
+      1180
+    ],
+    "onlineEngines": [
+      "Chromium 155.0.8059.84",
+      "Windows Playwright WebKit 26.5"
+    ],
+    "onlinePageErrors": 0,
+    "onlineFailedRequests": 0,
+    "onlineHttpErrors": 0,
+    "onlineConsoleErrors": 0,
+    "onlineCspViolations": 0,
+    "onlineExactByteIdentities": 15,
+    "actualInstalledSourceTarball": true
+  },
+  "sourceArtifacts": [
+    {
+      "name": "alvenx-design-kit-1.2.0.zip",
+      "bytes": 77490537,
+      "sha256": "87e9b3803b52552054e68cbc9d89bdcc284df33036ea25ab4d36ba4a0e788d64"
+    },
+    {
+      "name": "alvenx-liquid-glass-1.2.0.tgz",
+      "sha256": "3d4bb71ee7372ec649a47c0e9302194170132d707a758bf7bb0898d9107fdb90"
+    }
+  ],
+  "limits": [
+    "No physical iPhone 15 Pro / iPad Air M4 / Combo Touch certification.",
+    "Windows WebKit does not implement the iOS-specific tap-highlight property; the disappearance of the reported grey overlay requires owner device feedback.",
+    "No new physical latency/FPS benchmark claimed.",
+    "Source remains all rights reserved / UNLICENSED; no npm registry publication."
+  ]
+}

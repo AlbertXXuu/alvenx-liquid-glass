@@ -1,0 +1,525 @@
+{
+  "status": "passed",
+  "page": "index.html",
+  "scope": "Production candidate in Chromium native CDP touch; not physical Safari or Combo Touch certification",
+  "results": [
+    {
+      "viewport": {
+        "width": 393,
+        "height": 852
+      },
+      "holds": [
+        {
+          "name": "mother",
+          "initial": {
+            "scrollY": 392,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 500,
+              "deformY": 280,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "overview",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 392,
+            "surface": {
+              "parentX": 1.056957321997068,
+              "parentY": 0.9382127054853276,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 233.70602871289535,
+              "deformY": 95.38369371653356,
+              "deformDX": 0,
+              "deformDY": -18.26430759727041,
+              "curvature": 3.2
+            },
+            "layout": "overview",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        },
+        {
+          "name": "neck",
+          "initial": {
+            "scrollY": 392,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 499.9988918110078,
+              "deformY": 279.999224601077,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "overview",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 392,
+            "surface": {
+              "parentX": 1.0569460640080355,
+              "parentY": 0.9382231380886349,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 416.18326361361375,
+              "deformY": 97.97450465899327,
+              "deformDX": 0,
+              "deformDY": -18.26218092145009,
+              "curvature": 3.2
+            },
+            "layout": "overview",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        },
+        {
+          "name": "cavity",
+          "initial": {
+            "scrollY": 392,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 500,
+              "deformY": 279.99923223750295,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "overview",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 392,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1.0570993439298861,
+              "childY": 0.9381099515134639,
+              "deformX": 732.3522782051328,
+              "deformY": 194.25718737898583,
+              "deformDX": 0,
+              "deformDY": -18.267089779679758,
+              "curvature": 3.3141986878597725
+            },
+            "layout": "overview",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        }
+      ],
+      "insideToOutside": {
+        "insideInitial": {
+          "scrollY": 392,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 500.000777491655,
+            "deformY": 280,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "overview",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "movedOutside": {
+          "scrollY": 392,
+          "surface": {
+            "parentX": 1.0350169289843896,
+            "parentY": 0.9382353039375122,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 36.03834317213351,
+            "deformY": 121.7565844443946,
+            "deformDX": -18.273419729581274,
+            "deformDY": -18.25264433380562,
+            "curvature": 3.2
+          },
+          "layout": "overview",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "endHit": {
+          "tag": "CANVAS",
+          "shape": false,
+          "touchAction": "auto"
+        }
+      },
+      "outsideToShape": {
+        "outsideInitial": {
+          "scrollY": 392,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 499.9980615476529,
+            "deformY": 279.9993353694458,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "overview",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "outsideToShape": {
+          "scrollY": 479,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 500,
+            "deformY": 280,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "overview",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "fingerHitAfterPan": {
+          "tag": "DIV",
+          "shape": true,
+          "touchAction": "pinch-zoom"
+        }
+      },
+      "belowShape": {
+        "initial": {
+          "scrollY": 551,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 500,
+            "deformY": 280,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "overview",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "after": {
+          "scrollY": 630,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 500,
+            "deformY": 280,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "overview",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "startHit": {
+          "tag": "H3",
+          "shape": false,
+          "touchAction": "auto"
+        }
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 1180,
+        "height": 820
+      },
+      "holds": [
+        {
+          "name": "mother",
+          "initial": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 500,
+              "deformY": 280,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1.056755400476851,
+              "parentY": 0.93872005425756,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 234.65008387242452,
+              "deformY": 218.0147180753259,
+              "deformDX": 0,
+              "deformDY": -17.959304507203672,
+              "curvature": 3.2
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        },
+        {
+          "name": "neck",
+          "initial": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 499.99889782374686,
+              "deformY": 280,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1.0570985092204814,
+              "parentY": 0.9383204034782905,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 415.9588793999044,
+              "deformY": 217.05527205230385,
+              "deformDX": 0,
+              "deformDY": -18.092200056143625,
+              "curvature": 3.2
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        },
+        {
+          "name": "cavity",
+          "initial": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 500,
+              "deformY": 280,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1.0569593519012033,
+              "childY": 0.9384389998151086,
+              "deformX": 731.782635890962,
+              "deformY": 315.7019748125121,
+              "deformDX": 0,
+              "deformDY": -18.074544878374102,
+              "curvature": 3.3139187038024067
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        },
+        {
+          "name": "heading-glyph",
+          "initial": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1,
+              "childY": 1,
+              "deformX": 500.00096579992277,
+              "deformY": 280,
+              "deformDX": 0,
+              "deformDY": 0,
+              "curvature": 3.2
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "held": {
+            "scrollY": 615,
+            "surface": {
+              "parentX": 1,
+              "parentY": 1,
+              "childX": 1.057101010141702,
+              "childY": 0.938377258993942,
+              "deformX": 568.730378358274,
+              "deformY": 136.22223095233517,
+              "deformDX": 0,
+              "deformDY": -18.043361589055436,
+              "curvature": 3.314202020283404
+            },
+            "layout": "wide-integrated",
+            "growth": "1.0000",
+            "canvasError": null
+          },
+          "startHit": {
+            "tag": "DIV",
+            "shape": true,
+            "touchAction": "pinch-zoom"
+          }
+        }
+      ],
+      "insideToOutside": {
+        "insideInitial": {
+          "scrollY": 615,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 500,
+            "deformY": 279.99950294488343,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "wide-integrated",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "movedOutside": {
+          "scrollY": 615,
+          "surface": {
+            "parentX": 1.035475,
+            "parentY": 0.9384237922379314,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 35.289793564576435,
+            "deformY": 226.06873915062803,
+            "deformDX": -18.273790119947396,
+            "deformDY": -18.004583885730966,
+            "curvature": 3.2
+          },
+          "layout": "wide-integrated",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "endHit": {
+          "tag": "CANVAS",
+          "shape": false,
+          "touchAction": "auto"
+        }
+      },
+      "outsideToShape": {
+        "outsideInitial": {
+          "scrollY": 615,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 499.99805903966296,
+            "deformY": 280,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "wide-integrated",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "outsideToShape": {
+          "scrollY": 695,
+          "surface": {
+            "parentX": 1,
+            "parentY": 1,
+            "childX": 1,
+            "childY": 1,
+            "deformX": 500,
+            "deformY": 280,
+            "deformDX": 0,
+            "deformDY": 0,
+            "curvature": 3.2
+          },
+          "layout": "wide-integrated",
+          "growth": "1.0000",
+          "canvasError": null
+        },
+        "fingerHitAfterPan": {
+          "tag": "DIV",
+          "shape": true,
+          "touchAction": "pinch-zoom"
+        }
+      },
+      "belowShape": null,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "engine": "webkit",
+  "version": "26.5",
+  "url": "https://alvenx.com/ui/",
+  "sourceCommit": "9539291f27b39b596d1a92f52fc7462f7f76ad1f",
+  "physicalDevice": false,
+  "checks": [
+    "published source provenance 393",
+    "production title canonical and indexability 393",
+    "versioned first-party production assets 393",
+    "published responsive header and overflow 393",
+    "published gradient and varied canvas 393",
+    "published initial 50 percent 393",
+    "published mobile menu opens",
+    "published menu Escape closes",
+    "published horizontal form 393",
+    "published range click 393",
+    "published range continuous drag 393",
+    "published switch native tap 393",
+    "published shared optical source updates 393",
+    "published native message and Enter 393",
+    "historical review remains noindex 393",
+    "no published page network script or CSP errors 393",
+    "published source provenance 1180",
+    "production title canonical and indexability 1180",
+    "versioned first-party production assets 1180",
+    "published responsive header and overflow 1180",
+    "published gradient and varied canvas 1180",
+    "published initial 50 percent 1180",
+    "published horizontal form 1180",
+    "published range click 1180",
+    "published range continuous drag 1180",
+    "published switch native tap 1180",
+    "published shared optical source updates 1180",
+    "published native message and Enter 1180",
+    "historical review remains noindex 1180",
+    "no published page network script or CSP errors 1180"
+  ],
+  "cases": [
+    {
+      "width": 393,
+      "height": 852,
+      "head": {
+        "title": "AlvenX Liquid Glass — Glass that follows your hand.",
+        "commit": "9539291f27b39b596d1a92f52fc7462f7f76ad1f",
+        "version": "1.2.0",
+        "canonical": "https://alvenx.com/ui/",
+        "robots": "",
+        "assets": [
+          "https://alvenx.com/ui/releases/1.2.0/assets/main-gwBXwKN_.js",
+          "https://alvenx.com/ui/releases/1.2.0/assets/main-DR2flcMW.css",
+          "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+        ]
+      },
+      "visual": {
+        "width": 393,
+        "documentWidth": 393,
+        "heroGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "heroColor": "rgba(0, 0, 0, 0)",
+        "heroRect": {
+          "x": 18,
+          "y": 171.296875,
+          "width": 308.640625,
+          "height": 92.875,
+          "top": 171.296875,
+          "right": 326.640625,
+          "bottom": 264.171875,
+          "left": 18
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))",
+        "headerTop": 14,
+        "headerHeight": 74.484375,
+        "wordmark": 160
+      },
+      "volume": {
+        "layout": "overview",
+        "width": 357,
+        "height": 200,
+        "overflow": false,
+        "error": null
+      },
+      "nativeTouch": null,
+      "tapColors": {
+        "supported": false
+      },
+      "errors": [],
+      "failed": [],
+      "httpErrors": [],
+      "consoleErrors": [],
+      "csp": []
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "head": {
+        "title": "AlvenX Liquid Glass — Glass that follows your hand.",
+        "commit": "9539291f27b39b596d1a92f52fc7462f7f76ad1f",
+        "version": "1.2.0",
+        "canonical": "https://alvenx.com/ui/",
+        "robots": "",
+        "assets": [
+          "https://alvenx.com/ui/releases/1.2.0/assets/main-gwBXwKN_.js",
+          "https://alvenx.com/ui/releases/1.2.0/assets/main-DR2flcMW.css",
+          "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092"
+        ]
+      },
+      "visual": {
+        "width": 1180,
+        "documentWidth": 1180,
+        "heroGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "heroColor": "rgba(0, 0, 0, 0)",
+        "heroRect": {
+          "x": 40,
+          "y": 211,
+          "width": 567.453125,
+          "height": 170.71875,
+          "top": 211,
+          "right": 607.453125,
+          "bottom": 381.71875,
+          "left": 40
+        },
+        "background": "radial-gradient(at 8% 2%, rgba(188, 221, 251, 0.6), rgba(0, 0, 0, 0) 29%), radial-gradient(at 93% 8%, rgba(200, 183, 243, 0.55), rgba(0, 0, 0, 0) 29%), radial-gradient(at 68% 65%, rgba(207, 202, 249, 0.3), rgba(0, 0, 0, 0) 40%), linear-gradient(145deg, rgb(251, 253, 255), rgb(241, 245, 255) 48%, rgb(238, 240, 252))",
+        "headerTop": 14,
+        "headerHeight": 74.484375,
+        "wordmark": 160
+      },
+      "volume": {
+        "layout": "wide-integrated",
+        "width": 1100,
+        "height": 587,
+        "overflow": false,
+        "error": null
+      },
+      "nativeTouch": null,
+      "tapColors": {
+        "supported": false
+      },
+      "errors": [],
+      "failed": [],
+      "httpErrors": [],
+      "consoleErrors": [],
+      "csp": []
+    }
+  ],
+  "status": "passed"
+}

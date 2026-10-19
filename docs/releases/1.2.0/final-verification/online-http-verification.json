@@ -1,0 +1,85 @@
+{
+  "version": "1.2.0",
+  "sourceCommit": "9539291f27b39b596d1a92f52fc7462f7f76ad1f",
+  "workerVersion": "7078b93f-2618-47f3-a17d-eff45efe1d1a",
+  "status": "passed",
+  "productionIndexable": true,
+  "cspPresent": true,
+  "checks": [
+    {
+      "path": "/ui/index.html",
+      "sha256": "156e5e668e1b5dbc4917e5cf92b2ba9034f2a77846c7d979919b50f0f27af160",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "sha256": "48d35384b864b772956d20b3d36f8d31b1715969b9632d9f956f8e527360e6db",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/releases/1.2.0/assets/alvenx-monogram-ByDqnbcO.svg",
+      "sha256": "45367ec933c2ed8565cdf9e683fd4b856057d375435b46c62acb4fbb2cbeef16",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/releases/1.2.0/assets/main-gwBXwKN_.js",
+      "sha256": "3eadd9f91aeed33d94e252061ca02f5ae4168f1a5dfc9c8bb1d1353907de3d33",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/releases/1.2.0/assets/main-DR2flcMW.css",
+      "sha256": "2fc12b23b7e34307a4d5f4e3836f0d6410917e12baac09314042674483dab009",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/review-20261019/index.html",
+      "sha256": "f6a9ca900817fd5141aecca75f7d698f2dc697c7f62107c90c2626d166e23310",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/review-20261019-r2/index.html",
+      "sha256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/review-20261019-r3/index.html",
+      "sha256": "8583a2c9ea195f246e6140b1a31143782b78fc6abf62e6c63b4b41722ba1fba7",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/archive/production-20261018/index.html",
+      "sha256": "aa3ef22251bd13727daf33813f70a8b43627e648a53b60451f466790165c3640",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/archive/production-20261018/index-original.html",
+      "sha256": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/releases/1.2.0/docs/releases/1.2.0/verification.json",
+      "sha256": "3336788f8fa69eafe3357de30ac5d57d81d63d7b33e25458dd9b3b1e0d0d151f",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/releases/1.2.0/licenses/LICENSE-NOTICE.md",
+      "sha256": "1e7e58fc191a4e8a521149f95136202af7bcf60ba7d727826f9cdd17e8c597ce",
+      "matchesLocal": true
+    },
+    {
+      "path": "/ui/releases/1.2.0/licenses/InstrumentSans-OFL.txt",
+      "sha256": "bc29b497c4e8316b2d248322a9cea670c2f0afc24ae0eb7bbaa54e02e00eebab",
+      "matchesLocal": true
+    },
+    {
+      "path": "/_next/static/css/home-content.DyKEujSV.css",
+      "sha256": "248d8a54d4de4e3b52e31f84763098671f5b225c74bb5c73928d73b4b20fdd4a",
+      "matchesLocal": true
+    },
+    {
+      "path": "/_next/static/css/index.CjIW4VPp.css",
+      "sha256": "20e2a557560ef95244dfbd29aa892b5ce8c9bf9ef702c5dce193bd7207bb5166",
+      "matchesLocal": true
+    }
+  ]
+}
