@@ -135,7 +135,7 @@ export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommi
           }
         }}/>
     </LiquidControl>
-    {unit&&<span className="parameter-unit" aria-hidden="true">{unit}</span>}
+    <span className="parameter-unit" aria-hidden="true">{unit}</span>
     <span className="visually-hidden" id={`number-hint-${id}`}>Range {min} to {max}{unit?' '+unit:''}. Up to {precision} decimal places. Enter or leave the field to apply. Escape cancels.</span>
     <span className="parameter-number-notice" id={`number-notice-${id}`} role="status" aria-live="polite">{notice}</span>
   </span>;

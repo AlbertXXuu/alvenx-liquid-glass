@@ -20,8 +20,9 @@ export type VolumeStageProps = {
   renderBudget?: { maxPixels?: number; maxDpr?: number };
   /** Optional studio lighting study. The default keeps the accepted light angle. */
   studioMotion?: boolean;
-  /** Rotate the same continuous form into portrait below 720 CSS pixels.
-   * The host positions upright foreground DOM using data-orientation. */
+  /** Expose container-width layout modes for the host: overview below 600px,
+   * compact-integrated below 900px, otherwise wide-integrated. The original
+   * horizontal geometry and the same foreground DOM persist in every mode. */
   responsive?: boolean;
 };
 
@@ -39,8 +40,8 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   const budget = useRef(renderBudget); budget.current = renderBudget;
   const studio = useRef(studioMotion); studio.current = studioMotion;
   const responsiveEnabled = useRef(responsive); responsiveEnabled.current = responsive;
-  const portraitRef = useRef(false);
-  const [portrait, setPortrait] = useState(false);
+  const layoutRef = useRef<'overview' | 'compact-integrated' | 'wide-integrated'>('wide-integrated');
+  const [layout, setLayout] = useState(layoutRef.current);
   const fallbackId = useId().replace(/:/g, '');
   const [error, setError] = useState('');
   const reportedError = useRef('');
@@ -53,9 +54,19 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     if (active && stage.current?.hasPointerCapture(active.pointerId)) stage.current.releasePointerCapture(active.pointerId);
   }
   function cancelDrag() { releaseDrag(); settleSurface(); }
-  function measureOrientation(width: number) {
-    const next = responsiveEnabled.current && width < 720;
-    if (portraitRef.current !== next) { portraitRef.current = next; setPortrait(next); }
+  function syncForeground() {
+    const element = foreground.current;
+    if (!element) return;
+    // The overview's independent content panel does not grow with the shape.
+    const visible = layoutRef.current === 'overview' || simulation.current.failed || simulation.current.growth > .92;
+    const visibility = visible ? 'visible' : 'hidden', hidden = String(!visible);
+    if (element.style.visibility !== visibility) element.style.visibility = visibility;
+    if (element.getAttribute('aria-hidden') !== hidden) element.setAttribute('aria-hidden', hidden);
+  }
+  function measureLayout(width: number) {
+    if (!(width > 0)) return;
+    const next = !responsiveEnabled.current || width >= 900 ? 'wide-integrated' : width < 600 ? 'overview' : 'compact-integrated';
+    if (layoutRef.current !== next) { layoutRef.current = next; setLayout(next); syncForeground(); }
   }
 
   useLayoutEffect(() => {
@@ -79,7 +90,18 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     syncError();
     const draw = (delta: number, elapsed: number) => {
       const state = simulation.current;
-      if (!state.visible || state.failed) return false;
+      if (state.failed) return false;
+      if (!state.visible) {
+        // Keep the finite budding lifecycle coherent with the sibling content,
+        // without advancing ambient/deformation or touching the GPU offscreen.
+        if (state.playing) {
+          state.growth = Math.min(1, state.growth + delta / 3000); state.dirty = true;
+          if (stage.current) stage.current.dataset.growth = state.growth.toFixed(4);
+          if (state.growth === 1) { state.playing = false; callback.current?.(false); }
+        }
+        syncForeground();
+        return state.playing;
+      }
       let changed = state.dirty, remaining = 0;
       state.dirty = false;
       const ambientActive = state.ambient && !clock.reduced;
@@ -98,25 +120,22 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
         const angle = clock.reduced ? 0 : state.time * Math.PI * 2 / 48;
         const lightX = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.cos(angle) + .25 * Math.sin(angle))) : .22;
         const lightY = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.sin(angle) - .42 * Math.cos(angle))) : .08;
-        renderer.current?.render({ edge: 'pearl', flat: false, lightX, lightY, studioMotion: studio.current, portrait: portraitRef.current, showGrid: false, growth: state.growth, time: state.time, ...state.current, ...clock.material }, budget.current);
+        renderer.current?.render({ edge: 'pearl', flat: false, lightX, lightY, studioMotion: studio.current, showGrid: false, growth: state.growth, time: state.time, ...state.current, ...clock.material }, budget.current);
         if (stage.current) {
           stage.current.dataset.growth = state.growth.toFixed(4);
           stage.current.dataset.ambientTime = state.time.toFixed(4);
           stage.current.dataset.ambientActive = String(ambientActive);
           stage.current.dataset.surface = JSON.stringify(state.current);
         }
-        if (foreground.current) {
-          // Opacity would create a different backdrop root for local controls.
-          foreground.current.style.visibility = state.growth > .92 ? 'visible' : 'hidden';
-          foreground.current.setAttribute('aria-hidden', String(state.growth <= .92));
-        }
+        // Opacity would create a different backdrop root for local controls.
+        syncForeground();
         syncError();
       }
       return ambientActive || state.playing || remaining > .0005;
     };
     const unsubscribe = clock.subscribe(draw);
     const observer = new ResizeObserver(entries => {
-      measureOrientation(entries[entries.length - 1].contentRect.width); cancelDrag();
+      measureLayout(entries[entries.length - 1].contentRect.width); cancelDrag();
     });
     if (stage.current) observer.observe(stage.current);
     const visibility = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(entries => {
@@ -155,9 +174,11 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   }, [clock]);
 
   useLayoutEffect(() => {
-    if (stage.current) measureOrientation(stage.current.getBoundingClientRect().width);
+    if (stage.current) measureLayout(stage.current.getBoundingClientRect().width);
     simulation.current.dirty = true; clock.wake();
   }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive]);
+
+  useLayoutEffect(syncForeground, [layout]);
 
   useLayoutEffect(() => {
     const state = simulation.current;
@@ -168,6 +189,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       if (state.playing) callback.current?.(false);
       state.playing = false;
     }
+    syncForeground();
     state.dirty = true; clock.wake();
   }, [clock, settings, clock.reduced]);
 
@@ -178,10 +200,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   function nativeTarget(target: EventTarget | null) {
     if (!(target instanceof Element)) return false;
     if (target.closest('button,a,input,textarea,select,label,summary,[contenteditable]:not([contenteditable="false"]),[role="button"],[role="slider"],[role="switch"],[data-volume-interaction="ignore"]')) return true;
-    // Preserve native selection on foreground text, while allowing the empty
-    // gaps of a foreground layout wrapper to meet a drag on the same shape.
-    return Boolean(foreground.current?.contains(target) && target !== foreground.current &&
-      (target.closest('h1,h2,h3,h4,h5,h6,p,li,dt,dd,pre,code') || Array.from(target.childNodes).some(node => node.nodeType === Node.TEXT_NODE && Boolean(node.textContent?.trim()))));
+    return false;
   }
   function respond(event: PointerEvent<HTMLElement>, pressed = false) {
     if (!stage.current || simulation.current.growth < 1 || clock.reduced || simulation.current.failed) return;
@@ -202,8 +221,10 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       }
     }
     const rect = stage.current.getBoundingClientRect();
-    const screenX = (event.clientX - rect.left) / rect.width, screenY = (event.clientY - rect.top) / rect.height;
-    const x = (portraitRef.current ? screenY : screenX) * 1000, y = (portraitRef.current ? 1 - screenX : screenY) * 560;
+    // Match the renderer's uniform camera scale, including any letterbox.
+    const scale = Math.min(rect.width / 1000, rect.height / 560);
+    const x = (event.clientX - rect.left - rect.width * .5) / scale + 500;
+    const y = (event.clientY - rect.top - rect.height * .5) / scale + 280;
     const parent = drag.current?.parent ?? x < 450;
     const nx = (x - (parent ? 230 : 690)) / (parent ? 150 : 255), ny = (y - 280) / (parent ? 150 : 210);
     const proximity = Math.max(0, Math.min(1, (1.25 - Math.hypot(nx, ny)) * 2));
@@ -224,29 +245,25 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   useImperativeHandle(ref, () => ({ replay() {
     if (clock.reduced || simulation.current.failed) return;
     releaseDrag(); settleSurface();
-    simulation.current.growth = 0; simulation.current.playing = true; callback.current?.(true); clock.wake();
+    simulation.current.growth = 0; simulation.current.playing = true; syncForeground(); callback.current?.(true); clock.wake();
   } }), [clock]);
 
-  const orientation = portrait ? 'portrait' : 'landscape';
-  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-orientation={orientation}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-orientation={orientation} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
+  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
     onPointerMove={event => respond(event)} onPointerDown={event => { if (event.button === 0 && event.isPrimary && !drag.current) respond(event, true); }}
     onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}
     onPointerCancel={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}
     onLostPointerCapture={event => { if (event.target === event.currentTarget && drag.current?.pointerId === event.pointerId) cancelDrag(); }}
     onPointerLeave={() => { if (!drag.current) settleSurface(); }}>
     <canvas ref={canvas} className="volume-canvas" aria-hidden="true"/>
-    {error && <svg viewBox={portrait ? '0 0 560 1000' : '0 0 1000 560'} preserveAspectRatio="none" aria-hidden="true" data-renderer="static-pearl-fallback" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+    {error && <svg viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet" aria-hidden="true" data-renderer="static-pearl-fallback" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
       <defs>
         <linearGradient id={`${fallbackId}-environment`} x2="1" y2="1"><stop stopColor="#D7E6FC"/><stop offset=".52" stopColor="#EBEDFD"/><stop offset="1" stopColor="#D8CEF0"/></linearGradient>
         <radialGradient id={`${fallbackId}-pearl`} cx=".25" cy=".12" r=".9"><stop stopColor="#FBFCFF"/><stop offset=".42" stopColor="#D9E5FC"/><stop offset=".76" stopColor="#E4DBF6"/><stop offset="1" stopColor="#BAC4E6"/></radialGradient>
         <linearGradient id={`${fallbackId}-rim`} x2=".5" y2="1"><stop stopColor="#FFFFFF" stopOpacity=".95"/><stop offset=".48" stopColor="#C6D1ED" stopOpacity=".55"/><stop offset="1" stopColor="#A9A5CD" stopOpacity=".8"/></linearGradient>
       </defs>
-      <g transform={portrait ? 'translate(560 0) rotate(90)' : undefined}>
-        <path d="M0 0H1000V560H0Z" fill={`url(#${fallbackId}-environment)`}/>
-        <path d={volumeFallbackPath()} fill={`url(#${fallbackId}-pearl)`} stroke={`url(#${fallbackId}-rim)`} strokeWidth="2" strokeLinejoin="round"/>
-      </g>
+      <path d="M0 0H1000V560H0Z" fill={`url(#${fallbackId}-environment)`}/>
+      <path d={volumeFallbackPath()} fill={`url(#${fallbackId}-pearl)`} stroke={`url(#${fallbackId}-rim)`} strokeWidth="2" strokeLinejoin="round"/>
     </svg>}
-    <div ref={foreground} className="foreground">{children}</div>
     {error && <p role="status" title={error} style={{ position: 'absolute', left: 16, bottom: 4, margin: 0, fontSize: 11, color: 'var(--ax-label)' }}>Static pearl fallback · WebGL unavailable</p>}
-  </section></div>;
+  </section><div ref={foreground} className="foreground">{children}</div></div>;
 });

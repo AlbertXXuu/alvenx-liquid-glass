@@ -1,0 +1,80 @@
+{
+  "reviewId": "R2",
+  "iteration": "02",
+  "date": "2026-10-19",
+  "status": "draft",
+  "kind": "intermediate visual record",
+  "ownerAcceptance": false,
+  "publishedAsAccepted": false,
+  "exactSourceSnapshotAvailable": false,
+  "reproducibilityClaim": false,
+  "sourceEvidenceBundle": "horizontal-review-2026-10-19",
+  "note": "Initial blank control appearance came from the IntersectionObserver wake-up capture protocol; scrolling the whole wrapper into view and waiting corrected capture. This is not a code-failure verdict.",
+  "browser": {
+    "engine": "155.0.8059.84",
+    "physicalDevice": false,
+    "profiles": [
+      {
+        "viewportWidth": 320,
+        "layout": "overview",
+        "stageWidth": 284,
+        "stageHeight": 200,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 393,
+        "layout": "overview",
+        "stageWidth": 357,
+        "stageHeight": 200,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 768,
+        "layout": "compact-integrated",
+        "stageWidth": 708,
+        "stageHeight": 377.59375,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 1024,
+        "layout": "wide-integrated",
+        "stageWidth": 982.796875,
+        "stageHeight": 524.15625,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 1366,
+        "layout": "wide-integrated",
+        "stageWidth": 1251.59375,
+        "stageHeight": 667.515625,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "file": "iteration02-320-stage.png",
+      "bytes": 74933,
+      "sha256": "c681ab678e10d4750aff756a37779b425bbe3ebf9dc19b179bd6a4678d742bfa",
+      "widthPixels": 284,
+      "heightPixels": 485
+    },
+    {
+      "file": "iteration02-768-stage.png",
+      "bytes": 112322,
+      "sha256": "2e5b06f2b7bce02d905f3c01e1979076bc273cefc886731d8f8a28c75158550a",
+      "widthPixels": 708,
+      "heightPixels": 378
+    }
+  ]
+}

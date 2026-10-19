@@ -1,0 +1,80 @@
+{
+  "reviewId": "R2",
+  "iteration": "03",
+  "date": "2026-10-19",
+  "status": "draft",
+  "kind": "intermediate visual record",
+  "ownerAcceptance": false,
+  "publishedAsAccepted": false,
+  "exactSourceSnapshotAvailable": false,
+  "reproducibilityClaim": false,
+  "sourceEvidenceBundle": "horizontal-review-2026-10-19",
+  "note": "Intermediate visual composition before Decision B. No owner acceptance or independent failure verdict is assigned to this screenshot set.",
+  "browser": {
+    "engine": "155.0.8059.84",
+    "physicalDevice": false,
+    "profiles": [
+      {
+        "viewportWidth": 320,
+        "layout": "overview",
+        "stageWidth": 284,
+        "stageHeight": 200,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 393,
+        "layout": "overview",
+        "stageWidth": 357,
+        "stageHeight": 200,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 768,
+        "layout": "compact-integrated",
+        "stageWidth": 708,
+        "stageHeight": 377.59375,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 1024,
+        "layout": "wide-integrated",
+        "stageWidth": 982.796875,
+        "stageHeight": 524.15625,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 1366,
+        "layout": "wide-integrated",
+        "stageWidth": 1251.59375,
+        "stageHeight": 667.515625,
+        "documentOverflow": false,
+        "canvasError": null,
+        "pageErrorCount": 0
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "file": "iteration03-320-stage.png",
+      "bytes": 59939,
+      "sha256": "2021556e2be3e8421f8336164c1da2babcfc845c3d5c5097fb05e78b5be8dea9",
+      "widthPixels": 284,
+      "heightPixels": 485
+    },
+    {
+      "file": "iteration03-768-stage.png",
+      "bytes": 112444,
+      "sha256": "fb0f448264c8fa57bffd34e4d26a081c81f169491cc520f63c2d4f027b690a78",
+      "widthPixels": 708,
+      "heightPixels": 378
+    }
+  ]
+}

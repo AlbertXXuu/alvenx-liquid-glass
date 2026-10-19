@@ -1,0 +1,374 @@
+{
+  "reviewId": "R2",
+  "date": "2026-10-19",
+  "status": "self-reviewed",
+  "source": {
+    "packageVersion": "1.1.2",
+    "kind": "horizontal review revision in progress",
+    "branch": "codex/compact-horizontal-review",
+    "branchUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/codex/compact-horizontal-review",
+    "plannedSourceRef": "review-20261019-r2",
+    "plannedSourceUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r2",
+    "sourceRefPublished": false,
+    "baseRef": "review-20261019-r1-rejected",
+    "baseCommit": "80eb02e",
+    "reviewUrl": null,
+    "plannedReviewUrl": "https://alvenx.com/ui/review-20261019-r2/"
+  },
+  "requirements": {
+    "horizontalCompositionAtAllWidths": true,
+    "directHorizontalToVerticalRotationAllowed": false,
+    "ownerQuote": "我不是让你把横着的变成竖的！！！你理解错误我意思了，你这样竖着也不好看，文本排版有有很大问题。你之后把你生成的东西自己截屏检查一下看看，现在做的太烂了，做到足够好的时候再上传到网站上让我审查。",
+    "nativeTextReadableAndUpright": true,
+    "screenshotSelfReviewBeforeWebsitePublication": true,
+    "physicalDeviceOwnerReviewRequiresAccessibleReviewUrl": true,
+    "localAndGitHubRevisionRecordsRequired": true,
+    "responsiveContainerModes": {
+      "overview": "container <600 CSS px",
+      "compact-integrated": "container 600..899 CSS px",
+      "wide-integrated": "container >=900 CSS px; default when responsive is false"
+    }
+  },
+  "decision": {
+    "ownerAccepted": false,
+    "ownerRejected": false,
+    "ownerDeviceReview": "pending; the planned R2 review URL must be published before physical owner review"
+  },
+  "statusHistory": [
+    {
+      "date": "2026-10-19",
+      "status": "draft",
+      "evidence": "Revision requirements and pending verification boundary recorded; no R2 screenshot or test result supplied yet."
+    },
+    {
+      "date": "2026-10-19",
+      "status": "draft",
+      "evidence": "Local iteration 01 retained a horizontal axis but failed screenshot self-review for compact proportions and C2-rim text clearance; archived before the next geometry rewrite, with no website publication."
+    },
+    {
+      "date": "2026-10-19",
+      "status": "self-reviewed",
+      "evidence": "Decision B local Chromium nine-width layout checks, screenshot review and scoped Chromium/WebKit volume/input checks recorded. Final engine/build/deploy evidence and physical owner acceptance remain pending."
+    }
+  ],
+  "verification": {
+    "status": "self-reviewed; Chromium/WebKit visual checks, Edge/control regressions, kit check/build/contracts and actual packed-consumer install/check/build passed; final repack hash check, source publication and website deployment pending",
+    "automatedChecks": {
+      "visualChrome": "evidence/visual-checks.json",
+      "volume": "evidence/volume-checks.json",
+      "visualWebkit": "evidence/visual-webkit-checks.json",
+      "controls": "evidence/control-checks.json",
+      "engineAndBuild": "evidence/engine-build-checks.json",
+      "productionBuild": "evidence/production-build-checks.json",
+      "packedConsumerInstall": "evidence/install-receipt.json"
+    },
+    "screenshotSelfReview": {
+      "reportedBy": "root and independent visual review agent",
+      "status": "no blocker identified in supplied final local screenshots",
+      "reviewedScopes": [
+        "normal layouts across 320,360,393,430,640,768,820,1024,1366 CSS-px viewports",
+        "pressed, focused and bilingual message states at 320,393,768,1366",
+        "parameters and component studies at 320,768,1366",
+        "production-build intro/menu/design/typography pages at 393/768/1366; selected screenshots retained"
+      ],
+      "completedBeforeWebsitePublication": true,
+      "ownerAcceptance": false
+    },
+    "candidateReadyForWebsitePublication": "technical checks complete; pending root final repack hash confirmation, source commit/tag publication and deployment",
+    "physicalDevicesTestedByAgent": false,
+    "ownerPhysicalDeviceAcceptance": "pending after review URL publication"
+  },
+  "artifacts": [
+    {
+      "kind": "local-iteration",
+      "iteration": "01",
+      "status": "self-rejected",
+      "record": "iterations/01-self-rejected/README.md",
+      "publishedToWebsite": false
+    },
+    {
+      "kind": "local-iteration",
+      "iteration": "02",
+      "status": "draft",
+      "record": "iterations/02-intermediate/README.md",
+      "exactSourceSnapshotAvailable": false
+    },
+    {
+      "kind": "local-iteration",
+      "iteration": "03",
+      "status": "draft",
+      "record": "iterations/03-intermediate/README.md",
+      "exactSourceSnapshotAvailable": false
+    },
+    {
+      "kind": "selected-final-local-evidence",
+      "record": "evidence/visual-checks.json",
+      "volumeChecks": "evidence/volume-checks.json",
+      "hashes": "evidence/SHA256SUMS.txt",
+      "files": [
+        {
+          "file": "chromium-1024-normal.png",
+          "bytes": 166885,
+          "sha256": "31d1956adb991b7158922f7be6372890e436c1ceca8a66179c3f789e4158c97b",
+          "widthPixels": 984,
+          "heightPixels": 525
+        },
+        {
+          "file": "chromium-1366-components.png",
+          "bytes": 266851,
+          "sha256": "f693d5349c7a1e263bda5ce25ea11484349e29dacbd91c23e215ed9fd14671f4",
+          "widthPixels": 1366,
+          "heightPixels": 1024
+        },
+        {
+          "file": "chromium-1366-focus.png",
+          "bytes": 224266,
+          "sha256": "1abb69d5289e8483a330a46da39cc87d0f455e9ad7a5aa20451a434527f5feef",
+          "widthPixels": 1252,
+          "heightPixels": 669
+        },
+        {
+          "file": "chromium-1366-message.png",
+          "bytes": 230826,
+          "sha256": "119198a186d491856e5fe4b5e86f84b9d549990b314ff1c585a3ea2caff3fce0",
+          "widthPixels": 1252,
+          "heightPixels": 669
+        },
+        {
+          "file": "chromium-1366-normal.png",
+          "bytes": 222415,
+          "sha256": "ff2432d68ad70755420d836b767575b6e93acfd021c31152ed75d7eb331c0162",
+          "widthPixels": 1252,
+          "heightPixels": 669
+        },
+        {
+          "file": "chromium-320-components.png",
+          "bytes": 118566,
+          "sha256": "d623f94a29a6df2d8f1b0bb77af8fd0b8326a45e7edd7c7d708dcda04be58d4c",
+          "widthPixels": 320,
+          "heightPixels": 852
+        },
+        {
+          "file": "chromium-320-message.png",
+          "bytes": 65347,
+          "sha256": "76c8ff77654447bf70792838609c4e0ca3c44d5926824aba5010b86b59945073",
+          "widthPixels": 284,
+          "heightPixels": 517
+        },
+        {
+          "file": "chromium-320-normal.png",
+          "bytes": 60682,
+          "sha256": "cd521a3515100d4edd92617d6db6775ab83f8f6a30aa02551a7480881316082c",
+          "widthPixels": 284,
+          "heightPixels": 485
+        },
+        {
+          "file": "chromium-320-parameters.png",
+          "bytes": 82848,
+          "sha256": "e2a0967c36abd3514aa0bc6e2c58cff2bc51cabdb6d5efa7607e78fd8afd4632",
+          "widthPixels": 320,
+          "heightPixels": 852
+        },
+        {
+          "file": "chromium-320-pressed.png",
+          "bytes": 60919,
+          "sha256": "1d4562abc7fffb1fe294fed490181812f436079eac824d45fca6f925964c010b",
+          "widthPixels": 284,
+          "heightPixels": 485
+        },
+        {
+          "file": "chromium-360-normal.png",
+          "bytes": 65578,
+          "sha256": "038dac1f2f3c05753cd19342176bc073f5cc2722b4573a07dfb95d394053b8aa",
+          "widthPixels": 324,
+          "heightPixels": 485
+        },
+        {
+          "file": "chromium-393-focus.png",
+          "bytes": 72616,
+          "sha256": "f5cafd81287cf55ed819feb242f66a723ebffa131820d123ea4145ca2578c00f",
+          "widthPixels": 357,
+          "heightPixels": 485
+        },
+        {
+          "file": "chromium-393-normal.png",
+          "bytes": 70403,
+          "sha256": "3bb36ed475094f04f5f9a5e16f44eb611557121ccae29f119e4bd851b8658225",
+          "widthPixels": 357,
+          "heightPixels": 485
+        },
+        {
+          "file": "chromium-430-normal.png",
+          "bytes": 75320,
+          "sha256": "3d1a8c646a3206d11e862f18dd0ce5c43158234af6d97a14620d476fb277a9a4",
+          "widthPixels": 394,
+          "heightPixels": 495
+        },
+        {
+          "file": "chromium-640-normal.png",
+          "bytes": 107943,
+          "sha256": "1ba5974ee04853dda47683ced8b06f345074ae82daa7a7805f372905fef18584",
+          "widthPixels": 580,
+          "heightPixels": 594
+        },
+        {
+          "file": "chromium-768-message.png",
+          "bytes": 118224,
+          "sha256": "3927da3ab04c337d90d1bd90d9b1c351962882bc479693e0d08236af2174eb93",
+          "widthPixels": 708,
+          "heightPixels": 378
+        },
+        {
+          "file": "chromium-768-normal.png",
+          "bytes": 113717,
+          "sha256": "31367c91e4bfcf562ae90aac8a057bdb1efa52dd276d0ca0549e3d0208f2edfb",
+          "widthPixels": 708,
+          "heightPixels": 378
+        },
+        {
+          "file": "chromium-768-parameters.png",
+          "bytes": 145411,
+          "sha256": "79e08bc8842145610798036f21c7d67682079c46ba500526cb1f74553de5dd40",
+          "widthPixels": 768,
+          "heightPixels": 1024
+        },
+        {
+          "file": "chromium-768-pressed.png",
+          "bytes": 114818,
+          "sha256": "63129b3248c24fd09f45bdc0c1d5948e23dc335bb2a3d44f3b18bb9803ca7da8",
+          "widthPixels": 708,
+          "heightPixels": 378
+        },
+        {
+          "file": "chromium-820-normal.png",
+          "bytes": 132047,
+          "sha256": "cad1d04228129e9deaed5a5bb23be188b84ce49041ccc5445c2e7a96ba37a325",
+          "widthPixels": 798,
+          "heightPixels": 426
+        },
+        {
+          "file": "control-checks.json",
+          "bytes": 2529,
+          "sha256": "089d722c21942f4c022bb91cbb7ab594ebd63228ba8588dfdc54d1dadc5dda33"
+        },
+        {
+          "file": "edge-1366-focus.png",
+          "bytes": 209379,
+          "sha256": "14e4c6477991925cd5909458f58ba277c4d2f1c2502c7462ddf83d85b2d3e4ec",
+          "widthPixels": 1252,
+          "heightPixels": 669
+        },
+        {
+          "file": "edge-1366-normal.png",
+          "bytes": 205732,
+          "sha256": "c2318139c83b8fe1422e5e5003a1a6103a37a6892cd7f340ef1d07e4692eca7a",
+          "widthPixels": 1252,
+          "heightPixels": 669
+        },
+        {
+          "file": "engine-build-checks.json",
+          "bytes": 2110,
+          "sha256": "26b438bb016facb8b158e6af4ed03785ef968fb96474f6339cdc16e1359899f9"
+        },
+        {
+          "file": "install-receipt.json",
+          "bytes": 1632,
+          "sha256": "1e79bb0cbdc4a911e25c44fd7494e3c7e7d8c6fdb915d47bc4de610cb0855e09"
+        },
+        {
+          "file": "page-393-design.png",
+          "bytes": 77024,
+          "sha256": "56d8305e82c650cc0e24249b11db8191b65495a5d9a48a726f4200d31bbb1367",
+          "widthPixels": 393,
+          "heightPixels": 900
+        },
+        {
+          "file": "page-393-intro.png",
+          "bytes": 93865,
+          "sha256": "ebd183e2b7be213c8f9b381912a5334882d262b63e5d457e6f24bff5e904f95e",
+          "widthPixels": 393,
+          "heightPixels": 900
+        },
+        {
+          "file": "page-393-menu.png",
+          "bytes": 87650,
+          "sha256": "33945f6c0e4be80956de5ed529cdc73c08536df94c96a0a1143d69fdaffb9bcd",
+          "widthPixels": 393,
+          "heightPixels": 900
+        },
+        {
+          "file": "page-768-design.png",
+          "bytes": 93117,
+          "sha256": "8acedcd50c8eb9ddd132df518e802d1fe04b921d69b36b80c4fab565dc40d2f3",
+          "widthPixels": 768,
+          "heightPixels": 900
+        },
+        {
+          "file": "production-build-checks.json",
+          "bytes": 2836,
+          "sha256": "aa068bbd31d9df724599b06260f29c2f64ab88f1bb4c755bbef18db946a90fc0"
+        },
+        {
+          "file": "visual-checks.json",
+          "bytes": 4311,
+          "sha256": "40e2281ab5b2e5d6bf414fdb003515408c0d39da6157402483a147059f8ee5fe"
+        },
+        {
+          "file": "visual-webkit-checks.json",
+          "bytes": 3426,
+          "sha256": "2482c4d69e7d08ccb4d9cda1635e6e97b2666a3e4fc8d6b4faa1214a7d224c5e"
+        },
+        {
+          "file": "volume-checks.json",
+          "bytes": 3131,
+          "sha256": "8820882b0ae97f8027ed6cc5edf64b220ee9050dd5770f99e3c7b9356ff7f7ec"
+        },
+        {
+          "file": "webkit-1366-message.png",
+          "bytes": 222200,
+          "sha256": "c9fdc5c3c845ae8e5015278c2539094c44b7fa074192bc7734e271bd865a2411",
+          "widthPixels": 1252,
+          "heightPixels": 669
+        },
+        {
+          "file": "webkit-320-normal.png",
+          "bytes": 54045,
+          "sha256": "ac5f90026105519e2a5956602fba355f44257595b360b3203b2e3e376c9dcdab",
+          "widthPixels": 284,
+          "heightPixels": 485
+        },
+        {
+          "file": "webkit-768-focus.png",
+          "bytes": 111788,
+          "sha256": "3c8ce12e50b6b0160d56f11990f89d0d79d810934b2198b8827e84930bc60fe7",
+          "widthPixels": 708,
+          "heightPixels": 378
+        },
+        {
+          "file": "webkit-768-normal.png",
+          "bytes": 111317,
+          "sha256": "51b8dab5cca1b9f7590a44ccf6b4a8ee2cf676044860ad79d6e9f38c3fae85b4",
+          "widthPixels": 708,
+          "heightPixels": 378
+        }
+      ],
+      "engineBuildChecks": "evidence/engine-build-checks.json",
+      "controlChecks": "evidence/control-checks.json",
+      "productionBuildChecks": "evidence/production-build-checks.json",
+      "installReceipt": "evidence/install-receipt.json"
+    }
+  ],
+  "knownLimits": [
+    "R1 browser tests and screenshots are historical evidence and do not validate R2.",
+    "First-activation stalls on physical iPhone/iPad and physical Combo Touch behavior remain unvalidated.",
+    "Safari true refraction is not established by layout or browser-emulation checks.",
+    "A passing screenshot or automated check does not establish owner acceptance."
+  ],
+  "acceptedBaseline": {
+    "name": "material-direction-preview v6",
+    "ownerAcceptedDate": "2026-10-16",
+    "sourceManifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+    "unchanged": true
+  },
+  "candidate": "Decision B: original horizontal overview with one persistent foreground DOM"
+}

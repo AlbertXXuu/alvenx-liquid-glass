@@ -10,6 +10,8 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 Version **1.1.2** is a public design preview. It preserves the owner-approved v6 material and the 1.1.1 optimized rendering kernels; this release prepares the public showcase, notices, documentation and reproducible checks. Authoring specifications are in Chinese; component labels and the showcase are in English.
 
+The **19 October responsive/input revision is under owner review**, separate from the accepted showcase above. Its [review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, screenshots, source snapshots and remaining physical-device checks. It does not change the recorded v6 acceptance or grant a reuse license.
+
 ## Try it locally
 
 Use Node.js **22.13+** (or Node 20.19+ supported by the kit), npm, and React 19:

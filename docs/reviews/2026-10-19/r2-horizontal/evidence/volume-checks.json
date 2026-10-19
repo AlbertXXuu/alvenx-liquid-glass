@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-19",
+  "candidate": "Decision B: original horizontal overview with one persistent foreground DOM",
+  "ownerVisualAcceptance": "pending",
+  "status": "technical checks passed",
+  "sources": [
+    "src/VolumeStage.tsx",
+    "src/volume-renderer.js",
+    "src/volume-fallback.ts"
+  ],
+  "defaultGeometry": "Original 1000x560 logical scene, uniform camera; no portrait rotation, compact primitive geometry or variable logical-height branches",
+  "responsiveLayoutModes": {
+    "overview": "container <600 CSS px",
+    "compact-integrated": "container 600..899 CSS px",
+    "wide-integrated": "container >=900 CSS px; default when responsive is false"
+  },
+  "checks": {
+    "typecheck": "npx tsc --noEmit -p tsconfig.json: passed",
+    "diffWhitespace": "git diff --check on owned sources: passed",
+    "frozenV6GpuComparison": {
+      "states": 4,
+      "dimensions": [
+        1000,
+        560
+      ],
+      "time": 0,
+      "studioMotion": false,
+      "maximumChannelDifference": 0,
+      "differentChannels": 0,
+      "result": "volume-overview-pixels-result.txt"
+    },
+    "persistentDom": {
+      "engines": [
+        "Chromium",
+        "WebKit"
+      ],
+      "viewportSequence": [
+        1440,
+        820,
+        768,
+        600,
+        393,
+        320,
+        1440
+      ],
+      "sameNativeInputNodes": true,
+      "focusedNumericDraftPreserved": "0.",
+      "messagePreserved": "One persistent draft. 连续的文字。",
+      "horizontalCrop": false,
+      "results": [
+        "volume-overview-regression-result.txt",
+        "volume-overview-webkit-result.txt"
+      ]
+    },
+    "nativeTouch": {
+      "engine": "Chromium CDP",
+      "viewports": [
+        [
+          393,
+          852
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          1180,
+          820
+        ]
+      ],
+      "horizontalDragHeld": true,
+      "stageHorizontalScroll": 0,
+      "vertical130pxPullScrollDelta": 115,
+      "result": "volume-overview-touch-result.txt"
+    },
+    "buddingLifecycle": {
+      "engine": "WebKit",
+      "reproducedBeforeFix": "Replay then scroll shape offscreen left growth 0.0680 and foreground hidden after 3.4 seconds",
+      "overviewContentVisibleThroughout": true,
+      "offscreenAfter3_4Seconds": {
+        "growth": 1,
+        "playing": false,
+        "foreground": "visible",
+        "webglDrawsBefore": 20,
+        "webglDrawsAfter": 20,
+        "ambientBefore": 0.417,
+        "ambientAfter": 0.417
+      },
+      "integratedOnscreenSamples": [
+        0.0943,
+        0.1767,
+        0.26,
+        0.3507,
+        0.4383
+      ],
+      "offscreenLayoutSwitchRevealsOverviewContent": true,
+      "result": "volume-budding-offscreen-webkit-result.txt"
+    }
+  },
+  "limitations": [
+    "Not physical iPhone/iPad/Safari/Logitech Combo Touch certification",
+    "No stable FPS or physical device performance claim",
+    "Technical checks do not constitute owner acceptance of the new phone presentation"
+  ],
+  "physicalDevice": false
+}

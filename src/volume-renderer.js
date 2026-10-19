@@ -9,7 +9,7 @@ import { volumeRasterSize } from './volume-budget.js';
 const DEFAULTS = Object.freeze({
   edge: 'balanced', flat: false, curvature: 3.2,
   lightX: 0.22, lightY: 0.08, growth: 1, showGrid: false, time: 0,
-  studioMotion: false, portrait: false,
+  studioMotion: false,
   parentX: 1, parentY: 1, childX: 1, childY: 1,
   deformX: 500, deformY: 280, deformDX: 0, deformDY: 0,
   specularOpacity: .65, specularSaturation: 1, refractionLevel: 1,
@@ -33,7 +33,6 @@ uniform float u_grid;
 uniform float u_time;
 uniform float u_studio_motion;
 uniform vec2 u_studio_rotation;
-uniform float u_portrait;
 uniform float u_specular_opacity;
 uniform float u_specular_saturation;
 uniform float u_refraction_level;
@@ -255,11 +254,6 @@ void main() {
   float scale = min(u_resolution.x / VIEW.x, u_resolution.y / VIEW.y);
   vec2 screen = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y);
   vec2 p = (screen - u_resolution * 0.5) / scale + VIEW * 0.5;
-  if (u_portrait > 0.5) {
-    scale = min(u_resolution.x / VIEW.y, u_resolution.y / VIEW.x);
-    p = vec2(screen.y / u_resolution.y * VIEW.x,
-      (1.0 - screen.x / u_resolution.x) * VIEW.y);
-  }
   float aa = max(0.45, 0.8 / scale);
   float distance = sceneDistance(p);
   float coverage = 1.0 - smoothstep(-aa, aa, distance);
@@ -378,7 +372,6 @@ function bounded(value, fallback, min, max) {
  * render() is synchronous and draws one frame. The caller owns animation.
  * time is elapsed seconds (initially 0); pause it outside to freeze the field.
  * studioMotion opts into a 40-second colour-field rotation; it owns no clock.
- * portrait rotates the logical scene clockwise; the host keeps DOM text upright.
  * blurLevel/progressiveBlur are CSS-pixel sigmas of the analytic transmission.
  * Material ranges: specularOpacity/glassOpacity 0..1,
  * specularSaturation/refractionLevel 0..3, blurLevel/progressiveBlur 0..6.
@@ -441,7 +434,7 @@ export function createGlassPreview(canvas) {
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
       locations = Object.fromEntries([
         'resolution', 'light', 'curvature', 'growth', 'edge', 'flat', 'grid', 'time',
-        'studio_motion', 'studio_rotation', 'portrait',
+        'studio_motion', 'studio_rotation',
         'parent_stretch', 'child_stretch', 'deform_point', 'deform_amount',
         'specular_opacity', 'specular_saturation', 'refraction_level',
         'blur_level', 'progressive_blur', 'glass_opacity',
@@ -467,7 +460,6 @@ export function createGlassPreview(canvas) {
       growth: bounded(merged.growth, DEFAULTS.growth, 0, 1),
       showGrid: Boolean(merged.showGrid),
       studioMotion: Boolean(merged.studioMotion),
-      portrait: Boolean(merged.portrait),
       // All wave periods, including the studio rotation, divide 2520. Wrapping
       // stays continuous and preserves float precision in long-running previews.
       time: Number.isFinite(merged.time) ? Math.max(0, merged.time) % 2520 : 0,
@@ -518,13 +510,10 @@ export function createGlassPreview(canvas) {
     gl.uniform1f(locations.studio_motion, options.studioMotion ? 1 : 0);
     const studioAngle = options.time * (Math.PI * 2 / 40);
     gl.uniform2f(locations.studio_rotation, Math.cos(studioAngle), Math.sin(studioAngle));
-    gl.uniform1f(locations.portrait, options.portrait ? 1 : 0);
     gl.uniform1f(locations.specular_opacity, options.specularOpacity);
     gl.uniform1f(locations.specular_saturation, options.specularSaturation);
     gl.uniform1f(locations.refraction_level, options.refractionLevel);
-    const logicalPerCssPixel = raster.scale / (options.portrait
-      ? Math.min(width / 560, height / 1000)
-      : Math.min(width / 1000, height / 560));
+    const logicalPerCssPixel = raster.scale / Math.min(width / 1000, height / 560);
     gl.uniform1f(locations.blur_level, options.blurLevel * logicalPerCssPixel);
     gl.uniform1f(locations.progressive_blur, options.progressiveBlur * logicalPerCssPixel);
     gl.uniform1f(locations.glass_opacity, options.glassOpacity);

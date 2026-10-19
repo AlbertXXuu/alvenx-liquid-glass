@@ -3,6 +3,7 @@ dist/
 site-dist/
 releases/
 .playwright-cli/
+/output/
 docs/validation/
 KIT-MANIFEST.json
 *.tsbuildinfo

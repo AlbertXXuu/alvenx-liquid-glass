@@ -1,0 +1,495 @@
+diff --git a/showcase/main.tsx b/showcase/main.tsx
+index b2b6515..32210b6 100644
+--- a/showcase/main.tsx
++++ b/showcase/main.tsx
+@@ -27,19 +27,27 @@ function Example() {
+ function Showcase() {
+   const requestedOptics = new URLSearchParams(location.search).get('optics');
+   const optics: GlassOpticsMode = requestedOptics === 'svg' || requestedOptics === 'native' || requestedOptics === 'flat' ? requestedOptics : 'auto';
+-  const { clock, settings, updateSettings, reset, reduced, systemReduced } = useGlassSettings({ storageKey: 'alvenx-design-showcase-review-20261019', optics });
++  const { clock, settings, updateSettings, reset, reduced, systemReduced } = useGlassSettings({ storageKey: 'alvenx-design-showcase-review-20261019-r2', optics });
+   const stage = useRef<VolumeStageHandle>(null), messageInput = useRef<HTMLInputElement>(null), experience = useRef<HTMLElement>(null);
+   const header = useRef<HTMLElement>(null), menuButton = useRef<HTMLButtonElement>(null);
+   const [selected, setSelected] = useState(false), [message, setMessage] = useState(''), [feedback, setFeedback] = useState('');
+   const [parametersOpen, setParametersOpen] = useState(true), [playing, setPlaying] = useState(false), [copied, setCopied] = useState(''), [sampleSwitch, setSampleSwitch] = useState(true);
+   const [sampleValue, setSampleValue] = useState(.42), [lens, setLens] = useState({ x: .3, y: .45 }), [lensHeld, setLensHeld] = useState(false), [lensFocused, setLensFocused] = useState(false);
+   const [menuOpen, setMenuOpen] = useState(false);
++  const [compact,setCompact]=useState(false);
+   const lensArea = useRef<HTMLDivElement>(null), lensDrag = useRef<{ id: number; x: number; y: number; left: number; top: number; width:number; height:number; element:HTMLDivElement } | null>(null);
+   const lensPosition=useRef(lens);lensPosition.current=lens;
+   const pendingLens=useRef<typeof lens|null>(null);
+   const mode = resolveGlassOptics(optics);
+   const studioMotion=new URLSearchParams(location.search).get('studio')!=='off';
+   const behavior = reduced ? 'instant' : 'smooth';
++  useEffect(()=>{
++    const surface=experience.current?.querySelector('.stage');if(!surface)return;
++    const measure=(width:number)=>setCompact(old=>old===(width<720)?old:width<720);
++    measure(surface.clientWidth);
++    const observer=new ResizeObserver(entries=>measure(entries[0].contentRect.width));observer.observe(surface);
++    return()=>observer.disconnect();
++  },[]);
+   const go = (id: string) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' }); };
+   const home = () => { setMenuOpen(false); if (window.scrollY !== 0) window.scrollTo({ top: 0, left: window.scrollX, behavior }); };
+   const exploreStage = (side: 'volume' | 'controls') => {
+@@ -98,17 +106,17 @@ function Showcase() {
+     </header>
+     <main>
+       <section className="intro" aria-labelledby="intro-title">
+-        <div><p className="eyebrow">ALVENX LIQUID GLASS <span className="version">INPUT &amp; STUDIO REVIEW</span></p><h1 id="intro-title">Soft volume.<br/><span>Living glass.</span></h1></div>
+-        <div className="intro-copy"><p>A surface that meets your gesture. Pearl-like depth, light at the edge, and controls that move with you.</p><div className="intro-actions"><LiquidControl id="explore-material" clock={clock} className="explore-control" onClick={() => go('experience')}>Explore the material <span aria-hidden="true">↓</span></LiquidControl><a href={GITHUB} target="_blank" rel="noreferrer">View the source <span aria-hidden="true">↗</span></a></div><p className="fineprint">Review build · 19 Oct 2026. Separate preview settings.</p></div>
++        <div><p className="eyebrow">ALVENX LIQUID GLASS <span className="version">R2 · HORIZONTAL REVIEW</span></p><h1 id="intro-title">Soft volume.<br/><span>Living glass.</span></h1></div>
++        <div className="intro-copy"><p>A surface that meets your gesture. Pearl-like depth, light at the edge, and controls that move with you.</p><div className="intro-actions"><LiquidControl id="explore-material" clock={clock} className="explore-control" onClick={() => go('experience')}>Explore the material <span aria-hidden="true">↓</span></LiquidControl><a href={GITHUB} target="_blank" rel="noreferrer">View the source <span aria-hidden="true">↗</span></a></div><p className="fineprint">Horizontal review · 19 Oct 2026. Separate preview settings.</p></div>
+       </section>
+ 
+       <section ref={experience} id="experience" className="experience" aria-labelledby="experience-title">
+         <div className="section-heading experience-heading"><div><p className="eyebrow">01 / THE MATERIAL</p><h2 id="experience-title">One continuous surface.</h2></div><LiquidControl id="replay" clock={clock} className="replay" disabled={playing || reduced} onClick={() => stage.current?.replay()}>{playing ? 'Budding…' : 'Replay slow budding'} <span aria-hidden="true">↗</span></LiquidControl></div>
+         <div className="mobile-stage-nav" aria-label="Explore the wide material stage"><LiquidControl id="show-volume" clock={clock} className="stage-view-control" onClick={() => exploreStage('volume')}>← Pearl volume</LiquidControl><LiquidControl id="show-controls" clock={clock} className="stage-view-control" onClick={() => exploreStage('controls')}>Try the controls →</LiquidControl></div>
+         <VolumeStage ref={stage} clock={clock} settings={settings} responsive studioMotion={studioMotion} onPlayingChange={setPlaying} ariaLabel="AlvenX pearl volume and interactive glass controls">
+-          <p className="eyebrow">YOUR SPACE</p><h3>What’s on your mind?</h3>
+-          <div className="idea-row"><LiquidControl id="idea" clock={clock} className="idea" selected={selected} onClick={() => { setSelected(!selected); setFeedback(''); }}><span className="idea-symbol" aria-hidden="true">✦</span><span><strong>A little inspiration</strong><small>{selected ? 'Selected for this preview' : 'Give an idea room to grow'}</small></span></LiquidControl><LiquidControl id="idea-action" clock={clock} kind="circle" className="inline-action" label="Use inspiration" onClick={() => { setSelected(true); setMessage('Help me explore a new idea.'); setFeedback('Added to your message.'); messageInput.current?.focus(); }}><Arrow diagonal/></LiquidControl></div>
+-          <form className="composer" onSubmit={event => { event.preventDefault(); setFeedback(message.trim() ? 'Saved in this preview.' : 'Write a message before sending.'); if (!message.trim()) messageInput.current?.focus(); }}><LiquidControl id="input" clock={clock} kind="field" className="input-frame"><input ref={messageInput} aria-label="Preview message" aria-describedby="preview-feedback" placeholder="Ask anything…" value={message} onChange={event => { setMessage(event.target.value); setFeedback(''); }}/></LiquidControl><LiquidControl id="send" clock={clock} kind="circle" type="submit" className="inline-action" label="Send preview message"><Arrow/></LiquidControl></form>
++          <p className="eyebrow">YOUR SPACE</p><h3>{compact ? <>What’s on<br/>your mind?</> : <>What’s on your mind?</>}</h3>
++          <div className="idea-row"><LiquidControl id="idea" clock={clock} className="idea" selected={selected} onClick={() => { setSelected(!selected); setFeedback(''); if(compact&&!selected)setMessage('Help me explore a new idea.'); }}><span className="idea-symbol" aria-hidden="true">✦</span><span><strong>A little inspiration</strong><small>{selected ? 'Selected for this preview' : 'Give an idea room to grow'}</small></span></LiquidControl><LiquidControl id="idea-action" clock={clock} kind="circle" className="inline-action" label="Use inspiration" onClick={() => { setSelected(true); setMessage('Help me explore a new idea.'); setFeedback('Added to your message.'); messageInput.current?.focus(); }}><Arrow diagonal/></LiquidControl></div>
++          <form className="composer" onSubmit={event => { event.preventDefault(); setFeedback(message.trim() ? 'Saved in this preview.' : 'Write a message before sending.'); if (!message.trim()) messageInput.current?.focus(); }}><LiquidControl id="input" clock={clock} kind="field" className="input-frame"><input ref={messageInput} aria-label="Preview message" aria-describedby="preview-feedback" placeholder={compact?"Message…":"Ask anything…"} value={message} onChange={event => { setMessage(event.target.value); setFeedback(''); }}/></LiquidControl><LiquidControl id="send" clock={clock} kind="circle" type="submit" className="inline-action" label="Send preview message"><Arrow/></LiquidControl></form>
+           <p id="preview-feedback" className="feedback" role="status">{feedback}</p>
+         </VolumeStage>
+         <div className="experience-footer"><p><span className="gesture-line">Move close. Press. Pull. Let go.</span><span>Explore the form and the glass. Your text stays clear.</span></p><div className="switches"><GlassSwitch id="ambient" label="Background motion" checked={settings.ambient} clock={clock} onChange={ambient => updateSettings({ ambient })}/><GlassSwitch id="reduced-motion" label="Reduced motion" checked={reduced} disabled={systemReduced} clock={clock} onChange={reducedMotion => updateSettings({ reducedMotion })}/></div></div>
+@@ -126,7 +134,7 @@ function Showcase() {
+         <div className="release-note"><span className="release-mark">EXPERIMENTAL RELEASE</span><p>A working design system with measured performance and explicit browser fallbacks. Large forms use a 2.5D environment; controls use local backdrop optics where supported. Physical Safari / iOS validation is still in progress.</p><a href={`${GITHUB}/blob/main/docs/baseline-and-checklist.md`}>Read the validation checklist ↗</a></div>
+       </section>
+     </main>
+-    <footer className="site-footer"><div className="footer-brand"><img src={wordmark} width="112" height="34" alt="AlvenX"/><p>Shaped for interaction.</p></div><div className="footer-renderer"><p>Current material: <span data-rendering-mode={mode}>{mode === 'svg' ? 'SVG backdrop refraction' : mode === 'native' ? 'Compatible glass' : 'Flat glass'}</span></p><p className="mode-links"><a href="?optics=auto" aria-current={optics === 'auto' ? 'true' : undefined}>Auto</a><a href="?optics=native" aria-current={optics === 'native' ? 'true' : undefined}>Compatible</a><a href="?optics=flat" aria-current={optics === 'flat' ? 'true' : undefined}>Flat</a></p></div><div className="footer-links"><a href="https://alvenx.com/">AlvenX.com ↗</a><a href={GITHUB} target="_blank" rel="noreferrer">GitHub ↗</a><a href={`${GITHUB}/blob/main/LICENSE-NOTICE.md`}>License notice ↗</a><span>V1.1.2 · INPUT &amp; STUDIO REVIEW / 2026-10-19</span></div></footer>
++    <footer className="site-footer"><div className="footer-brand"><img src={wordmark} width="112" height="34" alt="AlvenX"/><p>Shaped for interaction.</p></div><div className="footer-renderer"><p>Current material: <span data-rendering-mode={mode}>{mode === 'svg' ? 'SVG backdrop refraction' : mode === 'native' ? 'Compatible glass' : 'Flat glass'}</span></p><p className="mode-links"><a href="?optics=auto" aria-current={optics === 'auto' ? 'true' : undefined}>Auto</a><a href="?optics=native" aria-current={optics === 'native' ? 'true' : undefined}>Compatible</a><a href="?optics=flat" aria-current={optics === 'flat' ? 'true' : undefined}>Flat</a></p></div><div className="footer-links"><a href="https://alvenx.com/">AlvenX.com ↗</a><a href={GITHUB} target="_blank" rel="noreferrer">GitHub ↗</a><a href={`${GITHUB}/blob/main/LICENSE-NOTICE.md`}>License notice ↗</a><span>V1.1.2 · R2 · HORIZONTAL REVIEW / 2026-10-19</span></div></footer>
+   </div>;
+ }
+ const root = document.getElementById('root'); if (!root) throw new Error('Showcase root missing'); createRoot(root).render(<StrictMode><Showcase/></StrictMode>);
+diff --git a/showcase/showcase.css b/showcase/showcase.css
+index 592fb33..6ce2aba 100644
+--- a/showcase/showcase.css
++++ b/showcase/showcase.css
+@@ -25,18 +25,27 @@
+ /* Only the movable hit surface opts out of selection; the study text remains
+  * native/selectable outside it, including on iPad with a trackpad attached. */
+ .showcase .moving-lens,.showcase .moving-lens .glass-hit{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}
+-/* Review composition: keep the complete continuous form in the container.
+- * The optical scene turns upright on narrow containers; native content does not. */
+-.showcase .stage[data-orientation="portrait"] .foreground h3{font-size:23px;line-height:1.2;margin-bottom:16px}
+-.showcase .stage[data-orientation="portrait"] .foreground>.eyebrow{margin-bottom:10px}
+-.showcase .stage[data-orientation="portrait"] .idea-symbol{display:none}
+-.showcase .stage[data-orientation="portrait"] .idea{height:88px}
+-.showcase .stage[data-orientation="portrait"] .idea>.glass-hit{padding:10px max(20px,6%);gap:0}
+-.showcase .stage[data-orientation="portrait"] .idea strong{font-size:14px}
+-.showcase .stage[data-orientation="portrait"] .idea small{font-size:12px}
+ .showcase .mobile-stage-nav{display:none}
+ .showcase{--ax-label:#5C6B8C}
+ .showcase .fineprint,.showcase .parameter-hint,.showcase .section-note,.showcase .demo-title p,.showcase .small-copy,.showcase .lens-caption,.showcase .principles p,.showcase .reuse-copy,.showcase .release-note p{color:#596A8B}
+ .showcase .input-frame input::placeholder{color:#64718E}
+-@media(max-width:360px){.showcase .stage[data-orientation="portrait"] .foreground{top:46%}.showcase .stage[data-orientation="portrait"] .idea small{display:none}}
+ @media(any-pointer:coarse){.showcase .glass-hit input,.showcase .glass-hit .parameter-number{font-size:16px}}
++
++/* Compact review keeps the same horizontal relationship. The cavity owns the
++ * text width; the send control fits inside the composer without covering ink. */
++.showcase .stage[data-layout="compact-horizontal"] .foreground h3{font-size:22px;line-height:1.22;letter-spacing:-.025em;margin:0 0 16px;padding:0 20px}
++.showcase .stage[data-layout="compact-horizontal"] .foreground>.eyebrow{font-size:10px;margin:0 0 8px;padding:0 20px}
++.showcase .stage[data-layout="compact-horizontal"] .idea-row{display:block;margin-bottom:12px;flex:none}
++.showcase .stage[data-layout="compact-horizontal"] .idea{width:100%;height:104px}
++.showcase .stage[data-layout="compact-horizontal"] .idea-symbol{display:none}
++.showcase .stage[data-layout="compact-horizontal"] .idea>.glass-hit{padding:12px 20px;gap:0}
++.showcase .stage[data-layout="compact-horizontal"] .idea>.glass-hit>span:last-child{min-width:0}
++.showcase .stage[data-layout="compact-horizontal"] .idea strong{font-size:14px;line-height:1.35}
++.showcase .stage[data-layout="compact-horizontal"] .idea small{display:block;font-size:12px;line-height:1.4}
++.showcase .stage[data-layout="compact-horizontal"] .idea-row>.inline-action{display:none}
++.showcase .stage[data-layout="compact-horizontal"] .composer{position:relative;display:block;flex:none}
++.showcase .stage[data-layout="compact-horizontal"] .input-frame{width:100%;height:64px}
++.showcase .stage[data-layout="compact-horizontal"] .input-frame>.field-hit{padding:8px 61px 8px 20px}
++.showcase .stage[data-layout="compact-horizontal"] .composer>.inline-action{position:absolute;right:9px;top:8px;width:48px;height:48px}
++.showcase .stage[data-layout="compact-horizontal"] .feedback{font-size:12px;margin:10px 4px 0;line-height:1.45;flex:none}
++@media(max-width:520px){.experience-heading{display:block}.experience-heading h2{max-width:none}.showcase .experience-heading .replay{margin-top:15px;width:176px;font-size:12px}.intro .eyebrow{flex-wrap:wrap;gap:8px}.version{padding-left:10px}.showcase .parameter-label{font-size:13px}.showcase .parameter-unit{width:18px;min-width:18px}}
+diff --git a/src/VolumeStage.tsx b/src/VolumeStage.tsx
+index 1dd2b71..92b532b 100644
+--- a/src/VolumeStage.tsx
++++ b/src/VolumeStage.tsx
+@@ -20,8 +20,8 @@ export type VolumeStageProps = {
+   renderBudget?: { maxPixels?: number; maxDpr?: number };
+   /** Optional studio lighting study. The default keeps the accepted light angle. */
+   studioMotion?: boolean;
+-  /** Rotate the same continuous form into portrait below 720 CSS pixels.
+-   * The host positions upright foreground DOM using data-orientation. */
++  /** Use a compact horizontal camera below 720 CSS pixels. Foreground DOM
++   * stays upright and is positioned by the host using data-layout. */
+   responsive?: boolean;
+ };
+ 
+@@ -39,8 +39,8 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+   const budget = useRef(renderBudget); budget.current = renderBudget;
+   const studio = useRef(studioMotion); studio.current = studioMotion;
+   const responsiveEnabled = useRef(responsive); responsiveEnabled.current = responsive;
+-  const portraitRef = useRef(false);
+-  const [portrait, setPortrait] = useState(false);
++  const layoutRef = useRef({ compact: false, viewHeight: 560 });
++  const [layout, setLayout] = useState(layoutRef.current);
+   const fallbackId = useId().replace(/:/g, '');
+   const [error, setError] = useState('');
+   const reportedError = useRef('');
+@@ -53,9 +53,13 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     if (active && stage.current?.hasPointerCapture(active.pointerId)) stage.current.releasePointerCapture(active.pointerId);
+   }
+   function cancelDrag() { releaseDrag(); settleSurface(); }
+-  function measureOrientation(width: number) {
+-    const next = responsiveEnabled.current && width < 720;
+-    if (portraitRef.current !== next) { portraitRef.current = next; setPortrait(next); }
++  function measureLayout(width: number, height: number) {
++    if (!(width > 0 && height > 0)) return;
++    const compact = responsiveEnabled.current && width < 720;
++    const viewHeight = compact ? Math.max(560, Math.min(20000, 1000 * height / width)) : 560;
++    if (layoutRef.current.compact !== compact || Math.abs(layoutRef.current.viewHeight - viewHeight) > .01) {
++      layoutRef.current = { compact, viewHeight }; setLayout(layoutRef.current);
++    }
+   }
+ 
+   useLayoutEffect(() => {
+@@ -98,7 +102,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+         const angle = clock.reduced ? 0 : state.time * Math.PI * 2 / 48;
+         const lightX = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.cos(angle) + .25 * Math.sin(angle))) : .22;
+         const lightY = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.sin(angle) - .42 * Math.cos(angle))) : .08;
+-        renderer.current?.render({ edge: 'pearl', flat: false, lightX, lightY, studioMotion: studio.current, portrait: portraitRef.current, showGrid: false, growth: state.growth, time: state.time, ...state.current, ...clock.material }, budget.current);
++        renderer.current?.render({ edge: 'pearl', flat: false, lightX, lightY, studioMotion: studio.current, compact: layoutRef.current.compact, viewHeight: layoutRef.current.viewHeight, showGrid: false, growth: state.growth, time: state.time, ...state.current, ...clock.material }, budget.current);
+         if (stage.current) {
+           stage.current.dataset.growth = state.growth.toFixed(4);
+           stage.current.dataset.ambientTime = state.time.toFixed(4);
+@@ -116,7 +120,8 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     };
+     const unsubscribe = clock.subscribe(draw);
+     const observer = new ResizeObserver(entries => {
+-      measureOrientation(entries[entries.length - 1].contentRect.width); cancelDrag();
++      const { width, height } = entries[entries.length - 1].contentRect;
++      measureLayout(width, height); cancelDrag();
+     });
+     if (stage.current) observer.observe(stage.current);
+     const visibility = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(entries => {
+@@ -155,7 +160,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+   }, [clock]);
+ 
+   useLayoutEffect(() => {
+-    if (stage.current) measureOrientation(stage.current.getBoundingClientRect().width);
++    if (stage.current) { const rect = stage.current.getBoundingClientRect(); measureLayout(rect.width, rect.height); }
+     simulation.current.dirty = true; clock.wake();
+   }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive]);
+ 
+@@ -202,10 +207,16 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+       }
+     }
+     const rect = stage.current.getBoundingClientRect();
+-    const screenX = (event.clientX - rect.left) / rect.width, screenY = (event.clientY - rect.top) / rect.height;
+-    const x = (portraitRef.current ? screenY : screenX) * 1000, y = (portraitRef.current ? 1 - screenX : screenY) * 560;
+-    const parent = drag.current?.parent ?? x < 450;
+-    const nx = (x - (parent ? 230 : 690)) / (parent ? 150 : 255), ny = (y - 280) / (parent ? 150 : 210);
++    const { compact, viewHeight } = layoutRef.current;
++    // Match the renderer's uniform camera scale, including any letterbox.
++    const scale = Math.min(rect.width / 1000, rect.height / viewHeight);
++    const x = (event.clientX - rect.left - rect.width * .5) / scale + 500;
++    const y = (event.clientY - rect.top - rect.height * .5) / scale + viewHeight * .5;
++    const parent = drag.current?.parent ?? x < (compact ? 420 : 450);
++    const centreX = parent ? (compact ? 180 : 230) : (compact ? 635 : 690);
++    const radiusX = parent ? (compact ? 145 : 150) : (compact ? 330 : 255);
++    const radiusY = parent ? (compact ? 145 : 150) : (compact ? viewHeight * .425 : 210);
++    const nx = (x - centreX) / radiusX, ny = (y - viewHeight * .5) / radiusY;
+     const proximity = Math.max(0, Math.min(1, (1.25 - Math.hypot(nx, ny)) * 2));
+     if (!drag.current && proximity === 0) { settleSurface(); return; }
+     if (pressed) {
+@@ -227,24 +238,22 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
+     simulation.current.growth = 0; simulation.current.playing = true; callback.current?.(true); clock.wake();
+   } }), [clock]);
+ 
+-  const orientation = portrait ? 'portrait' : 'landscape';
+-  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-orientation={orientation}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-orientation={orientation} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
++  const layoutName = layout.compact ? 'compact-horizontal' : 'wide-horizontal';
++  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layoutName}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layoutName} data-view-height={layout.viewHeight.toFixed(3)} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
+     onPointerMove={event => respond(event)} onPointerDown={event => { if (event.button === 0 && event.isPrimary && !drag.current) respond(event, true); }}
+     onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}
+     onPointerCancel={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}
+     onLostPointerCapture={event => { if (event.target === event.currentTarget && drag.current?.pointerId === event.pointerId) cancelDrag(); }}
+     onPointerLeave={() => { if (!drag.current) settleSurface(); }}>
+     <canvas ref={canvas} className="volume-canvas" aria-hidden="true"/>
+-    {error && <svg viewBox={portrait ? '0 0 560 1000' : '0 0 1000 560'} preserveAspectRatio="none" aria-hidden="true" data-renderer="static-pearl-fallback" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
++    {error && <svg viewBox={`0 0 1000 ${layout.viewHeight}`} preserveAspectRatio="xMidYMid meet" aria-hidden="true" data-renderer="static-pearl-fallback" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+       <defs>
+         <linearGradient id={`${fallbackId}-environment`} x2="1" y2="1"><stop stopColor="#D7E6FC"/><stop offset=".52" stopColor="#EBEDFD"/><stop offset="1" stopColor="#D8CEF0"/></linearGradient>
+         <radialGradient id={`${fallbackId}-pearl`} cx=".25" cy=".12" r=".9"><stop stopColor="#FBFCFF"/><stop offset=".42" stopColor="#D9E5FC"/><stop offset=".76" stopColor="#E4DBF6"/><stop offset="1" stopColor="#BAC4E6"/></radialGradient>
+         <linearGradient id={`${fallbackId}-rim`} x2=".5" y2="1"><stop stopColor="#FFFFFF" stopOpacity=".95"/><stop offset=".48" stopColor="#C6D1ED" stopOpacity=".55"/><stop offset="1" stopColor="#A9A5CD" stopOpacity=".8"/></linearGradient>
+       </defs>
+-      <g transform={portrait ? 'translate(560 0) rotate(90)' : undefined}>
+-        <path d="M0 0H1000V560H0Z" fill={`url(#${fallbackId}-environment)`}/>
+-        <path d={volumeFallbackPath()} fill={`url(#${fallbackId}-pearl)`} stroke={`url(#${fallbackId}-rim)`} strokeWidth="2" strokeLinejoin="round"/>
+-      </g>
++      <path d={`M0 0H1000V${layout.viewHeight}H0Z`} fill={`url(#${fallbackId}-environment)`}/>
++      <path d={volumeFallbackPath(layout)} fill={`url(#${fallbackId}-pearl)`} stroke={`url(#${fallbackId}-rim)`} strokeWidth="2" strokeLinejoin="round"/>
+     </svg>}
+     <div ref={foreground} className="foreground">{children}</div>
+     {error && <p role="status" title={error} style={{ position: 'absolute', left: 16, bottom: 4, margin: 0, fontSize: 11, color: 'var(--ax-label)' }}>Static pearl fallback · WebGL unavailable</p>}
+diff --git a/src/volume-fallback.ts b/src/volume-fallback.ts
+index 19f9bec..e403dd9 100644
+--- a/src/volume-fallback.ts
++++ b/src/volume-fallback.ts
+@@ -1,31 +1,37 @@
+ // Static fallback outline samples the same symmetric, fully grown resting
+ // sceneDistance as the volume shader. This is a pearl illustration, not WebGL
+ // optics or an alternative simulation; native foreground content stays usable.
+-const distance = (x: number, y: number, cx: number, rx: number, ry: number, exponent: number) => {
+-  const qx = Math.max(Math.abs(x - cx) / rx, .00001), qy = Math.max(Math.abs(y - 280) / ry, .00001);
++const distance = (x: number, y: number, cx: number, cy: number, rx: number, ry: number, exponent: number) => {
++  const qx = Math.max(Math.abs(x - cx) / rx, .00001), qy = Math.max(Math.abs(y - cy) / ry, .00001);
+   const sum = qx ** exponent + qy ** exponent, norm = sum ** (1 / exponent);
+   const factor = sum ** (1 / exponent - 1);
+   const gradient = Math.hypot(qx ** (exponent - 1) * factor / rx, qy ** (exponent - 1) * factor / ry);
+   return Math.max((norm - 1) / Math.max(gradient, .0001), -Math.min(rx, ry));
+ };
+-function sceneDistance(x: number, y: number) {
+-  const a = distance(x, y, 230, 150, 150, 2), b = distance(x, y, 690, 255, 210, 3.2);
++function sceneDistance(x: number, y: number, compact: boolean, viewHeight: number) {
++  const cy = viewHeight * .5;
++  const a = distance(x, y, compact ? 180 : 230, cy, compact ? 145 : 150, compact ? 145 : 150, 2);
++  const b = distance(x, y, compact ? 635 : 690, cy, compact ? 330 : 255, compact ? viewHeight * .425 : 210, 3.2);
+   const h = Math.min(1, Math.max(0, .5 + .5 * (b - a) / 160));
+   return b + (a - b) * h - 160 * h * (1 - h);
+ }
+-let cached = '';
+-export function volumeFallbackPath() {
+-  if (cached) return cached;
++let cached = '', cachedCompact: { viewHeight: number; path: string } | null = null;
++export function volumeFallbackPath(options: { compact?: boolean; viewHeight?: number } = {}) {
++  const compact = Boolean(options.compact);
++  const viewHeight = compact && Number.isFinite(options.viewHeight) ? Math.max(560, Math.min(20000, options.viewHeight!)) : 560;
++  if (!compact && cached) return cached;
++  if (compact && cachedCompact?.viewHeight === viewHeight) return cachedCompact.path;
+   const upper: Array<[number, number]> = [];
+   // The resting scene has one symmetric vertical interval at every covered x.
+   // A 1px sample with binary refinement preserves its union/neck contour.
+   for (let x = 0; x <= 1000; x++) {
+-    if (sceneDistance(x, 280) > 0) continue;
+-    let low = 0, high = 280;
+-    for (let i = 0; i < 16; i++) { const mid = (low + high) / 2; if (sceneDistance(x, mid) > 0) low = mid; else high = mid; }
++    if (sceneDistance(x, viewHeight * .5, compact, viewHeight) > 0) continue;
++    let low = 0, high = viewHeight * .5;
++    for (let i = 0; i < 16; i++) { const mid = (low + high) / 2; if (sceneDistance(x, mid, compact, viewHeight) > 0) low = mid; else high = mid; }
+     upper.push([x, (low + high) / 2]);
+   }
+-  const points = [...upper, ...upper.slice().reverse().map(([x, y]): [number, number] => [x, 560 - y])];
+-  cached = points.map(([x, y], index) => `${index ? 'L' : 'M'}${x} ${y.toFixed(3)}`).join(' ') + ' Z';
+-  return cached;
++  const points = [...upper, ...upper.slice().reverse().map(([x, y]): [number, number] => [x, viewHeight - y])];
++  const path = points.map(([x, y], index) => `${index ? 'L' : 'M'}${x} ${y.toFixed(3)}`).join(' ') + ' Z';
++  if (compact) cachedCompact = { viewHeight, path }; else cached = path;
++  return path;
+ }
+diff --git a/src/volume-renderer.js b/src/volume-renderer.js
+index 730f088..a7b1e06 100644
+--- a/src/volume-renderer.js
++++ b/src/volume-renderer.js
+@@ -4,12 +4,13 @@ import { volumeRasterSize } from './volume-budget.js';
+  * Isolated material study. This is a 2.5D height-field approximation, not an
+  * implementation of Apple's renderer or a physically accurate glass volume.
+  * No images, network calls, dependencies, or animation loop are used.
+- * All geometry is in a 1000 x 560 logical viewport, with y pointing down.
++ * Default geometry uses a 1000 x 560 logical viewport, with y pointing down.
++ * The optional compact horizontal camera retains one uniform geometry scale.
+  */
+ const DEFAULTS = Object.freeze({
+   edge: 'balanced', flat: false, curvature: 3.2,
+   lightX: 0.22, lightY: 0.08, growth: 1, showGrid: false, time: 0,
+-  studioMotion: false, portrait: false,
++  studioMotion: false, compact: false, viewHeight: 560,
+   parentX: 1, parentY: 1, childX: 1, childY: 1,
+   deformX: 500, deformY: 280, deformDX: 0, deformDY: 0,
+   specularOpacity: .65, specularSaturation: 1, refractionLevel: 1,
+@@ -33,7 +34,8 @@ uniform float u_grid;
+ uniform float u_time;
+ uniform float u_studio_motion;
+ uniform vec2 u_studio_rotation;
+-uniform float u_portrait;
++uniform float u_compact;
++uniform vec2 u_view;
+ uniform float u_specular_opacity;
+ uniform float u_specular_saturation;
+ uniform float u_refraction_level;
+@@ -45,8 +47,13 @@ uniform vec2 u_child_stretch;
+ uniform vec2 u_deform_point;
+ uniform vec2 u_deform_amount;
+ 
+-const vec2 VIEW = vec2(1000.0, 560.0);
+-const vec2 PARENT = vec2(230.0, 280.0);
++#define VIEW u_view
++const vec2 ENV_VIEW = vec2(1000.0, 560.0);
++
++vec2 parentCentre() {
++  return u_compact > 0.5 ? vec2(180.0, VIEW.y * 0.5) : vec2(230.0, 280.0);
++}
++float parentRadius() { return u_compact > 0.5 ? 145.0 : 150.0; }
+ 
+ // One smooth coordinate deformation feeds coverage AND the interior potential.
+ // Finite differences of heightAt therefore include its chain rule in normals.
+@@ -76,15 +83,19 @@ float chamberDistance(vec2 point, vec2 halfSize, float exponent) {
+ }
+ 
+ vec2 childCentre() {
++  if (u_compact > 0.5) {
++    return mix(vec2(318.1833333333, VIEW.y * 0.5), vec2(635.0, VIEW.y * 0.5), ease(u_growth));
++  }
+   return mix(vec2(373.0, 280.0), vec2(690.0, 280.0), ease(u_growth));
+ }
+ 
+ vec2 childSize() {
+-  return max(vec2(0.1), vec2(255.0, 210.0) * u_child_stretch * pow(u_growth, 0.85));
++  vec2 size = u_compact > 0.5 ? vec2(330.0, VIEW.y * 0.425) : vec2(255.0, 210.0);
++  return max(vec2(0.1), size * u_child_stretch * pow(u_growth, 0.85));
+ }
+ 
+ float parentDistance(vec2 p) {
+-  return chamberDistance(p - PARENT, 150.0 * u_parent_stretch, 2.0);
++  return chamberDistance(p - parentCentre(), parentRadius() * u_parent_stretch, 2.0);
+ }
+ 
+ float childDistance(vec2 p) {
+@@ -110,7 +121,7 @@ float sceneDistance(vec2 p) {
+ // a primitive's centre. They join into ONE potential before shading.
+ float interiorPotential(vec2 p) {
+   p = deformPoint(p);
+-  vec2 rootOffset = (p - PARENT) / (150.0 * u_parent_stretch);
++  vec2 rootOffset = (p - parentCentre()) / (parentRadius() * u_parent_stretch);
+   float parent = 75.0 * (1.0 - dot(rootOffset, rootOffset));
+   if (u_growth < 0.0001) return parent;
+   vec2 halfSize = childSize();
+@@ -147,12 +158,15 @@ vec3 environmentAt(vec2 p, float time) {
+   // reflection. Rotate only its sampling coordinates: the shape, grid and DOM
+   // stay still. The pearl softbox keeps its world-space u_light position.
+   // The old field is exact when disabled or sampled at time zero.
+-  vec2 fieldPoint = p;
++  // Colour positions follow the camera extent without stretching the actual
++  // geometry or its normals. All transmission/reflection samples share this.
++  vec2 environmentPoint = p * (ENV_VIEW / VIEW);
++  vec2 fieldPoint = environmentPoint;
+   float separation = 1.0;
+   if (u_studio_motion > 0.5 && time > 0.0) {
+     mat2 rotation = mat2(u_studio_rotation.x, -u_studio_rotation.y,
+       u_studio_rotation.y, u_studio_rotation.x);
+-    fieldPoint = rotation * (p - VIEW * 0.5) + VIEW * 0.5;
++    fieldPoint = rotation * (environmentPoint - ENV_VIEW * 0.5) + ENV_VIEW * 0.5;
+     separation += 0.06 * (1.0 - u_studio_rotation.x);
+   }
+   // Independent, gentle tides move colour centres, extent and density. Every
+@@ -175,7 +189,7 @@ vec3 environmentAt(vec2 p, float time) {
+   vec2 blueDelta = (fieldPoint - blueCentre) / blueExtent;
+   vec2 lilacDelta = (fieldPoint - lilacCentre) / lilacExtent;
+   vec2 indigoDelta = (fieldPoint - indigoCentre) / indigoExtent;
+-  vec2 pearlDelta = (p - u_light * VIEW) / vec2(420.0, 320.0);
++  vec2 pearlDelta = (environmentPoint - u_light * ENV_VIEW) / vec2(420.0, 320.0);
+   float blue = exp(-dot(blueDelta, blueDelta));
+   float lilac = exp(-dot(lilacDelta, lilacDelta));
+   float pearl = exp(-dot(pearlDelta, pearlDelta));
+@@ -255,11 +269,6 @@ void main() {
+   float scale = min(u_resolution.x / VIEW.x, u_resolution.y / VIEW.y);
+   vec2 screen = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y);
+   vec2 p = (screen - u_resolution * 0.5) / scale + VIEW * 0.5;
+-  if (u_portrait > 0.5) {
+-    scale = min(u_resolution.x / VIEW.y, u_resolution.y / VIEW.x);
+-    p = vec2(screen.y / u_resolution.y * VIEW.x,
+-      (1.0 - screen.x / u_resolution.x) * VIEW.y);
+-  }
+   float aa = max(0.45, 0.8 / scale);
+   float distance = sceneDistance(p);
+   float coverage = 1.0 - smoothstep(-aa, aa, distance);
+@@ -378,7 +387,8 @@ function bounded(value, fallback, min, max) {
+  * render() is synchronous and draws one frame. The caller owns animation.
+  * time is elapsed seconds (initially 0); pause it outside to freeze the field.
+  * studioMotion opts into a 40-second colour-field rotation; it owns no clock.
+- * portrait rotates the logical scene clockwise; the host keeps DOM text upright.
++ * compact preserves a horizontal mother/neck/chamber with a taller camera;
++ * viewHeight is the host's CSS aspect converted to the 1000-unit logical width.
+  * blurLevel/progressiveBlur are CSS-pixel sigmas of the analytic transmission.
+  * Material ranges: specularOpacity/glassOpacity 0..1,
+  * specularSaturation/refractionLevel 0..3, blurLevel/progressiveBlur 0..6.
+@@ -441,7 +451,7 @@ export function createGlassPreview(canvas) {
+       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+       locations = Object.fromEntries([
+         'resolution', 'light', 'curvature', 'growth', 'edge', 'flat', 'grid', 'time',
+-        'studio_motion', 'studio_rotation', 'portrait',
++        'studio_motion', 'studio_rotation', 'compact', 'view',
+         'parent_stretch', 'child_stretch', 'deform_point', 'deform_amount',
+         'specular_opacity', 'specular_saturation', 'refraction_level',
+         'blur_level', 'progressive_blur', 'glass_opacity',
+@@ -458,6 +468,8 @@ export function createGlassPreview(canvas) {
+   function render(next = {}, budget = {}) {
+     if (destroyed) return;
+     const merged = { ...options, ...next };
++    const compact = Boolean(merged.compact);
++    const viewHeight = compact ? bounded(merged.viewHeight, 560, 560, 20000) : 560;
+     options = {
+       edge: ['balanced', 'pearl', 'strong'].includes(merged.edge) ? merged.edge : 'balanced',
+       flat: Boolean(merged.flat),
+@@ -467,7 +479,8 @@ export function createGlassPreview(canvas) {
+       growth: bounded(merged.growth, DEFAULTS.growth, 0, 1),
+       showGrid: Boolean(merged.showGrid),
+       studioMotion: Boolean(merged.studioMotion),
+-      portrait: Boolean(merged.portrait),
++      compact,
++      viewHeight,
+       // All wave periods, including the studio rotation, divide 2520. Wrapping
+       // stays continuous and preserves float precision in long-running previews.
+       time: Number.isFinite(merged.time) ? Math.max(0, merged.time) % 2520 : 0,
+@@ -476,7 +489,7 @@ export function createGlassPreview(canvas) {
+       childX: bounded(merged.childX, 1, .85, 1.15),
+       childY: bounded(merged.childY, 1, .85, 1.15),
+       deformX: bounded(merged.deformX, 500, -100, 1100),
+-      deformY: bounded(merged.deformY, 280, -100, 660),
++      deformY: bounded(merged.deformY, 280, -100, viewHeight + 100),
+       deformDX: bounded(merged.deformDX, 0, -32, 32),
+       deformDY: bounded(merged.deformDY, 0, -32, 32),
+       specularOpacity: bounded(merged.specularOpacity, DEFAULTS.specularOpacity, 0, 1),
+@@ -504,6 +517,7 @@ export function createGlassPreview(canvas) {
+     gl.enableVertexAttribArray(locations.position);
+     gl.vertexAttribPointer(locations.position, 2, gl.FLOAT, false, 0, 0);
+     gl.uniform2f(locations.resolution, width, height);
++    gl.uniform2f(locations.view, 1000, options.viewHeight);
+     gl.uniform2f(locations.light, options.lightX, options.lightY);
+     gl.uniform2f(locations.parent_stretch, options.parentX, options.parentY);
+     gl.uniform2f(locations.child_stretch, options.childX, options.childY);
+@@ -518,13 +532,11 @@ export function createGlassPreview(canvas) {
+     gl.uniform1f(locations.studio_motion, options.studioMotion ? 1 : 0);
+     const studioAngle = options.time * (Math.PI * 2 / 40);
+     gl.uniform2f(locations.studio_rotation, Math.cos(studioAngle), Math.sin(studioAngle));
+-    gl.uniform1f(locations.portrait, options.portrait ? 1 : 0);
++    gl.uniform1f(locations.compact, options.compact ? 1 : 0);
+     gl.uniform1f(locations.specular_opacity, options.specularOpacity);
+     gl.uniform1f(locations.specular_saturation, options.specularSaturation);
+     gl.uniform1f(locations.refraction_level, options.refractionLevel);
+-    const logicalPerCssPixel = raster.scale / (options.portrait
+-      ? Math.min(width / 560, height / 1000)
+-      : Math.min(width / 1000, height / 560));
++    const logicalPerCssPixel = raster.scale / Math.min(width / 1000, height / options.viewHeight);
+     gl.uniform1f(locations.blur_level, options.blurLevel * logicalPerCssPixel);
+     gl.uniform1f(locations.progressive_blur, options.progressiveBlur * logicalPerCssPixel);
+     gl.uniform1f(locations.glass_opacity, options.glassOpacity);
+@@ -533,7 +545,7 @@ export function createGlassPreview(canvas) {
+     canvas.dataset.pixelBudget = String(raster.maxPixels);
+     canvas.dataset.renderScale = raster.scale.toFixed(4);
+     canvas.dataset.budgetLimited = String(raster.limited);
+-    canvas.dataset.volumeUniforms = JSON.stringify({parentX:options.parentX,parentY:options.parentY,childX:options.childX,childY:options.childY,deformX:options.deformX,deformY:options.deformY,deformDX:options.deformDX,deformDY:options.deformDY,curvature:options.curvature});
++    canvas.dataset.volumeUniforms = JSON.stringify({parentX:options.parentX,parentY:options.parentY,childX:options.childX,childY:options.childY,deformX:options.deformX,deformY:options.deformY,deformDX:options.deformDX,deformDY:options.deformDY,curvature:options.curvature,compact:options.compact,viewHeight:options.viewHeight});
+   }
+ 
+   function contextLost(event) {
+diff --git a/styles/glass.css b/styles/glass.css
+index fbaab3a..6038381 100644
+--- a/styles/glass.css
++++ b/styles/glass.css
+@@ -35,8 +35,8 @@
+ .alvenx-design .foreground h1 { font-size:clamp(23px,2.3vw,29px); line-height:1.15; letter-spacing:-.035em; font-weight:550; margin:0 0 23px; }
+ .alvenx-design .stage-scroll.is-responsive { overflow-x:hidden; }
+ .alvenx-design .stage.is-responsive { min-width:0; }
+-.alvenx-design .stage.is-responsive[data-orientation="portrait"] { aspect-ratio:560/1000; min-height:650px; max-height:900px; }
+-.alvenx-design .stage[data-orientation="portrait"] .foreground { left:18%; top:49%; width:64%; }
++.alvenx-design .stage[data-layout="compact-horizontal"] { aspect-ratio:1.25; min-height:440px; max-height:520px; }
++.alvenx-design .stage[data-layout="compact-horizontal"] .foreground { left:35%; width:60%; top:12%; bottom:12%; display:flex; flex-direction:column; justify-content:center; }
+ 
+ .alvenx-design .liquid-unit { position:relative; flex-shrink:0; }
+ /* A sleeping shell may retain its previous raster size after a responsive

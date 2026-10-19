@@ -1,0 +1,163 @@
+{
+  "reviewId": "R2",
+  "iteration": "01",
+  "date": "2026-10-19",
+  "status": "self-rejected",
+  "parentReviewStatus": "draft",
+  "rejectedBy": "agent screenshot self-review",
+  "ownerRejection": false,
+  "publishedToWebsite": false,
+  "source": {
+    "baseRef": "review-20261019-r1-rejected",
+    "baseCommit": "80eb02e",
+    "branch": "codex/compact-horizontal-review",
+    "patch": "source-from-r1.patch",
+    "patchScope": [
+      "src",
+      "styles",
+      "showcase"
+    ],
+    "patchFormat": "git diff --binary, written directly by Git",
+    "snapshotBeforeNextGeometryRewrite": true,
+    "localEvidenceBundle": "horizontal-review-2026-10-19"
+  },
+  "selfReview": {
+    "horizontalAxisRetained": true,
+    "overallVisualAccepted": false,
+    "findings": [
+      "At narrow widths, the right chamber is too tall and the mother volume reads as a small badge.",
+      "At 768px, text approaches/touches the actual C2 rim despite remaining within rectangular layout bounds.",
+      "At 1366px, the proportions are a useful local reference; this is an agent assessment, not owner acceptance."
+    ],
+    "nextAction": "Retain the horizontal relationship but revise compact geometry and text insets before website publication."
+  },
+  "browserCheck": {
+    "engine": "155.0.8059.84",
+    "method": "Windows Chromium with touch enabled, iPad UA, DPR1; not a physical device",
+    "profiles": [
+      {
+        "viewportWidth": 320,
+        "viewportHeight": 852,
+        "layout": "compact-horizontal",
+        "stageWidth": 284,
+        "stageHeight": 440,
+        "foregroundWidth": 170.390625,
+        "foregroundHeight": 334.40625,
+        "documentOverflow": false,
+        "inputWidth": 89,
+        "inputScrollWidth": 89,
+        "inputFont": "16px",
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 393,
+        "viewportHeight": 852,
+        "layout": "compact-horizontal",
+        "stageWidth": 357,
+        "stageHeight": 440,
+        "foregroundWidth": 214.1875,
+        "foregroundHeight": 334.40625,
+        "documentOverflow": false,
+        "inputWidth": 133,
+        "inputScrollWidth": 133,
+        "inputFont": "16px",
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 768,
+        "viewportHeight": 1024,
+        "layout": "compact-horizontal",
+        "stageWidth": 708,
+        "stageHeight": 520,
+        "foregroundWidth": 424.796875,
+        "foregroundHeight": 395.21875,
+        "documentOverflow": false,
+        "inputWidth": 344,
+        "inputScrollWidth": 344,
+        "inputFont": "16px",
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 1024,
+        "viewportHeight": 1024,
+        "layout": "wide-horizontal",
+        "stageWidth": 982.796875,
+        "stageHeight": 524.15625,
+        "foregroundWidth": 304.65625,
+        "foregroundHeight": 265.265625,
+        "documentOverflow": false,
+        "inputWidth": 201,
+        "inputScrollWidth": 201,
+        "inputFont": "16px",
+        "canvasError": null,
+        "pageErrorCount": 0
+      },
+      {
+        "viewportWidth": 1366,
+        "viewportHeight": 1024,
+        "layout": "wide-horizontal",
+        "stageWidth": 1251.59375,
+        "stageHeight": 667.515625,
+        "foregroundWidth": 387.984375,
+        "foregroundHeight": 271.53125,
+        "documentOverflow": false,
+        "inputWidth": 284,
+        "inputScrollWidth": 284,
+        "inputFont": "16px",
+        "canvasError": null,
+        "pageErrorCount": 0
+      }
+    ]
+  },
+  "validationLimits": [
+    "No page errors or document overflow were observed in the saved browser sweep; those checks did not validate actual C2-rim text clearance or visual quality.",
+    "No owner review of this local iteration occurred.",
+    "No physical iPhone/iPad/Combo Touch testing or Safari true-refraction acceptance occurred.",
+    "The R1-rejected geometry record and v6 baseline remain unchanged."
+  ],
+  "files": [
+    {
+      "file": "iteration01-1366-stage.png",
+      "bytes": 218897,
+      "sha256": "c7185f5a18fb9a5298553f104fe576edc95f13691b12ad8e73a8ea4c57c30266",
+      "widthPixels": 1252,
+      "heightPixels": 669
+    },
+    {
+      "file": "iteration01-320-experience.png",
+      "bytes": 113701,
+      "sha256": "bcec48625e6a9511bb8e28f5b2867c361511313c3969f2627cbc5bb6bed67cb7",
+      "widthPixels": 320,
+      "heightPixels": 852
+    },
+    {
+      "file": "iteration01-320-stage.png",
+      "bytes": 74590,
+      "sha256": "215e0445dcd4e86e2379dc16d7943afbd21b995ab3dc091cf95c22495f7dfa1c",
+      "widthPixels": 284,
+      "heightPixels": 441
+    },
+    {
+      "file": "iteration01-393-stage.png",
+      "bytes": 85559,
+      "sha256": "e34871fb2f4ffbbea449c4de60b7579ac767c3acb97705bd3ac752b5d9b71593",
+      "widthPixels": 357,
+      "heightPixels": 441
+    },
+    {
+      "file": "iteration01-768-stage.png",
+      "bytes": 143083,
+      "sha256": "76196bd007e41f97d1f3e4b9ed7886160974b0574ef23c8d5561cbc63b784816",
+      "widthPixels": 708,
+      "heightPixels": 521
+    },
+    {
+      "file": "source-from-r1.patch",
+      "bytes": 41205,
+      "sha256": "3e3e98ed12eab16f115a11336250975517301a2b8801467324a8b5b27acb2c5a"
+    }
+  ]
+}

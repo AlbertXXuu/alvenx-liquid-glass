@@ -27,7 +27,7 @@
 .alvenx-design button.glass-hit, .alvenx-design .switch-native { color: inherit; cursor: pointer; }
 .alvenx-design button.glass-hit:disabled, .alvenx-design .switch-native:disabled { cursor: default; }
 
-.alvenx-design .stage-scroll { width:105%; margin-left:-2.5%; overflow-x:auto; overflow-y:hidden; border-radius:22px; }
+.alvenx-design .stage-scroll { position:relative; width:105%; margin-left:-2.5%; overflow-x:auto; overflow-y:hidden; border-radius:22px; }
 .alvenx-design .stage { position:relative; min-width:760px; width:100%; aspect-ratio:1050/560; overflow:hidden; background:var(--ax-stage-background); touch-action:pan-y pinch-zoom; }
 .alvenx-design .volume-canvas { display:block; position:absolute; inset:0; width:100%; height:100%; }
 .alvenx-design .foreground { position:absolute; left:55.5%; top:25.2%; width:31%; color:var(--ax-content); }
@@ -35,8 +35,6 @@
 .alvenx-design .foreground h1 { font-size:clamp(23px,2.3vw,29px); line-height:1.15; letter-spacing:-.035em; font-weight:550; margin:0 0 23px; }
 .alvenx-design .stage-scroll.is-responsive { overflow-x:hidden; }
 .alvenx-design .stage.is-responsive { min-width:0; }
-.alvenx-design .stage.is-responsive[data-orientation="portrait"] { aspect-ratio:560/1000; min-height:650px; max-height:900px; }
-.alvenx-design .stage[data-orientation="portrait"] .foreground { left:18%; top:49%; width:64%; }
 
 .alvenx-design .liquid-unit { position:relative; flex-shrink:0; }
 /* A sleeping shell may retain its previous raster size after a responsive
@@ -106,7 +104,7 @@
 .alvenx-design .parameter-number-notice:empty { display:none; }
 
 @media(max-width:800px) {
-  .alvenx-design .stage-scroll { width:100%; margin-left:0; }
+  .alvenx-design .stage-scroll { position:relative; width:100%; margin-left:0; }
   .alvenx-design .foreground { top:24%; }
   .alvenx-design .foreground h1 { margin-bottom:15px; }
   .alvenx-design .idea>.glass-hit { padding-top:10px; padding-bottom:10px; }
@@ -127,3 +125,9 @@
   .alvenx-design .glass-range::-moz-range-track { background:CanvasText; }
   .alvenx-design .glass-range::-moz-range-thumb { background:Highlight; }
 }
+
+/* Responsive showcase placement keeps the canonical horizontal form intact.
+ * The foreground remains one DOM subtree across all widths. */
+.alvenx-design .stage-scroll[data-layout="overview"] .stage{min-height:200px}
+.alvenx-design .stage-scroll[data-layout="overview"]>.foreground{position:relative;left:auto;top:auto;width:100%;padding:20px 16px 22px}
+.alvenx-design .stage-scroll[data-layout="compact-integrated"]>.foreground{left:52%;width:39%;top:19%}

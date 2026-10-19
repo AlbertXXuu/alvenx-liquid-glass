@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-19",
+  "status": "passed",
+  "packageVersion": "1.1.2",
+  "reviewId": "R2",
+  "reviewSourceRef": "review-20261019-r2",
+  "sourceRefPublication": "pending",
+  "tarballFile": "alvenx-liquid-glass-1.1.2.tgz",
+  "tarballSHA256": "9898afaef74c4bca4e314ebdbd9526bb843d5a9eb2f682506e510185127e47cd",
+  "consumer": "fresh temporary consumer outside the source repository, with separate node_modules",
+  "commands": [
+    {
+      "command": "npm install --ignore-scripts --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run check",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    }
+  ],
+  "packKit": "passed",
+  "scope": "Actual tarball npm install, TypeScript check and production build in the fresh consumer.",
+  "browserSmoke": "not performed by this install receipt; current showcase browser regressions are recorded separately",
+  "physicalDeviceAcceptance": false,
+  "sourceFinalizationAfterScreenshots": {
+    "changes": [
+      "Removed unused CSS selectors without changing active visual rules.",
+      "Preview source/document links point to the fixed R2 source tag.",
+      "Local clone instructions explicitly check out the R2 tag."
+    ],
+    "checkAndBuildRerun": "passed",
+    "coreRuntimeAndBrowserInteractionBehavior": "unchanged in this finalization, as reported by root reviewer"
+  },
+  "receiptFinalization": "Root will repack after this documentation receipt and verify that its tarball SHA-256 remains identical; if it differs, the new artifact requires another fresh consumer check."
+}

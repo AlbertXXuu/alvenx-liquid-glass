@@ -124,7 +124,11 @@ AlvenX 模式复用正式 wordmark／AX 资产和 Instrument Sans／MiSans，不
 
 ## 消费项目验证
 
-2026-10-19 未验收预览增加 `VolumeStage` 的可选 `responsive` 与 `studioMotion`，两者默认 `false`。`responsive` 按实际容器宽度在 720 CSS px 以下使用纵向光学场景及正向 DOM 内容，基础尺寸样式包含在 `styles.css`；宿主仍需用自己的长文和控件检查内容腔安全区。`studioMotion` 使用同一共享时钟缓慢旋转蓝紫环境与光源，遵守背景动效和减少动态设置。它们是本轮独立小样的展示选项，不改变 v6 接受基线，也不表示 Safari 已获得任意 DOM 背景折射。正式采用前需完成视觉和实机验收。
+2026-10-19 R2 未验收预览增加 `VolumeStage` 的可选 `responsive` 与 `studioMotion`，两者默认 `false`。此前将形体旋转为纵向的 R1 已被所有者否决，记录保存在 [审查目录](reviews/2026-10-19/README.md)。R2 的形体在所有宽度均使用原始 1000×560 横向几何与统一缩放，不旋转母体、连接或内容腔。
+
+`responsive` 按实际舞台容器宽度暴露 `data-layout`：小于 600 CSS px 为 `overview`，600–899 为 `compact-integrated`，900 及以上为 `wide-integrated`。同一份 `.foreground` DOM 始终位于 `.stage` 后，作为 `.stage-scroll` 的直接子元素。两种集成布局将它定位到内容腔；概览布局在完整横向形体下方用正常字号展示内容。宿主可以沿用或覆盖 `styles.css` 中的布局规则，但不应通过重新挂载输入框切换布局。当前 showcase 的卡片、输入及文本安全边距属于展示组合，不能自动适配任意长文。宿主应测试断点、字体、实际文案、草稿和焦点保留。
+
+`studioMotion` 使用同一共享时钟缓慢旋转蓝紫环境与光源，遵守背景动效和减少动态设置，不旋转 DOM 文字。关闭它保留已接受的固定光照角度。这两个选项属于独立审查小样，不改变 v6 接受基线，也不表示 Safari 已获得任意 DOM 背景折射。正式采用前需完成所有者视觉和实机验收。
 
 在消费项目里检查 CSS 作用域、资源路径、实际字体、background/filter 支持、resize、scroll、卸载和多个实例。用短文及中英长文检验安全区，至少覆盖默认、最大强度、减少动效、数值非法输入、Reset 竞态和保存值恢复。
 

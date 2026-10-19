@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-19",
+  "status": "passed",
+  "engine": "155.0.8059.84",
+  "physicalDevice": false,
+  "method": "Windows Chromium mouse/keyboard and native CDP touch injection",
+  "checkCount": 30,
+  "checks": [
+    "mouse drag reaches legal maximum with elastic overdrag",
+    "re-grab preserves the displayed release position",
+    "primary mouse pointer remains draggable after re-grab",
+    "slider Home keyboard input",
+    "slider keyboard step remains discrete",
+    "queued keyboard edit survives same-task focus change",
+    "queued keyboard edit survives same-task window blur",
+    "numeric entry clamps to its range",
+    "switch reports midpoint crossing while held",
+    "keyboard switch activation travels continuously",
+    "keyboard switch finishes at its endpoint",
+    "keyboard-style switch activation survives immediate focus change",
+    "desktop controls produce no page errors",
+    "slider permits native vertical pan",
+    "vertical swipe from slider scrolls without editing",
+    "vertical swipe from switch scrolls without toggling",
+    "first touch tap toggles once",
+    "horizontal native touch drag updates the slider continuously",
+    "second touch cannot replace the active slider pointer",
+    "continuous settings drag does not write synchronous storage per frame",
+    "settings drag coalesces to one persisted update",
+    "pagehide flushes the latest committed settings",
+    "native touch controls produce no page errors",
+    "malformed numeric draft restores last committed value",
+    "negative out-of-range draft clamps to minimum",
+    "decimal half-up precision remains two digits",
+    "non-finite numeric text restores last finite value",
+    "switch keeps bounded elastic overdrag beyond legal minimum",
+    "switch re-grab preserves displayed spring position",
+    "switch elastic displacement returns after release"
+  ],
+  "observations": {
+    "original": {
+      "overdrag": 11.691,
+      "keyboardAnimationPosition": 0.380332,
+      "verticalScroll": {
+        "slider": 120,
+        "switch": 120
+      },
+      "secondTouch": {
+        "first": 0.378868103763681,
+        "second": 0.378868103763681
+      },
+      "storageWrites": {
+        "during": 0,
+        "after": 1
+      }
+    },
+    "extra": {
+      "switchOvershoot": -11.727
+    }
+  },
+  "limitations": [
+    "No physical iOS/Combo Touch certification.",
+    "No CPU/GPU performance benchmark performed by these control regressions."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-19",
+  "physicalDevice": false,
+  "edge": {
+    "engine": "155.0.4283.62",
+    "userAgentKind": "default Windows Edge UA, not iPad/iPhone substitution",
+    "checks": [
+      {
+        "name": "Windows Edge default UA mouse lens drag without text selection",
+        "passed": true
+      },
+      {
+        "name": "lens keyboard after drag does not get overwritten",
+        "passed": true
+      },
+      {
+        "name": "background DOM text remains selectable",
+        "passed": true
+      },
+      {
+        "name": "native slider platform paint hidden",
+        "passed": true
+      },
+      {
+        "name": "contour rejects outside-corner pointer hit",
+        "passed": true
+      },
+      {
+        "name": "contour center still activates",
+        "passed": true
+      },
+      {
+        "name": "background off freezes studio time",
+        "passed": true
+      },
+      {
+        "name": "background on advances studio time",
+        "passed": true
+      },
+      {
+        "name": "reduced motion stops ambient renderer",
+        "passed": true
+      },
+      {
+        "name": "no JavaScript errors",
+        "passed": true
+      }
+    ],
+    "pageErrorCount": 0,
+    "opticalMode": "svg",
+    "opticalReady": true,
+    "screenshotsViewed": "normal and focus 1366px by verification agent"
+  },
+  "kit": {
+    "check": "passed",
+    "build": "passed",
+    "contract": {
+      "status": "passed",
+      "checks": 28,
+      "geometryCases": 15
+    },
+    "runtime": {
+      "status": "passed",
+      "clockChecks": 16,
+      "rasterBudgetCases": 180,
+      "exactFloat32OpticsCases": 5800
+    },
+    "packedConsumerInstall": "passed",
+    "sourceEvidenceFiles": [
+      "kit-check.log",
+      "kit-build.log",
+      "kit-contract.log",
+      "kit-runtime.log"
+    ],
+    "packedConsumerReceipt": "install-receipt.json"
+  },
+  "deployment": {
+    "status": "pending",
+    "plannedReviewUrl": "https://alvenx.com/ui/review-20261019-r2/",
+    "productionShowcaseChangedByTheseTests": false
+  }
+}

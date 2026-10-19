@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-19",
+  "target": "locally served production build, not the live main showcase",
+  "physicalDevice": false,
+  "controlRegression": {
+    "engine": "155.0.8059.84",
+    "status": "passed",
+    "checkCount": 23,
+    "checks": [
+      "mouse drag reaches legal maximum with elastic overdrag",
+      "re-grab preserves the displayed release position",
+      "primary mouse pointer remains draggable after re-grab",
+      "slider Home keyboard input",
+      "slider keyboard step remains discrete",
+      "queued keyboard edit survives same-task focus change",
+      "queued keyboard edit survives same-task window blur",
+      "numeric entry clamps to its range",
+      "switch reports midpoint crossing while held",
+      "keyboard switch activation travels continuously",
+      "keyboard switch finishes at its endpoint",
+      "keyboard-style switch activation survives immediate focus change",
+      "desktop controls produce no page errors",
+      "slider permits native vertical pan",
+      "vertical swipe from slider scrolls without editing",
+      "vertical swipe from switch scrolls without toggling",
+      "first touch tap toggles once",
+      "horizontal native touch drag updates the slider continuously",
+      "second touch cannot replace the active slider pointer",
+      "continuous settings drag does not write synchronous storage per frame",
+      "settings drag coalesces to one persisted update",
+      "pagehide flushes the latest committed settings",
+      "native touch controls produce no page errors"
+    ],
+    "observations": {
+      "overdrag": 11.695,
+      "keyboardAnimationPosition": 0.377671,
+      "verticalScroll": {
+        "slider": 120,
+        "switch": 120
+      },
+      "secondTouch": {
+        "first": 0.379645075218279,
+        "second": 0.379645075218279
+      },
+      "storageWrites": {
+        "during": 0,
+        "after": 1
+      }
+    }
+  },
+  "pageSections": {
+    "engine": "155.0.8059.84",
+    "cases": [
+      {
+        "width": 393,
+        "passed": true
+      },
+      {
+        "width": 768,
+        "passed": true
+      },
+      {
+        "width": 1366,
+        "passed": true
+      }
+    ],
+    "pageErrorCount": 0,
+    "screenshotSelfReview": {
+      "reportedBy": "root agent",
+      "viewed": [
+        "393px intro",
+        "393px mobile menu",
+        "393px design and typography",
+        "768px design and typography",
+        "1366px intro"
+      ],
+      "conclusion": "no blocker identified in these screenshots",
+      "ownerAcceptance": false
+    }
+  },
+  "limitations": [
+    "These tests do not establish physical mobile Safari/Combo Touch behavior or stable FPS.",
+    "Local production-build checks do not mean a new website deployment occurred."
+  ]
+}
