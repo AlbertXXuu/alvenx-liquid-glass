@@ -1,0 +1,15 @@
+{
+  "status": "published-homepage-stage",
+  "kitVersion": "1.3.0",
+  "sourceCommit": "7f202150b2e95f744d90eab39eaf5e2d18d40bd8",
+  "sourceRef": "v1.3.0",
+  "websiteSource": "4d041edf745159129e458767d74fd5c89d07f2da",
+  "websiteMerge": "78a0f4029b3ed28d1b6db0c8650f40be831d9e52",
+  "websitePr": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/41",
+  "websiteCI": 39277273039,
+  "worker": "79be58bd-165f-4a9e-84ad-475ad4cf1359",
+  "tarballSHA256": "3acd90283037d999406d322c385f36570582191b1194f999c6a149c484c470f4",
+  "unchangedShowcaseAtThisStage": "1.2.2",
+  "next": "1.3.1 only moves typed text start; sizing options were not selected",
+  "rights": "All rights reserved / UNLICENSED"
+}

@@ -1,0 +1,12 @@
+/* One growing optical body participates in the hero action layout. */
+.hero__discovery { display: flex; flex: 0 0 auto; align-items: center; gap: 24px; }
+.alvenx-design.ui-entry { display: inline-flex; flex: 0 0 auto; background: transparent; }
+.alvenx-design.ui-entry .ui-entry__bud { --ax-bud-diameter: 54; }
+.alvenx-design.ui-entry, .alvenx-design.ui-entry * { -webkit-tap-highlight-color: transparent; }
+
+@media (max-width: 640px) {
+  .hero__actions:has(.ui-entry) { align-items: flex-start; row-gap: 16px; }
+  .hero__discovery:has(.ui-entry) { flex-basis: 100%; gap: 18px; }
+  .alvenx-design.ui-entry .ui-entry__bud { --ax-bud-diameter: 44; }
+  .alvenx-design.ui-entry .glass-budding-destination { font-size: 14px; }
+}

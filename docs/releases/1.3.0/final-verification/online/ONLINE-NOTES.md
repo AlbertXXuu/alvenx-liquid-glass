@@ -1,0 +1,11 @@
+# Homepage production verification — Worker79be stage
+
+The actual deployed production stage verified on2026-10-19 is Worker `79be58bd-165f-4a9e-84ad-475ad4cf1359`, homepage source prefix `4d041`. Its native destination loaded the accepted `/ui/releases/1.2.2/` showcase resources. The later separate1.3.1 field-text inset change is outside this receipt; this record is not silently relabelled to a newer Worker.
+
+The bounded homepage check passed **55 application assertions**: Chromium29 and WebKit26, with the WebKit result marked **passed_with_observation**. Each engine exercised393,768,1366px: empty single optical mother, intermediate continuous rightward growth, one completed chamber, unchanged mother center, actual-width GitHub push, no row jump/overflow, normal pointer rim, and the real native link to `/ui/`. Chromium also exercised reduced-motion completion and native keyboard activation/focus/navigation. No new physical-device or FPS claim is implied.
+
+There were zero page errors, console warnings/errors (including CSP) or HTTP errors. WebKit observed one same-origin Cloudflare `/cdn-cgi/rum?` collector request cancelled while changing pages. No application resource failed. That telemetry observation is retained verbatim rather than counted as a rendering or application-load failure.
+
+The original first-party request check counted the navigation-cancelled collector as a failure. Its raw run is preserved under `process/worker79-initial-request-classification/`. The final WebKit report explicitly records `classificationReview`, original25/1 counts, the narrow collector cancellation rule and `browserRerun:false`; this is a review of the same observed data, not a fabricated new run. All UI assertions were already successful. The updated callback separates cancelled collector telemetry from first-party application-resource failures for future runs.
+
+`summary.json` is the concise delivery record. The two reports contain assertions and actual measured states; the eight top-level PNGs show phone/desktop initial and completed states in both engines. Chromium phone and desktop completed screenshots were visually inspected. The published first-stage screenshots remain tied to this Worker even if later deployment changes the field text inset.

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-19",
+  "algorithm": "SHA-256",
+  "indexExcludesItself": true,
+  "files": [
+    {
+      "path": "desktop-1366.png",
+      "bytes": 344343,
+      "sha256": "9118c1f24bfe035b3570eaf90bf8202cfb9367aeddeabe1262d27e937d9c8e05"
+    },
+    {
+      "path": "phone-393.png",
+      "bytes": 212672,
+      "sha256": "60d723ee327eba5b363d6cac4557c63507b64f3f777c4a7ed1ed5d56a8bf104e"
+    },
+    {
+      "path": "raw-cli.log",
+      "bytes": 19246,
+      "sha256": "1605f95b6243b55e7c047bada7ffc3ed8680fa1b1cc57643e9dea683b992f01e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2667,
+      "sha256": "a5e08914845c1570c290ea8595ccbc6fd1469187c694d6c5f422e30b7502b244"
+    },
+    {
+      "path": "spotcheck.playwright.js",
+      "bytes": 6263,
+      "sha256": "b03a262ccdeb42df9a7f7c611bf3b18d9306111cc228e9f891218740d02b5df5"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 19315,
+      "sha256": "73e04109fdafe8df069baa5a2f944aafaf461db486c3e88e2b123e08bebaa59f"
+    }
+  ]
+}

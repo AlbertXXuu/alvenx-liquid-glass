@@ -1,0 +1,659 @@
+{
+  "date": "2026-10-19",
+  "worker": "79be58bd-165f-4a9e-84ad-475ad4cf1359",
+  "engine": "chromium",
+  "browser": "155.0.8059.84",
+  "passed": 29,
+  "failed": 0,
+  "results": [
+    {
+      "pass": true,
+      "label": "393: live empty single optical mother",
+      "details": {
+        "growth": 0,
+        "ready": "false",
+        "text": "",
+        "width": 56,
+        "x": 20,
+        "y": 595.671875,
+        "center": 48,
+        "githubX": 94,
+        "githubY": 610.46875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "393: live intermediate continuous right growth",
+      "details": {
+        "growth": 0.41055,
+        "ready": "false",
+        "text": "explore me!",
+        "width": 92.21875,
+        "x": 20,
+        "y": 595.671875,
+        "center": 48,
+        "githubX": 130.21875,
+        "githubY": 610.46875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": true,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "393: live native chamber link completes in same body",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 144.46875,
+        "x": 20,
+        "y": 595.671875,
+        "center": 48,
+        "githubX": 182.46875,
+        "githubY": 610.46875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "393: live mother center stays fixed",
+      "details": {
+        "start": 48,
+        "mid": 48,
+        "end": 48
+      }
+    },
+    {
+      "pass": true,
+      "label": "393: live GitHub pushed by actual width without row jump",
+      "details": {
+        "start": {
+          "growth": 0,
+          "ready": "false",
+          "text": "",
+          "width": 56,
+          "x": 20,
+          "y": 595.671875,
+          "center": 48,
+          "githubX": 94,
+          "githubY": 610.46875,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "overflow": 0
+        },
+        "mid": {
+          "growth": 0.41055,
+          "ready": "false",
+          "text": "explore me!",
+          "width": 92.21875,
+          "x": 20,
+          "y": 595.671875,
+          "center": 48,
+          "githubX": 130.21875,
+          "githubY": 610.46875,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "href": "/ui/",
+          "inert": true,
+          "overflow": 0
+        },
+        "end": {
+          "growth": 1,
+          "ready": "true",
+          "text": "explore me!",
+          "width": 144.46875,
+          "x": 20,
+          "y": 595.671875,
+          "center": 48,
+          "githubX": 182.46875,
+          "githubY": 610.46875,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "href": "/ui/",
+          "inert": false,
+          "overflow": 0
+        }
+      }
+    },
+    {
+      "pass": true,
+      "label": "393: live no horizontal overflow",
+      "details": {
+        "mid": 0,
+        "end": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "393: live pointer keeps normal rim without keyboard outline"
+    },
+    {
+      "pass": true,
+      "label": "768: live empty single optical mother",
+      "details": {
+        "growth": 0,
+        "ready": "false",
+        "text": "",
+        "width": 66,
+        "x": 284.390625,
+        "y": 408.203125,
+        "center": 317.390625,
+        "githubX": 374.390625,
+        "githubY": 430,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "768: live intermediate continuous right growth",
+      "details": {
+        "growth": 0.36983,
+        "ready": "false",
+        "text": "explore me!",
+        "width": 105.03125,
+        "x": 284.390625,
+        "y": 408.203125,
+        "center": 317.390625,
+        "githubX": 413.421875,
+        "githubY": 430,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": true,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "768: live native chamber link completes in same body",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "x": 284.390625,
+        "y": 408.203125,
+        "center": 317.390625,
+        "githubX": 482.96875,
+        "githubY": 430,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "768: live mother center stays fixed",
+      "details": {
+        "start": 317.390625,
+        "mid": 317.390625,
+        "end": 317.390625
+      }
+    },
+    {
+      "pass": true,
+      "label": "768: live GitHub pushed by actual width without row jump",
+      "details": {
+        "start": {
+          "growth": 0,
+          "ready": "false",
+          "text": "",
+          "width": 66,
+          "x": 284.390625,
+          "y": 408.203125,
+          "center": 317.390625,
+          "githubX": 374.390625,
+          "githubY": 430,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "overflow": 0
+        },
+        "mid": {
+          "growth": 0.36983,
+          "ready": "false",
+          "text": "explore me!",
+          "width": 105.03125,
+          "x": 284.390625,
+          "y": 408.203125,
+          "center": 317.390625,
+          "githubX": 413.421875,
+          "githubY": 430,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "href": "/ui/",
+          "inert": true,
+          "overflow": 0
+        },
+        "end": {
+          "growth": 1,
+          "ready": "true",
+          "text": "explore me!",
+          "width": 174.578125,
+          "x": 284.390625,
+          "y": 408.203125,
+          "center": 317.390625,
+          "githubX": 482.96875,
+          "githubY": 430,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "href": "/ui/",
+          "inert": false,
+          "overflow": 0
+        }
+      }
+    },
+    {
+      "pass": true,
+      "label": "768: live no horizontal overflow",
+      "details": {
+        "mid": 0,
+        "end": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "768: live pointer keeps normal rim without keyboard outline"
+    },
+    {
+      "pass": true,
+      "label": "1366: live empty single optical mother",
+      "details": {
+        "growth": 0,
+        "ready": "false",
+        "text": "",
+        "width": 66,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 404.296875,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "1366: live intermediate continuous right growth",
+      "details": {
+        "growth": 0.31489,
+        "ready": "false",
+        "text": "explore me!",
+        "width": 97.90625,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 436.203125,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": true,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "1366: live native chamber link completes in same body",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 512.875,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "1366: live mother center stays fixed",
+      "details": {
+        "start": 347.296875,
+        "mid": 347.296875,
+        "end": 347.296875
+      }
+    },
+    {
+      "pass": true,
+      "label": "1366: live GitHub pushed by actual width without row jump",
+      "details": {
+        "start": {
+          "growth": 0,
+          "ready": "false",
+          "text": "",
+          "width": 66,
+          "x": 314.296875,
+          "y": 698.21875,
+          "center": 347.296875,
+          "githubX": 404.296875,
+          "githubY": 720.015625,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "overflow": 0
+        },
+        "mid": {
+          "growth": 0.31489,
+          "ready": "false",
+          "text": "explore me!",
+          "width": 97.90625,
+          "x": 314.296875,
+          "y": 698.21875,
+          "center": 347.296875,
+          "githubX": 436.203125,
+          "githubY": 720.015625,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "href": "/ui/",
+          "inert": true,
+          "overflow": 0
+        },
+        "end": {
+          "growth": 1,
+          "ready": "true",
+          "text": "explore me!",
+          "width": 174.578125,
+          "x": 314.296875,
+          "y": 698.21875,
+          "center": 347.296875,
+          "githubX": 512.875,
+          "githubY": 720.015625,
+          "bodyCount": 1,
+          "mode": "svg",
+          "focus": false,
+          "href": "/ui/",
+          "inert": false,
+          "overflow": 0
+        }
+      }
+    },
+    {
+      "pass": true,
+      "label": "1366: live no horizontal overflow",
+      "details": {
+        "mid": 0,
+        "end": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "1366: live pointer keeps normal rim without keyboard outline"
+    },
+    {
+      "pass": true,
+      "label": "Live native destination enters production UI"
+    },
+    {
+      "pass": true,
+      "label": "Accepted production UI stays1.2.2"
+    },
+    {
+      "pass": true,
+      "label": "Production reduced motion settles immediately",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 512.875,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "Production native keyboard destination has shared focus outline",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 512.875,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": true,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "Production keyboard Enter follows native link"
+    },
+    {
+      "pass": true,
+      "label": "No live page errors",
+      "details": []
+    },
+    {
+      "pass": true,
+      "label": "No live console warnings/errors including CSP",
+      "details": []
+    },
+    {
+      "pass": true,
+      "label": "No live first-party HTTP/request errors",
+      "details": {
+        "httpErrors": [],
+        "firstPartyFailed": []
+      }
+    }
+  ],
+  "samples": [
+    {
+      "width": 393,
+      "start": {
+        "growth": 0,
+        "ready": "false",
+        "text": "",
+        "width": 56,
+        "x": 20,
+        "y": 595.671875,
+        "center": 48,
+        "githubX": 94,
+        "githubY": 610.46875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "overflow": 0
+      },
+      "mid": {
+        "growth": 0.41055,
+        "ready": "false",
+        "text": "explore me!",
+        "width": 92.21875,
+        "x": 20,
+        "y": 595.671875,
+        "center": 48,
+        "githubX": 130.21875,
+        "githubY": 610.46875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": true,
+        "overflow": 0
+      },
+      "end": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 144.46875,
+        "x": 20,
+        "y": 595.671875,
+        "center": 48,
+        "githubX": 182.46875,
+        "githubY": 610.46875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "width": 768,
+      "start": {
+        "growth": 0,
+        "ready": "false",
+        "text": "",
+        "width": 66,
+        "x": 284.390625,
+        "y": 408.203125,
+        "center": 317.390625,
+        "githubX": 374.390625,
+        "githubY": 430,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "overflow": 0
+      },
+      "mid": {
+        "growth": 0.36983,
+        "ready": "false",
+        "text": "explore me!",
+        "width": 105.03125,
+        "x": 284.390625,
+        "y": 408.203125,
+        "center": 317.390625,
+        "githubX": 413.421875,
+        "githubY": 430,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": true,
+        "overflow": 0
+      },
+      "end": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "x": 284.390625,
+        "y": 408.203125,
+        "center": 317.390625,
+        "githubX": 482.96875,
+        "githubY": 430,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "width": 1366,
+      "start": {
+        "growth": 0,
+        "ready": "false",
+        "text": "",
+        "width": 66,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 404.296875,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "overflow": 0
+      },
+      "mid": {
+        "growth": 0.31489,
+        "ready": "false",
+        "text": "explore me!",
+        "width": 97.90625,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 436.203125,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": true,
+        "overflow": 0
+      },
+      "end": {
+        "growth": 1,
+        "ready": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "x": 314.296875,
+        "y": 698.21875,
+        "center": 347.296875,
+        "githubX": 512.875,
+        "githubY": 720.015625,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "/ui/",
+        "inert": false,
+        "overflow": 0
+      }
+    }
+  ],
+  "errors": [],
+  "consoleMessages": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "limits": [
+    "Windows browser engines, not physical iPhone/iPad or Combo Touch acceptance.",
+    "Three production samples per width verify this deployed normal flow; no new device FPS claim or invalid-prop coverage."
+  ]
+}

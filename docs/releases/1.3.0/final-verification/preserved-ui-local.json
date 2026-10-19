@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "preservedProductionVersion": "1.2.2",
+  "files": 644,
+  "rootIndexSha256": "8ba7c8f0f7abcfeab6366d5652eff18f611359630cca9c19cfddef045be1e572",
+  "trackedExistingUiDiff": "git diff --name-only -- public/ui returned no changes; only new independent review and homepage-entry manifest were added"
+}

@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-19",
+  "consumer": "independent temporary consumer",
+  "browser": "155.0.8059.84",
+  "engine": "chromium",
+  "viewport": {
+    "width": 1366,
+    "height": 1100
+  },
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "pass": true,
+      "label": "Installed export renders an empty resting mother",
+      "details": {
+        "growth": 0,
+        "ready": "false",
+        "expanded": "false",
+        "text": "",
+        "width": 66,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false
+      }
+    },
+    {
+      "pass": true,
+      "label": "Installed control has one optical body and no optical error",
+      "details": {
+        "growth": 0,
+        "ready": "false",
+        "expanded": "false",
+        "text": "",
+        "width": 66,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false
+      }
+    },
+    {
+      "pass": true,
+      "label": "Installed body grows continuously through intermediate geometry",
+      "details": {
+        "growth": 0.47295,
+        "ready": "false",
+        "expanded": "true",
+        "text": "explore me!",
+        "width": 118.875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "#outside",
+        "inert": true
+      }
+    },
+    {
+      "pass": true,
+      "label": "Native destination exists but stays inert while growing",
+      "details": {
+        "growth": 0.47295,
+        "ready": "false",
+        "expanded": "true",
+        "text": "explore me!",
+        "width": 118.875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "#outside",
+        "inert": true
+      }
+    },
+    {
+      "pass": true,
+      "label": "Pointer activation has no persistent keyboard contour",
+      "details": {
+        "growth": 0.47295,
+        "ready": "false",
+        "expanded": "true",
+        "text": "explore me!",
+        "width": 118.875,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "#outside",
+        "inert": true
+      }
+    },
+    {
+      "pass": true,
+      "label": "Single installed body reaches ready completion",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "expanded": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "#outside",
+        "inert": false
+      }
+    },
+    {
+      "pass": true,
+      "label": "Installed destination retains the consumer-provided href",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "expanded": "true",
+        "text": "explore me!",
+        "width": 174.578125,
+        "bodyCount": 1,
+        "mode": "svg",
+        "focus": false,
+        "href": "#outside",
+        "inert": false
+      }
+    },
+    {
+      "pass": true,
+      "label": "Numeric material editing commits in the independent consumer"
+    },
+    {
+      "pass": true,
+      "label": "Numeric edit synchronizes the native range value"
+    },
+    {
+      "pass": true,
+      "label": "Keyboard slider input remains usable"
+    },
+    {
+      "pass": true,
+      "label": "Consumer switch initially on"
+    },
+    {
+      "pass": true,
+      "label": "Consumer switch toggles through its native action"
+    },
+    {
+      "pass": true,
+      "label": "Registered controlled-refraction track shares the updated state"
+    },
+    {
+      "pass": true,
+      "label": "Existing Reset defaults restores initial material value"
+    },
+    {
+      "pass": true,
+      "label": "Installed controlled scene supplies refracted source content"
+    },
+    {
+      "pass": true,
+      "label": "Scoped library CSS preserves the unrelated host button",
+      "details": {
+        "fontFamily": "serif",
+        "fontSize": "20px",
+        "color": "rgb(80, 40, 100)"
+      }
+    },
+    {
+      "pass": true,
+      "label": "Completed native link navigates to the consumer anchor"
+    },
+    {
+      "pass": true,
+      "label": "No independent-consumer page errors",
+      "details": []
+    },
+    {
+      "pass": true,
+      "label": "No independent-consumer console warnings or errors",
+      "details": []
+    },
+    {
+      "pass": true,
+      "label": "No failed requests or HTTP errors",
+      "details": {
+        "failedRequests": [],
+        "httpErrors": []
+      }
+    }
+  ],
+  "states": {
+    "start": {
+      "growth": 0,
+      "ready": "false",
+      "expanded": "false",
+      "text": "",
+      "width": 66,
+      "bodyCount": 1,
+      "mode": "svg",
+      "focus": false
+    },
+    "middle": {
+      "growth": 0.47295,
+      "ready": "false",
+      "expanded": "true",
+      "text": "explore me!",
+      "width": 118.875,
+      "bodyCount": 1,
+      "mode": "svg",
+      "focus": false,
+      "href": "#outside",
+      "inert": true
+    },
+    "end": {
+      "growth": 1,
+      "ready": "true",
+      "expanded": "true",
+      "text": "explore me!",
+      "width": 174.578125,
+      "bodyCount": 1,
+      "mode": "svg",
+      "focus": false,
+      "href": "#outside",
+      "inert": false
+    }
+  },
+  "errors": [],
+  "consoleMessages": [],
+  "failedRequests": [],
+  "httpErrors": [],
+  "limits": [
+    "Desktop installed-package smoke only; no physical iOS, touch, Safari or device performance certification.",
+    "No source checkout or alias resolution is used by this consumer; package installation was independently checked by the release integrator."
+  ]
+}

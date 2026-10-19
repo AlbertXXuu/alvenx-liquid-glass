@@ -1,0 +1,662 @@
+{
+  "url": "https://alvenx.com/ui/field-sizing-review-20261019/",
+  "reportedWorker": "79be58bd-165f-4a9e-84ad-475ad4cf1359",
+  "browser": "Installed Chrome on Windows through Playwright CLI",
+  "scope": "Production independent review route; desktop viewport emulation does not certify physical iOS, Safari, IME or Combo Touch.",
+  "assertions": 47,
+  "passed": 47,
+  "viewports": [
+    {
+      "width": 393,
+      "metrics": [
+        {
+          "option": "candidate candidate-a",
+          "width": 267,
+          "height": 68,
+          "inset": 40,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 267 × 68 px · Text inset 40 px"
+        },
+        {
+          "option": "candidate candidate-b",
+          "width": 267,
+          "height": 64,
+          "inset": 40,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 267 × 64 px · Text inset 40 px"
+        },
+        {
+          "option": "candidate candidate-c",
+          "width": 267,
+          "height": 60,
+          "inset": 36,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 267 × 60 px · Text inset 36 px"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "metrics": [
+        {
+          "option": "candidate candidate-a",
+          "width": 568,
+          "height": 74,
+          "inset": 56,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 568 × 74 px · Text inset 56 px"
+        },
+        {
+          "option": "candidate candidate-b",
+          "width": 568,
+          "height": 68,
+          "inset": 52,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 568 × 68 px · Text inset 52 px"
+        },
+        {
+          "option": "candidate candidate-c",
+          "width": 460,
+          "height": 60,
+          "inset": 44,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 460 × 60 px · Text inset 44 px"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "metrics": [
+        {
+          "option": "candidate candidate-a",
+          "width": 660,
+          "height": 74,
+          "inset": 56,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 660 × 74 px · Text inset 56 px"
+        },
+        {
+          "option": "candidate candidate-b",
+          "width": 580,
+          "height": 68,
+          "inset": 52,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 580 × 68 px · Text inset 52 px"
+        },
+        {
+          "option": "candidate candidate-c",
+          "width": 460,
+          "height": 60,
+          "inset": 44,
+          "inputFontSize": "16px",
+          "inputPadding": "0px",
+          "textAlign": "left",
+          "verticalCenterError": 0,
+          "opticalReady": "true",
+          "opticalMode": "scene",
+          "opticalError": null,
+          "readout": "Field now 460 × 60 px · Text inset 44 px"
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleDiagnostics": [],
+  "httpErrors": [],
+  "cancelledRequests": [],
+  "checks": [
+    {
+      "name": "independent review route",
+      "pass": true,
+      "details": "https://alvenx.com/ui/field-sizing-review-20261019/"
+    },
+    {
+      "name": "safe-area guides initially off",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no horizontal overflow 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "geometry and inset 393 0",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "width": 267,
+        "height": 68,
+        "inset": 40,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 267 × 68 px · Text inset 40 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 393 0",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "width": 267,
+        "height": 68,
+        "inset": 40,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 267 × 68 px · Text inset 40 px"
+      }
+    },
+    {
+      "name": "readout agrees 393 0",
+      "pass": true,
+      "details": "Field now 267 × 68 px · Text inset 40 px"
+    },
+    {
+      "name": "geometry and inset 393 1",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "width": 267,
+        "height": 64,
+        "inset": 40,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 267 × 64 px · Text inset 40 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 393 1",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "width": 267,
+        "height": 64,
+        "inset": 40,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 267 × 64 px · Text inset 40 px"
+      }
+    },
+    {
+      "name": "readout agrees 393 1",
+      "pass": true,
+      "details": "Field now 267 × 64 px · Text inset 40 px"
+    },
+    {
+      "name": "geometry and inset 393 2",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "width": 267,
+        "height": 60,
+        "inset": 36,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 267 × 60 px · Text inset 36 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 393 2",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "width": 267,
+        "height": 60,
+        "inset": 36,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 267 × 60 px · Text inset 36 px"
+      }
+    },
+    {
+      "name": "readout agrees 393 2",
+      "pass": true,
+      "details": "Field now 267 × 60 px · Text inset 36 px"
+    },
+    {
+      "name": "shared short Chinese 393",
+      "pass": true,
+      "details": [
+        "给想法一点生长的空间。",
+        "给想法一点生长的空间。",
+        "给想法一点生长的空间。"
+      ]
+    },
+    {
+      "name": "shared long English 393",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "native independent editing 393",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "Independent · 独立编辑",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "guide overlay 393",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no horizontal overflow 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "geometry and inset 768 0",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "width": 568,
+        "height": 74,
+        "inset": 56,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 568 × 74 px · Text inset 56 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 768 0",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "width": 568,
+        "height": 74,
+        "inset": 56,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 568 × 74 px · Text inset 56 px"
+      }
+    },
+    {
+      "name": "readout agrees 768 0",
+      "pass": true,
+      "details": "Field now 568 × 74 px · Text inset 56 px"
+    },
+    {
+      "name": "geometry and inset 768 1",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "width": 568,
+        "height": 68,
+        "inset": 52,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 568 × 68 px · Text inset 52 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 768 1",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "width": 568,
+        "height": 68,
+        "inset": 52,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 568 × 68 px · Text inset 52 px"
+      }
+    },
+    {
+      "name": "readout agrees 768 1",
+      "pass": true,
+      "details": "Field now 568 × 68 px · Text inset 52 px"
+    },
+    {
+      "name": "geometry and inset 768 2",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "width": 460,
+        "height": 60,
+        "inset": 44,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 460 × 60 px · Text inset 44 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 768 2",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "width": 460,
+        "height": 60,
+        "inset": 44,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 460 × 60 px · Text inset 44 px"
+      }
+    },
+    {
+      "name": "readout agrees 768 2",
+      "pass": true,
+      "details": "Field now 460 × 60 px · Text inset 44 px"
+    },
+    {
+      "name": "shared short Chinese 768",
+      "pass": true,
+      "details": [
+        "给想法一点生长的空间。",
+        "给想法一点生长的空间。",
+        "给想法一点生长的空间。"
+      ]
+    },
+    {
+      "name": "shared long English 768",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "native independent editing 768",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "Independent · 独立编辑",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "guide overlay 768",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "no horizontal overflow 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "geometry and inset 1366 0",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "width": 660,
+        "height": 74,
+        "inset": 56,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 660 × 74 px · Text inset 56 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 1366 0",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "width": 660,
+        "height": 74,
+        "inset": 56,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 660 × 74 px · Text inset 56 px"
+      }
+    },
+    {
+      "name": "readout agrees 1366 0",
+      "pass": true,
+      "details": "Field now 660 × 74 px · Text inset 56 px"
+    },
+    {
+      "name": "geometry and inset 1366 1",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "width": 580,
+        "height": 68,
+        "inset": 52,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 580 × 68 px · Text inset 52 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 1366 1",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "width": 580,
+        "height": 68,
+        "inset": 52,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 580 × 68 px · Text inset 52 px"
+      }
+    },
+    {
+      "name": "readout agrees 1366 1",
+      "pass": true,
+      "details": "Field now 580 × 68 px · Text inset 52 px"
+    },
+    {
+      "name": "geometry and inset 1366 2",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "width": 460,
+        "height": 60,
+        "inset": 44,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 460 × 60 px · Text inset 44 px"
+      }
+    },
+    {
+      "name": "native centered text and optics 1366 2",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "width": 460,
+        "height": 60,
+        "inset": 44,
+        "inputFontSize": "16px",
+        "inputPadding": "0px",
+        "textAlign": "left",
+        "verticalCenterError": 0,
+        "opticalReady": "true",
+        "opticalMode": "scene",
+        "opticalError": null,
+        "readout": "Field now 460 × 60 px · Text inset 44 px"
+      }
+    },
+    {
+      "name": "readout agrees 1366 2",
+      "pass": true,
+      "details": "Field now 460 × 60 px · Text inset 44 px"
+    },
+    {
+      "name": "shared short Chinese 1366",
+      "pass": true,
+      "details": [
+        "给想法一点生长的空间。",
+        "给想法一点生长的空间。",
+        "给想法一点生长的空间。"
+      ]
+    },
+    {
+      "name": "shared long English 1366",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "native independent editing 1366",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "Independent · 独立编辑",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "guide overlay 1366",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "zero page errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "zero console warning/error/CSP diagnostics",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "zero HTTP errors",
+      "pass": true,
+      "details": []
+    }
+  ]
+}

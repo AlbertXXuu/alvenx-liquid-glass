@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-19",
+  "worker": "79be58bd-165f-4a9e-84ad-475ad4cf1359",
+  "homepageSource": "4d041",
+  "showcaseVersion": "1.2.2",
+  "passed": 55,
+  "failed": 0,
+  "status": "passed_with_observation",
+  "chromium": {
+    "pageErrors": [],
+    "failed": 0,
+    "consoleMessages": [],
+    "httpErrors": [],
+    "passed": 29
+  },
+  "webkit": {
+    "passed": 26,
+    "httpErrors": [],
+    "pageErrors": [],
+    "failed": 0,
+    "appResourceFailures": [],
+    "consoleMessages": [],
+    "telemetryCancellations": [
+      {
+        "url": "https://alvenx.com/cdn-cgi/rum?",
+        "error": "Load request cancelled",
+        "firstParty": true
+      }
+    ]
+  },
+  "notes": [
+    "This is the actual Worker79be production stage before the separate1.3.1 field-inset change.",
+    "Raw initial whole-first-party cancellation failure retained; final app-resource classification is explicit and did not rerun the browser.",
+    "Windows browser proof is separate from physical owner acceptance."
+  ]
+}
