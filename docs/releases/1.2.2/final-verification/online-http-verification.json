@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "version": "1.2.2",
+  "sourceCommit": "92a4c1bd62c5f06ef345dc435e301c5aee4607fd",
+  "productionIndexable": true,
+  "cspPresent": true,
+  "checks": [
+    {
+      "path": "/ui/index.html",
+      "sha256": "8ba7c8f0f7abcfeab6366d5652eff18f611359630cca9c19cfddef045be1e572",
+      "matchesLocal": true,
+      "headersFile": "c5ff78f3e466e5ed.headers"
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "sha256": "20b2cb880effcd628e8e106ce5c692fb4b951ca0f1808a58c3407d1703df51cd",
+      "matchesLocal": true,
+      "headersFile": "f8e8f88e65952af6.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.2/assets/alvenx-monogram-ByDqnbcO.svg",
+      "sha256": "45367ec933c2ed8565cdf9e683fd4b856057d375435b46c62acb4fbb2cbeef16",
+      "matchesLocal": true,
+      "headersFile": "180a5393c8066a67.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.2/assets/main-B8GPKRPI.js",
+      "sha256": "74972a4201bc25b10ea88b3d1ca599671dbc8aae59ec893dfa9d4573307d1721",
+      "matchesLocal": true,
+      "headersFile": "cb3f18d06b355788.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.2/assets/main-CTNWwDJs.css",
+      "sha256": "e0fe0c762e586e8582f774eba09a2e7dde5bd59f577a7201dd7d5c578224dd0c",
+      "matchesLocal": true,
+      "headersFile": "9be7b52856ed03b4.headers"
+    },
+    {
+      "path": "/ui/review-20261019/index.html",
+      "sha256": "f6a9ca900817fd5141aecca75f7d698f2dc697c7f62107c90c2626d166e23310",
+      "matchesLocal": true,
+      "headersFile": "6faf10166d67aeb8.headers"
+    },
+    {
+      "path": "/ui/review-20261019-r2/index.html",
+      "sha256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+      "matchesLocal": true,
+      "headersFile": "c3a9f3c9201efbc8.headers"
+    },
+    {
+      "path": "/ui/review-20261019-r3/index.html",
+      "sha256": "8583a2c9ea195f246e6140b1a31143782b78fc6abf62e6c63b4b41722ba1fba7",
+      "matchesLocal": true,
+      "headersFile": "9feb1af603071d3c.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.1/index.html",
+      "sha256": "155e7a195918ada7dabebe24ba1b0cb3f3d4d18504f01b9cefb36789aa4dae04",
+      "matchesLocal": true,
+      "headersFile": "241de3e65e966d20.headers"
+    },
+    {
+      "path": "/ui/archive/production-1.2.1-20261019/index.html",
+      "sha256": "8af71c61e3388305b968597dd12af2a98dcbf3d338c980a74ccc12a37737a798",
+      "matchesLocal": true,
+      "headersFile": "84b32f73d938e08f.headers"
+    },
+    {
+      "path": "/ui/archive/production-1.2.1-20261019/index-original.html",
+      "sha256": "9ccbe72484ab77229438dbf06f995f1dcc5ee96962482fdef033462c388919ca",
+      "matchesLocal": true,
+      "headersFile": "248bcfd6d0a1e457.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.2/docs/releases/1.2.2/verification.json",
+      "sha256": "2d32a34f83f8828e75791ce8469c1bf4bae3423e60c38aaa6c96bffb1e418e1d",
+      "matchesLocal": true,
+      "headersFile": "6362baba59afef72.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.2/licenses/LICENSE-NOTICE.md",
+      "sha256": "1e7e58fc191a4e8a521149f95136202af7bcf60ba7d727826f9cdd17e8c597ce",
+      "matchesLocal": true,
+      "headersFile": "8ec857dd8ffd62c1.headers"
+    },
+    {
+      "path": "/ui/releases/1.2.2/licenses/MiSans-License-Agreement.pdf",
+      "sha256": "4a93a27cd2bd81b3b5ecfd0a853144a876fa26938a93a68443c67d74172fcb86",
+      "matchesLocal": true,
+      "headersFile": "3ffc9594c6496bef.headers"
+    }
+  ],
+  "historyPreserved": true
+}

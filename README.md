@@ -12,7 +12,7 @@ Version **1.2.2** is a public design preview. It carries the R3 explicit-scene r
 
 The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 
-The current showcase keeps the volume, motion controls and material parameters in one section with normal document scrolling. Expanding Surface parameters does not pin, resize or restyle the horizontal form. The stable Chinese sample typography from 1.2.1 remains. Ask anything includes a local message Easter egg; the homepage has an unlettered glass sphere between Explore the work and GitHub that reveals an “explore me!” link. See [the 1.2.2 record](docs/releases/1.2.2/README.md).
+The current showcase keeps the volume, motion controls and material parameters in one section with normal document scrolling. Expanding Surface parameters does not pin, resize or restyle the horizontal form. The stable Chinese sample typography from 1.2.1 remains. Ask anything includes a local message Easter egg; the homepage has an unlettered glass sphere between Explore the work and GitHub that reveals an “explore me!” link. See [the 1.2.2 record](docs/releases/1.2.2/README.md) and [production verification](docs/releases/1.2.2/publication.md).
 
 ## Try it locally
 

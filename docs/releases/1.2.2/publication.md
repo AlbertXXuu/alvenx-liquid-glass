@@ -1,0 +1,11 @@
+# Production delivery — 1.2.2
+
+Published at [alvenx.com](https://alvenx.com/) and [the UI showcase](https://alvenx.com/ui/). The [receipt](publication-receipt.json) pins the source, website PR, Worker identity and actual checks. Code is immutable at `v1.2.2`; these subsequent delivery records use `v1.2.2-published` without moving the source tag.
+
+The owner’s final homepage correction is implemented with the existing `LiquidControl` circle, empty content and no painted color/reflection layer, between Explore the work and GitHub. First activation reveals `explore me!`; the separate native link enters the showcase. The horizontal volume and material parameters share normal document flow. Native Ask anything returns the specified English response or literal `<3` for the exact secret word.
+
+420 focused local browser assertions and 86 fresh production assertions passed. Online runs had zero page errors, console/preload/CSP diagnostics and HTTP errors. Windows WebKit retains two cancelled existing analytics requests as observed navigation events. 14 HTTP byte checks match the versioned local artifacts, including preserved historical entries and the new source/license documents. See [online notes](final-verification/online-qa-notes.md) and [HTTP checks](final-verification/online-http-verification.json).
+
+The exact website revision passed full `npm run validate` in Linux GitHub CI. Locally, all product/static/build/CSS checks passed and Wrangler printed its completed dry-run result, but its Windows process remained open and was stopped after the output; this is recorded rather than counted as a successful local process exit. The development-only React/vinext preload diagnostic did not appear in fresh production runs. The Worker deployment was confirmed by its returned identity and actual hosted bytes; no second deployment was made for the merge-only commit.
+
+The full ZIP, local package, checksums and sanitized receipt for installation of the actual final tarball are attached to [GitHub release v1.2.2](https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.2.2). Historical performance numbers remain their original measurements. Physical iOS and assistive-device behavior remain bounded by their actual evidence, separate from desktop automation. Public source remains all rights reserved / UNLICENSED.

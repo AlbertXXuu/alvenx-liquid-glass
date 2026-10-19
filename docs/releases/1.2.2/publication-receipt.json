@@ -1,0 +1,71 @@
+{
+  "version": "1.2.2",
+  "date": "2026-10-19",
+  "status": "published-and-online-verified",
+  "productionUrl": "https://alvenx.com/ui/",
+  "homepageUrl": "https://alvenx.com/",
+  "sourceRepository": "https://github.com/AlbertXXuu/alvenx-liquid-glass",
+  "sourceRef": "v1.2.2",
+  "sourceCommit": "92a4c1bd62c5f06ef345dc435e301c5aee4607fd",
+  "publicationRef": "v1.2.2-published",
+  "sourceCi": {
+    "passed": true,
+    "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39261570983"
+  },
+  "website": {
+    "sourceCommit": "2ab7023ae7ceb22f02b85dda98e9d36c64ff3847",
+    "sourceRef": "ui-v1.2.2",
+    "pullRequest": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/40",
+    "mergedCommit": "6279c8b856ccab3abcde4c9823a96763324f9f89",
+    "ciPassed": true,
+    "ciUrl": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39261978933",
+    "fullValidateCompletedInLinuxCi": true,
+    "homepageDependency": "file:vendor/alvenx-liquid-glass-1.1.2.tgz"
+  },
+  "deployment": {
+    "workerVersion": "45aee022-7598-484d-a3eb-624430a8e490",
+    "previousWorkerVersion": "2f460e2c-93da-4e57-8fbc-8a5c45683584",
+    "releaseBase": "/ui/releases/1.2.2/",
+    "historicalBytesPreserved": true,
+    "previousEntryArchive": "https://alvenx.com/ui/archive/production-1.2.1-20261019/"
+  },
+  "verification": {
+    "localBrowserAssertions": 420,
+    "onlineBrowserAssertions": 86,
+    "online": {
+      "online-chromium": {
+        "assertions": 43,
+        "pageErrors": 0,
+        "consoleMessages": 0,
+        "httpErrors": 0,
+        "cancelledAnalyticsRequests": 0
+      },
+      "online-webkit": {
+        "assertions": 43,
+        "pageErrors": 0,
+        "consoleMessages": 0,
+        "httpErrors": 0,
+        "cancelledAnalyticsRequests": 2
+      }
+    },
+    "httpByteChecks": 14,
+    "cspPresent": true,
+    "productionIndexable": true,
+    "brandAndWorkspaceChecksPassed": true,
+    "rendererAndRuntimeSettingsChanged": false
+  },
+  "ownerScope": "Other existing effects accepted; volume+parameters in normal flow, exact local message Easter eggs, real unlettered glass component between Explore the work and GitHub. Extra painted color removed following owner steering.",
+  "artifacts": {
+    "releaseUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.2.2",
+    "archive": "alvenx-design-kit-1.2.2.zip",
+    "runtimePackage": "alvenx-liquid-glass-1.2.2.tgz",
+    "checksums": "SHA256SUMS.txt",
+    "actualInstalledArtifactReceipt": "install-receipt-1.2.2.json"
+  },
+  "limits": [
+    "Desktop tests do not independently certify physical iOS/OS IME/Combo Touch or physical display latency.",
+    "Windows WebKit canvas resize/capture and default Tab preference remain documented test-port limits.",
+    "Existing Cloudflare analytics cancellations are retained separately in the raw report."
+  ],
+  "rights": "All rights reserved / UNLICENSED; public inspection, no open-source reuse license."
+}
