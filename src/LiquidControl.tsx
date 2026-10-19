@@ -7,6 +7,7 @@ import { resolveGlassOptics, type GlassOpticsMode, type ResolvedGlassOptics } fr
 import { ControlledSceneContext } from './ControlledScene';
 
 export type ThumbGeometry = { hostWidth:number; hostHeight:number; width:number; height:number; centerX:number; centerY:number };
+export type LiquidContourFrame = { width:number; height:number; near:number; press:number; intensity:number; shiftX:number; shiftY:number };
 export type LiquidControlProps = {
   id: string; clock: PreviewClock; children: ReactNode; className?: string;
   kind?: 'button' | 'field' | 'circle' | 'thumb'; type?: 'button' | 'submit'; label?: string;
@@ -14,6 +15,9 @@ export type LiquidControlProps = {
   optics?: GlassOpticsMode;
   interaction?: { pressed: boolean; focused: boolean; position?: string | number; bounds?:()=>{left:number;top:number;width:number;height:number} };
   onGeometry?: (geometry:ThumbGeometry)=>void;
+  /** Optional compound contour. The same CSS-pixel path owns optics, rim,
+   * clipping, focus and pointer hits; the default control geometry is unchanged. */
+  contour?: (frame:LiquidContourFrame)=>string;
 };
 type Motion = { near: number; press: number; x: number; y: number };
 type Map = ReturnType<ReturnType<typeof createBackdropOptics>['render']>;
@@ -21,7 +25,7 @@ type Frame = { path: string; width: number; height: number; near: number; press:
 
 /** Review-only local optics. The exact same path clips pixels and pointer hits,
  * supplies the normal map, and owns every visible edge/focus/selection stroke. */
-export function LiquidControl({ id, clock, children, className = '', kind = 'button', type = 'button', label, disabled = false, selected, expanded, onClick, interaction, onGeometry, optics }: LiquidControlProps) {
+export function LiquidControl({ id, clock, children, className = '', kind = 'button', type = 'button', label, disabled = false, selected, expanded, onClick, interaction, onGeometry, optics, contour }: LiquidControlProps) {
   const scene = useContext(ControlledSceneContext), sceneRef = useRef(scene); sceneRef.current = scene;
   const key = `review-glass-${useId().replace(/[^a-z0-9]/gi, '')}`;
   const host = useRef<HTMLDivElement>(null);
@@ -37,6 +41,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
   const geometryListener=useRef(onGeometry);geometryListener.current=onGeometry;
   const interactionRef=useRef(interaction);interactionRef.current=interaction;
   const opticsRef=useRef(optics);opticsRef.current=optics;
+  const contourRef=useRef(contour);contourRef.current=contour;
   const visible=useRef(true);
   const [error, setError] = useState('');
   const [visual, setVisual] = useState<Frame>({ path: '', width: 1, height: 1, near: 0, press: 0, intensity: clock.strength, material:clock.material, focus: false, version: 0, mode:'flat', light: { x: 0, y: 0, z: 620 } });
@@ -126,7 +131,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
       const shape = { ...contourShape(w, h, kind === 'thumb' ? 2.4 : 3.4), x: width / 2 + shiftX, y: height / 2 + shiftY };
       if (kind === 'circle') shape.r = Math.min(w, h) / 2;
       const geometry=kind==='thumb'?{hostWidth:width,hostHeight:height,width:w,height:h,centerX:shape.x,centerY:shape.y}:undefined;
-      const path = shellPath(shape);
+      const path = contourRef.current?.({width,height,near:m.near,press:m.press,intensity,shiftX,shiftY}) ?? shellPath(shape);
       const stage = (host.current.closest('.stage') ?? host.current.closest('.alvenx-design')?.querySelector('.stage'))?.getBoundingClientRect();
       const light = { x: (stage?.left ?? 0) + (stage?.width ?? 1000) * .22 - rect.left,
         y: (stage?.top ?? 0) + (stage?.height ?? 560) * .08 - rect.top, z: 620 * (stage?.width ?? 1000) / 1000 };
@@ -175,6 +180,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
     return () => { alive=false;queued=null;observer.disconnect(); intersection?.disconnect(); unsubscribe(); window.removeEventListener('pointerup', release); window.removeEventListener('pointercancel', release); window.removeEventListener('blur', release); engine.current?.destroy(); engine.current = null; };
   }, [clock, kind]);
   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [disabled, selected, optics, clock]);
+  useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [contour, clock]);
   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [scene?.revision, scene?.ready, scene?.id, clock]);
   useLayoutEffect(() => { if (interaction) { pressed.current = interaction.pressed; focused.current = interaction.focused; dirty.current = true; clock.wake(); } }, [interaction?.pressed, interaction?.focused, clock]);
   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [interaction?.position, clock]);
@@ -194,7 +200,8 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
     },
     onFocus: (event: React.FocusEvent<HTMLElement>) => {
       if (!own(event.target)) return;
-      focused.current = kind === 'field' || (event.target as HTMLElement).matches(':focus-visible');
+      const target=event.target as HTMLElement;
+      focused.current = (kind === 'field' && (!contourRef.current || target.matches('input,textarea,select,[contenteditable="true"]'))) || target.matches(':focus-visible');
       dirty.current = true; clock.wake();
     },
     onBlur: () => { focused.current = false; pressed.current = false; dirty.current = true; clock.wake(); },

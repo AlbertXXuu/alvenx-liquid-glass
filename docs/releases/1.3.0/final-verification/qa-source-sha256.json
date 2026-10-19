@@ -1,0 +1,30 @@
+[
+  {
+    "path": "kit/src/BuddingLink.tsx",
+    "sha256": "1740153ff0fac75bbd6996b58bb152b3f33fed521a30573ca364707aa7a8e58b"
+  },
+  {
+    "path": "kit/src/buddingGeometry.ts",
+    "sha256": "4ba6c19b9700826311dc00cce5487ec5c29aa383dc9f94b042c129e4237ccd85"
+  },
+  {
+    "path": "kit/src/LiquidControl.tsx",
+    "sha256": "9b162b84c5401cf76cbc5b3e63b56df5e6e30ebe9ea8a1e6597a51825c2c60e8"
+  },
+  {
+    "path": "kit/styles/glass.css",
+    "sha256": "49b118098deda088d4016213ce363ec6535077f4569d61efe88035db176299fe"
+  },
+  {
+    "path": "website/app/liquid-glass-entry.tsx",
+    "sha256": "eef04c8a56b0cf593bb5cfd2b69b1ef97f60b7ba2349ceadb519ca761bb49c54"
+  },
+  {
+    "path": "website/app/liquid-glass-entry.css",
+    "sha256": "71c2c9c9833f168048036caa9340faad5f8d236e0c63c322a18fc35728635401"
+  },
+  {
+    "path": "website/app/home-content.tsx",
+    "sha256": "e3597f2613e2f4d1d4713bde6ac947f3c5b17bd7de15d741e36f07fc4b2c6573"
+  }
+]

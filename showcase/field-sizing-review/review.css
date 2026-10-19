@@ -1,0 +1,55 @@
+html,body,#root{margin:0;min-height:100%;width:100%}
+.alvenx-design.field-options{min-height:100vh;background:#F0F2FB;color:#293451;-webkit-text-size-adjust:100%}
+.alvenx-design.field-options main{max-width:1120px;margin:0 auto;padding:68px 40px 40px}
+.alvenx-design.field-options h1{font-size:clamp(36px,5.4vw,58px);font-weight:550;line-height:1.08;letter-spacing:-.045em;margin:16px 0 20px}
+.alvenx-design.field-options .review-intro>p:last-child{max-width:720px;font-size:17px;line-height:1.7;color:#657397;margin-bottom:28px}
+.alvenx-design.field-options .review-tools{margin:0 0 46px;padding:22px 0;border-top:1px solid #CDD3E8;border-bottom:1px solid #CDD3E8}
+.alvenx-design.field-options .sample-options{display:flex;flex-wrap:wrap;gap:8px}
+.alvenx-design.field-options .sample-options button{border:1px solid #CCD3E9;background:#F8F9FF;color:#53648F;border-radius:24px;padding:10px 15px;font:500 13px/1.3 var(--ax-font-family);cursor:pointer;min-height:40px}
+.alvenx-design.field-options .sample-options button[aria-pressed=true]{background:#E0E7FC;border-color:#8A9DD1;color:#344A7B}
+.alvenx-design.field-options .sample-options button:focus-visible,.alvenx-design.field-options .guide-control input:focus-visible{outline:2px solid #6F82BB;outline-offset:3px}
+.alvenx-design.field-options .guide-control{display:flex;align-items:center;gap:9px;width:fit-content;min-height:44px;margin-top:10px;font-size:13px;color:#53648F;cursor:pointer}
+.alvenx-design.field-options .guide-control input{width:16px;height:16px;accent-color:#6F82BB}
+.alvenx-design.field-options .review-tools>p{margin:4px 0 0;font-size:12px;line-height:1.6;color:#7C86A4}
+.alvenx-design.field-options .candidate-list{display:grid;gap:46px}
+.alvenx-design.field-options .candidate-heading{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:30px;margin:0 0 19px}
+.alvenx-design.field-options .candidate-index{margin:0 0 10px;color:#6E7A9A;font-size:11px;letter-spacing:.10em;font-weight:550}
+.alvenx-design.field-options .candidate-index span{display:inline-block;margin-left:12px;font-size:10px;color:#6C5FA0;letter-spacing:.025em;padding:4px 8px;background:#E8E5F6;border-radius:16px}
+.alvenx-design.field-options h2{margin:0;font-size:24px;line-height:1.3;font-weight:550;letter-spacing:-.025em}
+.alvenx-design.field-options .candidate-heading>p{margin:0;font-size:14px;line-height:1.7;color:#6E7A9A}
+.alvenx-design.field-options .candidate-scene{padding:35px 30px 16px;border-radius:22px;overflow:hidden;isolation:isolate}
+.alvenx-design.field-options .candidate-composer{display:flex;align-items:center;gap:16px;width:100%;margin:0 auto;position:relative}
+.alvenx-design.field-options .candidate-a{--field-height:74px;--field-inset:56px;--row-max:720px}
+.alvenx-design.field-options .candidate-b{--field-height:68px;--field-inset:52px;--row-max:640px}
+.alvenx-design.field-options .candidate-c{--field-height:60px;--field-inset:44px;--row-max:520px}
+.alvenx-design.field-options .candidate-composer{max-width:var(--row-max)}
+.alvenx-design.field-options .candidate-field{height:var(--field-height);flex:1;min-width:0;position:relative}
+.alvenx-design.field-options .candidate-field>.field-hit{padding:0 clamp(24px,17%,var(--field-inset));display:flex;align-items:center;justify-content:flex-start;text-align:left}
+.alvenx-design.field-options .candidate-field>.field-hit input{min-width:0;width:100%;height:26px;padding:0;margin:0;border:0;outline:0;appearance:none;border-radius:0;background:transparent;font:400 16px/1.5 var(--ax-font-family);color:#34405E;text-align:left}
+.alvenx-design.field-options .candidate-field>.field-hit input::placeholder{color:#6E7A9A;opacity:1}
+.alvenx-design.field-options[data-guides=true] .candidate-field::after{content:'';position:absolute;pointer-events:none;inset:14px clamp(24px,17%,var(--field-inset));border:1px dashed #6F82BB;border-radius:5px;opacity:.85}
+.alvenx-design.field-options .candidate-send{width:44px;height:44px;flex:none}
+.alvenx-design.field-options .candidate-send>.glass-hit>svg{width:22px;height:22px;fill:none;stroke:#5F73A0;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.alvenx-design.field-options .candidate-feedback{position:relative;margin:16px auto 0;min-height:19px;text-align:center;font-size:12px;line-height:1.6;color:#596C92}
+.alvenx-design.field-options .candidate-spec{display:flex;flex-wrap:wrap;gap:16px 34px;margin:16px 2px 0}
+.alvenx-design.field-options .candidate-spec>div{display:flex;gap:9px;font-size:12px;line-height:1.7}
+.alvenx-design.field-options .candidate-spec dt{color:#7B85A3}
+.alvenx-design.field-options .candidate-spec dd{margin:0;color:#53648F;font-variant-numeric:tabular-nums}
+.alvenx-design.field-options .candidate-metrics{margin:9px 2px 0;color:#7B85A3;font-size:11px;line-height:1.6;font-variant-numeric:tabular-nums}
+.alvenx-design.field-options footer{border-top:1px solid #CDD3E8;margin:44px 0 0;padding-top:20px;color:#7B85A3;font-size:12px;line-height:1.75;max-width:850px}
+@media(max-width:640px){
+ .alvenx-design.field-options main{padding:38px 20px 30px}
+ .alvenx-design.field-options .review-intro>p:last-child{font-size:15px;line-height:1.65}
+ .alvenx-design.field-options .review-tools{margin-bottom:35px}
+ .alvenx-design.field-options .candidate-heading{grid-template-columns:1fr;gap:10px}
+ .alvenx-design.field-options h2{font-size:22px}
+ .alvenx-design.field-options .candidate-heading>p{font-size:13px}
+ .alvenx-design.field-options .candidate-scene{padding:27px 16px 13px;border-radius:18px}
+ .alvenx-design.field-options .candidate-composer{gap:10px}
+ .alvenx-design.field-options .candidate-a{--field-height:68px;--field-inset:40px}
+ .alvenx-design.field-options .candidate-b{--field-height:64px;--field-inset:40px}
+ .alvenx-design.field-options .candidate-c{--field-inset:36px}
+ .alvenx-design.field-options .candidate-spec{gap:7px;display:grid}
+ .alvenx-design.field-options .candidate-spec>div{justify-content:space-between}
+ .alvenx-design.field-options .candidate-feedback{font-size:11px}
+}

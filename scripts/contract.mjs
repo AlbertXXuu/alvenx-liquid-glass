@@ -27,7 +27,7 @@ for(const [width,height,radius] of [[56,36,4.5],[55.36,34.24,9.68],[80,44,6]])ch
   const before=originalEndpoint.endpointGeometry(width,height,radius),after=kit.endpointGeometry(width,height,radius);
   assert.deepEqual(after,before);assert.ok(after.gap>0);assert.ok(after.radius>radius);
 });
-check('component public exports',()=>{for(const name of ['LiquidControl','GlassSlider','GlassSwitch','GlassNumber','useGlassSettings','resolveGlassOptics'])assert.equal(typeof kit[name],'function');assert.ok(kit.VolumeStage);assert.equal(new kit.GlassClock().maxFps,60);assert.equal(new kit.GlassClock({optics:'flat'}).optics,'flat');});
+check('component public exports',()=>{for(const name of ['LiquidControl','BuddingLink','GlassSlider','GlassSwitch','GlassNumber','useGlassSettings','resolveGlassOptics'])assert.equal(typeof kit[name],'function');assert.ok(kit.VolumeStage);assert.equal(new kit.GlassClock().maxFps,60);assert.equal(new kit.GlassClock({optics:'flat'}).optics,'flat');});
 
 await mkdir('docs/validation',{recursive:true});
 const report={status:'passed',checks:checks.length,geometryCases,baseline:'Owner-confirmed v6, original manifest frozen in docs/baseline/v6',details:checks};

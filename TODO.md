@@ -59,3 +59,17 @@ Release evidence and remaining work are maintained in the [1.2.0 release record]
 - [x] Complete scoped local/browser checks, screenshot review, production checks and versioned publication records.
 
 The owner accepted the other existing effects in this request. This records the owner’s acceptance of the visible baseline while retaining the actual scope and limitations of previous technical measurements.
+
+
+## 1.3.0 budding entrance
+
+- [x] Reuse volume coverage and C2 spline construction in one actual-backdrop control.
+- [x] Couple growth and occupied width so the neighboring GitHub link moves continuously.
+- [x] Preserve native empty mother activation and a separate native destination inside the chamber.
+- [x] Keep the accepted 1.2.2 showcase unchanged and preserve all existing material/default contracts.
+- [x] Complete current-build browser/visual checks. Installed-package and publication receipts are tracked in the versioned 1.3.0 release record.
+
+## Text field sizing review (2026-10-19)
+
+- [x] Create three editable, real-material comparisons with responsive text safe areas; keep production field styles unchanged.
+- [ ] Apply a field size only after the owner chooses A, B or C from the independent review.

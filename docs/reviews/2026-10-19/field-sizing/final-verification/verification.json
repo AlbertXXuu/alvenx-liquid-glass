@@ -1,0 +1,421 @@
+{
+  "page": "http://127.0.0.1:5174/field-sizing-review.html",
+  "browser": "Installed Chrome on Windows via Playwright CLI",
+  "assertions": 19,
+  "passed": 19,
+  "screenshotsSelfInspected": [
+    "desktop-chinese-guides.png",
+    "mobile-chinese-guides.png",
+    "320-native-input.png"
+  ],
+  "scope": "Local independent comparison; no production style changes; no physical iOS or IME certification",
+  "results": [
+    {
+      "name": "shared sample",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "independent edits",
+      "pass": true,
+      "details": [
+        "A clear place for a longer thought, with a little more room to breathe.",
+        "独立编辑 · Native text",
+        "A clear place for a longer thought, with a little more room to breathe."
+      ]
+    },
+    {
+      "name": "local send feedback",
+      "pass": true,
+      "details": null
+    },
+    {
+      "name": "layout 320",
+      "pass": true,
+      "details": [
+        {
+          "option": "candidate candidate-a",
+          "w": 194,
+          "h": 68,
+          "inset": 32.9688,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-b",
+          "w": 194,
+          "h": 64,
+          "inset": 32.9688,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-c",
+          "w": 194,
+          "h": 60,
+          "inset": 32.9688,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "native text 320 candidate candidate-a",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "w": 194,
+        "h": 68,
+        "inset": 32.9688,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 320 candidate candidate-b",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "w": 194,
+        "h": 64,
+        "inset": 32.9688,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 320 candidate candidate-c",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "w": 194,
+        "h": 60,
+        "inset": 32.9688,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "layout 393",
+      "pass": true,
+      "details": [
+        {
+          "option": "candidate candidate-a",
+          "w": 267,
+          "h": 68,
+          "inset": 40,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-b",
+          "w": 267,
+          "h": 64,
+          "inset": 40,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-c",
+          "w": 267,
+          "h": 60,
+          "inset": 36,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "native text 393 candidate candidate-a",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "w": 267,
+        "h": 68,
+        "inset": 40,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 393 candidate candidate-b",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "w": 267,
+        "h": 64,
+        "inset": 40,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 393 candidate candidate-c",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "w": 267,
+        "h": 60,
+        "inset": 36,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "layout 768",
+      "pass": true,
+      "details": [
+        {
+          "option": "candidate candidate-a",
+          "w": 568,
+          "h": 74,
+          "inset": 56,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-b",
+          "w": 568,
+          "h": 68,
+          "inset": 52,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-c",
+          "w": 460,
+          "h": 60,
+          "inset": 44,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "native text 768 candidate candidate-a",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "w": 568,
+        "h": 74,
+        "inset": 56,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 768 candidate candidate-b",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "w": 568,
+        "h": 68,
+        "inset": 52,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 768 candidate candidate-c",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "w": 460,
+        "h": 60,
+        "inset": 44,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "layout 1366",
+      "pass": true,
+      "details": [
+        {
+          "option": "candidate candidate-a",
+          "w": 660,
+          "h": 74,
+          "inset": 56,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-b",
+          "w": 580,
+          "h": 68,
+          "inset": 52,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        },
+        {
+          "option": "candidate candidate-c",
+          "w": 460,
+          "h": 60,
+          "inset": 44,
+          "font": "16px",
+          "padding": "0px",
+          "align": "left",
+          "centerError": 0,
+          "maxLength": 240,
+          "optical": "true",
+          "error": null
+        }
+      ]
+    },
+    {
+      "name": "native text 1366 candidate candidate-a",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-a",
+        "w": 660,
+        "h": 74,
+        "inset": 56,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 1366 candidate candidate-b",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-b",
+        "w": 580,
+        "h": 68,
+        "inset": 52,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    },
+    {
+      "name": "native text 1366 candidate candidate-c",
+      "pass": true,
+      "details": {
+        "option": "candidate candidate-c",
+        "w": 460,
+        "h": 60,
+        "inset": 44,
+        "font": "16px",
+        "padding": "0px",
+        "align": "left",
+        "centerError": 0,
+        "maxLength": 240,
+        "optical": "true",
+        "error": null
+      }
+    }
+  ]
+}

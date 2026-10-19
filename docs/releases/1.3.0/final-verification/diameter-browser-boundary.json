@@ -1,0 +1,121 @@
+{
+  "status": "passed",
+  "testedAt": "2026-10-19T15:16:14.428Z",
+  "origin": "http://127.0.0.1:5174/",
+  "engine": "chromium",
+  "scope": "Focused mounted-source CSS variable / diameter prop / native link font boundary checks; inherited 270-item suite was NOT rerun.",
+  "full270SuiteRerun": false,
+  "source": "/src/BuddingLink.tsx and /styles/glass.css from existing Vite dev server",
+  "optics": "flat and reduced clock only for this size/typography probe; this does not re-certify optical appearance or interaction performance",
+  "caseCount": 8,
+  "passed": 8,
+  "failed": 0,
+  "cases": [
+    {
+      "source": "css",
+      "input": "28",
+      "expected": 44,
+      "actualDiameter": 44,
+      "fontSize": 14,
+      "expectedFont": 14,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "css",
+      "input": "200",
+      "expected": 96,
+      "actualDiameter": 96,
+      "fontSize": 15,
+      "expectedFont": 15,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "css",
+      "input": "NaN",
+      "expected": 54,
+      "actualDiameter": 54,
+      "fontSize": 15,
+      "expectedFont": 15,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "css",
+      "input": "",
+      "expected": 54,
+      "actualDiameter": 54,
+      "fontSize": 15,
+      "expectedFont": 15,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "prop",
+      "input": 28,
+      "expected": 44,
+      "actualDiameter": 44,
+      "fontSize": 14,
+      "expectedFont": 14,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "prop",
+      "input": 200,
+      "expected": 96,
+      "actualDiameter": 96,
+      "fontSize": 15,
+      "expectedFont": 15,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "prop",
+      "input": "NaN",
+      "expected": 54,
+      "actualDiameter": 54,
+      "fontSize": 15,
+      "expectedFont": 15,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    },
+    {
+      "source": "prop",
+      "input": "omitted",
+      "expected": 54,
+      "actualDiameter": 54,
+      "fontSize": 15,
+      "expectedFont": 15,
+      "growth": 1,
+      "ready": "true",
+      "oneBody": true,
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "probeCleanup": "Each React root unmounted, clock destroyed and temporary container removed",
+  "sourceSha256": {
+    "src/BuddingLink.tsx": "5b9b87a00456620b5c7ddcb0114ee9aaca688d3016898538dbee145364929dd8",
+    "src/buddingGeometry.ts": "4ba6c19b9700826311dc00cce5487ec5c29aa383dc9f94b042c129e4237ccd85",
+    "src/LiquidControl.tsx": "9b162b84c5401cf76cbc5b3e63b56df5e6e30ebe9ea8a1e6597a51825c2c60e8",
+    "styles/glass.css": "49b118098deda088d4016213ce363ec6535077f4569d61efe88035db176299fe"
+  },
+  "browserSession": "diameter-browser-boundary (owned verification session)"
+}
+

@@ -167,3 +167,26 @@ AlvenX 模式复用正式 wordmark／AX 资产和 Instrument Sans／MiSans，不
 大形体、环境动效开关和材质参数应放在同一个文档区域。Surface parameters 只展开下方参数；不固定预览、不修改形体尺寸、不压缩标题或隐藏说明，整个区域随页面正常滚动。这是所有者对当前展示页的明确修正，替代 1.2.1 的编辑时停靠行为。共享设置仍即时应用于同一个形体和控件，业务项目可以根据自己的布局复用组件。
 
 Ask anything 是本地演示彩蛋，不会发送网络请求：非空普通内容回复 `Good question… but I don’t understand.`；去除首尾空格后不区分大小写的完整 `fluency` 回复 `<3`。空内容保留原有输入提示；编辑后清除旧回复。回复由 React 原生文本渲染，不能解释为 HTML。
+
+
+## 连续出芽入口（1.3.0）
+
+```tsx
+import { BuddingLink, useGlassSettings } from '@alvenx/liquid-glass';
+import '@alvenx/liquid-glass/styles.css';
+function Entry() {
+  const {clock} = useGlassSettings({storageKey:'my-material'});
+  return <div className="alvenx-design" style={{display:'flex',alignItems:'center',gap:24}}>
+    <BuddingLink id="my-entry" clock={clock} href="/ui/" label="explore me!" />
+    <a href="https://github.com/">GitHub</a>
+  </div>;
+}
+```
+
+组件初始只有母球，第一次激活原生按钮开始向右生长，第二次激活腔内原生链接进入目标。几何采用已有大形体的母体、软连接与腔体距离场，并转成周期三次 B 样条；真正的背景光学沿用 `LiquidControl`，不将大画布的模拟环境当成任意网页背景。`diameter` 默认为54；宿主可以用作用域内的 `--ax-bud-diameter:44` 调整母球。高度预留为 `1.4D+12px`，避免生长过程中 CTA 行上下跳动。宽度由当前轮廓右界决定，不能用 transform:scale 代替实际布局宽度。
+
+宿主须留出最终腔体和相邻链接的空间。官网在≤640px时预先把出芽入口与GitHub放在下一行，保持两者在整个生长过程不换行。文字由原生 DOM 渲染，位于光学层之上；生长未完成时链接暂时 inert，系统减少动态设置立即显示完成态。静止与离屏沿用共享时钟的休眠和缓存。默认控件不传 `contour`，原有几何和材质路径保持不变。
+
+高级轮廓组合可传 `LiquidControl.contour(frame)`，返回与宿主 CSS 像素坐标一致的闭合路径。该路径统一用于法线、背景、裁切、焦点、边光和命中；输入的近场与按压状态应保留安全内边距。不要用两块独立玻璃或额外有色连接片拼出连续材料。
+
+BuddingLink 的组件直径（prop 和 CSS 覆盖）统一限制为44–96px，非有限 prop 回到54px；44px母球使用14px链接字号，其余为15px。标签应采用类似 explore me! 的短文案；任意长度文本不在自动适配契约内。geometry 纯函数的数值测试范围不等于组件的可读尺寸支持范围。

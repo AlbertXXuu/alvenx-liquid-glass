@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "recordDate": "2026-10-19",
+  "status": "local-comparison-awaiting-owner-choice",
+  "algorithm": "SHA-256",
+  "indexExcludesItself": true,
+  "files": [
+    {
+      "path": "320-native-input.png",
+      "bytes": 196722,
+      "sha256": "06854d13c9cd19a2c3bd69273a322ec502ae566701aa6d5b3863a62069478e65"
+    },
+    {
+      "path": "768-native-input.png",
+      "bytes": 291333,
+      "sha256": "ee1a0268bfb860c53f179b641e7638530ea39a7eda8e72074d0c9bded721f86f"
+    },
+    {
+      "path": "desktop-chinese-guides.png",
+      "bytes": 345519,
+      "sha256": "ffa931a915335efd5c700d8fdf5eec0f20a84432803d68c4119bbca263aad2af"
+    },
+    {
+      "path": "desktop-placeholder.png",
+      "bytes": 339767,
+      "sha256": "3e789f401081d9c51bcd654dfd9a29ae5b46096e980921cfa1659ab96e6e52d2"
+    },
+    {
+      "path": "local-validation.playwright.js",
+      "bytes": 3038,
+      "sha256": "0446758a133afb2263cea2ceeb3b1e84a6c0f077fed0147a7ca1395dde3eb0c2"
+    },
+    {
+      "path": "mobile-chinese-guides.png",
+      "bytes": 214216,
+      "sha256": "09e4136d362fa69f5f1c0152678cfee733c89358f8a113acabca0614e911c3a3"
+    },
+    {
+      "path": "mobile-placeholder.png",
+      "bytes": 208801,
+      "sha256": "7aca3926df15cd17175c8443be1e847759b3716a1de60ff8945969d3f37a76cb"
+    },
+    {
+      "path": "validation.log",
+      "bytes": 8767,
+      "sha256": "be996b59d29b1d013d67087b47ed63873f48ead3b3f63f587f5e7f1de90d1041"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 10451,
+      "sha256": "34329cd449e35a255197943b2923497e11ae28cba1576b57cb707e55ee2ebde3"
+    }
+  ],
+  "reviewSource": [
+    {
+      "path": "field-sizing-review.html",
+      "bytes": 452,
+      "sha256": "ba15c75e854ffe9d44ac86ebf5ab627c92a2de00ff3d0c8a8a3aa96572166940"
+    },
+    {
+      "path": "showcase/field-sizing-review/main.tsx",
+      "bytes": 6330,
+      "sha256": "6b267875ba07cc85fff541b5021eb11644171e6b3a932bf03219468a8621622e"
+    },
+    {
+      "path": "showcase/field-sizing-review/review.css",
+      "bytes": 6024,
+      "sha256": "0df0c1cfdbee4d707765722ac122c77f72ed350f8c1fe11cb06a4b57cc14a9f0"
+    }
+  ]
+}

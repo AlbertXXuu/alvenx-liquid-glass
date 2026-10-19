@@ -8,7 +8,9 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-Version **1.2.2** is a public design preview. It carries the R3 explicit-scene refraction and touch-ownership work into the current showcase, with a canonical glass header, a layered blue/violet background, a gradient headline and a **50%** initial progress demonstration. Authoring specifications are in Chinese; component labels and the showcase are in English. The owner authorized this revision for the main `/ui/` route on 2026-10-19. The [1.2.0 release record](docs/releases/1.2.0/README.md) preserves that publication; the current [1.2.2 record](docs/releases/1.2.2/README.md) describes this follow-up.
+Version **1.3.0** adds a reusable `BuddingLink`: one empty mother form grows through a soft connection into a native link chamber, using the existing actual-backdrop glass material. Its real document width pushes neighboring content continuously. The [live homepage](https://alvenx.com/) uses it between Explore the work and GitHub. See [the 1.3.0 record](docs/releases/1.3.0/README.md).
+
+The accepted [UI showcase](https://alvenx.com/ui/) remains the 1.2.2 composition: canonical glass header, layered blue/violet background, gradient headline, horizontal volume, normal-flow material parameters, stable Chinese typography and a 50% initial Progress example. Authoring specifications are in Chinese; component labels and demonstrations are in English.
 
 The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 
@@ -27,6 +29,7 @@ Open `http://127.0.0.1:5174/`. Drag the sliders beyond their endpoints, re-grab 
 
 ## What is included
 
+- `BuddingLink`: one continuous mother/neck/chamber, native reveal/link semantics and real layout growth.
 - `LiquidControl`: contour-matched button, field, lens and circular control surfaces.
 - `GlassSlider`, `GlassSwitch`, `GlassNumber`: continuous gestures, bounded overdrag, release-only spring return and validated numeric drafts.
 - `VolumeStage`: mother form, soft connection and expanding content chamber, with slow budding and a canvas pixel budget.
@@ -44,7 +47,7 @@ Build and create a local package; the versioned tarball can be installed directl
 npm run build
 npm run pack:kit
 # In your React 19 project:
-npm install ./alvenx-liquid-glass-1.2.2.tgz
+npm install ./alvenx-liquid-glass-1.3.0.tgz
 ```
 
 ```tsx

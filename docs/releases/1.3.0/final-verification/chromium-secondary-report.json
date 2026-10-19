@@ -1,0 +1,159 @@
+{
+  "at": "2026-10-19T14:49:07.69Z",
+  "passed": 13,
+  "failed": 0,
+  "results": [
+    {
+      "pass": true,
+      "label": "Activation reaches an intermediate shape before offscreen test",
+      "details": {
+        "growth": 0.1061,
+        "ready": "false",
+        "version": "20",
+        "bodyCount": 1
+      }
+    },
+    {
+      "pass": true,
+      "label": "Offscreen budding stops state updates",
+      "details": {
+        "hiddenStart": {
+          "growth": 0.13946,
+          "ready": "false",
+          "version": "22",
+          "bodyCount": 1
+        },
+        "hiddenEnd": {
+          "growth": 0.13946,
+          "ready": "false",
+          "version": "22",
+          "bodyCount": 1
+        }
+      }
+    },
+    {
+      "pass": true,
+      "label": "Offscreen optical geometry remains cached",
+      "details": {
+        "hiddenStart": {
+          "growth": 0.13946,
+          "ready": "false",
+          "version": "22",
+          "bodyCount": 1
+        },
+        "hiddenEnd": {
+          "growth": 0.13946,
+          "ready": "false",
+          "version": "22",
+          "bodyCount": 1
+        }
+      }
+    },
+    {
+      "pass": true,
+      "label": "Visible return resolves completed growth",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "version": "56",
+        "bodyCount": 1
+      }
+    },
+    {
+      "pass": true,
+      "label": "After actual spring settling, geometry version stops",
+      "details": {
+        "settled": {
+          "growth": 1,
+          "ready": "true",
+          "version": "56",
+          "bodyCount": 1
+        },
+        "resting": {
+          "growth": 1,
+          "ready": "true",
+          "version": "56",
+          "bodyCount": 1
+        }
+      }
+    },
+    {
+      "pass": true,
+      "label": "Touch tap begins continuous native growth",
+      "details": {
+        "growth": 0.01438,
+        "expanded": "true",
+        "ready": "false",
+        "href": "/ui/",
+        "inert": true,
+        "url": "http://localhost:5187/",
+        "focusOutline": false,
+        "tapColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "pass": true,
+      "label": "First touch does not navigate before chamber completion",
+      "details": {
+        "growth": 0.01438,
+        "expanded": "true",
+        "ready": "false",
+        "href": "/ui/",
+        "inert": true,
+        "url": "http://localhost:5187/",
+        "focusOutline": false,
+        "tapColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "pass": true,
+      "label": "Pointer tap does not leave a keyboard contour",
+      "details": {
+        "growth": 0.01438,
+        "expanded": "true",
+        "ready": "false",
+        "href": "/ui/",
+        "inert": true,
+        "url": "http://localhost:5187/",
+        "focusOutline": false,
+        "tapColor": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "pass": true,
+      "label": "Authored transparent platform tap-highlight configured",
+      "details": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "pass": true,
+      "label": "Touch chamber completes then becomes native active link",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "Mobile touch completed shape stays within page",
+      "details": {
+        "growth": 1,
+        "ready": "true",
+        "inert": false,
+        "overflow": 0
+      }
+    },
+    {
+      "pass": true,
+      "label": "Second touch on chamber link enters showcase",
+      "details": "http://localhost:5187/ui/"
+    },
+    {
+      "pass": true,
+      "label": "No touch-simulation page errors",
+      "details": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-19",
+  "source": "Current BuddingLink preview2 source with opt-in contour native focus fix",
+  "devOrigin": "http://localhost:5187/",
+  "loadedDependency": "/node_modules/.vite/deps/@alvenx_liquid-glass.js?v=f0595f01",
+  "passed": 270,
+  "failed": 0,
+  "chromium": {
+    "passed": 129,
+    "pageErrors": [],
+    "failed": 0
+  },
+  "webkit": {
+    "passed": 128,
+    "pageErrors": [],
+    "failed": 0
+  },
+  "touchOffscreenCache": {
+    "passed": 13,
+    "pageErrors": [],
+    "failed": 0
+  },
+  "geometry": [
+    {
+      "viewportWidth": 320,
+      "motherDiameter": 44,
+      "initialWidth": 56,
+      "finalWidth": 144.46875,
+      "gitHubDisplacement": 88.46875,
+      "motherCenterDrift": 0,
+      "longTasks": 0,
+      "maxObservedRafInterval": 15.5,
+      "stableGeometryVersion": "111"
+    },
+    {
+      "viewportWidth": 393,
+      "motherDiameter": 44,
+      "initialWidth": 56,
+      "finalWidth": 144.46875,
+      "gitHubDisplacement": 88.46875,
+      "motherCenterDrift": 0,
+      "longTasks": 0,
+      "maxObservedRafInterval": 19.199999999254942,
+      "stableGeometryVersion": "111"
+    },
+    {
+      "viewportWidth": 640,
+      "motherDiameter": 44,
+      "initialWidth": 56,
+      "finalWidth": 144.46875,
+      "gitHubDisplacement": 88.46875,
+      "motherCenterDrift": 0,
+      "longTasks": 0,
+      "maxObservedRafInterval": 24.0,
+      "stableGeometryVersion": "107"
+    },
+    {
+      "viewportWidth": 641,
+      "motherDiameter": 54,
+      "initialWidth": 66,
+      "finalWidth": 174.578125,
+      "gitHubDisplacement": 108.578125,
+      "motherCenterDrift": 0,
+      "longTasks": 0,
+      "maxObservedRafInterval": 22.899999998509884,
+      "stableGeometryVersion": "109"
+    },
+    {
+      "viewportWidth": 768,
+      "motherDiameter": 54,
+      "initialWidth": 66,
+      "finalWidth": 174.578125,
+      "gitHubDisplacement": 108.578125,
+      "motherCenterDrift": 0.0,
+      "longTasks": 0,
+      "maxObservedRafInterval": 25.0,
+      "stableGeometryVersion": "108"
+    },
+    {
+      "viewportWidth": 1366,
+      "motherDiameter": 54,
+      "initialWidth": 66,
+      "finalWidth": 174.578125,
+      "gitHubDisplacement": 108.578125,
+      "motherCenterDrift": 0.0,
+      "longTasks": 0,
+      "maxObservedRafInterval": 29.200000002980232,
+      "stableGeometryVersion": "100"
+    }
+  ],
+  "limits": [
+    "Windows browser automation is not physical iPhone/iPad or Combo Touch certification.",
+    "Browser RAF/longtask samples are not OS FPS or physical input latency.",
+    "WebKit uses native glass fallback and skips native links under its default Tab preference; direct link focus used in its navigation test.",
+    "Existing Vinext dev preload diagnostics retained; production diagnostics require a separate live check.",
+    "Historical process-preview1 and process-preview2-stale-vite evidence is distinct from top-level final captures."
+  ]
+}

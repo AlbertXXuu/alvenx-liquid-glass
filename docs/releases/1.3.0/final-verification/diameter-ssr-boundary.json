@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "scope": "Final compiled BuddingLink initial prop clamp; CSS runtime covered separately online",
+  "rows": [
+    {
+      "input": "-100",
+      "expected": 44,
+      "actual": 44,
+      "pass": true
+    },
+    {
+      "input": "28",
+      "expected": 44,
+      "actual": 44,
+      "pass": true
+    },
+    {
+      "input": "44",
+      "expected": 44,
+      "actual": 44,
+      "pass": true
+    },
+    {
+      "input": "54",
+      "expected": 54,
+      "actual": 54,
+      "pass": true
+    },
+    {
+      "input": "96",
+      "expected": 96,
+      "actual": 96,
+      "pass": true
+    },
+    {
+      "input": "200",
+      "expected": 96,
+      "actual": 96,
+      "pass": true
+    },
+    {
+      "input": "NaN",
+      "expected": 54,
+      "actual": 54,
+      "pass": true
+    },
+    {
+      "input": "Infinity",
+      "expected": 54,
+      "actual": 54,
+      "pass": true
+    }
+  ]
+}

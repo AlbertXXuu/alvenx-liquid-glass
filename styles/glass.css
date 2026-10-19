@@ -134,3 +134,12 @@
 .alvenx-design .stage-scroll[data-layout="overview"] .stage{min-height:200px}
 .alvenx-design .stage-scroll[data-layout="overview"]>.foreground{position:relative;left:auto;top:auto;width:100%;padding:20px 16px 22px}
 .alvenx-design .stage-scroll[data-layout="compact-integrated"]>.foreground{left:52%;width:39%;top:19%}
+
+/* A single optical body grows in real document flow. Native actions and text
+ * sit above its shared contour, never inside a rasterized text layer. */
+.alvenx-design .glass-budding-link{position:relative;display:inline-block;flex:0 0 auto;vertical-align:middle;background:transparent}
+.alvenx-design .glass-budding-body{width:100%;height:100%}
+.alvenx-design .glass-budding-body>.glass-hit{padding:0}
+.alvenx-design .glass-budding-trigger,.alvenx-design .glass-budding-destination{position:absolute;display:flex;align-items:center;justify-content:center;margin:0;padding:0 6px;border:0;outline:0;background:transparent;color:var(--ax-text);font:600 15px/1.5 "Instrument Sans","MiSans",sans-serif;text-decoration:none;white-space:nowrap;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.alvenx-design .glass-budding-destination[inert]{pointer-events:none}
+@media(forced-colors:active){.alvenx-design .glass-budding-trigger:focus-visible,.alvenx-design .glass-budding-destination:focus-visible{outline:2px solid Highlight;outline-offset:-5px}.alvenx-design .glass-budding-trigger{border:1px solid ButtonText;border-radius:50%}.alvenx-design .glass-budding-destination{border:1px solid LinkText;border-radius:30px}}

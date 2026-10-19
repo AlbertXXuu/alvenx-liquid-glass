@@ -1,0 +1,59 @@
+### Result
+{"at":"2026-10-19T14:36:15.906Z","passed":11,"failed":0,"results":[{"pass":true,"label":"Activation reaches an intermediate shape before offscreen test","details":{"growth":0.40208,"ready":"false","version":"24","bodyCount":1}},{"pass":true,"label":"Offscreen budding stops state updates","details":{"hiddenStart":{"growth":0.88117,"ready":"false","version":"35","bodyCount":1},"hiddenEnd":{"growth":0.88117,"ready":"false","version":"35","bodyCount":1}}},{"pass":true,"label":"Offscreen optical geometry remains cached","details":{"hiddenStart":{"growth":0.88117,"ready":"false","version":"35","bodyCount":1},"hiddenEnd":{"growth":0.88117,"ready":"false","version":"35","bodyCount":1}}},{"pass":true,"label":"Visible return resolves completed growth","details":{"growth":1,"ready":"true","version":"62","bodyCount":1}},{"pass":true,"label":"After actual spring settling, geometry version stops","details":{"settled":{"growth":1,"ready":"true","version":"62","bodyCount":1},"resting":{"growth":1,"ready":"true","version":"62","bodyCount":1}}},{"pass":true,"label":"Touch tap begins continuous native growth","details":{"growth":0.0214,"expanded":"true","ready":"false","href":"/ui/","inert":true,"url":"http://localhost:5187/"}},{"pass":true,"label":"First touch does not navigate before chamber completion","details":{"growth":0.0214,"expanded":"true","ready":"false","href":"/ui/","inert":true,"url":"http://localhost:5187/"}},{"pass":true,"label":"Touch chamber completes then becomes native active link","details":{"growth":1,"ready":"true","inert":false,"overflow":0}},{"pass":true,"label":"Mobile touch completed shape stays within page","details":{"growth":1,"ready":"true","inert":false,"overflow":0}},{"pass":true,"label":"Second touch on chamber link enters showcase","details":"http://localhost:5187/ui/"},{"pass":true,"label":"No touch-simulation page errors","details":[]}],"errors":[]}
+### Ran Playwright code
+```js
+await (async (page) => {
+  const results=[],check=(pass,label,details)=>results.push({pass:!!pass,label,details});
+  const state=()=>page.locator('[data-budding-link]').evaluate(e=>({growth:Number(e.dataset.growth),ready:e.dataset.ready,version:e.querySelector('[data-local-glass]').dataset.geometryVersion,bodyCount:e.querySelectorAll('[data-local-glass]').length}));
+  await page.emulateMedia({reducedMotion:'no-preference'});
+  await page.setViewportSize({width:1366,height:900});
+  await page.goto('http://localhost:5187/',{waitUntil:'domcontentloaded'});
+  await page.locator('[data-budding-link] [data-optical-ready="true"]').waitFor();
+  await page.locator('.glass-budding-trigger').click();
+  await page.waitForTimeout(250);
+  const during=await state();
+  await page.locator('footer').scrollIntoViewIfNeeded();
+  await page.mouse.move(0,0);
+  await page.waitForTimeout(300);
+  const hiddenStart=await state();
+  await page.waitForTimeout(700);
+  const hiddenEnd=await state();
+  check(during.growth>0&&during.growth<1,'Activation reaches an intermediate shape before offscreen test',during);
+  check(hiddenEnd.growth===hiddenStart.growth,'Offscreen budding stops state updates',{hiddenStart,hiddenEnd});
+  check(hiddenEnd.version===hiddenStart.version,'Offscreen optical geometry remains cached',{hiddenStart,hiddenEnd});
+  await page.locator('.glass-budding-trigger').scrollIntoViewIfNeeded();
+  await page.waitForTimeout(1800);
+  const returned=await state();
+  check(returned.ready==='true'&&returned.growth===1,'Visible return resolves completed growth',returned);
+  await page.mouse.move(0,0);
+  await page.waitForTimeout(1800);
+  const settled=await state();
+  await page.waitForTimeout(900);
+  const resting=await state();
+  check(resting.version===settled.version,'After actual spring settling, geometry version stops',{settled,resting});
+  const context=await page.context().browser().newContext({viewport:{width:393,height:852},hasTouch:true,isMobile:true,reducedMotion:'no-preference'});
+  const touch=await context.newPage();
+  const errors=[];touch.on('pageerror',e=>errors.push(String(e)));
+  await touch.goto('http://localhost:5187/',{waitUntil:'domcontentloaded'});
+  await touch.locator('[data-budding-link] [data-optical-ready="true"]').waitFor();
+  await touch.locator('.glass-budding-trigger').tap();
+  await touch.waitForTimeout(120);
+  const touchStart=await touch.locator('[data-budding-link]').evaluate(e=>({growth:Number(e.dataset.growth),expanded:e.dataset.expanded,ready:e.dataset.ready,href:e.querySelector('a')?.getAttribute('href'),inert:e.querySelector('a')?.inert,url:location.href}));
+  check(touchStart.expanded==='true'&&touchStart.growth>0&&touchStart.growth<1,'Touch tap begins continuous native growth',touchStart);
+  check(touchStart.inert===true&&!touchStart.url.endsWith('/ui/'),'First touch does not navigate before chamber completion',touchStart);
+  await touch.waitForTimeout(1400);
+  const touchEnd=await touch.locator('[data-budding-link]').evaluate(e=>({growth:Number(e.dataset.growth),ready:e.dataset.ready,inert:e.querySelector('a')?.inert,overflow:document.documentElement.scrollWidth-innerWidth}));
+  check(touchEnd.growth===1&&touchEnd.ready==='true'&&!touchEnd.inert,'Touch chamber completes then becomes native active link',touchEnd);
+  check(touchEnd.overflow<=1,'Mobile touch completed shape stays within page',touchEnd);
+  await touch.screenshot({path:'output/playwright/budding-entry-2026-10-19/chromium-touch393-full.png'});
+  await touch.locator('.glass-budding-destination').tap();
+  await touch.waitForURL('**/ui/');
+  check(touch.url().endsWith('/ui/'),'Second touch on chamber link enters showcase',touch.url());
+  check(errors.length===0,'No touch-simulation page errors',errors);
+  await context.close();
+  return{at:new Date().toISOString(),passed:results.filter(x=>x.pass).length,failed:results.filter(x=>!x.pass).length,results,errors};
+}
+)(page);
+```
+### Events
+- New console entries: .playwright-cli\console-2026-10-19T14-31-31-294Z.log#L33-L34

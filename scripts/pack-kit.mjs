@@ -9,7 +9,7 @@ const root = process.cwd(), release = path.join(root, 'releases');
 const pkg = JSON.parse(await readFile('package.json', 'utf8'));
 await mkdir(release, { recursive: true });
 const roots = ['src','styles','assets','docs','showcase','scripts','dist','public','work'];
-const files = ['package.json','package-lock.json','tsconfig.json','tsconfig.lib.json','vite.config.mjs','vite.lib.config.mjs','index.html','mobile-review.html','tokens.json','README.md','SKILL.md','TODO.md','LICENSE-NOTICE.md','.gitignore','.gitattributes','.github/workflows/verify.yml'];
+const files = ['package.json','package-lock.json','tsconfig.json','tsconfig.lib.json','vite.config.mjs','vite.lib.config.mjs','index.html','mobile-review.html','field-sizing-review.html','tokens.json','README.md','SKILL.md','TODO.md','LICENSE-NOTICE.md','.gitignore','.gitattributes','.github/workflows/verify.yml'];
 async function walk(dir) {
   for (const item of await readdir(dir, { withFileTypes: true })) {
     const name = `${dir}/${item.name}`;

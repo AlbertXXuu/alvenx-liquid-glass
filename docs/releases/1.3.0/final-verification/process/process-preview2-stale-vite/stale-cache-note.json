@@ -1,0 +1,9 @@
+{
+  "reason": "Installed preview2 was correct, but Vinext/Vite dev optimized module retained old onFocus field behavior; this run is process evidence only and not final focus-fix validation.",
+  "webkitPassed": 128,
+  "chromeFailed": 6,
+  "loadedUrl": "http://localhost:5187/node_modules/.vite/deps/@alvenx_liquid-glass.js?v=98f002e0",
+  "chromePassed": 123,
+  "loadedSnippet": "F.current = n === \"field\" || I.target.matches(\":focus-visible\")",
+  "webkitFailed": 0
+}
