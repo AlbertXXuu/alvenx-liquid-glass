@@ -1,0 +1,162 @@
+{
+  "url": "https://alvenx.com/ui/review-20261019-r3/",
+  "engine": "26.5",
+  "physicalDevice": false,
+  "status": "passed",
+  "results": [
+    {
+      "status": 200,
+      "width": 393,
+      "overflow": false,
+      "opticalErrors": [],
+      "nativeRangePaint": [
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        }
+      ],
+      "instrumentLoaded": true,
+      "miSansLoaded": true,
+      "defaults": [
+        {
+          "id": "number-r3-sample",
+          "value": "0.42"
+        },
+        {
+          "id": "number-interactionStrength",
+          "value": "2.5"
+        },
+        {
+          "id": "number-specularOpacity",
+          "value": "1"
+        },
+        {
+          "id": "number-specularSaturation",
+          "value": "2"
+        },
+        {
+          "id": "number-refractionLevel",
+          "value": "2"
+        },
+        {
+          "id": "number-blurLevel",
+          "value": "2"
+        },
+        {
+          "id": "number-progressiveBlur",
+          "value": "2"
+        },
+        {
+          "id": "number-glassOpacity",
+          "value": "0.3"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "status": 200,
+      "width": 768,
+      "overflow": false,
+      "opticalErrors": [],
+      "nativeRangePaint": [
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        {
+          "appearance": "none",
+          "background": "rgba(0, 0, 0, 0)"
+        }
+      ],
+      "instrumentLoaded": true,
+      "miSansLoaded": true,
+      "defaults": [
+        {
+          "id": "number-r3-sample",
+          "value": "0.42"
+        },
+        {
+          "id": "number-interactionStrength",
+          "value": "2.5"
+        },
+        {
+          "id": "number-specularOpacity",
+          "value": "1"
+        },
+        {
+          "id": "number-specularSaturation",
+          "value": "2"
+        },
+        {
+          "id": "number-refractionLevel",
+          "value": "2"
+        },
+        {
+          "id": "number-blurLevel",
+          "value": "2"
+        },
+        {
+          "id": "number-progressiveBlur",
+          "value": "2"
+        },
+        {
+          "id": "number-glassOpacity",
+          "value": "0.3"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

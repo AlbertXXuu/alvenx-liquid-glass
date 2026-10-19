@@ -6,7 +6,7 @@
 | --- | --- | --- |
 | [R1](r1-rejected-vertical/README.md) | **rejected** | 横向形体直接改成竖向及文字排版被用户明确否决。保留截图和工程检查；输入修复仍可用于后续修订，不能自动视为已验收。 |
 | [R2](r2-horizontal/README.md) | **published-awaiting-owner** | Decision B 保留原横向几何；已记录截图自检、跨引擎／构建与 tarball 消费验证，固定源码标签及独立审查页已发布。线上 23 项控件回归通过；真机用户验收未完成，时序验证修正单独记录。 |
-| [R3](r3-mobile/README.md) | **self-reviewed** | 明确SVG场景折射和形体内任意方向拖动／外部滚页；最终混合策略36次串行输入、生命周期、生产截图、构建及实际外部消费安装通过。全异步触摸延迟退步与两次视觉自检失败留档；源码标签及独立网址待发布，真机首触／Combo Touch待用户验收。 |
+| [R3](r3-mobile/README.md) | **published-awaiting-owner** | 固定源码标签与独立R3页已发布；线上两引擎排版／明确场景折射／源编辑／CSP、Chromium触摸形体手势通过，首页CSS扫描隔离与原页面身份已核对。全异步延迟失败及视觉过程留档；真机首触／Combo Touch仍待用户验收，详见[发布回执](r3-mobile/publication-receipt.json)。 |
 
 [原 R1 公开审查入口](https://alvenx.com/ui/review-20261019/)是历史来源；页面内容可能以后变化。以对应目录的截图、哈希、来源记录和 Git 代码快照核对当时版本。当前没有在本目录登记任何已获用户接受的新修订。R2 已发布[独立审查页](https://alvenx.com/ui/review-20261019-r2/)，当前等待用户在实际手机、iPad 和 Combo Touch 上确认；最新交付事实见[发布回执](r2-horizontal/publication-receipt.json)。
 

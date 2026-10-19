@@ -98,3 +98,11 @@ v6 冻结基线、R2 标签和原独立展示页不因这些过程记录改写�
 
 - [WebKit issue 245510](https://bugs.webkit.org/show_bug.cgi?id=245510)：SVG URL 背景滤镜与普通受控 SVG 源滤镜是不同实现路径。
 - [Pointer Events direct-manipulation rules](https://www.w3.org/TR/pointerevents3/#the-touch-action-css-property)：触摸仲裁依据触点及祖先链开始时的 touch-action。
+
+## Published R3 review / 当前公开审查
+
+**Current status: published-awaiting-owner.** 打开[R3独立小样](https://alvenx.com/ui/review-20261019-r3/)进行真机审查；[固定公开源码](https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r3)为提交`566012cacf4225627008d2f407b5782647443180`，标签未移动，[CI通过](https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39239326479)。前文及[冻结摘要](summary.json)保留发布前self-reviewed事实，最新交付以[发布回执](publication-receipt.json)及[SHA-256](publication-SHA256SUMS.txt)为准；没有把历史阶段改写成后来的结果。
+
+[线上证据](publication/online-evidence/README.md)记录Chromium与WindowsWebKit393／768px排版、真实场景文字／轨道折射和源编辑、CSP，以及Chromium原生触摸的形体内／外起点。最终网站CSS扫描隔离也已验证：首页CSS资产恢复原文件名，原`/ui/`、其清单及R2字节相同；首页HTML只在生成JS哈希／部署UUID归一后相同，原始字节不同。
+
+请按前文[真机审查步骤](#physical-device-protocol--真机审查步骤)，在iPhone／iPad与ComboTouch上确认首触、连续拖动、释放重抓和形体手势。技术检查没有替代物理设备结果，当前`ownerAccepted=false`。发布回执属于新提交；冻结R3源码及111条归档哈希未改。

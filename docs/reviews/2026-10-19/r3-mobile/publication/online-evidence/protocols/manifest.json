@@ -1,0 +1,69 @@
+{
+  "kind": "portable online callbacks; output paths only changed",
+  "originalEvidenceBundle": "output/publication/mobile-r3-2026-10-19",
+  "runFrom": "parent directory containing the kit checkout",
+  "outputDirectory": "output/publication/r3-protocol-replay/",
+  "additionalArchiveTimeExecution": false,
+  "protocols": [
+    {
+      "file": "online-qa.cjs",
+      "originalEvidenceFile": "online-qa.cjs",
+      "originalSha256": "4edbd7743cc7c25c702562cdc259d4e1ef261558210d3ecd98040f8249a9e845",
+      "archivedSha256": "8f13bed8d3e1cd35077e50b4dccff7ef254d585d74b0b2653692dd1711d3cf71",
+      "pathOnlyChanges": [
+        {
+          "outputPathPrefixOnly": true,
+          "occurrences": 3
+        }
+      ],
+      "measurementLogicChanged": false
+    },
+    {
+      "file": "online-shape.cjs",
+      "originalEvidenceFile": "online-shape.cjs",
+      "originalSha256": "04e874c46ede8cec3d4c1e92810fcade486ebab2ab5af6c773b8e0958455d917",
+      "archivedSha256": "e4a10c76fadab4cf818ee5b6823ec7f0693221c914642212af9ce3f137b42905",
+      "pathOnlyChanges": [
+        {
+          "outputPathPrefixOnly": true,
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false
+    },
+    {
+      "file": "online-integration-pixel.cjs",
+      "originalEvidenceFile": "online-optics/online-integration-pixel.cjs",
+      "originalSha256": "f96d1d9f6e3495dc69e6bac2096da94601a2e80b69e1b54752ff923bcdc544ff",
+      "archivedSha256": "33070cf7122b1142b547f913c2bd33177d20c649728946bece1bfb4a7f520f6c",
+      "pathOnlyChanges": [
+        {
+          "outputPathPrefixOnly": true,
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false
+    },
+    {
+      "file": "csp-probe.cjs",
+      "originalEvidenceFile": "online-optics/csp-probe.cjs",
+      "originalSha256": "771cc7d4f5d9d135385d82e73b83facd7c7ddf7db6fca57e65b27c68537fa991",
+      "archivedSha256": "771cc7d4f5d9d135385d82e73b83facd7c7ddf7db6fca57e65b27c68537fa991",
+      "pathOnlyChanges": [],
+      "measurementLogicChanged": false
+    },
+    {
+      "file": "online-integration-compare.py",
+      "originalEvidenceFile": "online-optics/online-integration-compare.py",
+      "originalSha256": "613b83ef325606ef076ae542657d3fa4538c27259a0b96553fb15ccc340a2c02",
+      "archivedSha256": "6caf3b73ba82182611460c4928af29df43f6e224ff1424b8c9904256c66b5453",
+      "pathOnlyChanges": [
+        {
+          "analysisInputOutputPathOnly": true,
+          "occurrences": 1
+        }
+      ],
+      "measurementLogicChanged": false
+    }
+  ]
+}

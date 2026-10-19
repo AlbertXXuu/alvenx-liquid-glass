@@ -1,0 +1,224 @@
+{
+  "date": "2026-10-19",
+  "url": "https://alvenx.com/ui/review-20261019-r3/",
+  "status": "Online optics and CSP verification passed; owner physical device acceptance remains pending.",
+  "browsers": [
+    {
+      "url": "https://alvenx.com/ui/review-20261019-r3/",
+      "engine": "chromium",
+      "version": "155.0.8059.84",
+      "httpStatus": 200,
+      "csp": "default-src 'self'; base-uri 'self'; connect-src 'self' https://cloudflareinsights.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'",
+      "scene": {
+        "mode": "scene",
+        "normalProtocol": "data",
+        "sourceId": "alvenx-controlled-source-r9",
+        "sourcePresent": true,
+        "sourceText": "Clarity",
+        "pending": "false",
+        "violations": []
+      },
+      "errors": [],
+      "failedRequests": [],
+      "physicalDevice": false
+    },
+    {
+      "url": "https://alvenx.com/ui/review-20261019-r3/",
+      "engine": "webkit",
+      "version": "26.5",
+      "httpStatus": 200,
+      "csp": "default-src 'self'; base-uri 'self'; connect-src 'self' https://cloudflareinsights.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'",
+      "scene": {
+        "mode": "scene",
+        "normalProtocol": "data",
+        "sourceId": "alvenx-controlled-source-r9",
+        "sourcePresent": true,
+        "sourceText": "Clarity",
+        "pending": "false",
+        "violations": []
+      },
+      "errors": [],
+      "failedRequests": [],
+      "physicalDevice": false
+    }
+  ],
+  "pixelProof": {
+    "date": "2026-10-19",
+    "scope": "Actual R3 mobile-review.html integration; cross-SVG source use with current LiquidControl C2 map/material. No physical iOS device claim.",
+    "method": "UI Reduced motion stabilizes geometry; filter scale zero vs original, then change real Source word and Source line. Source pixels outside lens show no changes above 2/255 for each scale comparison; inspect reported maxDelta for exact-zero versus low-level raster variance. No CSS blur settings change.",
+    "pass": true,
+    "results": [
+      {
+        "engine": "chromium",
+        "version": "155.0.8059.84",
+        "cases": [
+          {
+            "kind": "text",
+            "mode": "scene",
+            "originalScale": "26",
+            "refraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 5016,
+                "percent": 27.32,
+                "maxDelta": 73
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "updatedRefraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 6603,
+                "percent": 35.964,
+                "maxDelta": 77
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "liveSourceUpdate": {
+              "pixels": 18360,
+              "changedAbove2": 7442,
+              "percent": 40.534,
+              "maxDelta": 149
+            }
+          },
+          {
+            "kind": "track",
+            "mode": "scene",
+            "originalScale": "26",
+            "refraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 2815,
+                "percent": 15.332,
+                "maxDelta": 16
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "updatedRefraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 3497,
+                "percent": 19.047,
+                "maxDelta": 19
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "liveSourceUpdate": {
+              "pixels": 18360,
+              "changedAbove2": 4526,
+              "percent": 24.651,
+              "maxDelta": 61
+            }
+          }
+        ]
+      },
+      {
+        "engine": "webkit",
+        "version": "26.5",
+        "cases": [
+          {
+            "kind": "text",
+            "mode": "scene",
+            "originalScale": "26",
+            "refraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 4340,
+                "percent": 23.638,
+                "maxDelta": 55
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "updatedRefraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 5808,
+                "percent": 31.634,
+                "maxDelta": 54
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "liveSourceUpdate": {
+              "pixels": 18360,
+              "changedAbove2": 6812,
+              "percent": 37.102,
+              "maxDelta": 149
+            }
+          },
+          {
+            "kind": "track",
+            "mode": "scene",
+            "originalScale": "26",
+            "refraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 1957,
+                "percent": 10.659,
+                "maxDelta": 16
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "updatedRefraction": {
+              "inside": {
+                "pixels": 18360,
+                "changedAbove2": 2918,
+                "percent": 15.893,
+                "maxDelta": 17
+              },
+              "outside": {
+                "pixels": 195788,
+                "changedAbove2": 0,
+                "maxDelta": 0
+              }
+            },
+            "liveSourceUpdate": {
+              "pixels": 18360,
+              "changedAbove2": 4443,
+              "percent": 24.199,
+              "maxDelta": 61
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "visualInspection": [
+    "webkit-integration-text-refracted.png",
+    "webkit-integration-track-refracted.png",
+    "chromium-integration-text-updated.png"
+  ],
+  "sourceEdits": "Changed actual Source word to Lucidity and actual Source line to 0.85 through public UI. The lens moved through actual pointer dragging.",
+  "limits": [
+    "Explicit registered scene refraction; arbitrary DOM capture is not provided.",
+    "Local browser engines on Windows are not physical iOS/Safari/Combo Touch validation.",
+    "This test is functional and visual; no performance benchmark was executed."
+  ]
+}

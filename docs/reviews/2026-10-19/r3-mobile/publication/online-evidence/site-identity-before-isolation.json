@@ -1,0 +1,29 @@
+{
+  "accepted-ui": {
+    "beforeSHA256": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+    "afterSHA256": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+    "byteIdentical": true
+  },
+  "accepted-manifest": {
+    "beforeSHA256": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+    "afterSHA256": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+    "byteIdentical": true
+  },
+  "r2": {
+    "beforeSHA256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+    "afterSHA256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+    "byteIdentical": true
+  },
+  "home": {
+    "beforeSHA256": "910e91d492277e3f1d8f426ee7cd8d3dcde93f7afd70cbd31899781929de5fd8",
+    "afterSHA256": "4b73b70a3ee2abdafb0856b636b443ca154426410b21526cf6b0a183d9c7bbdf",
+    "byteIdentical": false,
+    "normalizedIdentical": false,
+    "normalizedSHA256": "54042fd2d4ab86d65bf4bc5283ba1abf0378d8275a41f6df80a68577ec0feff9"
+  },
+  "review": {
+    "sourceCommit": "566012cacf4225627008d2f407b5782647443180",
+    "sourceRef": "review-20261019-r3",
+    "files": 515
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-19",
+  "kind": "website CSS source-scan isolation follow-up; R3 static UI bytes unchanged",
+  "initialWebsiteSourceCommit": "8ed1a10d43ed54340f7e805d10b4c9ab5a5bef2d",
+  "initialWorker": "fc5015aa-285a-4c97-b2ea-eddeae4535ac",
+  "observedProblem": "Tailwind automatically scanned newly copied public R3 archival source and emitted unintended homepage utility CSS. Site identity check detected the new CSS hash.",
+  "unintendedMainCss": {
+    "filename": "index.DoFPZWKK.css",
+    "bytes": 564540
+  },
+  "correction": "Add a scoped @source not exclusion for the new public/ui/review-20261019-r3 archive directory and a comment in app globals; no homepage component or kit runtime change.",
+  "finalWebsiteSourceCommit": "55ee663b2a164ad0453259d6a5c4671e2f5db58a",
+  "finalWorker": "c3f2fdda-e55d-4335-928a-5c9fe30b6b3e",
+  "restoredMainCss": {
+    "filename": "index.CjIW4VPp.css",
+    "bytes": 564309
+  },
+  "restoredHomeContentCss": "home-content.DyKEujSV.css",
+  "r3ManifestIdentical": true,
+  "limits": "Final page identity is exact only after the stated generated JS hash and deployment UUID normalization; raw homepage HTML still differs."
+}

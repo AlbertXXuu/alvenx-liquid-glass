@@ -1,0 +1,84 @@
+{
+  "reviewId": "R3",
+  "date": "2026-10-19",
+  "status": "published-awaiting-owner",
+  "ownerAccepted": false,
+  "reviewUrl": "https://alvenx.com/ui/review-20261019-r3/",
+  "source": {
+    "repository": "https://github.com/AlbertXXuu/alvenx-liquid-glass",
+    "branch": "codex/mobile-optics-review-r3",
+    "tag": "review-20261019-r3",
+    "commit": "566012cacf4225627008d2f407b5782647443180",
+    "tagUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/tree/review-20261019-r3",
+    "tagPushed": true,
+    "frozenTagMovedByThisReceipt": false,
+    "ci": {
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39239326479",
+      "conclusion": "success"
+    },
+    "frozenArchiveGitBlobSha256Entries": 111,
+    "frozenArchiveHashMismatches": 0
+  },
+  "website": {
+    "sourceRepository": "AlbertXXuu/AlvenXWebsite (private)",
+    "sourceCommit": "55ee663b2a164ad0453259d6a5c4671e2f5db58a",
+    "sourceTag": "ui-review-20261019-r3-published",
+    "sourcePushed": true,
+    "workerVersion": "c3f2fdda-e55d-4335-928a-5c9fe30b6b3e",
+    "reviewRoutePublished": true,
+    "sourceValidationLintBuildCssDryRun": "passed",
+    "preparedSourceToBuildHashMatches": 515,
+    "r3ManifestByteIdenticalAcrossBothDeployments": true,
+    "acceptedUiHtmlAndManifestByteIdentical": true,
+    "previousR2HtmlByteIdentical": true,
+    "homepageRawHtmlUnchanged": false,
+    "homepageCssAssetsIdentical": true,
+    "homepageAfterLimitedBuildMetadataNormalization": {
+      "identical": true,
+      "sha256": "54042fd2d4ab86d65bf4bc5283ba1abf0378d8275a41f6df80a68577ec0feff9",
+      "normalizedFields": [
+        "generated JS chunk filename hashes",
+        "Vinext deploymentVersion UUID"
+      ]
+    },
+    "homepageComponentAndKitRuntimeChangedByCssFollowUp": false,
+    "cssIsolationFollowUp": "publication/online-evidence/site-isolation-history.json"
+  },
+  "evidence": {
+    "record": "publication/online-evidence/README.md",
+    "hashes": "publication/online-evidence/SHA256SUMS.txt",
+    "layout": [
+      "publication/online-evidence/layout-chromium.json",
+      "publication/online-evidence/layout-webkit.json"
+    ],
+    "opticsCsp": "publication/online-evidence/optics-csp.json",
+    "shape": "publication/online-evidence/shape-checks.json",
+    "siteIdentity": "publication/online-evidence/site-identity.json",
+    "manifestIdentity": "publication/online-evidence/delivery-manifest-identity.json",
+    "portableProtocols": "publication/online-evidence/protocols/README.md"
+  },
+  "onlineValidation": {
+    "Chromium": "393/768px layout/fonts/field/default.3/native-range-paint, ordinary SVG scene pixels and editable source, CSP passed",
+    "WindowsWebKit": "393/768px layout/fonts/field/default.3/native-range-paint, ordinary SVG scene pixels and editable source, CSP passed",
+    "ChromiumNativeTouch": "393/768px actual-shape start/any-direction holds and inside/outside boundary semantics passed",
+    "visualReview": "Root personally viewed two online WebKit PNGs; research personally inspected online text/track/updated source images.",
+    "pageErrors": 0,
+    "opticalCspViolations": 0,
+    "physicalDevices": false
+  },
+  "retainedCostsAndLimits": [
+    "Explicit shared SVG source refraction; arbitrary DOM capture is not provided.",
+    "Touch and release settling intentionally retain exact synchronous PNG maps; final observed40–44encodes per gesture window,max23.6ms.",
+    "Mouse idle work uses async encoding; measured pressure delivery tradeoff is recorded and no universal speedup is claimed.",
+    "No physical iPhone/iPad/Safari/Combo Touch acceptance, displayed first-contact latency, temperature or power certification.",
+    "Owner should review the exact R3 URL before accepting; no production UI baseline is replaced."
+  ],
+  "package": {
+    "baseVersion": "1.1.2",
+    "tarballSha256": "941b4a1c944f8cb1009c99cbe59b315b82d93b30429abeaba88750dcec9f0525",
+    "npmRegistryPublished": false,
+    "sourceRights": "All rights reserved; no open-source reuse license granted"
+  },
+  "physicalDeviceProtocol": "README.md#physical-device-protocol--真机审查步骤",
+  "prepublicationSummaryUnchanged": true
+}

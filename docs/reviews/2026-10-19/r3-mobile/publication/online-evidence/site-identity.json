@@ -1,0 +1,41 @@
+{
+  "accepted-ui": {
+    "beforeSHA256": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+    "afterSHA256": "fc1ed4c17a00da9676c355f2f6dc8de55f97de4bc26213926159b73b8fca4c0b",
+    "byteIdentical": true
+  },
+  "accepted-manifest": {
+    "beforeSHA256": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+    "afterSHA256": "95a259eb4b904f29759df8282a981806a25b0dab41435a2f92afe5765e8e4f39",
+    "byteIdentical": true
+  },
+  "r2": {
+    "beforeSHA256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+    "afterSHA256": "e1a43e73956a5fda151ad6c29a5ebc2016bd47fea4a3be1a89c8e3bf1f339805",
+    "byteIdentical": true
+  },
+  "home": {
+    "beforeSHA256": "910e91d492277e3f1d8f426ee7cd8d3dcde93f7afd70cbd31899781929de5fd8",
+    "afterSHA256": "d1415e3e1a0d4d66f85f8081195d5c490c8905a56425d6829b70ce247e1fdd6e",
+    "byteIdentical": false,
+    "normalizedIdentical": true,
+    "normalizedSHA256": "54042fd2d4ab86d65bf4bc5283ba1abf0378d8275a41f6df80a68577ec0feff9",
+    "normalizedFields": [
+      "generated JS chunk filename hashes",
+      "Vinext deploymentVersion UUID"
+    ],
+    "cssAssetsIdentical": true,
+    "cssAssets": [
+      "/_next/static/css/index.CjIW4VPp.css",
+      "/_next/static/css/home-content.DyKEujSV.css"
+    ]
+  },
+  "review": {
+    "sourceCommit": "566012cacf4225627008d2f407b5782647443180",
+    "sourceRef": "review-20261019-r3",
+    "files": 515,
+    "manifestByteIdenticalAcrossDeployments": true
+  },
+  "finalWorker": "c3f2fdda-e55d-4335-928a-5c9fe30b6b3e",
+  "websiteSourceCommit": "55ee663b2a164ad0453259d6a5c4671e2f5db58a"
+}

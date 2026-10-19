@@ -1,0 +1,12 @@
+{
+  "sourceRef": "review-20261019-r3",
+  "sourceCommit": "566012cacf4225627008d2f407b5782647443180",
+  "reviewUrl": "https://alvenx.com/ui/review-20261019-r3/",
+  "status": "published-awaiting-owner",
+  "preparedFiles": 515,
+  "initialOnlineManifestSha256": "e4fc36c0e2dafcdb33cd81081336dba3f344b6fe42542facecfae85a16a90a89",
+  "finalOnlineManifestSha256": "e4fc36c0e2dafcdb33cd81081336dba3f344b6fe42542facecfae85a16a90a89",
+  "manifestByteIdenticalAcrossDeployments": true,
+  "archiveContainsFull515FileManifest": false,
+  "publicManifestUrl": "https://alvenx.com/ui/review-20261019-r3/review-manifest.json"
+}
