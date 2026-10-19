@@ -3,7 +3,7 @@ export type ResolvedGlassOptics = Exclude<GlassOpticsMode, 'auto'>;
 
 /** CSS.supports only checks syntax, not successful SVG backdrop rendering.
  * Auto conservatively enables the tested SVG path on desktop Chromium and
- * Android Chromium. All iOS browsers use WebKit, regardless of their name.
+ * Android Chromium. The iOS path stays conservative, including desktop iPad UA.
  * A host may force SVG only after validating its actual target renderer. */
 export function resolveGlassOptics(mode: GlassOpticsMode = 'auto'): ResolvedGlassOptics {
   if (typeof CSS === 'undefined' || typeof navigator === 'undefined') return 'flat';

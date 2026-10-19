@@ -9,6 +9,7 @@ import { volumeRasterSize } from './volume-budget.js';
 const DEFAULTS = Object.freeze({
   edge: 'balanced', flat: false, curvature: 3.2,
   lightX: 0.22, lightY: 0.08, growth: 1, showGrid: false, time: 0,
+  studioMotion: false, portrait: false,
   parentX: 1, parentY: 1, childX: 1, childY: 1,
   deformX: 500, deformY: 280, deformDX: 0, deformDY: 0,
   specularOpacity: .65, specularSaturation: 1, refractionLevel: 1,
@@ -30,6 +31,9 @@ uniform float u_edge;
 uniform float u_flat;
 uniform float u_grid;
 uniform float u_time;
+uniform float u_studio_motion;
+uniform vec2 u_studio_rotation;
+uniform float u_portrait;
 uniform float u_specular_opacity;
 uniform float u_specular_saturation;
 uniform float u_refraction_level;
@@ -139,11 +143,23 @@ float softLine(float distance, float width) {
 }
 
 vec3 environmentAt(vec2 p, float time) {
+  // An opt-in rotating colour field, shared by background, transmission and
+  // reflection. Rotate only its sampling coordinates: the shape, grid and DOM
+  // stay still. The pearl softbox keeps its world-space u_light position.
+  // The old field is exact when disabled or sampled at time zero.
+  vec2 fieldPoint = p;
+  float separation = 1.0;
+  if (u_studio_motion > 0.5 && time > 0.0) {
+    mat2 rotation = mat2(u_studio_rotation.x, -u_studio_rotation.y,
+      u_studio_rotation.y, u_studio_rotation.x);
+    fieldPoint = rotation * (p - VIEW * 0.5) + VIEW * 0.5;
+    separation += 0.06 * (1.0 - u_studio_rotation.x);
+  }
   // Independent, gentle tides move colour centres, extent and density. Every
   // wave is zero at time 0, preserving the accepted static volume. The same
   // field feeds the backdrop, transmission and reflected colour change; the
-  // studio light stays put. Wide travel makes a few seconds readable without
-  // speeding the whole field up or pulsing the scene's overall brightness.
+  // studio light is controlled separately by u_light. Wide travel makes a few
+  // seconds readable without pulsing the scene's overall brightness.
   float phase = time * 6.28318530718;
   float tide42 = sin(phase / 42.0);
   float tide45 = sin(phase / 45.0);
@@ -156,18 +172,18 @@ vec3 environmentAt(vec2 p, float time) {
   vec2 blueExtent = vec2(310.0, 230.0) * (1.0 + vec2(0.160 * tide63, 0.120 * tide45));
   vec2 lilacExtent = vec2(280.0, 210.0) * (1.0 + vec2(0.180 * tide70, -0.140 * tide56));
   vec2 indigoExtent = vec2(230.0, 170.0) * (1.0 + vec2(0.150 * tide45, 0.140 * tide63));
-  vec2 blueDelta = (p - blueCentre) / blueExtent;
-  vec2 lilacDelta = (p - lilacCentre) / lilacExtent;
-  vec2 indigoDelta = (p - indigoCentre) / indigoExtent;
+  vec2 blueDelta = (fieldPoint - blueCentre) / blueExtent;
+  vec2 lilacDelta = (fieldPoint - lilacCentre) / lilacExtent;
+  vec2 indigoDelta = (fieldPoint - indigoCentre) / indigoExtent;
   vec2 pearlDelta = (p - u_light * VIEW) / vec2(420.0, 320.0);
   float blue = exp(-dot(blueDelta, blueDelta));
   float lilac = exp(-dot(lilacDelta, lilacDelta));
   float pearl = exp(-dot(pearlDelta, pearlDelta));
   vec3 colour = vec3(0.932, 0.947, 0.991);
-  colour = mix(colour, vec3(0.580, 0.730, 0.960), blue * 0.70 * (1.0 + 0.150 * tide42));
-  colour = mix(colour, vec3(0.760, 0.660, 0.940), lilac * 0.62 * (1.0 + 0.130 * tide70));
+  colour = mix(colour, vec3(0.580, 0.730, 0.960), blue * 0.70 * (1.0 + 0.150 * tide42) * separation);
+  colour = mix(colour, vec3(0.760, 0.660, 0.940), lilac * 0.62 * (1.0 + 0.130 * tide70) * separation);
   colour = mix(colour, vec3(0.620, 0.650, 0.900),
-    exp(-dot(indigoDelta, indigoDelta)) * 0.24 * (1.0 + 0.220 * tide56));
+    exp(-dot(indigoDelta, indigoDelta)) * 0.24 * (1.0 + 0.220 * tide56) * separation);
   colour = mix(colour, vec3(0.992, 0.990, 1.0), pearl * 0.27);
 
   // Review direction: no default guide curves or background line overlays.
@@ -215,7 +231,7 @@ vec3 reflectedEnvironment(vec3 direction) {
   colour = mix(colour, vec3(0.742, 0.660, 0.916), lilac * 0.63);
   // Retain the accepted studio at time 0, while its coloured reflection
   // follows the SAME analytic field sampled by the visible background and
-  // transmission. Only its colour drift is added; the softbox never moves.
+  // transmission. Only its colour drift is added; the softbox follows u_light.
   vec2 scenePoint = VIEW * 0.5 + direction.xy * VIEW * 0.5;
   vec3 sceneChange = environment(scenePoint) - environmentAt(scenePoint, 0.0);
   colour = clamp(colour + sceneChange * 0.65, 0.0, 1.0);
@@ -239,6 +255,11 @@ void main() {
   float scale = min(u_resolution.x / VIEW.x, u_resolution.y / VIEW.y);
   vec2 screen = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y);
   vec2 p = (screen - u_resolution * 0.5) / scale + VIEW * 0.5;
+  if (u_portrait > 0.5) {
+    scale = min(u_resolution.x / VIEW.y, u_resolution.y / VIEW.x);
+    p = vec2(screen.y / u_resolution.y * VIEW.x,
+      (1.0 - screen.x / u_resolution.x) * VIEW.y);
+  }
   float aa = max(0.45, 0.8 / scale);
   float distance = sceneDistance(p);
   float coverage = 1.0 - smoothstep(-aa, aa, distance);
@@ -356,6 +377,8 @@ function bounded(value, fallback, min, max) {
  * @returns {{render(options?: Partial<typeof DEFAULTS>, budget?: {maxPixels?: number, maxDpr?: number}): void, destroy(): void}}
  * render() is synchronous and draws one frame. The caller owns animation.
  * time is elapsed seconds (initially 0); pause it outside to freeze the field.
+ * studioMotion opts into a 40-second colour-field rotation; it owns no clock.
+ * portrait rotates the logical scene clockwise; the host keeps DOM text upright.
  * blurLevel/progressiveBlur are CSS-pixel sigmas of the analytic transmission.
  * Material ranges: specularOpacity/glassOpacity 0..1,
  * specularSaturation/refractionLevel 0..3, blurLevel/progressiveBlur 0..6.
@@ -418,6 +441,7 @@ export function createGlassPreview(canvas) {
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
       locations = Object.fromEntries([
         'resolution', 'light', 'curvature', 'growth', 'edge', 'flat', 'grid', 'time',
+        'studio_motion', 'studio_rotation', 'portrait',
         'parent_stretch', 'child_stretch', 'deform_point', 'deform_amount',
         'specular_opacity', 'specular_saturation', 'refraction_level',
         'blur_level', 'progressive_blur', 'glass_opacity',
@@ -442,8 +466,10 @@ export function createGlassPreview(canvas) {
       lightY: bounded(merged.lightY, DEFAULTS.lightY, 0, 1),
       growth: bounded(merged.growth, DEFAULTS.growth, 0, 1),
       showGrid: Boolean(merged.showGrid),
-      // All five wave periods divide 2520, so this wrap is continuous and
-      // keeps float shader time precise during long-running local previews.
+      studioMotion: Boolean(merged.studioMotion),
+      portrait: Boolean(merged.portrait),
+      // All wave periods, including the studio rotation, divide 2520. Wrapping
+      // stays continuous and preserves float precision in long-running previews.
       time: Number.isFinite(merged.time) ? Math.max(0, merged.time) % 2520 : 0,
       parentX: bounded(merged.parentX, 1, .85, 1.15),
       parentY: bounded(merged.parentY, 1, .85, 1.15),
@@ -489,10 +515,16 @@ export function createGlassPreview(canvas) {
     gl.uniform1f(locations.flat, options.flat ? 1 : 0);
     gl.uniform1f(locations.grid, options.showGrid ? 1 : 0);
     gl.uniform1f(locations.time, options.time);
+    gl.uniform1f(locations.studio_motion, options.studioMotion ? 1 : 0);
+    const studioAngle = options.time * (Math.PI * 2 / 40);
+    gl.uniform2f(locations.studio_rotation, Math.cos(studioAngle), Math.sin(studioAngle));
+    gl.uniform1f(locations.portrait, options.portrait ? 1 : 0);
     gl.uniform1f(locations.specular_opacity, options.specularOpacity);
     gl.uniform1f(locations.specular_saturation, options.specularSaturation);
     gl.uniform1f(locations.refraction_level, options.refractionLevel);
-    const logicalPerCssPixel = raster.scale / Math.min(width / 1000, height / 560);
+    const logicalPerCssPixel = raster.scale / (options.portrait
+      ? Math.min(width / 560, height / 1000)
+      : Math.min(width / 1000, height / 560));
     gl.uniform1f(locations.blur_level, options.blurLevel * logicalPerCssPixel);
     gl.uniform1f(locations.progressive_blur, options.progressiveBlur * logicalPerCssPixel);
     gl.uniform1f(locations.glass_opacity, options.glassOpacity);

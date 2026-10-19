@@ -21,8 +21,9 @@ export class GlassClock {
     this.optics = options.optics ?? 'auto';
     this.maxFps = boundedFrameRate(options.maxFps);
   }
-  private move = (event: PointerEvent) => { this.pointer = { x: event.clientX, y: event.clientY }; this.pointerRevision++; this.wake(); };
+  private move = (event: PointerEvent) => { if(event.isPrimary===false)return; this.pointer = { x: event.clientX, y: event.clientY }; this.pointerRevision++; this.wake(); };
   private leave = () => { this.pointer = { x: -10000, y: -10000 }; this.pointerRevision++; this.wake(); };
+  private releaseTouch = (event:PointerEvent) => { if(event.pointerType==='touch'&&event.isPrimary!==false)this.leave(); };
   /** Call after host-driven positional layout changes without resize/scroll. */
   invalidateLayout = () => { this.layoutRevision++; this.wake(); };
   private visibility = () => {
@@ -32,6 +33,9 @@ export class GlassClock {
   private connect() {
     if (this.listening || typeof document === 'undefined') return;
     document.addEventListener('pointermove', this.move, { passive: true });
+    document.addEventListener('pointerdown', this.move, { passive: true });
+    document.addEventListener('pointerup', this.releaseTouch, { passive: true });
+    document.addEventListener('pointercancel', this.releaseTouch, { passive: true });
     document.addEventListener('pointerleave', this.leave);
     document.addEventListener('scroll', this.invalidateLayout, { passive: true, capture: true });
     window.addEventListener('resize', this.invalidateLayout, { passive: true });
@@ -44,6 +48,9 @@ export class GlassClock {
     this.frame = 0; this.last = 0;
     if (!this.listening) return;
     document.removeEventListener('pointermove', this.move);
+    document.removeEventListener('pointerdown', this.move);
+    document.removeEventListener('pointerup', this.releaseTouch);
+    document.removeEventListener('pointercancel', this.releaseTouch);
     document.removeEventListener('pointerleave', this.leave);
     document.removeEventListener('scroll', this.invalidateLayout, { capture: true });
     window.removeEventListener('resize', this.invalidateLayout);
@@ -57,7 +64,11 @@ export class GlassClock {
   }
   wake = () => {
     if (!this.frame && this.listeners.size && typeof document !== 'undefined' && !document.hidden) {
-      this.last = this.phase = performance.now(); this.frame = requestAnimationFrame(this.tick);
+      this.last = performance.now();
+      // A sleeping scene should respond at the next browser frame, rather than
+      // wait one full budget interval and often miss that first frame as well.
+      this.phase = this.last - 1000 / boundedFrameRate(this.maxFps);
+      this.frame = requestAnimationFrame(this.tick);
     }
   };
   private tick = (now: number) => {

@@ -22,3 +22,21 @@
 @media(max-width:360px){.showcase .ax-product-header{gap:16px}.showcase .header-menu{width:44px}.header-menu>span:last-child{display:none}.intro h1{font-size:55px}.intro-actions{flex-wrap:wrap;gap:8px 16px}.showcase .replay{width:138px;min-width:138px}.showcase .parameters-disclosure{width:175px;font-size:12px}.showcase .reset{width:108px;font-size:11px}.showcase h2{font-size:23px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media(forced-colors:active){.showcase .ax-product-header,.site-header nav,.showcase pre{background:Canvas;color:CanvasText;border:1px solid CanvasText}.showcase a,.showcase .header-link{color:LinkText}.showcase .header-link:hover,.showcase .header-menu[aria-expanded=true]{border-color:Highlight}.showcase a:focus-visible,.showcase button:focus-visible{outline-color:Highlight}}
+/* Only the movable hit surface opts out of selection; the study text remains
+ * native/selectable outside it, including on iPad with a trackpad attached. */
+.showcase .moving-lens,.showcase .moving-lens .glass-hit{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}
+/* Review composition: keep the complete continuous form in the container.
+ * The optical scene turns upright on narrow containers; native content does not. */
+.showcase .stage[data-orientation="portrait"] .foreground h3{font-size:23px;line-height:1.2;margin-bottom:16px}
+.showcase .stage[data-orientation="portrait"] .foreground>.eyebrow{margin-bottom:10px}
+.showcase .stage[data-orientation="portrait"] .idea-symbol{display:none}
+.showcase .stage[data-orientation="portrait"] .idea{height:88px}
+.showcase .stage[data-orientation="portrait"] .idea>.glass-hit{padding:10px max(20px,6%);gap:0}
+.showcase .stage[data-orientation="portrait"] .idea strong{font-size:14px}
+.showcase .stage[data-orientation="portrait"] .idea small{font-size:12px}
+.showcase .mobile-stage-nav{display:none}
+.showcase{--ax-label:#5C6B8C}
+.showcase .fineprint,.showcase .parameter-hint,.showcase .section-note,.showcase .demo-title p,.showcase .small-copy,.showcase .lens-caption,.showcase .principles p,.showcase .reuse-copy,.showcase .release-note p{color:#596A8B}
+.showcase .input-frame input::placeholder{color:#64718E}
+@media(max-width:360px){.showcase .stage[data-orientation="portrait"] .foreground{top:46%}.showcase .stage[data-orientation="portrait"] .idea small{display:none}}
+@media(any-pointer:coarse){.showcase .glass-hit input,.showcase .glass-hit .parameter-number{font-size:16px}}

@@ -18,6 +18,12 @@ const checks = [];
 try {
   for (const value of [0,-1,NaN,Infinity]) assert.equal(new GlassClock({maxFps:value}).maxFps,60);
   assert.equal(new GlassClock({maxFps:500}).maxFps,240);
+  {
+    const quick=new GlassClock();let frames=0;
+    const stop=quick.subscribe(()=>{frames++;return false;});advance(3);
+    assert.equal(frames,1,'new work uses the first available browser frame');
+    assert.equal(pending.size,0);stop();quick.destroy();checks.push('first-frame wake latency');
+  }
   for (const hz of [60,75,90,120,144,165,240]) {
     const clock = new GlassClock({maxFps:240}); let frames = 0, integrated = 0;
     const unsubscribe = clock.subscribe(delta => { frames++; integrated += delta; return frames < 20; });
@@ -45,6 +51,12 @@ try {
   const pointer = new Event('pointermove'); Object.assign(pointer, { clientX: 120, clientY: 240 }); doc.dispatchEvent(pointer);
   assert.deepEqual(clock.pointer, { x: 120, y: 240 }); assert.equal(clock.pointerRevision, 1);
   win.dispatchEvent(new Event('blur')); assert.equal(clock.pointerRevision, 2); assert.ok(clock.pointer.x < 0);
+  const down=new Event('pointerdown');Object.assign(down,{clientX:80,clientY:90,isPrimary:true,pointerType:'touch'});doc.dispatchEvent(down);
+  assert.deepEqual(clock.pointer,{x:80,y:90},'first contact updates coordinates without a prior move');
+  const secondary=new Event('pointermove');Object.assign(secondary,{clientX:500,clientY:600,isPrimary:false});doc.dispatchEvent(secondary);
+  assert.deepEqual(clock.pointer,{x:80,y:90},'secondary contact does not steal optical focus');
+  const touchUp=new Event('pointerup');Object.assign(touchUp,{isPrimary:true,pointerType:'touch'});doc.dispatchEvent(touchUp);
+  assert.ok(clock.pointer.x<0,'lifted touch does not retain a synthetic hover');
   unsubscribe(); assert.equal(pending.size, 0);
   const before = clock.layoutRevision; doc.dispatchEvent(new Event('scroll')); assert.equal(clock.layoutRevision, before, 'last unsubscribe removes listeners');
   const resubscribe = clock.subscribe(() => false); advance(16); resubscribe(); clock.destroy(); clock.destroy();

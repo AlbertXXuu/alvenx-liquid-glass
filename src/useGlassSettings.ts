@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useState, type Dispatch, type SetStateAction } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react';
 import { GlassClock, boundedFrameRate } from './GlassClock';
 import { DEFAULT_SETTINGS, SETTINGS_KEY, readSettings, type ReviewSettings } from './reviewSettings';
 import type { GlassOpticsMode } from './opticalSupport';
@@ -20,6 +20,13 @@ export function useGlassSettings({ storageKey = SETTINGS_KEY, optics = 'auto', m
   const [clock] = useState(() => new GlassClock());
   const [stored, setStored] = useState(() => ({ key: storageKey, value: readSettings(storageKey) }));
   const [systemReduced, setSystemReduced] = useState(() => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const pendingSave = useRef<{ key:string; value:ReviewSettings }|null>(null);
+  const saveTimer = useRef<ReturnType<typeof setTimeout>|null>(null);
+  const flushSave = useCallback(() => {
+    if (saveTimer.current !== null) { clearTimeout(saveTimer.current); saveTimer.current = null; }
+    const pending = pendingSave.current; pendingSave.current = null;
+    if (pending) try { localStorage.setItem(pending.key, JSON.stringify(pending.value)); } catch { /* Storage is optional. */ }
+  }, []);
   const settings = stored.value;
   const reduced = systemReduced || settings.reducedMotion;
   clock.strength = settings.interactionStrength; clock.material = settings; clock.reduced = reduced; clock.optics = optics;
@@ -35,10 +42,26 @@ export function useGlassSettings({ storageKey = SETTINGS_KEY, optics = 'auto', m
     update(); preference.addEventListener('change', update);
     return () => preference.removeEventListener('change', update);
   }, []);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (stored.key !== storageKey) return;
-    try { localStorage.setItem(storageKey, JSON.stringify(stored.value)); } catch { /* Storage is optional. */ }
-  }, [stored, storageKey]);
+    // Pointer values still reach the renderer every frame. Serialization and
+    // synchronous storage wait for a quiet interval instead of blocking each
+    // move; lifecycle events flush the latest value before leaving the page.
+    if (pendingSave.current && pendingSave.current.key !== stored.key) flushSave();
+    pendingSave.current = { key:stored.key, value:stored.value };
+    if (saveTimer.current !== null) clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(flushSave, 250);
+  }, [stored, storageKey, flushSave]);
+  useEffect(() => {
+    const hidden = () => { if (document.hidden) flushSave(); };
+    window.addEventListener('pagehide', flushSave);
+    document.addEventListener('visibilitychange', hidden);
+    return () => {
+      window.removeEventListener('pagehide', flushSave);
+      document.removeEventListener('visibilitychange', hidden);
+      flushSave();
+    };
+  }, [flushSave]);
   useEffect(() => () => clock.destroy(), [clock]);
 
   const setSettings: Dispatch<SetStateAction<ReviewSettings>> = useCallback(next => {

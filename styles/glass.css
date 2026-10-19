@@ -28,11 +28,15 @@
 .alvenx-design button.glass-hit:disabled, .alvenx-design .switch-native:disabled { cursor: default; }
 
 .alvenx-design .stage-scroll { width:105%; margin-left:-2.5%; overflow-x:auto; overflow-y:hidden; border-radius:22px; }
-.alvenx-design .stage { position:relative; min-width:760px; width:100%; aspect-ratio:1050/560; overflow:hidden; background:var(--ax-stage-background); }
+.alvenx-design .stage { position:relative; min-width:760px; width:100%; aspect-ratio:1050/560; overflow:hidden; background:var(--ax-stage-background); touch-action:pan-y pinch-zoom; }
 .alvenx-design .volume-canvas { display:block; position:absolute; inset:0; width:100%; height:100%; }
 .alvenx-design .foreground { position:absolute; left:55.5%; top:25.2%; width:31%; color:var(--ax-content); }
 .alvenx-design .eyebrow { font-size:12px; letter-spacing:.11em; font-weight:550; color:#7480A0; margin:0 0 12px; }
 .alvenx-design .foreground h1 { font-size:clamp(23px,2.3vw,29px); line-height:1.15; letter-spacing:-.035em; font-weight:550; margin:0 0 23px; }
+.alvenx-design .stage-scroll.is-responsive { overflow-x:hidden; }
+.alvenx-design .stage.is-responsive { min-width:0; }
+.alvenx-design .stage.is-responsive[data-orientation="portrait"] { aspect-ratio:560/1000; min-height:650px; max-height:900px; }
+.alvenx-design .stage[data-orientation="portrait"] .foreground { left:18%; top:49%; width:64%; }
 
 .alvenx-design .liquid-unit { position:relative; flex-shrink:0; }
 /* A sleeping shell may retain its previous raster size after a responsive
@@ -74,16 +78,16 @@
 .alvenx-design .range-track span, .alvenx-design .switch-track span { display:block; height:100%; background:linear-gradient(90deg,var(--ax-progress-start),var(--ax-progress-end)); border-radius:inherit; }
 .alvenx-design .range-thumb-position { position:absolute; top:0; width:64px; height:44px; pointer-events:none; }
 .alvenx-design .range-thumb { width:64px; height:44px; }
-.alvenx-design .glass-range { position:absolute; inset:0; width:100%; height:44px; min-width:0; margin:0; padding:0; appearance:none; -webkit-appearance:none; background:transparent; border:0; outline:0; cursor:ew-resize; opacity:1; z-index:2; touch-action:none; }
+.alvenx-design .glass-range { position:absolute; inset:0; width:100%; height:44px; min-width:0; margin:0; padding:0; appearance:none; -webkit-appearance:none; background:transparent; border:0; outline:0; box-shadow:none; cursor:ew-resize; opacity:0; z-index:2; touch-action:pan-y pinch-zoom; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
 .alvenx-design .glass-range::-webkit-slider-runnable-track { height:3px; background:transparent; }
-.alvenx-design .glass-range::-webkit-slider-thumb { appearance:none; -webkit-appearance:none; width:64px; height:40px; margin-top:-18.5px; border:0; background:transparent; }
+.alvenx-design .glass-range::-webkit-slider-thumb { appearance:none; -webkit-appearance:none; width:64px; height:40px; margin-top:-18.5px; border:0; background:transparent; box-shadow:none; }
 .alvenx-design .glass-range::-moz-range-track { height:3px; background:transparent; }
 .alvenx-design .glass-range::-moz-range-thumb { width:64px; height:40px; border:0; background:transparent; }
 .alvenx-design .glass-range:focus { outline:0; }
 .alvenx-design .switches { display:flex; gap:24px; align-items:center; }
 .alvenx-design .switch-control { display:flex; align-items:center; gap:10px; color:var(--ax-label); font-size:12px; }
 .alvenx-design .switch-body { position:relative; width:98px; height:48px; }
-.alvenx-design .switch-native { position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; outline:0; background:transparent; border-radius:24px; touch-action:none; }
+.alvenx-design .switch-native { position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; outline:0; background:transparent; border-radius:24px; appearance:none; -webkit-appearance:none; box-shadow:none; touch-action:pan-y pinch-zoom; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
 .alvenx-design .switch-native:focus-visible { outline:0; }
 .alvenx-design .switch-visual { position:absolute; left:5.88px; top:2.88px; width:86.24px; height:42.24px; pointer-events:none; }
 .alvenx-design .switch-track { position:absolute; left:6.16px; right:6.16px; top:11.44px; height:19.36px; border-radius:30px; background:linear-gradient(90deg,var(--ax-track-start),var(--ax-track-end)); overflow:hidden; }
@@ -114,3 +118,12 @@
   .alvenx-design .switches { flex-wrap:wrap; }
 }
 @media(prefers-reduced-motion:reduce) { .alvenx-design * { transition:none!important; } }
+/* The native range remains the accessible input; only its platform paint is
+ * hidden behind our contour. Forced-colour users keep a visible native rail. */
+@media(forced-colors:active) {
+  .alvenx-design .glass-range { opacity:1; appearance:auto; -webkit-appearance:auto; }
+  .alvenx-design .glass-range::-webkit-slider-runnable-track { background:CanvasText; }
+  .alvenx-design .glass-range::-webkit-slider-thumb { appearance:auto; -webkit-appearance:auto; background:Highlight; }
+  .alvenx-design .glass-range::-moz-range-track { background:CanvasText; }
+  .alvenx-design .glass-range::-moz-range-thumb { background:Highlight; }
+}

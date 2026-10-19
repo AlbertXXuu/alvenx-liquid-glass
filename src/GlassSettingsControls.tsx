@@ -8,6 +8,16 @@ const clamp = (value:number) => Math.max(0,Math.min(1,value));
 const resistance = (excess:number,reduced:boolean) => reduced?0:Math.sign(excess)*12*(1-Math.exp(-Math.abs(excess)/32));
 // Re-grabbing during release preserves the visible elastic displacement.
 const excessForOffset = (offset:number) => Math.sign(offset)*-32*Math.log1p(-Math.min(Math.abs(offset),11.999999)/12);
+type PointerIntent = 'pending'|'horizontal'|'vertical';
+type ControlDrag = {id:number;startX:number;startY:number;lastX:number;rawProgress:number;span:number;intent:PointerIntent};
+// Direct touch keeps a short undecided phase so scrolling cannot also edit a
+// control. Mouse/trackpad and pen drag immediately; CSS permits vertical pan.
+function resolveIntent(drag:ControlDrag,x:number,y:number):PointerIntent {
+  if(drag.intent!=='pending')return drag.intent;
+  const dx=Math.abs(x-drag.startX),dy=Math.abs(y-drag.startY);
+  if(Math.max(dx,dy)>=6)drag.intent=dy>dx?'vertical':'horizontal';
+  return drag.intent;
+}
 type RailGeometry = {left:number;right:number;cy:number;radius:number};
 const restShape = (width:number,height:number):ThumbGeometry => ({hostWidth:width,hostHeight:height,width:width-12,height:height-8,centerX:width/2,centerY:height/2});
 function placement(rail:RailGeometry,shape:ThumbGeometry,progress:number,offset=0) {
@@ -141,10 +151,16 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
   const [pressed,setPressed]=useState(false),[focused,setFocused]=useState(false);
   const [displayPosition,setDisplayPosition]=useState({progress:(value-min)/(max-min),offset:0});
   const anchor=useLensAnchor(64,44,displayPosition.progress,displayPosition.offset);
-  const state=useRef({value,progress:(value-min)/(max-min),offset:0,velocity:0,drag:null as null|{id:number;lastX:number;rawProgress:number;span:number},pending:null as null|{value:number;progress:number;offset:number}});
+  const state=useRef({value,progress:(value-min)/(max-min),offset:0,velocity:0,drag:null as null|ControlDrag,pending:null as null|{value:number;progress:number;offset:number}});
   const bounds=useRef({min,max}),native=useRef<HTMLInputElement>(null);
   const change=useRef(onChange);change.current=onChange;
-  const release=()=>{state.current.drag=null;setPressed(false);clock.wake();};
+  const release=(cancel=false)=>{
+    const s=state.current,id=s.drag?.id;
+    if(cancel)s.pending=null;
+    s.drag=null;setPressed(false);
+    if(id!==undefined&&native.current?.hasPointerCapture(id))native.current.releasePointerCapture(id);
+    clock.wake();
+  };
   useLayoutEffect(()=>clock.subscribe(delta=>{
     const s=state.current;let changed=false;
     if(s.pending){const p=s.pending;s.pending=null;s.progress=p.progress;s.offset=p.offset;s.velocity=0;changed=true;
@@ -166,7 +182,13 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
       clock.wake();
     }else if(!s.drag&&!s.pending&&value!==s.value){s.value=value;s.progress=(value-min)/(max-min);s.offset=0;s.velocity=0;setDisplayPosition({progress:s.progress,offset:0});}
   },[value,min,max,clock]);
-  useEffect(()=>{window.addEventListener('blur',release);window.addEventListener('pointercancel',release);return()=>{window.removeEventListener('blur',release);window.removeEventListener('pointercancel',release);};},[clock]);
+  useEffect(()=>{
+    // A queued keyboard edit is already an intentional value change. Blur only
+    // cancels unpainted pointer input when this control owns an active drag.
+    const blur=()=>release(Boolean(state.current.drag)),cancel=(event:PointerEvent)=>{if(state.current.drag?.id===event.pointerId)release(true);};
+    window.addEventListener('blur',blur);window.addEventListener('pointercancel',cancel);
+    return()=>{window.removeEventListener('blur',blur);window.removeEventListener('pointercancel',cancel);};
+  },[clock]);
   const queuePointer=(clientX:number)=>{
     const s=state.current,d=s.drag;if(!d)return;
     const {span}=anchor.getPlacement(),legal=clamp(d.rawProgress);d.rawProgress=legal+(d.rawProgress-legal)*d.span/span+(clientX-d.lastX)/span;d.span=span;d.lastX=clientX;
@@ -174,7 +196,7 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
     s.pending={value:min+progress*(max-min),progress,offset};clock.wake();
   };
   const queueValue=(next:number)=>{next=Math.max(min,Math.min(max,next));state.current.pending={value:next,progress:(next-min)/(max-min),offset:0};clock.wake();};
-  const commitNumber=(next:number)=>{const s=state.current;s.pending=null;s.drag=null;s.value=next;s.progress=(next-min)/(max-min);s.offset=0;s.velocity=0;setPressed(false);setDisplayPosition({progress:s.progress,offset:0});change.current(next);clock.wake();};
+  const commitNumber=(next:number)=>{release(true);const s=state.current;s.value=next;s.progress=(next-min)/(max-min);s.offset=0;s.velocity=0;setDisplayPosition({progress:s.progress,offset:0});change.current(next);clock.wake();};
   // Approved parameter ids retain their exact precision contract. Other sliders
   // may choose a readable 0–6 digit decimal field without quantizing dragging.
   const precision=PARAMETER_ROWS.find(row=>row.key===id)?.precision??(Number.isFinite(customPrecision)?Math.max(0,Math.min(6,Math.trunc(customPrecision))):2);
@@ -189,19 +211,28 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
       <input ref={native} id={`range-${id}`} aria-label={label} aria-valuetext={display} className="glass-range" type="range" min={min} max={max} step="any" value={value}
         onChange={event=>{if(!state.current.drag)queueValue(event.currentTarget.valueAsNumber);}}
         onPointerDown={event=>{
-          if(event.button!==0)return;event.preventDefault();event.currentTarget.focus({preventScroll:true});event.currentTarget.setPointerCapture(event.pointerId);setPressed(true);
+          if(event.button!==0)return;
+          if(event.isPrimary===false||state.current.drag){event.preventDefault();return;}
+          event.preventDefault();event.currentTarget.focus({preventScroll:true});event.currentTarget.setPointerCapture(event.pointerId);setPressed(true);
           const r=anchor.rail.current!.getBoundingClientRect(),s=state.current,p=anchor.getPlacement(),local=event.clientX-r.left;
           const centre=p.left+anchor.shape.centerX,within=Math.abs(local-centre)<=anchor.shape.width/2;
           // Seed from the committed visible frame: the clock's numerical spring
           // may already be one React commit ahead when pointerdown arrives.
           s.progress=displayPosition.progress;s.offset=displayPosition.offset;s.pending=null;
           const rawProgress=within?s.progress+excessForOffset(s.offset)/p.span:(local-p.start)/p.span;
-          s.drag={id:event.pointerId,lastX:event.clientX,rawProgress,span:p.span};s.velocity=0;queuePointer(event.clientX);
+          s.drag={id:event.pointerId,startX:event.clientX,startY:event.clientY,lastX:event.clientX,rawProgress,span:p.span,intent:event.pointerType==='touch'?'pending':'horizontal'};
+          s.velocity=0;if(s.drag.intent==='horizontal')queuePointer(event.clientX);else clock.wake();
         }}
-        onPointerMove={event=>{if(state.current.drag?.id===event.pointerId)queuePointer(event.clientX);}}
-        onPointerUp={event=>{if(state.current.drag?.id===event.pointerId){queuePointer(event.clientX);release();if(event.currentTarget.hasPointerCapture(event.pointerId))event.currentTarget.releasePointerCapture(event.pointerId);}}}
-        onPointerCancel={release} onLostPointerCapture={()=>{if(state.current.drag)release();}}
-        onFocus={event=>setFocused(event.currentTarget.matches(':focus-visible'))} onBlur={()=>{setFocused(false);release();}}
+        onPointerMove={event=>{const d=state.current.drag;if(d?.id===event.pointerId&&resolveIntent(d,event.clientX,event.clientY)==='horizontal')queuePointer(event.clientX);}}
+        onPointerUp={event=>{
+          const d=state.current.drag;if(d?.id!==event.pointerId)return;
+          const intent=resolveIntent(d,event.clientX,event.clientY);
+          if(intent!=='vertical')queuePointer(event.clientX);
+          release(intent==='vertical');
+        }}
+        onPointerCancel={event=>{if(state.current.drag?.id===event.pointerId)release(true);}}
+        onLostPointerCapture={event=>{if(state.current.drag?.id===event.pointerId)release(true);}}
+        onFocus={event=>setFocused(event.currentTarget.matches(':focus-visible'))} onBlur={()=>{setFocused(false);release(Boolean(state.current.drag));}}
         onKeyDown={event=>{
           const key=event.key;if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','PageUp','PageDown'].includes(key))return;
           event.preventDefault();setPressed(true);setFocused(true);
@@ -218,14 +249,18 @@ export type GlassSwitchProps = {id:string;label:string;checked:boolean;clock:Pre
 export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:GlassSwitchProps) {
   const [pressed,setPressed]=useState(false),[focused,setFocused]=useState(false),[display,setDisplay]=useState({position:checked?1:0,offset:0});
   const anchor=useLensAnchor(63.36,42.24,display.position,display.offset);
+  const native=useRef<HTMLButtonElement>(null);
   const state=useRef({position:checked?1:0,target:checked?1:0,reported:checked,offset:0,velocity:0,
-    drag:null as null|{id:number;startX:number;lastX:number;rawProgress:number;span:number;initialChecked:boolean;maxDistance:number},pending:null as null|{position:number;offset:number}});
+    drag:null as null|(ControlDrag&{initialChecked:boolean;maxDistance:number}),pending:null as null|{position:number;offset:number}});
   const change=useRef(onChange);change.current=onChange;
   const report=(next:boolean)=>{if(next!==state.current.reported){state.current.reported=next;change.current(next);}};
-  const settle=(next?:boolean)=>{
-    const s=state.current;
+  const settle=(next?:boolean,cancel=false)=>{
+    const s=state.current,id=s.drag?.id;
+    if(cancel)s.pending=null;
     if(next!==undefined)report(next);else if(s.pending)report(s.pending.position>=.5);
-    s.drag=null;s.target=s.reported?1:0;setPressed(false);clock.wake();
+    s.drag=null;s.target=s.reported?1:0;setPressed(false);
+    if(id!==undefined&&native.current?.hasPointerCapture(id))native.current.releasePointerCapture(id);
+    clock.wake();
   };
   useLayoutEffect(()=>clock.subscribe(delta=>{
     const s=state.current;let changed=false;
@@ -241,11 +276,12 @@ export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:Gla
   }),[clock]);
   useLayoutEffect(()=>{
     const s=state.current;s.reported=checked;s.target=checked?1:0;
-    if(disabled){s.drag=null;setPressed(false);}clock.wake();
+    if(disabled)settle(undefined,true);clock.wake();
   },[checked,disabled,clock]);
   useEffect(()=>{
-    const stop=()=>settle();window.addEventListener('blur',stop);window.addEventListener('pointercancel',stop);
-    return()=>{window.removeEventListener('blur',stop);window.removeEventListener('pointercancel',stop);};
+    const stop=()=>settle(undefined,true),cancel=(event:PointerEvent)=>{if(state.current.drag?.id===event.pointerId)settle(undefined,true);};
+    window.addEventListener('blur',stop);window.addEventListener('pointercancel',cancel);
+    return()=>{window.removeEventListener('blur',stop);window.removeEventListener('pointercancel',cancel);};
   },[clock]);
   const queuePointer=(x:number)=>{
     const s=state.current,d=s.drag;if(!d)return;
@@ -255,17 +291,31 @@ export function GlassSwitch({id,label,checked,clock,onChange,disabled=false}:Gla
   return <div className="switch-control"><span>{label}{disabled&&<small> · System</small>}</span><div className="switch-body" data-position={display.position.toFixed(6)} data-overshoot={display.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
     <div ref={anchor.rail} className="switch-visual"><div ref={anchor.track} className="switch-track" style={{left:anchor.trackInset,right:anchor.trackInset}} data-checked={checked} aria-hidden="true"><span style={{width:`${display.position*100}%`}}/></div>
     <div className="switch-thumb-position" style={{left:anchor.left,top:anchor.top}}><LiquidControl id={`${id}-thumb`} kind="thumb" clock={clock} className="switch-thumb" disabled={disabled} interaction={{pressed,focused,bounds:anchor.bounds,position:`${anchor.left}:${anchor.top}`}} onGeometry={anchor.onGeometry}>{null}</LiquidControl></div></div>
-    <button type="button" className="switch-native" role="switch" aria-label={label} aria-checked={checked} disabled={disabled}
-      onPointerDown={e=>{if(e.button!==0)return;e.currentTarget.setPointerCapture(e.pointerId);setPressed(true);const s=state.current,{span}=anchor.getPlacement();s.position=display.position;s.offset=display.offset;s.pending=null;s.drag={id:e.pointerId,startX:e.clientX,lastX:e.clientX,rawProgress:s.position+excessForOffset(s.offset)/span,span,initialChecked:s.reported,maxDistance:0};s.velocity=0;}}
-      onPointerMove={e=>{if(state.current.drag?.id===e.pointerId)queuePointer(e.clientX);}}
+    <button ref={native} type="button" className="switch-native" role="switch" aria-label={label} aria-checked={checked} disabled={disabled}
+      onPointerDown={e=>{
+        if(e.button!==0||e.isPrimary===false||state.current.drag||disabled)return;
+        e.preventDefault();e.currentTarget.focus({preventScroll:true});e.currentTarget.setPointerCapture(e.pointerId);setPressed(true);
+        const s=state.current,{span}=anchor.getPlacement();s.position=display.position;s.offset=display.offset;s.pending=null;
+        s.drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,lastX:e.clientX,rawProgress:s.position+excessForOffset(s.offset)/span,span,initialChecked:s.reported,maxDistance:0,intent:e.pointerType==='touch'?'pending':'horizontal'};
+        s.velocity=0;clock.wake();
+      }}
+      onPointerMove={e=>{
+        const d=state.current.drag;if(d?.id!==e.pointerId)return;
+        d.maxDistance=Math.max(d.maxDistance,Math.abs(e.clientX-d.startX),Math.abs(e.clientY-d.startY));
+        if(resolveIntent(d,e.clientX,e.clientY)==='horizontal')queuePointer(e.clientX);
+      }}
       onPointerUp={e=>{
         const d=state.current.drag;if(d?.id!==e.pointerId)return;
-        queuePointer(e.clientX);settle(d.maxDistance<4?!d.initialChecked:state.current.pending!.position>=.5);
-        if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);
+        d.maxDistance=Math.max(d.maxDistance,Math.abs(e.clientX-d.startX),Math.abs(e.clientY-d.startY));
+        const intent=resolveIntent(d,e.clientX,e.clientY);
+        if(intent==='vertical'){settle(undefined,true);return;}
+        if(intent==='horizontal')queuePointer(e.clientX);
+        settle(d.maxDistance<6?!d.initialChecked:(state.current.pending?.position??state.current.position)>=.5);
       }}
-      onPointerCancel={()=>settle()} onLostPointerCapture={()=>{if(state.current.drag)settle();}}
-      onClick={e=>{if(e.detail===0)settle(!state.current.reported);}}
+      onPointerCancel={e=>{if(state.current.drag?.id===e.pointerId)settle(undefined,true);}}
+      onLostPointerCapture={e=>{if(state.current.drag?.id===e.pointerId)settle(undefined,true);}}
+      onClick={e=>{if(e.detail===0&&!('pointerType' in e.nativeEvent&&e.nativeEvent.pointerType))settle(!state.current.reported);}}
       onKeyDown={e=>{if(e.key===' '||e.key==='Enter')setPressed(true);}} onKeyUp={()=>setPressed(false)}
-      onFocus={e=>setFocused(e.currentTarget.matches(':focus-visible'))} onBlur={()=>{setFocused(false);settle();}}/>
+      onFocus={e=>setFocused(e.currentTarget.matches(':focus-visible'))} onBlur={()=>{setFocused(false);settle(undefined,true);}}/>
   </div></div>;
 }

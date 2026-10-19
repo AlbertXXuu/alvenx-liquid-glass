@@ -124,6 +124,8 @@ AlvenX 模式复用正式 wordmark／AX 资产和 Instrument Sans／MiSans，不
 
 ## 消费项目验证
 
+2026-10-19 未验收预览增加 `VolumeStage` 的可选 `responsive` 与 `studioMotion`，两者默认 `false`。`responsive` 按实际容器宽度在 720 CSS px 以下使用纵向光学场景及正向 DOM 内容，基础尺寸样式包含在 `styles.css`；宿主仍需用自己的长文和控件检查内容腔安全区。`studioMotion` 使用同一共享时钟缓慢旋转蓝紫环境与光源，遵守背景动效和减少动态设置。它们是本轮独立小样的展示选项，不改变 v6 接受基线，也不表示 Safari 已获得任意 DOM 背景折射。正式采用前需完成视觉和实机验收。
+
 在消费项目里检查 CSS 作用域、资源路径、实际字体、background/filter 支持、resize、scroll、卸载和多个实例。用短文及中英长文检验安全区，至少覆盖默认、最大强度、减少动效、数值非法输入、Reset 竞态和保存值恢复。
 
 既有桌面 Chromium 证据可作为回归参照，不能替代新宿主的运行结果。尚未验证的平台需记录限制；未确认支持时保留清晰 DOM 与可操作状态，不把功能不可用静默伪装成同等材质。

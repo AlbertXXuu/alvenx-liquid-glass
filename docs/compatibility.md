@@ -67,6 +67,16 @@ playwright-cli -s=compat-webkit close
 
 ## Still requires physical-device acceptance
 
+### 2026-10-19 input and studio review (not an accepted release)
+
+The owner supplied physical iPad screenshots showing text selection during a lens drag and rectangular paint behind range lenses, and reported that the first interaction stalls on iPhone 15 Pro and iPad Air M4 (2026), including a Combo Touch trackpad drag failure. These reports supersede any inference that earlier viewport/tap checks established mobile acceptance.
+
+The review separates native range semantics from platform paint, defines primary-pointer ownership and vertical-scroll intent, prevents selection only on the movable lens, coalesces setting persistence, and allows new clock work at the next browser frame. The independent showcase also previews opt-in responsive portrait composition and a rotating blue-violet studio environment. `VolumeStage` defaults keep these two presentation options off for library consumers. No Apple rendering equivalence or universal DOM refraction is claimed.
+
+Windows Chrome 155, Edge 155 and Playwright WebKit 26.5 checks exercise mouse/keyboard/lens selection, contour hit testing and motion toggles. Chromium native touch checks cover vertical scrolling from controls, second-contact ownership, continuous endpoint overdrag/re-grab and shape gestures. The native range stays in the accessibility tree; its platform paint is transparent, with contour focus feedback supplied by the glass shell. Arbitrary-page SVG backdrop displacement remains unavailable in the conservative iOS path.
+
+Physical Combo Touch, first-activation latency, Safari compositor artifacts and software-keyboard behavior still require the owner's device review. Windows cold/warm tests did not consistently reproduce the reported first-click stall. A Windows WebKit cold drag also required a longer wait than the warm operation, so functional pointer tests must not be described as proof that startup jank has been eliminated. Evidence for this review is under the workspace's `output/playwright/*2026-10-19/`; it does not replace the versioned release measurements above.
+
 - Safari on a supported macOS device, including actual WebGL/backdrop composition and font rendering.
 - Physical iPhone/iPad Safari, real touch capture and drag/overdrag/re-grab behavior, viewport changes and software keyboard.
 - VoiceOver and other assistive technologies with the actual target platform and browser.

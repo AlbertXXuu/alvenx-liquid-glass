@@ -119,7 +119,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
     });
     if (host.current) intersection?.observe(host.current);
     const unsubscribe = clock.subscribe(draw);
-    const release = () => { if (pressed.current) { pressed.current = false; dirty.current = true; clock.wake(); } };
+    const release = (event:Event) => { if('isPrimary' in event && event.isPrimary===false)return; if (pressed.current) { pressed.current = false; dirty.current = true; clock.wake(); } };
     window.addEventListener('pointerup', release); window.addEventListener('pointercancel', release); window.addEventListener('blur', release);
     return () => { observer.disconnect(); intersection?.disconnect(); unsubscribe(); window.removeEventListener('pointerup', release); window.removeEventListener('pointercancel', release); window.removeEventListener('blur', release); engine.current?.destroy(); engine.current = null; };
   }, [clock, kind]);
@@ -130,7 +130,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
   const own = (target: EventTarget) => (target as HTMLElement).closest('[data-local-glass]') === host.current;
   const eventProps = {
     onPointerDown: (event: React.PointerEvent<HTMLElement>) => {
-      if (!own(event.target) || disabled) return;
+      if (!own(event.target) || disabled || event.button !== 0 || event.isPrimary === false) return;
       pressed.current = true; dirty.current = true; clock.wake();
     },
     onFocus: (event: React.FocusEvent<HTMLElement>) => {
@@ -214,6 +214,6 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
     {kind === 'thumb' ? null : kind === 'field'
       ? <div {...eventProps} ref={element => { hit.current = element; }} className="glass-hit field-hit" style={hitStyle}>{children}</div>
       : <button {...eventProps} ref={element => { hit.current = element; }} type={type} className="glass-hit" style={hitStyle} disabled={disabled} aria-label={label} aria-pressed={selected} aria-expanded={expanded}
-          onClick={event => { if (event.detail && host.current && visual.path) { const r = host.current.getBoundingClientRect(); const c = document.createElement('canvas').getContext('2d'); if (!c?.isPointInPath(new Path2D(visual.path), event.clientX - r.left, event.clientY - r.top)) return; } onClick?.(); }}>{children}</button>}
+          onClick={onClick}>{children}</button>}
   </div>;
 }
