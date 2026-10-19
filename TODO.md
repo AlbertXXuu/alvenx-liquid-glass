@@ -49,3 +49,13 @@ Release evidence and remaining work are maintained in the [1.2.0 release record]
 - Restore Surface parameters to the volume section and preserve the same live preview while editing where the viewport permits.
 - Keep Chinese sample publication separate from native composition and exact-weight font loading, with bounded request reuse and stale-completion protection.
 - Retain physical-device validation boundaries and the source/history identities in [the 1.2.1 record](docs/releases/1.2.1/README.md).
+
+
+## 1.2.2 owner corrections (2026-10-19)
+
+- [x] Keep the volume and material parameters in the same section and normal scrolling; remove parameter-triggered docking, size limits and compact typography.
+- [x] Add local Ask anything responses: ordinary nonempty text → “Good question… but I don’t understand.”; trimmed case-insensitive `fluency` → literal `<3`. Empty submissions retain validation.
+- [ ] Verify and publish the natural glass sphere entrance between Explore the work and GitHub: first click reveals “explore me!”; the revealed link opens `/ui/`.
+- [ ] Complete scoped local/browser checks, screenshot review, production checks and versioned publication records.
+
+The owner accepted the other existing effects in this request. This records the owner’s acceptance of the visible baseline while retaining the actual scope and limitations of previous technical measurements.

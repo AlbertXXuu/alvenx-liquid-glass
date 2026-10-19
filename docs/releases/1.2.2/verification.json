@@ -1,0 +1,128 @@
+{
+  "version": "1.2.2",
+  "date": "2026-10-19",
+  "status": "self-reviewed-before-publication",
+  "ownerAcceptance": "Other existing visible effects accepted by the owner; three requested corrections implemented and self-reviewed. New corrections remain subject to owner feedback.",
+  "technical": {
+    "typecheckDocs": {
+      "passed": true,
+      "documents": 10,
+      "localLinks": 48
+    },
+    "build": {
+      "passed": true
+    },
+    "contract": {
+      "passed": true,
+      "checks": 28,
+      "geometryCases": 15
+    },
+    "clock": {
+      "passed": true,
+      "checks": 16
+    },
+    "volumeBudget": {
+      "passed": true,
+      "cases": 180
+    },
+    "kernels": {
+      "passed": true,
+      "exactFloat32Cases": 5800
+    },
+    "baseline": {
+      "passed": true,
+      "files": 41,
+      "fontURLs": 228
+    },
+    "runtimeMaterialAssetsUnchangedFrom": "v1.2.1: src/, styles/, assets/, tokens.json"
+  },
+  "browser": {
+    "flow-chromium": {
+      "passed": true,
+      "engine": "chromium",
+      "version": "155.0.8059.84",
+      "assertions": 128,
+      "pageErrors": 0,
+      "widths": [
+        320,
+        393,
+        768,
+        1180,
+        1366
+      ],
+      "limitations": []
+    },
+    "flow-webkit": {
+      "passed": true,
+      "engine": "webkit",
+      "version": "26.5",
+      "assertions": 128,
+      "pageErrors": 0,
+      "widths": [
+        320,
+        393,
+        768,
+        1180,
+        1366
+      ],
+      "limitations": [
+        "Windows WebKit canvas resize/compositor retention issue prevents this port from certifying WebGL pixels. This run checks normal flow, controls and native input only; screenshots use Chromium. Physical iOS, OS IME and Combo Touch validation remain separate."
+      ]
+    },
+    "homepage-pearl-chromium": {
+      "passed": true,
+      "engine": "chromium",
+      "version": "155.0.8059.84",
+      "assertions": 82,
+      "pageErrors": 0,
+      "widths": [
+        320,
+        393,
+        768,
+        1180,
+        1366
+      ],
+      "limitations": [
+        "Automated touch and Windows browser engines are not physical iOS or Combo Touch certification. Existing vendor1.1.2 optics and actual C2 clipping are preserved; no renderer/dependency change."
+      ]
+    },
+    "homepage-pearl-webkit": {
+      "passed": true,
+      "engine": "webkit",
+      "version": "26.5",
+      "assertions": 82,
+      "pageErrors": 0,
+      "widths": [
+        320,
+        393,
+        768,
+        1180,
+        1366
+      ],
+      "limitations": [
+        "Observed Windows WebKit26.5 Tab traversal skips generated and ordinary homepage anchors to the next native button; no product tab-order workaround applied. Chromium native Tab path passes. WebKit verifies focus()+Enter on the existing native anchor.",
+        "Automated touch and Windows browser engines are not physical iOS or Combo Touch certification. Existing vendor1.1.2 optics and actual C2 clipping are preserved; no renderer/dependency change."
+      ]
+    }
+  },
+  "visualReview": {
+    "performed": true,
+    "reviewed": [
+      "material-chromium-393-expanded.png",
+      "material-chromium-1180-collapsed.png",
+      "message-chromium-393-ordinary.png",
+      "message-chromium-393-heart.png",
+      "homepage-chromium-320-reveal.png",
+      "homepage-chromium-393-initial.png",
+      "homepage-chromium-1366-reveal.png"
+    ],
+    "decision": "Normal-flow volume, readable local responses, natural existing glass circle between hero links, no visible content overlap."
+  },
+  "scopeLimits": [
+    "No new performance benchmark; renderer and runtime contracts unchanged.",
+    "Windows WebKit layout/input checks do not independently certify physical Safari/iOS/Combo Touch or OS IME.",
+    "Known Windows WebKit WebGL resize capture limit and native Tab preference recorded separately.",
+    "Dev vinext/React preload diagnostic will be checked against the production build."
+  ],
+  "portability": "Final local tarball installation is performed after packaging; exact artifact report is published with the GitHub release assets."
+}

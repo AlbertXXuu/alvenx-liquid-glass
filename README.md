@@ -8,11 +8,11 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-Version **1.2.1** is a public design preview. It carries the R3 explicit-scene refraction and touch-ownership work into the current showcase, with a canonical glass header, a layered blue/violet background, a gradient headline and a **50%** initial progress demonstration. Authoring specifications are in Chinese; component labels and the showcase are in English. The owner authorized this revision for the main `/ui/` route on 2026-10-19. The [1.2.0 release record](docs/releases/1.2.0/README.md) preserves that publication; the current [1.2.1 record](docs/releases/1.2.1/README.md) describes this follow-up.
+Version **1.2.2** is a public design preview. It carries the R3 explicit-scene refraction and touch-ownership work into the current showcase, with a canonical glass header, a layered blue/violet background, a gradient headline and a **50%** initial progress demonstration. Authoring specifications are in Chinese; component labels and the showcase are in English. The owner authorized this revision for the main `/ui/` route on 2026-10-19. The [1.2.0 release record](docs/releases/1.2.0/README.md) preserves that publication; the current [1.2.2 record](docs/releases/1.2.2/README.md) describes this follow-up.
 
 The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 
-The 1.2.1 follow-up keeps committed sample text stable until its exact font faces are ready, handles IME composition separately from the preview, and restores the material controls directly below the same live volume. The preview remains visible during parameter editing when viewport space permits; short/keyboard viewports return to normal scrolling. See [the 1.2.1 record](docs/releases/1.2.1/README.md).
+The current showcase keeps the volume, motion controls and material parameters in one section with normal document scrolling. Expanding Surface parameters does not pin, resize or restyle the horizontal form. The stable Chinese sample typography from 1.2.1 remains. Ask anything includes a local message Easter egg; the homepage has an unlettered glass sphere between Explore the work and GitHub that reveals an “explore me!” link. See [the 1.2.2 record](docs/releases/1.2.2/README.md).
 
 ## Try it locally
 
@@ -44,7 +44,7 @@ Build and create a local package; the versioned tarball can be installed directl
 npm run build
 npm run pack:kit
 # In your React 19 project:
-npm install ./alvenx-liquid-glass-1.2.1.tgz
+npm install ./alvenx-liquid-glass-1.2.2.tgz
 ```
 
 ```tsx
