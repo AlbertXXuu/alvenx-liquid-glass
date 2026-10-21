@@ -16,6 +16,10 @@ export type VolumeStageProps = {
   className?: string;
   ariaLabel?: string;
   onPlayingChange?: (playing: boolean) => void;
+  /** Play slow budding once on the first visible, foreground entry. The
+   * automatic introduction pauses offscreen; manual replay is unchanged.
+   * Reduced motion and an unavailable renderer show the complete form. */
+  autoPlay?: boolean;
   /** Canvas raster limits only; foreground DOM and logical geometry stay sharp.
    * Default 2M pixels (1M on constrained device hints), DPR at most 2. */
   renderBudget?: { maxPixels?: number; maxDpr?: number };
@@ -31,12 +35,14 @@ export type VolumeStageProps = {
  * Local controls use their own actual CSS backdrop optics. The caller owns
  * the shared clock, settings, and foreground content. */
 export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(function VolumeStage(
-  { clock, settings, children, className = '', ariaLabel = 'AlvenX volume stage', onPlayingChange, renderBudget, studioMotion = false, responsive = false }, ref,
+  { clock, settings, children, className = '', ariaLabel = 'AlvenX volume stage', onPlayingChange, autoPlay = false, renderBudget, studioMotion = false, responsive = false }, ref,
 ) {
   const canvas = useRef<HTMLCanvasElement>(null), stage = useRef<HTMLElement>(null), foreground = useRef<HTMLDivElement>(null);
   const hitSurface = useRef<HTMLDivElement>(null), hitKey = useRef('');
   const renderer = useRef<Renderer | null>(null);
-  const simulation = useRef({ current: resting(), target: resting(), growth: 1, playing: false, ambient: true, time: 0, dirty: true, visible: false, failed: false });
+  const simulation = useRef({ current: resting(), target: resting(), growth: autoPlay && !clock.reduced ? 0 : 1, playing: false, playbackAt: null as number | null, ambient: true, time: 0, dirty: true, visible: false, failed: false });
+  const entryPlayback = useRef({ consumed: false, active: false });
+  const autoPlayEnabled = useRef(autoPlay); autoPlayEnabled.current = autoPlay;
   const drag = useRef<{ x: number; y: number; parent: boolean; pointerId: number } | null>(null);
   const callback = useRef(onPlayingChange); callback.current = onPlayingChange;
   const budget = useRef(renderBudget); budget.current = renderBudget;
@@ -89,6 +95,34 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     const next = !responsiveEnabled.current || width >= 900 ? 'wide-integrated' : width < 600 ? 'overview' : 'compact-integrated';
     if (layoutRef.current !== next) { layoutRef.current = next; setLayout(next); syncForeground(); }
   }
+  function startPlayback() {
+    releaseDrag(); settleSurface();
+    simulation.current.growth = 0; simulation.current.playing = true; simulation.current.playbackAt = null;
+    syncForeground(); syncHitSurface(); callback.current?.(true); clock.wake();
+  }
+  function startEntryPlayback() {
+    const entry = entryPlayback.current, state = simulation.current;
+    if (!autoPlayEnabled.current || entry.consumed || !state.visible || document.hidden || state.failed || clock.reduced) return;
+    // Ref state survives StrictMode effect replay and scrolling out/back.
+    entry.consumed = true; entry.active = true;
+    if (stage.current) stage.current.dataset.entryPlayback = 'playing';
+    startPlayback();
+  }
+  function finishPlayback() {
+    simulation.current.playing = false; simulation.current.playbackAt = null;
+    if (entryPlayback.current.active && stage.current) stage.current.dataset.entryPlayback = 'completed';
+    entryPlayback.current.active = false;
+    callback.current?.(false);
+  }
+  function advancePlayback() {
+    const state = simulation.current, now = performance.now();
+    // The clock caps delta for stable physics. A finite presentation must use
+    // real active time, otherwise a slow raster can turn 3 seconds into a minute.
+    const elapsed = state.playbackAt === null ? 0 : Math.max(0, now - state.playbackAt);
+    state.playbackAt = now;
+    state.growth = Math.min(1, state.growth + elapsed / 3000);
+    if (state.growth === 1) finishPlayback();
+  }
 
   useLayoutEffect(() => {
     if (!canvas.current) return;
@@ -99,10 +133,15 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       const nextError = canvas.current?.dataset.error ?? '', state = simulation.current;
       state.failed = Boolean(nextError);
       if (nextError) {
+        if (autoPlayEnabled.current && (!entryPlayback.current.consumed || entryPlayback.current.active)) {
+          entryPlayback.current.consumed = true;
+          if (stage.current) stage.current.dataset.entryPlayback = 'unavailable';
+        }
+        entryPlayback.current.active = false;
         if (stage.current) stage.current.dataset.ambientActive = 'false';
         releaseDrag(); state.growth = 1; state.current = resting(); state.target = resting();
         if (state.playing) callback.current?.(false);
-        state.playing = false;
+        state.playing = false; state.playbackAt = null;
         if (foreground.current) { foreground.current.style.visibility = 'visible'; foreground.current.setAttribute('aria-hidden', 'false'); }
       }
       // Avoid scheduling a React state update on every ambient/drag frame.
@@ -112,13 +151,16 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     const draw = (delta: number, elapsed: number) => {
       const state = simulation.current;
       if (state.failed) return false;
+      startEntryPlayback();
       if (!state.visible) {
+        // Initial discovery must remain available when the visitor returns;
+        // do not consume the automatic introduction below the fold.
+        if (entryPlayback.current.active) { state.playbackAt = null; return false; }
         // Keep the finite budding lifecycle coherent with the sibling content,
         // without advancing ambient/deformation or touching the GPU offscreen.
         if (state.playing) {
-          state.growth = Math.min(1, state.growth + delta / 3000); state.dirty = true;
+          advancePlayback(); state.dirty = true;
           if (stage.current) stage.current.dataset.growth = state.growth.toFixed(4);
-          if (state.growth === 1) { state.playing = false; callback.current?.(false); }
         }
         syncForeground();
         return state.playing;
@@ -128,8 +170,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       const ambientActive = state.ambient && !clock.reduced;
       if (ambientActive) { state.time += elapsed / 1000; changed = true; }
       if (state.playing) {
-        state.growth = Math.min(1, state.growth + delta / 3000); changed = true;
-        if (state.growth === 1) { state.playing = false; callback.current?.(false); }
+        advancePlayback(); changed = true;
       }
       const blend = clock.reduced ? 1 : 1 - Math.exp(-delta / 78);
       for (const key of Object.keys(state.current) as Array<keyof ReturnType<typeof resting>>) {
@@ -169,7 +210,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
         if (!visible) stage.current.dataset.ambientActive = 'false';
       }
       if (state.visible === visible) return;
-      state.visible = visible;
+      state.visible = visible; state.playbackAt = null;
       if (visible) { state.dirty = true; clock.wake(); }
       else {
         releaseDrag(); state.target = resting();
@@ -182,7 +223,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     const contextChanged = () => { syncError(); simulation.current.dirty = true; clock.wake(); };
     element.addEventListener('webglcontextlost', contextChanged);
     element.addEventListener('webglcontextrestored', contextChanged);
-    const hidden = () => { if (document.hidden) cancelDrag(); };
+    const hidden = () => { simulation.current.playbackAt = null; if (document.hidden) cancelDrag(); else { startEntryPlayback(); clock.wake(); } };
     window.addEventListener('blur', cancelDrag);
     document.addEventListener('visibilitychange', hidden);
     return () => {
@@ -202,7 +243,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       measureLayout(width); syncHitCamera(width, height);
     }
     simulation.current.dirty = true; clock.wake();
-  }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive]);
+  }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive, autoPlay]);
 
   useLayoutEffect(syncForeground, [layout]);
 
@@ -211,9 +252,13 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     state.ambient = settings.ambient;
     if (stage.current && (!state.ambient || clock.reduced || !state.visible || state.failed)) stage.current.dataset.ambientActive = 'false';
     if (clock.reduced) {
+      if (autoPlayEnabled.current) {
+        entryPlayback.current.consumed = true; entryPlayback.current.active = false;
+        if (stage.current) stage.current.dataset.entryPlayback = 'reduced-motion';
+      }
       releaseDrag(); state.current = resting(); state.target = resting(); state.growth = 1;
       if (state.playing) callback.current?.(false);
-      state.playing = false;
+      state.playing = false; state.playbackAt = null;
     }
     syncForeground();
     syncHitSurface();
@@ -265,11 +310,11 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   }
   useImperativeHandle(ref, () => ({ replay() {
     if (clock.reduced || simulation.current.failed) return;
-    releaseDrag(); settleSurface();
-    simulation.current.growth = 0; simulation.current.playing = true; syncForeground(); syncHitSurface(); callback.current?.(true); clock.wake();
+    entryPlayback.current.consumed = true; entryPlayback.current.active = false;
+    startPlayback();
   } }), [clock]);
 
-  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth="1.0000"
+  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth={simulation.current.growth.toFixed(4)}
     onPointerMove={event => respond(event)} onPointerDown={event => { if (event.button === 0 && event.isPrimary && !drag.current) respond(event, true); }}
     onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}
     onPointerCancel={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}

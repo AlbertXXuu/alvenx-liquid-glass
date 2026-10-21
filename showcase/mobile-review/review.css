@@ -10,10 +10,6 @@ button,input,a,pre{touch-action:manipulation}
 
 
 .lab main{max-width:1200px;margin:auto;padding:0 40px}
-.lab-intro{max-width:710px;padding:72px 0 66px}
-.lab h1{font-size:clamp(44px,6.5vw,78px);font-weight:550;line-height:1.02;letter-spacing:-.055em;margin:0 0 25px}
-.lab-intro>p:not(.eyebrow){max-width:555px;font-size:18px;line-height:1.65;color:#5A6C90;margin:0 0 24px}
-.lab-intro>a{font-size:13px}
 .lab-section{padding:44px 0 48px;border-top:1px solid #CCD4EB;scroll-margin-top:24px}
 .lab-section-heading{display:flex;justify-content:space-between;align-items:center;gap:40px;margin-bottom:28px}
 .lab h2{font-size:32px;line-height:1.15;letter-spacing:-.035em;font-weight:500;margin:0;text-wrap:balance}
@@ -71,7 +67,6 @@ button,input,a,pre{touch-action:manipulation}
 .lab footer a{font-size:12px;margin-left:auto}
 .phone-break{display:none}
 @media(max-width:1000px){
-.lab-intro{padding-top:54px}
 .lab-switches{flex-direction:column;gap:8px}
 .lab-study-grid{grid-template-columns:1fr 1fr;gap:26px}
 .lab-optical-scene{height:320px}
@@ -86,9 +81,6 @@ button,input,a,pre{touch-action:manipulation}
 
 
 .lab main{padding:0 18px}
-.lab-intro{padding:42px 0}
-.lab h1{font-size:45px}
-.lab-intro>p:not(.eyebrow){font-size:16px}
 .lab-section{padding:32px 0}
 .lab h2{font-size:27px}
 .lab-section-heading{display:block;margin-bottom:24px}
@@ -129,16 +121,16 @@ button,input,a,pre{touch-action:manipulation}
 .ax-product-header [data-alvenx-home]{width:160px;min-height:44px;display:flex;align-items:center;flex:0 0 auto;padding:0;border:0;background:transparent;border-radius:12px;cursor:pointer}
 .ax-product-header__wordmark{display:block;width:160px;height:auto;aspect-ratio:330/100}
 .ax-product-header nav{margin-left:auto;display:flex;align-items:center;gap:4px}
-.ax-product-header nav :is(a,button),.lab-menu{font:500 12px/1.3 'Instrument Sans',MiSans,sans-serif;min-height:44px;padding:10px 13px;color:#4E6283;background:transparent;border:1px solid transparent;border-radius:14px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
-.ax-product-header nav :is(a,button):hover,.lab-menu:hover{background:rgb(255 255 255/.35);border-color:rgb(255 255 255/.82)}
+.ax-product-header nav > :is(a,button){font:500 12px/1.3 'Instrument Sans',MiSans,sans-serif;min-height:44px;padding:10px 13px;color:#4E6283;background:transparent;border:1px solid transparent;border-radius:14px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.ax-product-header nav > :is(a,button):hover{background:rgb(255 255 255/.35);border-color:rgb(255 255 255/.82)}
 .ax-product-header :is(button,a):focus-visible,.intro-link:focus-visible{outline:3px solid rgb(37 99 235/.45);outline-offset:4px}
 .ax-product-header .lab-menu{display:none;margin-left:auto}
 .skip-link{position:fixed;top:-90px;left:20px;z-index:110;background:#fff;padding:15px;border-radius:12px}
 .skip-link:focus{top:20px}
-.lab-intro{max-width:900px;padding:66px 0 74px}
-.lab h1{font-size:clamp(48px,6.7vw,86px);font-weight:550;line-height:1.04;letter-spacing:-.055em;background:linear-gradient(105deg,#2563EB 8%,#4F46E5 53%,#7C3AED 93%);background-clip:text;-webkit-background-clip:text;color:transparent;padding-bottom:.08em;margin-bottom:22px;width:fit-content}
-.lab-intro>p:not(.eyebrow){max-width:600px;color:#52668B}
-.lab-intro .eyebrow{color:#456494;line-height:1.7;font-weight:600}
+.lab-intro{max-width:none;padding:12px 0 22px}
+.lab h1{font-size:clamp(36px,4.25vw,52px);font-weight:550;line-height:1.04;letter-spacing:-.055em;background:linear-gradient(105deg,#2563EB 8%,#4F46E5 53%,#7C3AED 93%);background-clip:text;-webkit-background-clip:text;color:transparent;padding-bottom:.08em;margin:0 0 10px;width:fit-content;max-width:100%;text-wrap:balance}
+.lab-intro>p:not(.eyebrow){font-size:15px;line-height:1.5;color:#52668B;margin:0}
+.lab-intro .eyebrow{color:#456494;font-size:9px;line-height:1.5;font-weight:600;margin:0 0 10px}
 .intro-link{border:0;border-bottom:1px solid #8092C4;background:transparent;padding:0 0 6px;font-size:14px;color:#405C98;cursor:pointer;min-height:36px}
 .intro-link span{margin-left:13px}
 .intro-version{display:inline-block;margin-left:24px;color:#60769A;font-size:9px;letter-spacing:.1em}
@@ -152,7 +144,7 @@ button,input,a,pre{touch-action:manipulation}
 .lab-principles p,.code-copy,.code-boundary{font-size:14px;line-height:1.85;color:#596D91}
 .lab-type-sample{margin-top:48px;padding:35px;background:linear-gradient(120deg,#DDEAFEAA,#E5DFF6AA);border:1px solid #FFFFFFD9;border-radius:24px}
 .lab-type-sample p:first-child{font-size:clamp(30px,4vw,50px);line-height:1.15;letter-spacing:-.045em;color:#4E629B;margin:0 0 18px}
-.lab-type-sample p[lang]{font-size:clamp(19px,2.3vw,28px);color:#7164A3;margin:0 0 26px;line-height:1.6}
+.lab-type-sample .type-sample-secondary{font-size:clamp(19px,2.3vw,28px);color:#7164A3;margin:0 0 26px;line-height:1.6}
 .lab-type-sample>span{font-size:11px;color:#607496}
 .code-copy{max-width:760px;margin:0 0 25px}
 .lab #code pre{font:13px/1.8 ui-monospace,monospace;padding:25px 28px;border:1px solid #CDD5EC;border-radius:20px;background:#F8FAFF;overflow:auto;color:#405785}
@@ -161,25 +153,19 @@ button,input,a,pre{touch-action:manipulation}
 .lab footer>div{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
 .lab footer a{margin-left:0}
 @media(max-width:1000px){
- .ax-product-header nav :is(a,button){padding-inline:10px}
+ .ax-product-header nav > :is(a,button){padding-inline:10px}
  .lab-controls{padding:20px}
  .lab-principles{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px}
 }
-@media(max-width:720px){
- .ax-product-header .lab-menu{display:inline-flex;gap:8px}
+@media(max-width:900px){
+ .ax-product-header .lab-menu{display:inline-grid}
  .ax-product-header nav{display:none;position:absolute;left:0;right:0;top:calc(100% + 10px);padding:12px;background:#F1F4FEFA;box-shadow:0 18px 40px #536DA527;border:1px solid #FFFFFFD9;border-radius:22px;flex-direction:column;align-items:stretch;gap:3px}
  .ax-product-header[data-menu-open=true] nav{display:flex}
- .ax-product-header nav :is(a,button){justify-content:flex-start;font-size:14px;padding-inline:18px}
- .lab-intro{padding:42px 0 52px}
- .intro-version{display:block;margin:18px 0 0}
- .lab h1{font-size:clamp(43px,8.6vw,60px)}
+ .ax-product-header nav > :is(a,button){justify-content:flex-start;font-size:14px;padding-inline:18px}
 }
 @media(max-width:600px){
  .lab main{padding-top:110px}
- .lab-intro{padding-top:34px}
- .lab-intro>p:not(.eyebrow){font-size:16px}
- .lab-intro .eyebrow{font-size:9px;letter-spacing:.09em;max-width:290px}
- .lab-switches{max-width:none;padding:14px 18px}
+  .lab-switches{max-width:none;padding:14px 18px}
  .lab-controls{padding:20px 18px}
  .lab-parameter-grid{padding:22px 18px}
  .lab-principles{gap:22px;grid-template-columns:1fr 1fr;margin-top:30px}
@@ -191,8 +177,6 @@ button,input,a,pre{touch-action:manipulation}
 }
 @media(max-width:360px){
  .ax-product-header{gap:16px}
- .lab-menu{font-size:0!important;width:44px;padding:8px}
- .lab-menu span{font-size:22px}
  .lab-principles{grid-template-columns:1fr}
 }
 @media(forced-colors:active){.lab h1{background:none;color:CanvasText}}
@@ -212,3 +196,31 @@ button,input,a,pre{touch-action:manipulation}
 .lab-parameters-heading .lab-disclosure{width:170px}
 .lab-parameters-heading .lab-reset{width:110px}
 }
+
+/* The demonstration follows a compact introduction in normal document flow. */
+.lab #volume{padding-top:0;border-top:0}
+.lab #volume .lab-section-heading{justify-content:flex-end;margin-bottom:12px}
+.lab #volume h2{font-size:26px}
+@media(max-width:600px){
+ .lab-intro{padding:10px 0 20px}
+ .lab #volume{padding-top:0}
+ .lab #volume .lab-section-heading{display:flex;gap:12px;align-items:flex-end;margin-bottom:12px}
+ .lab #volume h2{font-size:23px}
+ .lab #volume .lab-replay{width:156px;height:44px;font-size:11px}
+ .lab #volume .eyebrow{font-size:8px;letter-spacing:.08em}
+}
+
+/* Chinese uses real MiSans weights with its own rhythm, not Latin tracking. */
+.lab:lang(zh-CN){font-family:MiSans,"Instrument Sans",sans-serif}
+.lab:lang(zh-CN) :is(h1,h2,h3){font-weight:500;letter-spacing:0;line-height:1.25;word-break:normal;overflow-wrap:break-word}
+.lab:lang(zh-CN) h1{font-size:clamp(34px,4vw,49px);padding-bottom:.06em}
+.lab:lang(zh-CN) .eyebrow{letter-spacing:.06em;font-weight:500}
+.lab:lang(zh-CN) .foreground h3{font-size:clamp(21px,2.5vw,30px);line-height:1.35;letter-spacing:0}
+.lab:lang(zh-CN) .lab-principles p{line-height:1.9}
+.lab:lang(zh-CN) .lab-type-sample p:first-child{letter-spacing:0;line-height:1.35}
+.lab .lab-language{align-self:stretch}
+@media(max-width:900px){.ax-product-header nav .lab-language__toggle{width:100%;justify-content:flex-start;padding-inline:18px}.ax-product-header nav .lab-language__panel{position:relative;top:auto;right:auto;min-width:0;margin:4px 8px 8px;box-shadow:none}.ax-product-header nav .lab-language__status:not(:empty){position:relative;top:auto;right:auto;max-width:100%;width:auto}}
+
+.intro-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.intro-heading h1{margin-bottom:0}
+@media(max-width:600px){.intro-heading{flex-wrap:wrap;gap:10px}.intro-heading h1{flex-basis:100%}.lab .intro-heading .lab-replay{margin-left:auto;width:156px;height:44px;font-size:11px}}

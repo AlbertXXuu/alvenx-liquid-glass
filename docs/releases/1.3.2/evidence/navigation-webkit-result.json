@@ -1,0 +1,237 @@
+{
+  "engine": "webkit",
+  "version": "26.5",
+  "base": "http://127.0.0.1:5188/",
+  "physicalDevice": false,
+  "checks": [
+    {
+      "name": "non-English browser locale fixture"
+    },
+    {
+      "name": "first visit remains English for Japanese browser locale"
+    },
+    {
+      "name": "English default has no authored Chinese"
+    },
+    {
+      "name": "minimum44px native menu button",
+      "detail": {
+        "button": {
+          "width": 44,
+          "height": 44
+        },
+        "icon": {
+          "width": 20,
+          "height": 20,
+          "dx": 0,
+          "dy": 0
+        },
+        "bodyTransition": "0s",
+        "bars": [
+          {
+            "width": 20,
+            "height": 2,
+            "transform": "matrix(1, 0, 0, 1, 0, -4)",
+            "duration": "0s"
+          },
+          {
+            "width": 20,
+            "height": 2,
+            "transform": "matrix(1, 0, 0, 1, 0, 4)",
+            "duration": "0s"
+          }
+        ]
+      }
+    },
+    {
+      "name": "menu icon centered inside target",
+      "detail": {
+        "width": 20,
+        "height": 20,
+        "dx": 0,
+        "dy": 0
+      }
+    },
+    {
+      "name": "canonical20x2 double bars",
+      "detail": [
+        {
+          "width": 20,
+          "height": 2,
+          "transform": "matrix(1, 0, 0, 1, 0, -4)",
+          "duration": "0s"
+        },
+        {
+          "width": 20,
+          "height": 2,
+          "transform": "matrix(1, 0, 0, 1, 0, 4)",
+          "duration": "0s"
+        }
+      ]
+    },
+    {
+      "name": "system reduced motion removes transitions",
+      "detail": {
+        "button": {
+          "width": 44,
+          "height": 44
+        },
+        "icon": {
+          "width": 20,
+          "height": 20,
+          "dx": 0,
+          "dy": 0
+        },
+        "bodyTransition": "0s",
+        "bars": [
+          {
+            "width": 20,
+            "height": 2,
+            "transform": "matrix(1, 0, 0, 1, 0, -4)",
+            "duration": "0s"
+          },
+          {
+            "width": 20,
+            "height": 2,
+            "transform": "matrix(1, 0, 0, 1, 0, 4)",
+            "duration": "0s"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Enter opens menu"
+    },
+    {
+      "name": "Escape closes menu"
+    },
+    {
+      "name": "Escape restores menu trigger focus"
+    },
+    {
+      "name": "Space opens menu"
+    },
+    {
+      "name": "Tab leaving navigation closes it"
+    },
+    {
+      "name": "native anchor activation closes menu"
+    },
+    {
+      "name": "outside pointer closes menu"
+    },
+    {
+      "name": "ArrowDown opens language disclosure"
+    },
+    {
+      "name": "ArrowDown focuses English option"
+    },
+    {
+      "name": "ArrowDown moves to Chinese option"
+    },
+    {
+      "name": "Home moves to English option"
+    },
+    {
+      "name": "End moves to Chinese option"
+    },
+    {
+      "name": "Escape closes language disclosure"
+    },
+    {
+      "name": "language Escape restores its own trigger"
+    },
+    {
+      "name": "nested language Escape does not close main navigation"
+    },
+    {
+      "name": "outside language pointer closes language"
+    },
+    {
+      "name": "Chinese heading selects native MiSans500",
+      "detail": {
+        "lang": "zh-CN",
+        "heading": "MiSans, Instrument Sans, sans-serif",
+        "headingWeight": "500",
+        "eyebrowWeight": "500",
+        "headingReady": true,
+        "eyebrowReady": true,
+        "loaded500": 14
+      }
+    },
+    {
+      "name": "published Chinese heading/eyebrow weight already loaded",
+      "detail": {
+        "lang": "zh-CN",
+        "heading": "MiSans, Instrument Sans, sans-serif",
+        "headingWeight": "500",
+        "eyebrowWeight": "500",
+        "headingReady": true,
+        "eyebrowReady": true,
+        "loaded500": 14
+      }
+    },
+    {
+      "name": "material parameter survives Chinese switch"
+    },
+    {
+      "name": "progress value survives Chinese switch"
+    },
+    {
+      "name": "sample draft survives Chinese switch"
+    },
+    {
+      "name": "sample display survives Chinese switch"
+    },
+    {
+      "name": "message draft survives Chinese switch"
+    },
+    {
+      "name": "static SVG caption translated"
+    },
+    {
+      "name": "volume static continuation translated"
+    },
+    {
+      "name": "numeric values survive round trip"
+    },
+    {
+      "name": "message draft survives round trip"
+    },
+    {
+      "name": "language changes retain full form under reduced motion"
+    },
+    {
+      "name": "in-progress numeric draft preserved across storage language switch"
+    },
+    {
+      "name": "language update preserves focused numeric editor"
+    },
+    {
+      "name": "numeric draft still commits with configured precision"
+    },
+    {
+      "name": "explicit Chinese selection persists on reload"
+    },
+    {
+      "name": "parameter disclosure has fresh page state"
+    },
+    {
+      "name": "no page exceptions",
+      "detail": []
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "notes": [
+    "Windows WebKit normal-motion fresh-page growth wait timed out before any assertions in the initial run. This follow-up tests native navigation and localization with reduced motion; it does not certify volume rendering, autoplay or physical Safari.",
+    "Windows WebKit default native Tab preference may omit links; focus-leave is checked directly as well."
+  ],
+  "status": "passed",
+  "visualReview": {
+    "screenshot": "navigation-webkit-zh.png",
+    "headerAndNativeTextInspected": true,
+    "canvasBlackInScreenshot": true,
+    "scope": "Windows WebKit screenshot shows a black WebGL canvas; native navigation/localization passed, volume visual acceptance is not claimed."
+  }
+}

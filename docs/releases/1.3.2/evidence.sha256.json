@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "path": "before-desktop.png",
+      "bytes": 727601,
+      "sha256": "202b778ba069dad21bd2aedc77fc24f4bd890e0686d36c4c64861b066c234326"
+    },
+    {
+      "path": "entry-autoplay-2026-10-21.json",
+      "bytes": 4441,
+      "sha256": "943131035fd616da3f61d272c8a0bf14a7ea8fb4d8a769959e9eab5e6bb8f8e1"
+    },
+    {
+      "path": "entry-chromium-1180-en.png",
+      "bytes": 377085,
+      "sha256": "9753e70884e49b14e62baf8004cdaa4402743c0d2cac1fd0747dd38c9f54278d"
+    },
+    {
+      "path": "entry-chromium-1366-en.png",
+      "bytes": 440023,
+      "sha256": "d5676cb6903a9ee06dfeb3c7dedb8da8d59b4e026a4580200e438634642edfd5"
+    },
+    {
+      "path": "entry-chromium-1413-en.png",
+      "bytes": 554175,
+      "sha256": "ab8f490f3677f99dd079fb4b4a55a7742f9fb23de57e57a563d345602484f8e0"
+    },
+    {
+      "path": "entry-chromium-320-en.png",
+      "bytes": 146021,
+      "sha256": "a4134bc1cb827588e4e9ddff1b6acd84c44fff7bd735e2f69b2e6b442c574a15"
+    },
+    {
+      "path": "entry-chromium-393-en.png",
+      "bytes": 178594,
+      "sha256": "70b61c4ffb4106abd95215bc78930d79a5b308e64a3a345e521050f539ddfcbf"
+    },
+    {
+      "path": "entry-chromium-393-zh-type.png",
+      "bytes": 236831,
+      "sha256": "50c6c82a598becf7f4e42bd9a2aa7ff3d10bc132f386163790e428479bf4566b"
+    },
+    {
+      "path": "entry-chromium-393-zh.png",
+      "bytes": 176667,
+      "sha256": "94d812f573d9050f5d147ed11a8618d7aa17191e1e0a839de9d7b782c27b46cb"
+    },
+    {
+      "path": "entry-chromium-768-en.png",
+      "bytes": 440137,
+      "sha256": "2918706b470cb27a3c10be648d9fb715adf51467b4981548abfd21c4ca59a382"
+    },
+    {
+      "path": "entry-chromium-820-zh.png",
+      "bytes": 516001,
+      "sha256": "141eff6c8ae5f94e844be6a2aedd2ddbb3b32a0a7d3c24d2413e6cb58d6db496"
+    },
+    {
+      "path": "layout-result.json",
+      "bytes": 16384,
+      "sha256": "132935448510f565b020eb7ead3b6c19a04c03553539e2085252b68b3935c6e3"
+    },
+    {
+      "path": "navigation-chromium-result.json",
+      "bytes": 5578,
+      "sha256": "759b3a88eaa850bf615fea4b5e5e73a3a7e3198085d5ff9938ec18aafc43c88f"
+    },
+    {
+      "path": "navigation-webkit-result.json",
+      "bytes": 5967,
+      "sha256": "220e16e636386fe074e93e5c176793602d8ff9b73d0aaa195a79fb065b35fd49"
+    },
+    {
+      "path": "number-locale-2026-10-21.json",
+      "bytes": 2220,
+      "sha256": "c674a2711e7721b122ea550dd59447925d92ac267ad64a6ad5e382e4002d6062"
+    }
+  ]
+}

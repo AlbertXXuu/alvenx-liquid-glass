@@ -8,13 +8,15 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
+Version **1.3.2** brings the horizontal demonstration into the opening view. A compact gradient title and Replay control replace the long introduction and separate first-section heading. Slow budding plays once when the stage first becomes visible in the foreground; Replay then starts another cycle. The showcase defaults to English and offers a dedicated Language selector for a complete Chinese presentation, with MiSans readiness checked before switching. The reusable `MenuToggle` preserves the official site's two-line navigation pattern. See [the 1.3.2 record and validation status](docs/releases/1.3.2/README.md).
+
 Version **1.3.0** adds a reusable `BuddingLink`: one empty mother form grows through a soft connection into a native link chamber, using the existing actual-backdrop glass material. Its real document width pushes neighboring content continuously. The [live homepage](https://alvenx.com/) uses it between Explore the work and GitHub. See [the 1.3.0 record](docs/releases/1.3.0/README.md).
 
-Version **1.3.1** moves only the typed-text start inside the existing message field. The [UI showcase](https://alvenx.com/ui/) retains the accepted 1.2.2 composition, field dimensions, contour, send button and placement. Its native text gains a little left inset; none of the independent A/B/C sizing variants was selected. See [the measured correction](docs/releases/1.3.1/README.md). Authoring specifications are in Chinese; component labels and demonstrations are in English.
+Version **1.3.1** moved only the typed-text start inside the existing message field. Its field dimensions, contour, send button and placement remain the accepted baseline; none of the independent A/B/C sizing variants was selected. See [the measured correction](docs/releases/1.3.1/README.md). Authoring specifications are in Chinese; product and demonstration copy defaults to English, with Chinese available by explicit choice in the current showcase.
 
 The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 
-The current showcase keeps the volume, motion controls and material parameters in one section with normal document scrolling. Expanding Surface parameters does not pin, resize or restyle the horizontal form. The stable Chinese sample typography from 1.2.1 remains. Ask anything includes a local message Easter egg; the homepage has an unlettered glass sphere between Explore the work and GitHub that reveals an “explore me!” link. See [the 1.2.2 record](docs/releases/1.2.2/README.md) and [production verification](docs/releases/1.2.2/publication.md).
+The current showcase keeps the volume, motion controls and material parameters in one section with normal document scrolling. Expanding Surface parameters does not pin, resize or restyle the horizontal form. The default specimen uses English; editing it in Chinese retains immediate native drafts, IME composition and font-ready specimen updates. Ask anything keeps its local message Easter egg. The homepage's independently pinned 1.3.0 entrance remains between Explore the work and GitHub, revealing its “explore me!” chamber through continuous growth.
 
 ## Try it locally
 
@@ -30,9 +32,10 @@ Open `http://127.0.0.1:5174/`. Drag the sliders beyond their endpoints, re-grab 
 ## What is included
 
 - `BuddingLink`: one continuous mother/neck/chamber, native reveal/link semantics and real layout growth.
+- `MenuToggle`: canonical two-line mobile navigation, a native 44 px button with controlled disclosure state.
 - `LiquidControl`: contour-matched button, field, lens and circular control surfaces.
 - `GlassSlider`, `GlassSwitch`, `GlassNumber`: continuous gestures, bounded overdrag, release-only spring return and validated numeric drafts.
-- `VolumeStage`: mother form, soft connection and expanding content chamber, with slow budding and a canvas pixel budget.
+- `VolumeStage`: mother form, soft connection and expanding content chamber, with opt-in first-visible budding and a canvas pixel budget.
 - `GlassClock` and `useGlassSettings`: shared activity scheduling, visibility handling, settings persistence and reduced motion.
 - `ControlledScene` and `ControlledSource`: opt-in shared SVG sources for displacement inside a lens, including engines where SVG backdrop displacement is unavailable.
 - Scoped CSS, blue/indigo/violet tokens, canonical AlvenX assets, Instrument Sans and MiSans with their individual licenses.
@@ -47,7 +50,7 @@ Build and create a local package; the versioned tarball can be installed directl
 npm run build
 npm run pack:kit
 # In your React 19 project:
-npm install ./alvenx-liquid-glass-1.3.1.tgz
+npm install ./alvenx-liquid-glass-1.3.2.tgz
 ```
 
 ```tsx
@@ -127,10 +130,12 @@ playwright-cli -s=glass-qa close
 | --- | --- |
 | [Design language](docs/design-language.md) | Contour, edge light, typography, B endpoints and numeric input contracts |
 | [Integration](docs/integration.md) | React API, host responsibilities and adaptation points |
+| [Navigation](docs/navigation.md) | Canonical two-line disclosure, focus, keyboard and host layout responsibilities |
 | [Runtime quality](docs/runtime-quality.md) | Scheduling, buffers, cache, pixel budgets and measured costs |
 | [Compatibility](docs/compatibility.md) | Rendering probes, automatic selection and validation boundaries |
 | [Baseline and checklist](docs/baseline-and-checklist.md) | Acceptance identity and versioned checks |
-| [1.2.0 release record](docs/releases/1.2.0/README.md) | Current showcase changes, publication identities and device acceptance boundaries |
+| [1.3.2 release record](docs/releases/1.3.2/README.md) | Current opening, first-visible budding, explicit language selection and validation status |
+| [1.2.0 release record](docs/releases/1.2.0/README.md) | Historical production changes, publication identities and device acceptance boundaries |
 | [Attribution](docs/attribution.md) | References and individual asset notices |
 | `src/`, `styles/`, `tokens.json` | Library implementation and scoped styles |
 | `showcase/` | Editable public playground; build emits `site-dist/` |

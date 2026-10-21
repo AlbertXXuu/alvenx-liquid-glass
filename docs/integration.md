@@ -9,14 +9,15 @@
 | 导出 | 用途与宿主责任 |
 | --- | --- |
 | `LiquidControl` | 通用 button／field／circle／thumb 光学外壳；宿主提供 id、clock、children、尺寸与实际业务行为 |
-| `GlassSlider` | 连续拖动、B 端部反馈与参数数字输入；提供 value、min、max、step、onChange，不能只绑定展示数字 |
+| `MenuToggle` | 官网同款双横线导航按钮，44×44 px，展开变为关闭图标；提供 expanded、controls 与原生事件，详见 [导航规范](navigation.md) |
+| `GlassSlider` | 连续拖动、B 端部反馈与参数数字输入；提供 value、min、max、step、onChange；可选 locale 默认 en，不能只绑定展示数字 |
 | `GlassSwitch` | checked／onChange 受控开关，中点即时状态、点击／键盘连续切换 |
-| `GlassNumber` | 直接数值编辑；使用同一精度、draft、IME、校验与 Reset 规则 |
+| `GlassNumber` | 直接数值编辑；使用同一精度、draft、IME、校验与 Reset 规则；可选 locale 为 en／zh-CN |
 | `GlassClock` | 共享指针／动画时钟，拥有销毁生命周期；保留 `PreviewClock` 兼容别名 |
 | `DEFAULT_SETTINGS`、`PARAMETER_ROWS` | 已确认基线设置及标签、范围、键盘步长、精度，不复制出第二份分叉配置 |
 | `SETTINGS_KEY`、`readSettings(storageKey?)` | 默认存储 key 与读取归界；新产品应选自己的 key |
 | `useGlassSettings({ storageKey?, optics?, maxFps? })` | 返回 clock、settings、setSettings、updateSettings、reset、reduced、systemReduced，管理设置与时钟生命周期；optics 默认为 auto，计算频率预算默认 60 次/秒 |
-| `VolumeStage` | 大母体／膜颈／内容腔展示，接收 clock、settings、children、className、ariaLabel、可选 onPlayingChange／renderBudget；ref 提供 `replay()` |
+| `VolumeStage` | 大母体／膜颈／内容腔展示，接收 clock、settings、children、className、ariaLabel、可选 autoPlay／onPlayingChange／renderBudget；ref 提供 `replay()` |
 | `ControlledScene`／`ControlledSource` | R3 实验性受控 SVG 场景；背景与镜内共用同一源，仅对显式登记内容折射，见下文 |
 | `resolveGlassOptics`／`GlassOpticsMode` | auto／svg／native／flat 渲染策略，具体能力和验证边界见兼容文档 |
 | `endpointGeometry`、`contourShape`、`shellPath` | 未舍入端部关系与 C2 轮廓的移植入口；几何类型也随包导出 |
@@ -27,11 +28,17 @@
 
 同一 document 中 `GlassSlider`／`GlassNumber` 的 `id` 必须唯一，字段、label、range 和帮助文本依靠它关联；内部 SVG 的 `useId` 并不能替外部字段去重。多个场景使用命名空间 id，例如 `editor:refractionLevel`，并传 `precision={row.precision}`，避免非标准 id 的精度回退到 2 位。`value/min/max` 必须有限，`min < max`，键盘 `step` 必须为有限正数。范围变化会重新计算进度，结束旧拖动事务，并在缩小范围时归正和回调合法值。
 
-`VolumeStage` 自带 `.stage-scroll` 和 `.foreground`，直接把正文 children 传入，不要再外包同名容器。正文在出芽进度超过 `.92` 后揭示；正常出芽为 3000ms 的模拟时间，实际墙钟仍受帧交付影响。`onPlayingChange` 可用于显示 Budding… 与禁用重放按钮。
+`VolumeStage` 自带 `.stage-scroll` 和 `.foreground`，直接把正文 children 传入，不要再外包同名容器。集成式布局的正文在出芽进度超过 `.92` 后揭示；窄屏 overview 的独立正文面板始终保留。`onPlayingChange` 可用于显示 Budding… 与禁用重放按钮。
+
+`autoPlay` 默认 `false`，原有宿主仍直接呈现完整形体。显式传入 `autoPlay` 后，在形体首次进入视口且文档位于前台时自动播放一次；离屏或切到后台会暂停这次介绍，返回后接续，完成后再次滚入不会重复播放。React StrictMode 的 effect 回放也不会重播。`settings.ambient` 只控制环境动效，不取消这一次出芽。系统或用户的 reduced motion 优先，直接展示完整形体；渲染不可用时保留静态形体与可读正文。`ref.replay()` 仍可手动启动后续播放，在 reduced motion 或渲染不可用时不启动动画。
+
+1.3.2 的有限出芽进度改用 `performance.now()` 计量的有效播放时间，每个完整周期为 3000ms。自动介绍暂停时重置时间锚点，隐藏期间不累计进度；物理形变仍使用时钟限制后的 delta，避免低帧率下物理积分失稳。这个约定替代旧版“3000ms 模拟时间”的说法，避免低频帧交付让介绍异常拖长。完成画面仍只能在下一次实际帧交付时显示；3000ms 是进度时间契约，不是所有设备的帧率或呈现延迟保证。离屏不提交 GPU 绘制，自动介绍暂停时也不维持出芽更新循环；手动 replay 的既有离屏生命周期继续保留。
+
+`GlassSlider` 与 `GlassNumber` 的可选 `locale="zh-CN"` 会本地化数值字段的无障碍名称、范围／精度帮助、归界／四舍五入／恢复、取消编辑和粘贴限制提示。默认 `locale="en"`，不自动读取 `document.lang` 或浏览器语言；标签 `label` 仍由宿主翻译。语言选择不改变有限数校验、小数精度、数值范围、连续指针输入或数字解析约定，也不会把小数点改成另一种分隔符。`GlassSlider` 会把自己的 locale 传给内部 `GlassNumber`。
 
 ## 组合示例
 
-下面使用已导出的 API 组合场景；宿主自行提供业务行为。业务文案始终为英文。
+下面使用已导出的 API 组合场景；宿主自行提供业务行为，默认业务文案为英文。是否在自己的产品启用首次出芽由宿主决定，示例显式开启。
 
 ```tsx
 import { useRef } from 'react';
@@ -56,6 +63,7 @@ export function MaterialScene() {
         ref={stage}
         clock={clock}
         settings={settings}
+        autoPlay
         ariaLabel="Organic glass material demonstration"
       >
         <p>Start with a clear thought.</p>
@@ -80,6 +88,43 @@ export function MaterialScene() {
 ```
 
 宿主需要给外壳明确尺寸并安排 DOM 内容安全区；组件不会替任意长文计算完整阅读布局。真实 backdrop 要有可采样背景；全白背景下折射差异较弱不能直接归为功能失效，也不能靠加白边冒充折射。
+
+## 显式语言选择与导航
+
+默认导航文案为英文，用户主动选择中文后才切换。通用移动导航使用已导出的 `MenuToggle`；按钮外观、原生语义、44px 命中、关闭与焦点契约见 [导航规范](navigation.md)。语言选择是独立控件，不能用导航按钮兼任语言切换，也不通过浏览器语言自动改变入口。
+
+当前展示页的 `showcase/mobile-review/localization.tsx` 提供页面专用的 `useShowcaseLanguage`、文案目录和 `LanguageControl`；它们不属于 npm 包的组件导出。下面是仓库内展示页的接线方式，消费项目应接到自己的语言管理层，并将明确选择传给数值控件：
+
+```tsx
+import { GlassSlider, useGlassSettings } from '../../src';
+import { LanguageControl, useShowcaseLanguage } from './localization';
+
+export function BilingualMaterialControls() {
+  const { language, languageStatus, setLanguage, t } = useShowcaseLanguage();
+  const { clock, settings, updateSettings } = useGlassSettings({
+    storageKey: 'example-project:material:v1',
+  });
+  return <section className="alvenx-design">
+    <LanguageControl
+      language={language}
+      onLanguageChange={setLanguage}
+      busy={languageStatus === 'loading'}
+      error={languageStatus === 'error'}
+    />
+    <GlassSlider
+      id="bilingual:interactionStrength"
+      label={t('Interaction strength')}
+      locale={language}
+      min={0} max={4} step={0.1} precision={1} unit="×"
+      value={settings.interactionStrength}
+      clock={clock}
+      onChange={interactionStrength => updateSettings({ interactionStrength })}
+    />
+  </section>;
+}
+```
+
+展示页的语言偏好独立保存在 `alvenx-showcase-language-v1`，不会覆盖材质设置。切换中文前按完整中文目录去重后的实际字形准备 MiSans 400／500；就绪后在同一布局阶段更新文案、`document.lang` 与中文排版。缓存只保留这一项字体准备 Promise，不预载整套中文字体；旧异步选择不能覆盖后来的选择。已保存的中文在冷启动时先保留稳定英文，字体就绪后切换；失败时保留原语言并允许重试，存储受限时选择仍可使用。中文采用 MiSans、适合中文的正常字距及行高；拉丁文保留 Instrument Sans，原生文字仍位于滤镜外。改变语言后的长标签和中文段落也须重新检查布局，不能仅以翻译函数通过类型检查代替视觉验收。
 
 ## 调整颜色与文字
 

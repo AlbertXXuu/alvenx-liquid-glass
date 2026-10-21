@@ -2,6 +2,8 @@ export { LiquidControl } from './LiquidControl';
 export type { LiquidControlProps, ThumbGeometry, LiquidContourFrame } from './LiquidControl';
 export { BuddingLink } from './BuddingLink';
 export type { BuddingLinkProps } from './BuddingLink';
+export { MenuToggle } from './MenuToggle';
+export type { MenuToggleProps } from './MenuToggle';
 export { GlassNumber, GlassSlider, GlassSwitch } from './GlassSettingsControls';
 export type { GlassNumberProps, GlassSliderProps, GlassSwitchProps } from './GlassSettingsControls';
 export { GlassClock, PreviewClock } from './GlassClock';

@@ -108,23 +108,25 @@ function roundDecimal(text:string,precision:number) {
 
 /** Text editing keeps IME/paste/selection native. A complete finite draft is
  * normalized only on commit; untouched focus/blur never quantizes pointer values. */
-export type GlassNumberProps = {id:string;label:string;value:number;min:number;max:number;precision:number;unit:string;clock:PreviewClock;onCommit:(value:number)=>void};
-export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommit}:GlassNumberProps) {
+export type GlassNumberProps = {id:string;label:string;value:number;min:number;max:number;precision:number;unit:string;clock:PreviewClock;onCommit:(value:number)=>void;locale?:'en'|'zh-CN'};
+export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommit,locale='en'}:GlassNumberProps) {
   const format=(next:number)=>String(roundDecimal(String(next),precision));
+  const chinese=locale==='zh-CN';
   const [draft,setDraft]=useState(format(value)),[editing,setEditing]=useState(false),[notice,setNotice]=useState(''),[compositionActive,setCompositionActive]=useState(false);
   const skipBlur=useRef(false),dirty=useRef(false),composing=useRef(false),noticeValue=useRef(value);
   useEffect(()=>{if(!editing&&value!==noticeValue.current)setNotice('');},[value,editing]);
+  useEffect(()=>setNotice(''),[locale]);
   const commit=()=>{
     if(composing.current)return;
     if(!dirty.current){setEditing(false);return;}
     const parsed=parseNumberText(draft);
-    if(!parsed){setDraft(format(value));noticeValue.current=value;setNotice(`${min}–${max} · Restored ${format(value)}`);}
+    if(!parsed){setDraft(format(value));noticeValue.current=value;setNotice(`${min}–${max} · ${chinese?'已恢复为':'Restored'} ${format(value)}`);}
     else {
       const bounded=Math.max(min,Math.min(max,parsed.value));
       const rounded=bounded!==parsed.value?bounded:roundDecimal(parsed.text,precision);
       const next=Math.max(min,Math.min(max,rounded));
       noticeValue.current=next;onCommit(next);setDraft(format(next));
-      setNotice(bounded!==parsed.value?`${min}–${max} · Set to ${format(next)}`:next!==parsed.value?`${min}–${max} · Rounded to ${format(next)}`:'');
+      setNotice(bounded!==parsed.value?`${min}–${max} · ${chinese?'已设为':'Set to'} ${format(next)}`:next!==parsed.value?`${min}–${max} · ${chinese?'已四舍五入为':'Rounded to'} ${format(next)}`:'');
     }
     dirty.current=false;setEditing(false);
   };
@@ -132,20 +134,20 @@ export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommi
   const invalid=editing&&dirty.current&&!compositionActive&&(!parsedDraft||parsedDraft.value<min||parsedDraft.value>max);
   return <span className="parameter-value">
     <LiquidControl id={`${id}-number`} kind="field" clock={clock} className="parameter-number-glass">
-      <input id={`number-${id}`} className="parameter-number" type="text" role="spinbutton" inputMode="decimal" maxLength={32} aria-valuemin={min} aria-valuemax={max} aria-valuenow={editing&&parsedDraft&& !invalid?parsedDraft.value:value} aria-invalid={invalid||undefined} aria-label={`${label} value`} aria-describedby={`number-hint-${id} number-notice-${id}`} value={editing?draft:format(value)}
+      <input id={`number-${id}`} className="parameter-number" type="text" role="spinbutton" inputMode="decimal" maxLength={32} aria-valuemin={min} aria-valuemax={max} aria-valuenow={editing&&parsedDraft&& !invalid?parsedDraft.value:value} aria-invalid={invalid||undefined} aria-label={`${label}${chinese?'数值':' value'}`} aria-describedby={`number-hint-${id} number-notice-${id}`} value={editing?draft:format(value)}
         onFocus={()=>{setDraft(format(value));dirty.current=false;setEditing(true);setNotice('');}}
         onChange={event=>{dirty.current=true;setDraft(event.currentTarget.value);setNotice('');}}
         onCompositionStart={()=>{composing.current=true;setCompositionActive(true);}}
         onCompositionEnd={event=>{composing.current=false;setCompositionActive(false);if(document.activeElement===event.currentTarget){dirty.current=true;setDraft(event.currentTarget.value);}else{dirty.current=false;setDraft(format(value));}}}
         onPaste={event=>{
           const input=event.currentTarget,text=event.clipboardData.getData('text'),length=input.value.length-(input.selectionEnd!-input.selectionStart!)+text.length;
-          if(length>32){event.preventDefault();noticeValue.current=value;setNotice('Max 32 characters · Paste ignored');}
+          if(length>32){event.preventDefault();noticeValue.current=value;setNotice(chinese?'最多 32 个字符 · 已忽略粘贴':'Max 32 characters · Paste ignored');}
         }}
         onBlur={()=>{if(skipBlur.current){skipBlur.current=false;return;}if(composing.current){dirty.current=false;setEditing(false);setDraft(format(value));return;}commit();}}
         onKeyDown={event=>{
           if(composing.current||event.nativeEvent.isComposing||event.nativeEvent.keyCode===229)return;
           if(event.altKey||event.ctrlKey||event.metaKey||event.shiftKey)return;
-          if(event.key==='Escape'){event.preventDefault();skipBlur.current=true;dirty.current=false;setEditing(false);setDraft(format(value));noticeValue.current=value;setNotice('Edit cancelled');event.currentTarget.blur();}
+          if(event.key==='Escape'){event.preventDefault();skipBlur.current=true;dirty.current=false;setEditing(false);setDraft(format(value));noticeValue.current=value;setNotice(chinese?'已取消编辑':'Edit cancelled');event.currentTarget.blur();}
           else if(event.key==='Enter'){event.preventDefault();commit();skipBlur.current=true;event.currentTarget.blur();}
           else if(['ArrowUp','ArrowDown','Home','End'].includes(event.key)) {
             event.preventDefault();const parsed=parsedDraft??{value,text:String(value)},bounded=Math.max(min,Math.min(max,parsed.value));
@@ -157,15 +159,15 @@ export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommi
         }}/>
     </LiquidControl>
     <span className="parameter-unit" aria-hidden="true">{unit}</span>
-    <span className="visually-hidden" id={`number-hint-${id}`}>Range {min} to {max}{unit?' '+unit:''}. Up to {precision} decimal places. Enter or leave the field to apply. Escape cancels.</span>
+    <span className="visually-hidden" id={`number-hint-${id}`}>{chinese?`范围 ${min} 至 ${max}${unit?' '+unit:''}。最多保留 ${precision} 位小数。按 Enter 或离开输入框应用，按 Escape 取消。`:`Range ${min} to ${max}${unit?' '+unit:''}. Up to ${precision} decimal places. Enter or leave the field to apply. Escape cancels.`}</span>
     <span className="parameter-number-notice" id={`number-notice-${id}`} role="status" aria-live="polite">{notice}</span>
   </span>;
 }
 
 /** Pointer input is continuous; configured steps belong only to keyboard input.
  * Deltas preserve the grab point during shell morphs. Only release uses a spring. */
-export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void;controlledRefraction?:boolean};
-export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange,controlledRefraction=false }: GlassSliderProps) {
+export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void;controlledRefraction?:boolean;locale?:'en'|'zh-CN'};
+export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange,controlledRefraction=false,locale='en' }: GlassSliderProps) {
   if (![min,max,step,value].every(Number.isFinite) || min>=max || step<=0) {
     throw new RangeError('GlassSlider requires finite value/min/max, min < max, and a finite positive keyboard step.');
   }
@@ -261,7 +263,7 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
         }} onKeyUp={()=>setPressed(false)}/>
   </>;
   return <div className="parameter-row">
-    <div className="parameter-label"><label htmlFor={`number-${id}`}>{label}</label><GlassNumber id={id} label={label} value={value} min={min} max={max} precision={precision} unit={unit} clock={clock} onCommit={commitNumber}/></div>
+    <div className="parameter-label"><label htmlFor={`number-${id}`}>{label}</label><GlassNumber id={id} label={label} value={value} min={min} max={max} precision={precision} unit={unit} clock={clock} onCommit={commitNumber} locale={locale}/></div>
     <div ref={anchor.rail} className="range-rail" data-progress={progress.toFixed(6)} data-overshoot={displayPosition.offset.toFixed(3)} data-end-radius={anchor.radius} data-end-gap={anchor.gap}>
       {controlledRefraction?<ControlledRail container={anchor.rail} geometry={anchor.railGeometry} progress={progress}>{railChildren}</ControlledRail>:railChildren}
     </div>
