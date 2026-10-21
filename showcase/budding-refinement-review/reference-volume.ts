@@ -133,17 +133,48 @@ export function createReferenceVolume(canvas:HTMLCanvasElement,width:number,heig
  const gl=canvas.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,premultipliedAlpha:false,preserveDrawingBuffer:false});
  if(!gl)throw new Error('WebGL is unavailable; the actual-backdrop glass remains visible.');
  const scale=1.5,w=Math.ceil(width*scale),h=Math.ceil(height*scale);canvas.width=w;canvas.height=h;canvas.style.width=`${width}px`;canvas.style.height=`${height}px`;
- const compile=(kind:number,source:string)=>{const shader=gl.createShader(kind);if(!shader)throw new Error('Shader allocation failed.');gl.shaderSource(shader,source);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(shader)??'Shader compilation failed.');return shader;};
+ const parallel=gl.getExtension('KHR_parallel_shader_compile');
+ let status:'pending'|'ready'|'failed'='pending',destroyed=false,paintPolls=0;
+ let preparationElapsed=0;
+ canvas.dataset.volumePreparation=status;
+ canvas.dataset.volumePreparationMode=parallel?'parallel':'deferred-sync';
+ const compile=(kind:number,source:string)=>{const shader=gl.createShader(kind);if(!shader)throw new Error('Shader allocation failed.');gl.shaderSource(shader,source);gl.compileShader(shader);return shader;};
  const vertex=compile(gl.VERTEX_SHADER,'attribute vec2 a_position;void main(){gl_Position=vec4(a_position,0.0,1.0);}'),shader=compile(gl.FRAGMENT_SHADER,fragment),program=gl.createProgram();
- if(!program)throw new Error('Review volume program allocation failed.');gl.attachShader(program,vertex);gl.attachShader(program,shader);gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program)??'Review volume linking failed.');
- const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
- const profile=gl.createTexture(),profilePixels=new Uint8Array(profileColumns*4),profileTop=new Float32Array(profileColumns),profileBottom=new Float32Array(profileColumns);
- gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,profile);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,profileColumns,1,0,gl.RGBA,gl.UNSIGNED_BYTE,profilePixels);
- const position=gl.getAttribLocation(program,'a_position');
+ if(!program)throw new Error('Review volume program allocation failed.');gl.attachShader(program,vertex);gl.attachShader(program,shader);gl.linkProgram(program);
+ let buffer:WebGLBuffer|null=null,profile:WebGLTexture|null=null,position=-1;
+ const profilePixels=new Uint8Array(profileColumns*4),profileTop=new Float32Array(profileColumns),profileBottom=new Float32Array(profileColumns);
  const names=['resolution','review_box','review_transform','review_mother_transform','review_chamber_transform','review_profile','light','curvature','growth','edge','flat','grid','time','studio_motion','studio_rotation','parent_stretch','child_stretch','deform_point','deform_amount','specular_opacity','specular_saturation','refraction_level','blur_level','progressive_blur','glass_opacity'];
- const uniforms=Object.fromEntries(names.map(name=>[name,gl.getUniformLocation(program,`u_${name}`)]));
- let previous='',renders=0,total=0;
- return {draw(path:string,growth:number,material:MaterialParameters,transform:ReviewBuddingTransform={}){
+ let uniforms:Record<string,WebGLUniformLocation|null>={},previous='',renders=0,total=0;
+ return {get ready(){return status==='ready';},poll(elapsedMs=0){
+  if(status!=='pending'||destroyed)return false;
+  preparationElapsed+=Math.max(0,elapsedMs);
+  if(gl.isContextLost()){status='failed';canvas.dataset.volumePreparation=status;gl.deleteTexture(profile);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vertex);gl.deleteShader(shader);destroyed=true;return false;}
+  if(parallel){if(!gl.getProgramParameter(program,parallel.COMPLETION_STATUS_KHR)){
+   // Only foreground shared-clock time consumes the preparation budget.
+   // A shader completed during a hidden interval remains usable on return.
+   if(preparationElapsed>10000){status='failed';canvas.dataset.volumePreparation=status;canvas.dataset.volumeError='Reference shader preparation timed out.';gl.deleteTexture(profile);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vertex);gl.deleteShader(shader);destroyed=true;return false;}
+   return true;
+  }}
+  else{
+   // Preserve the accepted material on engines without the extension. The
+   // unavoidable synchronous status wait starts only after initial content has
+   // painted, never from an activation handler. Paint timing is preferred;
+   // older engines get two existing-clock paint opportunities, recorded below.
+   const observed=performance.getEntriesByType('paint').length>0;
+   if(!observed&&++paintPolls<3)return true;
+   canvas.dataset.volumeFallbackPaint=observed?'observed':'two-clock-paint-opportunities';
+  }
+  // With KHR, status/location queries run only after completion. The explicitly
+  // recorded compatibility branch retains its residual synchronous status wait.
+  if(!gl.getProgramParameter(program,gl.LINK_STATUS)){
+   status='failed';canvas.dataset.volumePreparation=status;canvas.dataset.volumeError=gl.getProgramInfoLog(program)||gl.getShaderInfoLog(shader)||'Review volume linking failed.';return false;
+  }
+  buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  profile=gl.createTexture();gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,profile);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,profileColumns,1,0,gl.RGBA,gl.UNSIGNED_BYTE,profilePixels);
+  position=gl.getAttribLocation(program,'a_position');uniforms=Object.fromEntries(names.map(name=>[name,gl.getUniformLocation(program,`u_${name}`)]));
+  status='ready';canvas.dataset.volumePreparation=status;return false;
+ },draw(path:string,growth:number,material:MaterialParameters,transform:ReviewBuddingTransform={}){
+  if(status!=='ready'||destroyed)return;
   const key=path+JSON.stringify(material);if(key===previous)return;previous=key;
   const start=performance.now();gl.viewport(0,0,w,h);gl.useProgram(program);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
   gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,profile);gl.uniform1i(uniforms.review_profile,0);
@@ -152,7 +183,8 @@ export function createReferenceVolume(canvas:HTMLCanvasElement,width:number,heig
   for(const name of ['mother','chamber'] as const){const t=transform[name]??{};gl.uniform4f(uniforms[`review_${name}_transform`],t.scaleX??1,t.scaleY??1,t.offsetX??0,t.offsetY??0);}
   gl.uniform2f(uniforms.light,.22,.08);gl.uniform2f(uniforms.parent_stretch,1,1);gl.uniform2f(uniforms.child_stretch,1.15,1);gl.uniform2f(uniforms.deform_point,500,280);gl.uniform2f(uniforms.deform_amount,0,0);gl.uniform2f(uniforms.studio_rotation,1,0);
   for(const [name,value] of Object.entries({curvature:reviewChamberExponent,growth,edge:0,flat:0,grid:0,time:0,studio_motion:0,specular_opacity:material.specularOpacity,specular_saturation:material.specularSaturation,refraction_level:material.refractionLevel,blur_level:material.blurLevel/(diameter/300),progressive_blur:material.progressiveBlur/(diameter/300),glass_opacity:material.glassOpacity}))gl.uniform1f(uniforms[name],value);
+  if(renders===0)canvas.dataset.volumeReveal=growth===0?'instant':'blend';
   gl.drawArrays(gl.TRIANGLES,0,3);renders++;const ms=performance.now()-start;total+=ms;
   canvas.dataset.volumeLightRenders=String(renders);canvas.dataset.volumeLightComputeMs=ms.toFixed(3);canvas.dataset.volumeLightMeanMs=(total/renders).toFixed(3);canvas.dataset.volumeLightPixels=String(w*h);canvas.dataset.volumeHeightModel='accepted-reference-potential';canvas.dataset.materialSource='src/volume-renderer.js';
- },destroy(){gl.deleteTexture(profile);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vertex);gl.deleteShader(shader);previous='';}};
+ },destroy(){if(destroyed)return;destroyed=true;gl.deleteTexture(profile);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vertex);gl.deleteShader(shader);previous='';}};
 }

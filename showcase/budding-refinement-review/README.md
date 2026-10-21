@@ -1,4 +1,60 @@
-# Budding entrance — R5 independent review
+# Budding entrance — R6 startup review, accepted R5 geometry
+
+The owner accepted the R5 shape on 2026-10-22 and requested immediate visibility and less first-activation delay. R6 changes startup only. `geometry.ts` remains byte-identical to R5 (SHA-256 `bcf9efa6e6b5db5bcf55cc295e22798fe66a0fdfd20f6328092a8da84aa55b7d`): the chamber exponent stays **2.2**, with the same mother, separation, measured text slot, independent hover and reversible growth. The production homepage/library are not changed by this isolated review.
+
+## Progressive first frame and live readiness
+
+The built review is prerendered using the actual exported `Review` inside the same React `StrictMode` tree used by `hydrateRoot`. Its first render is independent of stored settings, with the live controls enhanced after hydration. English uses the existing Instrument Sans face through this review's small `fonts.css`; the shared glass CSS remains intact. This removes the large MiSans declaration sheet from this English review's critical path, without changing or deleting the library fonts, Chinese pages, font binaries or licenses.
+
+The initial mother is visible before the main JavaScript bundle: `first-frame.ts` supplies separate transparent textures for 54 and 44 px, each generated from an actual accepted R5 material draw with the exact growth-zero uniforms and contour. The texture was captured synchronously inside that draw, then clipped with the matching C2 path. It is not a background screenshot, a newly painted gradient or a stretched substitute for live growth. Its native CSS backdrop remains underneath. Responsive CSS selects the correct initial size before hydration, rather than displaying 54 px and jumping to 44 px. The source PNGs and embedded data URIs are the same project-owned rendering, with the project's reserved rights; font licenses remain separate.
+
+| Mother | PNG raster | PNG SHA-256 |
+| --- | --- | --- |
+| 54 px | 322 × 132 | `080a8ec125eeefe3569355226895bc9f207941227b25bf7dfdcf808910bc8936` |
+| 44 px | 281 × 111 | `bf305b7815634642b74d37722e42492a9081ba880a1918e475634c893861eace` |
+
+Before JavaScript, the visible circle is a genuine native destination link. A separate small self-hosted classic `early-activation.js` can retain a normal activation while the main module downloads, then consume it once React owns the action. Modified/non-primary clicks retain native link behavior. A mouse, touch or Space press begun before hydration and released after replacement is handed to the live action without losing the first gesture. Cancellation/outside release does not activate it. The controller is idempotent, cleans up its listeners and temporary globals, and has a bounded ten-second error deadline. With no JavaScript or a failed main module, the real destination link remains useful; it does not pretend the physics engine is ready. After enhancement there is only one focusable action on the mother, and focus transfers without scrolling.
+
+`reference-volume.ts` starts compilation near visibility and feature-detects `KHR_parallel_shader_compile`. Its existing shared clock polls only completion while preparation is pending. Link status, attribute/uniform reflection, buffer/texture setup and draw are deferred until completion succeeds. The poll stops after completion, context loss, failure, unmount, or ten seconds of foreground shared-clock preparation time while still incomplete. Hidden wall time does not consume this budget; completion is checked before the deadline so an already completed program remains usable on return. There is no new continuous animation loop. Without the extension, the accepted material is still prepared after an observed first paint (or two shared-clock paint opportunities where the paint API is unavailable); a synchronous compiler wait can remain on that path. [The Khronos specification](https://registry.khronos.org/webgl/extensions/KHR_parallel_shader_compile/) explicitly distinguishes nonblocking completion polling from the potentially blocking fallback. [MDN WebGL best practices](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/WebGL_best_practices#prefer_khr_parallel_shader_compile) recommends this extension. The [MDN compatibility data](https://raw.githubusercontent.com/mdn/browser-compat-data/main/api/KHR_parallel_shader_compile.json), checked on 2026-10-22, records Chrome 76+, Safari 14.1 and mirrored iOS support, with Firefox unsupported; the actual runtime probe remains authoritative for a device/driver.
+
+The closed poster is removed only when a matching live draw is committed. If the visitor activates while compilation is still pending, the unchanged current C2 native-backdrop optics respond immediately, but the extra blue-violet volume is temporarily flatter. It blends in over 160 ms once the matching live material is ready. The forced-pending screenshots deliberately retain this visible limitation. No growth-zero image is stretched across the growing body. The existing one-frame physics/optical scheduling is preserved to keep the host dimensions, path, native label and material coherent; R6 does not claim a new zero-frame response.
+
+“First visible accepted frame,” “live material ready,” “queued activation before the main module,” and “input-to-growth after readiness” are separate measurements. Network transfer, module download, browser paint and GPU compilation still take time. This implementation does not promise literal zero latency, stable FPS, or physical iPhone/iPad/Safari/Combo Touch acceptance.
+
+## Build and replay
+
+Build this review to a separate output and then prerender it; the generator intentionally refuses `site-dist` and a second prerender of an already processed entry.
+
+```powershell
+npx vite build --outDir output/playwright/budding-latency-20261022/r6-dist --base /r6/ --logLevel warn
+node showcase/budding-refinement-review/prerender.mjs --out-dir output/playwright/budding-latency-20261022/r6-dist --base /r6/
+npx vite preview --host 127.0.0.1 --port 5196 --strictPort --outDir output/playwright/budding-latency-20261022/r6-dist --base /r6/
+```
+
+Open `/r6/showcase/budding-refinement-review/index.html` on that preview server. For publication use the actual immutable release namespace in both build and prerender commands. The generator validates the same SSR tree without DOM shims, exact growth-zero path, PNG IHDR/SHA, responsive metadata (0.001 px dimension-record tolerance), local built asset URLs, and independent hash-named classic bootstrap. CI builds a separate `output/ci/entrance-first-frame` and runs this generator; it does not modify the default build output.
+
+The reusable browser callbacks are in `output/playwright/budding-refinement-r6-20261022/` and derive their target from the already-open `page.url()`. The paired benchmark is `output/playwright/budding-latency-20261022/paired-comparison.cjs`: open the R6 URL with `?baseline=<URL-encoded immutable R5 URL>`. It uses three paired samples per condition, in R5/R6, R6/R5, R5/R6 order, with fresh HTTP-cache-disabled contexts. Conditions are 1413 × 1000 desktop and 393 × 852 with 4× CPU, 150 ms synthetic latency and 200,000 B/s download. A shared browser process may retain driver/shader cache; HTTP cold does not prove GPU cold. ResourceTiming reports encoded and decoded bytes separately: gzip was active in this local preview run, correcting the earlier uncompressed assumption. Hosted CDN compression, protocol and transfer timing remain a separate measurement. Double-animation-frame timing denotes a paint opportunity, not completed GPU output. The original twelve diagnostic samples remain historical, not a substitute for this paired protocol.
+
+Local paired medians (milliseconds, three samples for each version and condition):
+
+| Condition / metric | R5 | R6 |
+| --- | ---: | ---: |
+| Desktop first contentful paint | 124 | 68 |
+| Desktop accepted frame paint opportunity | 354 | 61 |
+| Desktop live material draw | 349 | 338 |
+| Desktop blocking link status wait | 192 | 0 |
+| Desktop first ready input → growth | 8 | 23 |
+| Desktop first ready input → material | 24 | 26 |
+| Constrained first contentful paint | 2180 | 588 |
+| Constrained accepted frame paint opportunity | 2485 | 581 |
+| Constrained live material draw | 2460 | 1675 |
+| Constrained blocking link status wait | 180 | 0 |
+| Constrained first ready input → growth | 80 | 115 |
+| Constrained first ready input → material | 132 | 169 |
+
+The earlier visible accepted frame is R6's exact static material texture; R5's is its first live material draw. This does not mean the R6 live renderer was ready at 61/581 ms. The startup compiler stall disappears in the tested KHR path, but established-physics input latency does not improve in this small sample. Warm input-to-growth medians were 8 → 9 ms desktop and 124 → 115 ms constrained. Preserve these limits when presenting the result, including the synthetic conditions and uncontrolled driver cache. Raw local data and summary are `output/playwright/budding-latency-20261022/paired-local.json` and `paired-local-summary.json`; final hosted results must be recorded separately after publication.
+
+## Accepted shape and material contract
 
 Owner correction, 2026-10-22: the R4 content chamber looked too rectangular, with nearly vertical sides. R5 changes its terminal superellipse exponent from 3.2 to 2.2, giving both sides a continuous outward curve while preserving the measured width, height, native text, optical spacing, round mother, independent hover and return behavior. The joined morph and terminal shader use this same target exponent. R4's profile/committed-path material correction remains in place. The current homepage component and library defaults remain unchanged; immutable R4 and earlier source tags retain their historical results.
 
@@ -25,3 +81,13 @@ Local R5 verification, 2026-10-22: TypeScript passed and 392/392 geometry assert
 A separate R5 5/5 targeted material check inspected 115 joined growth/return draw calls and 791 native Path2D boundary samples: every sampled profile matched the displayed C2 path, joined frames refreshed the profile, and terminal/rest frames skipped its upload. Its test-only GL interception reads uniforms and is not a GPU timing or performance measurement. Both 54 and 44 px rest/hover images and the original-speed growth sequence were visually inspected.
 
 Evidence and replay callbacks are under `output/playwright/budding-refinement-r5-20261022/`: `checks-final.json`, `geometry-check.json`, `material-check.json`, `review-check.cjs`, `material-check.cjs` and `capture-stages.cjs`. All browser callbacks take the already-open `page.url()` so the same checks can run against built and hosted candidates. Retained images include five viewport sizes, the first 393 x852 viewport, both independent hovers, the narrow facing-edge case, and the growth sequence. `capture-stages.json` records progress before and after each native screenshot and checks contact/rim path agreement; threshold images are observations of the moving interaction, not synthetic exact frozen frames. R4's evidence remains in its separate `budding-refinement-r4-20261022/` folder; R5 does not overwrite those results.
+
+## R6 local verification
+
+TypeScript and the separate Vite build/prerender passed. The unchanged R5 geometry passed 392/392 assertions. R6's 129/129 responsive interaction assertions passed with zero page exceptions, console errors, HTTP errors and failed requests. The final 5/5 targeted material pass inspected 115 joined frames and 791 native boundary samples through growth/return; normal-size rest, independent hover, 44 px facing-edge hover, first phone viewport and observed growth phases were captured and visually inspected. The subsequent active-time timeout correction changes preparation lifecycle only; its own focused startup replay covers both long-hidden return and never-completion, and the material/handoff checks were refreshed afterward.
+
+The startup replay passed 19/19 assertions: native first frames without JavaScript at 320/393/1413 px; one action/focus owner during compilation; responsive Space activation while compile is forced pending; no early reflection/draw; matching material blend; native operation after bounded failure; hidden wall-time exclusion; a completed shader resuming after an 11-second controlled hidden interval; accepted material after first paint without KHR; pre-main queued intent consumption and focus transfer; and native link availability after module resource failure. The controlled hidden test uses a `document.hidden` visibility event and browser clock, not a physical OS background acceptance claim. The no-KHR fallback still measured about 193 ms of synchronous link status wait in this replay. With a deliberately held 200 ms main module, activation at 124 ms reached real growth at 389 ms; the retained intent is not instant physics.
+
+The separate 10/10 handoff checks cover mouse, CDP touch and held Space across hydration; outside release and cancellation; and Ctrl/Cmd/Shift/Alt/non-primary native-link bypass. Before the handoff fix, the actual mouse and held Space cases reproduced growth zero after release; the corrected cases open continuously. No physical Combo Touch or iOS result is inferred from these desktop inputs.
+
+R6 evidence is in `output/playwright/budding-refinement-r6-20261022/`: `checks-final.json`, `material-check.json`, `geometry-check.json`, `startup-check.json`, `gesture-final.json`, `prerender-final.txt` and the replay callbacks. Retained images include `stage-025.png`, `stage-055.png`, `stage-085.png`, `stage-095.png`, `stage-1.png`, five responsive detail views, both hover views, three no-JavaScript first frames, and the intentionally flatter forced-pending phase beside the completed material. R5 and earlier evidence remains historical in its own directory. Local replay, hosted verification and owner device acceptance remain separate records.
