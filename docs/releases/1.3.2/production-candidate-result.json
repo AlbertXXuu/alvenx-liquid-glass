@@ -1,0 +1,587 @@
+{
+  "engine": "chromium",
+  "version": "155.0.8059.85",
+  "base": "http://127.0.0.1:5190/ui/",
+  "physicalDevice": false,
+  "checks": [
+    "no overflow EN 320",
+    "default authored copy English 320",
+    "default document English 320",
+    "headline clears header 320",
+    "demonstration visible immediately 320",
+    "horizontal working volume 320",
+    "gradient title retained 320",
+    "canonical two bars 320",
+    "menu opens 320",
+    "no overflow ZH 320",
+    "Chinese heading and native face 320",
+    "Chinese demonstration visible immediately 320",
+    "language preserves progress 320",
+    "explicit language persists 320",
+    "no overflow EN 393",
+    "default authored copy English 393",
+    "default document English 393",
+    "headline clears header 393",
+    "demonstration visible immediately 393",
+    "horizontal working volume 393",
+    "gradient title retained 393",
+    "canonical two bars 393",
+    "menu opens 393",
+    "no overflow ZH 393",
+    "Chinese heading and native face 393",
+    "Chinese demonstration visible immediately 393",
+    "language preserves progress 393",
+    "explicit language persists 393",
+    "no overflow EN 768",
+    "default authored copy English 768",
+    "default document English 768",
+    "headline clears header 768",
+    "demonstration visible immediately 768",
+    "horizontal working volume 768",
+    "gradient title retained 768",
+    "canonical two bars 768",
+    "menu opens 768",
+    "no overflow ZH 768",
+    "Chinese heading and native face 768",
+    "Chinese demonstration visible immediately 768",
+    "language preserves progress 768",
+    "explicit language persists 768",
+    "no overflow EN 820",
+    "default authored copy English 820",
+    "default document English 820",
+    "headline clears header 820",
+    "demonstration visible immediately 820",
+    "horizontal working volume 820",
+    "gradient title retained 820",
+    "canonical two bars 820",
+    "menu opens 820",
+    "no overflow ZH 820",
+    "Chinese heading and native face 820",
+    "Chinese demonstration visible immediately 820",
+    "language preserves progress 820",
+    "explicit language persists 820",
+    "no overflow EN 1180",
+    "default authored copy English 1180",
+    "default document English 1180",
+    "headline clears header 1180",
+    "demonstration visible immediately 1180",
+    "horizontal working volume 1180",
+    "gradient title retained 1180",
+    "no overflow ZH 1180",
+    "Chinese heading and native face 1180",
+    "Chinese demonstration visible immediately 1180",
+    "language preserves progress 1180",
+    "explicit language persists 1180",
+    "no overflow EN 1366",
+    "default authored copy English 1366",
+    "default document English 1366",
+    "headline clears header 1366",
+    "demonstration visible immediately 1366",
+    "horizontal working volume 1366",
+    "gradient title retained 1366",
+    "no overflow ZH 1366",
+    "Chinese heading and native face 1366",
+    "Chinese demonstration visible immediately 1366",
+    "language preserves progress 1366",
+    "explicit language persists 1366",
+    "no overflow EN 1413",
+    "default authored copy English 1413",
+    "default document English 1413",
+    "headline clears header 1413",
+    "demonstration visible immediately 1413",
+    "horizontal working volume 1413",
+    "gradient title retained 1413",
+    "no overflow ZH 1413",
+    "Chinese heading and native face 1413",
+    "Chinese demonstration visible immediately 1413",
+    "language preserves progress 1413",
+    "explicit language persists 1413",
+    "no page errors"
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "height": 740,
+      "english": {
+        "width": 320,
+        "height": 740,
+        "documentWidth": 320,
+        "stage": {
+          "x": 18,
+          "y": 315.25,
+          "width": 284,
+          "height": 200,
+          "top": 315.25,
+          "right": 302,
+          "bottom": 515.25,
+          "left": 18
+        },
+        "intro": {
+          "x": 18,
+          "y": 110,
+          "width": 284,
+          "height": 205.25,
+          "top": 110,
+          "right": 302,
+          "bottom": 315.25,
+          "left": 18
+        },
+        "h1": {
+          "x": 18,
+          "y": 143.5,
+          "width": 284,
+          "height": 77.75,
+          "top": 143.5,
+          "right": 302,
+          "bottom": 221.25,
+          "left": 18
+        },
+        "header": {
+          "x": 18,
+          "y": 14,
+          "width": 284,
+          "height": 74.484375,
+          "top": 14,
+          "right": 302,
+          "bottom": 88.484375,
+          "left": 18
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "overview"
+      },
+      "chinese": {
+        "documentWidth": 320,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 18,
+          "y": 282.03125,
+          "width": 284,
+          "height": 200,
+          "top": 282.03125,
+          "right": 302,
+          "bottom": 482.03125,
+          "left": 18
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    },
+    {
+      "width": 393,
+      "height": 852,
+      "english": {
+        "width": 393,
+        "height": 852,
+        "documentWidth": 393,
+        "stage": {
+          "x": 18,
+          "y": 315.25,
+          "width": 357,
+          "height": 200,
+          "top": 315.25,
+          "right": 375,
+          "bottom": 515.25,
+          "left": 18
+        },
+        "intro": {
+          "x": 18,
+          "y": 110,
+          "width": 357,
+          "height": 205.25,
+          "top": 110,
+          "right": 375,
+          "bottom": 315.25,
+          "left": 18
+        },
+        "h1": {
+          "x": 18,
+          "y": 143.5,
+          "width": 357,
+          "height": 77.75,
+          "top": 143.5,
+          "right": 375,
+          "bottom": 221.25,
+          "left": 18
+        },
+        "header": {
+          "x": 19.65625,
+          "y": 14,
+          "width": 353.6875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 373.34375,
+          "bottom": 88.484375,
+          "left": 19.65625
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "overview"
+      },
+      "chinese": {
+        "documentWidth": 393,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 18,
+          "y": 282.03125,
+          "width": 357,
+          "height": 200,
+          "top": 282.03125,
+          "right": 375,
+          "bottom": 482.03125,
+          "left": 18
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "english": {
+        "width": 768,
+        "height": 1024,
+        "documentWidth": 753,
+        "stage": {
+          "x": 40,
+          "y": 221.5,
+          "width": 673,
+          "height": 358.921875,
+          "top": 221.5,
+          "right": 713,
+          "bottom": 580.421875,
+          "left": 40
+        },
+        "intro": {
+          "x": 40,
+          "y": 116,
+          "width": 673,
+          "height": 105.5,
+          "top": 116,
+          "right": 713,
+          "bottom": 221.5,
+          "left": 40
+        },
+        "h1": {
+          "x": 40,
+          "y": 155.34375,
+          "width": 421.609375,
+          "height": 40.3125,
+          "top": 155.34375,
+          "right": 461.609375,
+          "bottom": 195.65625,
+          "left": 40
+        },
+        "header": {
+          "x": 38.40625,
+          "y": 14,
+          "width": 676.1875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 714.59375,
+          "bottom": 88.484375,
+          "left": 38.40625
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "compact-integrated"
+      },
+      "chinese": {
+        "documentWidth": 753,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 40,
+          "y": 221.5,
+          "width": 673,
+          "height": 358.921875,
+          "top": 221.5,
+          "right": 713,
+          "bottom": 580.421875,
+          "left": 40
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "english": {
+        "width": 820,
+        "height": 1180,
+        "documentWidth": 805,
+        "stage": {
+          "x": 40,
+          "y": 221.5,
+          "width": 725,
+          "height": 386.65625,
+          "top": 221.5,
+          "right": 765,
+          "bottom": 608.15625,
+          "left": 40
+        },
+        "intro": {
+          "x": 40,
+          "y": 116,
+          "width": 725,
+          "height": 105.5,
+          "top": 116,
+          "right": 765,
+          "bottom": 221.5,
+          "left": 40
+        },
+        "h1": {
+          "x": 40,
+          "y": 155.34375,
+          "width": 421.609375,
+          "height": 40.3125,
+          "top": 155.34375,
+          "right": 461.609375,
+          "bottom": 195.65625,
+          "left": 40
+        },
+        "header": {
+          "x": 41,
+          "y": 14,
+          "width": 723,
+          "height": 74.484375,
+          "top": 14,
+          "right": 764,
+          "bottom": 88.484375,
+          "left": 41
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "compact-integrated"
+      },
+      "chinese": {
+        "documentWidth": 805,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 40,
+          "y": 221.5,
+          "width": 725,
+          "height": 386.65625,
+          "top": 221.5,
+          "right": 765,
+          "bottom": 608.15625,
+          "left": 40
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "english": {
+        "width": 1180,
+        "height": 820,
+        "documentWidth": 1165,
+        "stage": {
+          "x": 40,
+          "y": 229.65625,
+          "width": 1085,
+          "height": 578.65625,
+          "top": 229.65625,
+          "right": 1125,
+          "bottom": 808.3125,
+          "left": 40
+        },
+        "intro": {
+          "x": 40,
+          "y": 116,
+          "width": 1085,
+          "height": 113.65625,
+          "top": 116,
+          "right": 1125,
+          "bottom": 229.65625,
+          "left": 40
+        },
+        "h1": {
+          "x": 40,
+          "y": 151.5,
+          "width": 587.3125,
+          "height": 56.15625,
+          "top": 151.5,
+          "right": 627.3125,
+          "bottom": 207.65625,
+          "left": 40
+        },
+        "header": {
+          "x": 59,
+          "y": 14,
+          "width": 1047,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1106,
+          "bottom": 88.484375,
+          "left": 59
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "wide-integrated"
+      },
+      "chinese": {
+        "documentWidth": 1165,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 40,
+          "y": 235.328125,
+          "width": 1085,
+          "height": 578.65625,
+          "top": 235.328125,
+          "right": 1125,
+          "bottom": 813.984375,
+          "left": 40
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "english": {
+        "width": 1366,
+        "height": 768,
+        "documentWidth": 1351,
+        "stage": {
+          "x": 115.5,
+          "y": 231.734375,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 231.734375,
+          "right": 1235.5,
+          "bottom": 829.0625,
+          "left": 115.5
+        },
+        "intro": {
+          "x": 115.5,
+          "y": 116,
+          "width": 1120,
+          "height": 115.734375,
+          "top": 116,
+          "right": 1235.5,
+          "bottom": 231.734375,
+          "left": 115.5
+        },
+        "h1": {
+          "x": 115.5,
+          "y": 151.5,
+          "width": 608.984375,
+          "height": 58.234375,
+          "top": 151.5,
+          "right": 724.484375,
+          "bottom": 209.734375,
+          "left": 115.5
+        },
+        "header": {
+          "x": 68.3046875,
+          "y": 14,
+          "width": 1214.390625,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1282.6953125,
+          "bottom": 88.484375,
+          "left": 68.3046875
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "wide-integrated"
+      },
+      "chinese": {
+        "documentWidth": 1351,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 115.5,
+          "y": 237.6875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 237.6875,
+          "right": 1235.5,
+          "bottom": 835.015625,
+          "left": 115.5
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    },
+    {
+      "width": 1413,
+      "height": 936,
+      "english": {
+        "width": 1413,
+        "height": 936,
+        "documentWidth": 1398,
+        "stage": {
+          "x": 139,
+          "y": 231.734375,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 231.734375,
+          "right": 1259,
+          "bottom": 829.0625,
+          "left": 139
+        },
+        "intro": {
+          "x": 139,
+          "y": 116,
+          "width": 1120,
+          "height": 115.734375,
+          "top": 116,
+          "right": 1259,
+          "bottom": 231.734375,
+          "left": 139
+        },
+        "h1": {
+          "x": 139,
+          "y": 151.5,
+          "width": 608.984375,
+          "height": 58.234375,
+          "top": 151.5,
+          "right": 747.984375,
+          "bottom": 209.734375,
+          "left": 139
+        },
+        "header": {
+          "x": 70.65625,
+          "y": 14,
+          "width": 1256.6875,
+          "height": 74.484375,
+          "top": 14,
+          "right": 1327.34375,
+          "bottom": 88.484375,
+          "left": 70.65625
+        },
+        "titleGradient": "linear-gradient(105deg, rgb(37, 99, 235) 8%, rgb(79, 70, 229) 53%, rgb(124, 58, 237) 93%)",
+        "language": "en",
+        "canvasError": null,
+        "stageLayout": "wide-integrated"
+      },
+      "chinese": {
+        "documentWidth": 1398,
+        "heading": "\u968f\u624b\u800c\u52a8\u7684\u73bb\u7483\u3002",
+        "stage": {
+          "x": 139,
+          "y": 237.6875,
+          "width": 1120,
+          "height": 597.328125,
+          "top": 237.6875,
+          "right": 1259,
+          "bottom": 835.015625,
+          "left": 139
+        },
+        "font": "MiSans, \"Instrument Sans\", sans-serif",
+        "spacing": "normal"
+      }
+    }
+  ],
+  "errors": []
+}

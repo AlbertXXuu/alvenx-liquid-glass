@@ -8,11 +8,13 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
+**Publication status:** Source release [v1.3.2](https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.3.2) and its tested packages are public. Website deployment is pending API upload connectivity; the live showcase still serves 1.3.1. See the [verified source and current production state](docs/releases/1.3.2/source-publication.md).
+
 Version **1.3.2** brings the horizontal demonstration into the opening view. A compact gradient title and Replay control replace the long introduction and separate first-section heading. Slow budding plays once when the stage first becomes visible in the foreground; Replay then starts another cycle. The showcase defaults to English and offers a dedicated Language selector for a complete Chinese presentation, with MiSans readiness checked before switching. The reusable `MenuToggle` preserves the official site's two-line navigation pattern. See [the 1.3.2 record and validation status](docs/releases/1.3.2/README.md).
 
 Version **1.3.0** adds a reusable `BuddingLink`: one empty mother form grows through a soft connection into a native link chamber, using the existing actual-backdrop glass material. Its real document width pushes neighboring content continuously. The [live homepage](https://alvenx.com/) uses it between Explore the work and GitHub. See [the 1.3.0 record](docs/releases/1.3.0/README.md).
 
-Version **1.3.1** moved only the typed-text start inside the existing message field. Its field dimensions, contour, send button and placement remain the accepted baseline; none of the independent A/B/C sizing variants was selected. See [the measured correction](docs/releases/1.3.1/README.md). Authoring specifications are in Chinese; product and demonstration copy defaults to English, with Chinese available by explicit choice in the current showcase.
+Version **1.3.1** moved only the typed-text start inside the existing message field. Its field dimensions, contour, send button and placement remain the accepted baseline; none of the independent A/B/C sizing variants was selected. See [the measured correction](docs/releases/1.3.1/README.md). Authoring specifications are in Chinese; product and demonstration copy defaults to English, with Chinese available by explicit choice in the current source showcase.
 
 The [19 October review ledger](docs/reviews/2026-10-19/README.md) preserves the rejected R1, intermediate self-review, R2/R3 screenshots, source snapshots and their original acceptance status. Those historical review URLs and records remain separate from the current release. Neither publication nor this revision changes the recorded v6 acceptance or grants a reuse license.
 

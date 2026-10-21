@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "verifiedAtUtc": "2026-10-21T15:57:08.261770+00:00",
+  "tarball": "alvenx-liquid-glass-1.3.2.tgz",
+  "tarballSHA256": "6e941d2e875c2a38ca5c4913815b3025439c3e6e5737f1f1660f3159d7f4e0a8",
+  "installedFileCount": 295,
+  "installedFilesByteIdentical": true,
+  "consumerOutsideRepository": true,
+  "dependencyResolution": "A separate fresh consumer seeded with the kit package-lock to use already cached exact build dependencies; npm install --offline --ignore-scripts --no-audit --no-fund. No library files are resolved from the source checkout.",
+  "commands": [
+    {
+      "command": "npm install --offline --ignore-scripts --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run check",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    }
+  ],
+  "newApiCoverage": "MenuToggle import and controlled props; VolumeStage autoPlay; GlassSlider locale; actual installed package types and Vite production build.",
+  "initialAttempt": "Unseeded online consumer install stalled under the current HTTP client connectivity failure; unseeded offline install reported ENOTCACHED for a newly resolved rollup tarball. These are not claimed as passing."
+}

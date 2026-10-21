@@ -1,0 +1,334 @@
+{
+  "version": "1.3.2",
+  "sourceCommit": "24ef6e8c7db79e62c997e1fb1b4a12db15ad9d07",
+  "sourceRef": "v1.3.2",
+  "verifiedAtUtc": "2026-10-21T16:04:28.375159+00:00",
+  "scope": "Independent read-only archive/source/API/rights/fonts/frozen-baseline verification. No rebuild, repack or source edit.",
+  "zip": {
+    "file": "alvenx-design-kit-1.3.2.zip",
+    "bytes": 134122941,
+    "sha256": "0b7458a58109e39c64ce45dfe39bb3e197ef850532cb945278859a2c44f8b342",
+    "entries": 1049,
+    "manifestEntries": 1047,
+    "manifestSha256": "2c0551407c249433415867919f8e55b548664fd624325cf362baf76666a96e73",
+    "failedManifestEntries": [],
+    "currentFileMismatches": [],
+    "trackedSourceFilesCompared": 966,
+    "sourceCRLFtoLFOnly": [
+      "README.md",
+      "SKILL.md",
+      "TODO.md",
+      "docs/attribution.md",
+      "docs/baseline-and-checklist.md",
+      "docs/hover-comparison.html",
+      "docs/integration.md",
+      "package-lock.json",
+      "package.json",
+      "scripts/contract.mjs",
+      "scripts/control-input-regression.cjs",
+      "scripts/control-pointer-webkit-regression.cjs",
+      "scripts/entry-presentation-qa.cjs",
+      "scripts/fixtures/backdropOptics-1.1.0.ts",
+      "scripts/material-workbench-qa.cjs",
+      "scripts/qa-optics-speed.cjs",
+      "scripts/qa-optics.cjs",
+      "scripts/smoke-install.mjs",
+      "showcase/main.tsx",
+      "showcase/mobile-review/localization.tsx",
+      "showcase/mobile-review/main.tsx",
+      "showcase/mobile-review/review.css",
+      "showcase/showcase.css",
+      "src/GlassClock.ts",
+      "src/GlassSettingsControls.tsx",
+      "src/endpointGeometry.ts",
+      "src/reviewSettings.ts",
+      "src/useGlassSettings.ts",
+      "work/r3-controlled-proof/backdropOptics-pre-async.ts"
+    ],
+    "sourceSemanticMismatches": [],
+    "embeddedTarballMatchesStandalone": true
+  },
+  "tarball": {
+    "file": "alvenx-liquid-glass-1.3.2.tgz",
+    "bytes": 28921923,
+    "sha256": "6e941d2e875c2a38ca5c4913815b3025439c3e6e5737f1f1660f3159d7f4e0a8",
+    "entries": 295,
+    "zipFileMismatches": [],
+    "version": "1.3.2",
+    "license": "UNLICENSED",
+    "private": true,
+    "exportTargets": [
+      "./dist/index.d.ts",
+      "./dist/index.js",
+      "./styles/glass.css",
+      "./assets/fonts.css",
+      "./tokens.json"
+    ],
+    "missingExports": [],
+    "api": {
+      "MenuToggleSource": true,
+      "MenuToggleDeclaration": true,
+      "MenuToggleRootDeclaration": true,
+      "MenuTogglePropsRootDeclaration": true,
+      "MenuToggleRuntimeExport": true,
+      "autoPlayDeclaration": true,
+      "localeDeclarations": true,
+      "autoPlayActiveTimeSource": true
+    }
+  },
+  "fonts": {
+    "manifestFiles": 228,
+    "cssUrlCount": 228,
+    "uniqueCssUrls": 228,
+    "mismatchedFontFiles": [],
+    "missingCssUrls": [],
+    "fontManifestLocalCssMatches": true,
+    "licenses": [
+      {
+        "path": "assets/fonts/InstrumentSans-OFL.txt",
+        "bytes": 4402,
+        "sha256": "bc29b497c4e8316b2d248322a9cea670c2f0afc24ae0eb7bbaa54e02e00eebab"
+      },
+      {
+        "path": "assets/fonts/misans/MiSans-License-Agreement.pdf",
+        "bytes": 79535,
+        "sha256": "4a93a27cd2bd81b3b5ecfd0a853144a876fa26938a93a68443c67d74172fcb86"
+      },
+      {
+        "path": "assets/fonts/misans/NOTICE.txt",
+        "bytes": 1612,
+        "sha256": "11f5bfe8ee57d23e6646c2ba420b9ac3ee128b2c0b41e4abb639c5fa8cd4a571"
+      }
+    ],
+    "urlResolution": "Resolve each CSS relative URL against assets/fonts/misans/ using POSIX path normalization (including ./)."
+  },
+  "baseline": {
+    "manifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+    "expectedManifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+    "entries": 41,
+    "failed": []
+  },
+  "checksumsFile": {
+    "file": "SHA256SUMS.txt",
+    "bytes": 190,
+    "sha256": "0f6861e72e8319d0d6a9c1f60d0d6689f5683032f8d73541570089287263c5a5",
+    "entries": 2
+  },
+  "installedConsumer": {
+    "status": "passed",
+    "receipt": "installed-consumer.json",
+    "receiptSha256": "523ee031134cace071ee5e05d90a86e85efe97ad17b44cf4c37bf648f1f7eddd",
+    "tarballSha256": "6e941d2e875c2a38ca5c4913815b3025439c3e6e5737f1f1660f3159d7f4e0a8",
+    "checks": {
+      "receiptPassed": true,
+      "tarballNameMatches": true,
+      "tarballHashMatchesReceiptAndPriorArtifactAudit": true,
+      "allThreeActualCommandsPassed": true,
+      "consumerOutsideRepository": true,
+      "allInstalledFilesByteIdentical": true
+    },
+    "commands": [
+      {
+        "command": "npm install --offline --ignore-scripts --no-audit --no-fund",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run check",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0
+      }
+    ],
+    "installedFileCount": 295,
+    "installedFilesByteIdentical": true,
+    "consumerOutsideRepository": true,
+    "dependencyResolution": "A separate fresh consumer seeded with the kit package-lock to use already cached exact build dependencies; npm install --offline --ignore-scripts --no-audit --no-fund. No library files are resolved from the source checkout.",
+    "newApiCoverage": "MenuToggle import and controlled props; VolumeStage autoPlay; GlassSlider locale; actual installed package types and Vite production build.",
+    "initialAttempt": "Unseeded online consumer install stalled under the current HTTP client connectivity failure; unseeded offline install reported ENOTCACHED for a newly resolved rollup tarball. These are not claimed as passing.",
+    "boundary": "The root-owned fresh consumer install/type-check/production-build commands completed successfully using exact cached dependencies seeded from the kit lockfile. This artifact audit verifies the sanitized receipt, its exact package hash and stated installed-file identity; it does not claim that the original unseeded npm run test:install attempt passed or repeat the actual install/build."
+  },
+  "checks": [
+    {
+      "name": "frozen tag resolves to expected source",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ZIP has 1049 unique expected entries",
+      "passed": true,
+      "detail": {
+        "entries": 1049,
+        "extra": [],
+        "missing": []
+      }
+    },
+    {
+      "name": "all current ZIP manifest hashes and lengths match",
+      "passed": true,
+      "detail": {
+        "entries": 1047,
+        "failed": []
+      }
+    },
+    {
+      "name": "ZIP source/runtime contents match current packaged files",
+      "passed": true,
+      "detail": {
+        "entries": 1047,
+        "failed": []
+      }
+    },
+    {
+      "name": "all packaged tracked files match immutable source semantically",
+      "passed": true,
+      "detail": {
+        "trackedCompared": 966,
+        "CRLFtoLFOnly": [
+          "README.md",
+          "SKILL.md",
+          "TODO.md",
+          "docs/attribution.md",
+          "docs/baseline-and-checklist.md",
+          "docs/hover-comparison.html",
+          "docs/integration.md",
+          "package-lock.json",
+          "package.json",
+          "scripts/contract.mjs",
+          "scripts/control-input-regression.cjs",
+          "scripts/control-pointer-webkit-regression.cjs",
+          "scripts/entry-presentation-qa.cjs",
+          "scripts/fixtures/backdropOptics-1.1.0.ts",
+          "scripts/material-workbench-qa.cjs",
+          "scripts/qa-optics-speed.cjs",
+          "scripts/qa-optics.cjs",
+          "scripts/smoke-install.mjs",
+          "showcase/main.tsx",
+          "showcase/mobile-review/localization.tsx",
+          "showcase/mobile-review/main.tsx",
+          "showcase/mobile-review/review.css",
+          "showcase/showcase.css",
+          "src/GlassClock.ts",
+          "src/GlassSettingsControls.tsx",
+          "src/endpointGeometry.ts",
+          "src/reviewSettings.ts",
+          "src/useGlassSettings.ts",
+          "work/r3-controlled-proof/backdropOptics-pre-async.ts"
+        ],
+        "semanticMismatches": []
+      }
+    },
+    {
+      "name": "embedded TGZ equals standalone bytes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all TGZ files equal portable ZIP counterparts",
+      "passed": true,
+      "detail": {
+        "entries": 295,
+        "failed": []
+      }
+    },
+    {
+      "name": "all declared package exports exist",
+      "passed": true,
+      "detail": {
+        "targets": [
+          "./dist/index.d.ts",
+          "./dist/index.js",
+          "./styles/glass.css",
+          "./assets/fonts.css",
+          "./tokens.json"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "name": "new MenuToggle and autoPlay/locale APIs are included",
+      "passed": true,
+      "detail": {
+        "MenuToggleSource": true,
+        "MenuToggleDeclaration": true,
+        "MenuToggleRootDeclaration": true,
+        "MenuTogglePropsRootDeclaration": true,
+        "MenuToggleRuntimeExport": true,
+        "autoPlayDeclaration": true,
+        "localeDeclarations": true,
+        "autoPlayActiveTimeSource": true
+      }
+    },
+    {
+      "name": "public source retains all rights reserved and no npm publication",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "MiSans original font files and CSS URLs remain complete",
+      "passed": true,
+      "detail": {
+        "manifestFiles": 228,
+        "CSSUrls": 228,
+        "fontMismatches": [],
+        "missingURLs": []
+      }
+    },
+    {
+      "name": "both font licenses and MiSans notice retained",
+      "passed": true,
+      "detail": [
+        {
+          "path": "assets/fonts/InstrumentSans-OFL.txt",
+          "bytes": 4402,
+          "sha256": "bc29b497c4e8316b2d248322a9cea670c2f0afc24ae0eb7bbaa54e02e00eebab"
+        },
+        {
+          "path": "assets/fonts/misans/MiSans-License-Agreement.pdf",
+          "bytes": 79535,
+          "sha256": "4a93a27cd2bd81b3b5ecfd0a853144a876fa26938a93a68443c67d74172fcb86"
+        },
+        {
+          "path": "assets/fonts/misans/NOTICE.txt",
+          "bytes": 1612,
+          "sha256": "11f5bfe8ee57d23e6646c2ba420b9ac3ee128b2c0b41e4abb639c5fa8cd4a571"
+        }
+      ]
+    },
+    {
+      "name": "MiSans license still equals original manifest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "frozen v6 manifest and all referenced source/evidence remain unchanged",
+      "passed": true,
+      "detail": {
+        "entries": 41,
+        "manifestSha256": "8eb6bf9395ec63b2020211bb8b21815060d7399e27f9dbdd1f2128275760cb8d",
+        "failed": []
+      }
+    },
+    {
+      "name": "SHA256SUMS covers exact current ZIP and TGZ",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "fresh offline installed consumer receipt references exact packaged TGZ and successful commands",
+      "passed": true,
+      "detail": {
+        "receiptPassed": true,
+        "tarballNameMatches": true,
+        "tarballHashMatchesReceiptAndPriorArtifactAudit": true,
+        "allThreeActualCommandsPassed": true,
+        "consumerOutsideRepository": true,
+        "allInstalledFilesByteIdentical": true
+      }
+    }
+  ],
+  "issues": [],
+  "status": "passed",
+  "installationAcceptanceComplete": true
+}

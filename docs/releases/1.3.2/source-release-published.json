@@ -1,0 +1,39 @@
+{
+  "observedAtUtc": "2026-10-21T16:39:40.168215+00:00",
+  "id": 419760415,
+  "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.3.2",
+  "tag": "v1.3.2",
+  "draft": false,
+  "publishedAt": "2026-10-21T16:39:40Z",
+  "productionStatus": "pending; source release explicitly distinguishes 1.3.2 from live1.3.1",
+  "assets": [
+    {
+      "id": 663038650,
+      "name": "alvenx-design-kit-1.3.2.zip",
+      "size": 134122941,
+      "digest": "sha256:0b7458a58109e39c64ce45dfe39bb3e197ef850532cb945278859a2c44f8b342",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.2/alvenx-design-kit-1.3.2.zip"
+    },
+    {
+      "id": 663038642,
+      "name": "alvenx-liquid-glass-1.3.2.tgz",
+      "size": 28921923,
+      "digest": "sha256:6e941d2e875c2a38ca5c4913815b3025439c3e6e5737f1f1660f3159d7f4e0a8",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.2/alvenx-liquid-glass-1.3.2.tgz"
+    },
+    {
+      "id": 663036214,
+      "name": "installed-consumer.json",
+      "size": 1259,
+      "digest": "sha256:523ee031134cace071ee5e05d90a86e85efe97ad17b44cf4c37bf648f1f7eddd",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.2/installed-consumer.json"
+    },
+    {
+      "id": 663039345,
+      "name": "SHA256SUMS.txt",
+      "size": 190,
+      "digest": "sha256:0f6861e72e8319d0d6a9c1f60d0d6689f5683032f8d73541570089287263c5a5",
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/download/v1.3.2/SHA256SUMS.txt"
+    }
+  ]
+}

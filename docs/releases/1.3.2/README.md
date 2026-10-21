@@ -1,3 +1,5 @@
+> Source release v1.3.2 is public and verified; production deployment remains pending. The live site still serves 1.3.1. See the actual [source publication and final deployment status](source-publication.md). The preparation record below is retained as history.
+
 # 1.3.2 — demonstration first, explicit language selection
 
 The current candidate responds to the owner's 2026-10-21 corrections. The horizontal pearl demonstration comes directly after the compact gradient headline and Replay control. The opening no longer spends a separate row on interaction instructions, a visible `01` section label or `Hold. Pull. Let go.` heading. The section retains an accessible heading without adding another visible explanation. The accepted horizontal geometry, material parameters, normal document flow and message-field inset remain the baseline.
