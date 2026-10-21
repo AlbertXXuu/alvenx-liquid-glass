@@ -1,0 +1,98 @@
+[
+  {
+    "path": "history/r2-rejected-source/geometry.ts",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/source/geometry.ts",
+    "bytes": 2678,
+    "sha256": "73bde8c8f8d5f32094b19f283ba8487d4a2de7d2c9963f85e36227419b5469a6"
+  },
+  {
+    "path": "history/r2-rejected-source/index.html",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/source/index.html",
+    "bytes": 404,
+    "sha256": "2e68a058ded98c5854d29260d728eb8d4b25bb12551c17c84aec03802b0d1da5"
+  },
+  {
+    "path": "history/r2-rejected-source/main.tsx",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/source/main.tsx",
+    "bytes": 8479,
+    "sha256": "8cd8677b4c5f5b23d9212e3b6fd854052c458875cee66873acf5f0d3a60f0307"
+  },
+  {
+    "path": "history/r2-rejected-source/README.md",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/source/README.md",
+    "bytes": 3577,
+    "sha256": "774931aa8259baa8192fe7634bb005cbdc313f527eb75629267df4f9cc6bd4b6"
+  },
+  {
+    "path": "history/r2-rejected-source/review.css",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/source/review.css",
+    "bytes": 4709,
+    "sha256": "b861723ffe1966d5036f573295d74df42b4077e5f4b62194d7410ffc28160e32"
+  },
+  {
+    "path": "history/r2-rejected-source/volume-light.ts",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/source/volume-light.ts",
+    "bytes": 4610,
+    "sha256": "92e5478aa8954bb9914bee2d9d54bcad380f8cd655faee5f68d425efa38d4a78"
+  },
+  {
+    "path": "history/r1/detail-1413-proposal.png",
+    "originalLocalPath": "output/playwright/budding-refinement-review-20261022/detail-1413-proposal.png",
+    "bytes": 21531,
+    "sha256": "add848c28e62eb4e4858635d5dde1900e818fa1b88b1e69eef1469492c2a5b7c"
+  },
+  {
+    "path": "history/r1/checks.json",
+    "originalLocalPath": "output/playwright/budding-refinement-review-20261022/checks.json",
+    "bytes": 7396,
+    "sha256": "a345b6ccd3088be0ca25246317f39ae02a7cad78fbac8f08f78a07dc1e02fde0"
+  },
+  {
+    "path": "history/r1/geometry-check.json",
+    "originalLocalPath": "output/playwright/budding-refinement-review-20261022/geometry-check.json",
+    "bytes": 27628,
+    "sha256": "1bddb5e695079e0f0f4c9d72a243a0eb44d14b6f454fbacdbdaa4056ec617350"
+  },
+  {
+    "path": "history/r1/review-check.cjs",
+    "originalLocalPath": "output/playwright/budding-refinement-review-20261022/review-check.cjs",
+    "bytes": 6013,
+    "sha256": "fcddbb688bf8b69dda68891772f75da61dc08fb73d9b4e2302bd796b1263aef9"
+  },
+  {
+    "path": "history/r2/first-detail.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/first-detail.png",
+    "bytes": 24131,
+    "sha256": "71c545786a5e6d5610bcd9deecf1543bbb2ce9e392f03052e90328237c992973"
+  },
+  {
+    "path": "history/r2/transparent-detail.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r2-20261022/transparent-detail.png",
+    "bytes": 23095,
+    "sha256": "2d6feb2d3b8fce9b47e63e5c017670168d29dc67762d988db06fc211465f91d5"
+  },
+  {
+    "path": "history/r3/final-detail-54.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r3-20261022/final-detail-54.png",
+    "bytes": 21112,
+    "sha256": "0c783903bacfdeef8cf9afaaa0a51455c9df97777918dde82180335fa0051ea5"
+  },
+  {
+    "path": "history/r3/reference-check.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r3-20261022/reference-check.json",
+    "bytes": 1590,
+    "sha256": "cda42ad1a518b9484af45e6ec1c12c6d9b7adb900de614863f38ef927a7becbf"
+  },
+  {
+    "path": "history/r3/geometry-check.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r3-20261022/geometry-check.json",
+    "bytes": 27628,
+    "sha256": "1bddb5e695079e0f0f4c9d72a243a0eb44d14b6f454fbacdbdaa4056ec617350"
+  },
+  {
+    "path": "history/r3/reference-check.cjs",
+    "originalLocalPath": "output/playwright/budding-refinement-r3-20261022/reference-check.cjs",
+    "bytes": 4001,
+    "sha256": "652808488a9e7c1ae8c35e2485b9faef3d1050c9238dadde8255c9f0dcf0af56"
+  }
+]

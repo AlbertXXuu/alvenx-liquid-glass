@@ -1,0 +1,347 @@
+{
+  "url": "http://127.0.0.1:5194/showcase/budding-refinement-review/index.html",
+  "createdAt": "2026-10-21T17:33:45.499Z",
+  "checks": [
+    {
+      "name": "1413: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: grew right",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: label native link",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "1413 baseline: no optical error",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: grew right",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: label native link",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "1413 proposal: no optical error",
+      "pass": true
+    },
+    {
+      "name": "1413: no overflow after growth",
+      "pass": true
+    },
+    {
+      "name": "1413: proposal more room",
+      "pass": true
+    },
+    {
+      "name": "1413: reset clears growth",
+      "pass": true
+    },
+    {
+      "name": "820: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: grew right",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: label native link",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "820 baseline: no optical error",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: grew right",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: label native link",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "820 proposal: no optical error",
+      "pass": true
+    },
+    {
+      "name": "820: no overflow after growth",
+      "pass": true
+    },
+    {
+      "name": "820: proposal more room",
+      "pass": true
+    },
+    {
+      "name": "820: reset clears growth",
+      "pass": true
+    },
+    {
+      "name": "393: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: grew right",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: label native link",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "393 baseline: no optical error",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: grew right",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: label native link",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "393 proposal: no optical error",
+      "pass": true
+    },
+    {
+      "name": "393: no overflow after growth",
+      "pass": true
+    },
+    {
+      "name": "393: proposal more room",
+      "pass": true
+    },
+    {
+      "name": "393: reset clears growth",
+      "pass": true
+    },
+    {
+      "name": "320: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: grew right",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: label native link",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "320 baseline: no optical error",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: grew right",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: mother anchored",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: GitHub pushes by occupied width",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: one actual optical body",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: label native link",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: native button still 54px",
+      "pass": true
+    },
+    {
+      "name": "320 proposal: no optical error",
+      "pass": true
+    },
+    {
+      "name": "320: no overflow after growth",
+      "pass": true
+    },
+    {
+      "name": "320: proposal more room",
+      "pass": true
+    },
+    {
+      "name": "320: reset clears growth",
+      "pass": true
+    },
+    {
+      "name": "keyboard Enter grows",
+      "pass": true
+    },
+    {
+      "name": "keyboard Space grows",
+      "pass": true
+    },
+    {
+      "name": "link focus creates contour ring",
+      "pass": true
+    },
+    {
+      "name": "Tab advances to GitHub",
+      "pass": true
+    },
+    {
+      "name": "resting geometry sleeps",
+      "pass": true
+    },
+    {
+      "name": "light off removes added white layer",
+      "pass": true
+    },
+    {
+      "name": "light on restores it",
+      "pass": true
+    },
+    {
+      "name": "reduced motion reveals immediately",
+      "pass": true
+    },
+    {
+      "name": "page exceptions absent",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "HTTP errors absent",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "failed requests absent",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "passed": 83,
+  "total": 83,
+  "errors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "physicalDeviceCoverage": false
+}

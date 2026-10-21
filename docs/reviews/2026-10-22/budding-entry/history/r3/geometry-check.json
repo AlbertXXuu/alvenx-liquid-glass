@@ -1,0 +1,1495 @@
+{
+  "passed": 371,
+  "total": 371,
+  "checks": [
+    {
+      "name": "44/0: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.025: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.025: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.025: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.05: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.05: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.05: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.075: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.075: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.075: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.1: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.1: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.1: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.125: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.125: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.125: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.15: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.15: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.15: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.175: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.175: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.175: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.2: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.2: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.2: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.225: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.225: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.225: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.25: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.25: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.25: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.275: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.275: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.275: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.3: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.3: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.3: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.325: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.325: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.325: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.35: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.35: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.35: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.375: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.375: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.375: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.4: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.4: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.4: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.425: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.425: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.425: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.45: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.45: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.45: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.475: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.475: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.475: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.5: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.5: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.5: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.525: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.525: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.525: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.55: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.55: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.55: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.575: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.575: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.575: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.6: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.6: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.6: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.625: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.625: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.625: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.65: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.65: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.65: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.675: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.675: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.675: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.7: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.7: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.7: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.725: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.725: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.725: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.75: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.75: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.75: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.775: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.775: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.775: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.8: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.8: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.8: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.825: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.825: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.825: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.85: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.85: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.85: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.875: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.875: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.875: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.9: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.9: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.9: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.925: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.925: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.925: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.95: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.95: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.95: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/0.975: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.975: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/0.975: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "44/1: finite",
+      "pass": true
+    },
+    {
+      "name": "44/1: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "44/1: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.025: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.025: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.025: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.05: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.05: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.05: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.075: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.075: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.075: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.1: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.1: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.1: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.125: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.125: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.125: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.15: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.15: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.15: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.175: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.175: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.175: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.2: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.2: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.2: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.225: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.225: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.225: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.25: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.25: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.25: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.275: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.275: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.275: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.3: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.3: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.3: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.325: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.325: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.325: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.35: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.35: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.35: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.375: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.375: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.375: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.4: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.4: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.4: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.425: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.425: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.425: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.45: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.45: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.45: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.475: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.475: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.475: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.5: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.5: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.5: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.525: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.525: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.525: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.55: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.55: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.55: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.575: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.575: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.575: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.6: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.6: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.6: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.625: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.625: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.625: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.65: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.65: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.65: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.675: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.675: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.675: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.7: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.7: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.7: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.725: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.725: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.725: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.75: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.75: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.75: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.775: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.775: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.775: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.8: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.8: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.8: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.825: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.825: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.825: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.85: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.85: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.85: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.875: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.875: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.875: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.9: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.9: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.9: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.925: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.925: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.925: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.95: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.95: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.95: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/0.975: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.975: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/0.975: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "54/1: finite",
+      "pass": true
+    },
+    {
+      "name": "54/1: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "54/1: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.025: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.025: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.025: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.05: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.05: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.05: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.075: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.075: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.075: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.1: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.1: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.1: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.125: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.125: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.125: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.15: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.15: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.15: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.175: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.175: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.175: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.2: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.2: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.2: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.225: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.225: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.225: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.25: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.25: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.25: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.275: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.275: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.275: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.3: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.3: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.3: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.325: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.325: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.325: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.35: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.35: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.35: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.375: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.375: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.375: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.4: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.4: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.4: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.425: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.425: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.425: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.45: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.45: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.45: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.475: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.475: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.475: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.5: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.5: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.5: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.525: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.525: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.525: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.55: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.55: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.55: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.575: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.575: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.575: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.6: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.6: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.6: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.625: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.625: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.625: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.65: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.65: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.65: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.675: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.675: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.675: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.7: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.7: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.7: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.725: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.725: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.725: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.75: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.75: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.75: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.775: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.775: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.775: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.8: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.8: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.8: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.825: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.825: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.825: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.85: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.85: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.85: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.875: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.875: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.875: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.9: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.9: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.9: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.925: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.925: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.925: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.95: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.95: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.95: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/0.975: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.975: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/0.975: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "96/1: finite",
+      "pass": true
+    },
+    {
+      "name": "96/1: monotonic width",
+      "pass": true
+    },
+    {
+      "name": "96/1: same mother and height",
+      "pass": true
+    },
+    {
+      "name": "rounded path maintains C1 numeric tolerance",
+      "pass": true
+    },
+    {
+      "name": "rounded path maintains C2 numeric tolerance",
+      "pass": true
+    }
+  ],
+  "maxFirstDerivativeError": 0.0000030000001629559847,
+  "maxSecondDerivativeError": 0.000012000000651823939,
+  "baselineWidth54": 174.58531036376954,
+  "proposalWidth54": 194.02531036376953,
+  "scope": "Review-only geometry; not production acceptance or device rendering evidence."
+}

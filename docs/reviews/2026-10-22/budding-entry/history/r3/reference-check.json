@@ -1,0 +1,63 @@
+{
+  "createdAt": "2026-10-21T17:50:26.036Z",
+  "checks": [
+    {
+      "name": "offscreen shader allocation waits for approach",
+      "pass": true
+    },
+    {
+      "name": "accepted reference shader prepared before activation",
+      "pass": true
+    },
+    {
+      "name": "shader reuses actual accepted source",
+      "pass": true
+    },
+    {
+      "name": "small lighting raster is bounded",
+      "pass": true
+    },
+    {
+      "name": "reference material sleeps at rest",
+      "pass": true
+    },
+    {
+      "name": "reference material has no renderer error",
+      "pass": true
+    },
+    {
+      "name": "native backdrop optics remain under the material",
+      "pass": true
+    },
+    {
+      "name": "material off retains real optical body",
+      "pass": true
+    },
+    {
+      "name": "material off removes canvas",
+      "pass": true
+    },
+    {
+      "name": "material can reinitialise coherently at full growth",
+      "pass": true
+    },
+    {
+      "name": "DPR 3 keeps identical 38940-pixel budget",
+      "pass": true
+    }
+  ],
+  "passed": 11,
+  "total": 11,
+  "prepared": {
+    "width": 295,
+    "height": 132,
+    "volumeLightRenders": "1",
+    "volumeLightComputeMs": "0.100",
+    "volumeLightMeanMs": "0.100",
+    "volumeLightPixels": "38940",
+    "volumeHeightModel": "accepted-reference-potential",
+    "materialSource": "src/volume-renderer.js"
+  },
+  "physicalDeviceCoverage": false,
+  "measurementBoundary": "Canvas compute time describes CPU submission only, not GPU completion or FPS."
+}
