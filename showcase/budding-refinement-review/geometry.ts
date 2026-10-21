@@ -27,9 +27,9 @@ export function refinementGeometry(growth:number,diameter=54,transform:BuddingTr
   // Delay the separation until a chamber exists. The mother at x=230 stays
   // anchored; the chamber moves right with a broad transition around its neck.
   const baseX=6+(x-80)*scale;
-  const progress=smooth((x-270)/245);
+  const progress=smooth((x-330)/235);
   const chamberRoom=smooth((x-450)/500);
-  const neck=1-.16*ease*Math.exp(-(((x-354)/82)**2));
+  const neck=1-.14*ease*smooth((x-330)/45)*Math.exp(-(((x-410)/60)**2));
   const px=baseX+separation*progress+room*chamberRoom,py=cy+(y-280)*scale*neck;
   return [cx+(px-cx)*(transform.scaleX??1)+(transform.offsetX??0),cy+(py-cy)*(transform.scaleY??1)+(transform.offsetY??0)];
  });
