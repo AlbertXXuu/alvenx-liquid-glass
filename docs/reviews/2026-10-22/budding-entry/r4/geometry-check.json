@@ -1,0 +1,1555 @@
+{
+  "passed": 383,
+  "total": 383,
+  "checks": [
+    {
+      "name": "44/0: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.025: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.025: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.025: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.05: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.05: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.05: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.075: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.075: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.075: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.1: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.1: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.1: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.125: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.125: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.125: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.15: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.15: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.15: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.175: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.175: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.175: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.2: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.2: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.2: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.225: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.225: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.225: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.25: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.25: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.25: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.275: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.275: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.275: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.3: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.3: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.3: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.325: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.325: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.325: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.35: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.35: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.35: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.375: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.375: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.375: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.4: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.4: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.4: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.425: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.425: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.425: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.45: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.45: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.45: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.475: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.475: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.475: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.5: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.5: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.5: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.525: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.525: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.525: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.55: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.55: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.55: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.575: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.575: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.575: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.6: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.6: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.6: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.625: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.625: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.625: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.65: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.65: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.65: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.675: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.675: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.675: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.7: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.7: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.7: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.725: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.725: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.725: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.75: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.75: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.75: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.775: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.775: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.775: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.8: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.8: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.8: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.825: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.825: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.825: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.85: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.85: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.85: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.875: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.875: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.875: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.9: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.9: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.9: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.925: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.925: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.925: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.95: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.95: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.95: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/0.975: finite",
+      "pass": true
+    },
+    {
+      "name": "44/0.975: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/0.975: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44/1: finite",
+      "pass": true
+    },
+    {
+      "name": "44/1: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "44/1: expected topology",
+      "pass": true
+    },
+    {
+      "name": "44: no layout jump at topology change",
+      "pass": true
+    },
+    {
+      "name": "44: native slot has both-side comfort",
+      "pass": true
+    },
+    {
+      "name": "44: right transform leaves mother byte-identical",
+      "pass": true
+    },
+    {
+      "name": "44: mother transform leaves chamber byte-identical",
+      "pass": true
+    },
+    {
+      "name": "54/0: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.025: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.025: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.025: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.05: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.05: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.05: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.075: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.075: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.075: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.1: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.1: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.1: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.125: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.125: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.125: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.15: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.15: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.15: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.175: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.175: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.175: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.2: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.2: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.2: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.225: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.225: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.225: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.25: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.25: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.25: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.275: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.275: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.275: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.3: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.3: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.3: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.325: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.325: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.325: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.35: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.35: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.35: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.375: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.375: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.375: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.4: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.4: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.4: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.425: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.425: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.425: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.45: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.45: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.45: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.475: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.475: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.475: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.5: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.5: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.5: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.525: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.525: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.525: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.55: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.55: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.55: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.575: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.575: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.575: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.6: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.6: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.6: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.625: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.625: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.625: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.65: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.65: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.65: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.675: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.675: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.675: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.7: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.7: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.7: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.725: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.725: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.725: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.75: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.75: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.75: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.775: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.775: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.775: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.8: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.8: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.8: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.825: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.825: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.825: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.85: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.85: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.85: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.875: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.875: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.875: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.9: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.9: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.9: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.925: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.925: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.925: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.95: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.95: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.95: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/0.975: finite",
+      "pass": true
+    },
+    {
+      "name": "54/0.975: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/0.975: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54/1: finite",
+      "pass": true
+    },
+    {
+      "name": "54/1: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "54/1: expected topology",
+      "pass": true
+    },
+    {
+      "name": "54: no layout jump at topology change",
+      "pass": true
+    },
+    {
+      "name": "54: native slot has both-side comfort",
+      "pass": true
+    },
+    {
+      "name": "54: right transform leaves mother byte-identical",
+      "pass": true
+    },
+    {
+      "name": "54: mother transform leaves chamber byte-identical",
+      "pass": true
+    },
+    {
+      "name": "96/0: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.025: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.025: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.025: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.05: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.05: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.05: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.075: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.075: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.075: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.1: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.1: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.1: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.125: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.125: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.125: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.15: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.15: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.15: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.175: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.175: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.175: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.2: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.2: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.2: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.225: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.225: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.225: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.25: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.25: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.25: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.275: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.275: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.275: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.3: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.3: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.3: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.325: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.325: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.325: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.35: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.35: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.35: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.375: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.375: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.375: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.4: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.4: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.4: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.425: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.425: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.425: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.45: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.45: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.45: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.475: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.475: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.475: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.5: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.5: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.5: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.525: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.525: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.525: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.55: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.55: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.55: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.575: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.575: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.575: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.6: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.6: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.6: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.625: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.625: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.625: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.65: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.65: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.65: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.675: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.675: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.675: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.7: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.7: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.7: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.725: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.725: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.725: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.75: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.75: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.75: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.775: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.775: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.775: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.8: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.8: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.8: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.825: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.825: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.825: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.85: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.85: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.85: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.875: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.875: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.875: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.9: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.9: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.9: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.925: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.925: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.925: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.95: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.95: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.95: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/0.975: finite",
+      "pass": true
+    },
+    {
+      "name": "96/0.975: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/0.975: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96/1: finite",
+      "pass": true
+    },
+    {
+      "name": "96/1: monotonic layout width",
+      "pass": true
+    },
+    {
+      "name": "96/1: expected topology",
+      "pass": true
+    },
+    {
+      "name": "96: no layout jump at topology change",
+      "pass": true
+    },
+    {
+      "name": "96: native slot has both-side comfort",
+      "pass": true
+    },
+    {
+      "name": "96: right transform leaves mother byte-identical",
+      "pass": true
+    },
+    {
+      "name": "96: mother transform leaves chamber byte-identical",
+      "pass": true
+    },
+    {
+      "name": "C1 tolerance for each closed component",
+      "pass": true
+    },
+    {
+      "name": "C2 tolerance for each closed component",
+      "pass": true
+    }
+  ],
+  "maxFirstDerivativeError": 0.0000030000001629559847,
+  "maxSecondDerivativeError": 0.000012000000651823939,
+  "width54": 212.11418036376952,
+  "width44": 184.87341955566407,
+  "chamber54": {
+    "x": 90.015,
+    "y": 6,
+    "width": 116.09886999999999,
+    "height": 75.6
+  },
+  "chamber44": {
+    "x": 74.45666666666666,
+    "y": 5.9999999999999964,
+    "width": 104.4165,
+    "height": 61.6
+  },
+  "scope": "Individual contours are C2. The topology-changing split instant is not globally C2."
+}

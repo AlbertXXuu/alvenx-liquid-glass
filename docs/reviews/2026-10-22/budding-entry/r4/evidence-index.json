@@ -1,0 +1,224 @@
+[
+  {
+    "path": "r4/checks-final.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/checks-final.json",
+    "bytes": 25559,
+    "sha256": "5807707c2eca71248e00ffd16f8079ab7bf427a0ac99414f7aa348c0cbdaeb7a"
+  },
+  {
+    "path": "r4/checks-built.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/checks-built.json",
+    "bytes": 25600,
+    "sha256": "a0fc369e8ee52c42f8a53977cd1f0d2a56d161465345c03ec2896f9582893546"
+  },
+  {
+    "path": "r4/material-check.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/material-check.json",
+    "bytes": 878,
+    "sha256": "4faca818b59b604880747df69d7177cf28540f57f69d6281a2ffe5c210b04c38"
+  },
+  {
+    "path": "r4/material-built.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/material-built.json",
+    "bytes": 919,
+    "sha256": "7a88e9079938da7dff6c7c0fbf7a059a525c38550723d7de326aedeb19957cb1"
+  },
+  {
+    "path": "r4/geometry-check.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/geometry-check.json",
+    "bytes": 29194,
+    "sha256": "c96c6fbad294566ded43e983b0e6b84ebd0964942d712d7e7970e3a3813e62e9"
+  },
+  {
+    "path": "r4/capture-stages.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/capture-stages.json",
+    "bytes": 1333,
+    "sha256": "f4349cf4f1e76abdda534934c22607e91ad633f947b3f1860b6c8d4a66147a7a"
+  },
+  {
+    "path": "r4/review-check.cjs",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/review-check.cjs",
+    "bytes": 15901,
+    "sha256": "e9aa43fce3acdaa7328ffef965570bde9cc3e4ca0c62a8bbb932f2e33ad57a02"
+  },
+  {
+    "path": "r4/material-check.cjs",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/material-check.cjs",
+    "bytes": 3831,
+    "sha256": "0ce309bec59ee7b6688549e90d1566944c660eacabbc6288be9117d3b2d1840c"
+  },
+  {
+    "path": "r4/geometry-check.cjs",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/geometry-check.cjs",
+    "bytes": 3369,
+    "sha256": "89200ae9ccea541e19b2f814c19637c7dd9e19bea3aa4199040cc17a56697045"
+  },
+  {
+    "path": "r4/capture-stages.cjs",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/capture-stages.cjs",
+    "bytes": 2163,
+    "sha256": "c948d7555f99f0351e0d9415e447ad2534a8426f584f8f0a6c86fe855f7fde0e"
+  },
+  {
+    "path": "r4/evidence/first-viewport-393.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/first-viewport-393.png",
+    "bytes": 269046,
+    "sha256": "b11639aee8513588ba3004cab4a015bb66cd9b1c21d548513e01ce33f7cd2a24"
+  },
+  {
+    "path": "r4/evidence/final-820.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/final-820.png",
+    "bytes": 694904,
+    "sha256": "bd6491972f319916ff6dc76960bed9e7f624f29810f874be7b0b20dae0d86db1"
+  },
+  {
+    "path": "r4/evidence/final-1413.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/final-1413.png",
+    "bytes": 1032257,
+    "sha256": "9d1591929eb100d43869934b92badbb6ce2a3f478146c52906611998be53e315"
+  },
+  {
+    "path": "r4/evidence/detail-320.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/detail-320.png",
+    "bytes": 20068,
+    "sha256": "95fdb3f2ad16e58190b638eabbe0b7a36a50f71628b85f5c762b775c54fd100e"
+  },
+  {
+    "path": "r4/evidence/detail-393.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/detail-393.png",
+    "bytes": 23462,
+    "sha256": "78ca53c23927310904ef2645f19abeca4c0c0d7764787651fc90beb9f3d2fb1b"
+  },
+  {
+    "path": "r4/evidence/detail-1413.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/detail-1413.png",
+    "bytes": 22714,
+    "sha256": "c4c7963da1bc336c02de9e8bce1d432039c2c560a2f3eb19c598faf7e7a6ce36"
+  },
+  {
+    "path": "r4/evidence/hover-right.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/hover-right.png",
+    "bytes": 23317,
+    "sha256": "ed002abd2af369dda5cca8ad5b706b67a06eb4bde1dfec42ae04fcb339e9cffd"
+  },
+  {
+    "path": "r4/evidence/hover-mother.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/hover-mother.png",
+    "bytes": 23337,
+    "sha256": "5db40d363703d2b7a2438042c384b283dde31223eeb05f9a1f95147e4c20a8df"
+  },
+  {
+    "path": "r4/evidence/hover-right-facing-320.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/hover-right-facing-320.png",
+    "bytes": 19709,
+    "sha256": "60b22b7db3dbc5199eb5735cbde2e763c06fea283ffcae4a4dfa518cf5ed9b7d"
+  },
+  {
+    "path": "r4/evidence/stage-0.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/stage-0.png",
+    "bytes": 5493,
+    "sha256": "2fe43a95c2ea7d7336908cd323521c5eea2b0c38c8af010d537ca051146bab80"
+  },
+  {
+    "path": "r4/evidence/stage-025.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/stage-025.png",
+    "bytes": 71166,
+    "sha256": "21f326452e511d2771d39b0abc980a836a7da7d427988dbf324f15d86baad740"
+  },
+  {
+    "path": "r4/evidence/stage-055.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/stage-055.png",
+    "bytes": 74448,
+    "sha256": "5f7745c5c6d83cb3fc40c9127185f1d54f5861eb025370094721721765b4f5e7"
+  },
+  {
+    "path": "r4/evidence/stage-085.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/stage-085.png",
+    "bytes": 82800,
+    "sha256": "1dc5f94e3e73ed95a7e141b6e7b0feff907140904439b131f72aef37f29ca240"
+  },
+  {
+    "path": "r4/evidence/stage-095.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/stage-095.png",
+    "bytes": 83091,
+    "sha256": "85685ac5067b4e3a2bbf0d95923de0b70d4628d9327b073ee60627768fc176f4"
+  },
+  {
+    "path": "r4/evidence/stage-1.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/stage-1.png",
+    "bytes": 22664,
+    "sha256": "241e7417fa3853d287f0e49d41056b93c18373dd1294fff2e84af3251df15dd2"
+  },
+  {
+    "path": "history/r4-before-material-fix/source/geometry.ts",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/source/geometry.ts",
+    "bytes": 5019,
+    "sha256": "4c900d7fb1d2bc84bb298b1fe85e69ae8ba4c49c5eee9f5e36efe56acf654b58"
+  },
+  {
+    "path": "history/r4-before-material-fix/source/index.html",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/source/index.html",
+    "bytes": 404,
+    "sha256": "2e68a058ded98c5854d29260d728eb8d4b25bb12551c17c84aec03802b0d1da5"
+  },
+  {
+    "path": "history/r4-before-material-fix/source/main.tsx",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/source/main.tsx",
+    "bytes": 14755,
+    "sha256": "f4bad7628c0353a8f93e093e6eefb01dd21f45df7e9aa497ee849244d4bd1111"
+  },
+  {
+    "path": "history/r4-before-material-fix/source/README.md",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/source/README.md",
+    "bytes": 7700,
+    "sha256": "86fcdf651e68b0af0c9287e6e2e086c8d35d4f8a3a1e9640a0cdb04d38bf37f8"
+  },
+  {
+    "path": "history/r4-before-material-fix/source/reference-volume.ts",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/source/reference-volume.ts",
+    "bytes": 8635,
+    "sha256": "9c38191787011a47702cad7e4b4f10766badc581aeee34bf278b03c736f2ab84"
+  },
+  {
+    "path": "history/r4-before-material-fix/source/review.css",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/source/review.css",
+    "bytes": 5062,
+    "sha256": "726594eb04f0568f54d8924c59ee3630c8237fc991b247345adb4cc9dc067d33"
+  },
+  {
+    "path": "history/r4-before-material-fix/checks-final.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/checks-final.json",
+    "bytes": 25557,
+    "sha256": "b9b43b2f1c3932213de649b14c69df91f2999031e078e638f5c9c4675baee91e"
+  },
+  {
+    "path": "history/r4-before-material-fix/checks-built.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/checks-built.json",
+    "bytes": 25600,
+    "sha256": "5c24ebbe82d21d57dafc54a9dadb2c9deabca8fd716f58ddda9fd957aee955dd"
+  },
+  {
+    "path": "history/r4-before-material-fix/capture-stages.json",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/capture-stages.json",
+    "bytes": 783,
+    "sha256": "094039f3341ddf2f46664d153e59678cc3965bb72b2b1428b66973e0e024532a"
+  },
+  {
+    "path": "history/r4-before-material-fix/stage-025.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/stage-025.png",
+    "bytes": 71643,
+    "sha256": "07f9528fbcb9af70aa127627c41d22ae63f1752a65dab80a89778ead935c3e65"
+  },
+  {
+    "path": "history/r4-before-material-fix/stage-055.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/stage-055.png",
+    "bytes": 75251,
+    "sha256": "443627e0c805d93a6f21c5496aa5544139b1fc4669a7ca8789e98d869bf0ed38"
+  },
+  {
+    "path": "history/r4-before-material-fix/stage-085.png",
+    "originalLocalPath": "output/playwright/budding-refinement-r4-20261022/pre-material-fix/stage-085.png",
+    "bytes": 83041,
+    "sha256": "35c1cc4d352ab1ea9fd34127635f477c4d78826eece890e783ea9c02844ad329"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "base": "http://127.0.0.1:5194/showcase/budding-refinement-review/index.html",
+  "createdAt": "2026-10-21T18:32:15.706Z",
+  "passed": 5,
+  "total": 5,
+  "checks": [
+    {
+      "name": "actual draw inspected during joined growth and return",
+      "pass": true
+    },
+    {
+      "name": "profile checked against committed native C2 path",
+      "pass": true
+    },
+    {
+      "name": "joined frames refresh profile",
+      "pass": true
+    },
+    {
+      "name": "terminal and resting frames skip profile upload",
+      "pass": true
+    },
+    {
+      "name": "both growth and return observed",
+      "pass": true
+    }
+  ],
+  "joinedFrames": 115,
+  "boundarySamples": 791,
+  "failedFrames": [],
+  "instrumentationBoundary": "Test-only GL interception reads uniforms and samples native Path2D; not a performance or GPU timing measurement."
+}

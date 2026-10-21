@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "observedAtUtc": "2026-10-21T18:45:27.278849+00:00",
+  "url": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "reviewSourceCommit": "58cf3fc97d1cd84f6883c702ff0151c63c26e52d",
+  "sourceRef": "review-budding-20261022-r4",
+  "reviewStatus": "awaiting-owner-visual-and-device-acceptance",
+  "productionShowcaseSourceCommit": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+  "homepageKitVersion": "1.3.0",
+  "matches": 19,
+  "records": [
+    {
+      "path": "/ui/budding-refinement-review-20261022/review-manifest.json",
+      "bytes": 54777,
+      "sha256": "c875dd1e3c149624b1896d5271d440d5bebc00859d14cf1775cfeefc1ef0f29f",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/budding-refinement-review-20261022/",
+      "bytes": 1283,
+      "sha256": "441c7e89ab81f4aa051848a59da35d3bab381d4eaecefb4cc33c3319dd68b621",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/buddingRefinementReview-Ml5i4yf0.css",
+      "bytes": 5116,
+      "sha256": "6746394d1d1388fa38d0b88e80a666c49a1ccc4fb9a4e257df8c84869f73e30b",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/buddingRefinementReview-UYwO_Hro.js",
+      "bytes": 52954,
+      "sha256": "ca7fab1e72858afb767e6498bb96d5074e88bd65bd50d5b1178ba53676e29307",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/fieldSizingReview-Cgid3J6s.css",
+      "bytes": 5954,
+      "sha256": "1bb0414ec9f415362ff93e21a46c8c597f5fd6b0ec492b679f5bf5d078eaf48d",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/fieldSizingReview-DIEMkLAo.js",
+      "bytes": 5654,
+      "sha256": "ab9b4701fed3e4a3ed3ccf2cf0b77b15ce07aa7670c28a2f6fd9fba6c3901338",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/fonts-BDrmj5mK.js",
+      "bytes": 255318,
+      "sha256": "3149f4553bba6d33dcfdbd660362166a7c12b897d9cb8c50eda4be240369e850",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/fonts-DonbqHcN.css",
+      "bytes": 513488,
+      "sha256": "dee6c33f5932de0215b215d02d40b121fae216c4247f2748614585ca89bb90a1",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/main-C8deNzPd.js",
+      "bytes": 84123,
+      "sha256": "59305594d10bdc9a3dba71a77ad72836a9baefa629d0ce005aa8cfcef78db9ba",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/main-CYcsKogB.css",
+      "bytes": 17500,
+      "sha256": "9e06773c4247209b95f0ead141c2d16aa8b5508cd237c5afe6482d954421e738",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/budding-review-20261022-r4/assets/volume-hit-geometry-DJ1Z4u93.js",
+      "bytes": 1619,
+      "sha256": "c8474b39039c4c997c43dab15729b8df443d6994b8ebd0cc79cb98e0c363e90b",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/",
+      "bytes": 2696,
+      "sha256": "5875a213abdad96cc4b3b48085aa269fb11844bc06256e11ce9ab006e73932e3",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "bytes": 62447,
+      "sha256": "69cf1af0c494e253e0533b098aae6b556dd39daec487fbbceda3d54990cdfd5c",
+      "status": "byte-match"
+    },
+    {
+      "path": "/",
+      "bytes": 58111,
+      "status": "homepage-served"
+    },
+    {
+      "path": "/ui/homepage-entry-manifest.json",
+      "bytes": 411,
+      "sha256": "b16f11839e20c77d537c8f3b109bf8b94f1ff5b4a751edd6e9cfbffc3831c213",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/1.3.2-nav-unified-20261022/assets/fonts-BNAp78Xn.js",
+      "bytes": 255318,
+      "sha256": "3149f4553bba6d33dcfdbd660362166a7c12b897d9cb8c50eda4be240369e850",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/1.3.2-nav-unified-20261022/assets/volume-hit-geometry-DJ1Z4u93.js",
+      "bytes": 1619,
+      "sha256": "c8474b39039c4c997c43dab15729b8df443d6994b8ebd0cc79cb98e0c363e90b",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/1.3.2-nav-unified-20261022/assets/main-BfZoRqwt.js",
+      "bytes": 84123,
+      "sha256": "8afaf0c3de4438b8dd07bfb14dc298330cc8d681d5adc382bbb4e875c1fd1425",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/1.3.2-nav-unified-20261022/assets/fonts-DSDgsYNH.css",
+      "bytes": 513488,
+      "sha256": "c9619882fb7969bbc88e2c0ca8162bf798746ce4badead12ffe9a23bf9dd2c9a",
+      "status": "byte-match"
+    },
+    {
+      "path": "/ui/releases/1.3.2-nav-unified-20261022/assets/main-CYcsKogB.css",
+      "bytes": 17500,
+      "sha256": "9e06773c4247209b95f0ead141c2d16aa8b5508cd237c5afe6482d954421e738",
+      "status": "byte-match"
+    }
+  ]
+}

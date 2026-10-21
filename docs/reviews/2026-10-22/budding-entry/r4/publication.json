@@ -1,0 +1,60 @@
+{
+  "recordedAtUtc": "2026-10-21T18:50:08.285416+00:00",
+  "status": "deployed-tested-owner-requested-rounder-chamber",
+  "originalReviewUrl": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "sourceCommit": "58cf3fc97d1cd84f6883c702ff0151c63c26e52d",
+  "sourceRef": "review-budding-20261022-r4",
+  "website": {
+    "url": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/45",
+    "sourceCommit": "5c2aea7c1a9de7498b791dfbffcef6516267d611",
+    "mergeCommit": "22399b04fbf6a225e1baa12cab4040ed61af2fbd",
+    "sourceAndMergeTree": "8f0859b91e8ce57387c5f9a5cd100b116a38a814",
+    "mergedAt": "2026-10-21T18:41:33Z"
+  },
+  "activeDeploymentAtVerification": {
+    "id": "c7abe5fc-00f2-4a10-8534-a201154d1287",
+    "created_on": "2026-10-21T18:42:49.901767Z",
+    "versions": [
+      {
+        "version_id": "0263ec70-220a-422f-a50a-37a6fbd0020b",
+        "percentage": 100
+      }
+    ]
+  },
+  "checks": {
+    "geometry": 383,
+    "localInteraction": 129,
+    "builtInteraction": 129,
+    "onlineInteraction": 129,
+    "materialSynchronizationEachLocalBuiltOnline": 5,
+    "ciRuns": 5,
+    "ciJobs": 5,
+    "ciReportedSteps": 52,
+    "hostedByteMatches": 19
+  },
+  "deploymentProcess": {
+    "childExitCode": 1,
+    "timedOut": true,
+    "interrupted": false,
+    "deployedWorkerVersion": "0263ec70-220a-422f-a50a-37a6fbd0020b",
+    "apiStatusCounts": {
+      "200": 14,
+      "201": 1,
+      "202": 2
+    },
+    "transportFailureCounts": {}
+  },
+  "deploymentBoundary": "Windows Wrangler lingered after upload and activation. Active-version API and hosted bytes independently verified deployment; no normal CLI exit 0 is claimed.",
+  "ownerFeedback": "The chamber sides are too straight and square. R5 is a separate focused curvature correction; R4 is not promoted to the homepage.",
+  "preservedProduction": {
+    "homepageKitVersion": "1.3.0",
+    "showcaseSourceCommit": "e95fd08ad897c540788d6b78ecc4baa778e68fe2"
+  },
+  "helperCorrections": [
+    "HTTP helper explicitly uses UTF-8 on Windows.",
+    "Homepage presence checks use the actual ui-entry class and accessible label.",
+    "First online material invocation targeted about:blank and ran zero checks; navigating to the review URL then passed 5/5 without product changes."
+  ],
+  "scope": "Windows Edge/Chromium and viewport emulation; physical iOS/IME/Combo Touch and device power use remain unverified.",
+  "rights": "All rights reserved / UNLICENSED"
+}
