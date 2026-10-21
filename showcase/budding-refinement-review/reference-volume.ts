@@ -1,6 +1,6 @@
 import rendererSource from '../../src/volume-renderer.js?raw';
 import type { MaterialParameters } from '../../src/reviewSettings';
-import { refinementRoom,type ReviewBuddingTransform } from './geometry';
+import { refinementRoom,reviewChamberExponent,type ReviewBuddingTransform } from './geometry';
 
 // Reuse the actual accepted large-volume shader, rather than inventing another
 // neutral lighting model. The review adds only a bounded coordinate mapping,
@@ -151,7 +151,7 @@ export function createReferenceVolume(canvas:HTMLCanvasElement,width:number,heig
   gl.uniform2f(uniforms.resolution,w,h);gl.uniform4f(uniforms.review_box,width,height,diameter,refinementRoom(diameter)/(diameter/300));gl.uniform4f(uniforms.review_transform,transform.scaleX??1,transform.scaleY??1,transform.offsetX??0,transform.offsetY??0);
   for(const name of ['mother','chamber'] as const){const t=transform[name]??{};gl.uniform4f(uniforms[`review_${name}_transform`],t.scaleX??1,t.scaleY??1,t.offsetX??0,t.offsetY??0);}
   gl.uniform2f(uniforms.light,.22,.08);gl.uniform2f(uniforms.parent_stretch,1,1);gl.uniform2f(uniforms.child_stretch,1.15,1);gl.uniform2f(uniforms.deform_point,500,280);gl.uniform2f(uniforms.deform_amount,0,0);gl.uniform2f(uniforms.studio_rotation,1,0);
-  for(const [name,value] of Object.entries({curvature:3.2,growth,edge:0,flat:0,grid:0,time:0,studio_motion:0,specular_opacity:material.specularOpacity,specular_saturation:material.specularSaturation,refraction_level:material.refractionLevel,blur_level:material.blurLevel/(diameter/300),progressive_blur:material.progressiveBlur/(diameter/300),glass_opacity:material.glassOpacity}))gl.uniform1f(uniforms[name],value);
+  for(const [name,value] of Object.entries({curvature:reviewChamberExponent,growth,edge:0,flat:0,grid:0,time:0,studio_motion:0,specular_opacity:material.specularOpacity,specular_saturation:material.specularSaturation,refraction_level:material.refractionLevel,blur_level:material.blurLevel/(diameter/300),progressive_blur:material.progressiveBlur/(diameter/300),glass_opacity:material.glassOpacity}))gl.uniform1f(uniforms[name],value);
   gl.drawArrays(gl.TRIANGLES,0,3);renders++;const ms=performance.now()-start;total+=ms;
   canvas.dataset.volumeLightRenders=String(renders);canvas.dataset.volumeLightComputeMs=ms.toFixed(3);canvas.dataset.volumeLightMeanMs=(total/renders).toFixed(3);canvas.dataset.volumeLightPixels=String(w*h);canvas.dataset.volumeHeightModel='accepted-reference-potential';canvas.dataset.materialSource='src/volume-renderer.js';
  },destroy(){gl.deleteTexture(profile);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vertex);gl.deleteShader(shader);previous='';}};

@@ -3,6 +3,9 @@ import type { BuddingGeometry, BuddingTransform } from '../../src/buddingGeometr
 
 type Point = [number, number];
 export type ReviewBuddingTransform=BuddingTransform&{mother?:BuddingTransform;chamber?:BuddingTransform};
+// Near-elliptic sides keep the content chamber visibly convex instead of
+// approaching the accepted large panel's broad, nearly vertical shoulders.
+export const reviewChamberExponent=2.2;
 const resting:VolumeGeometry={parentX:1,parentY:1,childX:1.15,childY:1,deformX:500,deformY:280,deformDX:0,deformDY:0,curvature:3.2};
 const clamp=(v:number)=>Math.max(0,Math.min(1,v));
 const smooth=(v:number)=>{const t=clamp(v);return t*t*t*(t*(t*6-15)+10);};
@@ -46,7 +49,7 @@ export function refinementGeometry(growth:number,diameter=54,transform:ReviewBud
   // Terminal separation is a topology change. Each individual component is
   // C2; no claim is made of one global C2 surface through the split instant.
   const circle:Point[]=Array.from({length:128},(_,i)=>{const t=2*Math.PI*i/128;return transformPoint([cx+diameter/2*Math.cos(t),cy+diameter/2*Math.sin(t)],'mother');});
-  const n=2+(3.2-2)*ease;
+  const n=2+(reviewChamberExponent-2)*ease;
   const chamberPoints:Point[]=Array.from({length:128},(_,i)=>{const t=2*Math.PI*i/128,c=Math.cos(t),s=Math.sin(t);return transformPoint([chamberCentre+outerRx*Math.sign(c)*Math.abs(c)**(2/n),cy+ry*scale*Math.sign(s)*Math.abs(s)**(2/n)],'chamber');});
   path=`${c2Boundary(circle)} ${c2Boundary(chamberPoints)}`;
  }else{
@@ -59,7 +62,7 @@ export function refinementGeometry(growth:number,diameter=54,transform:ReviewBud
   const neck=1-.14*ease*smooth((x-330)/45)*Math.exp(-(((x-410)/60)**2));
   const px=baseX+separation*progress+room*chamberRoom;
   const parentHalf=Math.sqrt(Math.max(0,(diameter/2)**2-(px-cx)**2));
-  const q=Math.abs((px-chamberCentre)/Math.max(.1,outerRx)),n=2+(3.2-2)*ease;
+  const q=Math.abs((px-chamberCentre)/Math.max(.1,outerRx)),n=2+(reviewChamberExponent-2)*ease;
   const chamberHalf=ry*scale*Math.max(0,1-q**n)**(1/n);
   const bridgeGate=smooth((px-(6+diameter*.75))/(diameter*.2))*(1-smooth((px-(chamber.x+diameter*.05))/(diameter*.2)));
   const bridgeHalf=Math.max(.025,diameter*.22*(1-morph))*bridgeGate;
