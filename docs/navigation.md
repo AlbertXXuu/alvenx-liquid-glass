@@ -4,6 +4,8 @@ The default AlvenX mobile navigation trigger is **two horizontal lines**, with n
 
 Language selection is a separate control. Default authored navigation copy is English; a host may offer an explicit Chinese choice and localize the button's accessible `aria-label`. The icon, geometry and minimum 44 px target do not change with language. Collapse the full navigation at the width where its actual labels and language selector would crowd the wordmark, including in the longer localized state; do not squeeze the trigger or shrink its bars to make the row fit.
 
+All navigation labels at the same level, including a nested Language trigger, inherit one shared navigation typography rule: Instrument Sans with MiSans fallback, weight 500 and line height 1.3. The showcase uses 12 px in the desktop row and 14 px in the expanded navigation at widths up to 900 px. A nested control must follow the same responsive font size as adjacent links, rather than retaining a separate fixed size. Language options inherit this typography; status messages may use their explicit smaller size.
+
 The reference is the actual AlvenX website implementation: `app/header-navigation.tsx` and `.mobile-nav-toggle` / `.mobile-nav-icon` in `app/globals.css`, verified against website source `242be6814526ec4586df37e2ba78add1200a3fc2` on 2026-10-21. The reusable button preserves its visible geometry and transition; a controlled native button replaces the website's native `details` / `summary` host so consumers can own their navigation layout.
 
 ## Geometry and visual states
