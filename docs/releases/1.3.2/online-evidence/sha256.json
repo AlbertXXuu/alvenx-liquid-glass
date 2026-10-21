@@ -1,0 +1,162 @@
+[
+  {
+    "file": "entry-chromium-1180-en.png",
+    "bytes": 377090,
+    "sha256": "f98ca6581a6bf5be2ca247a14a1b86f362dad75dbd2be644ce5e0eba8ce03b2e"
+  },
+  {
+    "file": "entry-chromium-1180-zh-type.png",
+    "bytes": 515165,
+    "sha256": "20732820cf090d313438cfbc010e9a649e849392570c8a8a386f111e87093480"
+  },
+  {
+    "file": "entry-chromium-1180-zh.png",
+    "bytes": 363336,
+    "sha256": "5f9bdc633fa039ef3c2699ef1a4d07da72468a2b3ddb2550b915039ff2eb2932"
+  },
+  {
+    "file": "entry-chromium-1366-en.png",
+    "bytes": 440009,
+    "sha256": "1b58c5d8fda8ffc2b1668995ec1e5afd864e0254b981ba610d87341c87895a94"
+  },
+  {
+    "file": "entry-chromium-1366-zh-type.png",
+    "bytes": 559603,
+    "sha256": "984aa33290f1ce4b888f2e3d737dd77e84c3298e4671227b62260b0167962f1c"
+  },
+  {
+    "file": "entry-chromium-1366-zh.png",
+    "bytes": 432769,
+    "sha256": "3372bfee6ac5f8716fde79541b8d30576e5a3dba1d80ee6a5dadc32a82514833"
+  },
+  {
+    "file": "entry-chromium-1413-en.png",
+    "bytes": 554227,
+    "sha256": "9f4604085f5a4c069dc98a76f569dfd92e9a00cf759f820b2022deff4cbdc72a"
+  },
+  {
+    "file": "entry-chromium-1413-zh-type.png",
+    "bytes": 707925,
+    "sha256": "1109dc77565e9a26867a07c4b5aee971e255e284243d4b0e94676b7379f1acf3"
+  },
+  {
+    "file": "entry-chromium-1413-zh.png",
+    "bytes": 554047,
+    "sha256": "c54be94cd41bbfd305583aa4e25292c73b83886bfe43822891bc19479b8e51aa"
+  },
+  {
+    "file": "entry-chromium-320-en.png",
+    "bytes": 145921,
+    "sha256": "7f0b8176d900e197d585f7589faef26d7411fdeb1503b132d1f776264cc7fd9d"
+  },
+  {
+    "file": "entry-chromium-320-menu.png",
+    "bytes": 105112,
+    "sha256": "9e1d0c94728a3ce06927ace76ae711e48e266b7b9017ce9bcae98db893a90750"
+  },
+  {
+    "file": "entry-chromium-320-zh-type.png",
+    "bytes": 171378,
+    "sha256": "481ea156180cc8602fb43f3e1d39c9482b5fc4065cd69227bec10b43c2aa6bb7"
+  },
+  {
+    "file": "entry-chromium-320-zh.png",
+    "bytes": 143552,
+    "sha256": "10b5d4d837b6d48fefe3029eafa2f4d439e9a365916d97ac678bacbca5e2cec9"
+  },
+  {
+    "file": "entry-chromium-393-en.png",
+    "bytes": 178760,
+    "sha256": "ea0f9c5653bd199bd830d62736cddec673ce9a028bc073eea54cf545c84355c6"
+  },
+  {
+    "file": "entry-chromium-393-menu.png",
+    "bytes": 131725,
+    "sha256": "d4b0c53fa32a2e079309ca2ecd3eff8668a5a1ed2887c16966dc1fa1bb944bf0"
+  },
+  {
+    "file": "entry-chromium-393-zh-type.png",
+    "bytes": 236606,
+    "sha256": "dda90e5b7c5e2c6e2cbad6cbc569c90835dd72ab3e423956f4712b3d7348dedb"
+  },
+  {
+    "file": "entry-chromium-393-zh.png",
+    "bytes": 175133,
+    "sha256": "de8d9d6e26f062b0574d905544df988ccaecf15872e5408c05ff9885c075bd7b"
+  },
+  {
+    "file": "entry-chromium-768-en.png",
+    "bytes": 439752,
+    "sha256": "10d9bcef0ac7826de6cbd8926000f5bc701007865de211832ac2219ac442c25c"
+  },
+  {
+    "file": "entry-chromium-768-menu.png",
+    "bytes": 354025,
+    "sha256": "6887ec7dbae0cc98b556c3b2aee1e664cab6a21a2d8902adff9ceeea1f1fda19"
+  },
+  {
+    "file": "entry-chromium-768-zh-type.png",
+    "bytes": 462768,
+    "sha256": "904415a69571b37529c37a99616e8a41f5a2c6978a7eb54a999d98eb1e9bf86e"
+  },
+  {
+    "file": "entry-chromium-768-zh.png",
+    "bytes": 438493,
+    "sha256": "1077b90d63725868d8f34f815c2909f0e2ff24ba0f9e3d37f3159c791be64c80"
+  },
+  {
+    "file": "entry-chromium-820-en.png",
+    "bytes": 516095,
+    "sha256": "4e86f1a21377c136fd774eeee2a7a3bfa7de10fc8f3df2fabc54b018fe8826e5"
+  },
+  {
+    "file": "entry-chromium-820-menu.png",
+    "bytes": 425727,
+    "sha256": "27694940007cc94bff3f13cdab1b20bc0d1336f1be147c4634f731e87239c141"
+  },
+  {
+    "file": "entry-chromium-820-zh-clean.png",
+    "bytes": 514843,
+    "sha256": "4acc98296caedea1f666f5ab970f2da0cee6d1f5c51d2bbba325cf016c001318"
+  },
+  {
+    "file": "entry-chromium-820-zh-type.png",
+    "bytes": 551747,
+    "sha256": "1b8167521a71ceb8d3f4492d90dbb603611971c03d4bc661d9c099fa44ef7791"
+  },
+  {
+    "file": "entry-chromium-820-zh.png",
+    "bytes": 513736,
+    "sha256": "6bbb79ba35167c304df17d5d5d1ea4c504fed5b294a3719e3e2e3d549819ce11"
+  },
+  {
+    "file": "nav-setup-diagnostic.png",
+    "bytes": 184558,
+    "sha256": "8e399e5b2f44eac5c347d4aa5c971a2a1f879e372354dee4d31ee0e98a315281"
+  },
+  {
+    "file": "navigation-chromium-persisted.png",
+    "bytes": 169411,
+    "sha256": "c32c10c1ff340a1912371748a78790ecfb7a3a4873385bb9d22a4a9ed9f74196"
+  },
+  {
+    "file": "navigation-chromium-zh.png",
+    "bytes": 179930,
+    "sha256": "cf7460c1a4d8adb5a0f7bb16f0330087ede44d63dae9ebd36c0a163c83ff5394"
+  },
+  {
+    "file": "online-budding-intermediate.png",
+    "bytes": 172434,
+    "sha256": "676a48ba1ea107465f613a5f7ee0b2f55bf4b56a9ccf6f2d2d29b815444eefa6"
+  },
+  {
+    "file": "online-message-fluency.png",
+    "bytes": 151530,
+    "sha256": "db58e16ee1340135757c9f568130124244aec3c1f025c31afcacfd5da72a7ff9"
+  },
+  {
+    "file": "online-reduced-motion.png",
+    "bytes": 178261,
+    "sha256": "bcb5ec9c5102008ffc7cf01bbdf393c6cd14b1ce64678d4f67cc966c1b37d6e4"
+  }
+]

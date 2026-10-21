@@ -1,4 +1,4 @@
-> Source release v1.3.2 is public and verified; production deployment remains pending. The live site still serves 1.3.1. See the actual [source publication and final deployment status](source-publication.md). The preparation record below is retained as history.
+> Production 1.3.2 is deployed and verified. See the actual [publication and online checks](publication.md). The source preparation and earlier pending records remain historical.
 
 # 1.3.2 — demonstration first, explicit language selection
 

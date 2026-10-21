@@ -1,0 +1,14 @@
+{
+  "observedAtUtc": "2026-10-21T17:07:55.652926+00:00",
+  "method": "Fresh authenticated read-only deployments API through existing system proxy in this child process",
+  "activeDeployment": {
+    "id": "a834f964-3260-4768-b5da-8015ab890a59",
+    "created_on": "2026-10-21T16:53:54.130645Z",
+    "versions": [
+      {
+        "version_id": "b85e1e8c-3a6d-4ad6-b278-7eb79dc662c5",
+        "percentage": 100
+      }
+    ]
+  }
+}

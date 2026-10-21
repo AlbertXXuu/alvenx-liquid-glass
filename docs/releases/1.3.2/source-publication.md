@@ -1,3 +1,5 @@
+> Completed follow-up: production 1.3.2 is active and verified. The pending checkpoint below is historical; see [final publication](publication.md) and [publication.json](publication.json).
+
 # 1.3.2 source release — production deployment pending
 
 [Source release v1.3.2](https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.3.2) is public, published at **2026-10-21 16:39:40 UTC / 2026-10-22 00:39:40 Asia/Shanghai**, with four verified assets. Source CI, package verification, independent installation and local QA have passed. Production deployment is a separate pending step. **The last verified live showcase remains 1.3.1; online validation of website/showcase 1.3.2 has NOT been performed.**

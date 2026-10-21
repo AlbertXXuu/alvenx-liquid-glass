@@ -1,0 +1,16 @@
+{
+  "engine": "chromium",
+  "version": "155.0.4283.62",
+  "base": "about:blank",
+  "physicalDevice": false,
+  "checks": [],
+  "failures": [
+    {
+      "name": "suite completion",
+      "detail": "TimeoutError: page.waitForFunction: Timeout 12000ms exceeded."
+    }
+  ],
+  "errors": [],
+  "notes": [],
+  "status": "failed"
+}

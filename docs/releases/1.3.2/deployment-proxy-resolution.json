@@ -1,0 +1,30 @@
+{
+  "recordedAtUtc": "2026-10-21T17:09:14.240270+00:00",
+  "deploymentVerified": true,
+  "workerVersion": "b85e1e8c-3a6d-4ad6-b278-7eb79dc662c5",
+  "activeAt100Percent": true,
+  "apiStatusCounts": {
+    "200": 13,
+    "201": 1,
+    "202": 2
+  },
+  "apiTransportFailureCounts": {},
+  "proxyComparison": {
+    "existingWindowsSystemProxyEnabled": true,
+    "previousRequestProxyUsed": 0,
+    "successfulDeploymentRequestProxyUsed": 1,
+    "successfulRequestCount": 16,
+    "scope": "Existing system configuration read and passed only through the task child environment; no OS/DNS/proxy configuration edits",
+    "inference": "The same build and v4 helper completed API uploads when explicitly using the existing proxy. The exact failing hop on the previous direct route is not identified."
+  },
+  "processResult": {
+    "childExitCode": 1,
+    "timedOut": true,
+    "wrapperSuccess": false,
+    "reportedWorkerVersion": "b85e1e8c-3a6d-4ad6-b278-7eb79dc662c5",
+    "meaning": "Wrangler reported upload/deployment/version completion; its Windows process remained alive and was stopped at the five-minute limit. Actual activation and HTTP bytes were verified separately. No normal process exit is claimed."
+  },
+  "helperSource": "deployment-research/cloudflare-transport-v4.mjs",
+  "helperSHA256": "e361ecf0ca5bc82e34ce4d977bb5b7843457f69c6d3b760cddf94b370db84160",
+  "activationEvidence": "production-activation-verified.json"
+}

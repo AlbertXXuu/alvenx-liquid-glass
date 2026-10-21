@@ -1,0 +1,21 @@
+[
+  {
+    "authenticated": false,
+    "curlExitCode": 0,
+    "httpProxyTime": "403 1 1.305880",
+    "jsonResponse": true,
+    "apiSuccess": false,
+    "apiErrorCodes": [
+      9106,
+      9107
+    ]
+  },
+  {
+    "authenticated": true,
+    "curlExitCode": 0,
+    "httpProxyTime": "200 1 1.415504",
+    "jsonResponse": true,
+    "apiSuccess": true,
+    "apiErrorCodes": []
+  }
+]

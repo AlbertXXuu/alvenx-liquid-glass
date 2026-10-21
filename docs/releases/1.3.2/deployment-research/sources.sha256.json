@@ -53,5 +53,10 @@
     "file": "http2-probe.mjs",
     "bytes": 875,
     "sha256": "a6876a5186b72c7e6d87f0d43595846ed5ba18926edf4dc0c782bbd8833f8b2e"
+  },
+  {
+    "file": "with_system_proxy.py",
+    "bytes": 1185,
+    "sha256": "a2f45c525434be1582d1613d543c270005edf524c3d8006831921fb502cb9fff"
   }
 ]
