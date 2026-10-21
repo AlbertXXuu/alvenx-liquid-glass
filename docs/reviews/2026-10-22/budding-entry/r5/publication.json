@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "recordedAtUtc": "2026-10-21T19:19:19.408513+00:00",
+  "status": "shape-accepted-deployed-verified-latency-followup-active",
+  "overallTaskStatus": "R6-latency-active; not completed by this R5 record",
+  "reviewUrlAtVerification": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "sourceCommit": "b91217d9cf2c2fca5b71cfeea38ee5d13699fbf5",
+  "sourceRef": "review-budding-20261022-r5",
+  "recordsTag": "review-budding-20261022-r5-published",
+  "website": {
+    "url": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/46",
+    "sourceCommit": "21e0faf47c1b585162f6bbb3c4b48f2a5950649b",
+    "mergeCommit": "13c702793d8acb730f925f8984af8036b4853949",
+    "sourceAndMergeTree": "31ba298b864100a42e73173891e49f94e644eac2",
+    "mergedAt": "2026-10-21T19:00:54Z"
+  },
+  "activation": {
+    "observedAtUtc": "2026-10-21T19:07:36.954699Z",
+    "method": "Fresh authenticated read-only deployments API through existing system proxy in the child process",
+    "websiteSourceCommit": "21e0faf47c1b585162f6bbb3c4b48f2a5950649b",
+    "websiteMergeCommit": "13c702793d8acb730f925f8984af8036b4853949",
+    "activeDeployment": {
+      "id": "1d12915c-854a-4444-8a2a-7e291b607d6f",
+      "created_on": "2026-10-21T19:02:51.826681Z",
+      "versions": [
+        {
+          "version_id": "8535aba0-5ae2-463a-9bc9-08242ccc427a",
+          "percentage": 100
+        }
+      ]
+    }
+  },
+  "checks": {
+    "geometry": 392,
+    "priorGeometryInvariants": 383,
+    "addedR5CurvatureChecks": 9,
+    "localInteraction": 129,
+    "builtInteraction": 129,
+    "onlineInteraction": 129,
+    "materialSynchronizationEachLocalBuiltOnline": 5,
+    "ciRuns": 5,
+    "ciJobs": 5,
+    "ciReportedSteps": 52,
+    "hostedByteMatches": 22,
+    "homepageSSRServed": 1,
+    "onlinePageErrors": 0,
+    "onlineConsoleErrors": 0,
+    "onlineHttpErrors": 0,
+    "onlineFailedRequests": 0
+  },
+  "evidence": {
+    "indexedFiles": 56,
+    "pngs": 34,
+    "index": "evidence-index.json",
+    "replaySource": "Use the immutable R5 source tag; the active working tree may contain later R6 work."
+  },
+  "deploymentProcess": {
+    "startedAtUtc": "2026-10-21T19:02:08.325Z",
+    "completedAtUtc": "2026-10-21T19:07:10.237Z",
+    "childExitCode": 1,
+    "timedOut": true,
+    "interrupted": false,
+    "wrapperSuccess": false,
+    "reportedWorkerVersion": "8535aba0-5ae2-463a-9bc9-08242ccc427a",
+    "meaning": "Upload and activation succeeded; the Windows CLI remained alive and reached the five-minute process limit. Fresh activation and selected hosted bytes were verified separately; normal process exit 0 is not claimed."
+  },
+  "apiStatusCounts": {
+    "200": 13,
+    "201": 1,
+    "202": 2
+  },
+  "apiTransportFailureCounts": {},
+  "ownerAcceptance": {
+    "scope": "R5 n2.2 curved-end appearance",
+    "shapeAccepted": true,
+    "subsequentRequest": "Remove visible loading delay before first presentation and first activation.",
+    "latencyFollowup": "R6 active; no zero-network-time or zero-loading-delay result is claimed by R5."
+  },
+  "preservedProduction": {
+    "homepageKitVersion": "1.3.0",
+    "showcaseSourceCommit": "e95fd08ad897c540788d6b78ecc4baa778e68fe2"
+  },
+  "r4ArchiveUrl": "https://alvenx.com/ui/budding-refinement-review-20261022-r4/",
+  "boundaries": [
+    "R5 is a separate owner-review route; accepted appearance does not promote it to the production homepage.",
+    "Windows Edge/Chromium and viewport emulation do not certify physical iOS/Safari, OS IME, Combo Touch, power use or all-device FPS.",
+    "Material checks inspect submitted uniforms/native C2 geometry; they are not GPU timing or startup-latency measurements.",
+    "Individual contours are C2; the topology-changing split instant is not globally C2.",
+    "R4 remains historical and its straight-side appearance was rejected; R5 changes the chamber curvature.",
+    "The rolling review URL may later advance to R6; immutable source/record tags preserve this R5 result."
+  ],
+  "rights": "All rights reserved / UNLICENSED; no npm publication or new reuse license"
+}

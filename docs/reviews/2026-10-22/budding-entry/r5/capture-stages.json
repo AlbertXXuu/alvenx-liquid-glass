@@ -1,0 +1,50 @@
+{
+  "createdAt": "2026-10-21T18:47:51.694Z",
+  "method": "Actual shared-clock interaction and native CDP screenshots after observed growth thresholds. Before/after progress brackets are retained; these are not synthetic frozen frames.",
+  "images": [
+    {
+      "stage": 0.25,
+      "growthBefore": 0.27066,
+      "growthAfter": 0.51646,
+      "consistency": {
+        "shadowMatchesEdge": true,
+        "canvasWidth": 214.109375,
+        "hostWidth": 105.71875
+      },
+      "file": "stage-025.png"
+    },
+    {
+      "stage": 0.55,
+      "growthBefore": 0.55864,
+      "growthAfter": 0.70006,
+      "consistency": {
+        "shadowMatchesEdge": true,
+        "canvasWidth": 214.109375,
+        "hostWidth": 158.109375
+      },
+      "file": "stage-055.png"
+    },
+    {
+      "stage": 0.85,
+      "growthBefore": 0.85659,
+      "growthAfter": 0.89732,
+      "consistency": {
+        "shadowMatchesEdge": true,
+        "canvasWidth": 214.109375,
+        "hostWidth": 200.3125
+      },
+      "file": "stage-085.png"
+    },
+    {
+      "stage": 0.95,
+      "growthBefore": 0.95411,
+      "growthAfter": 0.96859,
+      "consistency": {
+        "shadowMatchesEdge": true,
+        "canvasWidth": 214.109375,
+        "hostWidth": 209.8125
+      },
+      "file": "stage-095.png"
+    }
+  ]
+}

@@ -1,0 +1,989 @@
+{
+  "base": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "createdAt": "2026-10-21T19:06:04.959Z",
+  "passed": 129,
+  "total": 129,
+  "checks": [
+    {
+      "name": "320: proposal is first card",
+      "pass": true
+    },
+    {
+      "name": "320: no initial horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320: final two closed contours",
+      "pass": true
+    },
+    {
+      "name": "320: exact responsive diameter",
+      "pass": true
+    },
+    {
+      "name": "320: final mother is round",
+      "pass": true,
+      "detail": {
+        "x": 6.008832931518555,
+        "y": 14.808833122253418,
+        "width": 43.982330322265625,
+        "height": 43.98233413696289
+      }
+    },
+    {
+      "name": "320: narrow type is 14px",
+      "pass": true
+    },
+    {
+      "name": "320: native Instrument Sans label",
+      "pass": true
+    },
+    {
+      "name": "320: comfortable left ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      }
+    },
+    {
+      "name": "320: comfortable right ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      }
+    },
+    {
+      "name": "320: visually balanced ink",
+      "pass": true,
+      "detail": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      }
+    },
+    {
+      "name": "320: destination slot contains added chamber room",
+      "pass": true
+    },
+    {
+      "name": "320: GitHub fits actual clipped card",
+      "pass": true
+    },
+    {
+      "name": "320: GitHub is in viewport",
+      "pass": true
+    },
+    {
+      "name": "320: GitHub genuinely clickable",
+      "pass": true
+    },
+    {
+      "name": "320: actual width pushes GitHub",
+      "pass": true
+    },
+    {
+      "name": "320: no growth horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320: accepted material renderer ready",
+      "pass": true
+    },
+    {
+      "name": "320: transparent gap starts return",
+      "pass": true
+    },
+    {
+      "name": "320: gap return settles as mother",
+      "pass": true
+    },
+    {
+      "name": "360: proposal is first card",
+      "pass": true
+    },
+    {
+      "name": "360: no initial horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "360: final two closed contours",
+      "pass": true
+    },
+    {
+      "name": "360: exact responsive diameter",
+      "pass": true
+    },
+    {
+      "name": "360: final mother is round",
+      "pass": true,
+      "detail": {
+        "x": 6.008832931518555,
+        "y": 14.808833122253418,
+        "width": 43.982330322265625,
+        "height": 43.98233413696289
+      }
+    },
+    {
+      "name": "360: narrow type is 14px",
+      "pass": true
+    },
+    {
+      "name": "360: native Instrument Sans label",
+      "pass": true
+    },
+    {
+      "name": "360: comfortable left ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      }
+    },
+    {
+      "name": "360: comfortable right ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      }
+    },
+    {
+      "name": "360: visually balanced ink",
+      "pass": true,
+      "detail": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      }
+    },
+    {
+      "name": "360: destination slot contains added chamber room",
+      "pass": true
+    },
+    {
+      "name": "360: GitHub fits actual clipped card",
+      "pass": true
+    },
+    {
+      "name": "360: GitHub is in viewport",
+      "pass": true
+    },
+    {
+      "name": "360: GitHub genuinely clickable",
+      "pass": true
+    },
+    {
+      "name": "360: actual width pushes GitHub",
+      "pass": true
+    },
+    {
+      "name": "360: no growth horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "360: accepted material renderer ready",
+      "pass": true
+    },
+    {
+      "name": "360: transparent gap starts return",
+      "pass": true
+    },
+    {
+      "name": "360: gap return settles as mother",
+      "pass": true
+    },
+    {
+      "name": "393: proposal is first card",
+      "pass": true
+    },
+    {
+      "name": "393: no initial horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "393x852: recommended mother visible on initial screen",
+      "pass": true
+    },
+    {
+      "name": "393: final two closed contours",
+      "pass": true
+    },
+    {
+      "name": "393: exact responsive diameter",
+      "pass": true
+    },
+    {
+      "name": "393: final mother is round",
+      "pass": true,
+      "detail": {
+        "x": 6.010840892791748,
+        "y": 16.810840606689453,
+        "width": 53.97831726074219,
+        "height": 53.97832107543945
+      }
+    },
+    {
+      "name": "393: narrow type is 14px",
+      "pass": true
+    },
+    {
+      "name": "393: native Instrument Sans label",
+      "pass": true
+    },
+    {
+      "name": "393: comfortable left ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "393: comfortable right ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "393: visually balanced ink",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "393: destination slot contains added chamber room",
+      "pass": true
+    },
+    {
+      "name": "393: GitHub fits actual clipped card",
+      "pass": true
+    },
+    {
+      "name": "393: GitHub is in viewport",
+      "pass": true
+    },
+    {
+      "name": "393: GitHub genuinely clickable",
+      "pass": true
+    },
+    {
+      "name": "393: actual width pushes GitHub",
+      "pass": true
+    },
+    {
+      "name": "393: no growth horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "393: accepted material renderer ready",
+      "pass": true
+    },
+    {
+      "name": "393: transparent gap starts return",
+      "pass": true
+    },
+    {
+      "name": "393: gap return settles as mother",
+      "pass": true
+    },
+    {
+      "name": "820: proposal is first card",
+      "pass": true
+    },
+    {
+      "name": "820: no initial horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "820: final two closed contours",
+      "pass": true
+    },
+    {
+      "name": "820: exact responsive diameter",
+      "pass": true
+    },
+    {
+      "name": "820: final mother is round",
+      "pass": true,
+      "detail": {
+        "x": 6.010840892791748,
+        "y": 16.810840606689453,
+        "width": 53.97831726074219,
+        "height": 53.97832107543945
+      }
+    },
+    {
+      "name": "820: narrow type is 14px",
+      "pass": true
+    },
+    {
+      "name": "820: native Instrument Sans label",
+      "pass": true
+    },
+    {
+      "name": "820: comfortable left ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "820: comfortable right ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "820: visually balanced ink",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "820: destination slot contains added chamber room",
+      "pass": true
+    },
+    {
+      "name": "820: GitHub fits actual clipped card",
+      "pass": true
+    },
+    {
+      "name": "820: GitHub is in viewport",
+      "pass": true
+    },
+    {
+      "name": "820: GitHub genuinely clickable",
+      "pass": true
+    },
+    {
+      "name": "820: actual width pushes GitHub",
+      "pass": true
+    },
+    {
+      "name": "820: no growth horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "820: accepted material renderer ready",
+      "pass": true
+    },
+    {
+      "name": "820: transparent gap starts return",
+      "pass": true
+    },
+    {
+      "name": "820: gap return settles as mother",
+      "pass": true
+    },
+    {
+      "name": "1413: proposal is first card",
+      "pass": true
+    },
+    {
+      "name": "1413: no initial horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1413: final two closed contours",
+      "pass": true
+    },
+    {
+      "name": "1413: exact responsive diameter",
+      "pass": true
+    },
+    {
+      "name": "1413: final mother is round",
+      "pass": true,
+      "detail": {
+        "x": 6.010840892791748,
+        "y": 16.810840606689453,
+        "width": 53.97831726074219,
+        "height": 53.97832107543945
+      }
+    },
+    {
+      "name": "1413: narrow type is 14px",
+      "pass": true
+    },
+    {
+      "name": "1413: native Instrument Sans label",
+      "pass": true
+    },
+    {
+      "name": "1413: comfortable left ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "1413: comfortable right ink spacing",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "1413: visually balanced ink",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      }
+    },
+    {
+      "name": "1413: destination slot contains added chamber room",
+      "pass": true
+    },
+    {
+      "name": "1413: GitHub fits actual clipped card",
+      "pass": true
+    },
+    {
+      "name": "1413: GitHub is in viewport",
+      "pass": true
+    },
+    {
+      "name": "1413: GitHub genuinely clickable",
+      "pass": true
+    },
+    {
+      "name": "1413: actual width pushes GitHub",
+      "pass": true
+    },
+    {
+      "name": "1413: no growth horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1413: accepted material renderer ready",
+      "pass": true
+    },
+    {
+      "name": "1413: transparent gap starts return",
+      "pass": true
+    },
+    {
+      "name": "1413: gap return settles as mother",
+      "pass": true
+    },
+    {
+      "name": "right hover leaves mother path exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "right hover leaves mother bounds unchanged",
+      "pass": true
+    },
+    {
+      "name": "right hover moves only right chamber",
+      "pass": true
+    },
+    {
+      "name": "right hover keeps native glyph optically centred",
+      "pass": true,
+      "detail": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 17.36255645751953,
+        "rightSpace": 17.444610595703125
+      }
+    },
+    {
+      "name": "mother hover leaves right path exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "mother hover leaves right bounds unchanged",
+      "pass": true
+    },
+    {
+      "name": "mother hover moves only mother",
+      "pass": true
+    },
+    {
+      "name": "right press leaves mother path unchanged",
+      "pass": true
+    },
+    {
+      "name": "press releases without requiring pointer movement",
+      "pass": true
+    },
+    {
+      "name": "320 facing-edge right hover does not activate mother",
+      "pass": true
+    },
+    {
+      "name": "320 facing-edge right hover leaves mother path identical",
+      "pass": true
+    },
+    {
+      "name": "320 facing-edge mother hover does not activate chamber",
+      "pass": true
+    },
+    {
+      "name": "320 facing-edge mother hover leaves chamber path identical",
+      "pass": true
+    },
+    {
+      "name": "native destination pointer-down stays inside",
+      "pass": true
+    },
+    {
+      "name": "native destination still points to showcase",
+      "pass": true
+    },
+    {
+      "name": "pointer leave alone does not dismiss",
+      "pass": true
+    },
+    {
+      "name": "outside pointer-down returns continuously",
+      "pass": true
+    },
+    {
+      "name": "reopening return does not reset its position",
+      "pass": true,
+      "detail": {
+        "before": 0.88913,
+        "after": 0.88913
+      }
+    },
+    {
+      "name": "Escape returns and focuses mother",
+      "pass": true
+    },
+    {
+      "name": "Enter opens the two forms",
+      "pass": true
+    },
+    {
+      "name": "Space opens the two forms",
+      "pass": true
+    },
+    {
+      "name": "scrolling out closes the hidden entrance",
+      "pass": true
+    },
+    {
+      "name": "scrolling back starts with the mother",
+      "pass": true
+    },
+    {
+      "name": "reduced motion opens immediately",
+      "pass": true
+    },
+    {
+      "name": "reduced motion closes immediately",
+      "pass": true
+    },
+    {
+      "name": "turning material off removes extra canvas",
+      "pass": true
+    },
+    {
+      "name": "turning material off keeps actual backdrop body",
+      "pass": true
+    },
+    {
+      "name": "reference shader sleeps at rest",
+      "pass": true
+    },
+    {
+      "name": "no renderer failures",
+      "pass": true
+    },
+    {
+      "name": "no page exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "no console errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "no HTTP errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "no failed requests",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "metrics": [
+    {
+      "viewport": 320,
+      "diameter": 44,
+      "width": 184.859375,
+      "height": 73.59375,
+      "paths": 2,
+      "mother": {
+        "x": 6.008832931518555,
+        "y": 14.808833122253418,
+        "width": 43.982330322265625,
+        "height": 43.98233413696289
+      },
+      "chamber": {
+        "x": 74.47572326660156,
+        "y": 6.011242866516113,
+        "width": 104.37838745117188,
+        "height": 61.577518463134766
+      },
+      "text": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      },
+      "slot": {
+        "width": 104.40625,
+        "left": 74.453125
+      },
+      "github": {
+        "left": 221.859375,
+        "right": 277.203125,
+        "top": 762.28125,
+        "bottom": 778.28125,
+        "clickable": true,
+        "insideCard": true,
+        "insideViewport": true
+      },
+      "gap": {
+        "x": 87.23344326019287,
+        "y": 770.28125
+      },
+      "canvas": {
+        "width": 281,
+        "height": 111,
+        "volumeLightRenders": "126",
+        "volumeLightComputeMs": "0.000",
+        "volumeLightMeanMs": "0.053",
+        "volumeLightPixels": "31191",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "viewport": 360,
+      "diameter": 44,
+      "width": 184.859375,
+      "height": 73.59375,
+      "paths": 2,
+      "mother": {
+        "x": 6.008832931518555,
+        "y": 14.808833122253418,
+        "width": 43.982330322265625,
+        "height": 43.98233413696289
+      },
+      "chamber": {
+        "x": 74.47572326660156,
+        "y": 6.011242866516113,
+        "width": 104.37838745117188,
+        "height": 61.577518463134766
+      },
+      "text": {
+        "advance": 77.31256103515625,
+        "inkWidth": 77.18257141113281,
+        "rangeWidth": 77.328125,
+        "fontSize": "14px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 13.711776733398438,
+        "rightSpace": 13.484039306640625
+      },
+      "slot": {
+        "width": 104.40625,
+        "left": 74.453125
+      },
+      "github": {
+        "left": 221.859375,
+        "right": 277.203125,
+        "top": 671.71875,
+        "bottom": 687.71875,
+        "clickable": true,
+        "insideCard": true,
+        "insideViewport": true
+      },
+      "gap": {
+        "x": 87.23344326019287,
+        "y": 679.71875
+      },
+      "canvas": {
+        "width": 281,
+        "height": 111,
+        "volumeLightRenders": "128",
+        "volumeLightComputeMs": "0.000",
+        "volumeLightMeanMs": "0.055",
+        "volumeLightPixels": "31191",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "viewport": 393,
+      "diameter": 54,
+      "width": 212.109375,
+      "height": 87.59375,
+      "paths": 2,
+      "mother": {
+        "x": 6.010840892791748,
+        "y": 16.810840606689453,
+        "width": 53.97831726074219,
+        "height": 53.97832107543945
+      },
+      "chamber": {
+        "x": 90.03618621826172,
+        "y": 6.013798236846924,
+        "width": 116.0564956665039,
+        "height": 75.57240295410156
+      },
+      "text": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      },
+      "slot": {
+        "width": 116.09375,
+        "left": 90
+      },
+      "github": {
+        "left": 267.109375,
+        "right": 322.453125,
+        "top": 650.921875,
+        "bottom": 666.921875,
+        "clickable": true,
+        "insideCard": true,
+        "insideViewport": true
+      },
+      "gap": {
+        "x": 112.01267218589783,
+        "y": 658.921875
+      },
+      "canvas": {
+        "width": 322,
+        "height": 132,
+        "volumeLightRenders": "128",
+        "volumeLightComputeMs": "0.100",
+        "volumeLightMeanMs": "0.054",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "viewport": 820,
+      "diameter": 54,
+      "width": 212.109375,
+      "height": 87.59375,
+      "paths": 2,
+      "mother": {
+        "x": 6.010840892791748,
+        "y": 16.810840606689453,
+        "width": 53.97831726074219,
+        "height": 53.97832107543945
+      },
+      "chamber": {
+        "x": 90.03618621826172,
+        "y": 6.013798236846924,
+        "width": 116.0564956665039,
+        "height": 75.57240295410156
+      },
+      "text": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      },
+      "slot": {
+        "width": 116.09375,
+        "left": 90
+      },
+      "github": {
+        "left": 531.53125,
+        "right": 591.125,
+        "top": 549.921875,
+        "bottom": 567.921875,
+        "clickable": true,
+        "insideCard": true,
+        "insideViewport": true
+      },
+      "gap": {
+        "x": 371.4345471858978,
+        "y": 558.921875
+      },
+      "canvas": {
+        "width": 322,
+        "height": 132,
+        "volumeLightRenders": "128",
+        "volumeLightComputeMs": "0.100",
+        "volumeLightMeanMs": "0.049",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "viewport": 1413,
+      "diameter": 54,
+      "width": 212.109375,
+      "height": 87.59375,
+      "paths": 2,
+      "mother": {
+        "x": 6.010840892791748,
+        "y": 16.810840606689453,
+        "width": 53.97831726074219,
+        "height": 53.97832107543945
+      },
+      "chamber": {
+        "x": 90.03618621826172,
+        "y": 6.013798236846924,
+        "width": 116.0564956665039,
+        "height": 75.57240295410156
+      },
+      "text": {
+        "advance": 82.83486938476562,
+        "inkWidth": 82.40988159179688,
+        "rangeWidth": 82.84375,
+        "fontSize": "15px",
+        "fontFamily": "\"Instrument Sans\", MiSans, sans-serif",
+        "leftSpace": 16.77631378173828,
+        "rightSpace": 16.87030029296875
+      },
+      "slot": {
+        "width": 116.09375,
+        "left": 90
+      },
+      "github": {
+        "left": 590.53125,
+        "right": 650.125,
+        "top": 567.453125,
+        "bottom": 585.453125,
+        "clickable": true,
+        "insideCard": true,
+        "insideViewport": true
+      },
+      "gap": {
+        "x": 430.4345471858978,
+        "y": 576.453125
+      },
+      "canvas": {
+        "width": 322,
+        "height": 132,
+        "volumeLightRenders": "127",
+        "volumeLightComputeMs": "0.100",
+        "volumeLightMeanMs": "0.056",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "failedRequests": [],
+  "physicalDeviceCoverage": false,
+  "measurementBoundary": "CPU shader submission counters are not GPU time or FPS."
+}

@@ -1,0 +1,16 @@
+{
+  "observedAtUtc": "2026-10-21T19:07:36.954699Z",
+  "method": "Fresh authenticated read-only deployments API through existing system proxy in the child process",
+  "websiteSourceCommit": "21e0faf47c1b585162f6bbb3c4b48f2a5950649b",
+  "websiteMergeCommit": "13c702793d8acb730f925f8984af8036b4853949",
+  "activeDeployment": {
+    "id": "1d12915c-854a-4444-8a2a-7e291b607d6f",
+    "created_on": "2026-10-21T19:02:51.826681Z",
+    "versions": [
+      {
+        "version_id": "8535aba0-5ae2-463a-9bc9-08242ccc427a",
+        "percentage": 100
+      }
+    ]
+  }
+}
