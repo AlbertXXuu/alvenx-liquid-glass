@@ -143,11 +143,16 @@ type LanguageStatus = 'ready' | 'loading' | 'error';
 // One bounded catalog request per locale. Character deduplication avoids asking
 // FontFaceSet to match repeated prose; decoded face/shard caching stays native.
 const chineseGlyphs = Array.from(new Set((Object.values(SHOWCASE_CHINESE_COPY).join('')+'范围至最多保留位小数按离开输入框应用取消已恢复为已设为已四舍五入为最多个字符已忽略粘贴已取消编辑简体中文').replace(/[\u0000-\u007f]/g, ''))).join('');
+// The canonical 590 navigation weight selects MiSans 600. Prepare only the
+// navigation/option glyphs at this weight; body copy still needs only 400/500.
+const navigationChineseGlyphs = Array.from(new Set(['Experience', 'Components', 'Design', 'Code', 'Language'].map(key => SHOWCASE_CHINESE_COPY[key]).join('')+'简体中文')).join('');
 let chineseFonts: Promise<void> | null = null;
 function prepareChinese(): Promise<void> {
   if (chineseFonts) return chineseFonts;
   if (!document.fonts?.load) return Promise.reject(new Error('Font loading is unavailable.'));
-  const request = Promise.all([400, 500].map(weight => document.fonts.load(`${weight} 16px "MiSans"`, chineseGlyphs).then(faces => {
+  const requests = [400, 500].map(weight => ({ weight, glyphs: chineseGlyphs }));
+  requests.push({ weight: 600, glyphs: navigationChineseGlyphs });
+  const request = Promise.all(requests.map(({ weight, glyphs }) => document.fonts.load(`${weight} 16px "MiSans"`, glyphs).then(faces => {
     if (!faces.length || faces.some(face => face.status !== 'loaded')) throw new Error('The Chinese catalog font is unavailable.');
   }))).then(() => undefined);
   chineseFonts = request;
@@ -157,7 +162,7 @@ function prepareChinese(): Promise<void> {
 
 export function useShowcaseLanguage() {
   // Stored Chinese starts with the stable English page and publishes only once
-  // both actual catalog weights are ready, avoiding a visible fallback swap.
+  // body catalog weights and the actual navigation glyphs are ready.
   const [language, updateLanguage] = useState<ShowcaseLanguage>('en');
   const [requestedLanguage, updateRequested] = useState<ShowcaseLanguage>(readLanguage);
   const [languageStatus, setLanguageStatus] = useState<LanguageStatus>(() => readLanguage() === 'zh-CN' ? 'loading' : 'ready');

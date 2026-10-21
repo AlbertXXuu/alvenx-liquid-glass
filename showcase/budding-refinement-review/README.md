@@ -1,0 +1,11 @@
+# Budding entrance refinement review
+
+Owner request, 2026-10-22: separate the mother and text chamber a little farther, narrow their connection, add room to the right of the label and make the glass look less flat. This isolated review compares the unchanged production BuddingLink with one proposed contour and lighting treatment. It does not change the homepage dependency or library defaults.
+
+Run `npm run dev` and open `/showcase/budding-refinement-review/index.html`. The Vite multi-page build includes this entry. Hosted review target: `https://alvenx.com/ui/budding-refinement-review-20261022/`.
+
+- `geometry.ts` reuses the accepted volume coverage samples and reconstructs a periodic uniform cubic B-spline, retaining C2 joins. At full growth the chamber moves approximately 0.24 mother diameters farther right, and its right contour receives up to 0.12 diameters extra room. The sampled local neck half-height is reduced by up to 16% before spline reconstruction; this is the construction parameter, not a claim of an exact 16% reduction in the final spline's minimum thickness.
+- `main.tsx` preserves the existing LiquidControl optical body and derives its clip, normal map, rim and hit path from that contour. The optional white specular layer and neutral contact shadow derive from the same path. Color comes from the actual backdrop rather than a painted blue/violet fill. These are 2.5D volume cues, not a new 3D renderer. The proposal's label has an additional 0.16-diameter right inset.
+- `review.css` supplies the comparison layout and a homepage-like blue/violet environment. Both examples use the real 54 px mother size; the proposed expanded occupied width is about 194 px versus 175 px. Actual occupied width moves the adjacent GitHub link.
+
+Activate each empty mother with pointer, touch or Enter/Space, then use the revealed native link. Reset restores both examples. The lighting toggle isolates the volume cue. Reduced motion reveals the final state immediately. Review screenshots and browser checks are retained with the navigation-unification publication records; desktop browser testing does not certify physical iOS/Combo Touch behavior or mobile power use. Owner visual acceptance precedes any change to the production homepage.
