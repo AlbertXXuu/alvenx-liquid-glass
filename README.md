@@ -8,7 +8,7 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-**Publication status:** Version 1.3.2 is live at [alvenx.com/ui](https://alvenx.com/ui/) and its tested source/packages are public. [Actual deployment, source identities and online verification](docs/releases/1.3.2/publication.md) supersede the preserved earlier pending checkpoint.
+**Publication status:** Version 1.3.2 is live at [alvenx.com/ui](https://alvenx.com/ui/) and its original tested source/packages remain public. The current [navigation presentation correction](docs/releases/1.3.2/navigation-typography/publication.md) unifies the showcase header with the official homepage; it follows the [original 1.3.2 deployment record](docs/releases/1.3.2/publication.md). Experimental budding refinements remain separate from the production homepage.
 
 Version **1.3.2** brings the horizontal demonstration into the opening view. A compact gradient title and Replay control replace the long introduction and separate first-section heading. Slow budding plays once when the stage first becomes visible in the foreground; Replay then starts another cycle. The showcase defaults to English and offers a dedicated Language selector for a complete Chinese presentation, with MiSans readiness checked before switching. The reusable `MenuToggle` preserves the official site's two-line navigation pattern. See [the 1.3.2 record and validation status](docs/releases/1.3.2/README.md).
 

@@ -1,0 +1,50 @@
+{
+  "url": "https://alvenx.com/ui/",
+  "results": [
+    {
+      "width": 393,
+      "navigation": {
+        "family": "\"Instrument Sans\", MiSans, sans-serif",
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "18.2px"
+      },
+      "language": {
+        "family": "\"Instrument Sans\", MiSans, sans-serif",
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "15.6px"
+      }
+    },
+    {
+      "width": 820,
+      "navigation": {
+        "family": "\"Instrument Sans\", MiSans, sans-serif",
+        "size": "14px",
+        "weight": "500",
+        "lineHeight": "18.2px"
+      },
+      "language": {
+        "family": "\"Instrument Sans\", MiSans, sans-serif",
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "15.6px"
+      }
+    },
+    {
+      "width": 1180,
+      "navigation": {
+        "family": "\"Instrument Sans\", MiSans, sans-serif",
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "15.6px"
+      },
+      "language": {
+        "family": "\"Instrument Sans\", MiSans, sans-serif",
+        "size": "12px",
+        "weight": "500",
+        "lineHeight": "15.6px"
+      }
+    }
+  ]
+}

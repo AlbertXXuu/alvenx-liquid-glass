@@ -1,0 +1,125 @@
+{
+  "observedAtUtc": "2026-10-21T17:53:10.170152Z",
+  "scope": "Read-only header PR44 merged-main exact-SHA CI audit. Budding R4 independent review is excluded. No rerun, cancellation, merge, commit, push, source edit or GitHub mutation.",
+  "allSuccess": true,
+  "completion": {
+    "allRunSuccess": true,
+    "allJobSuccess": true,
+    "allStepSuccess": true,
+    "runCount": 1,
+    "successfulRuns": 1,
+    "jobCount": 1,
+    "successfulJobs": 1,
+    "stepCount": 8,
+    "successfulSteps": 8
+  },
+  "provenance": {
+    "websiteSourceCommit": "4d3b078f5f424d155b5810c5300d5bf2e894739d",
+    "websiteMergeCommit": "7546cc1c4cb0d3977f4a0e9fddf859e25a3d847f",
+    "expectedSourceAndMergeTree": "e8505cef053be657ebf6dbc1080aace1646c5ad9",
+    "actualMergeTree": "e8505cef053be657ebf6dbc1080aace1646c5ad9",
+    "mergeTreeMatchesExpected": true
+  },
+  "runs": [
+    {
+      "repo": "AlbertXXuu/AlvenXWebsite",
+      "id": 39647050601,
+      "url": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39647050601",
+      "branch": "main",
+      "headSha": "7546cc1c4cb0d3977f4a0e9fddf859e25a3d847f",
+      "expectedHeadSha": "7546cc1c4cb0d3977f4a0e9fddf859e25a3d847f",
+      "headMatches": true,
+      "attempt": 1,
+      "event": "push",
+      "workflowPath": ".github/workflows/ci.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-21T17:48:22Z",
+      "updatedAt": "2026-10-21T17:49:50Z",
+      "jobTotalCount": 1,
+      "jobs": [
+        {
+          "id": 119385260298,
+          "name": "quality",
+          "url": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39647050601/job/119385260298",
+          "headSha": "7546cc1c4cb0d3977f4a0e9fddf859e25a3d847f",
+          "status": "completed",
+          "conclusion": "success",
+          "createdAt": "2026-10-21T17:48:23Z",
+          "startedAt": "2026-10-21T17:48:25Z",
+          "completedAt": "2026-10-21T17:49:49Z",
+          "runnerAssigned": true,
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "steps": [
+            {
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:48:26Z",
+              "completedAt": "2026-10-21T17:48:27Z"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:48:27Z",
+              "completedAt": "2026-10-21T17:48:33Z"
+            },
+            {
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:48:33Z",
+              "completedAt": "2026-10-21T17:48:44Z"
+            },
+            {
+              "name": "Run npm ci",
+              "number": 4,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:48:44Z",
+              "completedAt": "2026-10-21T17:49:12Z"
+            },
+            {
+              "name": "Run npm run validate",
+              "number": 5,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:49:12Z",
+              "completedAt": "2026-10-21T17:49:45Z"
+            },
+            {
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 9,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:49:45Z",
+              "completedAt": "2026-10-21T17:49:45Z"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 10,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:49:45Z",
+              "completedAt": "2026-10-21T17:49:46Z"
+            },
+            {
+              "name": "Complete job",
+              "number": 11,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-21T17:49:46Z",
+              "completedAt": "2026-10-21T17:49:46Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

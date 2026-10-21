@@ -1,5 +1,7 @@
 # 1.3.2 — production activation and HTTP verification
 
+> Later presentation follow-up, 2026-10-22: the [navigation correction publication](navigation-typography/publication.md) supersedes this record's current-production source and Worker identity. This original activation and its separate `publication.json` release asset remain unchanged as historical evidence.
+
 **Production 1.3.2 is active and verified.** The public source release and exact tested packages remain unchanged. The homepage retains its independently pinned kit 1.3.0 entrance.
 
 This activation supersedes the deployment-pending checkpoint under `v1.3.2-source-verified` and the historical `source-publication.json` release asset. Their original tags and bytes remain available. The completed deployment and online records are published separately under `v1.3.2-published`.

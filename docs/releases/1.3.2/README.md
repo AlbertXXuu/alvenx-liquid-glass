@@ -1,4 +1,4 @@
-> Production 1.3.2 is deployed and verified. See the actual [publication and online checks](publication.md). The source preparation and earlier pending records remain historical.
+> Production 1.3.2 is deployed and verified. The current [navigation correction and online checks](navigation-typography/publication.md) follow the [original activation](publication.md); the original source, packages and earlier checkpoints remain historical. New budding proposals are independent reviews and do not replace the homepage entrance.
 
 # 1.3.2 — demonstration first, explicit language selection
 

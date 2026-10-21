@@ -1,0 +1,57 @@
+{
+  "recordedAtUtc": "2026-10-21T17:54:21.506569+00:00",
+  "status": "deployed-and-verified",
+  "url": "https://alvenx.com/ui/",
+  "kitVersion": "1.3.2",
+  "presentationRevision": "nav-unified-20261022",
+  "sourceCommit": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+  "sourceTag": "v1.3.2-nav-unified-20261022",
+  "recordsTag": "nav-unified-20261022-published",
+  "website": {
+    "url": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/44",
+    "sourceCommit": "4d3b078f5f424d155b5810c5300d5bf2e894739d",
+    "mergeCommit": "7546cc1c4cb0d3977f4a0e9fddf859e25a3d847f",
+    "sourceAndMergeTree": "e8505cef053be657ebf6dbc1080aace1646c5ad9",
+    "mergedAt": "2026-10-21T17:48:20Z",
+    "sourceCiAudit": "header-ci-audit.json"
+  },
+  "activeDeployment": {
+    "id": "6a18ee8d-9dee-46c2-9508-8e61fadcd8bc",
+    "created_on": "2026-10-21T17:46:26.943808Z",
+    "versions": [
+      {
+        "version_id": "083daf58-2526-4ec0-95fc-2e24e6a09ffb",
+        "percentage": 100
+      }
+    ]
+  },
+  "checks": {
+    "localBrowser": 145,
+    "builtCandidateBrowser": 145,
+    "onlineBrowser": 145,
+    "onlineMatchedResources": 67,
+    "ciRuns": 5,
+    "ciJobs": 5,
+    "ciSteps": 52,
+    "ciAllSuccess": true
+  },
+  "deploymentProcess": {
+    "childExitCode": 1,
+    "timedOut": true,
+    "interrupted": false,
+    "deployedWorkerVersion": "083daf58-2526-4ec0-95fc-2e24e6a09ffb",
+    "apiStatusCounts": {
+      "200": 13,
+      "201": 1,
+      "202": 2
+    },
+    "transportFailureCounts": {}
+  },
+  "deploymentProcessBoundary": "API operations completed and active Worker/served bytes were independently verified; Windows CLI lingered until its five-minute process limit, so no normal CLI exit 0 is claimed.",
+  "homepageKitVersion": "1.3.0 unchanged",
+  "originalSixReleaseAssetsUnchanged": true,
+  "buddingReview": "R1 is historical and unapproved; R3 source is separately tagged review-budding-20261022-r3. The latest owner separation/retraction request is being implemented in an isolated R4 review and is not a production homepage change.",
+  "verificationHelperCorrection": "The first HTTP-helper attempt expected version in homepage metadata; the real schema field is kitVersion. Corrected helper then completed 67 byte matches; product code did not change.",
+  "scope": "Windows Edge/Chromium desktop and viewport emulation; not physical iOS/IME/Combo Touch or whole-page FPS certification",
+  "rights": "All rights reserved / UNLICENSED"
+}
