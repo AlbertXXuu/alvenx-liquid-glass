@@ -1,0 +1,16 @@
+{
+  "observedAtUtc": "2026-10-22T06:00:56.960729+00:00",
+  "method": "Fresh authenticated read-only deployments API through existing system proxy",
+  "websiteSourceCommit": "a89007ebc29c42385fe2b61414039ba44a953590",
+  "websiteMergeCommit": "2fb128fb0046f3076a918608ecb08b3f0898c161",
+  "activeDeployment": {
+    "id": "aeca9c70-fc94-4718-80c2-5c0b550bbfd0",
+    "created_on": "2026-10-22T06:00:50.436898Z",
+    "versions": [
+      {
+        "version_id": "965f4ae3-176d-46ae-88e4-64e0ae70dd96",
+        "percentage": 100
+      }
+    ]
+  }
+}

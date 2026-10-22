@@ -1,0 +1,57 @@
+{
+  "createdAt": "2026-10-22T06:13:38.640883+00:00",
+  "sourceCommit": "fdfeb10b93fc390c8859a2d475c1fba643ce5a81",
+  "candidate": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "baseline": "https://alvenx.com/ui/budding-refinement-review-20261022-r5/",
+  "runs": 12,
+  "recordedPageErrors": 0,
+  "ownedBrowser": "bud-hosted-latency closed; script exited 0",
+  "localHistoricalResults": "unchanged",
+  "runtimeEdits": "none",
+  "files": [
+    {
+      "path": "paired-comparison.cjs",
+      "bytes": 6782,
+      "sha256": "ad7d9aab00fb86e213b0a9c37e905ceddb4890df898d68344b733d4df61fcff6"
+    },
+    {
+      "path": "run-hosted-paired.ps1",
+      "bytes": 1025,
+      "sha256": "2f47b327aaba0e499cb19f963b18b0d50bc53e777de7780db1f3ebc4f495b3bc"
+    },
+    {
+      "path": "summarize-paired.py",
+      "bytes": 5101,
+      "sha256": "32b8e830e26e7fa3f24a8d874eea0b6fc2056c73dfcc6712d59b986fcb0ad359"
+    },
+    {
+      "path": "paired-hosted-cli.txt",
+      "bytes": 58379,
+      "sha256": "c9a1edd8eedaae2a2d3bb60575f0129f859767e119a446adbb2142299a521aa8"
+    },
+    {
+      "path": "paired-hosted-execution.txt",
+      "bytes": 2132,
+      "sha256": "58827a1e94e838ab610d34e1411e882d62a0475e5f594bf2b9e97c30019a6a34"
+    },
+    {
+      "path": "paired-hosted.json",
+      "bytes": 92670,
+      "sha256": "ea1533f4ead74d833a7beab78fc971b27006560a8141cdca2be6ce4a18472072"
+    },
+    {
+      "path": "paired-hosted-summary.json",
+      "bytes": 12436,
+      "sha256": "635a0feaee7bd574b2a8c04c9d64a8c4a9ab4b44f1ed4bda148085101fda9694"
+    }
+  ],
+  "limits": [
+    "N=3 paired samples per version/condition; medians are descriptive for this run.",
+    "R6 exact static material frame is separate from first live material draw and engine readiness.",
+    "First/warm input tests wait for live readiness; pre-main activation is covered by separate startup/gesture tests.",
+    "Double requestAnimationFrame marks a paint opportunity, not GPU completion.",
+    "Fresh HTTP-cache-disabled contexts do not guarantee a cold shared GPU/driver shader cache.",
+    "ResourceTiming encoded/decoded sizes are actual browser-observed body byte counts. They do not identify gzip versus Brotli without response-header evidence; transferSize also includes transport accounting.",
+    "Synthetic CPU/network conditions do not establish physical iPhone/iPad/Safari/Combo Touch latency or power use."
+  ]
+}

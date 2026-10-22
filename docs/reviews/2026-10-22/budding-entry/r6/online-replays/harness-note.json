@@ -1,0 +1,9 @@
+{
+  "scope": "Hosted startup replay adaptation only; no product source change",
+  "initialResult": "Timed out waiting for forced 600 ms pending canvas after page.goto waited for full load",
+  "evidence": "startup-timeout-diagnostic.txt",
+  "observation": "The forced program completed at about 3355 ms; the unrelated analytics resource ended about 3589 ms and monogram request about 3853 ms. The wait began after the deliberate pending window had elapsed.",
+  "correction": "Keep compile completion explicitly gated until the pending-state interaction assertion and screenshot finish; navigate that case at DOMContentLoaded, then release and test the same completion/material assertions.",
+  "unchanged": "All 19 assertions, live product bytes, 10 s active-time timeout and accepted geometry remain unchanged. The failed original callback and diagnostic are retained.",
+  "notPerformanceEvidence": true
+}

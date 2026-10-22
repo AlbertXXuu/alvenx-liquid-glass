@@ -1,0 +1,2711 @@
+{
+  "baseline": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+  "candidate": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+  "createdAt": "2026-10-21T19:35:48.86Z",
+  "protocol": "Three paired samples per condition, order R5/R6, R6/R5, R5/R6. Fresh contexts and HTTP cache disabled. Same own Chromium process. HTTP cold does not guarantee cold GPU/driver shader cache. Accepted static texture timing and live material draw are separate. Double-rAF is a paint opportunity, not GPU completion. First and warm input occur after live optics/material readiness; pre-main activation is covered separately by startup/gesture callbacks.",
+  "results": [
+    {
+      "marks": {
+        "rootDOM": 74.90000000223517,
+        "motherDOM": 74.90000000223517,
+        "opticsReady": 348.1000000014901,
+        "liveMaterialDraw": 348.5,
+        "acceptedFrameSubmitted": 348.5,
+        "acceptedFramePaintOpportunity": 354.20000000298023
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 375.4000000022352,
+          "click": 375.9000000022352,
+          "firstGrowth": 383.70000000298023,
+          "paintOpportunity": 386.6000000014901,
+          "firstMaterial": 399.20000000298023
+        },
+        "warm": {
+          "pointerdown": 3504.10000000149,
+          "click": 3504.400000002235,
+          "firstGrowth": 3511.7000000029802,
+          "paintOpportunity": 3515.5,
+          "firstMaterial": 3532.400000002235
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 136.20000000298023,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 136.20000000298023,
+          "duration": 0.5
+        },
+        {
+          "method": "compileShader",
+          "start": 136.70000000298023,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 136.70000000298023,
+          "duration": 5.899999998509884
+        },
+        {
+          "method": "linkProgram",
+          "start": 142.60000000149012,
+          "duration": 0
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 142.60000000149012,
+          "duration": 191.69999999925494,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 132,
+          "duration": 202
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "live-material-draw",
+      "navigation": {
+        "ttfb": 3.600000001490116,
+        "htmlEnd": 3.900000002235174,
+        "encoded": 1019,
+        "decoded": 1019
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 64
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 124
+        }
+      ],
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "start": 6.700000002980232,
+          "end": 13.800000000745058,
+          "transfer": 18770,
+          "encoded": 18470,
+          "decoded": 52958
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "start": 6.900000002235174,
+          "end": 14.300000000745058,
+          "transfer": 1915,
+          "encoded": 1615,
+          "decoded": 5116
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 6.900000002235174,
+          "end": 14,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "start": 6.900000002235174,
+          "end": 20.200000002980232,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "start": 6.900000002235174,
+          "end": 45.20000000298023,
+          "transfer": 191460,
+          "encoded": 191160,
+          "decoded": 513488
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 71.10000000149012,
+          "end": 71.10000000149012,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 72.5,
+          "end": 72.5,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 74.60000000149012,
+          "end": 79.30000000074506,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 113.80000000074506,
+          "end": 117.20000000298023,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R5",
+      "url": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+      "pair": 1,
+      "scenario": "desktop",
+      "conditions": {
+        "name": "desktop",
+        "width": 1413,
+        "height": 1000,
+        "cpu": 1,
+        "latency": 0,
+        "down": 0
+      },
+      "sequence": 1
+    },
+    {
+      "marks": {
+        "rootDOM": 12.600000001490116,
+        "motherDOM": 12.600000001490116,
+        "acceptedFrameSubmitted": 34.30000000074506,
+        "acceptedFramePaintOpportunity": 74.90000000223517,
+        "opticsReady": 130.19999999925494,
+        "engineReady": 357.1000000014901,
+        "liveMaterialDraw": 357.19999999925494
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 382,
+          "click": 382.5,
+          "firstGrowth": 391.6000000014901,
+          "paintOpportunity": 393.4000000022352,
+          "firstMaterial": 407.5
+        },
+        "warm": {
+          "pointerdown": 3514,
+          "click": 3514.400000002235,
+          "firstGrowth": 3523.10000000149,
+          "paintOpportunity": 3526.699999999255,
+          "firstMaterial": 3540.5
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 125.60000000149012,
+          "duration": 0
+        },
+        {
+          "method": "compileShader",
+          "start": 125.69999999925494,
+          "duration": 0
+        },
+        {
+          "method": "linkProgram",
+          "start": 125.69999999925494,
+          "duration": 0.10000000149011612
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 125.80000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 133.80000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 140.10000000149012,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 156.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 173.40000000223517,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 190,
+          "duration": 0.10000000149011612,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 206.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 223.40000000223517,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 240,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 256.69999999925494,
+          "duration": 0.10000000149011612,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 273.5,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 290.1000000014901,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 306.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 323.4000000022352,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 340,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 356.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 356.69999999925494,
+          "duration": 0,
+          "param": 35714
+        }
+      ],
+      "longtasks": [],
+      "errors": [],
+      "firstAcceptedKind": "exact-static-texture",
+      "navigation": {
+        "ttfb": 5.100000001490116,
+        "htmlEnd": 5.800000000745058,
+        "encoded": 27997,
+        "decoded": 45004
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 68
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 68
+        }
+      ],
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "start": 8.800000000745058,
+          "end": 13.199999999254942,
+          "transfer": 1422,
+          "encoded": 1122,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-5lpX6gCX.js",
+          "type": "script",
+          "start": 8.800000000745058,
+          "end": 20.300000000745058,
+          "transfer": 46282,
+          "encoded": 45982,
+          "decoded": 95970
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "start": 8.900000002235174,
+          "end": 24.600000001490116,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "start": 9,
+          "end": 18.400000002235174,
+          "transfer": 3416,
+          "encoded": 3116,
+          "decoded": 12496
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 9,
+          "end": 17.800000000745058,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "buddingRefinementReview-BqM9WJAW.css",
+          "type": "link",
+          "start": 9.100000001490116,
+          "end": 18.600000001490116,
+          "transfer": 2447,
+          "encoded": 2147,
+          "decoded": 6930
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 33.80000000074506,
+          "end": 37.600000001490116,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 90.60000000149012,
+          "end": 90.60000000149012,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 92.60000000149012,
+          "end": 92.60000000149012,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 101.69999999925494,
+          "end": 105.5,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R6",
+      "url": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+      "pair": 1,
+      "scenario": "desktop",
+      "conditions": {
+        "name": "desktop",
+        "width": 1413,
+        "height": 1000,
+        "cpu": 1,
+        "latency": 0,
+        "down": 0
+      },
+      "sequence": 2
+    },
+    {
+      "marks": {
+        "rootDOM": 15.300000000745058,
+        "motherDOM": 15.400000002235174,
+        "acceptedFrameSubmitted": 39,
+        "acceptedFramePaintOpportunity": 61.100000001490116,
+        "opticsReady": 130,
+        "engineReady": 338.19999999925494,
+        "liveMaterialDraw": 338.19999999925494
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 357.80000000074506,
+          "click": 358.30000000074506,
+          "firstGrowth": 381.5,
+          "paintOpportunity": 384.5,
+          "firstMaterial": 399.1000000014901
+        },
+        "warm": {
+          "pointerdown": 3479.800000000745,
+          "click": 3480.10000000149,
+          "firstGrowth": 3488.300000000745,
+          "paintOpportunity": 3494.199999999255,
+          "firstMaterial": 3504.199999999255
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 126.10000000149012,
+          "duration": 0
+        },
+        {
+          "method": "compileShader",
+          "start": 126.19999999925494,
+          "duration": 0
+        },
+        {
+          "method": "linkProgram",
+          "start": 126.19999999925494,
+          "duration": 0.10000000149011612
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 126.30000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 131.5,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 137.80000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 154.5,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 171,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 187.60000000149012,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 204.40000000223517,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 221,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 237.60000000149012,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 254.40000000223517,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 270.9000000022352,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 287.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 305.1000000014901,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 322.1000000014901,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 337.80000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 337.80000000074506,
+          "duration": 0,
+          "param": 35714
+        }
+      ],
+      "longtasks": [],
+      "errors": [],
+      "firstAcceptedKind": "exact-static-texture",
+      "navigation": {
+        "ttfb": 6.199999999254942,
+        "htmlEnd": 6.600000001490116,
+        "encoded": 27997,
+        "decoded": 45004
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 72
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 72
+        }
+      ],
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "start": 10.699999999254942,
+          "end": 20.699999999254942,
+          "transfer": 1422,
+          "encoded": 1122,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-5lpX6gCX.js",
+          "type": "script",
+          "start": 10.900000002235174,
+          "end": 23.5,
+          "transfer": 46282,
+          "encoded": 45982,
+          "decoded": 95970
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "start": 11,
+          "end": 29.300000000745058,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "start": 11.100000001490116,
+          "end": 21.199999999254942,
+          "transfer": 3416,
+          "encoded": 3116,
+          "decoded": 12496
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 11.100000001490116,
+          "end": 20.900000002235174,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "buddingRefinementReview-BqM9WJAW.css",
+          "type": "link",
+          "start": 11.199999999254942,
+          "end": 22,
+          "transfer": 2447,
+          "encoded": 2147,
+          "decoded": 6930
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 38.600000001490116,
+          "end": 43,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 90.19999999925494,
+          "end": 90.19999999925494,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 91.80000000074506,
+          "end": 91.80000000074506,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 126.90000000223517,
+          "end": 130.80000000074506,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R6",
+      "url": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+      "pair": 2,
+      "scenario": "desktop",
+      "conditions": {
+        "name": "desktop",
+        "width": 1413,
+        "height": 1000,
+        "cpu": 1,
+        "latency": 0,
+        "down": 0
+      },
+      "sequence": 3
+    },
+    {
+      "marks": {
+        "rootDOM": 67.39999999850988,
+        "motherDOM": 67.39999999850988,
+        "opticsReady": 335.80000000074506,
+        "liveMaterialDraw": 336,
+        "acceptedFrameSubmitted": 336,
+        "acceptedFramePaintOpportunity": 341.8999999985099
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 364.19999999925494,
+          "click": 364.69999999925494,
+          "firstGrowth": 372.3999999985099,
+          "paintOpportunity": 375.0999999977648,
+          "firstMaterial": 387.5999999977648
+        },
+        "warm": {
+          "pointerdown": 3495.199999999255,
+          "click": 3495.5,
+          "firstGrowth": 3506.5,
+          "paintOpportunity": 3508.099999997765,
+          "firstMaterial": 3522.199999999255
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 132.5,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 132.5,
+          "duration": 0.5
+        },
+        {
+          "method": "compileShader",
+          "start": 133,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 133,
+          "duration": 6.300000000745058
+        },
+        {
+          "method": "linkProgram",
+          "start": 139.30000000074506,
+          "duration": 0
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 139.30000000074506,
+          "duration": 183.59999999776483,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 128.19999999925494,
+          "duration": 195
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "live-material-draw",
+      "navigation": {
+        "ttfb": 2.099999997764826,
+        "htmlEnd": 2.399999998509884,
+        "encoded": 1019,
+        "decoded": 1019
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 64
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 128
+        }
+      ],
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "start": 5.099999997764826,
+          "end": 10.300000000745058,
+          "transfer": 18770,
+          "encoded": 18470,
+          "decoded": 52958
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "start": 5.199999999254942,
+          "end": 11.300000000745058,
+          "transfer": 1915,
+          "encoded": 1615,
+          "decoded": 5116
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 5.199999999254942,
+          "end": 11,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "start": 5.199999999254942,
+          "end": 17.399999998509884,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "start": 5.199999999254942,
+          "end": 36.80000000074506,
+          "transfer": 191460,
+          "encoded": 191160,
+          "decoded": 513488
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 63.399999998509884,
+          "end": 63.399999998509884,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 64.89999999850988,
+          "end": 64.89999999850988,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 67.09999999776483,
+          "end": 70.89999999850988,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 107.80000000074506,
+          "end": 111,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R5",
+      "url": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+      "pair": 2,
+      "scenario": "desktop",
+      "conditions": {
+        "name": "desktop",
+        "width": 1413,
+        "height": 1000,
+        "cpu": 1,
+        "latency": 0,
+        "down": 0
+      },
+      "sequence": 4
+    },
+    {
+      "marks": {
+        "rootDOM": 73.39999999850988,
+        "motherDOM": 73.39999999850988,
+        "opticsReady": 356.3999999985099,
+        "liveMaterialDraw": 356.69999999925494,
+        "acceptedFrameSubmitted": 356.69999999925494,
+        "acceptedFramePaintOpportunity": 362.1000000014901
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 384.69999999925494,
+          "click": 385.19999999925494,
+          "firstGrowth": 408.19999999925494,
+          "paintOpportunity": 411.30000000074506,
+          "firstMaterial": 426.19999999925494
+        },
+        "warm": {
+          "pointerdown": 3510.10000000149,
+          "click": 3510.39999999851,
+          "firstGrowth": 3517.800000000745,
+          "paintOpportunity": 3521.199999999255,
+          "firstMaterial": 3535.300000000745
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 136,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 136,
+          "duration": 0.30000000074505806
+        },
+        {
+          "method": "compileShader",
+          "start": 136.5,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 136.5,
+          "duration": 3.699999999254942
+        },
+        {
+          "method": "linkProgram",
+          "start": 140.19999999925494,
+          "duration": 0.10000000149011612
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 140.30000000074506,
+          "duration": 203.30000000074506,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 131.5,
+          "duration": 212
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "live-material-draw",
+      "navigation": {
+        "ttfb": 2.600000001490116,
+        "htmlEnd": 2.800000000745058,
+        "encoded": 1019,
+        "decoded": 1019
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 60
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 124
+        }
+      ],
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "start": 6,
+          "end": 11.399999998509884,
+          "transfer": 18770,
+          "encoded": 18470,
+          "decoded": 52958
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "start": 6.100000001490116,
+          "end": 17.300000000745058,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 6.199999999254942,
+          "end": 11.600000001490116,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "start": 6.199999999254942,
+          "end": 39.399999998509884,
+          "transfer": 191460,
+          "encoded": 191160,
+          "decoded": 513488
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "start": 6.300000000745058,
+          "end": 12.100000001490116,
+          "transfer": 1915,
+          "encoded": 1615,
+          "decoded": 5116
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 69.19999999925494,
+          "end": 69.19999999925494,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 70.80000000074506,
+          "end": 70.80000000074506,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 73.19999999925494,
+          "end": 76.89999999850988,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 112.69999999925494,
+          "end": 116.60000000149012,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R5",
+      "url": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+      "pair": 3,
+      "scenario": "desktop",
+      "conditions": {
+        "name": "desktop",
+        "width": 1413,
+        "height": 1000,
+        "cpu": 1,
+        "latency": 0,
+        "down": 0
+      },
+      "sequence": 5
+    },
+    {
+      "marks": {
+        "rootDOM": 13.899999998509884,
+        "motherDOM": 13.899999998509884,
+        "acceptedFrameSubmitted": 34.19999999925494,
+        "acceptedFramePaintOpportunity": 55.899999998509884,
+        "opticsReady": 134.39999999850988,
+        "engineReady": 326.69999999925494,
+        "liveMaterialDraw": 326.69999999925494
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 346.0999999977648,
+          "click": 346.69999999925494,
+          "firstGrowth": 369.0999999977648,
+          "firstMaterial": 369.19999999925494,
+          "paintOpportunity": 372.8999999985099
+        },
+        "warm": {
+          "pointerdown": 3476.099999997765,
+          "click": 3476.699999999255,
+          "firstGrowth": 3499.5,
+          "firstMaterial": 3499.5,
+          "paintOpportunity": 3503.599999997765
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 110.39999999850988,
+          "duration": 0
+        },
+        {
+          "method": "compileShader",
+          "start": 110.5,
+          "duration": 0
+        },
+        {
+          "method": "linkProgram",
+          "start": 110.5,
+          "duration": 0.09999999776482582
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 110.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 129.89999999850988,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 134.69999999925494,
+          "duration": 0.10000000149011612,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 142.89999999850988,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 159.5,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 176.19999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 194.69999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 209.39999999850988,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 226.19999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 242.80000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 259.5,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 276.19999999925494,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 292.69999999925494,
+          "duration": 0.10000000149011612,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 309.3999999985099,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 326.30000000074506,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 326.30000000074506,
+          "duration": 0,
+          "param": 35714
+        }
+      ],
+      "longtasks": [],
+      "errors": [],
+      "firstAcceptedKind": "exact-static-texture",
+      "navigation": {
+        "ttfb": 6.099999997764826,
+        "htmlEnd": 6.599999997764826,
+        "encoded": 27997,
+        "decoded": 45004
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 68
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 68
+        }
+      ],
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "start": 10.199999999254942,
+          "end": 17.599999997764826,
+          "transfer": 1422,
+          "encoded": 1122,
+          "decoded": 3042
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 10.5,
+          "end": 19.300000000745058,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "buddingRefinementReview-5lpX6gCX.js",
+          "type": "script",
+          "start": 10.5,
+          "end": 21.5,
+          "transfer": 46282,
+          "encoded": 45982,
+          "decoded": 95970
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "start": 10.5,
+          "end": 25.5,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "start": 10.599999997764826,
+          "end": 20.199999999254942,
+          "transfer": 3416,
+          "encoded": 3116,
+          "decoded": 12496
+        },
+        {
+          "name": "buddingRefinementReview-BqM9WJAW.css",
+          "type": "link",
+          "start": 10.599999997764826,
+          "end": 20.300000000745058,
+          "transfer": 2447,
+          "encoded": 2147,
+          "decoded": 6930
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 33.80000000074506,
+          "end": 37.30000000074506,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 89.09999999776483,
+          "end": 89.09999999776483,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 90.89999999850988,
+          "end": 90.89999999850988,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 110.89999999850988,
+          "end": 115.09999999776483,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R6",
+      "url": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+      "pair": 3,
+      "scenario": "desktop",
+      "conditions": {
+        "name": "desktop",
+        "width": 1413,
+        "height": 1000,
+        "cpu": 1,
+        "latency": 0,
+        "down": 0
+      },
+      "sequence": 6
+    },
+    {
+      "marks": {
+        "rootDOM": 1993,
+        "motherDOM": 1993,
+        "opticsReady": 2470.599999997765,
+        "liveMaterialDraw": 2471.89999999851,
+        "acceptedFrameSubmitted": 2471.89999999851,
+        "acceptedFramePaintOpportunity": 2484.800000000745
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 2542.300000000745,
+          "click": 2546.800000000745,
+          "firstGrowth": 2622.599999997765,
+          "firstMaterial": 2674.199999999255,
+          "paintOpportunity": 2731.800000000745
+        },
+        "warm": {
+          "pointerdown": 6234.699999999255,
+          "click": 6238.5,
+          "firstGrowth": 6358.300000000745,
+          "firstMaterial": 6400.800000000745,
+          "paintOpportunity": 6427.300000000745
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 2195.300000000745,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 2195.300000000745,
+          "duration": 0.5
+        },
+        {
+          "method": "compileShader",
+          "start": 2196.099999997765,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 2196.099999997765,
+          "duration": 3.900000002235174
+        },
+        {
+          "method": "linkProgram",
+          "start": 2200.099999997765,
+          "duration": 0
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 2200.099999997765,
+          "duration": 180.10000000149012,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 1850.5999999977648,
+          "duration": 60
+        },
+        {
+          "start": 1915.699999999255,
+          "duration": 77
+        },
+        {
+          "start": 2018.800000000745,
+          "duration": 164
+        },
+        {
+          "start": 2189.199999999255,
+          "duration": 193
+        },
+        {
+          "start": 2382.39999999851,
+          "duration": 62
+        },
+        {
+          "start": 2675.199999999255,
+          "duration": 58
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "live-material-draw",
+      "navigation": {
+        "ttfb": 2.800000000745058,
+        "htmlEnd": 160.09999999776483,
+        "encoded": 1019,
+        "decoded": 1019
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 1856
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 2188
+        }
+      ],
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "start": 172.69999999925494,
+          "end": 624.6999999992549,
+          "transfer": 18770,
+          "encoded": 18470,
+          "decoded": 52958
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 173.59999999776483,
+          "end": 347.8999999985099,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "start": 173.59999999776483,
+          "end": 1263.199999999255,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "start": 174,
+          "end": 1817.3999999985099,
+          "transfer": 191460,
+          "encoded": 191160,
+          "decoded": 513488
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "start": 174.30000000074506,
+          "end": 385.0999999977648,
+          "transfer": 1915,
+          "encoded": 1615,
+          "decoded": 5116
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1969.5999999977648,
+          "end": 1969.5999999977648,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1977.300000000745,
+          "end": 1977.300000000745,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 1991.3999999985099,
+          "end": 2597.300000000745,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 2186.599999997765,
+          "end": 2350.89999999851,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R5",
+      "url": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+      "pair": 1,
+      "scenario": "phone-constrained",
+      "conditions": {
+        "name": "phone-constrained",
+        "width": 393,
+        "height": 852,
+        "cpu": 4,
+        "latency": 150,
+        "down": 200000
+      },
+      "sequence": 7
+    },
+    {
+      "marks": {
+        "rootDOM": 185.10000000149012,
+        "motherDOM": 185.10000000149012,
+        "acceptedFrameSubmitted": 265.1000000014901,
+        "acceptedFramePaintOpportunity": 582.3000000007451,
+        "opticsReady": 1528.699999999255,
+        "engineReady": 1654.699999999255,
+        "liveMaterialDraw": 1654.699999999255
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 1724.6000000014901,
+          "click": 1727.199999999255,
+          "firstGrowth": 1816.4000000022352,
+          "firstMaterial": 1859.800000000745,
+          "paintOpportunity": 1882.199999999255
+        },
+        "warm": {
+          "pointerdown": 5290.60000000149,
+          "click": 5291.900000002235,
+          "firstGrowth": 5406,
+          "firstMaterial": 5453.5,
+          "paintOpportunity": 5493.800000000745
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 1442.9000000022352,
+          "duration": 0
+        },
+        {
+          "method": "compileShader",
+          "start": 1443.1000000014901,
+          "duration": 0
+        },
+        {
+          "method": "linkProgram",
+          "start": 1443.5,
+          "duration": 0.4000000022351742
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1444.300000000745,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1509.6000000014901,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1583,
+          "duration": 0.6000000014901161,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1600,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1602.4000000022352,
+          "duration": 0.19999999925494194,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1621.4000000022352,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1635.6000000014901,
+          "duration": 0.19999999925494194,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1652.4000000022352,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1652.4000000022352,
+          "duration": 0.19999999925494194,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 181.10000000149012,
+          "duration": 79
+        },
+        {
+          "start": 485.4000000022352,
+          "duration": 93
+        },
+        {
+          "start": 1332,
+          "duration": 76
+        },
+        {
+          "start": 1444.699999999255,
+          "duration": 67
+        },
+        {
+          "start": 1531.1000000014901,
+          "duration": 50
+        },
+        {
+          "start": 3961,
+          "duration": 50
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "exact-static-texture",
+      "navigation": {
+        "ttfb": 4.5,
+        "htmlEnd": 289.4000000022352,
+        "encoded": 27997,
+        "decoded": 45004
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 588
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 588
+        }
+      ],
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "start": 165.30000000074506,
+          "end": 319.1000000014901,
+          "transfer": 1422,
+          "encoded": 1122,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-5lpX6gCX.js",
+          "type": "script",
+          "start": 166.10000000149012,
+          "end": 919,
+          "transfer": 46282,
+          "encoded": 45982,
+          "decoded": 95970
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "start": 166.30000000074506,
+          "end": 1278.9000000022352,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 167.10000000149012,
+          "end": 341.9000000022352,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "start": 167.40000000223517,
+          "end": 394.1000000014901,
+          "transfer": 3416,
+          "encoded": 3116,
+          "decoded": 12496
+        },
+        {
+          "name": "buddingRefinementReview-BqM9WJAW.css",
+          "type": "link",
+          "start": 167.90000000223517,
+          "end": 483.5,
+          "transfer": 2447,
+          "encoded": 2147,
+          "decoded": 6930
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 488.30000000074506,
+          "end": 1459.800000000745,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1392.4000000022352,
+          "end": 1392.4000000022352,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1400.300000000745,
+          "end": 1400.300000000745,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 1601.300000000745,
+          "end": 1759.300000000745,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R6",
+      "url": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+      "pair": 1,
+      "scenario": "phone-constrained",
+      "conditions": {
+        "name": "phone-constrained",
+        "width": 393,
+        "height": 852,
+        "cpu": 4,
+        "latency": 150,
+        "down": 200000
+      },
+      "sequence": 8
+    },
+    {
+      "marks": {
+        "rootDOM": 195.80000000074506,
+        "motherDOM": 195.80000000074506,
+        "acceptedFrameSubmitted": 275.4000000022352,
+        "acceptedFramePaintOpportunity": 581.1000000014901,
+        "opticsReady": 1550.6000000014901,
+        "engineReady": 1674.800000000745,
+        "liveMaterialDraw": 1674.800000000745
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 1753.4000000022352,
+          "click": 1756.7000000029802,
+          "firstGrowth": 1868.800000000745,
+          "firstMaterial": 1922,
+          "paintOpportunity": 1946.1000000014901
+        },
+        "warm": {
+          "pointerdown": 5363.800000000745,
+          "click": 5364.900000002235,
+          "firstGrowth": 5399.900000002235,
+          "firstMaterial": 5443.20000000298,
+          "paintOpportunity": 5461.20000000298
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 1479.7000000029802,
+          "duration": 0
+        },
+        {
+          "method": "compileShader",
+          "start": 1480.300000000745,
+          "duration": 0
+        },
+        {
+          "method": "linkProgram",
+          "start": 1480.300000000745,
+          "duration": 0.30000000074505806
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1481,
+          "duration": 0.20000000298023224,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1535.800000000745,
+          "duration": 0.19999999925494194,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1594.9000000022352,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1612.9000000022352,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1621.7000000029802,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1638.2000000029802,
+          "duration": 0.09999999776482582,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1655.1000000014901,
+          "duration": 0.19999999925494194,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1672.1000000014901,
+          "duration": 0.10000000149011612,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1672.2000000029802,
+          "duration": 0,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 191.10000000149012,
+          "duration": 78
+        },
+        {
+          "start": 484.1000000014901,
+          "duration": 95
+        },
+        {
+          "start": 1302.4000000022352,
+          "duration": 52
+        },
+        {
+          "start": 1358.2000000029802,
+          "duration": 85
+        },
+        {
+          "start": 1481.4000000022352,
+          "duration": 56
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "exact-static-texture",
+      "navigation": {
+        "ttfb": 3.900000002235174,
+        "htmlEnd": 294.80000000074506,
+        "encoded": 27997,
+        "decoded": 45004
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 588
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 588
+        }
+      ],
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "start": 174.5,
+          "end": 332,
+          "transfer": 1422,
+          "encoded": 1122,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-5lpX6gCX.js",
+          "type": "script",
+          "start": 175.40000000223517,
+          "end": 940.1000000014901,
+          "transfer": 46282,
+          "encoded": 45982,
+          "decoded": 95970
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "start": 175.60000000149012,
+          "end": 1299.1000000014901,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 175.80000000074506,
+          "end": 354.30000000074506,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "start": 176.20000000298023,
+          "end": 406.70000000298023,
+          "transfer": 3416,
+          "encoded": 3116,
+          "decoded": 12496
+        },
+        {
+          "name": "buddingRefinementReview-BqM9WJAW.css",
+          "type": "link",
+          "start": 176.60000000149012,
+          "end": 482.1000000014901,
+          "transfer": 2447,
+          "encoded": 2147,
+          "decoded": 6930
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 486.30000000074506,
+          "end": 1472.2000000029802,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1425.800000000745,
+          "end": 1425.800000000745,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1434.2000000029802,
+          "end": 1434.2000000029802,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 1614.300000000745,
+          "end": 1771.6000000014901,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R6",
+      "url": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+      "pair": 2,
+      "scenario": "phone-constrained",
+      "conditions": {
+        "name": "phone-constrained",
+        "width": 393,
+        "height": 852,
+        "cpu": 4,
+        "latency": 150,
+        "down": 200000
+      },
+      "sequence": 9
+    },
+    {
+      "marks": {
+        "rootDOM": 1973.699999999255,
+        "motherDOM": 1973.699999999255,
+        "opticsReady": 2458.10000000149,
+        "liveMaterialDraw": 2459.60000000149,
+        "acceptedFrameSubmitted": 2459.60000000149,
+        "acceptedFramePaintOpportunity": 2492.699999999255
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 2553.89999999851,
+          "click": 2557.300000000745,
+          "firstGrowth": 2594.5,
+          "firstMaterial": 2644.300000000745,
+          "paintOpportunity": 2702.199999999255
+        },
+        "warm": {
+          "pointerdown": 6495.199999999255,
+          "click": 6497,
+          "firstGrowth": 6619.89999999851,
+          "firstMaterial": 6656.800000000745,
+          "paintOpportunity": 6681
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 2229.39999999851,
+          "duration": 0.20000000298023224
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 2229.60000000149,
+          "duration": 0.3999999985098839
+        },
+        {
+          "method": "compileShader",
+          "start": 2230.39999999851,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 2230.39999999851,
+          "duration": 3.7000000029802322
+        },
+        {
+          "method": "linkProgram",
+          "start": 2234.199999999255,
+          "duration": 0
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 2234.199999999255,
+          "duration": 194.40000000223517,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 1838.6000000014901,
+          "duration": 57
+        },
+        {
+          "start": 1900.300000000745,
+          "duration": 73
+        },
+        {
+          "start": 1996.300000000745,
+          "duration": 162
+        },
+        {
+          "start": 2163.60000000149,
+          "duration": 59
+        },
+        {
+          "start": 2223.10000000149,
+          "duration": 207
+        },
+        {
+          "start": 2645.60000000149,
+          "duration": 58
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "live-material-draw",
+      "navigation": {
+        "ttfb": 2.300000000745058,
+        "htmlEnd": 155.69999999925494,
+        "encoded": 1019,
+        "decoded": 1019
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 1844
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 2168
+        }
+      ],
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "start": 167.5,
+          "end": 612,
+          "transfer": 18770,
+          "encoded": 18470,
+          "decoded": 52958
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "start": 168.30000000074506,
+          "end": 1250.1000000014901,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 169.10000000149012,
+          "end": 327.3999999985099,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "start": 169.60000000149012,
+          "end": 1806,
+          "transfer": 191460,
+          "encoded": 191160,
+          "decoded": 513488
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "start": 170,
+          "end": 387.19999999925494,
+          "transfer": 1915,
+          "encoded": 1615,
+          "decoded": 5116
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1950.699999999255,
+          "end": 1950.699999999255,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1959.6000000014901,
+          "end": 1959.6000000014901,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 1971.699999999255,
+          "end": 2578.800000000745,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 2160.800000000745,
+          "end": 2322.89999999851,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R5",
+      "url": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+      "pair": 2,
+      "scenario": "phone-constrained",
+      "conditions": {
+        "name": "phone-constrained",
+        "width": 393,
+        "height": 852,
+        "cpu": 4,
+        "latency": 150,
+        "down": 200000
+      },
+      "sequence": 10
+    },
+    {
+      "marks": {
+        "rootDOM": 1985,
+        "motherDOM": 1985,
+        "opticsReady": 2438.60000000149,
+        "liveMaterialDraw": 2440.10000000149,
+        "acceptedFrameSubmitted": 2440.199999999255,
+        "acceptedFramePaintOpportunity": 2455.699999999255
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 2524.10000000149,
+          "click": 2527.199999999255,
+          "firstGrowth": 2611.39999999851,
+          "firstMaterial": 2660.800000000745,
+          "paintOpportunity": 2722.199999999255
+        },
+        "warm": {
+          "pointerdown": 6412.39999999851,
+          "click": 6414,
+          "firstGrowth": 6524.5,
+          "firstMaterial": 6562,
+          "paintOpportunity": 6585.5
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 2183.89999999851,
+          "duration": 0.20000000298023224
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 2184.10000000149,
+          "duration": 0.5
+        },
+        {
+          "method": "compileShader",
+          "start": 2184.800000000745,
+          "duration": 0
+        },
+        {
+          "method": "getShaderParameter",
+          "start": 2184.800000000745,
+          "duration": 3.599999997764826
+        },
+        {
+          "method": "linkProgram",
+          "start": 2188.39999999851,
+          "duration": 0
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 2188.39999999851,
+          "duration": 162.30000000074506,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 1847.199999999255,
+          "duration": 59
+        },
+        {
+          "start": 1911.6000000014901,
+          "duration": 73
+        },
+        {
+          "start": 2009.1000000014901,
+          "duration": 164
+        },
+        {
+          "start": 2178.60000000149,
+          "duration": 174
+        },
+        {
+          "start": 2352.60000000149,
+          "duration": 60
+        },
+        {
+          "start": 2662,
+          "duration": 62
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "live-material-draw",
+      "navigation": {
+        "ttfb": 2.800000000745058,
+        "htmlEnd": 154.60000000149012,
+        "encoded": 1019,
+        "decoded": 1019
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 1848
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 2180
+        }
+      ],
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "start": 168.19999999925494,
+          "end": 620.6000000014901,
+          "transfer": 18770,
+          "encoded": 18470,
+          "decoded": 52958
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "start": 168.69999999925494,
+          "end": 1257.199999999255,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 169.19999999925494,
+          "end": 342,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "start": 169.39999999850988,
+          "end": 1812.3999999985099,
+          "transfer": 191460,
+          "encoded": 191160,
+          "decoded": 513488
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "start": 169.5,
+          "end": 379.3999999985099,
+          "transfer": 1915,
+          "encoded": 1615,
+          "decoded": 5116
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1963.300000000745,
+          "end": 1963.300000000745,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1971.199999999255,
+          "end": 1971.199999999255,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 1983.1000000014901,
+          "end": 2591.300000000745,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 2175.800000000745,
+          "end": 2336.5,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R5",
+      "url": "http://127.0.0.1:5195/ui/releases/budding-review-20261022-r5/showcase/budding-refinement-review/index.html",
+      "pair": 3,
+      "scenario": "phone-constrained",
+      "conditions": {
+        "name": "phone-constrained",
+        "width": 393,
+        "height": 852,
+        "cpu": 4,
+        "latency": 150,
+        "down": 200000
+      },
+      "sequence": 11
+    },
+    {
+      "marks": {
+        "rootDOM": 183.80000000074506,
+        "motherDOM": 183.80000000074506,
+        "acceptedFrameSubmitted": 256.1000000014901,
+        "acceptedFramePaintOpportunity": 501.8999999985099,
+        "opticsReady": 1620.8999999985099,
+        "engineReady": 1817.6000000014901,
+        "liveMaterialDraw": 1817.6000000014901
+      },
+      "clicks": {
+        "first": {
+          "pointerdown": 1896.699999999255,
+          "click": 1900.800000000745,
+          "firstGrowth": 2019.300000000745,
+          "firstMaterial": 2067,
+          "paintOpportunity": 2099.5
+        },
+        "warm": {
+          "pointerdown": 5630.300000000745,
+          "click": 5631.60000000149,
+          "firstGrowth": 5759.800000000745,
+          "firstMaterial": 5803.300000000745,
+          "paintOpportunity": 5832.199999999255
+        }
+      },
+      "phase": "warm",
+      "gl": [
+        {
+          "method": "compileShader",
+          "start": 1603.800000000745,
+          "duration": 0.09999999776482582
+        },
+        {
+          "method": "compileShader",
+          "start": 1604.300000000745,
+          "duration": 0
+        },
+        {
+          "method": "linkProgram",
+          "start": 1604.3999999985099,
+          "duration": 0.30000000074505806
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1604.8999999985099,
+          "duration": 0.20000000298023224,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1641.5,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1649.300000000745,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1665.3999999985099,
+          "duration": 0.20000000298023224,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1682.199999999255,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1698.8999999985099,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1715.699999999255,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1732,
+          "duration": 0.10000000149011612,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1748.699999999255,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1765.800000000745,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1782.1000000014901,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1798.699999999255,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1815.3999999985099,
+          "duration": 0,
+          "param": 37297
+        },
+        {
+          "method": "getProgramParameter",
+          "start": 1815.5,
+          "duration": 0,
+          "param": 35714
+        }
+      ],
+      "longtasks": [
+        {
+          "start": 180.10000000149012,
+          "duration": 71
+        },
+        {
+          "start": 399.1000000014901,
+          "duration": 99
+        },
+        {
+          "start": 1381.5,
+          "duration": 86
+        },
+        {
+          "start": 1497.800000000745,
+          "duration": 58
+        }
+      ],
+      "errors": [],
+      "firstAcceptedKind": "exact-static-texture",
+      "navigation": {
+        "ttfb": 3.300000000745058,
+        "htmlEnd": 291,
+        "encoded": 27997,
+        "decoded": 45004
+      },
+      "paints": [
+        {
+          "name": "first-paint",
+          "start": 508
+        },
+        {
+          "name": "first-contentful-paint",
+          "start": 508
+        }
+      ],
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "start": 165.89999999850988,
+          "end": 320.1000000014901,
+          "transfer": 1422,
+          "encoded": 1122,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-5lpX6gCX.js",
+          "type": "script",
+          "start": 166.69999999925494,
+          "end": 958.1999999992549,
+          "transfer": 46282,
+          "encoded": 45982,
+          "decoded": 95970
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "start": 167,
+          "end": 1324.8999999985099,
+          "transfer": 81270,
+          "encoded": 80970,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "start": 167.19999999925494,
+          "end": 463.1000000014901,
+          "transfer": 1141,
+          "encoded": 841,
+          "decoded": 1619
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "start": 167.30000000074506,
+          "end": 396.69999999925494,
+          "transfer": 3416,
+          "encoded": 3116,
+          "decoded": 12496
+        },
+        {
+          "name": "buddingRefinementReview-BqM9WJAW.css",
+          "type": "link",
+          "start": 167.69999999925494,
+          "end": 380.80000000074506,
+          "transfer": 2447,
+          "encoded": 2147,
+          "decoded": 6930
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "start": 401.30000000074506,
+          "end": 1461,
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1449.800000000745,
+          "end": 1449.800000000745,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "",
+          "type": "other",
+          "start": 1458.8999999985099,
+          "end": 1458.8999999985099,
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "start": 1644.5,
+          "end": 1798.5,
+          "transfer": 1084,
+          "encoded": 784,
+          "decoded": 1643
+        }
+      ],
+      "version": "R6",
+      "url": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+      "pair": 3,
+      "scenario": "phone-constrained",
+      "conditions": {
+        "name": "phone-constrained",
+        "width": 393,
+        "height": 852,
+        "cpu": 4,
+        "latency": 150,
+        "down": 200000
+      },
+      "sequence": 12
+    }
+  ]
+}

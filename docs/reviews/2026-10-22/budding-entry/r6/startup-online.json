@@ -1,0 +1,1177 @@
+{
+  "base": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "createdAt": "2026-10-22T06:08:44.753Z",
+  "passed": 19,
+  "total": 19,
+  "checks": [
+    {
+      "name": "320: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 25,
+          "y": 733.484375,
+          "width": 56,
+          "height": 73.59375,
+          "top": 733.484375,
+          "right": 81,
+          "bottom": 807.078125,
+          "left": 25
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 25,
+          "y": 733.484375,
+          "width": 56,
+          "height": 73.59375,
+          "top": 733.484375,
+          "right": 81,
+          "bottom": 807.078125,
+          "left": 25
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 37,
+          "y": 615.125,
+          "width": 66,
+          "height": 87.59375,
+          "top": 615.125,
+          "right": 103,
+          "bottom": 702.71875,
+          "left": 37
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 37,
+          "y": 615.125,
+          "width": 66,
+          "height": 87.59375,
+          "top": 615.125,
+          "right": 103,
+          "bottom": 702.71875,
+          "left": 37
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 362.921875,
+          "y": 532.65625,
+          "width": 66,
+          "height": 87.59375,
+          "top": 532.65625,
+          "right": 428.921875,
+          "bottom": 620.25,
+          "left": 362.921875
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 362.921875,
+          "y": 532.65625,
+          "width": 66,
+          "height": 87.59375,
+          "top": 532.65625,
+          "right": 428.921875,
+          "bottom": 620.25,
+          "left": 362.921875
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "hydrated pending circle has one native action",
+      "pass": true,
+      "detail": {
+        "buttons": 1,
+        "anchors": 0
+      }
+    },
+    {
+      "name": "Space starts real growth while compile remains pending",
+      "pass": true,
+      "detail": {
+        "at": 2673.1999999955297,
+        "preparation": "pending"
+      }
+    },
+    {
+      "name": "all reflection and draws wait for parallel completion",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "pending growth blends matching live material",
+      "pass": true,
+      "detail": {
+        "volumePreparation": "ready",
+        "volumePreparationMode": "parallel",
+        "volumeReveal": "blend",
+        "volumeLightRenders": "45",
+        "volumeLightComputeMs": "0.000",
+        "volumeLightMeanMs": "0.149",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "name": "hidden wall time does not consume foreground preparation budget",
+      "pass": true
+    },
+    {
+      "name": "never-completing driver reaches bounded failure and releases program",
+      "pass": true,
+      "detail": {
+        "before": 42,
+        "after": 42,
+        "deletes": 1
+      }
+    },
+    {
+      "name": "failed shader preserves native interaction",
+      "pass": true
+    },
+    {
+      "name": "program completed across 11s hidden interval becomes ready on return",
+      "pass": true,
+      "detail": {
+        "calls": [
+          {
+            "type": "completion",
+            "at": 1839
+          },
+          {
+            "type": "completion",
+            "at": 1858
+          },
+          {
+            "type": "completion",
+            "at": 1874
+          },
+          {
+            "type": "completion",
+            "at": 1888
+          },
+          {
+            "type": "completion",
+            "at": 1905
+          },
+          {
+            "type": "completion",
+            "at": 1922
+          },
+          {
+            "type": "completion",
+            "at": 1937
+          },
+          {
+            "type": "completion",
+            "at": 1953
+          },
+          {
+            "type": "completion",
+            "at": 1968
+          },
+          {
+            "type": "completion",
+            "at": 1986
+          },
+          {
+            "type": "completion",
+            "at": 2000
+          },
+          {
+            "type": "completion",
+            "at": 2017
+          },
+          {
+            "type": "completion",
+            "at": 2033
+          },
+          {
+            "type": "completion",
+            "at": 2065
+          },
+          {
+            "type": "completion",
+            "at": 2083
+          },
+          {
+            "type": "completion",
+            "at": 2113
+          },
+          {
+            "type": "completion",
+            "at": 2128
+          },
+          {
+            "type": "completion",
+            "at": 2144
+          },
+          {
+            "type": "completion",
+            "at": 2161
+          },
+          {
+            "type": "completion",
+            "at": 2177
+          },
+          {
+            "type": "completion",
+            "at": 2192
+          },
+          {
+            "type": "completion",
+            "at": 2209
+          },
+          {
+            "type": "completion",
+            "at": 2225
+          },
+          {
+            "type": "completion",
+            "at": 2240
+          },
+          {
+            "type": "completion",
+            "at": 2258
+          },
+          {
+            "type": "completion",
+            "at": 2274
+          },
+          {
+            "type": "completion",
+            "at": 2288
+          },
+          {
+            "type": "completion",
+            "at": 2304
+          },
+          {
+            "type": "completion",
+            "at": 2321
+          },
+          {
+            "type": "completion",
+            "at": 2337
+          },
+          {
+            "type": "completion",
+            "at": 2354
+          },
+          {
+            "type": "completion",
+            "at": 2368
+          },
+          {
+            "type": "completion",
+            "at": 2385
+          },
+          {
+            "type": "completion",
+            "at": 2400
+          },
+          {
+            "type": "completion",
+            "at": 2433
+          },
+          {
+            "type": "completion",
+            "at": 2464
+          },
+          {
+            "type": "completion",
+            "at": 13697
+          },
+          {
+            "type": "completion",
+            "at": 13713
+          },
+          {
+            "type": "completion",
+            "at": 13728
+          },
+          {
+            "type": "completion",
+            "at": 13745
+          },
+          {
+            "type": "completion",
+            "at": 13761
+          },
+          {
+            "type": "completion",
+            "at": 13776
+          },
+          {
+            "type": "completion",
+            "at": 13793
+          },
+          {
+            "type": "completion",
+            "at": 13810
+          },
+          {
+            "type": "completion",
+            "at": 13826
+          },
+          {
+            "type": "completion",
+            "at": 13841
+          },
+          {
+            "type": "linkStatus",
+            "at": 13841,
+            "duration": 0,
+            "painted": false
+          }
+        ],
+        "violations": [],
+        "deletes": 0
+      }
+    },
+    {
+      "name": "no-KHR keeps accepted live renderer after first observed paint",
+      "pass": true,
+      "detail": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.100",
+          "volumeLightMeanMs": "0.100",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "accepted-reference-potential",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "calls": [
+          {
+            "type": "linkStatus",
+            "at": 1818.3999999985099,
+            "duration": 143.5,
+            "painted": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "pre-main native activation retains intent",
+      "pass": true
+    },
+    {
+      "name": "queued activation is consumed and early handlers removed",
+      "pass": true
+    },
+    {
+      "name": "focused first frame hands focus to the single native button",
+      "pass": true
+    },
+    {
+      "name": "main resource failure restores native link without dead interception",
+      "pass": true
+    }
+  ],
+  "metrics": [
+    {
+      "width": 320,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 25,
+          "y": 733.484375,
+          "width": 56,
+          "height": 73.59375,
+          "top": 733.484375,
+          "right": 81,
+          "bottom": 807.078125,
+          "left": 25
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 393,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 37,
+          "y": 615.125,
+          "width": 66,
+          "height": 87.59375,
+          "top": 615.125,
+          "right": 103,
+          "bottom": 702.71875,
+          "left": 37
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1413,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 362.921875,
+          "y": 532.65625,
+          "width": 66,
+          "height": 87.59375,
+          "top": 532.65625,
+          "right": 428.921875,
+          "bottom": 620.25,
+          "left": 362.921875
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "forcedPending": {
+        "first": {
+          "at": 2673.1999999955297,
+          "preparation": "pending"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 2055.6999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2072
+            },
+            {
+              "type": "completion",
+              "at": 2074.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2087.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2102.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2119
+            },
+            {
+              "type": "completion",
+              "at": 2135.6999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2152.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 2169
+            },
+            {
+              "type": "completion",
+              "at": 2185.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 2202.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 2219.0999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2237.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2252.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2269
+            },
+            {
+              "type": "completion",
+              "at": 2286.1999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2302.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2319.1999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2335.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2352.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 2369.1999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2385.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 2402.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2419.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2435.7999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2452.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2469
+            },
+            {
+              "type": "completion",
+              "at": 2485.6999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2502.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2519
+            },
+            {
+              "type": "completion",
+              "at": 2535.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2553.7999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2569
+            },
+            {
+              "type": "completion",
+              "at": 2585.6999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2603.0999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2618.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 2637.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 2652.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2669.1999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2691.7999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2706.7999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2723.5
+            },
+            {
+              "type": "completion",
+              "at": 2740.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2756.5
+            },
+            {
+              "type": "completion",
+              "at": 2774
+            },
+            {
+              "type": "completion",
+              "at": 2790.5
+            },
+            {
+              "type": "completion",
+              "at": 2807.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2824
+            },
+            {
+              "type": "completion",
+              "at": 2840.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2857.5999999940395
+            },
+            {
+              "type": "completion",
+              "at": 2874.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 2892
+            },
+            {
+              "type": "completion",
+              "at": 2907.6999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2924.1999999955297
+            },
+            {
+              "type": "completion",
+              "at": 2940.2999999970198
+            },
+            {
+              "type": "completion",
+              "at": 2958
+            },
+            {
+              "type": "completion",
+              "at": 2973.5
+            },
+            {
+              "type": "linkStatus",
+              "at": 2973.5,
+              "duration": 0,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "parallel",
+          "volumeReveal": "blend",
+          "volumeLightRenders": "45",
+          "volumeLightComputeMs": "0.000",
+          "volumeLightMeanMs": "0.149",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "accepted-reference-potential",
+          "materialSource": "src/volume-renderer.js"
+        }
+      }
+    },
+    {
+      "never": {
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 1883
+            },
+            {
+              "type": "completion",
+              "at": 1906
+            },
+            {
+              "type": "completion",
+              "at": 1920
+            },
+            {
+              "type": "completion",
+              "at": 1937
+            },
+            {
+              "type": "completion",
+              "at": 1952
+            },
+            {
+              "type": "completion",
+              "at": 1968
+            },
+            {
+              "type": "completion",
+              "at": 1985
+            },
+            {
+              "type": "completion",
+              "at": 2001
+            },
+            {
+              "type": "completion",
+              "at": 2017
+            },
+            {
+              "type": "completion",
+              "at": 2032
+            },
+            {
+              "type": "completion",
+              "at": 2048
+            },
+            {
+              "type": "completion",
+              "at": 2065
+            },
+            {
+              "type": "completion",
+              "at": 2081
+            },
+            {
+              "type": "completion",
+              "at": 2097
+            },
+            {
+              "type": "completion",
+              "at": 2113
+            },
+            {
+              "type": "completion",
+              "at": 2128
+            },
+            {
+              "type": "completion",
+              "at": 2145
+            },
+            {
+              "type": "completion",
+              "at": 2161
+            },
+            {
+              "type": "completion",
+              "at": 2177
+            },
+            {
+              "type": "completion",
+              "at": 2209
+            },
+            {
+              "type": "completion",
+              "at": 2224
+            },
+            {
+              "type": "completion",
+              "at": 2241
+            },
+            {
+              "type": "completion",
+              "at": 2258
+            },
+            {
+              "type": "completion",
+              "at": 2273
+            },
+            {
+              "type": "completion",
+              "at": 2288
+            },
+            {
+              "type": "completion",
+              "at": 2305
+            },
+            {
+              "type": "completion",
+              "at": 2321
+            },
+            {
+              "type": "completion",
+              "at": 2337
+            },
+            {
+              "type": "completion",
+              "at": 2353
+            },
+            {
+              "type": "completion",
+              "at": 2370
+            },
+            {
+              "type": "completion",
+              "at": 2386
+            },
+            {
+              "type": "completion",
+              "at": 2401
+            },
+            {
+              "type": "completion",
+              "at": 2418
+            },
+            {
+              "type": "completion",
+              "at": 2433
+            },
+            {
+              "type": "completion",
+              "at": 2449
+            },
+            {
+              "type": "completion",
+              "at": 2465
+            },
+            {
+              "type": "completion",
+              "at": 2480
+            },
+            {
+              "type": "completion",
+              "at": 2497
+            },
+            {
+              "type": "completion",
+              "at": 2513
+            },
+            {
+              "type": "completion",
+              "at": 2528
+            },
+            {
+              "type": "completion",
+              "at": 2548
+            },
+            {
+              "type": "completion",
+              "at": 23650
+            }
+          ],
+          "violations": [],
+          "deletes": 1
+        }
+      }
+    },
+    {
+      "hiddenResume": {
+        "simulatedHiddenMs": 11000,
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 1839
+            },
+            {
+              "type": "completion",
+              "at": 1858
+            },
+            {
+              "type": "completion",
+              "at": 1874
+            },
+            {
+              "type": "completion",
+              "at": 1888
+            },
+            {
+              "type": "completion",
+              "at": 1905
+            },
+            {
+              "type": "completion",
+              "at": 1922
+            },
+            {
+              "type": "completion",
+              "at": 1937
+            },
+            {
+              "type": "completion",
+              "at": 1953
+            },
+            {
+              "type": "completion",
+              "at": 1968
+            },
+            {
+              "type": "completion",
+              "at": 1986
+            },
+            {
+              "type": "completion",
+              "at": 2000
+            },
+            {
+              "type": "completion",
+              "at": 2017
+            },
+            {
+              "type": "completion",
+              "at": 2033
+            },
+            {
+              "type": "completion",
+              "at": 2065
+            },
+            {
+              "type": "completion",
+              "at": 2083
+            },
+            {
+              "type": "completion",
+              "at": 2113
+            },
+            {
+              "type": "completion",
+              "at": 2128
+            },
+            {
+              "type": "completion",
+              "at": 2144
+            },
+            {
+              "type": "completion",
+              "at": 2161
+            },
+            {
+              "type": "completion",
+              "at": 2177
+            },
+            {
+              "type": "completion",
+              "at": 2192
+            },
+            {
+              "type": "completion",
+              "at": 2209
+            },
+            {
+              "type": "completion",
+              "at": 2225
+            },
+            {
+              "type": "completion",
+              "at": 2240
+            },
+            {
+              "type": "completion",
+              "at": 2258
+            },
+            {
+              "type": "completion",
+              "at": 2274
+            },
+            {
+              "type": "completion",
+              "at": 2288
+            },
+            {
+              "type": "completion",
+              "at": 2304
+            },
+            {
+              "type": "completion",
+              "at": 2321
+            },
+            {
+              "type": "completion",
+              "at": 2337
+            },
+            {
+              "type": "completion",
+              "at": 2354
+            },
+            {
+              "type": "completion",
+              "at": 2368
+            },
+            {
+              "type": "completion",
+              "at": 2385
+            },
+            {
+              "type": "completion",
+              "at": 2400
+            },
+            {
+              "type": "completion",
+              "at": 2433
+            },
+            {
+              "type": "completion",
+              "at": 2464
+            },
+            {
+              "type": "completion",
+              "at": 13697
+            },
+            {
+              "type": "completion",
+              "at": 13713
+            },
+            {
+              "type": "completion",
+              "at": 13728
+            },
+            {
+              "type": "completion",
+              "at": 13745
+            },
+            {
+              "type": "completion",
+              "at": 13761
+            },
+            {
+              "type": "completion",
+              "at": 13776
+            },
+            {
+              "type": "completion",
+              "at": 13793
+            },
+            {
+              "type": "completion",
+              "at": 13810
+            },
+            {
+              "type": "completion",
+              "at": 13826
+            },
+            {
+              "type": "completion",
+              "at": 13841
+            },
+            {
+              "type": "linkStatus",
+              "at": 13841,
+              "duration": 0,
+              "painted": false
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "boundary": "Controlled document.hidden visibility event and browser clock; not physical OS background behavior."
+      }
+    },
+    {
+      "noKHR": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.100",
+          "volumeLightMeanMs": "0.100",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "accepted-reference-potential",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "linkStatus",
+              "at": 1818.3999999985099,
+              "duration": 143.5,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        }
+      }
+    },
+    {
+      "preMain": {
+        "activation": 2046,
+        "mainReleased": 2248.7999999970198,
+        "firstGrowth": 2625.89999999851,
+        "artificialModuleHoldMs": 200,
+        "boundary": "Native link exists before main; after early controller loads, activation waits for the deliberately held main module. This does not measure zero-delay physics."
+      }
+    }
+  ],
+  "boundary": "No-JS first frame is exact static R5 texture over native backdrop. Pre-main activation is queued only after the tiny controller loads; no-JS/error retains a genuine destination link. Pending real growth uses native C2 optics until accepted GL can blend in; its temporary lower volume is retained in screenshots. No claim of zero network latency."
+}

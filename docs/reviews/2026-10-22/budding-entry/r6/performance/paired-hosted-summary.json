@@ -1,0 +1,411 @@
+{
+  "createdAt": "2026-10-22T06:13:07.701492+00:00",
+  "measurementCompletedAt": "2026-10-22T06:13:07.022Z",
+  "baseline": "https://alvenx.com/ui/budding-refinement-review-20261022-r5/",
+  "candidate": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "protocol": "Three paired samples per condition, order R5/R6, R6/R5, R5/R6. Fresh contexts and HTTP cache disabled. Same own Chromium process. HTTP cold does not guarantee cold GPU/driver shader cache. Accepted static texture timing and live material draw are separate. Double-rAF is a paint opportunity, not GPU completion. First and warm input occur after live optics/material readiness; pre-main activation is covered separately by startup/gesture callbacks.",
+  "summary": [
+    {
+      "scenario": "desktop",
+      "version": "R5",
+      "n": 3,
+      "fcpMs": 2048,
+      "acceptedFramePaintOpportunityMs": 2212.5,
+      "acceptedFrameKind": "live-material-draw",
+      "liveMaterialDrawMs": 2205.9,
+      "firstReadyInputToGrowthMs": 8.9,
+      "firstReadyInputToMaterialMs": 38.4,
+      "warmInputToGrowthMs": 17.3,
+      "linkStatusBlockingMs": 136,
+      "allStatusQueryMs": 136,
+      "maxLongTaskMs": 143
+    },
+    {
+      "scenario": "desktop",
+      "version": "R6",
+      "n": 3,
+      "fcpMs": 1808,
+      "acceptedFramePaintOpportunityMs": 1796.4,
+      "acceptedFrameKind": "exact-static-texture",
+      "liveMaterialDrawMs": 1989.7,
+      "firstReadyInputToGrowthMs": 11.5,
+      "firstReadyInputToMaterialMs": 23.4,
+      "warmInputToGrowthMs": 11.2,
+      "linkStatusBlockingMs": 0,
+      "allStatusQueryMs": 0.1,
+      "maxLongTaskMs": 0
+    },
+    {
+      "scenario": "phone-constrained",
+      "version": "R5",
+      "n": 3,
+      "fcpMs": 2804,
+      "acceptedFramePaintOpportunityMs": 3415.7,
+      "acceptedFrameKind": "live-material-draw",
+      "liveMaterialDrawMs": 3356.9,
+      "firstReadyInputToGrowthMs": 460.2,
+      "firstReadyInputToMaterialMs": 607.7,
+      "warmInputToGrowthMs": 113.3,
+      "linkStatusBlockingMs": 147.6,
+      "allStatusQueryMs": 147.6,
+      "maxLongTaskMs": 556
+    },
+    {
+      "scenario": "phone-constrained",
+      "version": "R6",
+      "n": 3,
+      "fcpMs": 1972,
+      "acceptedFramePaintOpportunityMs": 1965.5,
+      "acceptedFrameKind": "exact-static-texture",
+      "liveMaterialDrawMs": 2603,
+      "firstReadyInputToGrowthMs": 119.4,
+      "firstReadyInputToMaterialMs": 166.2,
+      "warmInputToGrowthMs": 76.4,
+      "linkStatusBlockingMs": 0,
+      "allStatusQueryMs": 0.5,
+      "maxLongTaskMs": 422
+    }
+  ],
+  "actualResourceTimingBytes": [
+    {
+      "scenario": "desktop",
+      "version": "R5",
+      "samplePair": 1,
+      "navigation": {
+        "ttfb": 1089.6000000014901,
+        "htmlEnd": 1091.1000000014901,
+        "encoded": 818,
+        "decoded": 1661
+      },
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "transfer": 19420,
+          "encoded": 19120,
+          "decoded": 52958
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "transfer": 1162,
+          "encoded": 862,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "transfer": 83914,
+          "encoded": 83614,
+          "decoded": 255318
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "transfer": 56758,
+          "encoded": 56458,
+          "decoded": 513488
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "transfer": 2006,
+          "encoded": 1706,
+          "decoded": 5116
+        },
+        {
+          "name": "vce701823e78c4301a35b7e07294d87301792088814092",
+          "type": "script",
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "rum?",
+          "type": "xmlhttprequest",
+          "transfer": 300,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "transfer": 1111,
+          "encoded": 811,
+          "decoded": 1643
+        }
+      ],
+      "documentAndResourcesEncodedBytesMedian": 252266,
+      "documentAndResourcesDecodedBytesMedian": 920587,
+      "resourceTransferBytesMedian": 253848
+    },
+    {
+      "scenario": "desktop",
+      "version": "R6",
+      "samplePair": 1,
+      "navigation": {
+        "ttfb": 1108.2999999970198,
+        "htmlEnd": 1302.3999999985099,
+        "encoded": 27795,
+        "decoded": 45898
+      },
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "transfer": 1496,
+          "encoded": 1196,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-Dv59VCBE.js",
+          "type": "script",
+          "transfer": 47171,
+          "encoded": 46871,
+          "decoded": 95950
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "transfer": 1162,
+          "encoded": 862,
+          "decoded": 1619
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "transfer": 83873,
+          "encoded": 83573,
+          "decoded": 255318
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "transfer": 3777,
+          "encoded": 3477,
+          "decoded": 12496
+        },
+        {
+          "name": "buddingRefinementReview-CyVVhLu5.css",
+          "type": "link",
+          "transfer": 2584,
+          "encoded": 2284,
+          "decoded": 6966
+        },
+        {
+          "name": "vce701823e78c4301a35b7e07294d87301792088814092",
+          "type": "script",
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "rum?",
+          "type": "xmlhttprequest",
+          "transfer": 300,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "transfer": 1111,
+          "encoded": 811,
+          "decoded": 1643
+        }
+      ],
+      "documentAndResourcesEncodedBytesMedian": 255588,
+      "documentAndResourcesDecodedBytesMedian": 511716,
+      "resourceTransferBytesMedian": 230493
+    },
+    {
+      "scenario": "phone-constrained",
+      "version": "R5",
+      "samplePair": 1,
+      "navigation": {
+        "ttfb": 1121.7000000029802,
+        "htmlEnd": 1130.2999999970198,
+        "encoded": 818,
+        "decoded": 1661
+      },
+      "resources": [
+        {
+          "name": "buddingRefinementReview-C3LX1dSx.js",
+          "type": "script",
+          "transfer": 19420,
+          "encoded": 19120,
+          "decoded": 52958
+        },
+        {
+          "name": "fonts-yM8FnjBK.js",
+          "type": "other",
+          "transfer": 83914,
+          "encoded": 83614,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "transfer": 1162,
+          "encoded": 862,
+          "decoded": 1619
+        },
+        {
+          "name": "fonts-Cxq460Fs.css",
+          "type": "link",
+          "transfer": 56758,
+          "encoded": 56458,
+          "decoded": 513488
+        },
+        {
+          "name": "buddingRefinementReview-Ml5i4yf0.css",
+          "type": "link",
+          "transfer": 2006,
+          "encoded": 1706,
+          "decoded": 5116
+        },
+        {
+          "name": "vce701823e78c4301a35b7e07294d87301792088814092",
+          "type": "script",
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "rum?",
+          "type": "xmlhttprequest",
+          "transfer": 300,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "transfer": 1111,
+          "encoded": 811,
+          "decoded": 1643
+        }
+      ],
+      "documentAndResourcesEncodedBytesMedian": 252204,
+      "documentAndResourcesDecodedBytesMedian": 920587,
+      "resourceTransferBytesMedian": 253786
+    },
+    {
+      "scenario": "phone-constrained",
+      "version": "R6",
+      "samplePair": 1,
+      "navigation": {
+        "ttfb": 1095.2999999970198,
+        "htmlEnd": 1311.6999999955297,
+        "encoded": 27795,
+        "decoded": 45898
+      },
+      "resources": [
+        {
+          "name": "budding-early-activation-1a07cde247f3.js",
+          "type": "script",
+          "transfer": 1496,
+          "encoded": 1196,
+          "decoded": 3042
+        },
+        {
+          "name": "buddingRefinementReview-Dv59VCBE.js",
+          "type": "script",
+          "transfer": 47171,
+          "encoded": 46871,
+          "decoded": 95950
+        },
+        {
+          "name": "glass-B1j-dKWm.js",
+          "type": "other",
+          "transfer": 83873,
+          "encoded": 83573,
+          "decoded": 255318
+        },
+        {
+          "name": "volume-hit-geometry-DJ1Z4u93.js",
+          "type": "other",
+          "transfer": 1162,
+          "encoded": 862,
+          "decoded": 1619
+        },
+        {
+          "name": "glass-DAMpqEK9.css",
+          "type": "link",
+          "transfer": 3712,
+          "encoded": 3412,
+          "decoded": 12496
+        },
+        {
+          "name": "buddingRefinementReview-CyVVhLu5.css",
+          "type": "link",
+          "transfer": 2584,
+          "encoded": 2284,
+          "decoded": 6966
+        },
+        {
+          "name": "vce701823e78c4301a35b7e07294d87301792088814092",
+          "type": "script",
+          "transfer": 0,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "InstrumentSans-wdth-wght-tWV223Ma.woff2",
+          "type": "css",
+          "transfer": 89084,
+          "encoded": 88784,
+          "decoded": 88784
+        },
+        {
+          "name": "rum?",
+          "type": "xmlhttprequest",
+          "transfer": 300,
+          "encoded": 0,
+          "decoded": 0
+        },
+        {
+          "name": "alvenx-monogram-ByDqnbcO.svg",
+          "type": "other",
+          "transfer": 1111,
+          "encoded": 811,
+          "decoded": 1643
+        }
+      ],
+      "documentAndResourcesEncodedBytesMedian": 255588,
+      "documentAndResourcesDecodedBytesMedian": 511716,
+      "resourceTransferBytesMedian": 230493
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "N=3 paired samples per version/condition; medians are descriptive for this run.",
+    "R6 exact static material frame is separate from first live material draw and engine readiness.",
+    "First/warm input tests wait for live readiness; pre-main activation is covered by separate startup/gesture tests.",
+    "Double requestAnimationFrame marks a paint opportunity, not GPU completion.",
+    "Fresh HTTP-cache-disabled contexts do not guarantee a cold shared GPU/driver shader cache.",
+    "ResourceTiming encoded/decoded sizes are actual browser-observed body byte counts. They do not identify gzip versus Brotli without response-header evidence; transferSize also includes transport accounting.",
+    "Synthetic CPU/network conditions do not establish physical iPhone/iPad/Safari/Combo Touch latency or power use."
+  ]
+}

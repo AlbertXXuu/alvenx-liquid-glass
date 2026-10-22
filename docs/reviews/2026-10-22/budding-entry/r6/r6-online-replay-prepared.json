@@ -1,0 +1,31 @@
+{
+  "status": "prepared-only",
+  "onlineDirectory": "output/playwright/budding-refinement-r6-20261022/online",
+  "expectedUrl": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "callbacks": [
+    {
+      "name": "review-check.cjs",
+      "sourceSha256": "1ff427eea52562f4f08a580b2bf3ba06b6016f743d523b7027c17d8df69d2562",
+      "onlineSha256": "2ba6efb5af488606116b25b0304207220a8301bbfe0126a40316ce4c67f0799a"
+    },
+    {
+      "name": "material-check.cjs",
+      "sourceSha256": "0ce309bec59ee7b6688549e90d1566944c660eacabbc6288be9117d3b2d1840c",
+      "onlineSha256": "3a679b3be7922e598073e8596de1817b530861fb07d69bd1f072a77cbb98d8ed"
+    },
+    {
+      "name": "startup-check.cjs",
+      "sourceSha256": "ed29b692cc78cf34cc3c8db0f72e56c66f13483e38a01fb5afca17b8875613eb",
+      "onlineSha256": "c8b5714cec3873ed48d089bf72eb526d378549f6c9a9e451916da07e8f10f1ab"
+    },
+    {
+      "name": "gesture-handoff.cjs",
+      "sourceSha256": "3c5aa8e9416e1afc4795dcb6426a6e3f30c6bb3e3583f7460e2bb4e177133605",
+      "onlineSha256": "f7b55343d293cb4ef17401e91811fa52c9b2ae8102e2dfeaf426c75b8091af2f"
+    }
+  ],
+  "notes": [
+    "Assertion logic is retained; output paths and an exact production URL guard are added.",
+    "No browser execution or online QA success is claimed."
+  ]
+}

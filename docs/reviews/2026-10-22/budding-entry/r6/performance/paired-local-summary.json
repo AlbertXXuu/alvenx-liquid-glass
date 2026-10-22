@@ -1,0 +1,68 @@
+{
+  "createdAt": "2026-10-21T19:35:48.86Z",
+  "protocol": "Three paired samples per condition, order R5/R6, R6/R5, R5/R6. Fresh contexts and HTTP cache disabled. Same own Chromium process. HTTP cold does not guarantee cold GPU/driver shader cache. Accepted static texture timing and live material draw are separate. Double-rAF is a paint opportunity, not GPU completion. First and warm input occur after live optics/material readiness; pre-main activation is covered separately by startup/gesture callbacks.",
+  "summary": [
+    {
+      "scenario": "desktop",
+      "version": "R5",
+      "n": 3,
+      "FCP_ms": 124,
+      "accepted_frame_paint_opportunity_ms": 354.2,
+      "live_material_draw_ms": 348.5,
+      "first_event_to_growth_ms": 8.3,
+      "first_event_to_material_ms": 23.8,
+      "warm_event_to_growth_ms": 7.7,
+      "link_status_wait_ms": 191.7,
+      "all_status_query_wait_ms": 191.7,
+      "max_longtask_ms": 202,
+      "accepted_frame_kind": "live-material-draw"
+    },
+    {
+      "scenario": "desktop",
+      "version": "R6",
+      "n": 3,
+      "FCP_ms": 68,
+      "accepted_frame_paint_opportunity_ms": 61.1,
+      "live_material_draw_ms": 338.2,
+      "first_event_to_growth_ms": 23.0,
+      "first_event_to_material_ms": 25.5,
+      "warm_event_to_growth_ms": 9.1,
+      "link_status_wait_ms": 0,
+      "all_status_query_wait_ms": 0.2,
+      "max_longtask_ms": 0,
+      "accepted_frame_kind": "exact-static-texture"
+    },
+    {
+      "scenario": "phone-constrained",
+      "version": "R5",
+      "n": 3,
+      "FCP_ms": 2180,
+      "accepted_frame_paint_opportunity_ms": 2484.8,
+      "live_material_draw_ms": 2459.6,
+      "first_event_to_growth_ms": 80.3,
+      "first_event_to_material_ms": 131.9,
+      "warm_event_to_growth_ms": 123.6,
+      "link_status_wait_ms": 180.1,
+      "all_status_query_wait_ms": 180.1,
+      "max_longtask_ms": 193,
+      "accepted_frame_kind": "live-material-draw"
+    },
+    {
+      "scenario": "phone-constrained",
+      "version": "R6",
+      "n": 3,
+      "FCP_ms": 588,
+      "accepted_frame_paint_opportunity_ms": 581.1,
+      "live_material_draw_ms": 1674.8,
+      "first_event_to_growth_ms": 115.4,
+      "first_event_to_material_ms": 168.6,
+      "warm_event_to_growth_ms": 115.4,
+      "link_status_wait_ms": 0,
+      "all_status_query_wait_ms": 0.8,
+      "max_longtask_ms": 95,
+      "accepted_frame_kind": "exact-static-texture"
+    }
+  ],
+  "compression": "Both local Vite preview responses report encoded < decoded bytes: gzip is active in this run. ResourceTiming is authoritative; hosted CDN may use a different compression/protocol boundary.",
+  "errors": 0
+}

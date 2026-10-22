@@ -1,0 +1,761 @@
+{
+  "base": "http://127.0.0.1:5196/r6/showcase/budding-refinement-review/index.html",
+  "createdAt": "2026-10-21T19:39:43.079Z",
+  "passed": 19,
+  "total": 19,
+  "checks": [
+    {
+      "name": "320: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 25,
+          "y": 733.484375,
+          "width": 56,
+          "height": 73.59375,
+          "top": 733.484375,
+          "right": 81,
+          "bottom": 807.078125,
+          "left": 25
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 25,
+          "y": 733.484375,
+          "width": 56,
+          "height": 73.59375,
+          "top": 733.484375,
+          "right": 81,
+          "bottom": 807.078125,
+          "left": 25
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 37,
+          "y": 615.125,
+          "width": 66,
+          "height": 87.59375,
+          "top": 615.125,
+          "right": 103,
+          "bottom": 702.71875,
+          "left": 37
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 37,
+          "y": 615.125,
+          "width": 66,
+          "height": 87.59375,
+          "top": 615.125,
+          "right": 103,
+          "bottom": 702.71875,
+          "left": 37
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 362.921875,
+          "y": 532.65625,
+          "width": 66,
+          "height": 87.59375,
+          "top": 532.65625,
+          "right": 428.921875,
+          "bottom": 620.25,
+          "left": 362.921875
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 362.921875,
+          "y": 532.65625,
+          "width": 66,
+          "height": 87.59375,
+          "top": 532.65625,
+          "right": 428.921875,
+          "bottom": 620.25,
+          "left": 362.921875
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "hydrated pending circle has one native action",
+      "pass": true,
+      "detail": {
+        "buttons": 1,
+        "anchors": 0
+      }
+    },
+    {
+      "name": "Space starts real growth while compile remains pending",
+      "pass": true,
+      "detail": {
+        "at": 168.5,
+        "preparation": "pending"
+      }
+    },
+    {
+      "name": "all reflection and draws wait for parallel completion",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "pending growth blends matching live material",
+      "pass": true,
+      "detail": {
+        "volumePreparation": "ready",
+        "volumePreparationMode": "parallel",
+        "volumeReveal": "blend",
+        "volumeLightRenders": "28",
+        "volumeLightComputeMs": "0.000",
+        "volumeLightMeanMs": "0.032",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "accepted-reference-potential",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "name": "hidden wall time does not consume foreground preparation budget",
+      "pass": true
+    },
+    {
+      "name": "never-completing driver reaches bounded failure and releases program",
+      "pass": true,
+      "detail": {
+        "before": 4,
+        "after": 4,
+        "deletes": 1
+      }
+    },
+    {
+      "name": "failed shader preserves native interaction",
+      "pass": true
+    },
+    {
+      "name": "program completed across 11s hidden interval becomes ready on return",
+      "pass": true,
+      "detail": {
+        "calls": [
+          {
+            "type": "completion",
+            "at": 104
+          },
+          {
+            "type": "completion",
+            "at": 124
+          },
+          {
+            "type": "completion",
+            "at": 134
+          },
+          {
+            "type": "completion",
+            "at": 11362
+          },
+          {
+            "type": "completion",
+            "at": 11376
+          },
+          {
+            "type": "completion",
+            "at": 11393
+          },
+          {
+            "type": "completion",
+            "at": 11409
+          },
+          {
+            "type": "completion",
+            "at": 11424
+          },
+          {
+            "type": "completion",
+            "at": 11441
+          },
+          {
+            "type": "completion",
+            "at": 11457
+          },
+          {
+            "type": "completion",
+            "at": 11472
+          },
+          {
+            "type": "completion",
+            "at": 11489
+          },
+          {
+            "type": "completion",
+            "at": 11504
+          },
+          {
+            "type": "completion",
+            "at": 11521
+          },
+          {
+            "type": "completion",
+            "at": 11538
+          },
+          {
+            "type": "completion",
+            "at": 11569
+          },
+          {
+            "type": "linkStatus",
+            "at": 11569,
+            "duration": 0,
+            "painted": false
+          }
+        ],
+        "violations": [],
+        "deletes": 0
+      }
+    },
+    {
+      "name": "no-KHR keeps accepted live renderer after first observed paint",
+      "pass": true,
+      "detail": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.200",
+          "volumeLightMeanMs": "0.200",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "accepted-reference-potential",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "calls": [
+          {
+            "type": "linkStatus",
+            "at": 113.69999999925494,
+            "duration": 192.89999999850988,
+            "painted": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "pre-main native activation retains intent",
+      "pass": true
+    },
+    {
+      "name": "queued activation is consumed and early handlers removed",
+      "pass": true
+    },
+    {
+      "name": "focused first frame hands focus to the single native button",
+      "pass": true
+    },
+    {
+      "name": "main resource failure restores native link without dead interception",
+      "pass": true
+    }
+  ],
+  "metrics": [
+    {
+      "width": 320,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 25,
+          "y": 733.484375,
+          "width": 56,
+          "height": 73.59375,
+          "top": 733.484375,
+          "right": 81,
+          "bottom": 807.078125,
+          "left": 25
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 393,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 37,
+          "y": 615.125,
+          "width": 66,
+          "height": 87.59375,
+          "top": 615.125,
+          "right": 103,
+          "bottom": 702.71875,
+          "left": 37
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1413,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 362.921875,
+          "y": 532.65625,
+          "width": 66,
+          "height": 87.59375,
+          "top": 532.65625,
+          "right": 428.921875,
+          "bottom": 620.25,
+          "left": 362.921875
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "forcedPending": {
+        "first": {
+          "at": 168.5,
+          "preparation": "pending"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 116
+            },
+            {
+              "type": "completion",
+              "at": 119.80000000074506
+            },
+            {
+              "type": "completion",
+              "at": 130.30000000074506
+            },
+            {
+              "type": "completion",
+              "at": 146.90000000223517
+            },
+            {
+              "type": "completion",
+              "at": 164.10000000149012
+            },
+            {
+              "type": "completion",
+              "at": 193.60000000149012
+            },
+            {
+              "type": "completion",
+              "at": 201.90000000223517
+            },
+            {
+              "type": "completion",
+              "at": 218.10000000149012
+            },
+            {
+              "type": "completion",
+              "at": 234.5
+            },
+            {
+              "type": "completion",
+              "at": 251.40000000223517
+            },
+            {
+              "type": "completion",
+              "at": 269.70000000298023
+            },
+            {
+              "type": "completion",
+              "at": 286.30000000074506
+            },
+            {
+              "type": "completion",
+              "at": 302.20000000298023
+            },
+            {
+              "type": "completion",
+              "at": 319.20000000298023
+            },
+            {
+              "type": "completion",
+              "at": 335.6000000014901
+            },
+            {
+              "type": "completion",
+              "at": 352.4000000022352
+            },
+            {
+              "type": "completion",
+              "at": 370.20000000298023
+            },
+            {
+              "type": "completion",
+              "at": 386.1000000014901
+            },
+            {
+              "type": "completion",
+              "at": 402.30000000074506
+            },
+            {
+              "type": "completion",
+              "at": 418.80000000074506
+            },
+            {
+              "type": "completion",
+              "at": 435.5
+            },
+            {
+              "type": "completion",
+              "at": 451.70000000298023
+            },
+            {
+              "type": "completion",
+              "at": 468.9000000022352
+            },
+            {
+              "type": "completion",
+              "at": 484.5
+            },
+            {
+              "type": "completion",
+              "at": 501.4000000022352
+            },
+            {
+              "type": "completion",
+              "at": 518.1000000014901
+            },
+            {
+              "type": "completion",
+              "at": 535.1000000014901
+            },
+            {
+              "type": "completion",
+              "at": 551
+            },
+            {
+              "type": "completion",
+              "at": 568.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 584.6000000014901
+            },
+            {
+              "type": "completion",
+              "at": 601.4000000022352
+            },
+            {
+              "type": "completion",
+              "at": 617.9000000022352
+            },
+            {
+              "type": "completion",
+              "at": 635.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 650.8000000007451
+            },
+            {
+              "type": "completion",
+              "at": 667.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 684.1000000014901
+            },
+            {
+              "type": "completion",
+              "at": 701.6000000014901
+            },
+            {
+              "type": "completion",
+              "at": 718.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 734.5
+            },
+            {
+              "type": "completion",
+              "at": 753.3000000007451
+            },
+            {
+              "type": "completion",
+              "at": 767.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 784.4000000022352
+            },
+            {
+              "type": "completion",
+              "at": 800.6000000014901
+            },
+            {
+              "type": "completion",
+              "at": 818.1000000014901
+            },
+            {
+              "type": "completion",
+              "at": 834.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 852.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 867.4000000022352
+            },
+            {
+              "type": "completion",
+              "at": 884.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 901
+            },
+            {
+              "type": "completion",
+              "at": 917.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 934.2000000029802
+            },
+            {
+              "type": "linkStatus",
+              "at": 934.2000000029802,
+              "duration": 0,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "parallel",
+          "volumeReveal": "blend",
+          "volumeLightRenders": "28",
+          "volumeLightComputeMs": "0.000",
+          "volumeLightMeanMs": "0.032",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "accepted-reference-potential",
+          "materialSource": "src/volume-renderer.js"
+        }
+      }
+    },
+    {
+      "never": {
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 113
+            },
+            {
+              "type": "completion",
+              "at": 130
+            },
+            {
+              "type": "completion",
+              "at": 148
+            },
+            {
+              "type": "completion",
+              "at": 21250
+            }
+          ],
+          "violations": [],
+          "deletes": 1
+        }
+      }
+    },
+    {
+      "hiddenResume": {
+        "simulatedHiddenMs": 11000,
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 104
+            },
+            {
+              "type": "completion",
+              "at": 124
+            },
+            {
+              "type": "completion",
+              "at": 134
+            },
+            {
+              "type": "completion",
+              "at": 11362
+            },
+            {
+              "type": "completion",
+              "at": 11376
+            },
+            {
+              "type": "completion",
+              "at": 11393
+            },
+            {
+              "type": "completion",
+              "at": 11409
+            },
+            {
+              "type": "completion",
+              "at": 11424
+            },
+            {
+              "type": "completion",
+              "at": 11441
+            },
+            {
+              "type": "completion",
+              "at": 11457
+            },
+            {
+              "type": "completion",
+              "at": 11472
+            },
+            {
+              "type": "completion",
+              "at": 11489
+            },
+            {
+              "type": "completion",
+              "at": 11504
+            },
+            {
+              "type": "completion",
+              "at": 11521
+            },
+            {
+              "type": "completion",
+              "at": 11538
+            },
+            {
+              "type": "completion",
+              "at": 11569
+            },
+            {
+              "type": "linkStatus",
+              "at": 11569,
+              "duration": 0,
+              "painted": false
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "boundary": "Controlled document.hidden visibility event and browser clock; not physical OS background behavior."
+      }
+    },
+    {
+      "noKHR": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.200",
+          "volumeLightMeanMs": "0.200",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "accepted-reference-potential",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "linkStatus",
+              "at": 113.69999999925494,
+              "duration": 192.89999999850988,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        }
+      }
+    },
+    {
+      "preMain": {
+        "activation": 124.10000000149012,
+        "mainReleased": 329.1000000014901,
+        "firstGrowth": 388.80000000074506,
+        "artificialModuleHoldMs": 200,
+        "boundary": "Native link exists before main; after early controller loads, activation waits for the deliberately held main module. This does not measure zero-delay physics."
+      }
+    }
+  ],
+  "boundary": "No-JS first frame is exact static R5 texture over native backdrop. Pre-main activation is queued only after the tiny controller loads; no-JS/error retains a genuine destination link. Pending real growth uses native C2 optics until accepted GL can blend in; its temporary lower volume is retained in screenshots. No claim of zero network latency."
+}

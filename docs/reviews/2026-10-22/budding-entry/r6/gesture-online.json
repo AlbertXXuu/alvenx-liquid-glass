@@ -1,0 +1,150 @@
+{
+  "base": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "createdAt": "2026-10-22T06:10:31.111Z",
+  "passed": 10,
+  "total": 10,
+  "checks": [
+    {
+      "name": "mouse: press across hydration activates",
+      "pass": true,
+      "detail": {
+        "mode": "mouse",
+        "growth": 0.46753,
+        "expanded": "true",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "touch: press across hydration activates",
+      "pass": true,
+      "detail": {
+        "mode": "touch",
+        "growth": 0.46614,
+        "expanded": "true",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "space: press across hydration activates",
+      "pass": true,
+      "detail": {
+        "mode": "space",
+        "growth": 0.46531,
+        "expanded": "true",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "outside: press across hydration does not activate",
+      "pass": true,
+      "detail": {
+        "mode": "outside",
+        "growth": 0,
+        "expanded": "false",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "cancel: press across hydration does not activate",
+      "pass": true,
+      "detail": {
+        "mode": "cancel",
+        "growth": 0,
+        "expanded": "false",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "ctrlKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "metaKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "shiftKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "altKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "middle: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    }
+  ],
+  "results": [
+    {
+      "mode": "mouse",
+      "growth": 0.46753,
+      "expanded": "true",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "touch",
+      "growth": 0.46614,
+      "expanded": "true",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "space",
+      "growth": 0.46531,
+      "expanded": "true",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "outside",
+      "growth": 0,
+      "expanded": "false",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "cancel",
+      "growth": 0,
+      "expanded": "false",
+      "globals": {
+        "release": "undefined"
+      }
+    }
+  ]
+}

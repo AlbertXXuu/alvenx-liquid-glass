@@ -1,0 +1,5 @@
+### Error
+TimeoutError: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('canvas[data-volume-preparation=pending]') to be visible[22m
+

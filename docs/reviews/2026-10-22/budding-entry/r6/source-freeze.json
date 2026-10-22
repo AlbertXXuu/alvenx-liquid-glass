@@ -1,0 +1,244 @@
+{
+  "createdAt": "2026-10-21T19:41:48.935931+00:00",
+  "status": "frozen for root build/publication; no subagent Git or deployment",
+  "source": [
+    {
+      "path": "showcase/budding-refinement-review/early-activation.js",
+      "bytes": 3042,
+      "sha256": "1a07cde247f38278906a2aaad1efda3c556b7d8edee44e78559745af01d46666"
+    },
+    {
+      "path": "showcase/budding-refinement-review/first-frame-44.png",
+      "bytes": 7601,
+      "sha256": "bf305b7815634642b74d37722e42492a9081ba880a1918e475634c893861eace"
+    },
+    {
+      "path": "showcase/budding-refinement-review/first-frame-54.png",
+      "bytes": 10353,
+      "sha256": "080a8ec125eeefe3569355226895bc9f207941227b25bf7dfdcf808910bc8936"
+    },
+    {
+      "path": "showcase/budding-refinement-review/first-frame.ts",
+      "bytes": 40413,
+      "sha256": "c1d1de82b30b4e665456c34baa508c8a880a96474f420ba367c2c5bbec27e1fd"
+    },
+    {
+      "path": "showcase/budding-refinement-review/fonts.css",
+      "bytes": 426,
+      "sha256": "cafe58baa09ff98d515ffa215f44a2adf16a99936e6d6ae9e218f9b4ddc1688f"
+    },
+    {
+      "path": "showcase/budding-refinement-review/geometry.ts",
+      "bytes": 5245,
+      "sha256": "bcf9efa6e6b5db5bcf55cc295e22798fe66a0fdfd20f6328092a8da84aa55b7d"
+    },
+    {
+      "path": "showcase/budding-refinement-review/index.html",
+      "bytes": 416,
+      "sha256": "ae6aa68229f1b5b6b98d241c490e3560a31c9b24e084e914bb7ac94a7de8c7f6"
+    },
+    {
+      "path": "showcase/budding-refinement-review/main.tsx",
+      "bytes": 18231,
+      "sha256": "b025f683cf7fa3ba6ca7a488f36dc5999fa2eac53fe6209a320a1ea5b9c1282a"
+    },
+    {
+      "path": "showcase/budding-refinement-review/prerender.mjs",
+      "bytes": 10570,
+      "sha256": "c257133d8aa4f4916d582ffb57a6f80deabf1fecca1745f0289438fc80317294"
+    },
+    {
+      "path": "showcase/budding-refinement-review/README.md",
+      "bytes": 22072,
+      "sha256": "a22b85d0f884b421532eec4d2b87a2f38372548872f5f7d6143e89d55c54fc97"
+    },
+    {
+      "path": "showcase/budding-refinement-review/reference-volume.ts",
+      "bytes": 15084,
+      "sha256": "23a03dfb6c7001cf6554d334ded2ccdbceacb6d8906b81d0b620532d4ba49476"
+    },
+    {
+      "path": "showcase/budding-refinement-review/review.css",
+      "bytes": 6839,
+      "sha256": "e6a4f3a8be81f29821ab56e9232297570fbf50768a57df065739ec18f18bc3e3"
+    }
+  ],
+  "geometryUnchangedFromR5": true,
+  "checks": {
+    "checks-final": {
+      "passed": 129,
+      "total": 129,
+      "filename": "checks-final.json"
+    },
+    "material-check": {
+      "passed": 5,
+      "total": 5,
+      "filename": "material-check.json"
+    },
+    "geometry-check": {
+      "passed": 392,
+      "total": 392,
+      "filename": "geometry-check.json"
+    },
+    "startup-check": {
+      "passed": 19,
+      "total": 19,
+      "filename": "startup-check.json"
+    },
+    "gesture-final": {
+      "passed": 10,
+      "total": 10,
+      "filename": "gesture-final.json"
+    }
+  },
+  "typecheck": "passed exit 0",
+  "images": [
+    {
+      "path": "detail-1413.png",
+      "bytes": 22906,
+      "sha256": "07bba13c210a845173e1d24b0f685c090975f01429df1ce6604e1307041113b9"
+    },
+    {
+      "path": "detail-320.png",
+      "bytes": 20052,
+      "sha256": "19e566c5b8f2750c6f4d6ca8ded9007c3011af3c0433e6d528b400c6e047db05"
+    },
+    {
+      "path": "detail-360.png",
+      "bytes": 21979,
+      "sha256": "b82d896d8f7431dd3af0ca27076956e86fbbf58bec136069335fd3a20396c5dc"
+    },
+    {
+      "path": "detail-393.png",
+      "bytes": 23652,
+      "sha256": "6df0648f9534276a8a97c77bacfa9220a63dcaf408d2d4c6f051e9ef3abfd0c7"
+    },
+    {
+      "path": "detail-820.png",
+      "bytes": 23858,
+      "sha256": "32a8777e30d5d82a642a09d471024a8e6f6dd6195e678813e3dbe1fa5e76d5bc"
+    },
+    {
+      "path": "final-1413.png",
+      "bytes": 1039119,
+      "sha256": "39665873bfe33828c17d929884f0c7ac05715c991b0194f3d0d56d66d3e2b6e9"
+    },
+    {
+      "path": "final-320.png",
+      "bytes": 509137,
+      "sha256": "93a9803c7487aab3a41f2d04c84a235bcc968ad7904e012ac1c5d7f155c2f674"
+    },
+    {
+      "path": "final-360.png",
+      "bytes": 517162,
+      "sha256": "c6293c3e3dfa60b6cd99156c3456ab1c311c696ca8396e91ebca05f0bcaee695"
+    },
+    {
+      "path": "final-393.png",
+      "bytes": 529470,
+      "sha256": "c139931d767a272f685d476205b25ffa720a6224dfc2a63da70e2def2a6a27da"
+    },
+    {
+      "path": "final-820.png",
+      "bytes": 703729,
+      "sha256": "9e54bbd4b4ed560d1936f27853a4105d7952d668b12b2a54aae2071c8bc9c056"
+    },
+    {
+      "path": "first-viewport-393.png",
+      "bytes": 269064,
+      "sha256": "d3f8cba291393b2db9b549de6fc5195f8a770472faaa8aa56c25e183de553b67"
+    },
+    {
+      "path": "forced-pending-growth.png",
+      "bytes": 19408,
+      "sha256": "05eea460d228eb648b05a1ecc3547ae946b56c39c0a9674d7f08c692fdc44b56"
+    },
+    {
+      "path": "forced-pending-material.png",
+      "bytes": 24772,
+      "sha256": "f55b296ed765bc474b2ed4e3c1790c85d180461922d6177ead49f45d88ffdd75"
+    },
+    {
+      "path": "hover-mother.png",
+      "bytes": 23533,
+      "sha256": "10192650d54d571be7dabe7858cc3fe7b1398af177faa886f8ed1886b75de026"
+    },
+    {
+      "path": "hover-right-facing-320.png",
+      "bytes": 20551,
+      "sha256": "4f897a05abd07b5ac2b2fd46f3eeffd6d97093f05804b9c164aaf62c58f0113e"
+    },
+    {
+      "path": "hover-right.png",
+      "bytes": 23456,
+      "sha256": "2cdc10ac447cdba256c4377b8d5fe9fe18190187856fdc0b76de38a47cef14e5"
+    },
+    {
+      "path": "no-js-1413.png",
+      "bytes": 854217,
+      "sha256": "b4da07a384a49d709bd23c432d325378f0034579bc4caefd8e3ab73529f1f49c"
+    },
+    {
+      "path": "no-js-320.png",
+      "bytes": 222443,
+      "sha256": "f308bb80cc214407b1d1e44410a3b5e6bdaacebd9bc3a5da8d1b32e4c957ebf1"
+    },
+    {
+      "path": "no-js-393.png",
+      "bytes": 263111,
+      "sha256": "92759c83eaef7a4f3ee3094c3c23bb8f6f8bba1f036fbf5255d05b90d925e912"
+    },
+    {
+      "path": "stage-0.png",
+      "bytes": 5493,
+      "sha256": "2fe43a95c2ea7d7336908cd323521c5eea2b0c38c8af010d537ca051146bab80"
+    },
+    {
+      "path": "stage-025.png",
+      "bytes": 71091,
+      "sha256": "7c5bb53b11b39b9f025cdae89252f5ed1929936b43d8f396e4ec72ca98948c06"
+    },
+    {
+      "path": "stage-055.png",
+      "bytes": 75210,
+      "sha256": "8d31320615b8c263570f70b68541ab09109b998da9dae45241aee73421368023"
+    },
+    {
+      "path": "stage-085.png",
+      "bytes": 85287,
+      "sha256": "6f864179550a2f2945008b0dac0d54dbfb422517f5bf26b5394779506e7e60b1"
+    },
+    {
+      "path": "stage-095.png",
+      "bytes": 84008,
+      "sha256": "aca87e4512c300d02276a11c5a9e2a8676db589b4ac52585b0d430ce8a786506"
+    },
+    {
+      "path": "stage-1.png",
+      "bytes": 22852,
+      "sha256": "8b0df48b427bd0f9144901ccad1ac6128f297e3c4d65fa49208c4ee472029146"
+    }
+  ],
+  "pairedLocal": "../budding-latency-20261022/paired-local.json",
+  "pairedSummary": "../budding-latency-20261022/paired-local-summary.json",
+  "benchmarkCallback": "../budding-latency-20261022/paired-comparison.cjs",
+  "boundaries": [
+    "Exact static first frame is distinct from live GL ready.",
+    "Compiler-pending interaction temporarily shows flatter native real-backdrop optics; accepted volume blends when ready.",
+    "Ready input latency did not improve in paired N=3; unchanged established physics.",
+    "HTTP cache is fresh; GPU/driver cache is not proven cold.",
+    "Local preview gzip is observed by ResourceTiming, correcting the earlier uncompressed assumption. Hosted CDN remains separate.",
+    "Physical iOS, Combo Touch and mobile power are not measured."
+  ],
+  "defaultSiteDistChanged": false,
+  "pairedLocalSourceBoundary": "Paired local samples were captured before the later hidden/foreground preparation-budget correction. The correction changes only pending lifecycle timeout behavior, not geometry or the normally completing shader path. Root will benchmark the exact hosted final source separately.",
+  "ownedQAClosed": {
+    "browser": "bud-latency closed",
+    "ports": [
+      5195,
+      5196
+    ],
+    "listenCheck": "no listeners after stopping owned sessions",
+    "preexisting5174": "untouched"
+  }
+}
