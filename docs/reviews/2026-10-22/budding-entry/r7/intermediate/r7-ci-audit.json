@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 1,
+  "observedAtUtc": "2026-10-22T08:58:58.300403Z",
+  "scope": "R7 review-only exact-SHA CI audit. Prior header, R4 and R5 CI are excluded. No GitHub mutations or production acceptance claims.",
+  "allSuccess": true,
+  "completion": {
+    "runCount": 5,
+    "successfulRuns": 5,
+    "jobCount": 5,
+    "successfulJobs": 5,
+    "stepCount": 58,
+    "successfulSteps": 58,
+    "allRunSuccess": true,
+    "allJobSuccess": true,
+    "allStepSuccess": true
+  },
+  "runs": [
+    {
+      "role": "kit-r7-review",
+      "repo": "AlbertXXuu/alvenx-liquid-glass",
+      "expectedHeadSha": "188693af02c572126c326af9eb95625b0a3256cf",
+      "id": 39750339406,
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39750339406",
+      "branch": "main",
+      "headSha": "188693af02c572126c326af9eb95625b0a3256cf",
+      "headMatches": true,
+      "attempt": 1,
+      "event": "push",
+      "workflowPath": ".github/workflows/verify.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-22T08:47:05Z",
+      "updatedAt": "2026-10-22T08:47:32Z",
+      "jobTotalCount": 1,
+      "jobs": [
+        {
+          "id": 119729036252,
+          "name": "verify",
+          "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39750339406/job/119729036252",
+          "headSha": "188693af02c572126c326af9eb95625b0a3256cf",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-22T08:47:07Z",
+          "completedAt": "2026-10-22T08:47:32Z",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "runnerAssigned": true,
+          "steps": [
+            {
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:08Z",
+              "completedAt": "2026-10-22T08:47:09Z"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:09Z",
+              "completedAt": "2026-10-22T08:47:12Z"
+            },
+            {
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:12Z",
+              "completedAt": "2026-10-22T08:47:14Z"
+            },
+            {
+              "name": "Run npm ci",
+              "number": 4,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:14Z",
+              "completedAt": "2026-10-22T08:47:15Z"
+            },
+            {
+              "name": "Run npm run check",
+              "number": 5,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:15Z",
+              "completedAt": "2026-10-22T08:47:18Z"
+            },
+            {
+              "name": "Run npm run build",
+              "number": 6,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:18Z",
+              "completedAt": "2026-10-22T08:47:23Z"
+            },
+            {
+              "name": "Build independent entrance first frame",
+              "number": 7,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:23Z",
+              "completedAt": "2026-10-22T08:47:25Z"
+            },
+            {
+              "name": "Verify entrance prerender and responsive material frames",
+              "number": 8,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:25Z",
+              "completedAt": "2026-10-22T08:47:26Z"
+            },
+            {
+              "name": "Run npm run test:contract",
+              "number": 9,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:26Z",
+              "completedAt": "2026-10-22T08:47:28Z"
+            },
+            {
+              "name": "Run npm run test:runtime",
+              "number": 10,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:28Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Run node scripts/verify-kit.mjs --baseline-only",
+              "number": 11,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 21,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "kit-r7-review",
+      "repo": "AlbertXXuu/alvenx-liquid-glass",
+      "expectedHeadSha": "188693af02c572126c326af9eb95625b0a3256cf",
+      "id": 39750339516,
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39750339516",
+      "branch": "review-budding-20261022-r7",
+      "headSha": "188693af02c572126c326af9eb95625b0a3256cf",
+      "headMatches": true,
+      "attempt": 1,
+      "event": "push",
+      "workflowPath": ".github/workflows/verify.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-22T08:47:05Z",
+      "updatedAt": "2026-10-22T08:47:39Z",
+      "jobTotalCount": 1,
+      "jobs": [
+        {
+          "id": 119729035893,
+          "name": "verify",
+          "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39750339516/job/119729035893",
+          "headSha": "188693af02c572126c326af9eb95625b0a3256cf",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-22T08:47:08Z",
+          "completedAt": "2026-10-22T08:47:38Z",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "runnerAssigned": true,
+          "steps": [
+            {
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:09Z",
+              "completedAt": "2026-10-22T08:47:09Z"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:09Z",
+              "completedAt": "2026-10-22T08:47:16Z"
+            },
+            {
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:16Z",
+              "completedAt": "2026-10-22T08:47:18Z"
+            },
+            {
+              "name": "Run npm ci",
+              "number": 4,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:18Z",
+              "completedAt": "2026-10-22T08:47:19Z"
+            },
+            {
+              "name": "Run npm run check",
+              "number": 5,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:19Z",
+              "completedAt": "2026-10-22T08:47:23Z"
+            },
+            {
+              "name": "Run npm run build",
+              "number": 6,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:23Z",
+              "completedAt": "2026-10-22T08:47:28Z"
+            },
+            {
+              "name": "Build independent entrance first frame",
+              "number": 7,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:28Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Verify entrance prerender and responsive material frames",
+              "number": 8,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:31Z"
+            },
+            {
+              "name": "Run npm run test:contract",
+              "number": 9,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:31Z",
+              "completedAt": "2026-10-22T08:47:33Z"
+            },
+            {
+              "name": "Run npm run test:runtime",
+              "number": 10,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:33Z",
+              "completedAt": "2026-10-22T08:47:35Z"
+            },
+            {
+              "name": "Run node scripts/verify-kit.mjs --baseline-only",
+              "number": 11,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:35Z",
+              "completedAt": "2026-10-22T08:47:35Z"
+            },
+            {
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 21,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:35Z",
+              "completedAt": "2026-10-22T08:47:35Z"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:35Z",
+              "completedAt": "2026-10-22T08:47:36Z"
+            },
+            {
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:36Z",
+              "completedAt": "2026-10-22T08:47:36Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "kit-r7-review",
+      "repo": "AlbertXXuu/alvenx-liquid-glass",
+      "expectedHeadSha": "188693af02c572126c326af9eb95625b0a3256cf",
+      "id": 39750338981,
+      "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39750338981",
+      "branch": "codex/budding-review-r7-20261022",
+      "headSha": "188693af02c572126c326af9eb95625b0a3256cf",
+      "headMatches": true,
+      "attempt": 1,
+      "event": "push",
+      "workflowPath": ".github/workflows/verify.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-22T08:47:05Z",
+      "updatedAt": "2026-10-22T08:47:32Z",
+      "jobTotalCount": 1,
+      "jobs": [
+        {
+          "id": 119729034933,
+          "name": "verify",
+          "url": "https://github.com/AlbertXXuu/alvenx-liquid-glass/actions/runs/39750338981/job/119729034933",
+          "headSha": "188693af02c572126c326af9eb95625b0a3256cf",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-22T08:47:07Z",
+          "completedAt": "2026-10-22T08:47:31Z",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "runnerAssigned": true,
+          "steps": [
+            {
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:08Z",
+              "completedAt": "2026-10-22T08:47:08Z"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:08Z",
+              "completedAt": "2026-10-22T08:47:12Z"
+            },
+            {
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:12Z",
+              "completedAt": "2026-10-22T08:47:13Z"
+            },
+            {
+              "name": "Run npm ci",
+              "number": 4,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:13Z",
+              "completedAt": "2026-10-22T08:47:15Z"
+            },
+            {
+              "name": "Run npm run check",
+              "number": 5,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:15Z",
+              "completedAt": "2026-10-22T08:47:18Z"
+            },
+            {
+              "name": "Run npm run build",
+              "number": 6,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:18Z",
+              "completedAt": "2026-10-22T08:47:23Z"
+            },
+            {
+              "name": "Build independent entrance first frame",
+              "number": 7,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:23Z",
+              "completedAt": "2026-10-22T08:47:25Z"
+            },
+            {
+              "name": "Verify entrance prerender and responsive material frames",
+              "number": 8,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:25Z",
+              "completedAt": "2026-10-22T08:47:26Z"
+            },
+            {
+              "name": "Run npm run test:contract",
+              "number": 9,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:26Z",
+              "completedAt": "2026-10-22T08:47:28Z"
+            },
+            {
+              "name": "Run npm run test:runtime",
+              "number": 10,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:28Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Run node scripts/verify-kit.mjs --baseline-only",
+              "number": 11,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 21,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 22,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            },
+            {
+              "name": "Complete job",
+              "number": 23,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:47:30Z",
+              "completedAt": "2026-10-22T08:47:30Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "website-r7-review-pr",
+      "repo": "AlbertXXuu/AlvenXWebsite",
+      "expectedHeadSha": "052397a7a72a42101e661f39862a2e7b78ba181d",
+      "id": 39750599363,
+      "url": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39750599363",
+      "branch": "codex/budding-review-r7-20261022",
+      "headSha": "052397a7a72a42101e661f39862a2e7b78ba181d",
+      "headMatches": true,
+      "attempt": 1,
+      "event": "pull_request",
+      "workflowPath": ".github/workflows/ci.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-22T08:49:07Z",
+      "updatedAt": "2026-10-22T08:50:35Z",
+      "jobTotalCount": 1,
+      "jobs": [
+        {
+          "id": 119729914921,
+          "name": "quality",
+          "url": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39750599363/job/119729914921",
+          "headSha": "052397a7a72a42101e661f39862a2e7b78ba181d",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-22T08:49:10Z",
+          "completedAt": "2026-10-22T08:50:34Z",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "runnerAssigned": true,
+          "steps": [
+            {
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:49:11Z",
+              "completedAt": "2026-10-22T08:49:12Z"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:49:12Z",
+              "completedAt": "2026-10-22T08:49:17Z"
+            },
+            {
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:49:17Z",
+              "completedAt": "2026-10-22T08:49:28Z"
+            },
+            {
+              "name": "Run npm ci",
+              "number": 4,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:49:28Z",
+              "completedAt": "2026-10-22T08:49:55Z"
+            },
+            {
+              "name": "Run npm run validate",
+              "number": 5,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:49:55Z",
+              "completedAt": "2026-10-22T08:50:31Z"
+            },
+            {
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 9,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:50:31Z",
+              "completedAt": "2026-10-22T08:50:32Z"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 10,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:50:32Z",
+              "completedAt": "2026-10-22T08:50:32Z"
+            },
+            {
+              "name": "Complete job",
+              "number": 11,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:50:32Z",
+              "completedAt": "2026-10-22T08:50:32Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "website-r7-review-merged-main",
+      "repo": "AlbertXXuu/AlvenXWebsite",
+      "expectedHeadSha": "4940c71130890ad8218998d7f814b5e9c7cb332f",
+      "id": 39751005088,
+      "url": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39751005088",
+      "branch": "main",
+      "headSha": "4940c71130890ad8218998d7f814b5e9c7cb332f",
+      "headMatches": true,
+      "attempt": 1,
+      "event": "push",
+      "workflowPath": ".github/workflows/ci.yml",
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-22T08:52:16Z",
+      "updatedAt": "2026-10-22T08:53:43Z",
+      "jobTotalCount": 1,
+      "jobs": [
+        {
+          "id": 119731264609,
+          "name": "quality",
+          "url": "https://github.com/AlbertXXuu/AlvenXWebsite/actions/runs/39751005088/job/119731264609",
+          "headSha": "4940c71130890ad8218998d7f814b5e9c7cb332f",
+          "status": "completed",
+          "conclusion": "success",
+          "startedAt": "2026-10-22T08:52:18Z",
+          "completedAt": "2026-10-22T08:53:42Z",
+          "labels": [
+            "ubuntu-latest"
+          ],
+          "runnerAssigned": true,
+          "steps": [
+            {
+              "name": "Set up job",
+              "number": 1,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:52:19Z",
+              "completedAt": "2026-10-22T08:52:20Z"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 2,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:52:20Z",
+              "completedAt": "2026-10-22T08:52:25Z"
+            },
+            {
+              "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 3,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:52:25Z",
+              "completedAt": "2026-10-22T08:52:36Z"
+            },
+            {
+              "name": "Run npm ci",
+              "number": 4,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:52:36Z",
+              "completedAt": "2026-10-22T08:53:04Z"
+            },
+            {
+              "name": "Run npm run validate",
+              "number": 5,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:53:04Z",
+              "completedAt": "2026-10-22T08:53:39Z"
+            },
+            {
+              "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+              "number": 9,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:53:39Z",
+              "completedAt": "2026-10-22T08:53:39Z"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "number": 10,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:53:39Z",
+              "completedAt": "2026-10-22T08:53:40Z"
+            },
+            {
+              "name": "Complete job",
+              "number": 11,
+              "status": "completed",
+              "conclusion": "success",
+              "startedAt": "2026-10-22T08:53:40Z",
+              "completedAt": "2026-10-22T08:53:40Z"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "observedAtUtc": "2026-10-22T08:58:58.300403Z",
+      "poll": 1,
+      "allSuccess": true,
+      "completion": {
+        "runCount": 5,
+        "successfulRuns": 5,
+        "jobCount": 5,
+        "successfulJobs": 5,
+        "stepCount": 58,
+        "successfulSteps": 58,
+        "allRunSuccess": true,
+        "allJobSuccess": true,
+        "allStepSuccess": true
+      },
+      "remainingRunIds": []
+    }
+  ],
+  "notes": [
+    "Only explicitly supplied run IDs are queried; no unknown-SHA discovery.",
+    "Run/job/step projections are retained separately; pending projections are not marked passed.",
+    "Job coverage is complete only when the total count equals the returned job count.",
+    "Step totals are counted from actual returned jobs; no earlier release total is reused."
+  ]
+}

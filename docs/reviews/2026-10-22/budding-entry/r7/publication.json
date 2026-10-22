@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "review-deployed-verified; physical-device-owner-acceptance-pending",
+  "recordedAtUtc": "2026-10-22T19:28:33.462568+00:00",
+  "reviewUrl": "https://alvenx.com/ui/budding-refinement-review-20261022/",
+  "sourceCommit": "82de4e4cae458dd716ef3462c9c94192d1114265",
+  "sourceRef": "review-budding-20261023-r7-edge",
+  "recordsTag": "review-budding-20261022-r7-published",
+  "website": {
+    "url": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/49",
+    "sourceCommit": "ae43e8d8d7d9728d5ea5565b00f93a83ef5fdb9c",
+    "kitSourceCommit": "82de4e4cae458dd716ef3462c9c94192d1114265",
+    "mergeCommit": "aa4bb50ed5ee912e8eced8702a284133071b070b",
+    "sourceAndMergeTree": "ac41322dd354cd3ea527fe30ec924c747bd9eee0",
+    "mergedAt": "2026-10-22T19:19:05Z",
+    "ciCompletion": {
+      "runCount": 4,
+      "successfulRuns": 4,
+      "jobCount": 4,
+      "successfulJobs": 4,
+      "stepCount": 50,
+      "successfulSteps": 50,
+      "allRunSuccess": true,
+      "allJobSuccess": true,
+      "allStepSuccess": true
+    },
+    "observedAtUtc": "2026-10-22T19:19:09.339480+00:00"
+  },
+  "activation": {
+    "id": "da47b3fd-df15-460d-aa19-aaea2c357083",
+    "created_on": "2026-10-22T19:20:31.553232Z",
+    "versions": [
+      {
+        "version_id": "429bec5f-4171-4a43-9362-3c5a8c543b32",
+        "percentage": 100
+      }
+    ]
+  },
+  "deploymentProcessResult": {
+    "startedAtUtc": "2026-10-22T19:19:42.266Z",
+    "completedAtUtc": "2026-10-22T19:20:39.000Z",
+    "childExitCode": 0,
+    "timedOut": false,
+    "interrupted": false,
+    "wrapperSuccess": true
+  },
+  "verification": {
+    "localChecks": {
+      "review-check": 129,
+      "material-check": 5,
+      "startup-check": 19,
+      "gesture-handoff": 16,
+      "toggle-edge-check": 31
+    },
+    "onlineChecks": {
+      "review-check": 129,
+      "material-check": 5,
+      "startup-check": 19,
+      "gesture-handoff": 16,
+      "toggle-edge-check": 31
+    },
+    "mobileRimPixelRegression": {
+      "status": "passed",
+      "threshold": 8,
+      "records": [
+        {
+          "stage": "before",
+          "path": "narrow-rim-original.png",
+          "sha256": "0d3013b802a93d86875a905c1423f94b27830768e6e77f086be78f4ae92792d3",
+          "columns": 364,
+          "maxRidge": 15.8504,
+          "p95": 13.8504,
+          "columnsOver8": 232
+        },
+        {
+          "stage": "local",
+          "path": "touch-narrow-open.png",
+          "sha256": "f04a6e5fb2f6c59242f3b8367f0ffb292223bd4a88d5ba609d4a452ab2d2d5fa",
+          "columns": 364,
+          "maxRidge": 2.8596,
+          "p95": 1.5014,
+          "columnsOver8": 0
+        },
+        {
+          "stage": "online",
+          "path": "touch-narrow-open.png",
+          "sha256": "f04a6e5fb2f6c59242f3b8367f0ffb292223bd4a88d5ba609d4a452ab2d2d5fa",
+          "columns": 364,
+          "maxRidge": 2.8596,
+          "p95": 1.5014,
+          "columnsOver8": 0
+        }
+      ]
+    },
+    "geometry": 392,
+    "continuousMaterialFixture": 3,
+    "ciRuns": 5,
+    "ciJobs": 5,
+    "ciSteps": 58,
+    "hostedByteMatches": 270,
+    "manifestEntries": 243,
+    "indexedFiles": 93,
+    "pngs": 51
+  },
+  "preservedProduction": {
+    "showcaseSourceCommit": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+    "homepageSourceCommit": "7f202150b2e95f744d90eab39eaf5e2d18d40bd8",
+    "homepageKitVersion": "1.3.0"
+  },
+  "initialR7SourceCommit": "188693af02c572126c326af9eb95625b0a3256cf",
+  "acceptedGeometrySha256": "bcf9efa6e6b5db5bcf55cc295e22798fe66a0fdfd20f6328092a8da84aa55b7d",
+  "changes": [
+    "Continuous material normals throughout rest/growth/separation/return",
+    "Mother toggles continuously in either direction",
+    "Brighter blue-violet material; duplicate white rims and edge fades removed",
+    "Matching first-frame material and continuous contact shadow with no SourceAlpha cutout seam",
+    "No double toggle for a touch handed across hydration"
+  ],
+  "boundaries": [
+    "Independent review, no homepage promotion.",
+    "Chromium mobile/DPR/touch emulation is not physical iOS/Safari/Combo Touch acceptance.",
+    "Native backdrop plus analytic 2.5D reference material, not a physically unified 3D renderer.",
+    "First-frame visibility differs from live material readiness; no zero latency or FPS claim.",
+    "Original packages, historical source tags and reserved rights are unchanged."
+  ]
+}

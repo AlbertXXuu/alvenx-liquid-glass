@@ -1,0 +1,11 @@
+# Replay scope
+
+Use the immutable final source tag `review-budding-20261023-r7-edge`. The accepted geometry and reference shader/initial PNGs match the preceding R7 source; the last follow-up changes only the shared static/live shadow composition and its explanation.
+
+The local callbacks and `online/` callbacks are Playwright page functions. Run from the kit with the installed Playwright CLI: open a dedicated session, navigate it to the intended local build or the hosted review, then run `playwright-cli -s=<session> run-code --filename <callback>`. Each callback records the actual base URL and creates its own isolated contexts. Use a fresh navigation before every callback; do not use an about:blank target. Online callbacks assert the exact review URL. Screenshot outputs are under `output/playwright/budding-refinement-r7-20261022/edge-final/`; saved JSON beside these protocols is the corresponding observed result.
+
+The five suites cover responsive layout/interactions (129), contour/material synchronization (5), first-frame/preparation/failure cases (19), held touch across hydration plus subsequent toggles (16), and touch/DPR/reversal/keyboard/reduced-motion (31). The reversal probe captures before the click and reads in a window-bubble microtask after React commits, asserting the newly committed target as well as growth continuity. It briefly holds/drains the presentation RAF across the native reversal click, then resumes and checks settling; queued animation progress therefore cannot count as a handler discontinuity. Normal live toggle/handoff tests remain unpaused.
+
+The separate `rim-pixels.py` uses the retained PNGs beside this file and `intermediate/narrow-rim-original.png`. It requires Pillow and can be rerun from any directory. It detects a luminance ridge at the lower arcs at 320 CSS px / DPR 3, verifies the old screenshot fails the threshold, and confirms the same threshold passes for final local and online images. This scoped numeric check supplements visual inspection; it is not a general image-quality score.
+
+See `process-notes.md` for intermediate failures and retained limits. Physical iOS/Safari, Combo Touch and battery/performance acceptance are separate from desktop browser emulation. The default package binaries are unchanged; no new npm package was published.

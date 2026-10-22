@@ -1,0 +1,32 @@
+{
+  "base": "http://127.0.0.1:5198/",
+  "createdAt": "2026-10-22T19:13:02.324Z",
+  "passed": 5,
+  "total": 5,
+  "checks": [
+    {
+      "name": "actual draw inspected during joined growth and return",
+      "pass": true
+    },
+    {
+      "name": "profile checked against committed native C2 path",
+      "pass": true
+    },
+    {
+      "name": "changed contours refresh profile at every phase",
+      "pass": true
+    },
+    {
+      "name": "rest and separate shapes use actual contour profile",
+      "pass": true
+    },
+    {
+      "name": "both growth and return observed",
+      "pass": true
+    }
+  ],
+  "joinedFrames": 115,
+  "boundarySamples": 794,
+  "failedFrames": [],
+  "instrumentationBoundary": "Test-only GL interception reads uniforms and samples native Path2D; not a performance or GPU timing measurement."
+}

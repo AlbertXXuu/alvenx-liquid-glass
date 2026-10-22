@@ -1,0 +1,20 @@
+{
+  "url": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/49",
+  "sourceCommit": "ae43e8d8d7d9728d5ea5565b00f93a83ef5fdb9c",
+  "kitSourceCommit": "82de4e4cae458dd716ef3462c9c94192d1114265",
+  "mergeCommit": "aa4bb50ed5ee912e8eced8702a284133071b070b",
+  "sourceAndMergeTree": "ac41322dd354cd3ea527fe30ec924c747bd9eee0",
+  "mergedAt": "2026-10-22T19:19:05Z",
+  "ciCompletion": {
+    "runCount": 4,
+    "successfulRuns": 4,
+    "jobCount": 4,
+    "successfulJobs": 4,
+    "stepCount": 50,
+    "successfulSteps": 50,
+    "allRunSuccess": true,
+    "allJobSuccess": true,
+    "allStepSuccess": true
+  },
+  "observedAtUtc": "2026-10-22T19:19:09.339480+00:00"
+}

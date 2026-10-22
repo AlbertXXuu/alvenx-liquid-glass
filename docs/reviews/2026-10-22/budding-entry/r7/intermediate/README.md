@@ -1,0 +1,3 @@
+# Intermediate R7 before the narrow-screen shadow follow-up
+
+The first R7 source (188693af02c572126c326af9eb95625b0a3256cf) passed its functional suites and was deployed. Final screenshot inspection still found a bright bottom seam at 320 CSS px / DPR 3. Layer isolation shows that removing the contact shadow eliminates that seam; the final follow-up fixes the cutout instead of removing the shadow. The accompanying before image reproduces the regression. These historical identity/CI/HTTP receipts describe that earlier source, not the final follow-up. See ../publication.md for the final source and verified delivery.

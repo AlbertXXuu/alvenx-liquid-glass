@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "createdAtUtc": "2026-10-22T19:14:28.667387+00:00",
+  "scope": "Bottom arc of mother and chamber, 320 CSS px / DPR 3 Chromium screenshot. Detect local luminance ridge at 1 CSS px neighbors; not whole-image aesthetics or physical Safari certification.",
+  "threshold": 8,
+  "records": [
+    {
+      "stage": "before",
+      "path": "narrow-rim-original.png",
+      "sha256": "0d3013b802a93d86875a905c1423f94b27830768e6e77f086be78f4ae92792d3",
+      "columns": 364,
+      "maxRidge": 15.8504,
+      "p95": 13.8504,
+      "columnsOver8": 232
+    },
+    {
+      "stage": "local",
+      "path": "touch-narrow-open.png",
+      "sha256": "f04a6e5fb2f6c59242f3b8367f0ffb292223bd4a88d5ba609d4a452ab2d2d5fa",
+      "columns": 364,
+      "maxRidge": 2.8596,
+      "p95": 1.5014,
+      "columnsOver8": 0
+    }
+  ]
+}

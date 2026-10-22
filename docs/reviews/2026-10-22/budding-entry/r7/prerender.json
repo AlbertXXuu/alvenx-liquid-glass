@@ -1,0 +1,39 @@
+{
+  "status": "prerendered",
+  "entry": "showcase/budding-refinement-review/index.html",
+  "outDirectory": "D:\\.Development\\AlvenX-UIUX\\alvenx-design-kit\\output\\playwright\\budding-refinement-r7-20261022\\r7-edge-dist",
+  "base": "/ui/releases/budding-review-20261023-r7-edge/",
+  "render": "actual Review inside StrictMode; Node without DOM globals",
+  "initialGrowth": 0,
+  "previousHtmlSha256": "5da6cf4d49903bd6cfdb7a82a6756d81f36fe36f89f03641a1ebb2bf4f5d548b",
+  "htmlSha256": "26f4f7f00039476f74de5c9eec50212f0036d69fc8283b0e4c62c2fb86265a8f",
+  "htmlBytes": 59898,
+  "markupBytes": 58726,
+  "responsiveFrames": [
+    {
+      "diameter": 44,
+      "cssWidth": 56,
+      "cssHeight": 73.6,
+      "textureCssWidth": 186.873,
+      "rasterWidth": 281,
+      "rasterHeight": 111,
+      "pngSha256": "7ece4505f88faabaec8e7afb4e1768ed6fe6ca07a77e8c74accf3414ac0fe81c"
+    },
+    {
+      "diameter": 54,
+      "cssWidth": 66,
+      "cssHeight": 87.6,
+      "textureCssWidth": 214.114,
+      "rasterWidth": 322,
+      "rasterHeight": 132,
+      "pngSha256": "07b259a0b1f90837986160fb24bd08c047fc807267fab243cab3edead71509a1"
+    }
+  ],
+  "earlyController": {
+    "path": "assets/budding-early-activation-19e8c7030b4c.js",
+    "bytes": 4173,
+    "sha256": "19e8c7030b4ce9288c783e6e44d0f10261a432f25f3dac2d56db16b852fcf94d",
+    "execution": "external defer before the main module; no inline script"
+  },
+  "defaultSiteDistChanged": false
+}

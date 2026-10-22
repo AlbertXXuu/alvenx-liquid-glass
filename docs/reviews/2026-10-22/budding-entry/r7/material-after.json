@@ -1,0 +1,25 @@
+{
+  "initialTransition": 0,
+  "splitTransition": 0.027708333333333335,
+  "closedVsFinalMother": 0.009375,
+  "passed": 3,
+  "total": 3,
+  "checks": [
+    {
+      "name": "initialTransition",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "name": "splitTransition",
+      "pass": true,
+      "value": 0.027708333333333335
+    },
+    {
+      "name": "closedVsFinalMother",
+      "pass": true,
+      "value": 0.009375
+    }
+  ],
+  "boundary": "Controlled offscreen renderer samples; separate actual-page screenshots cover composition."
+}
