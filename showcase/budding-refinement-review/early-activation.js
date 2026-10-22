@@ -2,13 +2,21 @@
 (()=>{
  globalThis.__alvenxBuddingReleaseEarly?.();
  if(document.querySelector('[data-review-bud="refinement-proposal"][data-enhanced="true"]'))return;
- let destination='',gesture=null,activate=null;
- const release=()=>{for(const [type,handler] of [['click',handle],['pointerdown',down],['pointerup',up],['pointercancel',cancel],['keydown',keyDown],['keyup',keyUp]])document.removeEventListener(type,handler,true);window.removeEventListener('error',failed,true);clearTimeout(deadline);};
+ let destination='',gesture=null,activate=null,clearCompatibilityClick=()=>{};
+ const release=()=>{for(const [type,handler] of [['click',handle],['pointerdown',down],['pointerup',up],['pointercancel',cancel],['keydown',keyDown],['keyup',keyUp]])document.removeEventListener(type,handler,true);window.removeEventListener('error',failed,true);clearTimeout(deadline);clearCompatibilityClick();};
+ // Touch can synthesize a click on the replacement button after pointerup.
+ // Consume only that handed-off gesture, never the next pointerdown/keypress.
+ const consumeCompatibilityClick=upEvent=>{
+  let timeout;
+  const clear=()=>{document.removeEventListener('click',click,true);document.removeEventListener('pointerdown',clear,true);document.removeEventListener('keydown',clear,true);clearTimeout(timeout);clearCompatibilityClick=()=>{};};
+  const click=event=>{const samePointer=typeof event.pointerId!=='number'||event.pointerId===upEvent.pointerId;const samePlace=Math.abs(event.clientX-upEvent.clientX)<2&&Math.abs(event.clientY-upEvent.clientY)<2;if(samePointer&&samePlace&&event.target.closest?.('[data-review-bud="refinement-proposal"]')){event.preventDefault();event.stopImmediatePropagation();}clear();};
+  clearCompatibilityClick=clear;document.addEventListener('click',click,true);document.addEventListener('pointerdown',clear,true);document.addEventListener('keydown',clear,true);timeout=setTimeout(clear,500);
+ };
  const linkFor=event=>event.target.closest?.('[data-prejs-budding]');
  const modified=event=>event.metaKey||event.ctrlKey||event.shiftKey||event.altKey;
  const queue=link=>{destination=link.href;globalThis.__alvenxBuddingIntent=true;link.closest('[data-review-bud]')?.setAttribute('data-early-intent','true');};
  const down=event=>{const link=linkFor(event);if(link&&event.button===0&&!modified(event)){const r=link.getBoundingClientRect();gesture={pointerId:event.pointerId,left:r.left,top:r.top,right:r.right,bottom:r.bottom};}};
- const up=event=>{if(!gesture||gesture.pointerId!==event.pointerId)return;const g=gesture;gesture=null;if(activate){if(event.clientX>=g.left&&event.clientX<=g.right&&event.clientY>=g.top&&event.clientY<=g.bottom)activate();release();}};
+ const up=event=>{if(!gesture||gesture.pointerId!==event.pointerId)return;const g=gesture;gesture=null;if(activate){release();if(event.clientX>=g.left&&event.clientX<=g.right&&event.clientY>=g.top&&event.clientY<=g.bottom){consumeCompatibilityClick(event);activate();}}};
  const cancel=()=>{gesture=null;if(activate)release();};
  const keyDown=event=>{const link=linkFor(event);if(link&&event.key===' '&&!event.repeat&&!modified(event)){event.preventDefault();gesture={key:' ',link};}};
  const keyUp=event=>{if(event.key!==' '||gesture?.key!==' ')return;event.preventDefault();const link=gesture.link;gesture=null;if(activate){activate();release();}else queue(link);};

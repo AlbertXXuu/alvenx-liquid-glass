@@ -22,3 +22,9 @@ html{margin:0;background:#f5f7ff}body{margin:0}button,a,input{-webkit-tap-highli
 @media(prefers-reduced-motion:reduce){.refinement-volume-light{transition:none!important}}
 
 .refinement-bud[data-early-intent=true] .first-frame-action{transform:scale(.98)}
+/* The reference layer supplies its own rim; keep the native backdrop and focus,
+   but do not stack a second white specular ring on the small-screen silhouette. */
+.refinement-bud[data-volume-light=true] .local-edge>path:not([data-focus-outline]){stroke:none}
+.refinement-bud[data-volume-light=true] .local-edge>path[filter]{opacity:0}
+.refinement-bud[data-volume-light=true] .local-shadow{display:none}
+.first-frame-contact{position:absolute;inset:0;overflow:visible;pointer-events:none}
