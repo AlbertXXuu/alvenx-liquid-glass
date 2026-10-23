@@ -20,3 +20,5 @@ export { contourShape, shellPath } from './geometry';
 export type { Shape } from './geometry';
 export { ControlledScene, ControlledSource } from './ControlledScene';
 export type { ControlledSceneProps, ControlledSourceProps, ControlledSceneValue, ControlledSceneSize } from './ControlledScene';
+export { VolumeBuddingLink } from './VolumeBuddingLink';
+export type { VolumeBuddingLinkProps } from './VolumeBuddingLink';

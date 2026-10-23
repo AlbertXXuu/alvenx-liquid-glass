@@ -1,0 +1,27 @@
+/* Accepted R7 material; import after styles.css inside an .alvenx-design scope. */
+.volume-budding-bud{isolation:isolate}.volume-budding-contact{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:-1}.volume-budding-volume-light{position:absolute;inset:0;pointer-events:none;overflow:visible;opacity:.82}.volume-budding-destination{z-index:1}/* The first native frame occupies the same CSS-pixel slot before hydration. */
+.volume-budding-bud[data-enhanced=false]{width:66px;height:87.6px}
+.volume-budding-first-frame{position:absolute;inset:0;display:block;z-index:3;pointer-events:none}
+.volume-budding-first-frame>span{position:absolute;inset:0;display:block}
+.volume-first-frame-44{display:none!important}
+.volume-first-frame-backdrop{position:absolute;inset:0;background:rgba(240,242,255,.3);backdrop-filter:blur(2.7px) saturate(1.16);-webkit-backdrop-filter:blur(2.7px) saturate(1.16)}
+.volume-first-frame-texture{position:absolute;inset:0;width:66px;height:87.6px;max-width:none;opacity:.82;pointer-events:none}
+.volume-first-frame-action{position:absolute;left:6px;top:16.8px;width:54px;height:54px;border-radius:50%;pointer-events:auto;outline-offset:3px}
+.volume-first-frame-action:active{transform:scale(.98)}
+
+@media(max-width:360px){.volume-budding-bud[data-enhanced=false]{width:56px;height:73.6px}.volume-first-frame-54{display:none!important}.volume-first-frame-44{display:block!important}.volume-first-frame-texture{width:56px;height:73.6px}.volume-first-frame-action{top:14.8px;width:44px;height:44px}}
+
+.volume-budding-bud[data-enhanced=true]:has([data-optical-ready=true]) .volume-first-frame-backdrop{visibility:hidden}
+
+.volume-budding-volume-light[data-volume-preparation=pending]{opacity:0}
+.volume-budding-volume-light[data-volume-preparation=ready][data-volume-reveal=blend]{transition:opacity 160ms ease-out}
+@starting-style{.volume-budding-volume-light[data-volume-preparation=ready][data-volume-reveal=blend]{opacity:0}}
+@media(prefers-reduced-motion:reduce){.volume-budding-volume-light{transition:none!important}}
+
+.volume-budding-bud[data-early-intent=true] .volume-first-frame-action{transform:scale(.98)}
+/* The reference layer supplies its own rim; keep the native backdrop and focus,
+   but do not stack a second white specular ring on the small-screen silhouette. */
+.volume-budding-bud[data-volume-light=true] .local-edge>path:not([data-focus-outline]){stroke:none}
+.volume-budding-bud[data-volume-light=true] .local-edge>path[filter]{opacity:0}
+.volume-budding-bud[data-volume-light=true] .local-shadow{display:none}
+.volume-first-frame-contact{position:absolute;inset:0;overflow:visible;pointer-events:none}
