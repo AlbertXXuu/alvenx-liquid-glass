@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "tarball": "alvenx-liquid-glass-1.4.1.tgz",
+  "tarballSHA256": "76c2b8b09b53753bda59a031dddb9c10c2fdd41874bc8f41ff0625b9a0587cbd",
+  "commands": [
+    {
+      "command": "npm install --ignore-scripts --no-audit --no-fund",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run check",
+      "exitCode": 0
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0
+    }
+  ],
+  "note": "Fresh temporary directory outside original repository; own node_modules and types/build; browser smoke is reported separately.",
+  "websiteInstalledFilesMatched": 310
+}

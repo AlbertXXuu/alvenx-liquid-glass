@@ -1,0 +1,15 @@
+{
+  "startedAtUtc": "2026-10-23T05:38:54.569Z",
+  "completedAtUtc": "2026-10-23T05:39:54.440Z",
+  "success": true,
+  "childExitCode": 0,
+  "timedOut": false,
+  "interrupted": false,
+  "deployedWorkerVersion": "a91f3e72-86cd-45bb-b54a-e1c4a730857d",
+  "apiStatusCounts": {
+    "200": 14,
+    "201": 1,
+    "202": 2
+  },
+  "transportFailureCounts": {}
+}

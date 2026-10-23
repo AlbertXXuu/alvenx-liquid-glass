@@ -1,0 +1,305 @@
+{
+  "status": "passed",
+  "base": "https://alvenx.com/",
+  "checks": [
+    {
+      "name": "320: closed mother follows pointer",
+      "pass": true
+    },
+    {
+      "name": "320: chamber contour pulls",
+      "pass": true
+    },
+    {
+      "name": "320: mother remains independent",
+      "pass": true
+    },
+    {
+      "name": "320: neighboring layout is stable",
+      "pass": true
+    },
+    {
+      "name": "320: local deformation, not only translation",
+      "pass": true,
+      "detail": {
+        "min": 1.4601930000000038,
+        "max": 5.160274000000015
+      }
+    },
+    {
+      "name": "320: release has a return interval",
+      "pass": true
+    },
+    {
+      "name": "320: release returns to accepted shape",
+      "pass": true
+    },
+    {
+      "name": "320: drag never navigates",
+      "pass": true
+    },
+    {
+      "name": "320: mother also pulls",
+      "pass": true
+    },
+    {
+      "name": "320: chamber remains independent",
+      "pass": true
+    },
+    {
+      "name": "320: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "320: next click toggles normally",
+      "pass": true
+    },
+    {
+      "name": "320: keyboard toggle remains usable",
+      "pass": true
+    },
+    {
+      "name": "320: renderer sleeps when settled",
+      "pass": true
+    },
+    {
+      "name": "320: ordinary link click still navigates",
+      "pass": true,
+      "detail": {
+        "url": "https://alvenx.com/ui/",
+        "href": "/ui/"
+      }
+    },
+    {
+      "name": "393: closed mother follows pointer",
+      "pass": true
+    },
+    {
+      "name": "393: chamber contour pulls",
+      "pass": true
+    },
+    {
+      "name": "393: mother remains independent",
+      "pass": true
+    },
+    {
+      "name": "393: neighboring layout is stable",
+      "pass": true
+    },
+    {
+      "name": "393: local deformation, not only translation",
+      "pass": true,
+      "detail": {
+        "min": 1.5024290000000065,
+        "max": 5.488478999999984
+      }
+    },
+    {
+      "name": "393: release has a return interval",
+      "pass": true
+    },
+    {
+      "name": "393: release returns to accepted shape",
+      "pass": true
+    },
+    {
+      "name": "393: drag never navigates",
+      "pass": true
+    },
+    {
+      "name": "393: mother also pulls",
+      "pass": true
+    },
+    {
+      "name": "393: chamber remains independent",
+      "pass": true
+    },
+    {
+      "name": "393: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "393: next click toggles normally",
+      "pass": true
+    },
+    {
+      "name": "393: keyboard toggle remains usable",
+      "pass": true
+    },
+    {
+      "name": "393: renderer sleeps when settled",
+      "pass": true
+    },
+    {
+      "name": "touch: gesture belongs to shape",
+      "pass": true
+    },
+    {
+      "name": "touch: release does not navigate",
+      "pass": true
+    },
+    {
+      "name": "touch: subsequent tap still toggles",
+      "pass": true
+    },
+    {
+      "name": "touch: background remains scrollable",
+      "pass": true
+    },
+    {
+      "name": "393: ordinary link click still navigates",
+      "pass": true,
+      "detail": {
+        "url": "https://alvenx.com/ui/",
+        "href": "/ui/"
+      }
+    },
+    {
+      "name": "820: closed mother follows pointer",
+      "pass": true
+    },
+    {
+      "name": "820: chamber contour pulls",
+      "pass": true
+    },
+    {
+      "name": "820: mother remains independent",
+      "pass": true
+    },
+    {
+      "name": "820: neighboring layout is stable",
+      "pass": true
+    },
+    {
+      "name": "820: local deformation, not only translation",
+      "pass": true,
+      "detail": {
+        "min": 1.4947439999999972,
+        "max": 5.474766999999986
+      }
+    },
+    {
+      "name": "820: release has a return interval",
+      "pass": true
+    },
+    {
+      "name": "820: release returns to accepted shape",
+      "pass": true
+    },
+    {
+      "name": "820: drag never navigates",
+      "pass": true
+    },
+    {
+      "name": "820: mother also pulls",
+      "pass": true
+    },
+    {
+      "name": "820: chamber remains independent",
+      "pass": true
+    },
+    {
+      "name": "820: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "820: next click toggles normally",
+      "pass": true
+    },
+    {
+      "name": "820: keyboard toggle remains usable",
+      "pass": true
+    },
+    {
+      "name": "820: renderer sleeps when settled",
+      "pass": true
+    },
+    {
+      "name": "820: ordinary link click still navigates",
+      "pass": true,
+      "detail": {
+        "url": "https://alvenx.com/ui/",
+        "href": "/ui/"
+      }
+    },
+    {
+      "name": "1413: closed mother follows pointer",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber contour pulls",
+      "pass": true
+    },
+    {
+      "name": "1413: mother remains independent",
+      "pass": true
+    },
+    {
+      "name": "1413: neighboring layout is stable",
+      "pass": true
+    },
+    {
+      "name": "1413: local deformation, not only translation",
+      "pass": true,
+      "detail": {
+        "min": 1.4966390000000018,
+        "max": 5.480176
+      }
+    },
+    {
+      "name": "1413: release has a return interval",
+      "pass": true
+    },
+    {
+      "name": "1413: release returns to accepted shape",
+      "pass": true
+    },
+    {
+      "name": "1413: drag never navigates",
+      "pass": true
+    },
+    {
+      "name": "1413: mother also pulls",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber remains independent",
+      "pass": true
+    },
+    {
+      "name": "1413: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "1413: next click toggles normally",
+      "pass": true
+    },
+    {
+      "name": "1413: keyboard toggle remains usable",
+      "pass": true
+    },
+    {
+      "name": "1413: renderer sleeps when settled",
+      "pass": true
+    },
+    {
+      "name": "1413: ordinary link click still navigates",
+      "pass": true,
+      "detail": {
+        "url": "https://alvenx.com/ui/",
+        "href": "/ui/"
+      }
+    },
+    {
+      "name": "reduced motion: shape stays static",
+      "pass": true
+    },
+    {
+      "name": "no page exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "scope": "Chromium viewport and CDP touch emulation, not physical iOS"
+}

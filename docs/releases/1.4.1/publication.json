@@ -1,0 +1,78 @@
+{
+  "status": "published-and-verified",
+  "completedAt": "2026-10-23T13:53:06.001452+08:00",
+  "version": "1.4.1",
+  "url": "https://alvenx.com/",
+  "kitSource": "b3bca3c46913c31c8ce37cac9906bfbdd6544597",
+  "kitTag": "v1.4.1",
+  "websiteSource": "3ed2e8b52c7e393428ae6c887aa1659f9e8c3d7a",
+  "websiteTag": "homepage-budding-v1.4.1",
+  "packageSha256": "76c2b8b09b53753bda59a031dddb9c10c2fdd41874bc8f41ff0625b9a0587cbd",
+  "showcaseSourceUnchanged": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+  "websiteMerge": "20452f801b9e72e8a3a4899ceb9d9c222489d7fd",
+  "websiteTree": "a6b2bbee0010483dcbbe9f9986f3b8905d69cee0",
+  "worker": {
+    "id": "e9fadb03-916a-4d08-bed0-5cdd46da8795",
+    "created_on": "2026-10-23T05:39:47.630247Z",
+    "versions": [
+      {
+        "version_id": "a91f3e72-86cd-45bb-b54a-e1c4a730857d",
+        "percentage": 100
+      }
+    ]
+  },
+  "checks": {
+    "builtBrowser": 132,
+    "onlineBrowser": 74,
+    "ciRuns": 5,
+    "ciJobs": 5,
+    "ciSteps": 58,
+    "httpMatches": 510,
+    "installedFiles": 310,
+    "screenshots": 46
+  },
+  "assets": [
+    {
+      "name": "alvenx-design-kit-1.4.1.zip",
+      "bytes": 208500180,
+      "sha256": "747b1deffd86842b196f8d9292137cb24a853bced16fe367e7844b2d7d31d96d"
+    },
+    {
+      "name": "alvenx-liquid-glass-1.4.1.tgz",
+      "bytes": 29030424,
+      "sha256": "76c2b8b09b53753bda59a031dddb9c10c2fdd41874bc8f41ff0625b9a0587cbd"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 190,
+      "sha256": "8af5373818a4f2271f4ab73979fc14925251dc33d0563e157a90b582711bf7b5"
+    },
+    {
+      "name": "installed-consumer.json",
+      "bytes": 615,
+      "sha256": "3d63ead95f0342352b48375b1945ecad83d1e4a0d8669ba7482c485568cbfd3a"
+    }
+  ],
+  "archive": {
+    "status": "passed",
+    "mode": "Verify",
+    "checkedUtc": "2026-10-23T05:31:15.0816483Z",
+    "groups": 60,
+    "files": 2462,
+    "bytes": 1427764403.0,
+    "manifestSha256": "85c4d66dbc61fccd5565b2e2869e661b40c497eded0a2872b5ab841c0cfa1a0b"
+  },
+  "limitations": [
+    "Chromium viewport/CDP touch emulation is not physical iOS/Safari/Combo Touch acceptance.",
+    "No zero network/driver latency or stable FPS guarantee."
+  ],
+  "initialHarnessCorrections": [
+    "Settled-shape snapshots now wait for the proximity response to finish; no product change was required for that comparison.",
+    "Destination comparison normalizes the server trailing-slash redirect.",
+    "The preview was first navigated before its listener was ready; the subsequent actual page and tests loaded successfully."
+  ],
+  "initialHttpAttempt": {
+    "status": "download-failed",
+    "detail": "The initial batch raised Public GET failed without retaining the resource identity. The final checkpointed pass used the existing process proxy and matched all 510 resources."
+  }
+}

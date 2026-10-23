@@ -8,7 +8,7 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-**Publication status:** The [homepage](https://alvenx.com/) uses the accepted **1.4.0 VolumeBuddingLink**; its [publication record](docs/releases/1.4.0/publication.md) identifies the installed package, source and deployed resources. The [showcase](https://alvenx.com/ui/) remains on 1.3.2 with the [navigation presentation correction](docs/releases/1.3.2/navigation-typography/publication.md). These are independently pinned surfaces.
+**Publication status:** The [homepage](https://alvenx.com/) uses **1.4.1 VolumeBuddingLink**, adding independent local pulling and damped release to the accepted 1.4.0 material and shape. Its [publication record](docs/releases/1.4.1/publication.md) identifies the installed package, source and deployed resources. The [showcase](https://alvenx.com/ui/) remains on 1.3.2 with the [navigation presentation correction](docs/releases/1.3.2/navigation-typography/publication.md). These are independently pinned surfaces.
 
 The [R6 startup review](docs/reviews/2026-10-22/budding-entry/r6/publication.md) and [R7 continuous-material review](docs/reviews/2026-10-22/budding-entry/r7/publication.md) preserve the owner-accepted [R5 curved chamber](docs/reviews/2026-10-22/budding-entry/r5/publication.md). Their first frame, shader readiness, reversible toggle and mobile-edge correction were promoted into 1.4.0. Static visibility is distinct from live material readiness; no literal zero delay is claimed. Physical iOS experience remains separate from browser emulation.
 
@@ -140,6 +140,7 @@ playwright-cli -s=glass-qa close
 | [Baseline and checklist](docs/baseline-and-checklist.md) | Acceptance identity and versioned checks |
 | [1.3.2 release record](docs/releases/1.3.2/README.md) | Current opening, first-visible budding, explicit language selection and validation status |
 | [1.4.0 homepage record](docs/releases/1.4.0/publication.md) | Accepted entrance source, deployment, package and browser evidence |
+| [1.4.1 interaction record](docs/releases/1.4.1/publication.md) | Local pulling, independent lobes, release and current production checks |
 | [Development archive](docs/maintenance/archive-20261023/README.md) | Completed intermediate work, retained sources and reversible local retrieval |
 | [1.2.0 release record](docs/releases/1.2.0/README.md) | Historical production changes, publication identities and device acceptance boundaries |
 | [Attribution](docs/attribution.md) | References and individual asset notices |
