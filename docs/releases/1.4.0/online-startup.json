@@ -1,0 +1,1377 @@
+{
+  "base": "https://alvenx.com/",
+  "createdAt": "2026-10-23T04:29:17.171Z",
+  "passed": 19,
+  "total": 19,
+  "checks": [
+    {
+      "name": "320: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375,
+          "top": 606.125,
+          "right": 76,
+          "bottom": 679.71875,
+          "left": 20
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375,
+          "top": 606.125,
+          "right": 76,
+          "bottom": 679.71875,
+          "left": 20
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 595.671875,
+          "right": 86,
+          "bottom": 683.265625,
+          "left": 20
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 595.671875,
+          "right": 86,
+          "bottom": 683.265625,
+          "left": 20
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 719.921875,
+          "right": 382.640625,
+          "bottom": 807.515625,
+          "left": 316.640625
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 719.921875,
+          "right": 382.640625,
+          "bottom": 807.515625,
+          "left": 316.640625
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "hydrated pending circle has one native action",
+      "pass": true,
+      "detail": {
+        "buttons": 1,
+        "anchors": 0
+      }
+    },
+    {
+      "name": "Space starts real growth while compile remains pending",
+      "pass": true,
+      "detail": {
+        "at": 3999.7000000029802,
+        "preparation": "pending"
+      }
+    },
+    {
+      "name": "all reflection and draws wait for parallel completion",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "pending growth blends matching live material",
+      "pass": true,
+      "detail": {
+        "volumePreparation": "ready",
+        "volumePreparationMode": "parallel",
+        "volumeReveal": "blend",
+        "volumeLightRenders": "20",
+        "volumeLightComputeMs": "0.200",
+        "volumeLightMeanMs": "0.160",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "continuous-contour-profile",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "name": "hidden wall time does not consume foreground preparation budget",
+      "pass": true
+    },
+    {
+      "name": "never-completing driver reaches bounded failure and releases program",
+      "pass": true,
+      "detail": {
+        "before": 27,
+        "after": 27,
+        "deletes": 1
+      }
+    },
+    {
+      "name": "failed shader preserves native interaction",
+      "pass": true
+    },
+    {
+      "name": "program completed across 11s hidden interval becomes ready on return",
+      "pass": true,
+      "detail": {
+        "calls": [
+          {
+            "type": "completion",
+            "at": 2591
+          },
+          {
+            "type": "completion",
+            "at": 2612
+          },
+          {
+            "type": "completion",
+            "at": 2625
+          },
+          {
+            "type": "completion",
+            "at": 2641
+          },
+          {
+            "type": "completion",
+            "at": 2657
+          },
+          {
+            "type": "completion",
+            "at": 2674
+          },
+          {
+            "type": "completion",
+            "at": 2689
+          },
+          {
+            "type": "completion",
+            "at": 2705
+          },
+          {
+            "type": "completion",
+            "at": 2721
+          },
+          {
+            "type": "completion",
+            "at": 2736
+          },
+          {
+            "type": "completion",
+            "at": 2754
+          },
+          {
+            "type": "completion",
+            "at": 2770
+          },
+          {
+            "type": "completion",
+            "at": 2785
+          },
+          {
+            "type": "completion",
+            "at": 2801
+          },
+          {
+            "type": "completion",
+            "at": 2817
+          },
+          {
+            "type": "completion",
+            "at": 2833
+          },
+          {
+            "type": "completion",
+            "at": 2848
+          },
+          {
+            "type": "completion",
+            "at": 2865
+          },
+          {
+            "type": "completion",
+            "at": 2896
+          },
+          {
+            "type": "completion",
+            "at": 2913
+          },
+          {
+            "type": "completion",
+            "at": 2928
+          },
+          {
+            "type": "completion",
+            "at": 2944
+          },
+          {
+            "type": "completion",
+            "at": 2961
+          },
+          {
+            "type": "completion",
+            "at": 2977
+          },
+          {
+            "type": "completion",
+            "at": 2993
+          },
+          {
+            "type": "completion",
+            "at": 3008
+          },
+          {
+            "type": "completion",
+            "at": 3025
+          },
+          {
+            "type": "completion",
+            "at": 3040
+          },
+          {
+            "type": "completion",
+            "at": 3057
+          },
+          {
+            "type": "completion",
+            "at": 3073
+          },
+          {
+            "type": "completion",
+            "at": 3088
+          },
+          {
+            "type": "completion",
+            "at": 3105
+          },
+          {
+            "type": "completion",
+            "at": 3121
+          },
+          {
+            "type": "completion",
+            "at": 3137
+          },
+          {
+            "type": "completion",
+            "at": 3153
+          },
+          {
+            "type": "completion",
+            "at": 3168
+          },
+          {
+            "type": "completion",
+            "at": 3185
+          },
+          {
+            "type": "completion",
+            "at": 3201
+          },
+          {
+            "type": "completion",
+            "at": 3216
+          },
+          {
+            "type": "completion",
+            "at": 3233
+          },
+          {
+            "type": "completion",
+            "at": 3248
+          },
+          {
+            "type": "completion",
+            "at": 3265
+          },
+          {
+            "type": "completion",
+            "at": 3281
+          },
+          {
+            "type": "completion",
+            "at": 3314
+          },
+          {
+            "type": "completion",
+            "at": 3329
+          },
+          {
+            "type": "completion",
+            "at": 3344
+          },
+          {
+            "type": "completion",
+            "at": 3361
+          },
+          {
+            "type": "completion",
+            "at": 3377
+          },
+          {
+            "type": "completion",
+            "at": 3393
+          },
+          {
+            "type": "completion",
+            "at": 3408
+          },
+          {
+            "type": "completion",
+            "at": 3425
+          },
+          {
+            "type": "completion",
+            "at": 3441
+          },
+          {
+            "type": "completion",
+            "at": 3457
+          },
+          {
+            "type": "completion",
+            "at": 3472
+          },
+          {
+            "type": "completion",
+            "at": 3488
+          },
+          {
+            "type": "completion",
+            "at": 3505
+          },
+          {
+            "type": "completion",
+            "at": 3521
+          },
+          {
+            "type": "completion",
+            "at": 3537
+          },
+          {
+            "type": "completion",
+            "at": 3553
+          },
+          {
+            "type": "completion",
+            "at": 3569
+          },
+          {
+            "type": "completion",
+            "at": 3585
+          },
+          {
+            "type": "completion",
+            "at": 3601
+          },
+          {
+            "type": "completion",
+            "at": 3617
+          },
+          {
+            "type": "completion",
+            "at": 3632
+          },
+          {
+            "type": "completion",
+            "at": 3649
+          },
+          {
+            "type": "completion",
+            "at": 3665
+          },
+          {
+            "type": "completion",
+            "at": 3681
+          },
+          {
+            "type": "completion",
+            "at": 3713
+          },
+          {
+            "type": "completion",
+            "at": 3728
+          },
+          {
+            "type": "completion",
+            "at": 3745
+          },
+          {
+            "type": "completion",
+            "at": 3762
+          },
+          {
+            "type": "completion",
+            "at": 3777
+          },
+          {
+            "type": "completion",
+            "at": 3793
+          },
+          {
+            "type": "completion",
+            "at": 3808
+          },
+          {
+            "type": "completion",
+            "at": 3825
+          },
+          {
+            "type": "completion",
+            "at": 3841
+          },
+          {
+            "type": "completion",
+            "at": 3856
+          },
+          {
+            "type": "completion",
+            "at": 3872
+          },
+          {
+            "type": "completion",
+            "at": 3889
+          },
+          {
+            "type": "completion",
+            "at": 3904
+          },
+          {
+            "type": "completion",
+            "at": 3924
+          },
+          {
+            "type": "completion",
+            "at": 15137
+          },
+          {
+            "type": "completion",
+            "at": 15154
+          },
+          {
+            "type": "completion",
+            "at": 15168
+          },
+          {
+            "type": "completion",
+            "at": 15184
+          },
+          {
+            "type": "linkStatus",
+            "at": 15184,
+            "duration": 0,
+            "painted": false
+          }
+        ],
+        "violations": [],
+        "deletes": 0
+      }
+    },
+    {
+      "name": "no-KHR keeps accepted live renderer after first observed paint",
+      "pass": true,
+      "detail": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.600",
+          "volumeLightMeanMs": "0.600",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "continuous-contour-profile",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "calls": [
+          {
+            "type": "linkStatus",
+            "at": 2634.89999999851,
+            "duration": 47.5,
+            "painted": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "pre-main native activation retains intent",
+      "pass": true
+    },
+    {
+      "name": "queued activation is consumed and early handlers removed",
+      "pass": true
+    },
+    {
+      "name": "focused first frame hands focus to the single native button",
+      "pass": true
+    },
+    {
+      "name": "main resource failure releases interception within the bounded startup deadline",
+      "pass": true
+    }
+  ],
+  "metrics": [
+    {
+      "width": 320,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375,
+          "top": 606.125,
+          "right": 76,
+          "bottom": 679.71875,
+          "left": 20
+        },
+        "diameter": 44,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 393,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 595.671875,
+          "right": 86,
+          "bottom": 683.265625,
+          "left": 20
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1413,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 719.921875,
+          "right": 382.640625,
+          "bottom": 807.515625,
+          "left": 316.640625
+        },
+        "diameter": 54,
+        "href": "https://alvenx.com/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "forcedPending": {
+        "first": {
+          "at": 3999.7000000029802,
+          "preparation": "pending"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 3498.5
+            },
+            {
+              "type": "completion",
+              "at": 3504.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 3511.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3528.5
+            },
+            {
+              "type": "completion",
+              "at": 3545
+            },
+            {
+              "type": "completion",
+              "at": 3561.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3578.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 3594.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 3611.60000000149
+            },
+            {
+              "type": "completion",
+              "at": 3628.5
+            },
+            {
+              "type": "completion",
+              "at": 3645
+            },
+            {
+              "type": "completion",
+              "at": 3661.5
+            },
+            {
+              "type": "completion",
+              "at": 3678.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 3694.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 3711.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3728.3000000044703
+            },
+            {
+              "type": "completion",
+              "at": 3744.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 3761.60000000149
+            },
+            {
+              "type": "completion",
+              "at": 3778.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 3795
+            },
+            {
+              "type": "completion",
+              "at": 3811.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3828.3000000044703
+            },
+            {
+              "type": "completion",
+              "at": 3844.89999999851
+            },
+            {
+              "type": "completion",
+              "at": 3861.5
+            },
+            {
+              "type": "completion",
+              "at": 3878.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 3895
+            },
+            {
+              "type": "completion",
+              "at": 3911.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3928.2000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3945
+            },
+            {
+              "type": "completion",
+              "at": 3961.60000000149
+            },
+            {
+              "type": "completion",
+              "at": 3978.7000000029802
+            },
+            {
+              "type": "completion",
+              "at": 3995.5
+            },
+            {
+              "type": "completion",
+              "at": 4017
+            },
+            {
+              "type": "completion",
+              "at": 4033.5
+            },
+            {
+              "type": "completion",
+              "at": 4049.5
+            },
+            {
+              "type": "completion",
+              "at": 4066.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 4083.5
+            },
+            {
+              "type": "completion",
+              "at": 4100.5
+            },
+            {
+              "type": "completion",
+              "at": 4116.39999999851
+            },
+            {
+              "type": "completion",
+              "at": 4133.70000000298
+            },
+            {
+              "type": "completion",
+              "at": 4150.70000000298
+            },
+            {
+              "type": "completion",
+              "at": 4168
+            },
+            {
+              "type": "completion",
+              "at": 4185
+            },
+            {
+              "type": "completion",
+              "at": 4201.30000000447
+            },
+            {
+              "type": "linkStatus",
+              "at": 4201.30000000447,
+              "duration": 0,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "parallel",
+          "volumeReveal": "blend",
+          "volumeLightRenders": "20",
+          "volumeLightComputeMs": "0.200",
+          "volumeLightMeanMs": "0.160",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "continuous-contour-profile",
+          "materialSource": "src/volume-renderer.js"
+        }
+      }
+    },
+    {
+      "never": {
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 2737
+            },
+            {
+              "type": "completion",
+              "at": 2757
+            },
+            {
+              "type": "completion",
+              "at": 2770
+            },
+            {
+              "type": "completion",
+              "at": 2784
+            },
+            {
+              "type": "completion",
+              "at": 2800
+            },
+            {
+              "type": "completion",
+              "at": 2816
+            },
+            {
+              "type": "completion",
+              "at": 2832
+            },
+            {
+              "type": "completion",
+              "at": 2849
+            },
+            {
+              "type": "completion",
+              "at": 2864
+            },
+            {
+              "type": "completion",
+              "at": 2881
+            },
+            {
+              "type": "completion",
+              "at": 2896
+            },
+            {
+              "type": "completion",
+              "at": 2913
+            },
+            {
+              "type": "completion",
+              "at": 2928
+            },
+            {
+              "type": "completion",
+              "at": 2944
+            },
+            {
+              "type": "completion",
+              "at": 2962
+            },
+            {
+              "type": "completion",
+              "at": 2976
+            },
+            {
+              "type": "completion",
+              "at": 3008
+            },
+            {
+              "type": "completion",
+              "at": 3025
+            },
+            {
+              "type": "completion",
+              "at": 3040
+            },
+            {
+              "type": "completion",
+              "at": 3056
+            },
+            {
+              "type": "completion",
+              "at": 3073
+            },
+            {
+              "type": "completion",
+              "at": 3089
+            },
+            {
+              "type": "completion",
+              "at": 3104
+            },
+            {
+              "type": "completion",
+              "at": 3139
+            },
+            {
+              "type": "completion",
+              "at": 3152
+            },
+            {
+              "type": "completion",
+              "at": 3171
+            },
+            {
+              "type": "completion",
+              "at": 24274
+            }
+          ],
+          "violations": [],
+          "deletes": 1
+        }
+      }
+    },
+    {
+      "hiddenResume": {
+        "simulatedHiddenMs": 11000,
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 2591
+            },
+            {
+              "type": "completion",
+              "at": 2612
+            },
+            {
+              "type": "completion",
+              "at": 2625
+            },
+            {
+              "type": "completion",
+              "at": 2641
+            },
+            {
+              "type": "completion",
+              "at": 2657
+            },
+            {
+              "type": "completion",
+              "at": 2674
+            },
+            {
+              "type": "completion",
+              "at": 2689
+            },
+            {
+              "type": "completion",
+              "at": 2705
+            },
+            {
+              "type": "completion",
+              "at": 2721
+            },
+            {
+              "type": "completion",
+              "at": 2736
+            },
+            {
+              "type": "completion",
+              "at": 2754
+            },
+            {
+              "type": "completion",
+              "at": 2770
+            },
+            {
+              "type": "completion",
+              "at": 2785
+            },
+            {
+              "type": "completion",
+              "at": 2801
+            },
+            {
+              "type": "completion",
+              "at": 2817
+            },
+            {
+              "type": "completion",
+              "at": 2833
+            },
+            {
+              "type": "completion",
+              "at": 2848
+            },
+            {
+              "type": "completion",
+              "at": 2865
+            },
+            {
+              "type": "completion",
+              "at": 2896
+            },
+            {
+              "type": "completion",
+              "at": 2913
+            },
+            {
+              "type": "completion",
+              "at": 2928
+            },
+            {
+              "type": "completion",
+              "at": 2944
+            },
+            {
+              "type": "completion",
+              "at": 2961
+            },
+            {
+              "type": "completion",
+              "at": 2977
+            },
+            {
+              "type": "completion",
+              "at": 2993
+            },
+            {
+              "type": "completion",
+              "at": 3008
+            },
+            {
+              "type": "completion",
+              "at": 3025
+            },
+            {
+              "type": "completion",
+              "at": 3040
+            },
+            {
+              "type": "completion",
+              "at": 3057
+            },
+            {
+              "type": "completion",
+              "at": 3073
+            },
+            {
+              "type": "completion",
+              "at": 3088
+            },
+            {
+              "type": "completion",
+              "at": 3105
+            },
+            {
+              "type": "completion",
+              "at": 3121
+            },
+            {
+              "type": "completion",
+              "at": 3137
+            },
+            {
+              "type": "completion",
+              "at": 3153
+            },
+            {
+              "type": "completion",
+              "at": 3168
+            },
+            {
+              "type": "completion",
+              "at": 3185
+            },
+            {
+              "type": "completion",
+              "at": 3201
+            },
+            {
+              "type": "completion",
+              "at": 3216
+            },
+            {
+              "type": "completion",
+              "at": 3233
+            },
+            {
+              "type": "completion",
+              "at": 3248
+            },
+            {
+              "type": "completion",
+              "at": 3265
+            },
+            {
+              "type": "completion",
+              "at": 3281
+            },
+            {
+              "type": "completion",
+              "at": 3314
+            },
+            {
+              "type": "completion",
+              "at": 3329
+            },
+            {
+              "type": "completion",
+              "at": 3344
+            },
+            {
+              "type": "completion",
+              "at": 3361
+            },
+            {
+              "type": "completion",
+              "at": 3377
+            },
+            {
+              "type": "completion",
+              "at": 3393
+            },
+            {
+              "type": "completion",
+              "at": 3408
+            },
+            {
+              "type": "completion",
+              "at": 3425
+            },
+            {
+              "type": "completion",
+              "at": 3441
+            },
+            {
+              "type": "completion",
+              "at": 3457
+            },
+            {
+              "type": "completion",
+              "at": 3472
+            },
+            {
+              "type": "completion",
+              "at": 3488
+            },
+            {
+              "type": "completion",
+              "at": 3505
+            },
+            {
+              "type": "completion",
+              "at": 3521
+            },
+            {
+              "type": "completion",
+              "at": 3537
+            },
+            {
+              "type": "completion",
+              "at": 3553
+            },
+            {
+              "type": "completion",
+              "at": 3569
+            },
+            {
+              "type": "completion",
+              "at": 3585
+            },
+            {
+              "type": "completion",
+              "at": 3601
+            },
+            {
+              "type": "completion",
+              "at": 3617
+            },
+            {
+              "type": "completion",
+              "at": 3632
+            },
+            {
+              "type": "completion",
+              "at": 3649
+            },
+            {
+              "type": "completion",
+              "at": 3665
+            },
+            {
+              "type": "completion",
+              "at": 3681
+            },
+            {
+              "type": "completion",
+              "at": 3713
+            },
+            {
+              "type": "completion",
+              "at": 3728
+            },
+            {
+              "type": "completion",
+              "at": 3745
+            },
+            {
+              "type": "completion",
+              "at": 3762
+            },
+            {
+              "type": "completion",
+              "at": 3777
+            },
+            {
+              "type": "completion",
+              "at": 3793
+            },
+            {
+              "type": "completion",
+              "at": 3808
+            },
+            {
+              "type": "completion",
+              "at": 3825
+            },
+            {
+              "type": "completion",
+              "at": 3841
+            },
+            {
+              "type": "completion",
+              "at": 3856
+            },
+            {
+              "type": "completion",
+              "at": 3872
+            },
+            {
+              "type": "completion",
+              "at": 3889
+            },
+            {
+              "type": "completion",
+              "at": 3904
+            },
+            {
+              "type": "completion",
+              "at": 3924
+            },
+            {
+              "type": "completion",
+              "at": 15137
+            },
+            {
+              "type": "completion",
+              "at": 15154
+            },
+            {
+              "type": "completion",
+              "at": 15168
+            },
+            {
+              "type": "completion",
+              "at": 15184
+            },
+            {
+              "type": "linkStatus",
+              "at": 15184,
+              "duration": 0,
+              "painted": false
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "boundary": "Controlled document.hidden visibility event and browser clock; not physical OS background behavior."
+      }
+    },
+    {
+      "noKHR": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.600",
+          "volumeLightMeanMs": "0.600",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "continuous-contour-profile",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "linkStatus",
+              "at": 2634.89999999851,
+              "duration": 47.5,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        }
+      }
+    },
+    {
+      "preMain": {
+        "activation": 2644,
+        "mainReleased": 2846.2000000029802,
+        "firstGrowth": 3177.8000000044703,
+        "artificialModuleHoldMs": 200,
+        "boundary": "Native link exists before main; after early controller loads, activation waits for the deliberately held main module. This does not measure zero-delay physics."
+      }
+    }
+  ],
+  "boundary": "No-JS first frame is exact static R7 texture over native backdrop. Pre-main activation is queued only after the tiny controller loads; no-JS/error retains a genuine destination link. Pending real growth uses native C2 optics until accepted GL can blend in; its temporary lower volume is retained in screenshots. No claim of zero network latency."
+}

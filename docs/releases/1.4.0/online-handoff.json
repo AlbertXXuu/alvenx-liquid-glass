@@ -1,0 +1,174 @@
+{
+  "base": "https://alvenx.com/",
+  "createdAt": "2026-10-23T04:24:46.927Z",
+  "passed": 16,
+  "total": 16,
+  "checks": [
+    {
+      "name": "mouse: press across hydration activates",
+      "pass": true,
+      "detail": {
+        "mode": "mouse",
+        "growth": 0.46669,
+        "expanded": "true",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "mouse: immediate next gesture closes",
+      "pass": true
+    },
+    {
+      "name": "mouse: third gesture reopens",
+      "pass": true
+    },
+    {
+      "name": "touch: press across hydration activates",
+      "pass": true,
+      "detail": {
+        "mode": "touch",
+        "growth": 0.46697,
+        "expanded": "true",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "touch: immediate next gesture closes",
+      "pass": true
+    },
+    {
+      "name": "touch: third gesture reopens",
+      "pass": true
+    },
+    {
+      "name": "space: press across hydration activates",
+      "pass": true,
+      "detail": {
+        "mode": "space",
+        "growth": 0.46614,
+        "expanded": "true",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "space: immediate next gesture closes",
+      "pass": true
+    },
+    {
+      "name": "space: third gesture reopens",
+      "pass": true
+    },
+    {
+      "name": "outside: press across hydration does not activate",
+      "pass": true,
+      "detail": {
+        "mode": "outside",
+        "growth": 0,
+        "expanded": "false",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "cancel: press across hydration does not activate",
+      "pass": true,
+      "detail": {
+        "mode": "cancel",
+        "growth": 0,
+        "expanded": "false",
+        "globals": {
+          "release": "undefined"
+        }
+      }
+    },
+    {
+      "name": "ctrlKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "metaKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "shiftKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "altKey: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    },
+    {
+      "name": "middle: native modified link is not intercepted",
+      "pass": true,
+      "detail": {
+        "intercepted": false,
+        "queued": false
+      }
+    }
+  ],
+  "results": [
+    {
+      "mode": "mouse",
+      "growth": 0.46669,
+      "expanded": "true",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "touch",
+      "growth": 0.46697,
+      "expanded": "true",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "space",
+      "growth": 0.46614,
+      "expanded": "true",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "outside",
+      "growth": 0,
+      "expanded": "false",
+      "globals": {
+        "release": "undefined"
+      }
+    },
+    {
+      "mode": "cancel",
+      "growth": 0,
+      "expanded": "false",
+      "globals": {
+        "release": "undefined"
+      }
+    }
+  ]
+}

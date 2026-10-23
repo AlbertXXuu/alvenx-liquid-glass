@@ -1,0 +1,5 @@
+
+> @alvenx/liquid-glass@1.4.0 check
+> tsc --noEmit -p tsconfig.json && node scripts/check-docs.mjs
+
+{"status":"passed","documents":10,"localLinks":57}

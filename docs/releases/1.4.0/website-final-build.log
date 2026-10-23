@@ -1,0 +1,69 @@
+
+> alvenx-website@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.2.2)
+
+[1/5] analyze client references...
+transforming...
+✓ 273 modules transformed.
+rendering chunks...
+✓ built in 2.06s
+[2/5] analyze server references...
+transforming...
+✓ 163 modules transformed.
+rendering chunks...
+✓ built in 418ms
+[3/5] build rsc environment...
+transforming...
+✓ 265 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 1.37s
+[4/5] build client environment...
+transforming...
+✓ 169 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 5.07s
+[PLUGIN_TIMINGS] Your build spent 98% of 5.1s inside plugin hooks (5.0s).
+Measured inside the callback, so queue time is excluded and time the callback itself awaited is not:
+  - vite:prepare-out-dir renderStart (90%, 4.6s, 1 call)
+Those rows are 90% of the build; the rest of the 98% is below.
+Not measurable — 3 hooks whose calls overlap, so elapsed time covers work other calls were doing. Profile with `node --cpu-prof`:
+  - vinext:og-inline-fetch-assets resolveId (453 calls)
+  - alias resolveId (517 calls)
+  - rsc:use-server transform (169 calls)
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+[5/5] build ssr environment...
+transforming...
+✓ 162 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 573ms
+[0m
+  Route (app)
+  ┌ ? /                                   
+  ├ ? /about                              
+  ├ ? /notes                              
+  ├ ? /notes/2026-09-22-multiview-geometry
+  ├ ƒ /notes/engineering/:slug            
+  ├ ? /work/browser-agent-regression      
+  ├ ? /work/openmultimodallab             
+  └ ? /work/physgauge                     
+
+  ƒ Dynamic  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
+
+> alvenx-website@0.1.0 validate:build-css
+> node scripts/validate_built_css.mjs
+
+AlvenX production glass CSS validation passed: locked normal fills and contrast fallbacks retained.

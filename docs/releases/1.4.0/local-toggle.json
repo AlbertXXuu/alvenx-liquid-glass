@@ -1,0 +1,206 @@
+{
+  "createdAt": "2026-10-23T04:09:20.774Z",
+  "base": "http://localhost:5196/",
+  "passed": 31,
+  "total": 31,
+  "checks": [
+    {
+      "name": "phone: first tap opens",
+      "pass": true
+    },
+    {
+      "name": "phone: second tap targets close",
+      "pass": true
+    },
+    {
+      "name": "phone: second tap retracts chamber",
+      "pass": true
+    },
+    {
+      "name": "phone: growing tap reverses without snapping",
+      "pass": true,
+      "detail": {
+        "at": 4076.7000000029802,
+        "before": 0.16456,
+        "targetBefore": "true",
+        "after": 0.16456,
+        "targetAfter": "false"
+      }
+    },
+    {
+      "name": "phone: returning tap reopens continuously",
+      "pass": true,
+      "detail": {
+        "at": 4213.39999999851,
+        "before": 0.25211,
+        "targetBefore": "false",
+        "after": 0.25211,
+        "targetAfter": "true"
+      }
+    },
+    {
+      "name": "phone: no duplicate native white rim",
+      "pass": true,
+      "detail": {
+        "strokes": [
+          "none",
+          "none"
+        ],
+        "specular": [
+          "0"
+        ],
+        "model": "continuous-contour-profile"
+      }
+    },
+    {
+      "name": "phone: one continuous material model",
+      "pass": true
+    },
+    {
+      "name": "phone: keyboard focus remains authored",
+      "pass": true
+    },
+    {
+      "name": "phone: Space also toggles",
+      "pass": true
+    },
+    {
+      "name": "phone: reduced motion toggles",
+      "pass": true
+    },
+    {
+      "name": "narrow: first tap opens",
+      "pass": true
+    },
+    {
+      "name": "narrow: second tap targets close",
+      "pass": true
+    },
+    {
+      "name": "narrow: second tap retracts chamber",
+      "pass": true
+    },
+    {
+      "name": "narrow: growing tap reverses without snapping",
+      "pass": true,
+      "detail": {
+        "at": 4265.80000000447,
+        "before": 0.16396,
+        "targetBefore": "true",
+        "after": 0.16396,
+        "targetAfter": "false"
+      }
+    },
+    {
+      "name": "narrow: returning tap reopens continuously",
+      "pass": true,
+      "detail": {
+        "at": 4416.20000000298,
+        "before": 0.24818,
+        "targetBefore": "false",
+        "after": 0.24818,
+        "targetAfter": "true"
+      }
+    },
+    {
+      "name": "narrow: no duplicate native white rim",
+      "pass": true,
+      "detail": {
+        "strokes": [
+          "none",
+          "none"
+        ],
+        "specular": [
+          "0"
+        ],
+        "model": "continuous-contour-profile"
+      }
+    },
+    {
+      "name": "narrow: one continuous material model",
+      "pass": true
+    },
+    {
+      "name": "narrow: keyboard focus remains authored",
+      "pass": true
+    },
+    {
+      "name": "narrow: Space also toggles",
+      "pass": true
+    },
+    {
+      "name": "narrow: reduced motion toggles",
+      "pass": true
+    },
+    {
+      "name": "tablet: first tap opens",
+      "pass": true
+    },
+    {
+      "name": "tablet: second tap targets close",
+      "pass": true
+    },
+    {
+      "name": "tablet: second tap retracts chamber",
+      "pass": true
+    },
+    {
+      "name": "tablet: growing tap reverses without snapping",
+      "pass": true,
+      "detail": {
+        "at": 4476.19999999553,
+        "before": 0.16396,
+        "targetBefore": "true",
+        "after": 0.16396,
+        "targetAfter": "false"
+      }
+    },
+    {
+      "name": "tablet: returning tap reopens continuously",
+      "pass": true,
+      "detail": {
+        "at": 4612.79999999702,
+        "before": 0.25306,
+        "targetBefore": "false",
+        "after": 0.25306,
+        "targetAfter": "true"
+      }
+    },
+    {
+      "name": "tablet: no duplicate native white rim",
+      "pass": true,
+      "detail": {
+        "strokes": [
+          "none",
+          "none"
+        ],
+        "specular": [
+          "0"
+        ],
+        "model": "continuous-contour-profile"
+      }
+    },
+    {
+      "name": "tablet: one continuous material model",
+      "pass": true
+    },
+    {
+      "name": "tablet: keyboard focus remains authored",
+      "pass": true
+    },
+    {
+      "name": "tablet: Space also toggles",
+      "pass": true
+    },
+    {
+      "name": "tablet: reduced motion toggles",
+      "pass": true
+    },
+    {
+      "name": "no page exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "boundary": "Chromium touch/DPR emulation. Reversal snapshots bracket React click commit; only the presentation RAF is briefly held/drained across the native click, then resumed. This separates handler continuity from queued animation progress. Not physical iPhone/iPad Safari acceptance."
+}

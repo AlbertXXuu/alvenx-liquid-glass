@@ -1,0 +1,82 @@
+
+> @alvenx/liquid-glass@1.4.0 test:contract
+> node scripts/contract.mjs && node scripts/test-budding-geometry.mjs && node scripts/test-volume-budding.mjs
+
+{"status":"passed","checks":28,"geometryCases":15}
+{
+  "status": "passed",
+  "checks": 410,
+  "endpoints": {
+    "44": [
+      {
+        "growth": 0,
+        "width": 56.000369262695315,
+        "height": 73.6,
+        "chamber": {
+          "x": 48.973333333333336,
+          "y": 36.8,
+          "width": 0,
+          "height": 0
+        }
+      },
+      {
+        "growth": 0.5,
+        "width": 102.08052673339844,
+        "height": 73.6,
+        "chamber": {
+          "x": 48.358708503181,
+          "y": 19.712630130155183,
+          "width": 47.722582993638014,
+          "height": 34.17473973968963
+        }
+      },
+      {
+        "growth": 1,
+        "width": 144.47691955566407,
+        "height": 73.6,
+        "chamber": {
+          "x": 52.45666666666666,
+          "y": 5.9999999999999964,
+          "width": 86.02,
+          "height": 61.6
+        }
+      }
+    ],
+    "54": [
+      {
+        "growth": 0,
+        "width": 66.00045318603514,
+        "height": 87.6,
+        "chamber": {
+          "x": 58.739999999999995,
+          "y": 43.8,
+          "width": 0,
+          "height": 0
+        }
+      },
+      {
+        "growth": 0.5,
+        "width": 122.55337371826171,
+        "height": 87.6,
+        "chamber": {
+          "x": 57.985687708449404,
+          "y": 22.829136977917724,
+          "width": 58.5686245831012,
+          "height": 41.94172604416455
+        }
+      },
+      {
+        "growth": 1,
+        "width": 174.58531036376954,
+        "height": 87.6,
+        "chamber": {
+          "x": 63.015,
+          "y": 6,
+          "width": 105.57,
+          "height": 75.6
+        }
+      }
+    ]
+  }
+}
+Volume budding promotion: accepted geometry/material/frame identity and native SSR passed.

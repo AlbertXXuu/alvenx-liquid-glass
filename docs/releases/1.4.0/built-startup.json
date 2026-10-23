@@ -1,0 +1,569 @@
+{
+  "base": "http://localhost:5197/",
+  "createdAt": "2026-10-23T04:16:51.859Z",
+  "passed": 19,
+  "total": 19,
+  "checks": [
+    {
+      "name": "320: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375,
+          "top": 606.125,
+          "right": 76,
+          "bottom": 679.71875,
+          "left": 20
+        },
+        "diameter": 44,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "320: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375,
+          "top": 606.125,
+          "right": 76,
+          "bottom": 679.71875,
+          "left": 20
+        },
+        "diameter": 44,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 595.671875,
+          "right": 86,
+          "bottom": 683.265625,
+          "left": 20
+        },
+        "diameter": 54,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "393: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 595.671875,
+          "right": 86,
+          "bottom": 683.265625,
+          "left": 20
+        },
+        "diameter": 54,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: actual static native first frame without JavaScript",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 719.921875,
+          "right": 382.640625,
+          "bottom": 807.515625,
+          "left": 316.640625
+        },
+        "diameter": 54,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "1413: responsive first native target and working destination",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "slot": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 719.921875,
+          "right": 382.640625,
+          "bottom": 807.515625,
+          "left": 316.640625
+        },
+        "diameter": 54,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "hydrated pending circle has one native action",
+      "pass": true,
+      "detail": {
+        "buttons": 1,
+        "anchors": 0
+      }
+    },
+    {
+      "name": "Space starts real growth while compile remains pending",
+      "pass": true,
+      "detail": {
+        "at": 272.09999999403954,
+        "preparation": "pending"
+      }
+    },
+    {
+      "name": "all reflection and draws wait for parallel completion",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "pending growth blends matching live material",
+      "pass": true,
+      "detail": {
+        "volumePreparation": "ready",
+        "volumePreparationMode": "parallel",
+        "volumeReveal": "blend",
+        "volumeLightRenders": "24",
+        "volumeLightComputeMs": "0.200",
+        "volumeLightMeanMs": "0.212",
+        "volumeLightPixels": "42504",
+        "volumeHeightModel": "continuous-contour-profile",
+        "materialSource": "src/volume-renderer.js"
+      }
+    },
+    {
+      "name": "hidden wall time does not consume foreground preparation budget",
+      "pass": true
+    },
+    {
+      "name": "never-completing driver reaches bounded failure and releases program",
+      "pass": true,
+      "detail": {
+        "before": 4,
+        "after": 4,
+        "deletes": 1
+      }
+    },
+    {
+      "name": "failed shader preserves native interaction",
+      "pass": true
+    },
+    {
+      "name": "program completed across 11s hidden interval becomes ready on return",
+      "pass": true,
+      "detail": {
+        "calls": [
+          {
+            "type": "completion",
+            "at": 233
+          },
+          {
+            "type": "completion",
+            "at": 241
+          },
+          {
+            "type": "completion",
+            "at": 11473
+          },
+          {
+            "type": "completion",
+            "at": 11488
+          },
+          {
+            "type": "completion",
+            "at": 11505
+          },
+          {
+            "type": "completion",
+            "at": 11521
+          },
+          {
+            "type": "completion",
+            "at": 11536
+          },
+          {
+            "type": "linkStatus",
+            "at": 11536,
+            "duration": 0,
+            "painted": false
+          }
+        ],
+        "violations": [],
+        "deletes": 0
+      }
+    },
+    {
+      "name": "no-KHR keeps accepted live renderer after first observed paint",
+      "pass": true,
+      "detail": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.800",
+          "volumeLightMeanMs": "0.800",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "continuous-contour-profile",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "calls": [
+          {
+            "type": "linkStatus",
+            "at": 223.5,
+            "duration": 56.100000001490116,
+            "painted": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "pre-main native activation retains intent",
+      "pass": true
+    },
+    {
+      "name": "queued activation is consumed and early handlers removed",
+      "pass": true
+    },
+    {
+      "name": "focused first frame hands focus to the single native button",
+      "pass": true
+    },
+    {
+      "name": "main resource failure releases interception within the bounded startup deadline",
+      "pass": true
+    }
+  ],
+  "metrics": [
+    {
+      "width": 320,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375,
+          "top": 606.125,
+          "right": 76,
+          "bottom": 679.71875,
+          "left": 20
+        },
+        "diameter": 44,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 393,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 595.671875,
+          "right": 86,
+          "bottom": 683.265625,
+          "left": 20
+        },
+        "diameter": 54,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "width": 1413,
+      "noJS": {
+        "enhanced": "false",
+        "slot": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375,
+          "top": 719.921875,
+          "right": 382.640625,
+          "bottom": 807.515625,
+          "left": 316.640625
+        },
+        "diameter": 54,
+        "href": "http://localhost:5197/ui/",
+        "display": "block",
+        "imageReady": true,
+        "overflow": false
+      }
+    },
+    {
+      "forcedPending": {
+        "first": {
+          "at": 272.09999999403954,
+          "preparation": "pending"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 211.39999999850988
+            },
+            {
+              "type": "completion",
+              "at": 231.09999999403954
+            },
+            {
+              "type": "completion",
+              "at": 236.69999999552965
+            },
+            {
+              "type": "completion",
+              "at": 247.19999999552965
+            },
+            {
+              "type": "completion",
+              "at": 265.29999999701977
+            },
+            {
+              "type": "completion",
+              "at": 287.59999999403954
+            },
+            {
+              "type": "completion",
+              "at": 302.8999999985099
+            },
+            {
+              "type": "completion",
+              "at": 319.3999999985099
+            },
+            {
+              "type": "completion",
+              "at": 336
+            },
+            {
+              "type": "completion",
+              "at": 353.3999999985099
+            },
+            {
+              "type": "completion",
+              "at": 371.5
+            },
+            {
+              "type": "completion",
+              "at": 387.69999999552965
+            },
+            {
+              "type": "completion",
+              "at": 405.19999999552965
+            },
+            {
+              "type": "completion",
+              "at": 428.69999999552965
+            },
+            {
+              "type": "completion",
+              "at": 446.69999999552965
+            },
+            {
+              "type": "completion",
+              "at": 462
+            },
+            {
+              "type": "completion",
+              "at": 474.5
+            },
+            {
+              "type": "completion",
+              "at": 491.59999999403954
+            },
+            {
+              "type": "completion",
+              "at": 507.59999999403954
+            },
+            {
+              "type": "completion",
+              "at": 521.5
+            },
+            {
+              "type": "completion",
+              "at": 537.5999999940395
+            },
+            {
+              "type": "linkStatus",
+              "at": 537.6999999955297,
+              "duration": 0,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "parallel",
+          "volumeReveal": "blend",
+          "volumeLightRenders": "24",
+          "volumeLightComputeMs": "0.200",
+          "volumeLightMeanMs": "0.212",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "continuous-contour-profile",
+          "materialSource": "src/volume-renderer.js"
+        }
+      }
+    },
+    {
+      "never": {
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 240
+            },
+            {
+              "type": "completion",
+              "at": 259
+            },
+            {
+              "type": "completion",
+              "at": 11264
+            },
+            {
+              "type": "completion",
+              "at": 21364
+            }
+          ],
+          "violations": [],
+          "deletes": 1
+        }
+      }
+    },
+    {
+      "hiddenResume": {
+        "simulatedHiddenMs": 11000,
+        "audit": {
+          "calls": [
+            {
+              "type": "completion",
+              "at": 233
+            },
+            {
+              "type": "completion",
+              "at": 241
+            },
+            {
+              "type": "completion",
+              "at": 11473
+            },
+            {
+              "type": "completion",
+              "at": 11488
+            },
+            {
+              "type": "completion",
+              "at": 11505
+            },
+            {
+              "type": "completion",
+              "at": 11521
+            },
+            {
+              "type": "completion",
+              "at": 11536
+            },
+            {
+              "type": "linkStatus",
+              "at": 11536,
+              "duration": 0,
+              "painted": false
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        },
+        "boundary": "Controlled document.hidden visibility event and browser clock; not physical OS background behavior."
+      }
+    },
+    {
+      "noKHR": {
+        "canvas": {
+          "volumePreparation": "ready",
+          "volumePreparationMode": "deferred-sync",
+          "volumeFallbackPaint": "observed",
+          "volumeReveal": "instant",
+          "volumeLightRenders": "1",
+          "volumeLightComputeMs": "0.800",
+          "volumeLightMeanMs": "0.800",
+          "volumeLightPixels": "42504",
+          "volumeHeightModel": "continuous-contour-profile",
+          "materialSource": "src/volume-renderer.js"
+        },
+        "audit": {
+          "calls": [
+            {
+              "type": "linkStatus",
+              "at": 223.5,
+              "duration": 56.100000001490116,
+              "painted": true
+            }
+          ],
+          "violations": [],
+          "deletes": 0
+        }
+      }
+    },
+    {
+      "preMain": {
+        "activation": 170.89999999850988,
+        "mainReleased": 376.79999999701977,
+        "firstGrowth": 473.69999999552965,
+        "artificialModuleHoldMs": 200,
+        "boundary": "Native link exists before main; after early controller loads, activation waits for the deliberately held main module. This does not measure zero-delay physics."
+      }
+    }
+  ],
+  "boundary": "No-JS first frame is exact static R7 texture over native backdrop. Pre-main activation is queued only after the tiny controller loads; no-JS/error retains a genuine destination link. Pending real growth uses native C2 optics until accepted GL can blend in; its temporary lower volume is retained in screenshots. No claim of zero network latency."
+}

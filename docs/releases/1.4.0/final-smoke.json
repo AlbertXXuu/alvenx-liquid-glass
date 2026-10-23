@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-23T04:33:51.402Z",
+  "passed": 8,
+  "total": 8,
+  "checks": [
+    {
+      "name": "393: opened final homepage",
+      "pass": true
+    },
+    {
+      "name": "393: actual destination navigation",
+      "pass": true
+    },
+    {
+      "name": "820: opened final homepage",
+      "pass": true
+    },
+    {
+      "name": "820: actual destination navigation",
+      "pass": true
+    },
+    {
+      "name": "1413: opened final homepage",
+      "pass": true
+    },
+    {
+      "name": "1413: actual destination navigation",
+      "pass": true
+    },
+    {
+      "name": "zero page or console errors",
+      "pass": true
+    },
+    {
+      "name": "zero HTTP error responses",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "http": [],
+  "failed": [],
+  "boundary": "Three fresh Chromium contexts; mobile viewport/DPR emulation, not physical iOS."
+}

@@ -1,0 +1,99 @@
+{
+  "status": "published-and-verified",
+  "recordedAtUtc": "2026-10-23T04:39:34.502071+00:00",
+  "productionUrl": "https://alvenx.com/",
+  "version": "1.4.0",
+  "sourceRef": "v1.4.0",
+  "sourceCommit": "d6666aff512951c1a67053a67b738fce76e25c9e",
+  "recordsRef": "v1.4.0-published",
+  "acceptedReviewSource": "82de4e4cae458dd716ef3462c9c94192d1114265",
+  "websiteSourceCommit": "d5c44c7ed50af038e4efcf5a11d91b3c968f816e",
+  "websiteMergeCommit": "483c03acc6e2770aba6609866af63deea0ebc556",
+  "websiteTree": "59a1894c9fa775409a8d52219d7da69712a4faf3",
+  "websitePRs": [
+    50,
+    51
+  ],
+  "activeDeployment": {
+    "id": "642e75e7-16ce-4387-8ea4-e20793a763f7",
+    "created_on": "2026-10-23T04:31:51.731592Z",
+    "versions": [
+      {
+        "version_id": "baa0384f-fd4a-4522-a9b5-2d43336c37d7",
+        "percentage": 100
+      }
+    ]
+  },
+  "validation": {
+    "browser": {
+      "local-homepage": {
+        "passed": 54,
+        "total": 54
+      },
+      "local-toggle": {
+        "passed": 31,
+        "total": 31
+      },
+      "built-startup": {
+        "passed": 19,
+        "total": 19
+      },
+      "built-handoff": {
+        "passed": 16,
+        "total": 16
+      },
+      "online-homepage": {
+        "passed": 54,
+        "total": 54
+      },
+      "online-toggle": {
+        "passed": 31,
+        "total": 31
+      },
+      "online-startup": {
+        "passed": 19,
+        "total": 19
+      },
+      "online-handoff": {
+        "passed": 16,
+        "total": 16
+      },
+      "final-smoke": {
+        "passed": 8,
+        "total": 8
+      }
+    },
+    "ci": {
+      "runs": 7,
+      "jobs": 7,
+      "steps": 74
+    },
+    "httpByteMatches": 510,
+    "installedPackageFiles": 308,
+    "portableManifestFiles": 1481,
+    "frozenBaselineFiles": 41,
+    "fontURLs": 228,
+    "screenshots": 67
+  },
+  "packages": [
+    {
+      "name": "alvenx-design-kit-1.4.0.zip",
+      "bytes": 181826834,
+      "sha256": "39f9e4391a5c49675487ee3bb9c6519c9dd1575d36157ab4f12523c26c612c46"
+    },
+    {
+      "name": "alvenx-liquid-glass-1.4.0.tgz",
+      "bytes": 29026831,
+      "sha256": "fe51e5b8640b8c90f8c61dcac24c30f0e3f198de86f53b4f9f8676ec4798ee3a"
+    }
+  ],
+  "sourceAndRecordsRights": "All rights reserved / UNLICENSED",
+  "showcaseSourceUnchanged": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+  "boundaries": [
+    "Responsive Chromium touch/DPR emulation is not physical iPhone/iPad/Safari/Combo Touch testing.",
+    "The native backdrop plus analytic reference environment is a 2.5D approximation.",
+    "No absolute zero network or driver compilation latency is claimed.",
+    "If the async page entry fails before the deferred early controller is installed, its existing 10-second deadline releases interception."
+  ],
+  "releaseUrl": "https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/v1.4.0"
+}

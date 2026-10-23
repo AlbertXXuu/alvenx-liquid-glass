@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-23T04:11:50.148680+00:00",
+  "tests": {
+    "local-homepage": {
+      "passed": 54,
+      "total": 54
+    },
+    "local-toggle": {
+      "passed": 31,
+      "total": 31
+    }
+  },
+  "installedWebsiteFiles": 308,
+  "tarballSha256": "fe51e5b8640b8c90f8c61dcac24c30f0e3f198de86f53b4f9f8676ec4798ee3a",
+  "installedIntegrityMatches": true
+}

@@ -1,0 +1,489 @@
+{
+  "base": "http://localhost:5196/",
+  "at": "2026-10-23T04:08:03.978Z",
+  "passed": 54,
+  "total": 54,
+  "checks": [
+    {
+      "name": "320: real width pushes GitHub",
+      "pass": true,
+      "detail": {
+        "before": {
+          "x": 88,
+          "y": 620.921875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "after": {
+          "x": 216.859375,
+          "y": 620.921875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "beforeBox": {
+          "x": 20,
+          "y": 606.125,
+          "width": 56,
+          "height": 73.59375
+        },
+        "box": {
+          "x": 20,
+          "y": 606.125,
+          "width": 184.859375,
+          "height": 73.59375
+        }
+      }
+    },
+    {
+      "name": "320: link and right margin remain in viewport",
+      "pass": true,
+      "detail": {
+        "after": {
+          "x": 216.859375,
+          "y": 620.921875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "width": 320
+      }
+    },
+    {
+      "name": "320: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320: native chamber destination",
+      "pass": true
+    },
+    {
+      "name": "320: CTA sequence",
+      "pass": true,
+      "detail": [
+        "#work",
+        "Toggle explore link",
+        "/ui/",
+        "https://github.com/AlbertXXuu"
+      ]
+    },
+    {
+      "name": "320: chamber hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.994
+      }
+    },
+    {
+      "name": "320: mother hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 1,
+        "chamber": 0
+      }
+    },
+    {
+      "name": "320: outside click returns",
+      "pass": true
+    },
+    {
+      "name": "320: scroll away returns",
+      "pass": true
+    },
+    {
+      "name": "320: Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "393: real width pushes GitHub",
+      "pass": true,
+      "detail": {
+        "before": {
+          "x": 104,
+          "y": 617.46875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "after": {
+          "x": 250.109375,
+          "y": 617.46875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "beforeBox": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 66,
+          "height": 87.59375
+        },
+        "box": {
+          "x": 20,
+          "y": 595.671875,
+          "width": 212.109375,
+          "height": 87.59375
+        }
+      }
+    },
+    {
+      "name": "393: link and right margin remain in viewport",
+      "pass": true,
+      "detail": {
+        "after": {
+          "x": 250.109375,
+          "y": 617.46875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "width": 393
+      }
+    },
+    {
+      "name": "393: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "393: native chamber destination",
+      "pass": true
+    },
+    {
+      "name": "393: CTA sequence",
+      "pass": true,
+      "detail": [
+        "#work",
+        "Toggle explore link",
+        "/ui/",
+        "https://github.com/AlbertXXuu"
+      ]
+    },
+    {
+      "name": "393: chamber hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.9968
+      }
+    },
+    {
+      "name": "393: mother hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 1,
+        "chamber": 0
+      }
+    },
+    {
+      "name": "393: outside click returns",
+      "pass": true
+    },
+    {
+      "name": "393: scroll away returns",
+      "pass": true
+    },
+    {
+      "name": "393: Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "640: real width pushes GitHub",
+      "pass": true,
+      "detail": {
+        "before": {
+          "x": 104,
+          "y": 642.390625,
+          "width": 65.28125,
+          "height": 44
+        },
+        "after": {
+          "x": 250.109375,
+          "y": 642.390625,
+          "width": 65.28125,
+          "height": 44
+        },
+        "beforeBox": {
+          "x": 20,
+          "y": 620.59375,
+          "width": 66,
+          "height": 87.59375
+        },
+        "box": {
+          "x": 20,
+          "y": 620.59375,
+          "width": 212.109375,
+          "height": 87.59375
+        }
+      }
+    },
+    {
+      "name": "640: link and right margin remain in viewport",
+      "pass": true,
+      "detail": {
+        "after": {
+          "x": 250.109375,
+          "y": 642.390625,
+          "width": 65.28125,
+          "height": 44
+        },
+        "width": 640
+      }
+    },
+    {
+      "name": "640: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "640: native chamber destination",
+      "pass": true
+    },
+    {
+      "name": "640: CTA sequence",
+      "pass": true,
+      "detail": [
+        "#work",
+        "Toggle explore link",
+        "/ui/",
+        "https://github.com/AlbertXXuu"
+      ]
+    },
+    {
+      "name": "640: chamber hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.9927
+      }
+    },
+    {
+      "name": "640: mother hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 1,
+        "chamber": 0
+      }
+    },
+    {
+      "name": "640: outside click returns",
+      "pass": true
+    },
+    {
+      "name": "640: scroll away returns",
+      "pass": true
+    },
+    {
+      "name": "640: Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "820: real width pushes GitHub",
+      "pass": true,
+      "detail": {
+        "before": {
+          "x": 377,
+          "y": 441.453125,
+          "width": 65.28125,
+          "height": 44
+        },
+        "after": {
+          "x": 523.109375,
+          "y": 441.453125,
+          "width": 65.28125,
+          "height": 44
+        },
+        "beforeBox": {
+          "x": 287,
+          "y": 419.65625,
+          "width": 66,
+          "height": 87.59375
+        },
+        "box": {
+          "x": 287,
+          "y": 419.65625,
+          "width": 212.109375,
+          "height": 87.59375
+        }
+      }
+    },
+    {
+      "name": "820: link and right margin remain in viewport",
+      "pass": true,
+      "detail": {
+        "after": {
+          "x": 523.109375,
+          "y": 441.453125,
+          "width": 65.28125,
+          "height": 44
+        },
+        "width": 820
+      }
+    },
+    {
+      "name": "820: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "820: native chamber destination",
+      "pass": true
+    },
+    {
+      "name": "820: CTA sequence",
+      "pass": true,
+      "detail": [
+        "#work",
+        "Toggle explore link",
+        "/ui/",
+        "https://github.com/AlbertXXuu"
+      ]
+    },
+    {
+      "name": "820: chamber hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.9937
+      }
+    },
+    {
+      "name": "820: mother hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 1,
+        "chamber": 0
+      }
+    },
+    {
+      "name": "820: outside click returns",
+      "pass": true
+    },
+    {
+      "name": "820: scroll away returns",
+      "pass": true
+    },
+    {
+      "name": "820: Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "1413: real width pushes GitHub",
+      "pass": true,
+      "detail": {
+        "before": {
+          "x": 406.640625,
+          "y": 741.71875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "after": {
+          "x": 552.75,
+          "y": 741.71875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "beforeBox": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 66,
+          "height": 87.59375
+        },
+        "box": {
+          "x": 316.640625,
+          "y": 719.921875,
+          "width": 212.109375,
+          "height": 87.59375
+        }
+      }
+    },
+    {
+      "name": "1413: link and right margin remain in viewport",
+      "pass": true,
+      "detail": {
+        "after": {
+          "x": 552.75,
+          "y": 741.71875,
+          "width": 65.28125,
+          "height": 44
+        },
+        "width": 1413
+      }
+    },
+    {
+      "name": "1413: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1413: native chamber destination",
+      "pass": true
+    },
+    {
+      "name": "1413: CTA sequence",
+      "pass": true,
+      "detail": [
+        "#work",
+        "Toggle explore link",
+        "/ui/",
+        "https://github.com/AlbertXXuu"
+      ]
+    },
+    {
+      "name": "1413: chamber hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.9931
+      }
+    },
+    {
+      "name": "1413: mother hover is independent",
+      "pass": true,
+      "detail": {
+        "mother": 1,
+        "chamber": 0
+      }
+    },
+    {
+      "name": "1413: outside click returns",
+      "pass": true
+    },
+    {
+      "name": "1413: scroll away returns",
+      "pass": true
+    },
+    {
+      "name": "1413: Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320: SSR exact native first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "img": true,
+        "href": "/ui/",
+        "width": 44
+      }
+    },
+    {
+      "name": "393: SSR exact native first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "img": true,
+        "href": "/ui/",
+        "width": 54
+      }
+    },
+    {
+      "name": "1413: SSR exact native first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "img": true,
+        "href": "/ui/",
+        "width": 54
+      }
+    },
+    {
+      "name": "zero page exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "boundary": "Desktop Chromium responsive emulation; not physical iOS acceptance."
+}

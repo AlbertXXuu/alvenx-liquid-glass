@@ -1,0 +1,4 @@
+
+> alvenx-website@0.1.0 lint
+> eslint . --ignore-pattern dist --ignore-pattern .next --ignore-pattern .wrangler
+

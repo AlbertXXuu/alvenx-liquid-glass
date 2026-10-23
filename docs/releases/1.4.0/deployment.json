@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "startedAtUtc": "2026-10-23T04:30:59.542Z",
+  "completedAtUtc": "2026-10-23T04:31:58.553Z",
+  "purpose": "Task-local Wrangler HTTP transport; no product, dependency, OS network or credential changes",
+  "childCommand": [
+    "wrangler",
+    "deploy"
+  ],
+  "childArgumentCount": 3,
+  "childExitCode": 0,
+  "childSignal": null,
+  "timedOut": false,
+  "interrupted": false,
+  "wrapperError": null,
+  "success": true,
+  "authenticationReported": false,
+  "deployedWorkerVersion": "baa0384f-fd4a-4522-a9b5-2d43336c37d7",
+  "upstream": "https://api.cloudflare.com/client/v4",
+  "tlsVerification": "normal curl HTTPS verification; no insecure option",
+  "transport": "curl; config/credentials in ephemeral Windows kernel pipe, bounded upload on stdin, response headers parsed in memory",
+  "maximumRequestBodyBytes": 134217728,
+  "bodyFilesCreated": false,
+  "adapterVersion": 4,
+  "requestTimeouts": {
+    "connectSeconds": 8,
+    "readSeconds": 25,
+    "writeSeconds": 90
+  },
+  "expectContinueDisabledForUploads": true,
+  "manifestUploadLimitRate": "64k only for assets-upload-session JSON; bulk assets and OAuth unchanged",
+  "oauthRefreshRelay": {
+    "target": "https://dash.cloudflare.com/oauth2/token",
+    "localPath": "/_wrangler/oauth2/token",
+    "scope": "WRANGLER_TOKEN_URL in child environment only; existing Wrangler refresh/storage mechanism",
+    "upstreamDns": "normal curl DNS for dash.cloudflare.com, no API-IP reuse",
+    "automaticRetry": false
+  },
+  "uploadBuffering": "Memory only, 128MiB limit, fresh Readable for each attempt; no body files",
+  "zeroConnectionWriteRetries": [],
+  "upstreamDns": {
+    "scope": "wrapper process only",
+    "selectedIp": "104.19.193.29",
+    "preflight": [
+      {
+        "ip": "104.19.193.29",
+        "status": 403
+      }
+    ]
+  },
+  "readOnlyTransportRetries": [],
+  "listener": "127.0.0.1 ephemeral port; closed after child completion",
+  "methodAndRouteCounts": {
+    "GET /client/v4/accounts": 4,
+    "POST /client/v4/accounts": 7,
+    "PATCH /client/v4/accounts": 1,
+    "GET /client/v4/zones": 3,
+    "PUT /client/v4/accounts": 1
+  },
+  "apiStatusCounts": {
+    "200": 13,
+    "201": 1,
+    "202": 2
+  },
+  "transportFailureCounts": {},
+  "sampledRequests": [
+    {
+      "method": "GET",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 2111,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 591,
+          "time_connect": 0.000556,
+          "time_appconnect": 1.158084,
+          "time_starttransfer": 2.025832,
+          "time_total": 2.027008,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 2624,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 1151,
+          "time_connect": 0.000623,
+          "time_appconnect": 1.781859,
+          "time_starttransfer": 2.538247,
+          "time_total": 2.538339,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 17926,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 1012510,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 1012510,
+          "size_download": 942,
+          "time_connect": 0.000593,
+          "time_appconnect": 0.764283,
+          "time_starttransfer": 17.810463,
+          "time_total": 17.810523,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 202,
+      "elapsedMs": 2967,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 204498,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 204498,
+          "size_download": 54,
+          "time_connect": 0.00059,
+          "time_appconnect": 0.816451,
+          "time_starttransfer": 2.873901,
+          "time_total": 2.875733,
+          "exitcode": 0,
+          "http_code": 202,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 202,
+      "elapsedMs": 2960,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 247728,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 247728,
+          "size_download": 54,
+          "time_connect": 0.000537,
+          "time_appconnect": 0.798793,
+          "time_starttransfer": 2.87712,
+          "time_total": 2.877146,
+          "exitcode": 0,
+          "http_code": 202,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 201,
+      "elapsedMs": 3246,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 324468,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 324468,
+          "size_download": 417,
+          "time_connect": 0.000474,
+          "time_appconnect": 0.798536,
+          "time_starttransfer": 3.159865,
+          "time_total": 3.159921,
+          "exitcode": 0,
+          "http_code": 201,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 1289,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 331,
+          "time_connect": 0.000558,
+          "time_appconnect": 0.809036,
+          "time_starttransfer": 1.203846,
+          "time_total": 1.203926,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 4385,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 2224806,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 2224806,
+          "size_download": 1905,
+          "time_connect": 0.000781,
+          "time_appconnect": 0.792032,
+          "time_starttransfer": 4.288126,
+          "time_total": 4.289117,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 1504,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 126,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 126,
+          "size_download": 127,
+          "time_connect": 0.000588,
+          "time_appconnect": 0.808821,
+          "time_starttransfer": 1.41805,
+          "time_total": 1.418136,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "PATCH",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 1488,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 44,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 44,
+          "size_download": 225,
+          "time_connect": 0.000567,
+          "time_appconnect": 0.760696,
+          "time_starttransfer": 1.400078,
+          "time_total": 1.400144,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 1381,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 113,
+          "time_connect": 0.010657,
+          "time_appconnect": 0.85008,
+          "time_starttransfer": 1.297951,
+          "time_total": 1.299206,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "POST",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 1336,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 17,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 17,
+          "size_download": 113,
+          "time_connect": 0.000666,
+          "time_appconnect": 0.816746,
+          "time_starttransfer": 1.248468,
+          "time_total": 1.248548,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/client/v4/zones",
+      "status": 200,
+      "elapsedMs": 1296,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 121,
+          "time_connect": 0.000559,
+          "time_appconnect": 0.784414,
+          "time_starttransfer": 1.196973,
+          "time_total": 1.197059,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/client/v4/zones",
+      "status": 200,
+      "elapsedMs": 1388,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 761,
+          "time_connect": 0.00048,
+          "time_appconnect": 0.824296,
+          "time_starttransfer": 1.279983,
+          "time_total": 1.292199,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "GET",
+      "route": "/client/v4/zones",
+      "status": 200,
+      "elapsedMs": 1764,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 25,
+        "requestBodyBytes": 0,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 0,
+          "size_download": 78,
+          "time_connect": 0.000557,
+          "time_appconnect": 1.282067,
+          "time_starttransfer": 1.678128,
+          "time_total": 1.678207,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    },
+    {
+      "method": "PUT",
+      "route": "/client/v4/accounts",
+      "status": 200,
+      "elapsedMs": 1520,
+      "curl": {
+        "configuredIp": "104.19.193.29",
+        "requestMaxSeconds": 90,
+        "requestBodyBytes": 159,
+        "uploadPipeError": null,
+        "metrics": {
+          "proxy_used": 1,
+          "size_upload": 159,
+          "size_download": 331,
+          "time_connect": 0.000632,
+          "time_appconnect": 0.840996,
+          "time_starttransfer": 1.434873,
+          "time_total": 1.435017,
+          "exitcode": 0,
+          "http_code": 200,
+          "remote_ip": "127.0.0.1"
+        },
+        "stderrSummary": null
+      }
+    }
+  ],
+  "sampleLimit": 80,
+  "maximumActiveRequests": 3,
+  "childLog": {
+    "path": "D:\\.Development\\AlvenX-UIUX\\output\\publication\\homepage-budding-1.4.0\\deploy-final.private.log",
+    "private": true,
+    "maxBytes": 4194304,
+    "truncated": false,
+    "credentialLinesRedacted": true
+  }
+}
