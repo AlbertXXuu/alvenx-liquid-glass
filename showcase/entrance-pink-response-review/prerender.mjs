@@ -1,6 +1,6 @@
 // Build-time progressive first frame for this isolated review only.
 // Run after its separate preview Vite build. Never modifies the default site-dist.
-import { readFile, writeFile, lstat, realpath } from 'node:fs/promises';
+import { readFile, writeFile, lstat, realpath, readdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { dirname, isAbsolute, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -14,8 +14,8 @@ const kit = resolve(reviewDirectory, '../..');
 const entryRelative = 'showcase/entrance-pink-response-review/index.html';
 const args = process.argv.slice(2);
 if (!args.length || args.includes('--help')) {
-  console.log('Usage: node showcase/entrance-pink-response-review/prerender.mjs --out-dir <separate-preview-build> --base /ui/releases/budding-review-20261022-pink-response/');
-  console.log('After the client build, render the same Review/StrictMode tree into its unique empty root. The default site-dist and previous review builds are not written.');
+  console.log('Usage: node showcase/entrance-pink-response-review/prerender.mjs --out-dir <separate-preview-build> --base /ui/releases/entrance-pink-response-20261023/');
+  console.log('After the client build, render the same Review tree into its unique empty root. The default site-dist and previous review builds are not written.');
   process.exit(0);
 }
 const options = new Map();
@@ -95,6 +95,14 @@ try {
     verifiedFrames.push({ diameter, cssWidth: frame.cssWidth, cssHeight: frame.cssHeight, textureCssWidth: frame.textureCssWidth, rasterWidth: frame.width, rasterHeight: frame.height, pngSha256: frame.sha256 });
   }
   markup = renderToString(createElement(Review));
+  // Vite's development SSR loader returns the source SVG URL; resolve it to
+  // the actual built asset so the prerendered logo works before hydration.
+  const brandFiles=(await readdir(join(outDirectory,'assets'))).filter(name=>/^alvenx-wordmark-[\w-]+\.svg$/.test(name));
+  if(brandFiles.length!==1)throw Error('Expected one built canonical wordmark.');
+  markup=markup.replaceAll(`${base}assets/brand/alvenx-wordmark.svg`,`${base}assets/${brandFiles[0]}`);
+  for(const match of markup.matchAll(/(?:src|href)=["']([^"']+)["']/g)){
+    if(match[1].startsWith(base))await lstat(join(outDirectory,match[1].slice(base.length)));
+  }
   if (!markup || !markup.includes('Soft color.') || !markup.includes('A clearer response.')) throw Error('The actual complete review was not rendered.');
   for (const diameter of [44, 54]) {
     if (!markup.includes(firstFrames[diameter].png) || [...markup.matchAll(new RegExp(`data-first-frame=["']${diameter}["']`, 'g'))].length !== 1) throw Error(`The rendered tree omits or duplicates its ${diameter}px responsive static material.`);

@@ -200,4 +200,3 @@ export function PreviewBuddingLink({clock,id,href,toggleLabel='Toggle explore li
   </LiquidControl>}
  </span>;
 }
-
