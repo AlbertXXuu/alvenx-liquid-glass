@@ -1,0 +1,374 @@
+{
+  "status": "passed",
+  "date": "2026-10-23",
+  "scope": "local archival only",
+  "groups": 60,
+  "files": 2462,
+  "bytes": 1427764403.0,
+  "manifestSha256": "85c4d66dbc61fccd5565b2e2869e661b40c497eded0a2872b5ab841c0cfa1a0b",
+  "filesDeleted": 0,
+  "sourceCommitUnchanged": "d6666aff512951c1a67053a67b738fce76e25c9e",
+  "websiteCommitUnchanged": "483c03acc6e2770aba6609866af63deea0ebc556",
+  "inventory": [
+    {
+      "source": "alvenx-design-kit/.playwright-cli",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/.playwright-cli",
+      "files": 250,
+      "bytes": 1948191.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/budding-refinement-r2-20261022",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/budding-refinement-r2-20261022",
+      "files": 27,
+      "bytes": 3977146.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/budding-refinement-r3-20261022",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/budding-refinement-r3-20261022",
+      "files": 24,
+      "bytes": 4444039.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/budding-refinement-r4-20261022",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/budding-refinement-r4-20261022",
+      "files": 95,
+      "bytes": 11899855.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/budding-refinement-r5-20261022",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/budding-refinement-r5-20261022",
+      "files": 57,
+      "bytes": 8382395.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/budding-refinement-r6-20261022",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/budding-refinement-r6-20261022",
+      "files": 85,
+      "bytes": 11416324.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/budding-refinement-review-20261022",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/budding-refinement-review-20261022",
+      "files": 20,
+      "bytes": 4629106.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/entry-first-demo-2026-10-21",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/entry-first-demo-2026-10-21",
+      "files": 43,
+      "bytes": 11386447.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/entry-first-demo-online-2026-10-22",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/entry-first-demo-online-2026-10-22",
+      "files": 32,
+      "bytes": 11045668.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/mobile-r3-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/mobile-r3-2026-10-19",
+      "files": 6,
+      "bytes": 267874.0
+    },
+    {
+      "source": "alvenx-design-kit/output/playwright/navigation-type-2026-10-22",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/output/playwright/navigation-type-2026-10-22",
+      "files": 28,
+      "bytes": 3385659.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.0.0.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.0.0.zip",
+      "files": 1,
+      "bytes": 61625595.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.1.0.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.1.0.zip",
+      "files": 1,
+      "bytes": 63620426.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.1.1.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.1.1.zip",
+      "files": 1,
+      "bytes": 64476556.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.1.2-review-20261019-r2.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.1.2-review-20261019-r2.zip",
+      "files": 1,
+      "bytes": 71398547.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.1.2.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.1.2.zip",
+      "files": 1,
+      "bytes": 75342578.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.2.0.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.2.0.zip",
+      "files": 1,
+      "bytes": 78649885.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.2.1.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.2.1.zip",
+      "files": 1,
+      "bytes": 81018987.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.2.2.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.2.2.zip",
+      "files": 1,
+      "bytes": 87428776.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.3.1.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.3.1.zip",
+      "files": 1,
+      "bytes": 130248865.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-design-kit-1.3.2.zip",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-design-kit-1.3.2.zip",
+      "files": 1,
+      "bytes": 134122941.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.0.0.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.0.0.tgz",
+      "files": 1,
+      "bytes": 28515799.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.1.0.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.1.0.tgz",
+      "files": 1,
+      "bytes": 28539229.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.1.1.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.1.1.tgz",
+      "files": 1,
+      "bytes": 28681769.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.1.2-review-20261019-r2.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.1.2-review-20261019-r2.tgz",
+      "files": 1,
+      "bytes": 28887241.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.1.2.sha256",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.1.2.sha256",
+      "files": 1,
+      "bytes": 97.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.1.2.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.1.2.tgz",
+      "files": 1,
+      "bytes": 28900554.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.2.0.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.2.0.tgz",
+      "files": 1,
+      "bytes": 28904092.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.2.1.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.2.1.tgz",
+      "files": 1,
+      "bytes": 28905103.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.2.2.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.2.2.tgz",
+      "files": 1,
+      "bytes": 28906029.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.3.0.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.3.0.tgz",
+      "files": 1,
+      "bytes": 28913347.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.3.1.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.3.1.tgz",
+      "files": 1,
+      "bytes": 28913428.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/alvenx-liquid-glass-1.3.2.tgz",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/alvenx-liquid-glass-1.3.2.tgz",
+      "files": 1,
+      "bytes": 28921923.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/install-receipt-1.2.2.json",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/install-receipt-1.2.2.json",
+      "files": 1,
+      "bytes": 1062.0
+    },
+    {
+      "source": "alvenx-design-kit/releases/review-20261019-r2-artifacts.json",
+      "archive": "archive/development-process-2026-10-23/payload/alvenx-design-kit/releases/review-20261019-r2-artifacts.json",
+      "files": 1,
+      "bytes": 811.0
+    },
+    {
+      "source": "output/playwright/budding-entry-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/budding-entry-2026-10-19",
+      "files": 89,
+      "bytes": 33709275.0
+    },
+    {
+      "source": "output/playwright/compatibility-2026-10-16",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/compatibility-2026-10-16",
+      "files": 17,
+      "bytes": 1543085.0
+    },
+    {
+      "source": "output/playwright/control-input-fixes-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/control-input-fixes-2026-10-19",
+      "files": 17,
+      "bytes": 1331466.0
+    },
+    {
+      "source": "output/playwright/field-sizing-review-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/field-sizing-review-2026-10-19",
+      "files": 9,
+      "bytes": 1882044.0
+    },
+    {
+      "source": "output/playwright/horizontal-review-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/horizontal-review-2026-10-19",
+      "files": 194,
+      "bytes": 16591280.0
+    },
+    {
+      "source": "output/playwright/hover-optimization-2026-10-17",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/hover-optimization-2026-10-17",
+      "files": 289,
+      "bytes": 29717471.0
+    },
+    {
+      "source": "output/playwright/input-fixes-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/input-fixes-2026-10-19",
+      "files": 43,
+      "bytes": 2055229.0
+    },
+    {
+      "source": "output/playwright/mobile-input-fixes-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/mobile-input-fixes-2026-10-19",
+      "files": 21,
+      "bytes": 252714.0
+    },
+    {
+      "source": "output/playwright/mobile-r3-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/mobile-r3-2026-10-19",
+      "files": 252,
+      "bytes": 18356885.0
+    },
+    {
+      "source": "output/playwright/mobile-visitor-audit-2026-10-18",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/mobile-visitor-audit-2026-10-18",
+      "files": 54,
+      "bytes": 6865419.0
+    },
+    {
+      "source": "output/playwright/performance-optimization-2026-10-16",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/performance-optimization-2026-10-16",
+      "files": 18,
+      "bytes": 89495.0
+    },
+    {
+      "source": "output/playwright/performance-review-2026-10-16",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/performance-review-2026-10-16",
+      "files": 27,
+      "bytes": 156152.0
+    },
+    {
+      "source": "output/playwright/public-release-2026-10-18",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/public-release-2026-10-18",
+      "files": 18,
+      "bytes": 2270059.0
+    },
+    {
+      "source": "output/playwright/public-showcase-2026-10-18",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/public-showcase-2026-10-18",
+      "files": 8,
+      "bytes": 1181992.0
+    },
+    {
+      "source": "output/playwright/r3-controlled-proof-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/r3-controlled-proof-2026-10-19",
+      "files": 23,
+      "bytes": 1554466.0
+    },
+    {
+      "source": "output/playwright/ui-1.2.1-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/ui-1.2.1-2026-10-19",
+      "files": 109,
+      "bytes": 13811929.0
+    },
+    {
+      "source": "output/playwright/ui-1.2.2-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/ui-1.2.2-2026-10-19",
+      "files": 71,
+      "bytes": 17432887.0
+    },
+    {
+      "source": "output/playwright/ui-production-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/ui-production-2026-10-19",
+      "files": 110,
+      "bytes": 25681244.0
+    },
+    {
+      "source": "output/playwright/windows-fix-audit-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/playwright/windows-fix-audit-2026-10-19",
+      "files": 22,
+      "bytes": 1517589.0
+    },
+    {
+      "source": "output/publication/budding-entry-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/publication/budding-entry-2026-10-19",
+      "files": 81,
+      "bytes": 3159035.0
+    },
+    {
+      "source": "output/publication/ci-closure-2026-10-20",
+      "archive": "archive/development-process-2026-10-23/payload/output/publication/ci-closure-2026-10-20",
+      "files": 128,
+      "bytes": 5449307.0
+    },
+    {
+      "source": "output/publication/mobile-r3-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/publication/mobile-r3-2026-10-19",
+      "files": 74,
+      "bytes": 3360539.0
+    },
+    {
+      "source": "output/publication/ui-1.2.0-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/publication/ui-1.2.0-2026-10-19",
+      "files": 24,
+      "bytes": 293744.0
+    },
+    {
+      "source": "output/publication/ui-1.2.1-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/publication/ui-1.2.1-2026-10-19",
+      "files": 24,
+      "bytes": 361831.0
+    },
+    {
+      "source": "output/publication/ui-1.2.2-2026-10-19",
+      "archive": "archive/development-process-2026-10-23/payload/output/publication/ui-1.2.2-2026-10-19",
+      "files": 49,
+      "bytes": 1432922.0
+    }
+  ]
+}
