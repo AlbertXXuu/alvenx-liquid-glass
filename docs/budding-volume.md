@@ -23,14 +23,22 @@ The accepted `explore me!` label and its measured optical margins are fixed.
 Actual occupied width pushes the following item. Keep the discovery pair on
 its own row on narrow screens; do not absolutely position the adjacent link.
 The mother toggles, including during animation. Detached hover and press are
-independent. Outside activation, Escape and leaving the viewport close it.
+independent. Version 1.4.1 adds bounded, touch-centered deformation and damped
+release. Approaching either lobe shapes that lobe; holding and pulling captures
+the primary pointer. Movement beyond 6 CSS pixels consumes the activation, so a
+drag does not toggle or navigate. The next ordinary tap or click still works.
+The contour, material profile and native clip use the same deformed path; text
+stays native and readable. The background remains scrollable on touch devices.
+Outside activation, Escape and leaving the viewport close it.
 Reduced motion settles immediately, and native keyboard focus remains visible.
 
 The SSR image is the accepted closed shader frame, with the same continuous
 soft contact shadow used by the live body. The reference material combines
 native backdrop optics with the large form's analytic 2.5D blue/violet
 environment. It is not a physically unified 3D renderer. Geometry, shader,
-first-frame pixels and the final mobile shadow fix retain R7 behavior.
+first-frame pixels and the final mobile shadow fix retain R7 behavior. Resting
+and growth geometry are checked against R7 across both responsive sizes; the
+new interaction changes the transient surface, not the accepted resting form.
 
 For a server-rendered entrance above the fold, optionally copy the package's
 `budding-early.js` export to a versioned, same-origin static URL and load it as

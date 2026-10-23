@@ -25,3 +25,4 @@
 .volume-budding-bud[data-volume-light=true] .local-edge>path[filter]{opacity:0}
 .volume-budding-bud[data-volume-light=true] .local-shadow{display:none}
 .volume-first-frame-contact{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.volume-budding-bud .glass-budding-trigger,.volume-budding-bud .glass-budding-destination{touch-action:pinch-zoom;-webkit-user-select:none;user-select:none}

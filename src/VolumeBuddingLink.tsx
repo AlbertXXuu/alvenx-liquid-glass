@@ -4,10 +4,10 @@ import type { GlassClock } from './GlassClock';
 import { refinementGeometry, type ReviewBuddingTransform } from './budding-volume/geometry';
 import { createReferenceVolume } from './budding-volume/reference-volume';
 import { firstFrames } from './budding-volume/first-frame';
+import { emptyMotion,lobeTransform,springStep,boundedPull,type LobeMotion } from './budding-volume/motion';
 
-type LobeMotion={near:number;press:number;x:number;y:number};
-const emptyMotion=():LobeMotion=>({near:0,press:0,x:0,y:0});
-const lobeTransform=(m:LobeMotion,intensity:number)=>({offsetX:m.x*1.05*intensity*.35,offsetY:m.y*.75*intensity*.35,scaleX:1+m.near*.004*intensity,scaleY:1+(m.near*.006-m.press*.016)*intensity});
+type Lobe='mother'|'chamber';
+type Gesture={name:Lobe;pointerId:number;x:number;y:number;dx:number;dy:number;startPullX:number;startPullY:number;anchorX:number;anchorY:number;moved:boolean;element:HTMLElement};
 
 // Keep the soft contact shadow continuous beneath the translucent body. Cutting
 // it out with SourceAlpha leaves a pale antialiased seam at narrow/high-DPR sizes.
@@ -41,6 +41,8 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
  const state=useRef({growth:0,velocity:0,target:0,active:false,visible:true});
  const earlyFocused=useRef(false);
  const lobeState=useRef({mother:emptyMotion(),chamber:emptyMotion()}),held=useRef<'mother'|'chamber'|null>(null);
+ const gesture=useRef<Gesture|null>(null),motionRevision=useRef(0),suppressClick=useRef(0);
+ const pullVelocity=useRef({mother:{pullX:0,pullY:0},chamber:{pullX:0,pullY:0}});
  const [lobes,setLobes]=useState(lobeState.current);
  const host=useRef<HTMLSpanElement>(null),volumeCanvas=useRef<HTMLCanvasElement>(null),volumeRenderer=useRef<ReturnType<typeof createReferenceVolume>|null>(null),shadowPath=useRef<SVGPathElement>(null);
  const materialFrames=useRef(new Map<string,{growth:number;transform:ReviewBuddingTransform}>()),commitMaterial=useRef(()=>{});
@@ -48,6 +50,15 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
  const shape=useMemo(()=>refinementGeometry(growth,size),[growth,size]);
  const currentShape=useRef(shape);currentShape.current=shape;
  const visiblePath=useRef(shape.path);
+ const wakeMotion=useCallback(()=>{motionRevision.current++;clock.wake();},[clock]);
+ const releaseGesture=useCallback((cancelled=false)=>{
+  const active=gesture.current;gesture.current=null;held.current=null;
+  if(active){
+   if(active.moved&&!cancelled)suppressClick.current=performance.now()+700;
+   if(active.element.hasPointerCapture(active.pointerId))active.element.releasePointerCapture(active.pointerId);
+  }
+  wakeMotion();
+ },[wakeMotion]);
  useLayoutEffect(()=>{const media=matchMedia('(max-width:360px)'),measure=()=>setSize(media.matches?44:diameter);measure();media.addEventListener('change',measure);return()=>media.removeEventListener('change',measure);},[diameter]);
  const animate=useCallback((target:number)=>{
   const s=state.current;s.target=target;setExpanded(target===1);
@@ -91,11 +102,11 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
    const s=state.current;s.visible=entries.some(e=>e.isIntersecting);
    if(s.visible)clock.wake();else if(s.growth>0||s.target>0){s.growth=0;s.velocity=0;s.target=0;s.active=false;setExpanded(false);setGrowth(0);}
   });if(node)observer.observe(node);
-  let localMotionActive=false,lastPointer=-1,lastLayout=-1,lastReduced=clock.reduced;
+  let localMotionActive=false,lastPointer=-1,lastLayout=-1,lastReduced=clock.reduced,lastMotion=-1;
   const stop=clock.subscribe(delta=>{
    const s=state.current;if(!s.visible)return false;
-   if(!s.active&&!localMotionActive&&lastPointer===clock.pointerRevision&&lastLayout===clock.layoutRevision&&lastReduced===clock.reduced)return false;
-   lastPointer=clock.pointerRevision;lastLayout=clock.layoutRevision;lastReduced=clock.reduced;
+   if(!s.active&&!localMotionActive&&lastPointer===clock.pointerRevision&&lastLayout===clock.layoutRevision&&lastReduced===clock.reduced&&lastMotion===motionRevision.current)return false;
+   lastPointer=clock.pointerRevision;lastLayout=clock.layoutRevision;lastReduced=clock.reduced;lastMotion=motionRevision.current;
    if(s.active){if(clock.reduced){s.growth=s.target;s.velocity=0;s.active=false;}else{
     const dt=delta/1000,omega=8.5,x=s.growth-s.target,velocity=s.velocity,decay=Math.exp(-omega*dt),blend=velocity+omega*x;
     s.growth=s.target+(x+blend*dt)*decay;s.velocity=(velocity-omega*blend*dt)*decay;
@@ -106,14 +117,27 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
    let moving=false,changed=false;
    const bounds=node?.getBoundingClientRect(),blend=clock.reduced?1:1-Math.exp(-delta/75);
    const gap=currentShape.current.chamber.x-currentShape.current.mother.x-currentShape.current.mother.width;
-   const proximity=Math.max(1,Math.min(28,gap/2));
+   const proximity=s.growth<.95?14:Math.max(1,Math.min(18,gap/2));
    for(const name of ['mother','chamber'] as const){
     const rect=currentShape.current[name],x=clock.pointer.x-(bounds?.left??0),y=clock.pointer.y-(bounds?.top??0);
     const distance=Math.hypot(Math.max(rect.x-x,0,x-rect.x-rect.width),Math.max(rect.y-y,0,y-rect.y-rect.height));
-    const near=s.growth>=.95&&!clock.reduced?Math.max(0,1-distance/proximity):0;
-    const target:LobeMotion={near,press:near>0&&held.current===name?1:0,x:near*Math.max(-1,Math.min(1,(x-rect.x)/rect.width*2-1)),y:near*Math.max(-1,Math.min(1,(y-rect.y)/rect.height*2-1))};
+    const active=gesture.current?.name===name?gesture.current:null;
+    const available=name==='mother'||s.growth>=.95;
+    const near=available&&!clock.reduced&&(!gesture.current||active)?(active?1:Math.max(0,1-distance/proximity)):0;
+    const nx=Math.max(-1,Math.min(1,(x-rect.x)/Math.max(1,rect.width)*2-1)),ny=Math.max(-1,Math.min(1,(y-rect.y)/Math.max(1,rect.height)*2-1));
+    const limit=Math.min(name==='mother'?4.8:6,rect.height*.09)*Math.min(1,clock.strength/2.5);
+    const pull=(axis:'X'|'Y')=>active&&limit>0&&!clock.reduced?Math.max(-limit,Math.min(limit,active[axis==='X'?'startPullX':'startPullY']+boundedPull(active[axis==='X'?'dx':'dy'],limit))):0;
+    const target={near,press:near>0&&held.current===name?1:0,x:near*(active?active.anchorX:nx),y:near*(active?active.anchorY:ny),pullX:pull('X'),pullY:pull('Y')};
     const previous=lobeState.current[name],next={...previous};
     for(const channel of ['near','press','x','y'] as const){const difference=target[channel]-previous[channel];moving ||= Math.abs(difference)>=.0008;next[channel]=Math.abs(difference)<.0008?target[channel]:previous[channel]+difference*blend;changed ||= next[channel]!==previous[channel];}
+    for(const channel of ['pullX','pullY'] as const){
+     const velocity=pullVelocity.current[name][channel],settled=Math.abs(target[channel]-previous[channel])<.002&&Math.abs(velocity)<.02;
+     const [value,speed]=clock.reduced||settled?[target[channel],0]:springStep(previous[channel],velocity,target[channel],delta/1000);
+     next[channel]=value;pullVelocity.current[name][channel]=speed;moving ||= !settled;changed ||= value!==previous[channel];
+    }
+    const returning=Math.abs(next.pullX)+Math.abs(next.pullY)>.02;
+    next.anchorX=active?.anchorX??(returning?previous.anchorX:nx);next.anchorY=active?.anchorY??(returning?previous.anchorY:ny);
+    changed ||= next.anchorX!==previous.anchorX||next.anchorY!==previous.anchorY;
     lobeState.current[name]=next;
    }
    localMotionActive=moving;if(changed)setLobes({...lobeState.current});
@@ -121,6 +145,7 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
   });
   const hitContext=document.createElement('canvas').getContext('2d');
   const outside=(event:globalThis.PointerEvent)=>{
+   if(!event.isPrimary)return;
    if(!node||(!state.current.target&&!state.current.growth))return;
    const target=event.target as Element;
    if(node.contains(target)){
@@ -131,16 +156,17 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
    animate(0);
   };
   const escape=(event:KeyboardEvent)=>{if(event.key==='Escape'&&node?.contains(document.activeElement)){animate(0);node.querySelector<HTMLButtonElement>('button')?.focus();}};
-  const release=()=>{if(held.current){held.current=null;localMotionActive=true;clock.wake();}};
+  const release=(event:Event)=>{if('pointerId' in event&&gesture.current&&event.pointerId!==gesture.current.pointerId)return;if(held.current)releaseGesture(event.type!=='pointerup');};
   document.addEventListener('pointerdown',outside);document.addEventListener('keydown',escape);
   window.addEventListener('pointerup',release);window.addEventListener('pointercancel',release);window.addEventListener('blur',release);
   return()=>{stop();observer.disconnect();document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',escape);window.removeEventListener('pointerup',release);window.removeEventListener('pointercancel',release);window.removeEventListener('blur',release);};
- },[clock,animate,enhanced]);
+ },[clock,animate,enhanced,releaseGesture]);
  const toggle=()=>animate(state.current.target===1?0:1);
  useLayoutEffect(()=>{if(!enhanced)earlyFocused.current=host.current?.querySelector('[data-prejs-budding]')===document.activeElement;else if(earlyFocused.current)host.current?.querySelector<HTMLButtonElement>('button')?.focus({preventScroll:true});},[enhanced]);
  useLayoutEffect(()=>{if(!enhanced||!earlyActivation)return;const early=globalThis as typeof globalThis&{__alvenxVolumeBuddingIntent?:boolean;__alvenxVolumeBuddingReleaseEarly?:(activate:()=>void)=>(()=>void)|void};if(early.__alvenxVolumeBuddingIntent)animate(1);const release=early.__alvenxVolumeBuddingReleaseEarly?.(()=>animate(1));delete early.__alvenxVolumeBuddingIntent;delete early.__alvenxVolumeBuddingReleaseEarly;host.current?.removeAttribute('data-early-intent');return release;},[enhanced,animate,earlyActivation]);
  const contour=useCallback((frame:LiquidContourFrame)=>{
-  const transform:ReviewBuddingTransform=growth>=.95?{mother:lobeTransform(lobes.mother,frame.intensity),chamber:lobeTransform(lobes.chamber,frame.intensity)}:{offsetX:frame.shiftX*.35,offsetY:frame.shiftY*.35,scaleX:1+frame.near*.004*frame.intensity,scaleY:1+(frame.near*.006-frame.press*.016)*frame.intensity};
+  const base=currentShape.current;
+  const transform:ReviewBuddingTransform={mother:lobeTransform(lobes.mother,frame.intensity,base.mother),chamber:lobeTransform(lobes.chamber,frame.intensity,base.chamber)};
   const next=refinementGeometry(growth,size,transform);
   visiblePath.current=next.path;
   // The contour is requested before LiquidControl commits its optical frame.
@@ -151,9 +177,20 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
   return next.path;
  },[growth,size,lobes]);
  const m=shape.mother,c=shape.chamber;
- const mt=growth>=.95?lobeTransform(lobes.mother,clock.strength):{offsetX:0,offsetY:0,scaleX:1,scaleY:1},ct=growth>=.95?lobeTransform(lobes.chamber,clock.strength):{offsetX:0,offsetY:0,scaleX:1,scaleY:1};
+ const mt=lobeTransform(lobes.mother,clock.strength,m),ct=lobeTransform(lobes.chamber,clock.strength,c);
  return <span ref={host} className="glass-budding-link volume-budding-bud" data-volume-budding={id} data-budding-early={earlyActivation} data-growth={growth.toFixed(5)} data-ready={growth===1&&expanded} data-expanded={expanded} data-detached={growth>=.95} data-diameter={size} data-volume-light={light} data-enhanced={enhanced} data-mother-near={lobes.mother.near.toFixed(4)} data-chamber-near={lobes.chamber.near.toFixed(4)} style={enhanced?{width:shape.width,height:shape.height}:undefined}
-  onPointerDownCapture={e=>{const action=(e.target as Element).closest('button,a');if(action&&e.currentTarget.contains(action)){held.current=action.tagName==='BUTTON'?'mother':'chamber';clock.wake();}}}>
+  onPointerDownCapture={e=>{
+   if(!e.isPrimary||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||gesture.current)return;
+   const action=(e.target as Element).closest<HTMLElement>('button,a');if(!action||!e.currentTarget.contains(action))return;
+   const name:Lobe=action.tagName==='BUTTON'?'mother':'chamber',rect=currentShape.current[name],bounds=e.currentTarget.getBoundingClientRect();
+   held.current=name;suppressClick.current=0;
+   gesture.current={name,pointerId:e.pointerId,x:e.clientX,y:e.clientY,dx:0,dy:0,startPullX:lobeState.current[name].pullX,startPullY:lobeState.current[name].pullY,anchorX:Math.max(-1,Math.min(1,(e.clientX-bounds.left-rect.x)/rect.width*2-1)),anchorY:Math.max(-1,Math.min(1,(e.clientY-bounds.top-rect.y)/rect.height*2-1)),moved:false,element:action};
+   action.setPointerCapture(e.pointerId);wakeMotion();
+  }}
+  onPointerMoveCapture={e=>{const g=gesture.current;if(!g||g.pointerId!==e.pointerId)return;g.dx=e.clientX-g.x;g.dy=e.clientY-g.y;g.moved ||= Math.hypot(g.dx,g.dy)>6;wakeMotion();}}
+  onLostPointerCapture={e=>{if(gesture.current?.pointerId===e.pointerId)releaseGesture(true);}}
+  onClickCapture={e=>{if(e.detail>0&&performance.now()<suppressClick.current){suppressClick.current=0;e.preventDefault();e.stopPropagation();}}}
+  onDragStart={e=>e.preventDefault()}>
   {(!enhanced||(!firstFrameReady&&growth===0&&light))&&<FirstFrame enhanced={enhanced} onActivate={toggle} href={href}/>}
   {enhanced&&light&&<svg className="volume-budding-contact" width={shape.width} height={shape.height} aria-hidden="true"><defs><filter id={`${uid}-contact`} x="-20%" y="-40%" width="140%" height="200%"><feGaussianBlur in="SourceAlpha" stdDeviation="2.1" result="blur"/><feOffset in="blur" dy="2.8" result="offset"/><feFlood floodColor="#293451" floodOpacity=".105" result="ink"/><feComposite in="ink" in2="offset" operator="in" result="shadow"/></filter></defs><path ref={shadowPath} fill="#293451" filter={`url(#${uid}-contact)`}/></svg>}
   {enhanced&&<LiquidControl id={`${id}-body`} clock={clock} kind="field" className="glass-budding-body" contour={contour}>

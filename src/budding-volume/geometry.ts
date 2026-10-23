@@ -2,7 +2,8 @@ import { volumeHitContour, type VolumeGeometry } from '../volume-hit-geometry';
 import type { BuddingGeometry, BuddingTransform } from '../buddingGeometry';
 
 type Point = [number, number];
-export type ReviewBuddingTransform=BuddingTransform&{mother?:BuddingTransform;chamber?:BuddingTransform};
+export type VolumeLobeTransform=BuddingTransform&{pull?:{x:number;y:number;dx:number;dy:number;radiusX:number;radiusY:number}};
+export type ReviewBuddingTransform=BuddingTransform&{mother?:VolumeLobeTransform;chamber?:VolumeLobeTransform};
 // Near-elliptic sides keep the content chamber visibly convex instead of
 // approaching the accepted large panel's broad, nearly vertical shoulders.
 export const reviewChamberExponent=2.2;
@@ -28,8 +29,9 @@ function c2Boundary(points:Point[]) {
  return `M ${pair(mix(at(-1),at(0),at(1),1,4,1,6))} ${points.map((p,i)=>`C ${pair(mix(p,at(i+1),at(i+1),2,1,0,3))} ${pair(mix(p,at(i+1),at(i+1),1,2,0,3))} ${pair(mix(p,at(i+1),at(i+2),1,4,1,6))}`).join(' ')} Z`;
 }
 
-/** Review-only geometry. Reuses the accepted volume coverage kernel and C2
- * construction. Production buddingGeometry and BuddingLink remain untouched. */
+/** Accepted volume geometry with optional local pulls resampled into C2 curves.
+ * Without motion this stays identical to the R7 reference. Original
+ * buddingGeometry and BuddingLink remain untouched. */
 export function refinementGeometry(growth:number,diameter=54,transform:ReviewBuddingTransform={}):BuddingGeometry {
  const g=clamp(growth),scale=diameter/300,height=1.4*diameter+12,cy=height/2,cx=6+diameter/2;
  const ease=g*g*(3-2*g),size=g**.85;
@@ -38,9 +40,16 @@ export function refinementGeometry(growth:number,diameter=54,transform:ReviewBud
  const mother={x:6,y:cy-diameter/2,width:diameter,height:diameter};
  const chamber={x:6+(chamberX-rx-80)*scale+separation,y:cy-ry*scale,width:rx*2*scale+room,height:ry*2*scale};
  const chamberCentre=chamber.x+chamber.width/2,outerRx=chamber.width/2;
- const transformPoint=([x,y]:Point,lobe?:'mother'|'chamber'):Point=>{
-  const selected=lobe?transform[lobe]:undefined,t=selected??transform,anchor=lobe==='chamber'?chamberCentre:cx;
-  return [anchor+(x-anchor)*(t.scaleX??1)+(t.offsetX??0),cy+(y-cy)*(t.scaleY??1)+(t.offsetY??0)];
+ const apply=([x,y]:Point,t:VolumeLobeTransform,anchor:number):Point=>{
+  const p=t.pull,weight=p?Math.exp(-(((x-p.x)/p.radiusX)**2+((y-p.y)/p.radiusY)**2)):0;
+  return [anchor+(x-anchor)*(t.scaleX??1)+(t.offsetX??0)+(p?.dx??0)*weight,cy+(y-cy)*(t.scaleY??1)+(t.offsetY??0)+(p?.dy??0)*weight];
+ };
+ const transformPoint=(point:Point,lobe?:'mother'|'chamber'):Point=>{
+  if(lobe)return apply(point,transform[lobe]??transform,lobe==='chamber'?chamberCentre:cx);
+  if(!transform.mother&&!transform.chamber)return apply(point,transform,cx);
+  const a=apply(point,transform.mother??transform,cx),b=apply(point,transform.chamber??transform,chamberCentre);
+  const weight=smooth((point[0]-(cx+diameter*.28))/Math.max(diameter*.4,chamberCentre-cx-diameter*.28));
+  return [a[0]+(b[0]-a[0])*weight,a[1]+(b[1]-a[1])*weight];
  };
  const morph=smooth((g-.70)/.25);
  const sampled=volumeHitContour(resting,g,64).points;
