@@ -1,0 +1,32 @@
+{
+  "status": "failed",
+  "checks": [
+    {
+      "active": "chamber",
+      "fixed": "mother",
+      "crop": [
+        394,
+        482,
+        461,
+        549
+      ],
+      "changedPixels": 25,
+      "maxChannelDelta": 1,
+      "pass": false
+    },
+    {
+      "active": "mother",
+      "fixed": "chamber",
+      "crop": [
+        478,
+        471,
+        607,
+        559
+      ],
+      "changedPixels": 586,
+      "maxChannelDelta": 1,
+      "pass": false
+    }
+  ],
+  "scope": "Exact RGB pixel comparison of the other lobe and 6 CSS px border; Chromium desktop screenshot."
+}

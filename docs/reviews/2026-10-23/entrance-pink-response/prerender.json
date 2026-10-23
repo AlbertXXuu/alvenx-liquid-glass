@@ -1,0 +1,39 @@
+{
+  "status": "prerendered",
+  "entry": "showcase/entrance-pink-response-review/index.html",
+  "outDirectory": "D:\\.Development\\AlvenX-UIUX\\alvenx-design-kit\\output\\playwright\\entrance-pink-response-20261023\\dist",
+  "base": "/ui/releases/entrance-pink-response-20261023/",
+  "render": "actual Review; Node without DOM globals",
+  "initialGrowth": 0,
+  "previousHtmlSha256": "50c12aa0cc4c0d185c606ca437b7c12c72472ef62a312f99042a8e4eb51952d2",
+  "htmlSha256": "fcd7ae673645756eb87db9adefb9f151f56d4391eacffe8ecf6988979452e8d3",
+  "htmlBytes": 56760,
+  "markupBytes": 56105,
+  "responsiveFrames": [
+    {
+      "diameter": 44,
+      "cssWidth": 56.000369262695315,
+      "cssHeight": 73.6,
+      "textureCssWidth": 186.87341955566407,
+      "rasterWidth": 281,
+      "rasterHeight": 111,
+      "pngSha256": "af94544963f85b4a0c3dd73ecca40debb4d7208a5d0e8c007d0c47325c26df0b"
+    },
+    {
+      "diameter": 54,
+      "cssWidth": 66.00045318603514,
+      "cssHeight": 87.6,
+      "textureCssWidth": 214.11418036376952,
+      "rasterWidth": 322,
+      "rasterHeight": 132,
+      "pngSha256": "d5d2695305018ed024e03ce235ab6560724ef3a3d5e3222270c024839606d074"
+    }
+  ],
+  "earlyController": {
+    "path": "assets/budding-early-activation-f69daf83c2c3.js",
+    "bytes": 4223,
+    "sha256": "f69daf83c2c3d750bb002f8775e253184cb6634159bdbbf8dcf3272e33dc0ce2",
+    "execution": "external defer before the main module; no inline script"
+  },
+  "defaultSiteDistChanged": false
+}

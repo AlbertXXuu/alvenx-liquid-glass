@@ -1,0 +1,28 @@
+[
+  {
+    "active": "chamber",
+    "interiorCrop": [
+      497,
+      490,
+      588,
+      540
+    ],
+    "changedPixels": 4195,
+    "pixels": 4550,
+    "meanAbsoluteRGBDifference": 1.3153846153846154,
+    "maxChannelDelta": 60
+  },
+  {
+    "active": "mother",
+    "interiorCrop": [
+      413,
+      501,
+      442,
+      530
+    ],
+    "changedPixels": 785,
+    "pixels": 841,
+    "meanAbsoluteRGBDifference": 1.3420531113753469,
+    "maxChannelDelta": 13
+  }
+]

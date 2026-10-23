@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-23T15:44:29.584824+00:00",
+  "status": "deployed-independent-preview-awaiting-owner-acceptance",
+  "url": "https://alvenx.com/ui/entrance-pink-response-review-20261023/",
+  "sourceCommit": "26aeec51f79820322f833231243c14ed6d64985c",
+  "sourceTag": "review-entrance-pink-response-20261023-r2",
+  "websiteSource": "ef7f424ed494c42256c323e27995265bc09f6902",
+  "websiteMerge": {
+    "source": "ef7f424ed494c42256c323e27995265bc09f6902",
+    "merge": "9164a3d404495079e34f15e4f1f7218690948355",
+    "tree": "1d49b2a8995c7af861fd95c7b4cb8d48c5aa5903",
+    "url": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/54"
+  },
+  "worker": {
+    "id": "244095a8-03d6-49db-b3ea-60acc74ef9d8",
+    "created_on": "2026-10-23T15:38:03.26541Z",
+    "versions": [
+      {
+        "version_id": "27aeb79a-7c7f-4ab8-aaf6-a4d5fc84dc01",
+        "percentage": 100
+      }
+    ]
+  },
+  "checks": {
+    "localInteraction": 106,
+    "builtFirstFrameAndNavigation": 31,
+    "onlineInteraction": 106,
+    "hostedByteMatches": 28,
+    "ciRuns": 4,
+    "ciJobs": 4
+  },
+  "productionHomepageKit": "1.4.1 unchanged",
+  "productionShowcaseSource": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+  "deploymentCommand": {
+    "childExitCode": 1,
+    "timedOut": true,
+    "success": false,
+    "deployedWorkerVersion": "27aeb79a-7c7f-4ab8-aaf6-a4d5fc84dc01",
+    "apiStatusCounts": {
+      "200": 14,
+      "201": 1,
+      "202": 2
+    },
+    "transportFailureCounts": {}
+  },
+  "deploymentEvidence": "CLI reported activation but lingered until its five-minute bound; authenticated active-version and hosted byte checks independently establish deployment. The timeout is retained, not called CLI success.",
+  "protocolCorrections": [
+    "The first closed-center test found absent-chamber transform bleed; growth-gated blending repaired it before source freeze.",
+    "Prerendered wordmark initially used Vite development asset URL; r2 maps it to the built canonical asset and verifies local SSR references. Both original source tags remain immutable.",
+    "The initial online reduced-motion comparison read ready state before the matching two-lobe contour committed. Final protocol waits for that committed contour before comparing hover; no runtime workaround.",
+    "Local vinext preview serves explicit index.html and required a fresh server after the static-entry update; previous local URL/cached-entry probe failures are not counted as passing tests."
+  ],
+  "limits": [
+    "Chromium desktop and mobile viewport/DPR emulation; physical iOS/Safari/Combo Touch not independently tested.",
+    "Independent material screenshot comparisons allow at most 1/255 channel difference, retaining raw quantization differences. No exact-RGB identity claim.",
+    "Regenerated first frame matches resting geometry/material; measured static-to-live screenshot differences are retained, not claimed zero pixels."
+  ],
+  "rights": "All rights reserved / UNLICENSED; no package or historical tag changed."
+}

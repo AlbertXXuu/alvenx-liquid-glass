@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-23T15:36:13.929Z",
+  "base": "http://127.0.0.1:5197/ui/entrance-pink-response-review-20261023/index.html",
+  "assertions": 31,
+  "passed": 31,
+  "checks": [
+    {
+      "name": "320: native static first frame",
+      "pass": true
+    },
+    {
+      "name": "320: native destination",
+      "pass": true
+    },
+    {
+      "name": "320: first frame target size",
+      "pass": true
+    },
+    {
+      "name": "320: hydrated single button",
+      "pass": true
+    },
+    {
+      "name": "320: transparent first frame removed",
+      "pass": true
+    },
+    {
+      "name": "320: starts closed",
+      "pass": true
+    },
+    {
+      "name": "320: opens",
+      "pass": true
+    },
+    {
+      "name": "320: link works",
+      "pass": true
+    },
+    {
+      "name": "320: no overflow",
+      "pass": true
+    },
+    {
+      "name": "320: closes",
+      "pass": true
+    },
+    {
+      "name": "393: native static first frame",
+      "pass": true
+    },
+    {
+      "name": "393: native destination",
+      "pass": true
+    },
+    {
+      "name": "393: first frame target size",
+      "pass": true
+    },
+    {
+      "name": "393: hydrated single button",
+      "pass": true
+    },
+    {
+      "name": "393: transparent first frame removed",
+      "pass": true
+    },
+    {
+      "name": "393: starts closed",
+      "pass": true
+    },
+    {
+      "name": "393: opens",
+      "pass": true
+    },
+    {
+      "name": "393: link works",
+      "pass": true
+    },
+    {
+      "name": "393: no overflow",
+      "pass": true
+    },
+    {
+      "name": "393: closes",
+      "pass": true
+    },
+    {
+      "name": "1413: native static first frame",
+      "pass": true
+    },
+    {
+      "name": "1413: native destination",
+      "pass": true
+    },
+    {
+      "name": "1413: first frame target size",
+      "pass": true
+    },
+    {
+      "name": "1413: hydrated single button",
+      "pass": true
+    },
+    {
+      "name": "1413: transparent first frame removed",
+      "pass": true
+    },
+    {
+      "name": "1413: starts closed",
+      "pass": true
+    },
+    {
+      "name": "1413: opens",
+      "pass": true
+    },
+    {
+      "name": "1413: link works",
+      "pass": true
+    },
+    {
+      "name": "1413: no overflow",
+      "pass": true
+    },
+    {
+      "name": "1413: closes",
+      "pass": true
+    },
+    {
+      "name": "no runtime or console errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

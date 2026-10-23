@@ -1,0 +1,34 @@
+[
+  {
+    "path": "showcase/entrance-pink-response-review/PreviewBuddingLink.tsx",
+    "sha256": "3f79a04114ba0f09d558ce53f4a6d69c55d3faf7937f1215478fbf6ab23332ac"
+  },
+  {
+    "path": "showcase/entrance-pink-response-review/geometry.ts",
+    "sha256": "ff4d9ec098407607cb49c5f11f8367a409cde0e5f05ca20f24f0d90dc9b587d3"
+  },
+  {
+    "path": "showcase/entrance-pink-response-review/motion.ts",
+    "sha256": "bce97ea65a5f59bcba0a4f46ec8d373d97fa29610a2f60b92f09a72a33ad59b8"
+  },
+  {
+    "path": "showcase/entrance-pink-response-review/reference-volume.ts",
+    "sha256": "ac751a9d8de56bcf8a09339363c79693c3da5bcf4d96fb1741d37a82fc62428d"
+  },
+  {
+    "path": "showcase/entrance-pink-response-review/first-frame.ts",
+    "sha256": "f945dbd49a5092d5d0ae67a11640ab5328d0973fbbb0f6d285c5a8e1bd4abb71"
+  },
+  {
+    "path": "showcase/entrance-pink-response-review/main.tsx",
+    "sha256": "13b2a43be34ac933c04b13a10a1ac5e8203fb365943f88b01697bb636b1c4ec7"
+  },
+  {
+    "path": "showcase/entrance-pink-response-review/review.css",
+    "sha256": "b02d08c93208dcde0b70e5fba975a3509017c1c8c21d1bd5d25be35edc3e35e1"
+  },
+  {
+    "path": "output/playwright/entrance-pink-response-20261023/qa.cjs",
+    "sha256": "d2a14338d8cc16fb0b0f08567591099e15dc6a192183facf15c833f1d756bc44"
+  }
+]
