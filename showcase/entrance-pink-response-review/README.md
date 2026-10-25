@@ -6,6 +6,7 @@ This independent visual proposal responds to the owner’s request for a fixed i
 - Hover grows each lobe by up to 5% before local compensation, with a 30px approach zone for the closed pearl. Detached approach zones remain separated. Drag retains spring release, re-grab, click suppression, toggles, outside/scroll dismissal and native destination semantics.
 - Blue and rose studio colours are sampled by the existing analytic volume model. Each lobe has independent pointer lighting. This is an environment approximation layered over native backdrop glass, not a claim of full 3D rendering.
 - First-frame images are regenerated from the same resting contour, renderer and defaults at 44/54px. The shared runtime and historical review remain unchanged. Reduced motion stays static; inactive rendering sleeps.
+- The 2026-10-25 edge correction tapers empty profile columns to zero thickness at the neighbouring contour centre, and pairs premultiplied shader output with the canvas compositor. This removes inward tip cuts and transparent-black resampling specks without changing the C2 path, palette, interaction or pixel budget.
 
 Run the repository dev server and open `/showcase/entrance-pink-response-review/`. Build with `node node_modules/vite/bin/vite.js build --config showcase/entrance-pink-response-review/vite.config.mjs --base /ui/releases/entrance-pink-response-20261023/`, then run `prerender.mjs` with that base and `--out-dir output/playwright/entrance-pink-response-20261023/dist`.
 
