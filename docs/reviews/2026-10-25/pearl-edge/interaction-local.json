@@ -1,0 +1,1145 @@
+{
+  "status": "passed",
+  "base": "http://127.0.0.1:5197/ui/releases/pearl-edge-20261025/showcase/entrance-pink-response-review/index.html",
+  "assertions": 106,
+  "passed": 106,
+  "checks": [
+    {
+      "name": "1413: resting contour stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: pointer approach responds before contact",
+      "pass": true,
+      "detail": {
+        "near": "0.5985"
+      }
+    },
+    {
+      "name": "1413: approach keeps mother center anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "approach": {
+          "x": 4.374806880950928,
+          "y": 16.010848999023438,
+          "width": 57.25047302246094,
+          "height": 55.57830047607422,
+          "cx": 33.0000433921814,
+          "cy": 43.79999923706055
+        }
+      }
+    },
+    {
+      "name": "1413: centered hover visibly expands more than 1 CSS px",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 4.6855340003967285,
+          "y": 15.495576858520508,
+          "width": 56.6290168762207,
+          "height": 56.608848571777344,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        }
+      }
+    },
+    {
+      "name": "1413: centered hover keeps mother center anchored",
+      "pass": true
+    },
+    {
+      "name": "1413: hit button is fixed during hover",
+      "pass": true
+    },
+    {
+      "name": "1413: center hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 4.6855340003967285,
+          "y": 15.495576858520508,
+          "width": 56.6290168762207,
+          "height": 56.608848571777344,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: side hover keeps mother center anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 3.900034189224243,
+          "y": 15.309935569763184,
+          "width": 58.20001220703125,
+          "height": 56.980125427246094,
+          "cx": 33.00004029273987,
+          "cy": 43.79999828338623
+        }
+      }
+    },
+    {
+      "name": "1413: side hover changes contour direction",
+      "pass": true,
+      "detail": {
+        "center": {
+          "x": 4.6855340003967285,
+          "y": 15.495576858520508,
+          "width": 56.6290168762207,
+          "height": 56.608848571777344,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        },
+        "side": {
+          "x": 3.900034189224243,
+          "y": 15.309935569763184,
+          "width": 58.20001220703125,
+          "height": 56.980125427246094,
+          "cx": 33.00004029273987,
+          "cy": 43.79999828338623
+        }
+      }
+    },
+    {
+      "name": "1413: side hover keeps hit button fixed",
+      "pass": true
+    },
+    {
+      "name": "1413: side hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 3.8989169597625732,
+          "y": 15.309653282165527,
+          "width": 58.20225143432617,
+          "height": 56.980690002441406,
+          "cx": 33.00004267692566,
+          "cy": 43.79999828338623
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: open form has detached mother and chamber",
+      "pass": true
+    },
+    {
+      "name": "1413: open mother remains anchored to closed mother",
+      "pass": true,
+      "detail": {
+        "closed": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "open": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        }
+      }
+    },
+    {
+      "name": "1413: expanded contour stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 90.03618621826172,
+          "y": 6.013798236846924,
+          "width": 116.0564956665039,
+          "height": 75.57240295410156,
+          "cx": 148.06443405151367,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: page has no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1413,
+        "viewport": 1413
+      }
+    },
+    {
+      "name": "1413: chamber hover leaves mother exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber hover responds locally",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber hover stays centered",
+      "pass": true
+    },
+    {
+      "name": "1413: hover does not move neighboring layout",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 87.21347045898438,
+          "y": 3.986182451248169,
+          "width": 121.70193481445312,
+          "height": 79.62763214111328,
+          "cx": 148.06443786621094,
+          "cy": 43.79999852180481
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: chamber drag leaves mother exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber drag produces additional deformation",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber drag keeps center anchored",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber drag stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 87.20054626464844,
+          "y": 4.686690330505371,
+          "width": 121.727783203125,
+          "height": 78.22661590576172,
+          "cx": 148.06443786621094,
+          "cy": 43.79999828338623
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: release visibly returns over time",
+      "pass": true
+    },
+    {
+      "name": "1413: release returns to resting contour",
+      "pass": true
+    },
+    {
+      "name": "1413: chamber drag suppresses accidental navigation",
+      "pass": true
+    },
+    {
+      "name": "1413: mother drag leaves chamber exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "1413: mother drag stays anchored",
+      "pass": true
+    },
+    {
+      "name": "1413: mother drag stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.134272575378418,
+          "y": 17.08356475830078,
+          "width": 53.73145294189453,
+          "height": 53.43286895751953,
+          "cx": 32.999999046325684,
+          "cy": 43.79999923706055
+        },
+        "chamber": {
+          "x": 90.03618621826172,
+          "y": 6.013798236846924,
+          "width": 116.0564956665039,
+          "height": 75.57240295410156,
+          "cx": 148.06443405151367,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "1413: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "1413: ordinary next click toggles closed",
+      "pass": true
+    },
+    {
+      "name": "1413: second click toggles open",
+      "pass": true
+    },
+    {
+      "name": "1413: idle rendering sleeps",
+      "pass": true
+    },
+    {
+      "name": "393: resting contour stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: pointer approach responds before contact",
+      "pass": true,
+      "detail": {
+        "near": "0.5986"
+      }
+    },
+    {
+      "name": "393: approach keeps mother center anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "approach": {
+          "x": 4.374897480010986,
+          "y": 16.010896682739258,
+          "width": 57.25028991699219,
+          "height": 55.578208923339844,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        }
+      }
+    },
+    {
+      "name": "393: centered hover visibly expands more than 1 CSS px",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 4.6855340003967285,
+          "y": 15.495576858520508,
+          "width": 56.6290168762207,
+          "height": 56.608848571777344,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        }
+      }
+    },
+    {
+      "name": "393: centered hover keeps mother center anchored",
+      "pass": true
+    },
+    {
+      "name": "393: hit button is fixed during hover",
+      "pass": true
+    },
+    {
+      "name": "393: center hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 4.6855340003967285,
+          "y": 15.495576858520508,
+          "width": 56.6290168762207,
+          "height": 56.608848571777344,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: side hover keeps mother center anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 3.900024175643921,
+          "y": 15.30993366241455,
+          "width": 58.200035095214844,
+          "height": 56.98012924194336,
+          "cx": 33.00004172325134,
+          "cy": 43.79999828338623
+        }
+      }
+    },
+    {
+      "name": "393: side hover changes contour direction",
+      "pass": true,
+      "detail": {
+        "center": {
+          "x": 4.6855340003967285,
+          "y": 15.495576858520508,
+          "width": 56.6290168762207,
+          "height": 56.608848571777344,
+          "cx": 33.00004243850708,
+          "cy": 43.80000114440918
+        },
+        "side": {
+          "x": 3.900024175643921,
+          "y": 15.30993366241455,
+          "width": 58.200035095214844,
+          "height": 56.98012924194336,
+          "cx": 33.00004172325134,
+          "cy": 43.79999828338623
+        }
+      }
+    },
+    {
+      "name": "393: side hover keeps hit button fixed",
+      "pass": true
+    },
+    {
+      "name": "393: side hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 3.8989169597625732,
+          "y": 15.309653282165527,
+          "width": 58.20225143432617,
+          "height": 56.980690002441406,
+          "cx": 33.00004267692566,
+          "cy": 43.79999828338623
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: open form has detached mother and chamber",
+      "pass": true
+    },
+    {
+      "name": "393: open mother remains anchored to closed mother",
+      "pass": true,
+      "detail": {
+        "closed": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "open": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        }
+      }
+    },
+    {
+      "name": "393: expanded contour stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 90.03618621826172,
+          "y": 6.013798236846924,
+          "width": 116.0564956665039,
+          "height": 75.57240295410156,
+          "cx": 148.06443405151367,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: page has no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 393,
+        "viewport": 393
+      }
+    },
+    {
+      "name": "393: chamber hover leaves mother exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "393: chamber hover responds locally",
+      "pass": true
+    },
+    {
+      "name": "393: chamber hover stays centered",
+      "pass": true
+    },
+    {
+      "name": "393: hover does not move neighboring layout",
+      "pass": true
+    },
+    {
+      "name": "393: chamber hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 87.21347045898438,
+          "y": 3.9861819744110107,
+          "width": 121.70193481445312,
+          "height": 79.62763214111328,
+          "cx": 148.06443786621094,
+          "cy": 43.79999804496765
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: chamber drag leaves mother exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "393: chamber drag produces additional deformation",
+      "pass": true
+    },
+    {
+      "name": "393: chamber drag keeps center anchored",
+      "pass": true
+    },
+    {
+      "name": "393: chamber drag stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.010840892791748,
+          "y": 16.810840606689453,
+          "width": 53.97831726074219,
+          "height": 53.97832107543945,
+          "cx": 32.99999952316284,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 87.19924926757812,
+          "y": 4.683825492858887,
+          "width": 121.73036193847656,
+          "height": 78.23235321044922,
+          "cx": 148.0644302368164,
+          "cy": 43.800002098083496
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: release visibly returns over time",
+      "pass": true
+    },
+    {
+      "name": "393: release returns to resting contour",
+      "pass": true
+    },
+    {
+      "name": "393: chamber drag suppresses accidental navigation",
+      "pass": true
+    },
+    {
+      "name": "393: mother drag leaves chamber exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "393: mother drag stays anchored",
+      "pass": true
+    },
+    {
+      "name": "393: mother drag stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.126831531524658,
+          "y": 17.08173179626465,
+          "width": 53.746337890625,
+          "height": 53.43653869628906,
+          "cx": 33.00000047683716,
+          "cy": 43.80000114440918
+        },
+        "chamber": {
+          "x": 90.03618621826172,
+          "y": 6.013798236846924,
+          "width": 116.0564956665039,
+          "height": 75.57240295410156,
+          "cx": 148.06443405151367,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "393: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "393: ordinary next click toggles closed",
+      "pass": true
+    },
+    {
+      "name": "393: second click toggles open",
+      "pass": true
+    },
+    {
+      "name": "393: idle rendering sleeps",
+      "pass": true
+    },
+    {
+      "name": "320: resting contour stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: pointer approach responds before contact",
+      "pass": true,
+      "detail": {
+        "near": "0.5986"
+      }
+    },
+    {
+      "name": "320: approach keeps mother center anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "approach": {
+          "x": 4.5082807540893555,
+          "y": 14.154898643493652,
+          "width": 46.9835090637207,
+          "height": 45.29020309448242,
+          "cx": 28.000035285949707,
+          "cy": 36.80000019073486
+        }
+      }
+    },
+    {
+      "name": "320: centered hover visibly expands more than 1 CSS px",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "hover": {
+          "x": 4.919700622558594,
+          "y": 13.727892875671387,
+          "width": 46.16067123413086,
+          "height": 46.14421463012695,
+          "cx": 28.000036239624023,
+          "cy": 36.80000019073486
+        }
+      }
+    },
+    {
+      "name": "320: centered hover keeps mother center anchored",
+      "pass": true
+    },
+    {
+      "name": "320: hit button is fixed during hover",
+      "pass": true
+    },
+    {
+      "name": "320: center hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 4.919700622558594,
+          "y": 13.727892875671387,
+          "width": 46.16067123413086,
+          "height": 46.14421463012695,
+          "cx": 28.000036239624023,
+          "cy": 36.80000019073486
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: side hover keeps mother center anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "hover": {
+          "x": 4.103575706481934,
+          "y": 13.536089897155762,
+          "width": 47.79291534423828,
+          "height": 46.52781677246094,
+          "cx": 28.000033378601074,
+          "cy": 36.79999828338623
+        }
+      }
+    },
+    {
+      "name": "320: side hover changes contour direction",
+      "pass": true,
+      "detail": {
+        "center": {
+          "x": 4.919700622558594,
+          "y": 13.727892875671387,
+          "width": 46.16067123413086,
+          "height": 46.14421463012695,
+          "cx": 28.000036239624023,
+          "cy": 36.80000019073486
+        },
+        "side": {
+          "x": 4.103575706481934,
+          "y": 13.536089897155762,
+          "width": 47.79291534423828,
+          "height": 46.52781677246094,
+          "cx": 28.000033378601074,
+          "cy": 36.79999828338623
+        }
+      }
+    },
+    {
+      "name": "320: side hover keeps hit button fixed",
+      "pass": true
+    },
+    {
+      "name": "320: side hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 4.102388381958008,
+          "y": 13.53579330444336,
+          "width": 47.795291900634766,
+          "height": 46.528411865234375,
+          "cx": 28.00003433227539,
+          "cy": 36.79999923706055
+        },
+        "chamber": null,
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: open form has detached mother and chamber",
+      "pass": true
+    },
+    {
+      "name": "320: open mother remains anchored to closed mother",
+      "pass": true,
+      "detail": {
+        "closed": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "open": {
+          "x": 6.008832931518555,
+          "y": 14.808833122253418,
+          "width": 43.982330322265625,
+          "height": 43.98233413696289,
+          "cx": 27.999998092651367,
+          "cy": 36.80000019073486
+        }
+      }
+    },
+    {
+      "name": "320: expanded contour stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.008832931518555,
+          "y": 14.808833122253418,
+          "width": 43.982330322265625,
+          "height": 43.98233413696289,
+          "cx": 27.999998092651367,
+          "cy": 36.80000019073486
+        },
+        "chamber": {
+          "x": 74.47572326660156,
+          "y": 6.011242866516113,
+          "width": 104.37838745117188,
+          "height": 61.577518463134766,
+          "cx": 126.6649169921875,
+          "cy": 36.800002098083496
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: page has no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "viewport": 320
+      }
+    },
+    {
+      "name": "320: chamber hover leaves mother exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "320: chamber hover responds locally",
+      "pass": true
+    },
+    {
+      "name": "320: chamber hover stays centered",
+      "pass": true
+    },
+    {
+      "name": "320: hover does not move neighboring layout",
+      "pass": true
+    },
+    {
+      "name": "320: chamber hover stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.008832931518555,
+          "y": 14.808833122253418,
+          "width": 43.982330322265625,
+          "height": 43.98233413696289,
+          "cx": 27.999998092651367,
+          "cy": 36.80000019073486
+        },
+        "chamber": {
+          "x": 71.85050201416016,
+          "y": 4.278992652893066,
+          "width": 109.62883758544922,
+          "height": 65.04202270507812,
+          "cx": 126.66492080688477,
+          "cy": 36.80000400543213
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: chamber drag leaves mother exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "320: chamber drag produces additional deformation",
+      "pass": true
+    },
+    {
+      "name": "320: chamber drag keeps center anchored",
+      "pass": true
+    },
+    {
+      "name": "320: chamber drag stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.008832931518555,
+          "y": 14.808833122253418,
+          "width": 43.982330322265625,
+          "height": 43.98233413696289,
+          "cx": 27.999998092651367,
+          "cy": 36.80000019073486
+        },
+        "chamber": {
+          "x": 71.8080062866211,
+          "y": 4.744293212890625,
+          "width": 109.71382904052734,
+          "height": 64.11141204833984,
+          "cx": 126.66492080688477,
+          "cy": 36.79999923706055
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: release visibly returns over time",
+      "pass": true
+    },
+    {
+      "name": "320: release returns to resting contour",
+      "pass": true
+    },
+    {
+      "name": "320: chamber drag suppresses accidental navigation",
+      "pass": true
+    },
+    {
+      "name": "320: mother drag leaves chamber exactly unchanged",
+      "pass": true
+    },
+    {
+      "name": "320: mother drag stays anchored",
+      "pass": true
+    },
+    {
+      "name": "320: mother drag stays inside canvas",
+      "pass": true,
+      "detail": {
+        "mother": {
+          "x": 6.108842849731445,
+          "y": 15.049708366394043,
+          "width": 43.782318115234375,
+          "height": 43.50058364868164,
+          "cx": 28.000001907348633,
+          "cy": 36.80000019073486
+        },
+        "chamber": {
+          "x": 74.47572326660156,
+          "y": 6.011242866516113,
+          "width": 104.37838745117188,
+          "height": 61.577518463134766,
+          "cx": 126.6649169921875,
+          "cy": 36.800002098083496
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "320: mother drag does not toggle",
+      "pass": true
+    },
+    {
+      "name": "320: ordinary next click toggles closed",
+      "pass": true
+    },
+    {
+      "name": "320: second click toggles open",
+      "pass": true
+    },
+    {
+      "name": "320: idle rendering sleeps",
+      "pass": true
+    },
+    {
+      "name": "reduced motion: closed contour stays static",
+      "pass": true
+    },
+    {
+      "name": "reduced motion: expanded contour stays static",
+      "pass": true
+    },
+    {
+      "name": "reduced motion: renderer sleeps",
+      "pass": true
+    },
+    {
+      "name": "no page or console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "output/playwright/pearl-edge-20261025/qa-1413-rest.png",
+    "output/playwright/pearl-edge-20261025/qa-1413-center-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-1413-side-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-1413-open.png",
+    "output/playwright/pearl-edge-20261025/qa-1413-chamber-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-1413-chamber-drag.png",
+    "output/playwright/pearl-edge-20261025/qa-393-rest.png",
+    "output/playwright/pearl-edge-20261025/qa-393-center-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-393-side-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-393-open.png",
+    "output/playwright/pearl-edge-20261025/qa-393-chamber-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-393-chamber-drag.png",
+    "output/playwright/pearl-edge-20261025/qa-320-rest.png",
+    "output/playwright/pearl-edge-20261025/qa-320-center-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-320-side-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-320-open.png",
+    "output/playwright/pearl-edge-20261025/qa-320-chamber-hover.png",
+    "output/playwright/pearl-edge-20261025/qa-320-chamber-drag.png"
+  ],
+  "scope": "Chromium desktop and mobile viewport emulation; not physical iOS or Safari acceptance."
+}

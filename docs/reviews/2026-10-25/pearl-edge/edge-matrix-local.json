@@ -1,0 +1,1524 @@
+{
+  "at": "2026-10-25T04:47:47.767Z",
+  "status": "passed",
+  "base": "http://127.0.0.1:5197/ui/releases/pearl-edge-20261025/showcase/entrance-pink-response-review/index.html",
+  "assertions": 85,
+  "passed": 85,
+  "checks": [
+    {
+      "name": "44px-dpr1: native static first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "loaded": true,
+        "href": "https://alvenx.com/ui/",
+        "width": 44
+      }
+    },
+    {
+      "name": "44px-dpr1: no-JS native destination",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr1: requested diameter and DPR",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr1: rest fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr1: hover responds and stays anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "hover": {
+          "x": 4.162258148193359,
+          "y": 13.524524688720703,
+          "width": 47.67555236816406,
+          "height": 46.55094909667969,
+          "cx": 28.00003433227539,
+          "cy": 36.79999923706055
+        }
+      }
+    },
+    {
+      "name": "44px-dpr1: hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 4.15975284576416,
+          "y": 13.522677421569824,
+          "width": 47.68056106567383,
+          "height": 46.55464172363281,
+          "cx": 28.000033378601074,
+          "cy": 36.79999828338623
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr1: opens into detached lobes",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr1: open fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 6.011242866516113,
+          "width": 172.84527587890625,
+          "height": 61.577518463134766,
+          "cx": 92.43147087097168,
+          "cy": 36.800002098083496
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr1: chamber hover is independent",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr1: chamber hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 4.2844624519348145,
+          "width": 175.48939514160156,
+          "height": 65.03107452392578,
+          "cx": 93.75353050231934,
+          "cy": 36.799999713897705
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr1: chamber drag is independent",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr1: chamber drag fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 4.804438591003418,
+          "width": 175.53421020507812,
+          "height": 63.99112319946289,
+          "cx": 93.77593803405762,
+          "cy": 36.80000019073486
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr1: drag returns without navigation or toggling",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr1: page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: native static first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "loaded": true,
+        "href": "https://alvenx.com/ui/",
+        "width": 44
+      }
+    },
+    {
+      "name": "44px-dpr2: no-JS native destination",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: requested diameter and DPR",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: rest fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr2: hover responds and stays anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "hover": {
+          "x": 4.162281036376953,
+          "y": 13.524541854858398,
+          "width": 47.675506591796875,
+          "height": 46.55091094970703,
+          "cx": 28.00003433227539,
+          "cy": 36.799997329711914
+        }
+      }
+    },
+    {
+      "name": "44px-dpr2: hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 4.15975284576416,
+          "y": 13.522677421569824,
+          "width": 47.68056106567383,
+          "height": 46.55464172363281,
+          "cx": 28.000033378601074,
+          "cy": 36.79999828338623
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr2: opens into detached lobes",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: open fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 6.011242866516113,
+          "width": 172.84527587890625,
+          "height": 61.577518463134766,
+          "cx": 92.43147087097168,
+          "cy": 36.800002098083496
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr2: chamber hover is independent",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: chamber hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 4.283379077911377,
+          "width": 175.49087524414062,
+          "height": 65.03324127197266,
+          "cx": 93.75427055358887,
+          "cy": 36.799999713897705
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr2: chamber drag is independent",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: chamber drag fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 4.803573131561279,
+          "width": 175.53465270996094,
+          "height": 63.99285888671875,
+          "cx": 93.77615928649902,
+          "cy": 36.800002574920654
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr2: drag returns without navigation or toggling",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr2: page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: native static first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "loaded": true,
+        "href": "https://alvenx.com/ui/",
+        "width": 44
+      }
+    },
+    {
+      "name": "44px-dpr3: no-JS native destination",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: requested diameter and DPR",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: rest fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr3: hover responds and stays anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000802516937256,
+          "y": 14.808624267578125,
+          "width": 43.99846649169922,
+          "height": 43.982749938964844,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        },
+        "hover": {
+          "x": 4.162377834320068,
+          "y": 13.524612426757812,
+          "width": 47.675315856933594,
+          "height": 46.55077362060547,
+          "cx": 28.000035762786865,
+          "cy": 36.79999923706055
+        }
+      }
+    },
+    {
+      "name": "44px-dpr3: hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 4.15975284576416,
+          "y": 13.522677421569824,
+          "width": 47.68056106567383,
+          "height": 46.55464172363281,
+          "cx": 28.000033378601074,
+          "cy": 36.79999828338623
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr3: opens into detached lobes",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: open fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 6.011242866516113,
+          "width": 172.84527587890625,
+          "height": 61.577518463134766,
+          "cx": 92.43147087097168,
+          "cy": 36.800002098083496
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr3: chamber hover is independent",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: chamber hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 4.283379077911377,
+          "width": 175.49087524414062,
+          "height": 65.03324127197266,
+          "cx": 93.75427055358887,
+          "cy": 36.799999713897705
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr3: chamber drag is independent",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: chamber drag fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.008832931518555,
+          "y": 4.8039398193359375,
+          "width": 175.53443908691406,
+          "height": 63.99211883544922,
+          "cx": 93.77605247497559,
+          "cy": 36.79999923706055
+        },
+        "canvas": {
+          "width": 186.873,
+          "height": 73.6
+        }
+      }
+    },
+    {
+      "name": "44px-dpr3: drag returns without navigation or toggling",
+      "pass": true
+    },
+    {
+      "name": "44px-dpr3: page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: native static first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "loaded": true,
+        "href": "https://alvenx.com/ui/",
+        "width": 54
+      }
+    },
+    {
+      "name": "54px-dpr1: no-JS native destination",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: requested diameter and DPR",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: rest fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr1: hover responds and stays anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 3.956059217453003,
+          "y": 15.299111366271973,
+          "width": 58.08796691894531,
+          "height": 57.00177764892578,
+          "cx": 33.00004267692566,
+          "cy": 43.80000019073486
+        }
+      }
+    },
+    {
+      "name": "54px-dpr1: hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 3.9541971683502197,
+          "y": 15.297914505004883,
+          "width": 58.09169006347656,
+          "height": 57.004173278808594,
+          "cx": 33.0000422000885,
+          "cy": 43.80000114440918
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr1: opens into detached lobes",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: open fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 6.013798236846924,
+          "width": 200.08184814453125,
+          "height": 75.57240295410156,
+          "cx": 106.05176496505737,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr1: chamber hover is independent",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: chamber hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 3.990358829498291,
+          "width": 202.92355346679688,
+          "height": 79.6192855834961,
+          "cx": 107.47261762619019,
+          "cy": 43.80000162124634
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr1: chamber drag is independent",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: chamber drag fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 4.735204696655273,
+          "width": 202.94259643554688,
+          "height": 78.12958526611328,
+          "cx": 107.48213911056519,
+          "cy": 43.799997329711914
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr1: drag returns without navigation or toggling",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr1: page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: native static first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "loaded": true,
+        "href": "https://alvenx.com/ui/",
+        "width": 54
+      }
+    },
+    {
+      "name": "54px-dpr2: no-JS native destination",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: requested diameter and DPR",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: rest fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr2: hover responds and stays anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 3.9560160636901855,
+          "y": 15.299077987670898,
+          "width": 58.088050842285156,
+          "height": 57.00183868408203,
+          "cx": 33.000041484832764,
+          "cy": 43.799997329711914
+        }
+      }
+    },
+    {
+      "name": "54px-dpr2: hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 3.9542200565338135,
+          "y": 15.297941207885742,
+          "width": 58.091644287109375,
+          "height": 57.004119873046875,
+          "cx": 33.0000422000885,
+          "cy": 43.80000114440918
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr2: opens into detached lobes",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: open fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 6.013798236846924,
+          "width": 200.08184814453125,
+          "height": 75.57240295410156,
+          "cx": 106.05176496505737,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr2: chamber hover is independent",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: chamber hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 3.990358829498291,
+          "width": 202.92355346679688,
+          "height": 79.6192855834961,
+          "cx": 107.47261762619019,
+          "cy": 43.80000162124634
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr2: chamber drag is independent",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: chamber drag fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 4.74720573425293,
+          "width": 202.93560791015625,
+          "height": 78.1055908203125,
+          "cx": 107.47864484786987,
+          "cy": 43.80000114440918
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr2: drag returns without navigation or toggling",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr2: page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: native static first frame",
+      "pass": true,
+      "detail": {
+        "enhanced": "false",
+        "loaded": true,
+        "href": "https://alvenx.com/ui/",
+        "width": 54
+      }
+    },
+    {
+      "name": "54px-dpr3: no-JS native destination",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: requested diameter and DPR",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: rest fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr3: hover responds and stays anchored",
+      "pass": true,
+      "detail": {
+        "rest": {
+          "x": 6.000984191894531,
+          "y": 16.810583114624023,
+          "width": 53.99811553955078,
+          "height": 53.97882843017578,
+          "cx": 33.00004196166992,
+          "cy": 43.799997329711914
+        },
+        "hover": {
+          "x": 3.95611834526062,
+          "y": 15.299159049987793,
+          "width": 58.08784866333008,
+          "height": 57.00168228149414,
+          "cx": 33.00004267692566,
+          "cy": 43.80000019073486
+        }
+      }
+    },
+    {
+      "name": "54px-dpr3: hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 3.953322172164917,
+          "y": 15.296951293945312,
+          "width": 58.093441009521484,
+          "height": 57.00609588623047,
+          "cx": 33.00004267692566,
+          "cy": 43.79999923706055
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr3: opens into detached lobes",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: open fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 6.013798236846924,
+          "width": 200.08184814453125,
+          "height": 75.57240295410156,
+          "cx": 106.05176496505737,
+          "cy": 43.799999713897705
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr3: chamber hover is independent",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: chamber hover fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 3.990358829498291,
+          "width": 202.92355346679688,
+          "height": 79.6192855834961,
+          "cx": 107.47261762619019,
+          "cy": 43.80000162124634
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr3: chamber drag is independent",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: chamber drag fits canvas",
+      "pass": true,
+      "detail": {
+        "contour": {
+          "x": 6.010840892791748,
+          "y": 4.744494915008545,
+          "width": 202.9371337890625,
+          "height": 78.11101531982422,
+          "cx": 107.479407787323,
+          "cy": 43.800002574920654
+        },
+        "canvas": {
+          "width": 214.114,
+          "height": 87.6
+        }
+      }
+    },
+    {
+      "name": "54px-dpr3: drag returns without navigation or toggling",
+      "pass": true
+    },
+    {
+      "name": "54px-dpr3: page has no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "no page or console errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "frames": [
+    {
+      "key": "44px-dpr1",
+      "state": "static-first-frame",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr1-static-first-frame.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "44px-dpr1",
+      "state": "closed-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr1-closed-rest.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d19689c25855e0eaea4d81ab3aba54ef8f0fd1369aa341cb79213713def704d8"
+    },
+    {
+      "key": "44px-dpr1",
+      "state": "closed-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr1-closed-hover.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "2b99c877e429ecf5ad5f0fdab9dd5b281058a87235387245d5efe3e3ef01986e"
+    },
+    {
+      "key": "44px-dpr1",
+      "state": "open-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr1-open-rest.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d8012e8f0a20471850775a72fc62bdc19c41e46c683859c25a5bb523e317eb81"
+    },
+    {
+      "key": "44px-dpr1",
+      "state": "chamber-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr1-chamber-hover.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "fbcd6c04040be55ed8cf8660197c1b195fc087acc3931b4655016e39937045d0"
+    },
+    {
+      "key": "44px-dpr1",
+      "state": "chamber-drag",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr1-chamber-drag.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "ed7a35c686c11672b6f2ce126e62fab175ab031463eb5b09b2d60fdf66812f65"
+    },
+    {
+      "key": "44px-dpr2",
+      "state": "static-first-frame",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr2-static-first-frame.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "44px-dpr2",
+      "state": "closed-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr2-closed-rest.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d19689c25855e0eaea4d81ab3aba54ef8f0fd1369aa341cb79213713def704d8"
+    },
+    {
+      "key": "44px-dpr2",
+      "state": "closed-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr2-closed-hover.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "8f18f7fd79d172b906059cb1066800df92cf5d67a80ffe86ba8e999ba0d81647"
+    },
+    {
+      "key": "44px-dpr2",
+      "state": "open-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr2-open-rest.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d8012e8f0a20471850775a72fc62bdc19c41e46c683859c25a5bb523e317eb81"
+    },
+    {
+      "key": "44px-dpr2",
+      "state": "chamber-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr2-chamber-hover.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "e8dab7bff311b2f02392338e8b5107caf39b46da89aa45fb946a752455bff8d5"
+    },
+    {
+      "key": "44px-dpr2",
+      "state": "chamber-drag",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr2-chamber-drag.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d352252927e63c27044b4a660d1f1ab85232b35e6f11d90e2c2ccb67daf20fa1"
+    },
+    {
+      "key": "44px-dpr3",
+      "state": "static-first-frame",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr3-static-first-frame.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "44px-dpr3",
+      "state": "closed-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr3-closed-rest.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d19689c25855e0eaea4d81ab3aba54ef8f0fd1369aa341cb79213713def704d8"
+    },
+    {
+      "key": "44px-dpr3",
+      "state": "closed-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr3-closed-hover.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 76,
+        "height": 94
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "fccbc3ea27426fac110370dfab574a67fc54bb992090e6f4b53bece465e67f8b"
+    },
+    {
+      "key": "44px-dpr3",
+      "state": "open-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr3-open-rest.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "d8012e8f0a20471850775a72fc62bdc19c41e46c683859c25a5bb523e317eb81"
+    },
+    {
+      "key": "44px-dpr3",
+      "state": "chamber-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr3-chamber-hover.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "e8dab7bff311b2f02392338e8b5107caf39b46da89aa45fb946a752455bff8d5"
+    },
+    {
+      "key": "44px-dpr3",
+      "state": "chamber-drag",
+      "file": "output/playwright/pearl-edge-20261025/edge-44px-dpr3-chamber-drag.png",
+      "clip": {
+        "x": 14,
+        "y": 487,
+        "width": 205,
+        "height": 94
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "3cb0f85094c72dbf093c2fd9119707dec7f09d4643c178820b5059b9b975faf3"
+    },
+    {
+      "key": "54px-dpr1",
+      "state": "static-first-frame",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr1-static-first-frame.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "54px-dpr1",
+      "state": "closed-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr1-closed-rest.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "4267258c41d68eaac8282203cab739ee3f348175616535a7d7e93fffd322ee35"
+    },
+    {
+      "key": "54px-dpr1",
+      "state": "closed-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr1-closed-hover.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "a32dc8dc883b26aa1f0acf44034e1dbc9dca03c67f34f4d508e407b4e2650057"
+    },
+    {
+      "key": "54px-dpr1",
+      "state": "open-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr1-open-rest.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "3fae1e8d5b9b3fef33b7b8fb9d9f513abc7b2bcec2f1f8cb34e054d82c9a69fb"
+    },
+    {
+      "key": "54px-dpr1",
+      "state": "chamber-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr1-chamber-hover.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "f27f27b88d832950441e613273ad2d93279d8bc89058cb1f94a5730845e8dea0"
+    },
+    {
+      "key": "54px-dpr1",
+      "state": "chamber-drag",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr1-chamber-drag.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 1,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "bb2d6fdb7f9bcc04a6b78daa030e6b3aed61bcf350fec72c80e33269a0303171"
+    },
+    {
+      "key": "54px-dpr2",
+      "state": "static-first-frame",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr2-static-first-frame.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "54px-dpr2",
+      "state": "closed-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr2-closed-rest.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "4267258c41d68eaac8282203cab739ee3f348175616535a7d7e93fffd322ee35"
+    },
+    {
+      "key": "54px-dpr2",
+      "state": "closed-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr2-closed-hover.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "9c32fd8efa9b866c19737f077379a8f35eabf739d661249f46de97a2ba24638b"
+    },
+    {
+      "key": "54px-dpr2",
+      "state": "open-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr2-open-rest.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "3fae1e8d5b9b3fef33b7b8fb9d9f513abc7b2bcec2f1f8cb34e054d82c9a69fb"
+    },
+    {
+      "key": "54px-dpr2",
+      "state": "chamber-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr2-chamber-hover.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "f27f27b88d832950441e613273ad2d93279d8bc89058cb1f94a5730845e8dea0"
+    },
+    {
+      "key": "54px-dpr2",
+      "state": "chamber-drag",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr2-chamber-drag.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 2,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "ca83d3f25fbd09bff9d8148da4a8a75f39a580bd4a639a8723850d1d130381a6"
+    },
+    {
+      "key": "54px-dpr3",
+      "state": "static-first-frame",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr3-static-first-frame.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "key": "54px-dpr3",
+      "state": "closed-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr3-closed-rest.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "4267258c41d68eaac8282203cab739ee3f348175616535a7d7e93fffd322ee35"
+    },
+    {
+      "key": "54px-dpr3",
+      "state": "closed-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr3-closed-hover.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 86,
+        "height": 108
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "0dfff894c3b8118fe53cb9c81eb91ed92d07958a755cf8f1c35d77c6f2f153fb"
+    },
+    {
+      "key": "54px-dpr3",
+      "state": "open-rest",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr3-open-rest.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "3fae1e8d5b9b3fef33b7b8fb9d9f513abc7b2bcec2f1f8cb34e054d82c9a69fb"
+    },
+    {
+      "key": "54px-dpr3",
+      "state": "chamber-hover",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr3-chamber-hover.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "f27f27b88d832950441e613273ad2d93279d8bc89058cb1f94a5730845e8dea0"
+    },
+    {
+      "key": "54px-dpr3",
+      "state": "chamber-drag",
+      "file": "output/playwright/pearl-edge-20261025/edge-54px-dpr3-chamber-drag.png",
+      "clip": {
+        "x": 384,
+        "y": 461,
+        "width": 233,
+        "height": 108
+      },
+      "deviceScaleFactor": 3,
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "contourSha256": "e9073c4a51a0bbbc76bd4b4ba531f3e9cf14b8b48568d7e9ff66ef49b7f1d88b"
+    }
+  ],
+  "scope": "Chromium screenshots at native device pixels. 44 px uses a 320 px touch-capable viewport; 54 px uses a 1413 px desktop viewport. This is browser emulation, not physical iOS/Safari acceptance. Edge appearance requires visual comparison; no numerical assertion here claims removal of a white halo."
+}

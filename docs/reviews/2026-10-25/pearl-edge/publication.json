@@ -1,0 +1,55 @@
+{
+  "completedAt": "2026-10-25T04:58:21.343358+00:00",
+  "status": "published-independent-review-awaiting-owner-acceptance",
+  "branch": "codex/pearl-edge-fix-20261025",
+  "kitSource": "c879bb2e877e978150b87ca407b1cb9cbdf09e4e",
+  "kitTag": "review-pearl-edge-20261025",
+  "websiteSource": "d6225e754cd8bc44adf1542c7d1825c4a6f9bbac",
+  "websiteTag": "ui-pearl-edge-20261025",
+  "previewUrl": "https://alvenx.com/ui/entrance-pink-response-review-20261023/",
+  "recordsTag": "review-pearl-edge-20261025-published",
+  "websiteMerge": "f2fd582a8a47b4d0594df14b022ec1eba3c1c82e",
+  "websiteTree": "0e24ed599b5eef794e2b10ad536539d5f844ed6b",
+  "pullRequest": "https://github.com/AlbertXXuu/AlvenXWebsite/pull/55",
+  "activeDeployment": {
+    "id": "d0ded8a0-88e1-4862-97db-2cac565f1839",
+    "created_on": "2026-10-25T04:53:03.023725Z",
+    "versions": [
+      {
+        "version_id": "65674aeb-2695-4705-9aa8-c786d1284b26",
+        "percentage": 100
+      }
+    ]
+  },
+  "deploymentCommand": {
+    "childExitCode": 0,
+    "timedOut": false,
+    "success": true
+  },
+  "onlineAssertions": 106,
+  "onlineSourceAndAlphaChecks": 4,
+  "onlinePageAndConsoleErrors": 0,
+  "hostedByteMatches": 31,
+  "ci": {
+    "allSuccess": true,
+    "runs": 4,
+    "jobs": 4,
+    "steps": 48
+  },
+  "localAssertions": {
+    "edgeMatrix": 85,
+    "SSR": 31,
+    "interaction": 106
+  },
+  "preserved": {
+    "homepageSource": "b3bca3c46913c31c8ce37cac9906bfbdd6544597",
+    "homepageKitVersion": "1.4.1",
+    "rootUiSource": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+    "previousReviewArchive": "https://alvenx.com/ui/archive/entrance-pink-response-pre-edge-20261025/"
+  },
+  "limits": [
+    "Chromium DPR/viewport emulation does not certify physical iOS/Safari/Combo Touch.",
+    "Fine attached light pixels remain on parts of the44px lower contour; this correction targets dark lateral specks and short tip cuts."
+  ],
+  "cleanup": "Owned edge-fix QA browser and ports5196/5197 closed; preexisting5174 preserved."
+}

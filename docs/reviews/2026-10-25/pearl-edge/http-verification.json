@@ -1,0 +1,164 @@
+{
+  "at": "2026-10-25T04:54:05.262503+00:00",
+  "matches": 31,
+  "sourceCommit": "c879bb2e877e978150b87ca407b1cb9cbdf09e4e",
+  "homepageKitUnchanged": "1.4.1",
+  "showcaseSourceUnchanged": "e95fd08ad897c540788d6b78ecc4baa778e68fe2",
+  "files": [
+    {
+      "path": "/ui/entrance-pink-response-review-20261023/",
+      "bytes": 57263,
+      "sha256": "43e4fe1d9cc851f30b18d68c32c235106a41a8324b3ae19dc36f7ce656689c4c"
+    },
+    {
+      "path": "/ui/entrance-pink-response-review-20261023/review-manifest.json",
+      "bytes": 2171,
+      "sha256": "7cc403ba92a514b898ddddc54ed97a6d5fb28ea02b46ed6427cd0d292480f9e1"
+    },
+    {
+      "path": "/ui/entrance-pink-response-review-20261023/index.html",
+      "bytes": 57263,
+      "sha256": "43e4fe1d9cc851f30b18d68c32c235106a41a8324b3ae19dc36f7ce656689c4c"
+    },
+    {
+      "path": "/ui/releases/pearl-edge-20261025/assets/alvenx-wordmark-CStPzd7j.svg",
+      "bytes": 5278,
+      "sha256": "6cc422fb2ed289bee723f1c6e6d19baec63c18d988616eb5b90d8332a30b7b1e"
+    },
+    {
+      "path": "/ui/releases/pearl-edge-20261025/assets/budding-early-activation-f69daf83c2c3.js",
+      "bytes": 4223,
+      "sha256": "f69daf83c2c3d750bb002f8775e253184cb6634159bdbbf8dcf3272e33dc0ce2"
+    },
+    {
+      "path": "/ui/releases/pearl-edge-20261025/assets/index-CWxvORab.js",
+      "bytes": 346708,
+      "sha256": "4bbe071e01a915c4ebe8235bdf77c1dc206f1bee86a134b3e5f29194b7ee318f"
+    },
+    {
+      "path": "/ui/releases/pearl-edge-20261025/assets/index-LdzulOqB.css",
+      "bytes": 17769,
+      "sha256": "20a942da9644a58be26179ae53867f072f7799d0160f391c5387147dda892494"
+    },
+    {
+      "path": "/ui/releases/pearl-edge-20261025/assets/InstrumentSans-wdth-wght-tWV223Ma.woff2",
+      "bytes": 88784,
+      "sha256": "aa72922aafcc0dc18f36ec1d805b0212057dabe8b9d5b8b57f67035aea1b826d"
+    },
+    {
+      "path": "/ui/",
+      "bytes": 2696,
+      "sha256": "5875a213abdad96cc4b3b48085aa269fb11844bc06256e11ce9ab006e73932e3"
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "bytes": 62447,
+      "sha256": "69cf1af0c494e253e0533b098aae6b556dd39daec487fbbceda3d54990cdfd5c"
+    },
+    {
+      "path": "/ui/budding-refinement-review-20261022/",
+      "bytes": 60178,
+      "sha256": "ae0a4e28ae03b2c16bf61166eaeb9e3656585fb18d825c6d38acfeefd6935321"
+    },
+    {
+      "path": "/ui/budding-refinement-review-20261022/review-manifest.json",
+      "bytes": 56486,
+      "sha256": "68863420abd2bf61e03a0c42fde99ae2123bc0419a45d2fcbbbb5b38f6b50913"
+    },
+    {
+      "path": "/ui/archive/entrance-pink-response-pre-edge-20261025/index.html",
+      "bytes": 57052,
+      "sha256": "be3f841a181918594bb7c9c5278475a44a077fd425c8b14f1eab13e7e5a53204"
+    },
+    {
+      "path": "/ui/archive/entrance-pink-response-pre-edge-20261025/review-manifest.json",
+      "bytes": 2167,
+      "sha256": "617218681fe864f7f55c55a2633cd5bd8a35d81297c117b71b3a06f1dd5f06c8"
+    },
+    {
+      "path": "/ui/archive/entrance-pink-response-pre-edge-20261025/review-manifest-original.json",
+      "bytes": 2092,
+      "sha256": "eb061e4f12af9db6abb9b21dcde85af121ef9f9dc592810de07f5d92a206f093"
+    },
+    {
+      "path": "/ui/homepage-entry-manifest.json",
+      "bytes": 668,
+      "sha256": "987fccb4be4f8bda58ca07453df7fdc051c79da6bfe2a0dac89242964f27e3b8"
+    },
+    {
+      "path": "/_next/static/css/index.yoYR4TWh.css",
+      "bytes": 564338,
+      "sha256": "d0c29ac39865c68a6c3abe7b02d2561909a21ee47a08c43331c2ffeaaa386438"
+    },
+    {
+      "path": "/_next/static/css/home-content.ugh_Wz5u.css",
+      "bytes": 15258,
+      "sha256": "7090f2dd40808221628bc536358cd14b35bcbb322084aa617dbc2c8971d82599"
+    },
+    {
+      "path": "/_next/static/chunks/index-D4lTbBrK.js",
+      "bytes": 114342,
+      "sha256": "3fefbc6f781145e16484dbd52f1e7692c07be3b906a5b5ce66e07301cd42cd09"
+    },
+    {
+      "path": "/_next/static/chunks/rolldown-runtime-hePW80VL.js",
+      "bytes": 716,
+      "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+    },
+    {
+      "path": "/_next/static/chunks/framework-DTZGTDtF.js",
+      "bytes": 190109,
+      "sha256": "2a1edf81f32a49b1eacafc3546b371bca024c82a9191836e274d90890212e9df"
+    },
+    {
+      "path": "/_next/static/chunks/vinext-CpIhqqhs.js",
+      "bytes": 129839,
+      "sha256": "75737cb042d04a554763708491c5854bb34e34d00e787ba0f091114ddf9a4394"
+    },
+    {
+      "path": "/_next/static/chunks/layout-segment-context-C6N3So4M.js",
+      "bytes": 496,
+      "sha256": "82188762247fc367d6a217542f7f4c92256a3426e5c1425d240669625b26318a"
+    },
+    {
+      "path": "/_next/static/chunks/locale-BeO5Tlw4.js",
+      "bytes": 2718,
+      "sha256": "75dacea8e61853bee4c1673e221a869731765d147299b36d9e445bd132b893ac"
+    },
+    {
+      "path": "/_next/static/chunks/home-content-DxIP_jq6.js",
+      "bytes": 175548,
+      "sha256": "2860272269f1170204d01b4fd4d3bb525bcd7a1f110def006f00c1ef28c778d2"
+    },
+    {
+      "path": "/_next/static/chunks/ambient-field-B5HDEZ4Y.js",
+      "bytes": 16680,
+      "sha256": "77bc0fee5311b2d26a41ff4f7c928fec1020e1684c645f60774c9819a04c7422"
+    },
+    {
+      "path": "/_next/static/chunks/query-DugiHe4Q.js",
+      "bytes": 984,
+      "sha256": "0a1973f3c6175c2655da2d796c0b590a07352ee8c22aed1a49cd90513fa34b02"
+    },
+    {
+      "path": "/_next/static/chunks/project-data-BfERtmMr.js",
+      "bytes": 21043,
+      "sha256": "bcd5fc41aede137c61b969b61fa123036affab85e16ab0a3dad4653d1b8f718e"
+    },
+    {
+      "path": "/_next/static/chunks/engineering-cases-Cx5MeecK.js",
+      "bytes": 181426,
+      "sha256": "14f8b68a1f5338173d2918478bdd4995cfa2d716d47605d3e48ff30f6e59f125"
+    },
+    {
+      "path": "/_next/static/chunks/project-localization-BmY-nzaz.js",
+      "bytes": 22056,
+      "sha256": "f87db712bdfd10267e43cfea904dc736fa146d1380c426eccd873394c7051c09"
+    },
+    {
+      "path": "/ui/entrance/1.4.1/budding-early.js",
+      "bytes": 4223,
+      "sha256": "f69daf83c2c3d750bb002f8775e253184cb6634159bdbbf8dcf3272e33dc0ce2"
+    }
+  ]
+}

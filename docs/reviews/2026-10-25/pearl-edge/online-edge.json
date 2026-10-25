@@ -1,0 +1,27 @@
+{
+  "checks": [
+    {
+      "name": "320: live source",
+      "pass": true
+    },
+    {
+      "name": "320: premultiplied canvas",
+      "pass": true
+    },
+    {
+      "name": "1413: live source",
+      "pass": true
+    },
+    {
+      "name": "1413: premultiplied canvas",
+      "pass": true
+    }
+  ],
+  "frames": [
+    "output/playwright/pearl-edge-20261025/online-edge-320.png",
+    "output/playwright/pearl-edge-20261025/online-edge-hover-320.png",
+    "output/playwright/pearl-edge-20261025/online-edge-1413.png",
+    "output/playwright/pearl-edge-20261025/online-edge-hover-1413.png"
+  ],
+  "errors": []
+}

@@ -1,0 +1,68 @@
+{
+  "observedAt": "2026-10-25T04:57:23.977Z",
+  "beforeCommit": "8cfd29e7443f757b030026b93573f1b5d498a0eb",
+  "afterCommit": "c879bb2e877e978150b87ca407b1cb9cbdf09e4e",
+  "rendererBeforeSha256": "4ae0891d86162c8f852cd745e25d89081ee1e901b8469e21e65481a3bf24096e",
+  "rendererAfterSha256": "85cda1d84a2e9e69b6b4b372f1a5b9d5939c02d67e8409eb611614ae78ba7486",
+  "geometrySha256": "5a2f4489997621877a538a5824d3035177abe5db348fa8883ee5f62cc29903c3",
+  "method": "Exact extrema of all cubic Bezier spans; actual immutable fillProfile functions; 16-bit encoded bounds decoded before LINEAR zero-crossing calculation. Expanded resting shapes at44/54px. No browser/GPU or physical-device claims.",
+  "scope": "This quantifies the profile-sentinel geometry defect only. Premultiplied-alpha compositing evidence is separate in flat-composition-comparison.json.",
+  "results": [
+    {
+      "diameter": 44,
+      "textureCssWidth": 186.87341955566407,
+      "height": 73.6,
+      "columns": 256,
+      "columnStepCssPx": 0.7299742951393128,
+      "exactCubicTips": {
+        "min": 74.475724,
+        "max": 178.854109
+      },
+      "firstValidColumn": 102,
+      "lastValidColumn": 244,
+      "oldDecodedTextureZeroCrossing": {
+        "left": 74.74297662589927,
+        "right": 178.5606946387245,
+        "insetLeftCssPx": 0.2672526258992747,
+        "insetRightCssPx": 0.29341436127549514
+      },
+      "taperZeroCrossing": {
+        "left": 74.09239095664024,
+        "right": 179.20868945670128,
+        "outsideLeftCssPx": 0.38333304335975527,
+        "outsideRightCssPx": 0.35458045670128513
+      },
+      "oldLeftHeightRampGain": 9.194948105539572,
+      "validSamplesUnchanged": 203,
+      "emptySamplesNowZero": 53
+    },
+    {
+      "diameter": 54,
+      "textureCssWidth": 214.11418036376952,
+      "height": 87.6,
+      "columns": 256,
+      "columnStepCssPx": 0.8363835170459747,
+      "exactCubicTips": {
+        "min": 90.03619,
+        "max": 206.09268
+      },
+      "firstValidColumn": 108,
+      "lastValidColumn": 245,
+      "oldDecodedTextureZeroCrossing": {
+        "left": 90.62842371991654,
+        "right": 205.45446199365654,
+        "insetLeftCssPx": 0.5922337199165355,
+        "insetRightCssPx": 0.6382180063434646
+      },
+      "taperZeroCrossing": {
+        "left": 89.91122808244228,
+        "right": 206.16853695183275,
+        "outsideLeftCssPx": 0.12496191755772657,
+        "outsideRightCssPx": 0.07585695183274765
+      },
+      "oldLeftHeightRampGain": 7.0173537783490945,
+      "validSamplesUnchanged": 203,
+      "emptySamplesNowZero": 53
+    }
+  ]
+}

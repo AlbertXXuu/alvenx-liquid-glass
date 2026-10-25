@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "sourceCommit": "c879bb2e877e978150b87ca407b1cb9cbdf09e4e",
+  "checks": [
+    {
+      "stage": "built-smoke-local",
+      "assertions": 31,
+      "passed": 31,
+      "errors": []
+    },
+    {
+      "stage": "interaction-local",
+      "assertions": 106,
+      "passed": 106,
+      "errors": []
+    },
+    {
+      "stage": "edge-matrix-local",
+      "assertions": 85,
+      "passed": 85,
+      "errors": []
+    }
+  ],
+  "typeAndDocs": "npm run check passed",
+  "build": "isolated Vite build and actual SSR prerender passed",
+  "productionRegression": "node scripts/test-volume-budding.mjs passed",
+  "sourceScope": "five review-only files; no geometry, colour, motion, shared runtime or production assets changed",
+  "visualScope": "DPR1/2/3, 44/54px; dark lateral specks and short cuts resolved in inspected browser captures; physical iOS not asserted"
+}
