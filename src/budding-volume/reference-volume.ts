@@ -63,7 +63,8 @@ fragment=hook(fragment,'sourceShoulder * 0.24','sourceShoulder * 0.0');
 fragment=hook(fragment,'  gl_FragColor = vec4(clamp(mix(background, surface, coverage), 0.0, 1.0), 1.0);',`  surface=mix(surface,vec3(0.98,0.985,1.0),0.18);
   float luminance=dot(surface,vec3(0.2126,0.7152,0.0722));
   surface=mix(vec3(luminance),surface,1.16);
-  gl_FragColor = vec4(clamp(surface, 0.0, 1.0), coverage * 0.84);`);
+  float alpha=coverage * 0.84;
+  gl_FragColor = vec4(clamp(surface, 0.0, 1.0) * alpha, alpha);`);
 
 // Bounded, reusable 1D cross-section texture. Rasterize short chords of the
 // actual cubic path, so the material uses its visible boundary throughout the
@@ -94,6 +95,20 @@ function fillProfile(path:string,width:number,height:number,pixels:Uint8Array,to
   }
   x=x3;y=y3;i+=6;
  }
+ // Extend an empty column with a zero-height sample at the nearest
+ // contour centre. Inverted sentinels interpolate through negative thickness
+ // inside the true tip, cutting a vertical slit into the material.
+ for(let first=0;first<profileColumns;){
+  if(top[first]<=bottom[first]){first++;continue;}
+  let end=first;while(end<profileColumns&&top[end]>bottom[end])end++;
+  const left=first-1,right=end;
+  for(let i=first;i<end;i++){
+   const nearest=left<0?right:right>=profileColumns?left:i-left<=right-i?left:right;
+   const centre=nearest>=0&&nearest<profileColumns?(top[nearest]+bottom[nearest])*.5:height*.5;
+   top[i]=centre;bottom[i]=centre;
+  }
+  first=end;
+ }
  for(let i=0;i<profileColumns;i++){
   const a=Math.round(Math.max(0,Math.min(1,top[i]/height))*65535),b=Math.round(Math.max(0,Math.min(1,bottom[i]/height))*65535);
   pixels[i*4]=a>>8;pixels[i*4+1]=a&255;pixels[i*4+2]=b>>8;pixels[i*4+3]=b&255;
@@ -101,7 +116,7 @@ function fillProfile(path:string,width:number,height:number,pixels:Uint8Array,to
 }
 
 export function createReferenceVolume(canvas:HTMLCanvasElement,width:number,height:number,diameter:number){
- const gl=canvas.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,premultipliedAlpha:false,preserveDrawingBuffer:false});
+ const gl=canvas.getContext('webgl',{alpha:true,antialias:false,depth:false,stencil:false,premultipliedAlpha:true,preserveDrawingBuffer:false});
  if(!gl)throw new Error('WebGL is unavailable; the actual-backdrop glass remains visible.');
  const scale=1.5,w=Math.ceil(width*scale),h=Math.ceil(height*scale);canvas.width=w;canvas.height=h;canvas.style.width=`${width}px`;canvas.style.height=`${height}px`;
  const parallel=gl.getExtension('KHR_parallel_shader_compile');
