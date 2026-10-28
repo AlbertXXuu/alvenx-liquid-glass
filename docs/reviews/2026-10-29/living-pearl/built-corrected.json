@@ -1,0 +1,159 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "390: internal animation advances",
+      "pass": true,
+      "detail": {
+        "t0": {
+          "t": 2.218,
+          "n": 116,
+          "ms": 0.148,
+          "pixels": 42504
+        },
+        "t1": {
+          "t": 8.801,
+          "n": 195,
+          "ms": 0.102,
+          "pixels": 42504
+        }
+      }
+    },
+    {
+      "name": "390: hover responds independently",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.9925
+      }
+    },
+    {
+      "name": "390: drag deforms chamber",
+      "pass": true
+    },
+    {
+      "name": "390: drag avoids navigation",
+      "pass": true
+    },
+    {
+      "name": "390: sphere toggles closed",
+      "pass": true
+    },
+    {
+      "name": "390: keyboard focus visible",
+      "pass": true
+    },
+    {
+      "name": "390: keyboard toggle opens",
+      "pass": true
+    },
+    {
+      "name": "390: background switch freezes specimen",
+      "pass": true,
+      "detail": {
+        "off": {
+          "t": "14.485",
+          "n": "651"
+        },
+        "off2": {
+          "t": "14.485",
+          "n": "651"
+        }
+      }
+    },
+    {
+      "name": "390: offscreen renderer sleeps",
+      "pass": true
+    },
+    {
+      "name": "390: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1365: internal animation advances",
+      "pass": true,
+      "detail": {
+        "t0": {
+          "t": 2.233,
+          "n": 112,
+          "ms": 0.15,
+          "pixels": 42504
+        },
+        "t1": {
+          "t": 8.816,
+          "n": 191,
+          "ms": 0.097,
+          "pixels": 42504
+        }
+      }
+    },
+    {
+      "name": "1365: hover responds independently",
+      "pass": true,
+      "detail": {
+        "mother": 0,
+        "chamber": 0.994
+      }
+    },
+    {
+      "name": "1365: drag deforms chamber",
+      "pass": true
+    },
+    {
+      "name": "1365: drag avoids navigation",
+      "pass": true
+    },
+    {
+      "name": "1365: sphere toggles closed",
+      "pass": true
+    },
+    {
+      "name": "1365: keyboard focus visible",
+      "pass": true
+    },
+    {
+      "name": "1365: keyboard toggle opens",
+      "pass": true
+    },
+    {
+      "name": "1365: background switch freezes specimen",
+      "pass": true,
+      "detail": {
+        "off": {
+          "t": "14.400",
+          "n": "646"
+        },
+        "off2": {
+          "t": "14.400",
+          "n": "646"
+        }
+      }
+    },
+    {
+      "name": "1365: offscreen renderer sleeps",
+      "pass": true
+    },
+    {
+      "name": "1365: no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "reduced motion freezes specimen",
+      "pass": true
+    },
+    {
+      "name": "reduced motion keeps focus",
+      "pass": true
+    },
+    {
+      "name": "reduced motion toggle works",
+      "pass": true
+    },
+    {
+      "name": "zero errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

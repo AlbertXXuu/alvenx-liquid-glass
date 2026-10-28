@@ -1,0 +1,80 @@
+{
+  "matches": 15,
+  "files": [
+    {
+      "path": "/ui/",
+      "bytes": 2782,
+      "sha256": "f6bf5c27d5d90f85c1dc9823739640f87a9e579712854c78f577969f8984b88a"
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "bytes": 53795,
+      "sha256": "2694e236a388d872bfe08c49f004991cff5e9dd5e7d4bd4b8d8fa84774bb9973"
+    },
+    {
+      "path": "/ui/homepage-entry-manifest.json",
+      "bytes": 668,
+      "sha256": "0d84b25deb1bc01a75114bcd184d11074da67a2d18473fc45d78f8e3459eafd7"
+    },
+    {
+      "path": "/ui/archive/production-budding-interaction-pre-living-20261029/index.html",
+      "bytes": 2849,
+      "sha256": "ce202f255a1793e8d4a6631eb72b47f7adcac0bc965e6ee7ea60fffe2532487e"
+    },
+    {
+      "path": "/ui/archive/production-budding-interaction-pre-living-20261029/showcase-manifest.json",
+      "bytes": 56716,
+      "sha256": "b9cdd4e6820245c9b3ba4502fff80d246f12047f64b42472dfb7a1c9b6ffc6b6"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/buddingRefinementReview-BzF-R6Pf.js",
+      "bytes": 66085,
+      "sha256": "97a8c130d71e29ca80fda058ed3a24dc09b713eaaf06dcd59c25624659ab6fd3"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/buddingRefinementReview-C1WLVyVy.css",
+      "bytes": 7282,
+      "sha256": "48506f828217a59776413f235ce01dc2d6b912844bb6d55f8b63c2bd0849f078"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/fieldSizingReview-Cgid3J6s.css",
+      "bytes": 5954,
+      "sha256": "1bb0414ec9f415362ff93e21a46c8c597f5fd6b0ec492b679f5bf5d078eaf48d"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/fieldSizingReview-DlM9NvlS.js",
+      "bytes": 5682,
+      "sha256": "b5dbd564fcd0dae9044a2e411fe957cbe5905a88f43cd6e633c13129da5e183c"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/fonts-Dk-YdSxY.css",
+      "bytes": 499848,
+      "sha256": "59b911296644af22a6b9ef6230c285f174b8dfeae17fbede56c56aa9bfd86b04"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/glass-B1j-dKWm.js",
+      "bytes": 255318,
+      "sha256": "3149f4553bba6d33dcfdbd660362166a7c12b897d9cb8c50eda4be240369e850"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/glass-DAMpqEK9.css",
+      "bytes": 12496,
+      "sha256": "02396cb1b0a6afb39853ca0f2c9b3b180860855429fcf618d996b15e3e6453ae"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/main-D4qHCgq8.css",
+      "bytes": 20583,
+      "sha256": "fb035c9455c11e5c93188b98e9105cd90b65ecc3f0815b58f62fe1c33accddd3"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/main-DnuBncxI.js",
+      "bytes": 148037,
+      "sha256": "2a84d460e6bd801068ff5a853ddac8111d5a3ad14ea7721abbe10d92305ee6f6"
+    },
+    {
+      "path": "/ui/releases/living-pearl-20261029/assets/volume-renderer-BWLhzMBo.js",
+      "bytes": 27919,
+      "sha256": "ce5b2ec4489602ba9bb9223d94619fe522c41f5971e9f7ea61b32715aa135679"
+    }
+  ]
+}

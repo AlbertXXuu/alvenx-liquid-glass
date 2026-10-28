@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "320px no overflow",
+      "pass": true
+    },
+    {
+      "name": "offscreen stops with motion enabled",
+      "pass": true,
+      "detail": {
+        "a": "121",
+        "b": "121"
+      }
+    },
+    {
+      "name": "reentry resumes motion",
+      "pass": true,
+      "detail": {
+        "b": "121",
+        "resumed": "129"
+      }
+    },
+    {
+      "name": "hidden tab pauses clock",
+      "pass": true
+    },
+    {
+      "name": "visible tab resumes clock",
+      "pass": true
+    },
+    {
+      "name": "no errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

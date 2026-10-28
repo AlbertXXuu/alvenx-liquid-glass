@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "touch drag engages chamber",
+      "pass": true,
+      "detail": "0.9883"
+    },
+    {
+      "name": "touch drag keeps page stationary",
+      "pass": true
+    },
+    {
+      "name": "drag suppresses navigation",
+      "pass": true
+    },
+    {
+      "name": "tap closes after drag",
+      "pass": true
+    },
+    {
+      "name": "Escape closes",
+      "pass": true
+    },
+    {
+      "name": "Chinese specimen label localized",
+      "pass": true
+    },
+    {
+      "name": "Chinese toggle accessible",
+      "pass": true
+    },
+    {
+      "name": "reduced motion has visible press",
+      "pass": true,
+      "detail": {
+        "inactive": "rgba(0, 0, 0, 0)",
+        "active": "rgba(132, 151, 224, 0.18)"
+      }
+    },
+    {
+      "name": "no errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

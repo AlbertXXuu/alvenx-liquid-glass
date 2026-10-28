@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "mode": "native",
+      "observed": "native",
+      "near": "0.9817",
+      "label": "explore me!"
+    },
+    {
+      "mode": "flat",
+      "observed": "flat",
+      "near": "0.9771",
+      "label": "explore me!"
+    }
+  ],
+  "errors": []
+}

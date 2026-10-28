@@ -1,0 +1,28 @@
+{
+  "durationMs": 5000,
+  "before": {
+    "before": {
+      "renders": 1,
+      "meanMs": 0.6,
+      "pixels": 42504
+    },
+    "after": {
+      "renders": 16,
+      "meanMs": 0.125,
+      "pixels": 42504
+    }
+  },
+  "after": {
+    "before": {
+      "renders": 1,
+      "meanMs": 0.6,
+      "pixels": 42504
+    },
+    "after": {
+      "renders": 76,
+      "meanMs": 0.057,
+      "pixels": 42504
+    }
+  },
+  "errors": []
+}
