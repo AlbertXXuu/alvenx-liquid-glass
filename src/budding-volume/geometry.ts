@@ -2,7 +2,7 @@ import { volumeHitContour, type VolumeGeometry } from '../volume-hit-geometry';
 import type { BuddingGeometry, BuddingTransform } from '../buddingGeometry';
 
 type Point = [number, number];
-export type VolumeLobeTransform=BuddingTransform&{pull?:{x:number;y:number;dx:number;dy:number;radiusX:number;radiusY:number}};
+export type VolumeLobeTransform=BuddingTransform&{pull?:{x:number;y:number;dx:number;dy:number;radiusX:number;radiusY:number;anchored?:boolean}};
 export type ReviewBuddingTransform=BuddingTransform&{mother?:VolumeLobeTransform;chamber?:VolumeLobeTransform};
 // Near-elliptic sides keep the content chamber visibly convex instead of
 // approaching the accepted large panel's broad, nearly vertical shoulders.
@@ -41,14 +41,21 @@ export function refinementGeometry(growth:number,diameter=54,transform:ReviewBud
  const chamber={x:6+(chamberX-rx-80)*scale+separation,y:cy-ry*scale,width:rx*2*scale+room,height:ry*2*scale};
  const chamberCentre=chamber.x+chamber.width/2,outerRx=chamber.width/2;
  const apply=([x,y]:Point,t:VolumeLobeTransform,anchor:number):Point=>{
-  const p=t.pull,weight=p?Math.exp(-(((x-p.x)/p.radiusX)**2+((y-p.y)/p.radiusY)**2)):0;
-  return [anchor+(x-anchor)*(t.scaleX??1)+(t.offsetX??0)+(p?.dx??0)*weight,cy+(y-cy)*(t.scaleY??1)+(t.offsetY??0)+(p?.dy??0)*weight];
+  const p=t.pull;
+  const gaussian=(px:number,py:number)=>p?Math.exp(-(((px-p.x)/p.radiusX)**2+((py-p.y)/p.radiusY)**2)):0;
+  // Equal and opposite contour displacement keeps the lobe center anchored.
+  // Pointer-side pull remains local; its opposite balances the optical center.
+  const weight=p?.anchored?(gaussian(x,y)-gaussian(2*anchor-x,2*cy-y))*.5:gaussian(x,y);
+  const dx=(x-anchor)*((t.scaleX??1)-1)+(t.offsetX??0)+(p?.dx??0)*weight;
+  const dy=(y-cy)*((t.scaleY??1)-1)+(t.offsetY??0)+(p?.dy??0)*weight;
+  const bound=(d:number)=>p?.anchored?4.8*Math.tanh(d/4.8):d;
+  return [x+bound(dx),y+bound(dy)];
  };
  const transformPoint=(point:Point,lobe?:'mother'|'chamber'):Point=>{
   if(lobe)return apply(point,transform[lobe]??transform,lobe==='chamber'?chamberCentre:cx);
   if(!transform.mother&&!transform.chamber)return apply(point,transform,cx);
   const a=apply(point,transform.mother??transform,cx),b=apply(point,transform.chamber??transform,chamberCentre);
-  const weight=smooth((point[0]-(cx+diameter*.28))/Math.max(diameter*.4,chamberCentre-cx-diameter*.28));
+  const weight=smooth(g/.35)*smooth((point[0]-(cx+diameter*.28))/Math.max(diameter*.4,chamberCentre-cx-diameter*.28));
   return [a[0]+(b[0]-a[0])*weight,a[1]+(b[1]-a[1])*weight];
  };
  const morph=smooth((g-.70)/.25);

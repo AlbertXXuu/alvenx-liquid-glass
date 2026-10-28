@@ -26,6 +26,8 @@ function FirstFrame({enhanced,onActivate,href}:{enhanced:boolean;onActivate:()=>
 /** The accepted R7 entrance, with its first frame, continuous material and
  * reversible growth. Its native destination remains available without JS. */
 export type VolumeBuddingLinkProps = {
+ ambient?: boolean;
+ destinationText?: string;
  id: string;
  clock: GlassClock;
  href: string;
@@ -33,7 +35,7 @@ export type VolumeBuddingLinkProps = {
  /** Opt one above-the-fold entrance into the optional early-activation script. */
  earlyActivation?: boolean;
 };
-export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore link',earlyActivation=false}:VolumeBuddingLinkProps) {
+export function VolumeBuddingLink({clock,id,href,ambient=false,destinationText='explore me!',toggleLabel='Toggle explore link',earlyActivation=false}:VolumeBuddingLinkProps) {
  const [enhanced,setEnhanced]=useState(false);
  useLayoutEffect(()=>setEnhanced(true),[]);
  const diameter=54,light=true;
@@ -45,6 +47,8 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
  const pullVelocity=useRef({mother:{pullX:0,pullY:0},chamber:{pullX:0,pullY:0}});
  const [lobes,setLobes]=useState(lobeState.current);
  const host=useRef<HTMLSpanElement>(null),volumeCanvas=useRef<HTMLCanvasElement>(null),volumeRenderer=useRef<ReturnType<typeof createReferenceVolume>|null>(null),shadowPath=useRef<SVGPathElement>(null);
+ const ambientEnabled=useRef(ambient);ambientEnabled.current=ambient;
+ const ambientTime=useRef(0),ambientBudget=useRef(0);
  const materialFrames=useRef(new Map<string,{growth:number;transform:ReviewBuddingTransform}>()),commitMaterial=useRef(()=>{});
  const uid=`volume-budding-${useId().replace(/[^a-z0-9]/gi,'')}`;
  const shape=useMemo(()=>refinementGeometry(growth,size),[growth,size]);
@@ -86,7 +90,7 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
   const flush=()=>{
    const path=displayed?.querySelector('path')?.getAttribute('d'),frame=path?materialFrames.current.get(path):undefined;
    if(!path||!frame)return;
-   volumeRenderer.current?.draw(path,frame.growth,clock.material,frame.transform);
+   volumeRenderer.current?.draw(path,frame.growth,clock.material,frame.transform,ambientTime.current, {mother:lobeState.current.mother,chamber:lobeState.current.chamber});
    if(volumeRenderer.current?.ready)setFirstFrameReady(true);
    shadowPath.current?.setAttribute('d',path);
   };
@@ -103,6 +107,12 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
    if(s.visible)clock.wake();else if(s.growth>0||s.target>0){s.growth=0;s.velocity=0;s.target=0;s.active=false;setExpanded(false);setGrowth(0);}
   });if(node)observer.observe(node);
   let localMotionActive=false,lastPointer=-1,lastLayout=-1,lastReduced=clock.reduced,lastMotion=-1;
+  const stopAmbient=clock.subscribe((_delta,elapsed)=>{
+   if(!state.current.visible||!ambientEnabled.current||clock.reduced||!volumeRenderer.current?.ready)return false;
+   ambientBudget.current+=elapsed;
+   if(ambientBudget.current>=80){ambientTime.current+=ambientBudget.current/1000;ambientBudget.current=0;commitMaterial.current();}
+   return true;
+  });
   const stop=clock.subscribe(delta=>{
    const s=state.current;if(!s.visible)return false;
    if(!s.active&&!localMotionActive&&lastPointer===clock.pointerRevision&&lastLayout===clock.layoutRevision&&lastReduced===clock.reduced&&lastMotion===motionRevision.current)return false;
@@ -159,8 +169,9 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
   const release=(event:Event)=>{if('pointerId' in event&&gesture.current&&event.pointerId!==gesture.current.pointerId)return;if(held.current)releaseGesture(event.type!=='pointerup');};
   document.addEventListener('pointerdown',outside);document.addEventListener('keydown',escape);
   window.addEventListener('pointerup',release);window.addEventListener('pointercancel',release);window.addEventListener('blur',release);
-  return()=>{stop();observer.disconnect();document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',escape);window.removeEventListener('pointerup',release);window.removeEventListener('pointercancel',release);window.removeEventListener('blur',release);};
+  return()=>{stopAmbient();stop();observer.disconnect();document.removeEventListener('pointerdown',outside);document.removeEventListener('keydown',escape);window.removeEventListener('pointerup',release);window.removeEventListener('pointercancel',release);window.removeEventListener('blur',release);};
  },[clock,animate,enhanced,releaseGesture]);
+ useLayoutEffect(()=>{ambientBudget.current=0;clock.wake();},[ambient,clock]);
  const toggle=()=>animate(state.current.target===1?0:1);
  useLayoutEffect(()=>{if(!enhanced)earlyFocused.current=host.current?.querySelector('[data-prejs-budding]')===document.activeElement;else if(earlyFocused.current)host.current?.querySelector<HTMLButtonElement>('button')?.focus({preventScroll:true});},[enhanced]);
  useLayoutEffect(()=>{if(!enhanced||!earlyActivation)return;const early=globalThis as typeof globalThis&{__alvenxVolumeBuddingIntent?:boolean;__alvenxVolumeBuddingReleaseEarly?:(activate:()=>void)=>(()=>void)|void};if(early.__alvenxVolumeBuddingIntent)animate(1);const release=early.__alvenxVolumeBuddingReleaseEarly?.(()=>animate(1));delete early.__alvenxVolumeBuddingIntent;delete early.__alvenxVolumeBuddingReleaseEarly;host.current?.removeAttribute('data-early-intent');return release;},[enhanced,animate,earlyActivation]);
@@ -178,7 +189,7 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
  },[growth,size,lobes]);
  const m=shape.mother,c=shape.chamber;
  const mt=lobeTransform(lobes.mother,clock.strength,m),ct=lobeTransform(lobes.chamber,clock.strength,c);
- return <span ref={host} className="glass-budding-link volume-budding-bud" data-volume-budding={id} data-budding-early={earlyActivation} data-growth={growth.toFixed(5)} data-ready={growth===1&&expanded} data-expanded={expanded} data-detached={growth>=.95} data-diameter={size} data-volume-light={light} data-enhanced={enhanced} data-mother-near={lobes.mother.near.toFixed(4)} data-chamber-near={lobes.chamber.near.toFixed(4)} style={enhanced?{width:shape.width,height:shape.height}:undefined}
+ return <span ref={host} className="glass-budding-link volume-budding-bud" data-volume-budding={id} data-budding-early={earlyActivation} data-growth={growth.toFixed(5)} data-ready={growth===1&&expanded} data-expanded={expanded} data-detached={growth>=.95} data-diameter={size} data-volume-light={light} data-reduced={clock.reduced} data-enhanced={enhanced} data-mother-near={lobes.mother.near.toFixed(4)} data-chamber-near={lobes.chamber.near.toFixed(4)} style={enhanced?{width:shape.width,height:shape.height}:undefined}
   onPointerDownCapture={e=>{
    if(!e.isPrimary||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||gesture.current)return;
    const action=(e.target as Element).closest<HTMLElement>('button,a');if(!action||!e.currentTarget.contains(action))return;
@@ -196,7 +207,7 @@ export function VolumeBuddingLink({clock,id,href,toggleLabel='Toggle explore lin
   {enhanced&&<LiquidControl id={`${id}-body`} clock={clock} kind="field" className="glass-budding-body" contour={contour}>
    {light&&<canvas ref={volumeCanvas} className="volume-budding-volume-light" aria-hidden="true"/>}
    <button type="button" className="glass-budding-trigger" aria-label={toggleLabel} aria-expanded={expanded} aria-controls={`${id}-destination`} onClick={toggle} style={{left:m.x+mt.offsetX,top:m.y+mt.offsetY,width:m.width,height:m.height}}/>
-   {growth>0&&<a id={`${id}-destination`} href={href} className="glass-budding-destination volume-budding-destination" inert={growth!==1||!expanded} aria-hidden={growth!==1||!expanded} style={{left:c.x+ct.offsetX-c.width*(ct.scaleX-1)/2,top:c.y+ct.offsetY-c.height*(ct.scaleY-1)/2,width:c.width*ct.scaleX,height:c.height*ct.scaleY,fontSize:size<=44?14:15,opacity:Math.max(0,(growth-.8)/.2),paddingLeft:6.4,paddingRight:6}}>explore me!</a>}
+   {growth>0&&<a id={`${id}-destination`} href={href} className="glass-budding-destination volume-budding-destination" inert={growth!==1||!expanded} aria-hidden={growth!==1||!expanded} style={{left:c.x+ct.offsetX-c.width*(ct.scaleX-1)/2,top:c.y+ct.offsetY-c.height*(ct.scaleY-1)/2,width:c.width*ct.scaleX,height:c.height*ct.scaleY,fontSize:size<=44?14:15,opacity:Math.max(0,(growth-.8)/.2),paddingLeft:6.4,paddingRight:6}}>{destinationText}</a>}
   </LiquidControl>}
  </span>;
 }

@@ -15,17 +15,17 @@ export function springStep(value:number,velocity:number,target:number,seconds:nu
 export const boundedPull=(distance:number,limit:number)=>limit*Math.tanh(distance*.32/limit);
 
 export function lobeTransform(m:LobeMotion,intensity:number,rect:BuddingGeometry['mother']):Required<VolumeLobeTransform> {
- const gain=Math.max(0,Math.min(4,intensity))/2.5;
+ const gain=Math.max(0,Math.min(3.125,intensity))/2.5;
  return {
-  offsetX:m.x*1.1*gain+m.pullX*.12,
-  offsetY:m.y*.8*gain+m.pullY*.12,
-  scaleX:1+(m.near*.006+m.press*.004)*gain,
-  scaleY:1+(m.near*.008-m.press*.009)*gain,
+  offsetX:0,
+  offsetY:0,
+  scaleX:1+(m.near*.05-m.press*.02)*gain,
+  scaleY:1+(m.near*.05-m.press*.045)*gain,
   pull:{
    x:rect.x+rect.width*(m.anchorX+1)/2,y:rect.y+rect.height*(m.anchorY+1)/2,
-   dx:m.x*.8*gain+m.pullX*.82-m.anchorX*m.press*.75*gain,
-   dy:m.y*.7*gain+m.pullY*.82-m.anchorY*m.press*.75*gain,
-   radiusX:Math.max(1,rect.width*.58),radiusY:Math.max(1,rect.height*.58),
+   dx:m.x*3*gain+m.pullX*.9-m.anchorX*m.press*1.2*gain,
+   dy:m.y*3*gain+m.pullY*.9-m.anchorY*m.press*1.2*gain,
+   radiusX:Math.max(1,rect.width*.48),radiusY:Math.max(1,rect.height*.48), anchored:true,
   },
  };
 }

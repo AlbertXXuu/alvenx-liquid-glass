@@ -7,19 +7,15 @@ import { VolumeBuddingLink, GlassClock } from '../dist/index.js';
 
 // The public geometry remains the accepted R7 contour; the production
 // renderer and resting frames may receive independently verified edge fixes.
-const acceptedRenderer=(await readFile('showcase/budding-refinement-review/reference-volume.ts','utf8')).replaceAll('../../src/','../').replaceAll('\r\n','\n');
-let correctedRenderer=(await readFile('src/budding-volume/reference-volume.ts','utf8')).replaceAll('\r\n','\n');
-const taperStart=correctedRenderer.indexOf(' // Extend an empty column');
-const taperEnd=correctedRenderer.indexOf(' for(let i=0;i<profileColumns;i++){\n  const a=',taperStart);
-assert.ok(taperStart>=0&&taperEnd>taperStart,'Only the profile tip correction is added');
-correctedRenderer=correctedRenderer.slice(0,taperStart)+correctedRenderer.slice(taperEnd);
-correctedRenderer=correctedRenderer.replace('premultipliedAlpha:true','premultipliedAlpha:false').replace('float alpha=coverage * 0.84;\n  gl_FragColor = vec4(clamp(surface, 0.0, 1.0) * alpha, alpha);','gl_FragColor = vec4(clamp(surface, 0.0, 1.0), coverage * 0.84);');
-assert.equal(correctedRenderer,acceptedRenderer,'All other accepted rendering logic is unchanged');
+// Match the owner-approved living-pearl implementation after adapting imports.
+const acceptedRenderer=(await readFile('showcase/mobile-review/specimen-volume.ts','utf8')).replaceAll('../../src/','../').replace("'../entrance-pink-response-review/geometry'", "'./geometry'").replaceAll('\r\n','\n');
+const currentRenderer=(await readFile('src/budding-volume/reference-volume.ts','utf8')).replaceAll('\r\n','\n');
+assert.equal(currentRenderer,acceptedRenderer,'The installed renderer matches the approved showcase');
 const asModule=source=>'data:text/javascript;base64,'+Buffer.from(ts.transpileModule(source,{compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext}}).outputText).toString('base64');
 const volume=asModule(await readFile('src/volume-hit-geometry.ts','utf8'));
 async function geometry(file){return (await import(asModule((await readFile(file,'utf8')).replace(/from ['"](?:\.\.\/)+src\/volume-hit-geometry['"]|from ['"]\.\.\/volume-hit-geometry['"]/,`from ${JSON.stringify(volume)}`)))).refinementGeometry;}
-const current=await geometry('src/budding-volume/geometry.ts'),accepted=await geometry('showcase/budding-refinement-review/geometry.ts');
-for(const d of [44,54])for(let i=0;i<=100;i++)assert.deepEqual(current(i/100,d),accepted(i/100,d),'Resting and growth geometry preserve R7');
+const current=await geometry('src/budding-volume/geometry.ts'),accepted=await geometry('showcase/entrance-pink-response-review/geometry.ts');
+for(const d of [44,54])for(let i=0;i<=100;i++)assert.deepEqual(current(i/100,d),accepted(i/100,d),'Resting and growth geometry preserve the approved showcase');
 const frames=(await import(asModule(await readFile('src/budding-volume/first-frame.ts','utf8')))).firstFrames;
 for(const diameter of [44,54]){
  const frame=frames[diameter], shape=current(0,diameter);
