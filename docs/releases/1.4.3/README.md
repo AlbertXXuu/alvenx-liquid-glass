@@ -10,3 +10,5 @@ The owner approved the showcase living-pearl interaction for the homepage. The i
 - Screenshots: [desktop](images/home-1413-open.png), [phone](images/home-393-open.png), [phone detail](images/detail-393.png). These are responsive browser captures; physical iOS/Safari is not independently certified.
 
 The separate showcase remains on its earlier source at this publication point. This record does not change the 1.4.3 package or historical tags. Rights remain reserved / UNLICENSED.
+
+Following the separate showcase copy update, final Worker `cfe38af6-d506-4e84-b76e-25a9e10f895d` again passed all 56 homepage checks with zero page/console errors. Final production captures: [desktop](images/final-home-1413-open.png) and [phone](images/final-home-393-open.png); see `online-final-qa.json`.
