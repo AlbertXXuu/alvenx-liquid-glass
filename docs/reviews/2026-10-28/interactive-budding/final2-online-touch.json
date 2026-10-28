@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "touch drag changes volume during playback",
+      "ok": true,
+      "detail": {
+        "parentX": 1.0795157942764912,
+        "parentY": 0.9377660289401296,
+        "childX": 1,
+        "childY": 1,
+        "deformX": 319.6623341219558,
+        "deformY": 213.7196895619123,
+        "deformDX": 18.367841493047727,
+        "deformDY": -18.33491826707191,
+        "curvature": 3.2
+      }
+    },
+    {
+      "name": "shape drag does not pan page",
+      "ok": true
+    },
+    {
+      "name": "touch release returns",
+      "ok": true
+    },
+    {
+      "name": "outside volume remains scrollable",
+      "ok": true,
+      "detail": {
+        "before": 0,
+        "after": 241
+      }
+    },
+    {
+      "name": "no page errors",
+      "ok": true,
+      "detail": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "initial": {
+    "growth": "0.1216",
+    "hit": "none",
+    "uniforms": {
+      "parentX": 1,
+      "parentY": 1,
+      "childX": 1,
+      "childY": 1,
+      "deformX": 500,
+      "deformY": 280,
+      "deformDX": 0,
+      "deformDY": 0,
+      "curvature": 3.2
+    }
+  },
+  "after": {
+    "growth": "0.1660",
+    "hit": "none",
+    "uniforms": {
+      "parentX": 1,
+      "parentY": 1,
+      "childX": 1,
+      "childY": 1,
+      "deformX": 500,
+      "deformY": 280,
+      "deformDX": 0,
+      "deformDY": 0,
+      "curvature": 3.2
+    }
+  },
+  "errors": []
+}

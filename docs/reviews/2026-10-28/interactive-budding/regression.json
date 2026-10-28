@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "checks": 13,
+  "results": [
+    {
+      "name": "390: contour enabled while growing",
+      "ok": true,
+      "detail": 0.1232
+    },
+    {
+      "name": "390: playback continues while held",
+      "ok": true,
+      "detail": {
+        "before": 0.1232,
+        "after": 0.1954
+      }
+    },
+    {
+      "name": "390: mouse drag changes volume",
+      "ok": true,
+      "detail": 17.292377551994395
+    },
+    {
+      "name": "390: hit contour follows volume",
+      "ok": true
+    },
+    {
+      "name": "390: drag survives completion",
+      "ok": true
+    },
+    {
+      "name": "390: release settles",
+      "ok": true
+    },
+    {
+      "name": "1200: contour enabled while growing",
+      "ok": true,
+      "detail": 0.1209
+    },
+    {
+      "name": "1200: playback continues while held",
+      "ok": true,
+      "detail": {
+        "before": 0.1209,
+        "after": 0.1876
+      }
+    },
+    {
+      "name": "1200: mouse drag changes volume",
+      "ok": true,
+      "detail": 16.046430511909662
+    },
+    {
+      "name": "1200: hit contour follows volume",
+      "ok": true
+    },
+    {
+      "name": "1200: drag survives completion",
+      "ok": true
+    },
+    {
+      "name": "1200: release settles",
+      "ok": true
+    },
+    {
+      "name": "no page errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

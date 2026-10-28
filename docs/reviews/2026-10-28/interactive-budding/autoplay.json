@@ -1,0 +1,340 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "offscreen entry stays unconsumed at mother form",
+      "pass": true,
+      "detail": {
+        "growth": 0,
+        "visible": "false",
+        "events": [],
+        "draws": 0,
+        "error": ""
+      }
+    },
+    {
+      "name": "first visible entry starts once under StrictMode",
+      "pass": true,
+      "detail": {
+        "growth": 0.0014,
+        "visible": "true",
+        "status": "playing",
+        "events": [
+          true
+        ],
+        "draws": 2,
+        "error": ""
+      }
+    },
+    {
+      "name": "foreground lifecycle pauses automatic play while hidden",
+      "pass": true,
+      "detail": {
+        "hiddenStart": {
+          "growth": 0.0014,
+          "visible": "true",
+          "status": "playing",
+          "events": [
+            true
+          ],
+          "draws": 2,
+          "error": ""
+        },
+        "hiddenEnd": {
+          "growth": 0.0014,
+          "visible": "true",
+          "status": "playing",
+          "events": [
+            true
+          ],
+          "draws": 2,
+          "error": ""
+        }
+      }
+    },
+    {
+      "name": "foreground return resumes pending animation",
+      "pass": true,
+      "detail": {
+        "growth": 0.0514,
+        "visible": "true",
+        "status": "playing",
+        "events": [
+          true
+        ],
+        "draws": 12,
+        "error": ""
+      }
+    },
+    {
+      "name": "automatic play pauses offscreen without GPU/lifecycle consumption",
+      "pass": true,
+      "detail": {
+        "offscreenStart": {
+          "growth": 0.0569,
+          "visible": "false",
+          "status": "playing",
+          "events": [
+            true
+          ],
+          "draws": 13,
+          "error": ""
+        },
+        "offscreenEnd": {
+          "growth": 0.0569,
+          "visible": "false",
+          "status": "playing",
+          "events": [
+            true
+          ],
+          "draws": 13,
+          "error": ""
+        }
+      }
+    },
+    {
+      "name": "automatic introduction completes with one start/end pair",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "completed",
+        "events": [
+          true,
+          false
+        ],
+        "draws": 184,
+        "error": ""
+      }
+    },
+    {
+      "name": "scrolling away/back never restarts completed introduction",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "completed",
+        "events": [
+          true,
+          false
+        ],
+        "draws": 194,
+        "error": ""
+      }
+    },
+    {
+      "name": "manual replay remains available after initial automatic play",
+      "pass": true,
+      "detail": {
+        "growth": 0.0278,
+        "visible": "true",
+        "status": "completed",
+        "events": [
+          true,
+          false,
+          true
+        ],
+        "draws": 200,
+        "error": ""
+      }
+    },
+    {
+      "name": "reduced motion completes active play immediately",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "reduced-motion",
+        "events": [
+          true,
+          false,
+          true,
+          false
+        ],
+        "draws": 202,
+        "error": ""
+      }
+    },
+    {
+      "name": "system reduced motion initially presents complete form",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "reduced-motion",
+        "events": [],
+        "draws": 1,
+        "error": ""
+      }
+    },
+    {
+      "name": "turning reduced motion off does not trigger a late introduction",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "reduced-motion",
+        "events": [],
+        "draws": 10,
+        "error": ""
+      }
+    },
+    {
+      "name": "saved reduced-motion preference suppresses initial animation",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "reduced-motion",
+        "events": [],
+        "draws": 1,
+        "error": ""
+      }
+    },
+    {
+      "name": "initial hidden document does not consume automatic entry",
+      "pass": true,
+      "detail": {
+        "growth": 0,
+        "visible": "true",
+        "events": [],
+        "draws": 0,
+        "error": ""
+      }
+    },
+    {
+      "name": "initial hidden document starts once when foregrounded",
+      "pass": true,
+      "detail": {
+        "growth": 0,
+        "visible": "true",
+        "status": "playing",
+        "events": [
+          true
+        ],
+        "draws": 1,
+        "error": ""
+      }
+    },
+    {
+      "name": "saved background-motion off retains finite introduction",
+      "pass": true,
+      "detail": {
+        "growth": 0.0055,
+        "visible": "true",
+        "status": "playing",
+        "events": [
+          true
+        ],
+        "draws": 3,
+        "error": ""
+      }
+    },
+    {
+      "name": "renderer failure suppresses automatic play and retains usable foreground",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "unavailable",
+        "events": [],
+        "draws": 0,
+        "error": "WebGL is unavailable. This material preview needs WebGL."
+      }
+    },
+    {
+      "name": "omitting autoPlay preserves complete manual-only default",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "events": [],
+        "draws": 12,
+        "error": ""
+      }
+    },
+    {
+      "name": "manual-only consumer still replays on demand",
+      "pass": true,
+      "detail": {
+        "growth": 0.0278,
+        "visible": "true",
+        "events": [
+          true
+        ],
+        "draws": 18,
+        "error": ""
+      }
+    },
+    {
+      "name": "automatic first rendered frame retains the mother form",
+      "pass": true,
+      "detail": {
+        "growth": 0,
+        "visible": "true",
+        "status": "playing",
+        "events": [
+          true
+        ],
+        "draws": 1,
+        "error": ""
+      }
+    },
+    {
+      "name": "three 1000ms active frames finish budding despite capped 34ms physics delta",
+      "pass": true,
+      "detail": {
+        "slowOne": {
+          "growth": 0.3333,
+          "visible": "true",
+          "status": "playing",
+          "events": [
+            true
+          ],
+          "draws": 2,
+          "error": ""
+        },
+        "slowTwo": {
+          "growth": 0.6667,
+          "visible": "true",
+          "status": "playing",
+          "events": [
+            true
+          ],
+          "draws": 3,
+          "error": ""
+        },
+        "slowComplete": {
+          "growth": 1,
+          "visible": "true",
+          "status": "completed",
+          "events": [
+            true,
+            false
+          ],
+          "draws": 4,
+          "error": ""
+        }
+      }
+    },
+    {
+      "name": "manual replay also uses three seconds of real active time",
+      "pass": true,
+      "detail": {
+        "growth": 1,
+        "visible": "true",
+        "status": "completed",
+        "events": [
+          true,
+          false,
+          true,
+          false
+        ],
+        "draws": 8,
+        "error": ""
+      }
+    }
+  ],
+  "failures": [],
+  "visibilityCoverage": "document.hidden lifecycle simulated; native IntersectionObserver and WebGL rendered in Edge Chromium; no physical-device claim"
+}
