@@ -7,6 +7,8 @@ import {useSampleText,SAMPLE_TEXT_FAMILY,SAMPLE_TEXT_LIMIT} from './useSampleTex
 import '../../styles/glass.css';
 import '../../assets/fonts.css';
 import './review.css';
+import '../../styles/budding-volume.css';
+import {ShowcaseBudding} from './ShowcaseBudding';
 import wordmark from '../../assets/brand/alvenx-wordmark.svg';
 
 const REPO='https://github.com/AlbertXXuu/alvenx-liquid-glass';
@@ -61,6 +63,7 @@ function Showcase(){
     <div className="lab-material-workbench"><div className="lab-material-preview">
     <VolumeStage ref={stage} clock={clock} settings={settings} responsive studioMotion autoPlay onPlayingChange={setPlaying} ariaLabel={t('Touch the pearl form; swipe its surrounding background to scroll')}><p className="eyebrow">{t('YOUR SPACE')}</p><h3>{t('A little room')}<br/>{t('to grow.')}</h3><p className="volume-caption">{t('Mother. Connection. Possibility.')}</p></VolumeStage></div>
     <div className="lab-volume-footer"><p>{t('On the pearl: pull, hold, release.')}<br/>{t('Outside the pearl: scroll freely.')}</p><div className="lab-switches"><GlassSwitch id="r3-ambient" label={t('Background motion')} checked={settings.ambient} clock={clock} controlledRefraction onChange={ambient=>updateSettings({ambient})}/><GlassSwitch id="r3-reduced" label={t('Reduced motion')} checked={reduced} disabled={systemReduced} clock={clock} controlledRefraction onChange={reducedMotion=>updateSettings({reducedMotion})}/></div></div>
+    <div className="lab-pearl-example"><p>{t('Try the glass')}</p><ShowcaseBudding id="showcase-living-pearl" clock={clock} ambient={settings.ambient} href="#refraction" destinationText={t('explore me!')} toggleLabel={t('Toggle explore link')}/></div>
     <div className="lab-parameters" id="parameters"><div className="lab-parameters-heading"><LiquidControl id="r3-parameters" clock={clock} className="lab-disclosure" expanded={parameters} onClick={()=>setParameters(!parameters)}>{t('Surface parameters')} <span>{parameters?'−':'+'}</span></LiquidControl><LiquidControl id="r3-reset" clock={clock} className="lab-reset" onClick={controller.reset}>{t('Reset defaults')}</LiquidControl></div>{parameters&&<p className="lab-parameter-note">{t('Tune the material below. The pearl above and the glass controls share these settings.')}</p>}{parameters&&<div className="lab-parameter-grid">{PARAMETER_ROWS.map(row=><GlassSlider key={row.key} id={row.key} label={t(row.label)} locale={language} min={row.min} max={row.max} step={row.step} precision={row.precision} unit={row.unit} value={settings[row.key]} clock={clock} controlledRefraction onChange={value=>updateSettings({[row.key]:value})}/>)}</div>}</div>
     </div>
    </section>
