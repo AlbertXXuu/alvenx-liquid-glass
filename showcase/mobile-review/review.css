@@ -19,6 +19,7 @@ button,input,a,pre{touch-action:manipulation}
 .lab .stage-scroll{width:100%;margin-left:0;border-radius:24px}
 .lab .stage{min-width:0;background:#E6E9FA}
 .lab .foreground{left:55.5%;top:27%;width:31%}
+.lab-volume-copy{opacity:var(--volume-text-reveal,1)}
 .lab .foreground h3{font-size:clamp(23px,3vw,36px);letter-spacing:-.035em;font-weight:500;line-height:1.12;margin:0 0 18px}
 .volume-caption{font-size:12px;line-height:1.6;color:#5D7096;margin:0}
 .lab .stage-scroll[data-layout=overview]{background:#E7E5FA}

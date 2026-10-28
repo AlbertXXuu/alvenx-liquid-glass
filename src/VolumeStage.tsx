@@ -84,7 +84,13 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     const element = foreground.current;
     if (!element) return;
     // The overview's independent content panel does not grow with the shape.
-    const visible = layoutRef.current === 'overview' || simulation.current.failed || simulation.current.growth > .92;
+    const state = simulation.current;
+    const visible = layoutRef.current === 'overview' || state.failed || state.growth > .92;
+    // Expose reveal progress without changing the foreground backdrop root.
+    // Only consumers that opt in through a child style use this value.
+    const progress = state.failed || clock.reduced ? 1 : Math.max(0, Math.min(1, (state.growth - .92) / .08));
+    const reveal = String(progress * progress * (3 - 2 * progress));
+    if (element.style.getPropertyValue('--volume-text-reveal') !== reveal) element.style.setProperty('--volume-text-reveal', reveal);
     const visibility = visible ? 'visible' : 'hidden', hidden = String(!visible);
     if (element.style.visibility !== visibility) element.style.visibility = visibility;
     if (element.getAttribute('aria-hidden') !== hidden) element.setAttribute('aria-hidden', hidden);
@@ -141,7 +147,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
         releaseDrag(); state.growth = 1; state.current = resting(); state.target = resting();
         if (state.playing) callback.current?.(false);
         state.playing = false; state.playbackAt = null;
-        if (foreground.current) { foreground.current.style.visibility = 'visible'; foreground.current.setAttribute('aria-hidden', 'false'); }
+        syncForeground();
       }
       // Avoid scheduling a React state update on every ambient/drag frame.
       if (reportedError.current !== nextError) { reportedError.current = nextError; setError(nextError); syncHitSurface(); }
