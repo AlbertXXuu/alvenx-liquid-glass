@@ -1,0 +1,9 @@
+# Showcase copy and reveal — 2026-10-29
+
+The owner requested specific interaction copy and a gradual reveal. The large showcase volume now displays **ALVENX / Interactive preview / Touch and drag to shape the glass.** The Chinese version is **ALVENX / 交互预览 / 触摸并拖动，改变玻璃形状。** The English heading is a single phrase, allowing normal responsive wrapping. The copy fades in as the volume finishes budding, remains visible, resets on replay and is immediately readable when reduced motion or the renderer fallback applies. The wrapper is plain text; opacity does not change the parent backdrop root.
+
+Source `c5c74dc2c328944de2bc1cbd8b5b2c4e016b995d`, tag `ui-copy-reveal-20261029`. Website source `60fdb227e0e6378f37e391fc1727787db4321f81`, PR 61 merged as `3d77d176e73fa87ade7e91be865e725672b1c936`. Worker `cfe38af6-d506-4e84-b76e-25a9e10f895d` was independently verified active at 100%, deployment `3bf75201-5f00-4dbe-bcff-dcf42b705ffb`. The previous root entry and manifest are preserved at `/ui/archive/production-living-pearl-20261029/`; the homepage remains installed kit 1.4.3.
+
+Kit source CI run 40742874995, website PR CI run 40743165689 and website merged-main CI run 40743567514 passed. Source, built and online Chromium each passed 39 targeted checks: desktop and phone English/Chinese, actual language selection, entry and replay reveal, drag during playback, reduced motion, simulated WebGL failure, and overflow. Online checks reported zero page exceptions. Sixteen relevant online files and 18 homepage build resources matched locally built bytes. Screenshots: [desktop](images/1365-en-complete.png), [phone Chinese](images/390-zh-CN-complete.png), [entry](images/1365-en-entry.png). This browser testing and touch emulation are not physical iOS/Safari acceptance.
+
+No historical package or tag was modified; this is a showcase presentation revision and does not change the installed 1.4.3 homepage package. Rights remain reserved / UNLICENSED.

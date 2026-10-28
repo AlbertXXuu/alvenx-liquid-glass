@@ -1,0 +1,85 @@
+{
+  "matches": 16,
+  "files": [
+    {
+      "path": "/ui/",
+      "bytes": 2774,
+      "sha256": "88945c9d8aad5b8f95c3e1e8f1ef36033786afbd915a6204a83c01b6db3f182f"
+    },
+    {
+      "path": "/ui/showcase-manifest.json",
+      "bytes": 53534,
+      "sha256": "81eb8bf7d6f80b129bf19f054c479ac44049fdb88e9a06e2b275c2ed6978a310"
+    },
+    {
+      "path": "/ui/homepage-entry-manifest.json",
+      "bytes": 631,
+      "sha256": "31155a93beff010fa594394baece7418e8c2e892a25cfe189f26e71cc948dbbe"
+    },
+    {
+      "path": "/ui/entrance/1.4.3/budding-early.js",
+      "bytes": 4223,
+      "sha256": "f69daf83c2c3d750bb002f8775e253184cb6634159bdbbf8dcf3272e33dc0ce2"
+    },
+    {
+      "path": "/ui/archive/production-living-pearl-20261029/index.html",
+      "bytes": 2782,
+      "sha256": "f6bf5c27d5d90f85c1dc9823739640f87a9e579712854c78f577969f8984b88a"
+    },
+    {
+      "path": "/ui/archive/production-living-pearl-20261029/showcase-manifest.json",
+      "bytes": 53795,
+      "sha256": "2694e236a388d872bfe08c49f004991cff5e9dd5e7d4bd4b8d8fa84774bb9973"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/buddingRefinementReview-BYMIov-L.js",
+      "bytes": 66085,
+      "sha256": "97a8c130d71e29ca80fda058ed3a24dc09b713eaaf06dcd59c25624659ab6fd3"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/buddingRefinementReview-H237fP6C.css",
+      "bytes": 7281,
+      "sha256": "2db524a136970e97e9ae3421d62d22f8800f047948e6311c02ad93eb2f3c2dfc"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/fieldSizingReview-CcyjgnR3.js",
+      "bytes": 5682,
+      "sha256": "b5dbd564fcd0dae9044a2e411fe957cbe5905a88f43cd6e633c13129da5e183c"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/fieldSizingReview-Cgid3J6s.css",
+      "bytes": 5954,
+      "sha256": "1bb0414ec9f415362ff93e21a46c8c597f5fd6b0ec492b679f5bf5d078eaf48d"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/fonts-fYNykYbD.css",
+      "bytes": 499619,
+      "sha256": "6511e14b2db6ce8351ce9ef1a0152939289ef257556a20a4a4abfb2ed1dffa43"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/glass-B1j-dKWm.js",
+      "bytes": 255318,
+      "sha256": "3149f4553bba6d33dcfdbd660362166a7c12b897d9cb8c50eda4be240369e850"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/glass-DAMpqEK9.css",
+      "bytes": 12496,
+      "sha256": "02396cb1b0a6afb39853ca0f2c9b3b180860855429fcf618d996b15e3e6453ae"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/main-CYUpWYPf.css",
+      "bytes": 20636,
+      "sha256": "1930cfdeaf69ca399ec5b8d9f2be75159162c617333bc948c4c64d8bc0ab0886"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/main-Ln9fyVTB.js",
+      "bytes": 148040,
+      "sha256": "5cd0e84c86dec22101280f454fbc13c6ad8534bfb957783b1eba7bee666d7975"
+    },
+    {
+      "path": "/ui/releases/copy-reveal-20261029/assets/volume-renderer-BWLhzMBo.js",
+      "bytes": 27919,
+      "sha256": "ce5b2ec4489602ba9bb9223d94619fe522c41f5971e9f7ea61b32715aa135679"
+    }
+  ]
+}
