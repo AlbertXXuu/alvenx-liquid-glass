@@ -65,13 +65,12 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   function syncHitSurface() {
     const surface = hitSurface.current, state = simulation.current;
     if (!surface) return;
-    const interactive = !state.failed && !clock.reduced && state.growth === 1;
+    const interactive = !state.failed && !clock.reduced;
     // touch-action is known by the browser from the hit path before contact.
     // The rectangle outside this CSS-clipped HTML box keeps native page panning.
     const pointerEvents = interactive ? 'auto' : 'none';
     if (surface.style.pointerEvents !== pointerEvents) surface.style.pointerEvents = pointerEvents;
-    // Budding is temporarily noninteractive; do not spend contour work on
-    // frames whose hit surface is disabled. Rebuild at completion/recovery.
+    // The hit contour follows the same growth and deformation as the volume.
     if (!interactive) { hitKey.current = ''; return; }
     const key = JSON.stringify([state.growth, ...Object.values(state.current)]);
     if (hitKey.current === key) return;
@@ -275,7 +274,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     return false;
   }
   function respond(event: PointerEvent<HTMLElement>, pressed = false) {
-    if (!stage.current || simulation.current.growth < 1 || clock.reduced || simulation.current.failed) return;
+    if (!stage.current || clock.reduced || simulation.current.failed) return;
     const active = drag.current;
     if (active && active.pointerId !== event.pointerId) return;
     if (!active && (!event.isPrimary || (!pressed && event.pointerType === 'touch'))) return;
@@ -288,8 +287,12 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     const scale = Math.min(rect.width / 1000, rect.height / 560);
     const x = (event.clientX - rect.left - rect.width * .5) / scale + 500;
     const y = (event.clientY - rect.top - rect.height * .5) / scale + 280;
-    const parent = drag.current?.parent ?? x < 450;
-    const nx = (x - (parent ? 230 : 690)) / (parent ? 150 : 255), ny = (y - 280) / (parent ? 150 : 210);
+    const growth = simulation.current.growth, ease = growth * growth * (3 - 2 * growth);
+    const childCenter = 373 + (690 - 373) * ease, childSize = Math.pow(growth, .85);
+    const motherDistance = Math.hypot((x - 230) / 150, (y - 280) / 150);
+    const childDistance = childSize > .001 ? Math.hypot((x - childCenter) / (255 * childSize), (y - 280) / (210 * childSize)) : Infinity;
+    const parent = drag.current?.parent ?? motherDistance <= childDistance;
+    const nx = (x - (parent ? 230 : childCenter)) / (parent ? 150 : 255 * childSize), ny = (y - 280) / (parent ? 150 : 210 * childSize);
     const proximity = Math.max(0, Math.min(1, (1.25 - Math.hypot(nx, ny)) * 2));
     if (!drag.current && !pressed && proximity === 0) { settleSurface(); return; }
     if (pressed) {
