@@ -21,7 +21,7 @@ attribute vec2 a_position;
 void main() { gl_Position = vec4(a_position, 0.0, 1.0); }
 `;
 
-const FRAGMENT = `
+export const FRAGMENT = `
 precision highp float;
 uniform vec2 u_resolution;
 uniform vec2 u_light;
@@ -367,7 +367,12 @@ function bounded(value, fallback, min, max) {
 }
 
 /**
+ * @typedef {{fragment: string, uniforms: readonly string[], writeUniforms: (gl: WebGLRenderingContext, locations: Record<string, WebGLUniformLocation | null>, options: object) => void}} VolumeShaderVariant
+ */
+
+/**
  * @param {HTMLCanvasElement} canvas
+ * @param {VolumeShaderVariant} [variant]
  * @returns {{render(options?: Partial<typeof DEFAULTS>, budget?: {maxPixels?: number, maxDpr?: number}): void, destroy(): void}}
  * render() is synchronous and draws one frame. The caller owns animation.
  * time is elapsed seconds (initially 0); pause it outside to freeze the field.
@@ -377,7 +382,7 @@ function bounded(value, fallback, min, max) {
  * specularSaturation/refractionLevel 0..3, blurLevel/progressiveBlur 0..6.
  * A WebGL/compilation/context failure is exposed as canvas.dataset.error.
  */
-export function createGlassPreview(canvas) {
+export function createGlassPreview(canvas, variant) {
   let options = { ...DEFAULTS };
   let gl = null;
   let program = null;
@@ -423,7 +428,7 @@ export function createGlassPreview(canvas) {
       program = gl.createProgram();
       if (!program) throw new Error('Unable to allocate the WebGL program.');
       gl.attachShader(program, compile(gl.VERTEX_SHADER, VERTEX));
-      gl.attachShader(program, compile(gl.FRAGMENT_SHADER, FRAGMENT));
+      gl.attachShader(program, compile(gl.FRAGMENT_SHADER, variant?.fragment ?? FRAGMENT));
       gl.linkProgram(program);
       if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
         throw new Error(gl.getProgramInfoLog(program) || 'Glass preview shader linking failed.');
@@ -438,6 +443,7 @@ export function createGlassPreview(canvas) {
         'parent_stretch', 'child_stretch', 'deform_point', 'deform_amount',
         'specular_opacity', 'specular_saturation', 'refraction_level',
         'blur_level', 'progressive_blur', 'glass_opacity',
+        ...(variant?.uniforms ?? []),
       ].map(name => [name, gl.getUniformLocation(program, `u_${name}`)]));
       locations.position = gl.getAttribLocation(program, 'a_position');
       delete canvas.dataset.error;
@@ -517,6 +523,7 @@ export function createGlassPreview(canvas) {
     gl.uniform1f(locations.blur_level, options.blurLevel * logicalPerCssPixel);
     gl.uniform1f(locations.progressive_blur, options.progressiveBlur * logicalPerCssPixel);
     gl.uniform1f(locations.glass_opacity, options.glassOpacity);
+    variant?.writeUniforms(gl, locations, next);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
     canvas.dataset.renderPixels = String(width * height);
     canvas.dataset.pixelBudget = String(raster.maxPixels);

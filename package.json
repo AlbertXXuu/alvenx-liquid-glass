@@ -1,6 +1,6 @@
 {
   "name": "@alvenx/liquid-glass",
-  "version": "1.4.3",
+  "version": "1.5.0-agent.1",
   "description": "AlvenX owner-approved blue-violet volume and interactive glass design kit",
   "private": true,
   "license": "UNLICENSED",
@@ -17,7 +17,8 @@
     "./fonts.css": "./assets/fonts.css",
     "./tokens.json": "./tokens.json",
     "./budding-volume.css": "./styles/budding-volume.css",
-    "./budding-early.js": "./src/budding-volume/early-activation.js"
+    "./budding-early.js": "./src/budding-volume/early-activation.js",
+    "./workspace-volume.css": "./styles/workspace-volume.css"
   },
   "files": [
     "dist",
@@ -44,7 +45,7 @@
     "build:lib": "vite build --config vite.lib.config.mjs && tsc -p tsconfig.lib.json",
     "build:showcase": "vite build && node scripts/copy-showcase-docs.mjs",
     "build": "npm run build:lib && npm run build:showcase",
-    "test:contract": "node scripts/contract.mjs && node scripts/test-budding-geometry.mjs && node scripts/test-volume-budding.mjs",
+    "test:contract": "node scripts/contract.mjs && node scripts/test-budding-geometry.mjs && node scripts/test-volume-budding.mjs && node scripts/test-workspace-volume-geometry.mjs",
     "test:runtime": "node scripts/clock-contract.mjs && node scripts/test-volume-budget.mjs && node scripts/test-optics-kernels.mjs",
     "test:install": "node scripts/smoke-install.mjs",
     "pack:kit": "node scripts/pack-kit.mjs",

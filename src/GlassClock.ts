@@ -19,6 +19,7 @@ export class GlassClock {
   private phase = 0;
   private listening = false;
   private listeners = new Set<(delta: number, elapsed: number) => boolean>();
+  private preparers = new Set<(delta: number, elapsed: number) => boolean>();
   constructor(options: { optics?: GlassOpticsMode; maxFps?: number } = {}) {
     this.optics = options.optics ?? 'auto';
     this.maxFps = boundedFrameRate(options.maxFps);
@@ -60,12 +61,13 @@ export class GlassClock {
     document.removeEventListener('visibilitychange', this.visibility);
     this.listening = false;
   }
-  subscribe(listener: (delta: number, elapsed: number) => boolean) {
-    this.listeners.add(listener); this.connect(); this.wake();
-    return () => { this.listeners.delete(listener); if (!this.listeners.size) this.disconnect(); };
+  subscribe(listener: (delta: number, elapsed: number) => boolean, phase:'prepare'|'render'='render') {
+    const group=phase==='prepare'?this.preparers:this.listeners;
+    group.add(listener); this.connect(); this.wake();
+    return () => { group.delete(listener); if (!this.listeners.size&&!this.preparers.size) this.disconnect(); };
   }
   wake = () => {
-    if (!this.frame && this.listeners.size && typeof document !== 'undefined' && !document.hidden) {
+    if (!this.frame && (this.listeners.size||this.preparers.size) && typeof document !== 'undefined' && !document.hidden) {
       this.last = performance.now();
       // A sleeping scene should respond at the next browser frame, rather than
       // wait one full budget interval and often miss that first frame as well.
@@ -85,10 +87,12 @@ export class GlassClock {
     const elapsed = now - this.last;
     const delta = Math.max(0, Math.min(34, elapsed)); this.last = now;
     let active = false;
+    // Host translations must commit before optical consumers sample bounds.
+    for (const listener of this.preparers) active = listener(delta, elapsed) || active;
     for (const listener of this.listeners) active = listener(delta, elapsed) || active;
-    if (active && !this.frame && this.listeners.size) this.frame = requestAnimationFrame(this.tick);
+    if (active && !this.frame && (this.listeners.size||this.preparers.size)) this.frame = requestAnimationFrame(this.tick);
   };
   /** Idempotent; a later subscription can reactivate the same instance. */
-  destroy() { this.listeners.clear(); this.disconnect(); }
+  destroy() { this.listeners.clear();this.preparers.clear(); this.disconnect(); }
 }
 export { GlassClock as PreviewClock };

@@ -33,7 +33,10 @@ button,input,a,pre{touch-action:manipulation}
 .lab .switch-control{font-size:12px}
 .lab-study-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center}
 .lab-optical-scene{width:100%;height:340px;border-radius:24px;overflow:hidden;touch-action:pan-y pinch-zoom}
-.lab-moving-lens{position:absolute;width:166px;height:104px;transform:translate(-50%,-50%)}
+.lab-continuous-scene{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;visibility:hidden;z-index:0}
+.lab-optical-scene[data-continuous-ready=true]>.lab-continuous-scene{visibility:visible}
+.lab-optical-scene[data-continuous-ready=true]>svg[data-controlled-source]{z-index:1}
+.lab-moving-lens{position:absolute;width:166px;height:104px;transform:translate(-50%,-50%);z-index:2}
 .lab-lens-glass{width:100%;height:100%}
 .lab-moving-lens .glass-hit{touch-action:pinch-zoom;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-user-drag:none}
 .lab-controls{min-width:0}
@@ -233,3 +236,9 @@ button,input,a,pre{touch-action:manipulation}
 @media(max-width:600px){.lab-pearl-example{gap:12px;margin-top:12px}}
 .lab-pearl-example .glass-budding-trigger:focus-visible,.lab-pearl-example .glass-budding-destination:focus-visible{outline:2px solid #596fc0;outline-offset:2px;border-radius:50%}
 .lab-pearl-example [data-reduced=true] :is(.glass-budding-trigger,.glass-budding-destination):active{background:rgb(132 151 224 / .18);border-radius:50%;color:#182442}
+.lab-large-panels>.glass-panel{margin:12px 0 28px}
+.lab-large-panels>.glass-panel.lab-reading-panel{height:420px}
+.lab-large-panels>h3{font-size:15px;font-weight:500;color:#64789C;margin:22px 0 0}
+.lab-large-panels .glass-panel-content h3{font-size:25px;letter-spacing:-.03em;margin:0 0 16px;font-weight:500}
+.lab-large-panels .glass-panel-content p{margin:0 0 20px}
+@media(max-width:600px){.lab-large-panels>.glass-panel{height:400px}.lab-large-panels>.glass-panel.lab-reading-panel{height:480px}}

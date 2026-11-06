@@ -197,3 +197,10 @@
   .alvenx-design .ax-menu-toggle:focus-visible { outline-color:Highlight; }
   .alvenx-design .ax-menu-toggle[aria-expanded="true"] { border-color:ButtonText; }
 }
+.alvenx-design .glass-panel{height:360px;min-height:140px;min-width:0;isolation:isolate;background:#EDF0FA;overflow:hidden;border-radius:24px}
+.alvenx-design .glass-panel-pixels{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.alvenx-design .glass-panel-content{position:absolute;inset:clamp(20px,4vw,40px);color:#40547B;font-family:var(--ax-font-family,'Instrument Sans',MiSans,sans-serif);font-size:16px;line-height:1.7;background:none;border:0;border-radius:8px;outline:none}
+.alvenx-design .glass-panel-scroll{overflow:auto;overscroll-behavior:contain;scrollbar-color:#9CAAD0 transparent;padding-right:10px}
+.alvenx-design .glass-panel-content:focus-visible,.alvenx-design .glass-panel-content:focus-within{outline:2px solid #8D9EC8;outline-offset:5px}
+.alvenx-design .glass-panel-content textarea{display:block;width:100%;height:100%;resize:none;border:0;outline:none;background:none;color:inherit;font:inherit;line-height:inherit;caret-color:#506FB1;padding:0 10px 0 0;scrollbar-color:#9CAAD0 transparent}
+.alvenx-design .glass-panel-content::selection,.alvenx-design .glass-panel-content ::selection{background:#BCC7EE;color:#263B67}

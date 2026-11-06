@@ -4,6 +4,7 @@ Copyright © 2026 AlvenX. All rights reserved for the AlvenX source, design lang
 
 - AlvenX wordmark and AX monogram: unchanged official project brand assets; do not redraw, distort or imply permission to use the brand in an unrelated product.
 - Instrument Sans: redistributed unchanged with `assets/fonts/InstrumentSans-OFL.txt` (SIL Open Font License).
+- AlvenX Optical Latin: renamed static 400/500/600 instances derived from that retained Instrument Sans font under the same OFL, with build provenance in `assets/fonts/optical/NOTICE.txt`. These faces address the measured Canvas variable-weight defect; they do not replace the original font license or grant a reuse license for AlvenX code.
 - MiSans: redistributed unchanged with `assets/fonts/misans/MiSans-License-Agreement.pdf`, `NOTICE.txt`, original unicode-range CSS and manifest. Its own agreement applies; it is not described as OFL.
 - React, React DOM, Vite and TypeScript remain third-party dependencies under their respective upstream licenses. React is external to the library module. The hosted showcase bundles React, React DOM and scheduler; its `licenses/THIRD-PARTY-NOTICES.txt` preserves their MIT license texts. Build tools are development dependencies.
 - Kube's [Liquid Glass in the Browser](https://kube.io/blog/liquid-glass-css-svg/) is an interaction and optics reference. This kit packages the existing AlvenX implementation; it does not bundle the article, its photographs or its source code, and does not claim to implement Apple's renderer.

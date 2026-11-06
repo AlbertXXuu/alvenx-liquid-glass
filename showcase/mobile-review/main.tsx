@@ -1,14 +1,16 @@
-import { StrictMode, useCallback, useEffect, useId, useLayoutEffect, useRef, useState, type PointerEvent } from 'react';
+import { StrictMode, useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import {createRoot} from 'react-dom/client';
-import {ControlledScene,GlassSlider,GlassSwitch,LiquidControl,MenuToggle,PARAMETER_ROWS,VolumeStage,useGlassSettings,type ControlledSceneSize,type VolumeStageHandle,type GlassOpticsMode} from '../../src';
+import {ControlledScene,GlassPanel,GlassSlider,GlassSwitch,LiquidControl,MenuToggle,PARAMETER_ROWS,VolumeStage,useGlassSettings,balancedOpticsMetrics,type ControlledSceneSize,type VolumeStageHandle,type GlassOpticsMode} from '../../src';
 import {observeDeviceInput} from './diagnostics';
 import {useShowcaseLanguage,LanguageControl} from './localization';
-import {useSampleText,SAMPLE_TEXT_FAMILY,SAMPLE_TEXT_LIMIT} from './useSampleText';
+import {useSampleText,SAMPLE_TEXT_LIMIT} from './useSampleText';
 import '../../styles/glass.css';
 import '../../assets/fonts.css';
 import './review.css';
 import '../../styles/budding-volume.css';
 import {ShowcaseBudding} from './ShowcaseBudding';
+import {paintRefractionScene,refractionSvg} from './refractionScene';
+import {loadSceneFont} from './loadSceneFont';
 import wordmark from '../../assets/brand/alvenx-wordmark.svg';
 
 const REPO='https://github.com/AlbertXXuu/alvenx-liquid-glass';
@@ -29,27 +31,33 @@ function Showcase(){
  const drag=useRef<null|{id:number;startX:number;startY:number;x:number;y:number;width:number;height:number;lensWidth:number;lensHeight:number}>(null);
  const sampleText=useSampleText(),sourceText=sampleText.value;
  const [sample,setSample]=useState(.5),[on,setOn]=useState(true),[message,setMessage]=useState(''),[feedback,setFeedback]=useState('');
+ const [panelGrid,setPanelGrid]=useState(false);
  const [parameters,setParameters]=useState(false),[deviceOpen,setDeviceOpen]=useState(false),[deviceText,setDeviceText]=useState(''),[copyStatus,setCopyStatus]=useState('');
  const trace=useRef<ReturnType<typeof observeDeviceInput>|null>(null);
  const uid=useId().replace(/[^a-z0-9]/gi,'');
  useEffect(()=>{const observer=observeDeviceInput();trace.current=observer;return()=>{observer.destroy();trace.current=null;};},[]);
- useLayoutEffect(()=>clock.subscribe(()=>{if(!pending.current)return false;setPosition(pending.current);pending.current=null;return false;}),[clock]);
+ useLayoutEffect(()=>clock.subscribe(()=>{
+  const next=pending.current;if(!next)return false;
+  // Apply the actual position before the clock's optical render phase. React
+  // retains the same value for keyboard movement and subsequent re-renders.
+  if(lens.current){lens.current.style.left=`${next.x*100}%`;lens.current.style.top=`${next.y*100}%`;}
+  lastPosition.current=next;setPosition(next);pending.current=null;clock.layoutRevision++;return false;
+ },'prepare'),[clock]);
  const release=()=>{const id=drag.current?.id;drag.current=null;setLensHeld(false);if(id!==undefined&&lens.current?.hasPointerCapture(id))lens.current.releasePointerCapture(id);};
  useEffect(()=>{const stop=()=>release();window.addEventListener('blur',stop);window.addEventListener('resize',stop);return()=>{window.removeEventListener('blur',stop);window.removeEventListener('resize',stop);};},[]);
  const moveLens=(event:PointerEvent<HTMLDivElement>)=>{const d=drag.current;if(!d||event.pointerId!==d.id)return;pending.current={x:Math.max(d.lensWidth/2,Math.min(d.width-d.lensWidth/2,d.x*d.width+event.clientX-d.startX))/d.width,y:Math.max(d.lensHeight/2,Math.min(d.height-d.lensHeight/2,d.y*d.height+event.clientY-d.startY))/d.height};clock.wake();};
- const paint=useCallback(({width,height}:ControlledSceneSize)=>{
-  const small=width<450;
-  return <>
-   <defs><linearGradient id={`${uid}-board`} x2="1" y2="1"><stop stopColor="#CDDEFF"/><stop offset=".52" stopColor="#E1E8FC"/><stop offset="1" stopColor="#DCCCF5"/></linearGradient><pattern id={`${uid}-grid`} width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#7F8DBB" strokeWidth=".65" opacity=".33"/></pattern><linearGradient id={`${uid}-stripe`}><stop stopColor="#658CE4"/><stop offset="1" stopColor="#A28ADC"/></linearGradient></defs>
-   <rect width={width} height={height} fill={`url(#${uid}-board)`}/><rect width={width} height={height} fill={`url(#${uid}-grid)`}/>
-   <text x={width*.085} y={height*.31} fill="#425990" fontFamily={SAMPLE_TEXT_FAMILY} fontSize={small?40:60} fontWeight="600" letterSpacing="-2" style={{pointerEvents:'auto',userSelect:'text'}}>{sourceText}</text>
-   <text x={width*.085} y={height*.47} fill="#7865AE" fontFamily={SAMPLE_TEXT_FAMILY} fontSize={small?25:32} fontWeight="500" style={{pointerEvents:'auto',userSelect:'text'}}>{t('Light & form')}</text>
-   <text x={width*.085} y={height*.61} fill="#596C92" fontSize={small?15:19}>{t('A clear view. A living edge.')}</text>
-   <rect x={width*.085} y={height*.76} width={width*.83} height="15" rx="7.5" fill="#BFC7E2"/><rect x={width*.085} y={height*.76} width={width*.83*sample} height="15" rx="7.5" fill={`url(#${uid}-stripe)`}/>
-  </>;
- },[sourceText,sample,uid,t]);
+ const sceneModel=useMemo(()=>({title:sourceText,subtitle:t('Light & form'),caption:t('A clear view. A living edge.'),progress:sample}),[sourceText,sample,t]);
+ const paint=useCallback((size:ControlledSceneSize)=>refractionSvg(size,sceneModel,uid),[sceneModel,uid]);
+ const selection=useCallback((size:ControlledSceneSize)=>refractionSvg(size,sceneModel,uid+'-native',true),[sceneModel,uid]);
+ const paintCanvas=useCallback(async(ctx:CanvasRenderingContext2D,size:ControlledSceneSize)=>{
+  if(!('letterSpacing' in ctx)||typeof ctx.roundRect!=='function')throw Error('Canvas typography unavailable; native optics retained');
+  const nonAscii=(s:string)=>s.replace(/[\u0000-\u007f]/g,'');
+  await Promise.all([loadSceneFont('AlvenX Optical Latin',600,60,sceneModel.title),loadSceneFont('AlvenX Optical Latin',500,32,sceneModel.subtitle),loadSceneFont('AlvenX Optical Latin',400,19,sceneModel.caption),...(nonAscii(sceneModel.title)?[loadSceneFont('MiSans',600,60,nonAscii(sceneModel.title))]:[]),...(nonAscii(sceneModel.subtitle)?[loadSceneFont('MiSans',500,32,nonAscii(sceneModel.subtitle))]:[]),...(nonAscii(sceneModel.caption)?[loadSceneFont('MiSans',400,19,nonAscii(sceneModel.caption))]:[])]);
+  paintRefractionScene(ctx,size.width,size.height,sceneModel);
+ },[sceneModel]);
  const fieldPaint=useCallback(({width,height}:ControlledSceneSize)=><><defs><linearGradient id={`${uid}-field`} x2="1" y2="1"><stop stopColor="#CDDEFC"/><stop offset="1" stopColor="#D9CEF1"/></linearGradient><pattern id={`${uid}-field-grid`} width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="#8995BE" strokeWidth=".7" opacity=".35"/></pattern></defs><rect width={width} height={height} fill={`url(#${uid}-field)`}/><rect width={width} height={height} fill={`url(#${uid}-field-grid)`}/></>,[uid]);
- const showDevice=()=>{setDeviceText(JSON.stringify(trace.current?.snapshot(),null,2));setDeviceOpen(true);setCopyStatus('');};
+ const fieldCanvas=useCallback((ctx:CanvasRenderingContext2D,{width,height}:ControlledSceneSize)=>{const g=ctx.createLinearGradient(0,0,width,0);g.addColorStop(0,'#CDDEFC');g.addColorStop(1,'#D9CEF1');ctx.fillStyle=g;ctx.fillRect(0,0,width,height);ctx.strokeStyle='rgba(137,149,190,.35)';ctx.lineWidth=.35;ctx.beginPath();for(let x=.175;x<=width;x+=25){ctx.moveTo(x,0);ctx.lineTo(x,height)}for(let y=.175;y<=height;y+=25){ctx.moveTo(0,y);ctx.lineTo(width,y)}ctx.stroke()},[]);
+ const showDevice=()=>{setDeviceText(JSON.stringify({...trace.current?.snapshot(),optics:balancedOpticsMetrics()},null,2));setDeviceOpen(true);setCopyStatus('');};
  return <div className="alvenx-design lab">
   <a className="skip-link" href="#volume">{t('Skip to the experience')}</a>
   <header ref={header} className="ax-product-header" data-menu-open={menuOpen} onBlur={event=>{if(event.relatedTarget&&!event.currentTarget.contains(event.relatedTarget as Node))setMenuOpen(false);}}>
@@ -68,7 +76,7 @@ function Showcase(){
     </div>
    </section>
    <section id="refraction" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">{t('02 / LOOK THROUGH IT')}</p><h2>{t('A source. A lens.')}<br/>{t('Real displacement.')}</h2></div><p className="section-copy">{t('Drag the lens over the letters or the line. The scene is shared by the background and the glass.')}</p></div>
-    <div className="lab-study-grid"><ControlledScene className="lab-optical-scene" paint={paint}>
+    <div className="lab-study-grid"><ControlledScene className="lab-optical-scene" paint={paint} paintCanvas={paintCanvas} paintSelection={selection}>
      <div ref={lens} className="lab-moving-lens" style={{left:`${position.x*100}%`,top:`${position.y*100}%`}}
       onPointerDown={e=>{if(e.button!==0||e.isPrimary===false||drag.current||!(e.target as Element).closest('.glass-hit'))return;e.preventDefault();const rect=e.currentTarget.parentElement!.getBoundingClientRect(),box=e.currentTarget.getBoundingClientRect();drag.current={id:e.pointerId,startX:e.clientX,startY:e.clientY,...lastPosition.current,width:rect.width,height:rect.height,lensWidth:box.width,lensHeight:box.height};e.currentTarget.setPointerCapture(e.pointerId);setLensHeld(true);}}
       onPointerMove={moveLens} onPointerUp={e=>{if(drag.current?.id===e.pointerId){moveLens(e);release();}}} onPointerCancel={e=>{if(drag.current?.id===e.pointerId)release();}} onLostPointerCapture={e=>{if(e.target===e.currentTarget&&drag.current?.id===e.pointerId)release();}}
@@ -85,13 +93,18 @@ function Showcase(){
     </div></div>
    </section>
    <section id="fields" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">{t('03 / TYPE CLEARLY')}</p><h2>{t('The surface bends.')}<br/>{t('Your words stay clear.')}</h2></div><p className="section-copy">{t('Native text, selection and keyboard editing above the optical layer.')}</p></div>
-    <ControlledScene className="lab-field-scene" paint={fieldPaint}><form className="lab-composer" onSubmit={e=>{e.preventDefault();const value=message.trim();setFeedback(!value?'Write a message before sending.':value.toLowerCase()==='fluency'?'<3':'Good question… but I don’t understand.');}}><LiquidControl id="r3-message" clock={clock} kind="field" className="lab-message"><input aria-label={t('Preview message')} placeholder={t('Ask anything…')} value={message} onChange={e=>{setMessage(e.target.value);setFeedback('');}}/></LiquidControl><LiquidControl id="r3-send" clock={clock} kind="circle" className="lab-send" label={t('Send preview message')} type="submit"><Arrow/></LiquidControl></form><p className="lab-message-feedback" role="status">{t(feedback)}</p></ControlledScene>
+    <ControlledScene className="lab-field-scene" paint={fieldPaint} paintCanvas={fieldCanvas}><form className="lab-composer" onSubmit={e=>{e.preventDefault();const value=message.trim();setFeedback(!value?'Write a message before sending.':value.toLowerCase()==='fluency'?'<3':'Good question… but I don’t understand.');}}><LiquidControl id="r3-message" clock={clock} kind="field" className="lab-message"><input aria-label={t('Preview message')} placeholder={t('Ask anything…')} value={message} onChange={e=>{setMessage(e.target.value);setFeedback('');}}/></LiquidControl><LiquidControl id="r3-send" clock={clock} kind="circle" className="lab-send" label={t('Send preview message')} type="submit"><Arrow/></LiquidControl></form><p className="lab-message-feedback" role="status">{t(feedback)}</p></ControlledScene>
    </section>
 
+   <section id="large-panels" className="lab-section lab-large-panels"><div className="lab-section-heading"><div><p className="eyebrow">{t('READ AND WRITE')}</p><h2>{t('A quiet center. A rounded edge.')}</h2></div><GlassSwitch id="panel-grid" label={t('Show background grid')} checked={panelGrid} clock={clock} controlledRefraction onChange={setPanelGrid}/></div>
+    <p className="section-copy">{t('Background bends at the edge. Your text, caret and selection stay clear.')}</p>
+    <h3>{t('Multiline editor')}</h3><GlassPanel id="native-editor" clock={clock} label={t('Multiline editor')} diagnostic={panelGrid} scrollable={false}><textarea aria-label={t('Multiline editor')} spellCheck={false} defaultValue={Array.from({length:14},(_,i)=>`${i+1}. ${t('A broad, quiet surface leaves room for your words. The background bends near the rounded edge while native text stays clear and editable.')}`).join('\n\n')}/></GlassPanel>
+    <h3>{t('Reading panel')}</h3><GlassPanel id="native-reader" clock={clock} label={t('Reading panel')} diagnostic={panelGrid} className="lab-reading-panel"><h3>{t('Room to read.')}</h3>{Array.from({length:16},(_,i)=><p key={i}>{i+1}. {t('A broad, quiet surface leaves room for your words. The background bends near the rounded edge while native text stays clear and editable.')}</p>)}<p>{t('End of the reading sample.')}</p></GlassPanel>
+   </section>
    <section id="language" className="lab-section"><p className="eyebrow">{t('04 / DESIGN LANGUAGE')}</p><h2>{t('Softness with a structure.')}</h2><div className="lab-principles"><article><span>{t('01 / FORM')}</span><h3>{t('Full volume')}</h3><p>{t('A mother form, a soft connection and an expanding chamber share one continuous contour.')}</p></article><article><span>{t('02 / LIGHT')}</span><h3>{t('Light at the edge')}</h3><p>{t('Blue, indigo and violet give the material depth. Edge light follows its living contour.')}</p></article><article><span>{t('03 / MOTION')}</span><h3>{t('Motion with memory')}</h3><p>{t('Continuous gestures, bounded resistance and a return after release preserve the movement of your hand.')}</p></article><article><span>{t('04 / TYPE')}</span><h3>{t('Text stays text')}</h3><p>{t('Instrument Sans and MiSans stay readable, selectable and editable above the optical layer.')}</p></article></div><div className="lab-type-sample"><p>{t('Room for a new idea.')}</p><p className="type-sample-secondary">{t('Space for an idea to grow.')}</p><span>{t('Instrument Sans / MiSans · Native, selectable text')}</span></div></section>
-   <section id="code" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">{t('05 / INSPECT THE SYSTEM')}</p><h2>{t('A material you can explore.')}</h2></div><a href={`${REPO}/tree/v1.3.2`}>{t('Explore the source')} ↗</a></div><p className="code-copy">{t('React components, continuous geometry, scoped styles and editable material parameters. Source is public for inspection; reuse requires permission under the reserved-rights notice.')}</p><pre tabIndex={0} aria-label={t('Run the showcase locally')}><code>git clone {REPO}.git{'\n'}cd alvenx-liquid-glass{'\n'}git checkout v1.3.2{'\n'}npm ci{'\n'}npm run dev</code></pre><div className="lab-doc-links"><a href={`${REPO}/blob/v1.3.2/docs/design-language.md`}>{t('Design language')} ↗</a><a href={`${REPO}/blob/v1.3.2/docs/integration.md`}>{t('Integration guide')} ↗</a><a href={`${REPO}/blob/v1.3.2/docs/compatibility.md`}>{t('Browser support')} ↗</a><a href={`${REPO}/blob/v1.3.2/docs/attribution.md`}>{t('Credits & licenses')} ↗</a></div><p className="code-boundary">{t('Large forms use a 2.5D lighting environment. The interactive specimens refract a shared SVG scene, including its live text and progress. Arbitrary page capture is not provided. Physical iPhone and iPad validation continues with device feedback.')}</p></section>
+   <section id="code" className="lab-section"><div className="lab-section-heading"><div><p className="eyebrow">{t('05 / INSPECT THE SYSTEM')}</p><h2>{t('A material you can explore.')}</h2></div><a href={`${REPO}/tree/v1.3.2`}>{t('Published source')} ↗</a></div><p className="code-copy">{t('React components, continuous geometry, scoped styles and editable material parameters. Source is public for inspection; reuse requires permission under the reserved-rights notice.')}</p><pre tabIndex={0} aria-label={t('Run the showcase locally')}><code>npm ci{'\n'}npm run check{'\n'}npm run dev</code></pre><div className="lab-doc-links"><a href={`${REPO}/blob/v1.3.2/docs/design-language.md`}>{t('Design language')} ↗</a><a href={`${REPO}/blob/v1.3.2/docs/integration.md`}>{t('Integration guide')} ↗</a><a href={`${REPO}/blob/v1.3.2/docs/compatibility.md`}>{t('Browser support')} ↗</a><a href={`${REPO}/blob/v1.3.2/docs/attribution.md`}>{t('Credits & licenses')} ↗</a></div><p className="code-boundary">{t('Large forms use a 2.5D lighting environment. B controls sample an explicit registered scene. Native editing stays above the optical layer. Unsupported graphics use native blur or a flat fallback. Physical iPhone and iPad acceptance remains separate.')}</p></section>
    <section className="lab-section lab-device"><div className="lab-section-heading"><div><p className="eyebrow">{t('DEVICE REVIEW')}</p><h2>{t('Try it on your device.')}</h2></div><LiquidControl id="r3-device-check" clock={clock} className="lab-disclosure" onClick={showDevice}>{t('Show input report')} ↗</LiquidControl></div><p className="section-copy">{t('If a touch or trackpad drag fails, the local report shows which input and capture events reached this page. Frame timings describe scheduling, not physical display latency.')}</p>{deviceOpen&&<><pre tabIndex={0} aria-label={t('Local input report')}>{deviceText}</pre><div className="device-actions"><LiquidControl id="r3-copy-report" clock={clock} className="lab-disclosure" onClick={()=>{navigator.clipboard.writeText(deviceText).then(()=>setCopyStatus('Report copied.'),()=>setCopyStatus('Select the report text to copy.'));}}>{t('Copy input report')} ↗</LiquidControl><p role="status">{t(copyStatus)}</p></div></>}</section>
-  </main><footer><img src={wordmark} alt="AlvenX" width="110"/><p>{t('Shaped for interaction.')}<br/>V1.3.2 · {t('Public design preview')} · {t('All rights reserved.')}</p><div><a href={`${REPO}/tree/v1.3.2`}>GitHub ↗</a><a href="https://alvenx.com/">AlvenX.com ↗</a><a href={`${REPO}/blob/v1.3.2/LICENSE-NOTICE.md`}>{t('License notice')} ↗</a></div></footer>
+  </main><footer><img src={wordmark} alt="AlvenX" width="110"/><p>{t('Shaped for interaction.')}<br/>B · {t('Local validation')} · {t('All rights reserved.')}</p><div><a href={`${REPO}/tree/v1.3.2`}>GitHub ↗</a><a href="https://alvenx.com/">AlvenX.com ↗</a><a href={`${REPO}/blob/v1.3.2/LICENSE-NOTICE.md`}>{t('License notice')} ↗</a></div></footer>
  </div>;
 }
 createRoot(document.getElementById('root')!).render(<StrictMode><Showcase/></StrictMode>);

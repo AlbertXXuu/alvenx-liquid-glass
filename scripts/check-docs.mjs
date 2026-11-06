@@ -1,6 +1,6 @@
 import { readFile, access } from 'node:fs/promises';
 import path from 'node:path';
-const files=['README.md','SKILL.md','TODO.md','LICENSE-NOTICE.md','docs/design-language.md','docs/integration.md','docs/baseline-and-checklist.md','docs/attribution.md','docs/runtime-quality.md','docs/compatibility.md'];
+const files=['README.md','SKILL.md','TODO.md','LICENSE-NOTICE.md','docs/design-language.md','docs/integration.md','docs/agent-integration.md','docs/baseline-and-checklist.md','docs/attribution.md','docs/runtime-quality.md','docs/compatibility.md'];
 let localLinks=0;
 for(const file of files){
   const text=await readFile(file,'utf8');

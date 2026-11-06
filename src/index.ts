@@ -22,3 +22,12 @@ export { ControlledScene, ControlledSource } from './ControlledScene';
 export type { ControlledSceneProps, ControlledSourceProps, ControlledSceneValue, ControlledSceneSize } from './ControlledScene';
 export { VolumeBuddingLink } from './VolumeBuddingLink';
 export type { VolumeBuddingLinkProps } from './VolumeBuddingLink';
+export {GlassPanel} from './GlassPanel';
+export type {GlassPanelProps} from './GlassPanel';
+export {balancedOpticsMetrics} from './balancedOptics';
+export { createReferenceVolume } from './budding-volume/reference-volume';
+export { refinementGeometry } from './budding-volume/geometry';
+export { emptyMotion, lobeTransform, springStep } from './budding-volume/motion';
+
+export { WorkspaceVolume } from './workspace-volume/WorkspaceVolume';
+export type { WorkspaceVolumeProps } from './workspace-volume/WorkspaceVolume';

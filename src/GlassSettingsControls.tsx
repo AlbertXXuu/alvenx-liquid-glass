@@ -38,7 +38,16 @@ function ControlledRail({container,geometry,progress,fillOpacity=1,children}:{co
       <rect x={left} y={cy-radius} width={trackWidth*clamp(progress)} height={trackHeight} rx={radius} fill={`url(#${key}-progress)`} opacity={fillOpacity}/>
     </>;
   },[key,left,right,cy,radius,progress,fillOpacity]);
-  return <ControlledSource container={container} paint={paint}>{children}</ControlledSource>;
+  const paintCanvas=useCallback((ctx:CanvasRenderingContext2D,{width,height}:ControlledSceneSize)=>{
+    const style=container.current?getComputedStyle(container.current):null;
+    const color=(name:string,fallback:string)=>style?.getPropertyValue(name).trim()||fallback;
+    ctx.fillStyle=color('--ax-background','#F0F2FB');ctx.fillRect(0,0,width,height);
+    const length=Math.max(0,right-left),h=radius*2;
+    const rect=(w:number,start:string,end:string,opacity=1)=>{if(w<=0||h<=0)return;const gradient=ctx.createLinearGradient(left,0,left+w,0);gradient.addColorStop(0,start);gradient.addColorStop(1,end);ctx.fillStyle=gradient;ctx.globalAlpha=opacity;ctx.beginPath();ctx.roundRect(left,cy-radius,w,h,Math.min(radius,w/2));ctx.fill();ctx.globalAlpha=1};
+    rect(length,color('--ax-track-start','#CBD6ED'),color('--ax-track-end','#D3CFE8'));
+    rect(length*clamp(progress),color('--ax-progress-start','#809FE6'),color('--ax-progress-end','#A092D8'),fillOpacity);
+  },[container,left,right,cy,radius,progress,fillOpacity]);
+  return <ControlledSource container={container} paint={paint} paintCanvas={paintCanvas}>{children}</ControlledSource>;
 }
 const restShape = (width:number,height:number):ThumbGeometry => ({hostWidth:width,hostHeight:height,width:width-12,height:height-8,centerX:width/2,centerY:height/2});
 function placement(rail:RailGeometry,shape:ThumbGeometry,progress:number,offset=0) {
@@ -167,7 +176,7 @@ export function GlassNumber({id,label,value,min,max,precision,unit,clock,onCommi
 /** Pointer input is continuous; configured steps belong only to keyboard input.
  * Deltas preserve the grab point during shell morphs. Only release uses a spring. */
 export type GlassSliderProps = {id:string;label:string;value:number;min:number;max:number;step:number;unit?:string;precision?:number;clock:PreviewClock;onChange:(value:number)=>void;controlledRefraction?:boolean;locale?:'en'|'zh-CN'};
-export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange,controlledRefraction=false,locale='en' }: GlassSliderProps) {
+export function GlassSlider({ id,label,value,min,max,step,unit='',precision:customPrecision=2,clock,onChange,controlledRefraction=true,locale='en' }: GlassSliderProps) {
   if (![min,max,step,value].every(Number.isFinite) || min>=max || step<=0) {
     throw new RangeError('GlassSlider requires finite value/min/max, min < max, and a finite positive keyboard step.');
   }
@@ -272,7 +281,7 @@ export function GlassSlider({ id,label,value,min,max,step,unit='',precision:cust
 
 /** The legal value is discrete; display position and elastic overscroll are not. */
 export type GlassSwitchProps = {id:string;label:string;checked:boolean;clock:PreviewClock;onChange:(checked:boolean)=>void;disabled?:boolean;controlledRefraction?:boolean};
-export function GlassSwitch({id,label,checked,clock,onChange,disabled=false,controlledRefraction=false}:GlassSwitchProps) {
+export function GlassSwitch({id,label,checked,clock,onChange,disabled=false,controlledRefraction=true}:GlassSwitchProps) {
   const [pressed,setPressed]=useState(false),[focused,setFocused]=useState(false),[display,setDisplay]=useState({position:checked?1:0,offset:0});
   const anchor=useLensAnchor(63.36,42.24,display.position,display.offset);
   const native=useRef<HTMLButtonElement>(null);

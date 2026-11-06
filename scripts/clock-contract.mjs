@@ -24,6 +24,20 @@ try {
     assert.equal(frames,1,'new work uses the first available browser frame');
     assert.equal(pending.size,0);stop();quick.destroy();checks.push('first-frame wake latency');
   }
+  {
+    const clock=new GlassClock();const order=[];let position=0;
+    // Child render subscribers mount first; host preparation must still win.
+    const render=clock.subscribe(()=>{order.push(`render:${position}`);return false;});
+    const prepare=clock.subscribe(()=>{position++;order.push('prepare');return false;},'prepare');
+    advance(17);assert.deepEqual(order,['prepare','render:1']);
+    render();clock.wake();advance(17);assert.equal(position,2,'prepare-only work remains subscribed');
+    prepare();assert.equal(pending.size,0);clock.destroy();checks.push('host preparation precedes child optics regardless of mount order');
+  }
+  {
+    const clock=new GlassClock();let frames=0;
+    clock.subscribe(()=>{frames++;return true;},'prepare');advance(17);clock.destroy();advance(17);
+    assert.equal(frames,1);assert.equal(pending.size,0);checks.push('prepare phase destroy clears work and scheduling');
+  }
   for (const hz of [60,75,90,120,144,165,240]) {
     const clock = new GlassClock({maxFps:240}); let frames = 0, integrated = 0;
     const unsubscribe = clock.subscribe(delta => { frames++; integrated += delta; return frames < 20; });

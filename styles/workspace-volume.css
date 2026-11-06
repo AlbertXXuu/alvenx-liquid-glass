@@ -1,0 +1,304 @@
+.ax-workspace-volume.glass-stage-shell {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ax-workspace-gap, clamp(30px, 4.5vw, 64px));
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: clamp(360px, 55svh, 690px);
+  padding: clamp(24px, 5vw, 76px);
+  border-radius: var(--ax-workspace-radius, 22px);
+  background: var(--ax-stage-background, #e6e9fa);
+}
+
+.ax-workspace-volume > .glass-mother-space {
+  flex: none;
+  inline-size: var(--ax-workspace-orb, clamp(136px, 23vw, 300px));
+  block-size: var(--ax-workspace-orb, clamp(136px, 23vw, 300px));
+}
+
+.ax-workspace-volume > :is(.glass-volume-canvas, .glass-fallback, .glass-volume-hit, .glass-enter) {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.ax-workspace-volume > :is(.glass-volume-canvas, .glass-fallback) {
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.ax-workspace-volume:not([data-renderer="webgl"]) > .glass-volume-canvas {
+  visibility: hidden;
+}
+
+.ax-workspace-volume[data-renderer="webgl"] > .glass-fallback :is(rect, path:not(.glass-focus)) {
+  display: none;
+}
+
+.ax-workspace-volume > :is(.glass-volume-hit, .glass-enter) {
+  touch-action: pinch-zoom;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ax-workspace-volume > .glass-volume-hit {
+  cursor: grab;
+}
+
+.ax-workspace-volume > .glass-volume-hit[data-interactive="false"],
+.ax-workspace-volume > :is(.glass-volume-hit, .glass-enter):not([style*="clip-path"]) {
+  pointer-events: none;
+}
+
+.ax-workspace-volume > .glass-enter {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ax-workspace-volume > :is(.glass-volume-hit, .glass-enter):active {
+  cursor: grabbing;
+}
+
+.ax-workspace-volume .glass-focus {
+  display: none;
+  fill: none;
+  stroke: var(--ax-focus, #4569bf);
+  stroke-width: 3;
+  pointer-events: none;
+}
+
+.ax-workspace-volume:has(> .glass-enter:focus-visible) .glass-focus {
+  display: block;
+}
+
+.ax-workspace-volume > .glass-foreground {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: grid;
+  align-items: center;
+  inline-size: var(--ax-workspace-panel, min(64%, 660px));
+  min-inline-size: 0;
+  min-block-size: 194px;
+  padding: clamp(26px, 4.7%, 62px);
+  color: var(--ax-content, #344566);
+  pointer-events: none;
+}
+
+.ax-workspace-volume > .glass-foreground > * {
+  min-inline-size: 0;
+  pointer-events: auto;
+}
+
+.ax-workspace-volume > .glass-foreground[data-revealed="false"] {
+  visibility: hidden;
+}
+
+.ax-workspace-volume + .glass-motion-controls {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  padding: 8px 14px;
+  border: 1px solid #cbd5ed;
+  border-radius: 18px;
+  background: rgb(244 247 255 / 66%);
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-replay {
+  inline-size: 120px;
+  block-size: 44px;
+  font-size: 13px;
+}
+
+/* The standalone stage can sit inside any host. Agent uses it as the whole scene. */
+.approved-workspace > .workspace:has(> .ax-workspace-volume.glass-stage-shell) {
+  --ax-agent-orb: clamp(220px, min(28vw, 46svh), 430px);
+  --ax-agent-gap: clamp(36px, calc(var(--ax-agent-orb) * .236), 94px);
+  --ax-agent-panel: calc(var(--ax-agent-orb) * 1.618);
+  --ax-agent-margin: clamp(18px, 3vw, 54px);
+  --ax-agent-pair: calc(var(--ax-agent-orb) + var(--ax-agent-gap) + var(--ax-agent-panel));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 0;
+  inline-size: 100%;
+  max-inline-size: none;
+  min-inline-size: 0;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  margin: 0;
+  padding: 0;
+}
+
+.approved-workspace:is([data-space="conversation"], [data-space="result"], [data-space="settings"]) > .workspace:has(> .ax-workspace-volume.glass-stage-shell) {
+  --ax-agent-panel: min(62vw, 950px);
+}
+
+.approved-workspace > .workspace > .ax-workspace-volume.glass-stage-shell {
+  --ax-workspace-orb: var(--ax-agent-orb);
+  --ax-workspace-gap: var(--ax-agent-gap);
+  --ax-workspace-panel: min(var(--ax-agent-panel), calc(100% - var(--ax-agent-orb) - var(--ax-agent-gap)));
+  grid-area: 1 / 1;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  padding: max(64px, env(safe-area-inset-top)) var(--ax-agent-margin) 112px;
+  border-radius: 0;
+}
+
+.approved-workspace > .workspace > .ax-workspace-volume + .glass-motion-controls {
+  grid-area: 1 / 1;
+  place-self: end end;
+  z-index: 2;
+  max-inline-size: calc(100% - 2 * var(--ax-agent-margin));
+  margin-block-end: max(clamp(16px, 4svh, 44px), env(safe-area-inset-bottom));
+  margin-inline-end: max(var(--ax-agent-margin), calc((100% - var(--ax-agent-pair)) / 2));
+}
+
+@media (max-width: 720px) {
+  .ax-workspace-volume.glass-stage-shell {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+
+  .ax-workspace-volume > .glass-foreground {
+    inline-size: var(--ax-workspace-panel, 100%);
+    min-block-size: 124px;
+    padding: 23px 14px;
+  }
+
+  .ax-workspace-volume + .glass-motion-controls {
+    justify-content: center;
+    gap: 6px 12px;
+  }
+
+  .approved-workspace > .workspace:has(> .ax-workspace-volume.glass-stage-shell) {
+    --ax-agent-orb: clamp(144px, min(50vw, 34svh), 225px);
+    --ax-agent-gap: clamp(24px, 7.5vw, 44px);
+  }
+
+  .approved-workspace:is([data-space="conversation"], [data-space="result"], [data-space="settings"]) > .workspace:has(> .ax-workspace-volume.glass-stage-shell) {
+    --ax-agent-panel: 100%;
+  }
+
+  .approved-workspace > .workspace > .ax-workspace-volume.glass-stage-shell {
+    --ax-workspace-panel: min(100%, var(--ax-agent-panel));
+    padding-block: max(56px, env(safe-area-inset-top)) max(158px, calc(env(safe-area-inset-bottom) + 144px));
+  }
+
+  .approved-workspace > .workspace > .ax-workspace-volume + .glass-motion-controls {
+    justify-self: center;
+    margin-inline-end: 0;
+  }
+}
+
+.ax-workspace-volume > .glass-mother-space {
+  position: relative;
+  pointer-events: none;
+}
+
+.ax-workspace-volume .glass-entry-hint {
+  position: absolute;
+  inset-block-start: calc(100% + 17px);
+  inset-inline: 0;
+  z-index: 1;
+  color: #3f5075;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ax-workspace-volume + .glass-motion-controls {
+  gap: 4px 10px;
+  padding: 5px 10px;
+  border-color: #d3dbef;
+  background: rgb(244 247 255 / 48%);
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-options {
+  position: relative;
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-options summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-block-size: 44px;
+  padding-inline: 10px;
+  color: #405278;
+  font-size: 13px;
+  list-style: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-options summary::-webkit-details-marker {
+  display: none;
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-options summary::after {
+  content: "";
+  inline-size: 5px;
+  block-size: 5px;
+  border: solid currentColor;
+  border-width: 0 1px 1px 0;
+  transform: translateY(-2px) rotate(45deg);
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-options[open] summary::after {
+  transform: translateY(1px) rotate(225deg);
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-options summary:focus-visible {
+  outline: 2px solid var(--ax-focus, #4569bf);
+  outline-offset: 2px;
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-popover {
+  position: absolute;
+  inset-block-end: calc(100% + 10px);
+  inset-inline-end: 0;
+  display: grid;
+  gap: 4px;
+  inline-size: min(238px, calc(100vw - 52px));
+  padding: 12px 14px;
+  border: 1px solid #cbd5ed;
+  border-radius: 18px;
+  background: var(--ax-background, #f0f2fb);
+  box-shadow: 0 8px 25px rgb(52 69 102 / 10%);
+}
+
+.ax-workspace-volume + .glass-motion-controls .glass-motion-popover .switch-control {
+  justify-content: space-between;
+  color: #405278;
+}
+
+.approved-workspace .ax-workspace-volume .agent-composer textarea::placeholder {
+  color: #675e7c;
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .approved-workspace > .workspace > .ax-workspace-volume.glass-stage-shell {
+    padding-block-end: max(120px, calc(env(safe-area-inset-bottom) + 104px));
+  }
+}
+
+.approved-workspace > .workspace > .ax-workspace-volume.glass-stage-shell[data-opened="false"] {
+  padding-block: max(56px, env(safe-area-inset-top), env(safe-area-inset-bottom));
+}

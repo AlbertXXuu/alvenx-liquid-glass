@@ -4,11 +4,13 @@
 
 Full pearl volumes, refractive controls, and continuous motion. An independent React 19 design kit with a live material playground, a precise design specification, and measured rendering evidence.
 
+**Local Agent reuse package:** `1.5.0-agent.1` packages the selected B renderer and the zero-blur edge correction the owner reviewed in `4bda813`. It exposes the existing renderer and geometry helpers already used by the Agent vendor fork. Install the local tarball and use the [Agent integration guide](docs/agent-integration.md). See [B integration and limits](docs/balanced-optics.md) for the registered-scene contract.
+
 **[Explore the live showcase](https://alvenx.com/ui/)** · [Design language](docs/design-language.md) · [Integration guide](docs/integration.md) · [Performance comparison](https://alvenx.com/ui/docs/hover-comparison.html)
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-**Publication status:** The [homepage](https://alvenx.com/) uses **1.4.1 VolumeBuddingLink**, adding independent local pulling and damped release to the accepted 1.4.0 material and shape. Its [publication record](docs/releases/1.4.1/publication.md) identifies the installed package, source and deployed resources. The [showcase](https://alvenx.com/ui/) remains on 1.3.2 with the [navigation presentation correction](docs/releases/1.3.2/navigation-typography/publication.md). These are independently pinned surfaces.
+**Last verified publication:** The [homepage](https://alvenx.com/) uses **1.4.3 VolumeBuddingLink**. The [homepage publication record](docs/releases/1.4.3/README.md) identifies the installed package and validation. The [showcase](https://alvenx.com/ui/) uses the independently pinned [2026-10-29 copy and reveal source](docs/reviews/2026-10-29/copy-reveal/README.md).
 
 The [R6 startup review](docs/reviews/2026-10-22/budding-entry/r6/publication.md) and [R7 continuous-material review](docs/reviews/2026-10-22/budding-entry/r7/publication.md) preserve the owner-accepted [R5 curved chamber](docs/reviews/2026-10-22/budding-entry/r5/publication.md). Their first frame, shader readiness, reversible toggle and mobile-edge correction were promoted into 1.4.0. Static visibility is distinct from live material readiness; no literal zero delay is claimed. Physical iOS experience remains separate from browser emulation.
 
@@ -54,7 +56,7 @@ Build and create a local package; the versioned tarball can be installed directl
 npm run build
 npm run pack:kit
 # In your React 19 project:
-npm install ./alvenx-liquid-glass-1.3.2.tgz
+npm install ./alvenx-liquid-glass-1.5.0-agent.1.tgz
 ```
 
 ```tsx

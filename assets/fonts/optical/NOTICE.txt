@@ -1,0 +1,10 @@
+AlvenX Optical Latin is a renamed static instance of Instrument Sans.
+Source: ../InstrumentSans-wdth-wght.woff2 (retained unchanged).
+Copyright 2022 The Instrument Sans Project Authors.
+License: SIL Open Font License 1.1; full text in ../InstrumentSans-OFL.txt.
+Derived with fonttools[woff] 4.60.1; width axis at its source default,
+weight axis fixed at 400, 500 or 600. Internal family renamed to
+AlvenX Optical Latin to distinguish the derived faces from the original.
+Used only for optical-source typography to avoid the observed Windows
+WebKit Canvas variable-weight rasterization defect. Original font and
+native product typography remain available. Rebuild: scripts/build-optical-fonts.py.

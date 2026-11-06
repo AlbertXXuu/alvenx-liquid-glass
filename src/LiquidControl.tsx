@@ -5,6 +5,7 @@ import type { PreviewClock } from './GlassClock';
 import type { MaterialParameters } from './reviewSettings';
 import { resolveGlassOptics, type GlassOpticsMode, type ResolvedGlassOptics } from './opticalSupport';
 import { ControlledSceneContext } from './ControlledScene';
+import {acquireBalancedOptics} from './balancedOptics';
 
 export type ThumbGeometry = { hostWidth:number; hostHeight:number; width:number; height:number; centerX:number; centerY:number };
 export type LiquidContourFrame = { width:number; height:number; near:number; press:number; intensity:number; shiftX:number; shiftY:number };
@@ -13,6 +14,8 @@ export type LiquidControlProps = {
   kind?: 'button' | 'field' | 'circle' | 'thumb'; type?: 'button' | 'submit'; label?: string;
   disabled?: boolean; selected?: boolean; expanded?: boolean; onClick?: () => void;
   optics?: GlassOpticsMode;
+  /** A host-owned controlled-scene renderer supplies this control's transmission. */
+  externalScene?: boolean;
   interaction?: { pressed: boolean; focused: boolean; position?: string | number; bounds?:()=>{left:number;top:number;width:number;height:number} };
   onGeometry?: (geometry:ThumbGeometry)=>void;
   /** Optional compound contour. The same CSS-pixel path owns optics, rim,
@@ -21,14 +24,16 @@ export type LiquidControlProps = {
 };
 type Motion = { near: number; press: number; x: number; y: number };
 type Map = ReturnType<ReturnType<typeof createBackdropOptics>['render']>;
-type Frame = { path: string; width: number; height: number; near: number; press: number; intensity: number; material:MaterialParameters; focus: boolean; version: number; mode: ResolvedGlassOptics | 'scene'; source?:{id:string;x:number;y:number}; map?: Map; light: { x: number; y: number; z: number } };
+type Frame = { path: string; width: number; height: number; near: number; press: number; intensity: number; material:MaterialParameters; focus: boolean; version: number; mode: ResolvedGlassOptics | 'scene'|'balanced'; source?:{id:string;x:number;y:number}; map?: Map; light: { x: number; y: number; z: number } };
 
 /** Review-only local optics. The exact same path clips pixels and pointer hits,
  * supplies the normal map, and owns every visible edge/focus/selection stroke. */
-export function LiquidControl({ id, clock, children, className = '', kind = 'button', type = 'button', label, disabled = false, selected, expanded, onClick, interaction, onGeometry, optics, contour }: LiquidControlProps) {
+export function LiquidControl({ id, clock, children, className = '', kind = 'button', type = 'button', label, disabled = false, selected, expanded, onClick, interaction, onGeometry, optics, contour, externalScene = false }: LiquidControlProps) {
   const scene = useContext(ControlledSceneContext), sceneRef = useRef(scene); sceneRef.current = scene;
   const key = `review-glass-${useId().replace(/[^a-z0-9]/gi, '')}`;
   const host = useRef<HTMLDivElement>(null);
+  const balancedCanvas=useRef<HTMLCanvasElement>(null);
+  const drawAtCommittedPosition=useRef<((delta:number)=>boolean)|null>(null);
   const transmitted = useRef<SVGUseElement>(null), committed = useRef<Frame|null>(null);
   const hit = useRef<HTMLElement | null>(null);
   const engine = useRef<ReturnType<typeof createBackdropOptics> | null>(null);
@@ -41,12 +46,14 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
   const geometryListener=useRef(onGeometry);geometryListener.current=onGeometry;
   const interactionRef=useRef(interaction);interactionRef.current=interaction;
   const opticsRef=useRef(optics);opticsRef.current=optics;
+  const externalSceneRef=useRef(externalScene);externalSceneRef.current=externalScene;
   const contourRef=useRef(contour);contourRef.current=contour;
   const visible=useRef(true);
   const [error, setError] = useState('');
   const [visual, setVisual] = useState<Frame>({ path: '', width: 1, height: 1, near: 0, press: 0, intensity: clock.strength, material:clock.material, focus: false, version: 0, mode:'flat', light: { x: 0, y: 0, z: 620 } });
 
   useLayoutEffect(() => {
+    const balanced=acquireBalancedOptics();
     let animating = false, pointerRevision = -1, layoutRevision = -1, lastReduced = clock.reduced;
     let lastOptics: GlassOpticsMode | undefined, failedOptics = false;
     type SceneJob={frame:Frame;input:BackdropOpticsInput;scale:number;geometry?:ThumbGeometry;epoch:number};
@@ -87,7 +94,9 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
       const rect = host.current.getBoundingClientRect();
       if (!(rect.width > 0 && rect.height > 0)) return false;
       const registered = sceneRef.current;
-      const mode = !failedOptics && registered?.ready && requestedOptics !== 'flat' && requestedOptics !== 'native' ? 'scene' : resolveGlassOptics(failedOptics ? 'native' : requestedOptics);
+      const pendingRaster=requestedOptics==='auto'&&registered?.rasterExpected&&!registered.raster;
+      const nativeHost=requestedOptics==='auto'&&(!registered||!registered.rasterExpected)&&!contourRef.current;
+      const mode = externalSceneRef.current ? 'native' : !failedOptics&&registered?.raster&&requestedOptics==='auto'&&!contourRef.current?'balanced':pendingRaster||nativeHost?resolveGlassOptics('native'):!failedOptics && registered?.ready && requestedOptics !== 'flat' && requestedOptics !== 'native' ? 'scene' : resolveGlassOptics(failedOptics ? 'native' : requestedOptics);
       if(lastMode!==mode){lastMode=mode;epoch++;queued=null;}
       const x = clock.pointer.x, y = clock.pointer.y;
       // Anchored thumbs use a resting reference box. Their hover deformation
@@ -145,10 +154,15 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
         if (displaced && !engine.current) engine.current = createBackdropOptics();
         if (!displaced && engine.current) { engine.current.destroy(); engine.current = null; }
         const input:BackdropOpticsInput={ path, width:width*scale, height:height*scale, camera: { x: width / 2, y: height / 2 + 8/scale, zoom: scale }, light: {x:0,y:0,z:620}, channels:'rg', version };
-        const origin = mode === 'scene' ? registered?.bounds() : undefined;
+        const origin = mode === 'scene'||mode==='balanced' ? registered?.bounds() : undefined;
         const source = origin && registered ? {id:registered.id,x:rect.left-origin.left,y:rect.top-origin.top}:undefined;
         const frame:Frame={ path, width, height, near: m.near, press: m.press, intensity, material:clock.material, focus: focused.current, version, mode, source, light };
-        if(mode==='scene'&&!immediateScene){
+        if(mode==='balanced'&&registered?.raster&&balancedCanvas.current&&origin){
+          const channel=(value:number)=>Math.round(Math.max(0,Math.min(255,value)));
+          const rim={color:`rgb(${channel(255-20*clock.material.specularSaturation)},${channel(255-11*clock.material.specularSaturation)},255)`,opacity:Math.min(1,clock.material.specularOpacity/.65*((kind==='thumb'?.65:.40)+m.near*intensity*.10)),width:kind==='thumb'?1:.7};
+          balanced.render(balancedCanvas.current,registered.raster,{width,height,origin:{x:rect.left-origin.left,y:rect.top-origin.top},center:{x:shape.x,y:shape.y},half:{x:w/2,y:h/2},exponent:kind==='circle'?2:kind==='thumb'?2.4:3.4,path,material:clock.material,rim});
+          commit(frame,geometry);
+        }else if(mode==='scene'&&!immediateScene){
           // Preparing optics must not delay native focus, editing or pointer
           // ownership. The initial fallback already has the exact hit contour.
           if(!committed.current||committed.current.mode!=='scene')commit({...frame,mode:'native',source:undefined},geometry);
@@ -174,16 +188,28 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
       if (visible.current) { dirty.current = true; clock.wake(); }
     });
     if (host.current) intersection?.observe(host.current);
+    drawAtCommittedPosition.current=draw;
     const unsubscribe = clock.subscribe(draw);
     const release = (event:Event) => { if('isPrimary' in event && event.isPrimary===false)return; if (pressed.current) { pressed.current = false; dirty.current = true; clock.wake(); } };
     window.addEventListener('pointerup', release); window.addEventListener('pointercancel', release); window.addEventListener('blur', release);
-    return () => { alive=false;queued=null;observer.disconnect(); intersection?.disconnect(); unsubscribe(); window.removeEventListener('pointerup', release); window.removeEventListener('pointercancel', release); window.removeEventListener('blur', release); engine.current?.destroy(); engine.current = null; };
+    return () => { drawAtCommittedPosition.current=null;alive=false;queued=null;observer.disconnect(); intersection?.disconnect(); unsubscribe(); window.removeEventListener('pointerup', release); window.removeEventListener('pointercancel', release); window.removeEventListener('blur', release); engine.current?.destroy(); engine.current = null;balanced.release(); };
   }, [clock, kind]);
   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [disabled, selected, optics, clock]);
+  useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [externalScene, clock]);
   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [contour, clock]);
   useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [scene?.revision, scene?.ready, scene?.id, clock]);
+  useLayoutEffect(() => {dirty.current=true;clock.wake()},[scene?.raster?.version,clock]);
   useLayoutEffect(() => { if (interaction) { pressed.current = interaction.pressed; focused.current = interaction.focused; dirty.current = true; clock.wake(); } }, [interaction?.pressed, interaction?.focused, clock]);
-  useLayoutEffect(() => { dirty.current = true; clock.wake(); }, [interaction?.position, clock]);
+  useLayoutEffect(() => {
+    const rect=host.current?.getBoundingClientRect();
+    if(committed.current?.mode==='balanced'&&rect&&Math.abs(rect.x-lastPosition.current.x)<=.05&&Math.abs(rect.y-lastPosition.current.y)<=.05)return;
+    dirty.current = true;
+    // A host translation may commit after this frame's shared clock callback.
+    // Sample the committed DOM position before paint, so a moved canvas never
+    // presents background pixels captured at the previous position.
+    if(sceneRef.current?.raster&&(opticsRef.current??clock.optics)==='auto'&&!contourRef.current)drawAtCommittedPosition.current?.(0);
+    clock.wake();
+  }, [interaction?.position, clock]);
   useLayoutEffect(()=>{
     // Async normals may finish after the host has moved. Register the live
     // source before paint, also after B endpoint compensation or a free drag.
@@ -228,7 +254,7 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
   const ready = !!visual.path && (!(visual.mode === 'svg' || visual.mode === 'scene') || !!visual.map);
   const backdrop = visual.mode === 'svg' ? `url(#${key}-refraction)` : visual.mode === 'native' ? `blur(${material.blurLevel + material.progressiveBlur * .35}px) saturate(${1 + material.specularSaturation * .08})` : 'none';
   return <div ref={host} className={`liquid-unit ${className}`} data-local-glass={id} data-optical-ready={ready} data-optical-error={error || undefined}
-    data-optical-mode={visual.mode} data-optical-compute-ms={visual.map?.computeMs.toFixed(3)} data-geometry-version={visual.version} data-proximity={visual.near.toFixed(4)} data-pressure={visual.press.toFixed(4)} data-refraction-strength={strength.toFixed(3)} data-strength={visual.intensity}>
+    data-optical-mode={externalScene?'scene-continuous':visual.mode} data-optical-profile={visual.mode==='balanced'?'B':undefined} data-optical-compute-ms={visual.map?.computeMs.toFixed(3)} data-geometry-version={visual.version} data-proximity={visual.near.toFixed(4)} data-pressure={visual.press.toFixed(4)} data-refraction-strength={externalScene||visual.mode==='balanced'?undefined:strength.toFixed(3)} data-magnification={externalScene||visual.mode==='balanced'?(1+material.refractionLevel/6).toFixed(4):undefined} data-strength={visual.intensity}>
     <svg className="local-optical-defs" width={visual.width} height={visual.height} aria-hidden="true">
       <defs>
         <linearGradient id={`${key}-flat`} x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stopColor="#FFFFFF" stopOpacity=".38"/><stop offset=".52" stopColor="var(--ax-glass-fill, #F0F2FF)" stopOpacity=".16"/><stop offset="1" stopColor="var(--ax-progress-end, #A092D8)" stopOpacity=".14"/></linearGradient>
@@ -269,14 +295,15 @@ export function LiquidControl({ id, clock, children, className = '', kind = 'but
         </filter>
       </defs>
     </svg>
+    <canvas ref={balancedCanvas} className="local-balanced" aria-hidden="true" style={{position:'absolute',inset:0,width:'100%',height:'100%',pointerEvents:'none',visibility:visual.mode==='balanced'?'visible':'hidden'}}/>
     <svg className="local-shadow" width={visual.width} height={visual.height} aria-hidden="true"><path d={visual.path} fill="#FFFFFF" filter={`url(#${key}-shadow)`}/></svg>
-    {ready && visual.mode !== 'flat' && visual.mode !== 'scene' && <div className="local-backdrop" style={{ clipPath: `path('${visual.path}')`, backdropFilter: backdrop, WebkitBackdropFilter: backdrop }}/>}
-    {ready && visual.mode === 'scene' && visual.source && <svg data-controlled-transmission={visual.source.id} width={visual.width} height={visual.height} aria-hidden="true" style={{position:'absolute',inset:0,pointerEvents:'none',overflow:'hidden',clipPath:`path('${visual.path}')`}}>
+    {!externalScene && ready && visual.mode !== 'flat' && visual.mode !== 'scene' && visual.mode!=='balanced' && <div className="local-backdrop" style={{ clipPath: `path('${visual.path}')`, backdropFilter: backdrop, WebkitBackdropFilter: backdrop }}/>}
+    {!externalScene && ready && visual.mode === 'scene' && visual.source && <svg data-controlled-transmission={visual.source.id} width={visual.width} height={visual.height} aria-hidden="true" style={{position:'absolute',inset:0,pointerEvents:'none',overflow:'hidden',clipPath:`path('${visual.path}')`}}>
       <g filter={`url(#${key}-refraction)`}><use ref={transmitted} href={`#${visual.source.id}`} transform={`translate(${-visual.source.x} ${-visual.source.y})`}/></g>
     </svg>}
     <svg className="local-edge" width={visual.width} height={visual.height} aria-hidden="true">
-      {visual.mode !== 'svg' && visual.mode !== 'scene' && <path d={visual.path} fill={`url(#${key}-flat)`}/>}
-      <path d={visual.path} fill="var(--ax-glass-fill, #F0F2FF)" fillOpacity={Math.min(1,material.glassOpacity+(selected?.04:0))} stroke={mirrorTint} strokeOpacity={Math.min(1,mirrorGain*((kind==='thumb'?.65:.40) + near * .10))} strokeWidth={kind==='thumb'?1:'.7'}/>
+      {!externalScene && visual.mode !== 'svg' && visual.mode !== 'scene' && visual.mode!=='balanced' && <path d={visual.path} fill={`url(#${key}-flat)`}/>}
+      <path d={visual.path} fill="var(--ax-glass-fill, #F0F2FF)" fillOpacity={Math.min(1,material.glassOpacity+(selected?.04:0))} stroke={visual.mode==='balanced'?'none':mirrorTint} strokeOpacity={Math.min(1,mirrorGain*((kind==='thumb'?.65:.40) + near * .10))} strokeWidth={kind==='thumb'?1:'.7'}/>
       <path d={visual.path} fill="#FFFFFF" filter={`url(#${key}-edge)`}/>
       {(selected || visual.focus) && <path data-focus-outline={visual.focus} d={visual.path} fill="none" stroke={visual.focus ? 'var(--ax-focus, #6F82BB)' : 'var(--ax-selection, #929BCD)'} strokeWidth={visual.focus ? 1.6 : 1} strokeOpacity={visual.focus ? .8 : .48}/>}
     </svg>

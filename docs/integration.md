@@ -2,6 +2,8 @@
 
 本包将 v6 小样的组件与设计规则抽取成独立项目；不携带完整 Agent 业务、对话历史或主页面导航。当前目标是 React 19、TypeScript 与 Vite。消费项目能运行，并不代表它的背景、字体、浏览器和长文本已经视觉验收。
 
+本地交付包 `1.5.0-agent.1` 包含用户选定的 B 方案和已查看的零模糊边缘修复。Canvas 注册源、滑块／开关默认轨道、`GlassPanel` 与降级策略见 [B 接入契约](balanced-optics.md)。Agent 的安装方式、入口选择及现有适配层的迁移边界见 [Agent 接入指南](agent-integration.md)。
+
 ## 包入口与生命周期
 
 实际公开入口为 `@alvenx/liquid-glass`，样式为 `@alvenx/liquid-glass/styles.css`；可选本地字体入口为 `@alvenx/liquid-glass/fonts.css`。根容器使用 `.alvenx-design`，避免全局覆盖宿主页面。当前导出、类型和资源路径已经过独立消费项目的安装、构建及浏览器检查，实际签名可查看随包 `dist/index.d.ts`。

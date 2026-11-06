@@ -8,6 +8,18 @@ export const SHOWCASE_LANGUAGE_STORAGE_KEY = 'alvenx-showcase-language-v1';
  * Language selection belongs to the showcase, independently of material settings.
  * Deliberately do not infer language from the browser or the operating system. */
 export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
+  'Published source':'已发布的源码',
+  'READ AND WRITE':'阅读与书写',
+  'A quiet center. A rounded edge.':'中央平缓，边缘圆润。',
+  'Show background grid':'显示背景网格',
+  'Background bends at the edge. Your text, caret and selection stay clear.':'背景在边缘弯折，文字、光标与选区保持清晰。',
+  'Multiline editor':'多行编辑器',
+  'Reading panel':'阅读面板',
+  'Room to read.':'自在阅读。',
+  'End of the reading sample.':'阅读示例结束。',
+  'A broad, quiet surface leaves room for your words. The background bends near the rounded edge while native text stays clear and editable.':'宽阔而安静的表面，为文字留出空间。背景在圆润边缘附近弯折，原生文字始终清晰，可以正常选择和编辑。',
+  'Local validation':'本地验证版本',
+  'Large forms use a 2.5D lighting environment. B controls sample an explicit registered scene. Native editing stays above the optical layer. Unsupported graphics use native blur or a flat fallback. Physical iPhone and iPad acceptance remains separate.':'大型形体使用 2.5D 光照近似。B 控件采样明确注册的场景，原生编辑位于光学层上方。图形能力不足时降级为原生模糊或平面背景，实际 iPhone 与 iPad 验收仍需单独进行。',
   'Choose language': '选择语言',
   'Language': '语言',
   'Showcase language': '展示页语言',
