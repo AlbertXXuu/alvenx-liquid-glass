@@ -6,11 +6,11 @@ Full pearl volumes, refractive controls, and continuous motion. An independent R
 
 **Local Agent reuse package:** `1.5.0-agent.1` packages the selected B renderer and the zero-blur edge correction the owner reviewed in `4bda813`. It exposes the existing renderer and geometry helpers already used by the Agent vendor fork. Install the local tarball and use the [Agent integration guide](docs/agent-integration.md). See [B integration and limits](docs/balanced-optics.md) for the registered-scene contract.
 
-**[Explore the live showcase](https://alvenx.com/ui/)** · [Design language](docs/design-language.md) · [Integration guide](docs/integration.md) · [Performance comparison](https://alvenx.com/ui/docs/hover-comparison.html)
+**[Explore the live showcase](https://alvenx.com/ui/)** · [Design record](docs/design-record.md) · [Design language](docs/design-language.md) · [Integration guide](docs/integration.md) · [Performance comparison](https://alvenx.com/ui/docs/hover-comparison.html)
 
 [![The live AlvenX pearl volume and glass controls](public/social-preview.png)](https://alvenx.com/ui/)
 
-**Last verified publication:** The [homepage](https://alvenx.com/) uses **1.4.3 VolumeBuddingLink**. The [homepage publication record](docs/releases/1.4.3/README.md) identifies the installed package and validation. The [showcase](https://alvenx.com/ui/) uses the independently pinned [2026-10-29 copy and reveal source](docs/reviews/2026-10-29/copy-reveal/README.md).
+**Design archive:** [`ui-assets-20261125`](https://github.com/AlbertXXuu/alvenx-liquid-glass/releases/tag/ui-assets-20261125) fixes the design record, interactive showcase source and public reproduction evidence together. The [showcase design record](https://alvenx.com/ui/#asset-record) is the browser reading entry. The [homepage publication record](docs/releases/1.4.3/README.md) documents the independently pinned **1.4.3 VolumeBuddingLink**.
 
 The [R6 startup review](docs/reviews/2026-10-22/budding-entry/r6/publication.md) and [R7 continuous-material review](docs/reviews/2026-10-22/budding-entry/r7/publication.md) preserve the owner-accepted [R5 curved chamber](docs/reviews/2026-10-22/budding-entry/r5/publication.md). Their first frame, shader readiness, reversible toggle and mobile-edge correction were promoted into 1.4.0. Static visibility is distinct from live material readiness; no literal zero delay is claimed. Physical iOS experience remains separate from browser emulation.
 
@@ -35,6 +35,8 @@ npm run dev
 
 Open `http://127.0.0.1:5174/`. Drag the sliders beyond their endpoints, re-grab during the return, move the lens across text, and edit the material values directly. Reset restores the material defaults, including **glass background opacity 0.3**. Both blur ranges remain **0–6 px**.
 
+In **Components → Text refraction**, edit the text directly in the scene and drag the glass over it, or move the glass with the arrow keys. On the validated Chromium path, the lens uses bilinear sampling to displace a scene raster based on the native input's measured layout and the current stage lighting. The [text lens implementation and rollout notes](docs/text-lens.md) cover the cubic contour and timing, fallback, browser checks, and static `/ui/` build.
+
 ## What is included
 
 - `BuddingLink`: one continuous mother/neck/chamber, native reveal/link semantics and real layout growth.
@@ -46,7 +48,7 @@ Open `http://127.0.0.1:5174/`. Drag the sliders beyond their endpoints, re-grab 
 - `ControlledScene` and `ControlledSource`: opt-in shared SVG sources for displacement inside a lens, including engines where SVG backdrop displacement is unavailable.
 - Scoped CSS, blue/indigo/violet tokens, canonical AlvenX assets, Instrument Sans and MiSans with their individual licenses.
 
-Large forms use an analytic 2.5D environment approximation. Small glass controls can refract the actual browser backdrop where supported. The current showcase instead demonstrates an explicitly registered SVG scene: the visible background and its lens share the same source. This is real displacement of that source, without arbitrary DOM backdrop capture. Text and native fields outside the lens remain clear and selectable. See the [compatibility contract](docs/compatibility.md).
+Large forms use an analytic 2.5D environment approximation. Small glass controls can refract the actual browser backdrop where supported. Components can also use explicitly registered SVG or Canvas scenes. The text refraction study retains a native input and registers its current text and stage lighting for the transmission layer. See the [compatibility contract](docs/compatibility.md).
 
 ## Use in another React project
 

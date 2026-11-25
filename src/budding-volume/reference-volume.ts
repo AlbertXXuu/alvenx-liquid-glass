@@ -187,9 +187,9 @@ export function createReferenceVolume(canvas:HTMLCanvasElement,width:number,heig
   profile=gl.createTexture();gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,profile);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,profileColumns,1,0,gl.RGBA,gl.UNSIGNED_BYTE,profilePixels);
   position=gl.getAttribLocation(program,'a_position');uniforms=Object.fromEntries(names.map(name=>[name,gl.getUniformLocation(program,`u_${name}`)]));
   status='ready';canvas.dataset.volumePreparation=status;return false;
- },draw(path:string,growth:number,material:MaterialParameters,transform:ReviewBuddingTransform={},ambientTime=0,lighting:ReviewLighting=restingLight){
+ },draw(path:string,growth:number,material:MaterialParameters,transform:ReviewBuddingTransform={},ambientTime=0,lighting:ReviewLighting=restingLight,studioLight?:{x:number;y:number}){
   if(status!=='ready'||destroyed)return;
-  const key=path+JSON.stringify([material,transform,lighting,ambientTime]);if(key===previous)return;previous=key;
+  const key=path+JSON.stringify([material,transform,lighting,ambientTime,studioLight]);if(key===previous)return;previous=key;
   const start=performance.now();gl.viewport(0,0,w,h);gl.useProgram(program);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
   gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,profile);gl.uniform1i(uniforms.review_profile,0);
   if(path!==previousProfile){fillProfile(path,width,height,profilePixels,profileTop,profileBottom);gl.texSubImage2D(gl.TEXTURE_2D,0,0,0,profileColumns,1,gl.RGBA,gl.UNSIGNED_BYTE,profilePixels);previousProfile=path;}
@@ -201,7 +201,7 @@ export function createReferenceVolume(canvas:HTMLCanvasElement,width:number,heig
   const t=Math.max(0,Math.min(1,(g-.75)/.20)),splitMix=t*t*t*(t*(t*6-15)+10);
   const splitStart=joinedStart+(detachedStart-joinedStart)*splitMix,splitEnd=joinedEnd+(detachedEnd-joinedEnd)*splitMix;
   gl.uniform2f(uniforms.review_light_split,splitStart,splitEnd);
-  gl.uniform2f(uniforms.light,.22,.08);gl.uniform2f(uniforms.parent_stretch,1,1);gl.uniform2f(uniforms.child_stretch,1.15,1);gl.uniform2f(uniforms.deform_point,500,280);gl.uniform2f(uniforms.deform_amount,0,0);gl.uniform2f(uniforms.studio_rotation,1,0);
+  gl.uniform2f(uniforms.light,studioLight?.x??.22,studioLight?.y??.08);gl.uniform2f(uniforms.parent_stretch,1,1);gl.uniform2f(uniforms.child_stretch,1.15,1);gl.uniform2f(uniforms.deform_point,500,280);gl.uniform2f(uniforms.deform_amount,0,0);gl.uniform2f(uniforms.studio_rotation,1,0);
   for(const [name,value] of Object.entries({curvature:reviewChamberExponent,growth,edge:0,flat:0,grid:0,time:ambientTime,studio_motion:1,specular_opacity:material.specularOpacity,specular_saturation:material.specularSaturation,refraction_level:material.refractionLevel,blur_level:material.blurLevel/(diameter/300),progressive_blur:material.progressiveBlur/(diameter/300),glass_opacity:material.glassOpacity}))gl.uniform1f(uniforms[name],value);
   if(renders===0)canvas.dataset.volumeReveal=growth===0?'instant':'blend';
   gl.drawArrays(gl.TRIANGLES,0,3);renders++;const ms=performance.now()-start;total+=ms;

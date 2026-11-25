@@ -1,0 +1,121 @@
+{
+  "assertions": 25,
+  "results": [
+    {
+      "cycle": 0,
+      "before": {
+        "draws": 9,
+        "uploads": 5,
+        "blurPasses": 20,
+        "contexts": 1,
+        "disposed": 0,
+        "clients": 9,
+        "cachePixels": 5443776,
+        "peakCachePixels": 5443776,
+        "copyFailures": 0,
+        "profile": "B",
+        "maxCachePixels": 8000000,
+        "maxSourcePixels": 3000000,
+        "maxOutputPixels": 2000000
+      },
+      "after": {
+        "draws": 13,
+        "uploads": 5,
+        "blurPasses": 20,
+        "contexts": 1,
+        "disposed": 1,
+        "clients": 0,
+        "cachePixels": 0,
+        "peakCachePixels": 5443776,
+        "copyFailures": 0,
+        "profile": "B",
+        "maxCachePixels": 8000000,
+        "maxSourcePixels": 3000000,
+        "maxOutputPixels": 2000000
+      },
+      "host": {
+        "font": "serif",
+        "color": "rgb(80, 40, 100)",
+        "size": "20px"
+      }
+    },
+    {
+      "cycle": 1,
+      "before": {
+        "draws": 18,
+        "uploads": 10,
+        "blurPasses": 40,
+        "contexts": 2,
+        "disposed": 1,
+        "clients": 9,
+        "cachePixels": 5443776,
+        "peakCachePixels": 5443776,
+        "copyFailures": 0,
+        "profile": "B",
+        "maxCachePixels": 8000000,
+        "maxSourcePixels": 3000000,
+        "maxOutputPixels": 2000000
+      },
+      "after": {
+        "draws": 22,
+        "uploads": 10,
+        "blurPasses": 40,
+        "contexts": 2,
+        "disposed": 2,
+        "clients": 0,
+        "cachePixels": 0,
+        "peakCachePixels": 5443776,
+        "copyFailures": 0,
+        "profile": "B",
+        "maxCachePixels": 8000000,
+        "maxSourcePixels": 3000000,
+        "maxOutputPixels": 2000000
+      },
+      "host": {
+        "font": "serif",
+        "color": "rgb(80, 40, 100)",
+        "size": "20px"
+      }
+    },
+    {
+      "cycle": 2,
+      "before": {
+        "draws": 27,
+        "uploads": 15,
+        "blurPasses": 60,
+        "contexts": 3,
+        "disposed": 2,
+        "clients": 9,
+        "cachePixels": 5443776,
+        "peakCachePixels": 5443776,
+        "copyFailures": 0,
+        "profile": "B",
+        "maxCachePixels": 8000000,
+        "maxSourcePixels": 3000000,
+        "maxOutputPixels": 2000000
+      },
+      "after": {
+        "draws": 31,
+        "uploads": 15,
+        "blurPasses": 60,
+        "contexts": 3,
+        "disposed": 3,
+        "clients": 0,
+        "cachePixels": 0,
+        "peakCachePixels": 5443776,
+        "copyFailures": 0,
+        "profile": "B",
+        "maxCachePixels": 8000000,
+        "maxSourcePixels": 3000000,
+        "maxOutputPixels": 2000000
+      },
+      "host": {
+        "font": "serif",
+        "color": "rgb(80, 40, 100)",
+        "size": "20px"
+      }
+    }
+  ],
+  "errors": [],
+  "at": "2026-10-31T09:37:58.128Z"
+}

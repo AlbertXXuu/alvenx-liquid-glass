@@ -9,12 +9,40 @@ export type VolumeGeometry = {
 type Point = [number, number];
 const clamp = (value: number, minimum: number, maximum: number) => Math.min(maximum, Math.max(minimum, value));
 
+function childShape(geometry: VolumeGeometry, g: number) {
+  const ease = g * g * (3 - 2 * g), size = g ** .85;
+  return {cx: 373 + 317 * ease, rx: Math.max(.1, 255 * clamp(geometry.childX, .85, 1.15) * size),
+    ry: Math.max(.1, 210 * clamp(geometry.childY, .85, 1.15) * size), exponent: 2 + (clamp(geometry.curvature, 2, 5.2) - 2) * ease};
+}
+
+/** The right lobe's projected logical bounds, including the current bounded pull. */
+export function volumeChamberBounds(geometry: VolumeGeometry, growth: number) {
+  const {cx, rx, ry, exponent} = childShape(geometry, clamp(growth, 0, 1));
+  const dx = clamp(geometry.deformDX, -32, 32), dy = clamp(geometry.deformDY, -32, 32);
+  if (!(dx || dy)) return {left: cx - rx, top: 280 - ry, right: cx + rx, bottom: 280 + ry};
+  const deformX = clamp(geometry.deformX, -100, 1100), deformY = clamp(geometry.deformY, -100, 660);
+  let left = Infinity, top = Infinity, right = -Infinity, bottom = -Infinity;
+  for (let i = 0; i < 128; i++) {
+    const angle = i * Math.PI / 64, u = Math.cos(angle), v = Math.sin(angle);
+    const norm = (Math.abs(u) ** exponent + Math.abs(v) ** exponent) ** (1 / exponent);
+    const sourceX = cx + rx * u / norm, sourceY = 280 + ry * v / norm;
+    let x = sourceX, y = sourceY;
+    // Invert the bounded, injective Gaussian deformation used by the shader.
+    for (let j = 0; j < 8; j++) {
+      const weight = Math.exp(-((x - deformX) ** 2 + (y - deformY) ** 2) / 11025);
+      x = sourceX + dx * weight; y = sourceY + dy * weight;
+    }
+    left = Math.min(left, x); top = Math.min(top, y);
+    right = Math.max(right, x); bottom = Math.max(bottom, y);
+  }
+  return {left, top, right, bottom};
+}
+
 export function volumeCoverage(geometry: VolumeGeometry, growth: number) {
   // Match the renderer's public bounds before evaluating its field.
   const px = 150 * clamp(geometry.parentX, .85, 1.15), py = 150 * clamp(geometry.parentY, .85, 1.15);
-  const g = clamp(growth, 0, 1), ease = g * g * (3 - 2 * g), size = g ** .85;
-  const cx = 373 + 317 * ease, rx = Math.max(.1, 255 * clamp(geometry.childX, .85, 1.15) * size);
-  const ry = Math.max(.1, 210 * clamp(geometry.childY, .85, 1.15) * size), exponent = 2 + (clamp(geometry.curvature, 2, 5.2) - 2) * ease;
+  const g = clamp(growth, 0, 1);
+  const {cx, rx, ry, exponent} = childShape(geometry, g);
   const union = 24 + 136 * Math.sqrt(g);
   const dx = clamp(geometry.deformDX, -32, 32), dy = clamp(geometry.deformDY, -32, 32);
   const deformX = clamp(geometry.deformX, -100, 1100), deformY = clamp(geometry.deformY, -100, 660);

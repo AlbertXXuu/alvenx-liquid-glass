@@ -1,0 +1,129 @@
+{
+  "motion-before": {
+    "frames": 443,
+    "mismatched": 293,
+    "maxError": 17.528527250688377,
+    "slowFrames": 0,
+    "maxFrame": 13.400000000001455,
+    "copies": 90,
+    "maxCopy": 0.20000000018626451
+  },
+  "motion-after": {
+    "frames": 446,
+    "mismatched": 0,
+    "maxError": 0,
+    "slowFrames": 0,
+    "maxFrame": 3.5,
+    "copies": 88,
+    "maxCopy": 0.20000000018626451
+  },
+  "motion-after-webkit": {
+    "frames": 45,
+    "mismatched": 0,
+    "maxError": 0,
+    "slowFrames": 44,
+    "maxFrame": 34,
+    "copies": 45,
+    "maxCopy": 1
+  },
+  "font-recovery-chromium": {
+    "before": "flat",
+    "after": "balanced",
+    "failedRequests": 4,
+    "continuedAttempts": 4,
+    "restoreMs": 9679,
+    "loads": 1,
+    "draft": "keep my draft",
+    "sourceError": null,
+    "errors": [],
+    "idle": true
+  },
+  "font-recovery-webkit": {
+    "before": "native",
+    "after": "balanced",
+    "failedRequests": 4,
+    "continuedAttempts": 4,
+    "restoreMs": 9553,
+    "loads": 1,
+    "draft": "keep my draft",
+    "sourceError": null,
+    "errors": [],
+    "idle": true
+  },
+  "version": "1.5.0-local.1",
+  "installedConsumer": {
+    "status": "passed",
+    "consumer": "historical-temp/alvenx-glass-consumer-woo9Od",
+    "tarball": "historical-local/alvenx-design-kit/releases/alvenx-liquid-glass-1.5.0-local.1.tgz",
+    "tarballSHA256": "a5df024119903ed0a88cdb5bcd07b345e2540d8ab8978eaed033b5a32187cc81",
+    "commands": [
+      {
+        "command": "npm install --ignore-scripts --no-audit --no-fund",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run check",
+        "exitCode": 0
+      },
+      {
+        "command": "npm run build",
+        "exitCode": 0
+      }
+    ],
+    "note": "Fresh temporary directory outside original repository; own node_modules and types/build; browser smoke is reported separately."
+  },
+  "scope": "Targeted transient-font and registered-scene translation regression; no publication/deployment.",
+  "testEnvironment": "Chromium CLI; existing Windows WebKit revision2342 via explicit executable override. Default CLI WebKit2368 was unavailable.",
+  "limitations": "Frame intervals are test-run observations, not a display FPS certification. Font requests were aborted and unblocked in one document; the attempted in-script real-service controller could not run because the CLI VM does not expose dynamic Node imports.",
+  "evidence": [
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/motion.cjs",
+      "sha256": "0c0e3f9878063ce21bceddad96064e2a2df9e04d27d98f28339188da77235310"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/font-recovery.cjs",
+      "sha256": "1ad3c0ca081755efd1242f252b8d874d72001222781f64dacc5c6080deb27b79"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/motion-before.txt",
+      "sha256": "3d1ad769e558908921777017e2dd4d720ae49e4beb452228d797653a592c0d22"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/motion-after.txt",
+      "sha256": "2ef0138d39855986030edf2648abcc9807ae49de7253d69252f63377b126bb2e"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/motion-after-webkit.txt",
+      "sha256": "b029b5b3ab0038f1589b141af81cd196e43652eb879ef3399a555f9e10bc5ad1"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/font-recovery-chromium.txt",
+      "sha256": "9c96cd0de120a24348814b9dfe12ea823ff886484ec85bfd67b32df4b201a7ea"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/font-recovery-webkit.txt",
+      "sha256": "9a1f9c15d6eaa3953a4dfa5c0a5f636ea8637b6452b1e56c30b4890dfcdaa150"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/build.log",
+      "sha256": "1b34d8203bec8cc390fa35717b40ddb25e969255d5eda1bdcb2cb4ec7c8a67d2"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/runtime.log",
+      "sha256": "64ae8e365745656a4b6356a856861665f4301e77310cd7283dfc446786140e20"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/contract.log",
+      "sha256": "1710a55b0e947919a9a1d7b83d2d638a9c6b73c9d6d45c3e44e50d40228547a9"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/installed-consumer.json",
+      "sha256": "678bac1ec7d3b37c7004a72e602cff6f1b65b0b476e7e7318b22dae047f186a4"
+    },
+    {
+      "path": "historical-local/output/playwright/b-recovery-20261104/auto-restored.png",
+      "sha256": "1830db34ca6562f6670af969b2101d62dcd738739c8e08ddc82436300e78e835"
+    }
+  ],
+  "installedFilesMatched": 303
+}

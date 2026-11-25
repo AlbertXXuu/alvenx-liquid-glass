@@ -1,9 +1,9 @@
 import { forwardRef, useId, useImperativeHandle, useLayoutEffect, useRef, useState, type PointerEvent, type ReactNode } from 'react';
-import type { GlassClock } from './GlassClock';
+import { studioLightDirection, type GlassClock } from './GlassClock';
 import type { ReviewSettings } from './reviewSettings';
 import { createGlassPreview } from './volume-renderer.js';
 import { volumeFallbackPath } from './volume-fallback';
-import { volumeHitContour } from './volume-hit-geometry';
+import { volumeChamberBounds, volumeHitContour } from './volume-hit-geometry';
 
 type Renderer = { render(options: Record<string, unknown>, budget?: { maxPixels?: number; maxDpr?: number }): void; destroy(): void };
 const resting = () => ({ parentX: 1, parentY: 1, childX: 1, childY: 1, deformX: 500, deformY: 280, deformDX: 0, deformDY: 0, curvature: 3.2 });
@@ -29,13 +29,15 @@ export type VolumeStageProps = {
    * compact-integrated below 900px, otherwise wide-integrated. The original
    * horizontal geometry and the same foreground DOM persist in every mode. */
   responsive?: boolean;
+  /** Expose the projected right-chamber bounds to an opted-in foreground. */
+  foregroundAnchor?: 'chamber';
 };
 
 /** The approved 2.5D volume study, not refraction of arbitrary DOM content.
  * Local controls use their own actual CSS backdrop optics. The caller owns
  * the shared clock, settings, and foreground content. */
 export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(function VolumeStage(
-  { clock, settings, children, className = '', ariaLabel = 'AlvenX volume stage', onPlayingChange, autoPlay = false, renderBudget, studioMotion = false, responsive = false }, ref,
+  { clock, settings, children, className = '', ariaLabel = 'AlvenX volume stage', onPlayingChange, autoPlay = false, renderBudget, studioMotion = false, responsive = false, foregroundAnchor }, ref,
 ) {
   const canvas = useRef<HTMLCanvasElement>(null), stage = useRef<HTMLElement>(null), foreground = useRef<HTMLDivElement>(null);
   const hitSurface = useRef<HTMLDivElement>(null), hitKey = useRef('');
@@ -48,6 +50,9 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
   const budget = useRef(renderBudget); budget.current = renderBudget;
   const studio = useRef(studioMotion); studio.current = studioMotion;
   const responsiveEnabled = useRef(responsive); responsiveEnabled.current = responsive;
+  const chamberAnchor = useRef(foregroundAnchor); chamberAnchor.current = foregroundAnchor;
+  const camera = useRef({width: 0, height: 0, scale: 0});
+  const chamberKey = useRef('');
   const layoutRef = useRef<'overview' | 'compact-integrated' | 'wide-integrated'>('wide-integrated');
   const [layout, setLayout] = useState(layoutRef.current);
   const fallbackId = useId().replace(/:/g, '');
@@ -78,14 +83,31 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     surface.style.clipPath = `path('${volumeHitContour(state.current, state.growth).path}')`;
   }
   function syncHitCamera(width: number, height: number) {
-    if (hitSurface.current && width > 0 && height > 0) hitSurface.current.style.transform = `translate(-50%, -50%) scale(${Math.min(width / 1000, height / 560)})`;
+    if (!(width > 0 && height > 0)) return;
+    const scale = Math.min(width / 1000, height / 560);
+    camera.current = {width, height, scale};
+    if (hitSurface.current) hitSurface.current.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    if (chamberAnchor.current) syncForeground();
   }
   function syncForeground() {
     const element = foreground.current;
     if (!element) return;
     // The overview's independent content panel does not grow with the shape.
     const state = simulation.current;
-    const visible = layoutRef.current === 'overview' || state.failed || state.growth > .92;
+    const anchor = chamberAnchor.current;
+    const visible = (!anchor && layoutRef.current === 'overview') || state.failed || state.growth > .92;
+    const {width, height, scale} = camera.current;
+    if (anchor && visible && scale > 0) {
+      const key = JSON.stringify([width, height, state.growth, ...Object.values(state.current)]);
+      if (chamberKey.current !== key) {
+        chamberKey.current = key;
+        const {left, top, right, bottom} = volumeChamberBounds(state.current, state.growth);
+        element.style.setProperty('--volume-chamber-x', `${width / 2 + ((left + right) / 2 - 500) * scale}px`);
+        element.style.setProperty('--volume-chamber-top', `${height / 2 + (top - 280) * scale}px`);
+        element.style.setProperty('--volume-chamber-width', `${(right - left) * scale}px`);
+        element.style.setProperty('--volume-chamber-height', `${(bottom - top) * scale}px`);
+      }
+    }
     // Expose reveal progress without changing the foreground backdrop root.
     // Only consumers that opt in through a child style use this value.
     const progress = state.failed || clock.reduced ? 1 : Math.max(0, Math.min(1, (state.growth - .92) / .08));
@@ -185,9 +207,8 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       }
       if (changed) {
         syncHitSurface();
-        const angle = clock.reduced ? 0 : state.time * Math.PI * 2 / 48;
-        const lightX = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.cos(angle) + .25 * Math.sin(angle))) : .22;
-        const lightY = studio.current ? Math.max(0, Math.min(1, .5 - .28 * Math.sin(angle) - .42 * Math.cos(angle))) : .08;
+        const light = studio.current ? clock.studioLight?.direction ?? studioLightDirection(clock.reduced ? 0 : state.time) : {x: .22, y: .08};
+        const lightX = light.x, lightY = light.y;
         renderer.current?.render({ edge: 'pearl', flat: false, lightX, lightY, studioMotion: studio.current, showGrid: false, growth: state.growth, time: state.time, ...state.current, ...clock.material }, budget.current);
         if (stage.current) {
           stage.current.dataset.growth = state.growth.toFixed(4);
@@ -248,7 +269,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
       measureLayout(width); syncHitCamera(width, height);
     }
     simulation.current.dirty = true; clock.wake();
-  }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive, autoPlay]);
+  }, [clock, renderBudget?.maxPixels, renderBudget?.maxDpr, studioMotion, responsive, autoPlay, foregroundAnchor]);
 
   useLayoutEffect(syncForeground, [layout]);
 
@@ -323,7 +344,7 @@ export const VolumeStage = forwardRef<VolumeStageHandle, VolumeStageProps>(funct
     startPlayback();
   } }), [clock]);
 
-  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth={simulation.current.growth.toFixed(4)}
+  return <div className={`stage-scroll${responsive ? ' is-responsive' : ''}`} data-layout={layout} data-foreground-anchor={foregroundAnchor}><section className={`stage${responsive ? ' is-responsive' : ''} ${className}`.trim()} data-layout={layout} ref={stage} aria-label={ariaLabel} data-growth={simulation.current.growth.toFixed(4)}
     onPointerMove={event => respond(event)} onPointerDown={event => { if (event.button === 0 && event.isPrimary && !drag.current) respond(event, true); }}
     onPointerUp={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}
     onPointerCancel={event => { if (drag.current?.pointerId === event.pointerId) cancelDrag(); }}

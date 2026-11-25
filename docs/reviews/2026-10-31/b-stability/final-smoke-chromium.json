@@ -1,0 +1,16 @@
+{
+  "assertions": 16,
+  "results": [
+    {
+      "engine": "chromium",
+      "width": 1365,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 320,
+      "errors": []
+    }
+  ],
+  "at": "2026-10-31T09:35:43.060Z"
+}

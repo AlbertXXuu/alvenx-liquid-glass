@@ -90,7 +90,7 @@ export function ShowcaseBudding({clock,id,href,ambient,destinationText,toggleLab
   const flush=()=>{
    const path=displayed?.querySelector('path')?.getAttribute('d'),frame=path?materialFrames.current.get(path):undefined;
    if(!path||!frame)return;
-   volumeRenderer.current?.draw(path,frame.growth,clock.material,frame.transform,ambientTime.current, {mother:lobeState.current.mother,chamber:lobeState.current.chamber});
+   volumeRenderer.current?.draw(path,frame.growth,clock.material,frame.transform,ambientTime.current, {mother:lobeState.current.mother,chamber:lobeState.current.chamber},clock.studioLight?.direction);
    if(volumeRenderer.current?.ready)setFirstFrameReady(true);
    shadowPath.current?.setAttribute('d',path);
   };

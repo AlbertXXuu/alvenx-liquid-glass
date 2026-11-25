@@ -1,0 +1,64 @@
+{
+  "version": "1.5.0-local.0",
+  "baseline": "db73ade0da93e038ce0d204b4fc4f5ac913df9a5",
+  "branch": "codex/liquid-glass-b-stable-20261031",
+  "pushed": false,
+  "deployed": false,
+  "independentReview": "pending coordinator review",
+  "results": {
+    "matrix-chromium.json": {
+      "assertions": null,
+      "cases": 37
+    },
+    "matrix-webkit.json": {
+      "assertions": null,
+      "cases": 37
+    },
+    "interaction-chromium.json": {
+      "assertions": 48,
+      "cases": 2
+    },
+    "interaction-webkit.json": {
+      "assertions": 48,
+      "cases": 2
+    },
+    "faults-chromium.json": {
+      "assertions": 50,
+      "cases": 5
+    },
+    "faults-webkit.json": {
+      "assertions": 50,
+      "cases": 5
+    },
+    "consumer-final-chromium.json": {
+      "assertions": 25,
+      "cases": 3
+    },
+    "consumer-final-webkit.json": {
+      "assertions": 25,
+      "cases": 3
+    },
+    "final-smoke-chromium.json": {
+      "assertions": 16,
+      "cases": 2
+    },
+    "final-smoke-webkit.json": {
+      "assertions": 16,
+      "cases": 2
+    }
+  },
+  "installedSourceIdentity": {
+    "filesMatched": 303,
+    "folders": [
+      "src",
+      "styles",
+      "assets",
+      "dist"
+    ],
+    "differences": []
+  },
+  "tarballSHA256": "8cfb3d4a19d8e95bab60a9bd7fb45037f54896df9070d18b15822e4ded33129f",
+  "evidenceRoot": "historical-local/output/playwright/b-stability-20261031",
+  "performanceRuns": 12,
+  "performanceClaim": "Same-machine scripted actions, no measured main-thread long tasks; not FPS/GPU-time or cold-start certification."
+}

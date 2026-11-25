@@ -1,0 +1,61 @@
+{
+  "assertions": 48,
+  "results": [
+    {
+      "width": 1365,
+      "engine": "webkit",
+      "errors": [],
+      "before": {
+        "start": 1995,
+        "end": 2015,
+        "scroll": 477,
+        "valueLength": 2015
+      },
+      "after": {
+        "start": 1995,
+        "end": 2015,
+        "scroll": 477,
+        "valueLength": 2015
+      },
+      "idle": {
+        "contexts": 1,
+        "uploads": 289,
+        "draws": 258
+      },
+      "end": {
+        "contexts": 1,
+        "uploads": 289,
+        "draws": 258
+      }
+    },
+    {
+      "width": 390,
+      "engine": "webkit",
+      "errors": [],
+      "before": {
+        "start": 1995,
+        "end": 2015,
+        "scroll": 1512,
+        "valueLength": 2015
+      },
+      "after": {
+        "start": 1995,
+        "end": 2015,
+        "scroll": 1512,
+        "valueLength": 2015
+      },
+      "idle": {
+        "contexts": 1,
+        "uploads": 123,
+        "draws": 350
+      },
+      "end": {
+        "contexts": 1,
+        "uploads": 123,
+        "draws": 350
+      }
+    }
+  ],
+  "note": "CSS layout zoom, desktop native selection and emulated viewport/DPR. Not physical touch/IME/Safari acceptance.",
+  "at": "2026-10-31T08:59:31.251Z"
+}

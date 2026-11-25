@@ -1,0 +1,16 @@
+{
+  "assertions": 16,
+  "results": [
+    {
+      "engine": "webkit",
+      "width": 1365,
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "width": 320,
+      "errors": []
+    }
+  ],
+  "at": "2026-10-31T09:35:57.090Z"
+}

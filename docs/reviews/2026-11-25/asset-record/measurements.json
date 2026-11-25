@@ -1,0 +1,429 @@
+{
+  "recordedOn": "2026-11-25",
+  "current": {
+    "candidate": "5199",
+    "scope": "Built /ui/ showcase recorded in local browsers",
+    "sha256": {
+      "index.html": "6df7d5876e47b697c447cfa21d1085a036a8a2feadbd7b7b3a77f943db70efbf",
+      "assets/main-NfNpivgs.js": "0b4d6df5d35586f0178ce1f736bf9099735cdfc968ca81411632a7117cc8dd7e",
+      "assets/main-BzkZphjV.css": "727d174914145293a4b246acd5f964221d13363818d1cb6e62c2bdde43c24420"
+    },
+    "menu": {
+      "browser": "Chromium 151.0.7922.34",
+      "checksPassed": 9,
+      "compactViewportCssPx": 890,
+      "narrowViewportCssPx": 390,
+      "designNativeTargetCssPx": [
+        383.5,
+        44
+      ],
+      "designGlassWidthCssPx": 74.5625,
+      "compactTrayCubicSegments": 8,
+      "labelCubicSegments": 8,
+      "narrowTriggerSizeCssPx": [
+        44,
+        44
+      ],
+      "nativeRowEdgeActivates": true,
+      "movingPhaseSampleDegrees": [
+        152.456,
+        154.51
+      ],
+      "reducedMotionPhaseSampleDegrees": [
+        155.021,
+        155.021
+      ],
+      "keyboardFocus": "passed",
+      "languagePicker": "passed",
+      "forcedColors": "passed",
+      "nativeOpticsFallback": "passed"
+    },
+    "volumeTitle": {
+      "browser": "Chrome 156.0.8078.48",
+      "targetFractionFromVisibleRightChamberTopLeft": [
+        0.5,
+        0.382
+      ],
+      "settled": [
+        {
+          "viewportCssPx": [
+            1440,
+            900
+          ],
+          "layout": "wide-integrated",
+          "titleCenterCssPx": [
+            922.65625,
+            548.03125
+          ],
+          "targetCenterCssPx": [
+            922.6649,
+            548.034898
+          ],
+          "titleMinusTargetCssPx": [
+            -0.00865,
+            -0.003648
+          ]
+        },
+        {
+          "viewportCssPx": [
+            768,
+            900
+          ],
+          "layout": "compact-integrated",
+          "titleCenterCssPx": [
+            508.484375,
+            684.296875
+          ],
+          "targetCenterCssPx": [
+            508.49135,
+            684.300852
+          ],
+          "titleMinusTargetCssPx": [
+            -0.006975,
+            -0.003977
+          ]
+        },
+        {
+          "viewportCssPx": [
+            390,
+            844
+          ],
+          "layout": "overview",
+          "titleCenterCssPx": [
+            262.25,
+            664.453125
+          ],
+          "targetCenterCssPx": [
+            262.26,
+            664.45576
+          ],
+          "titleMinusTargetCssPx": [
+            -0.01,
+            -0.002635
+          ]
+        }
+      ],
+      "heldDrag": {
+        "titleMinusTargetCssPx": [
+          -0.016291,
+          -0.013838
+        ],
+        "maximumAxisErrorCssPx": 0.016291
+      },
+      "hiddenDuringInitialGrowth": true,
+      "settledReducedMotion": true,
+      "rendererUnavailableFallback": true
+    },
+    "sharedLight": {
+      "periodSeconds": 48,
+      "composerBrowser": "Chrome 156.0.8078.48",
+      "movingRasterChannelChangeThreshold": 5,
+      "composer": [
+        {
+          "viewportCssPx": [
+            1200,
+            780
+          ],
+          "phaseSampleDegrees": [
+            151.722,
+            -178.786
+          ],
+          "textField": {
+            "visibleChanges": 1604,
+            "maxChannelChange": 50
+          },
+          "sendButton": {
+            "visibleChanges": 225,
+            "maxChannelChange": 42
+          },
+          "backgroundMotionResumesSamePhase": true,
+          "enterSubmitsFixture": true
+        },
+        {
+          "viewportCssPx": [
+            390,
+            844
+          ],
+          "phaseSampleDegrees": [
+            151.671,
+            170.501
+          ],
+          "textField": {
+            "visibleChanges": 702,
+            "maxChannelChange": 41
+          },
+          "sendButton": {
+            "visibleChanges": 139,
+            "maxChannelChange": 26
+          },
+          "backgroundMotionResumesSamePhase": true,
+          "enterSubmitsFixture": true
+        }
+      ],
+      "composerReducedMotion": true,
+      "chromiumRails": {
+        "browser": "Chrome 156.0.8078.48",
+        "rails": 11,
+        "phaseSampleDegrees": [
+          153.537,
+          161.828
+        ],
+        "fixedNativeTargetsVisualBoxesAndSourceRevision": true,
+        "backgroundMotionPaused": true,
+        "zeroSpecularLeavesNoRailLight": true,
+        "forcedColorsHidesDecorativePaint": true,
+        "reducedMotionPaused": true
+      },
+      "webkitRails": {
+        "browser": "WebKit 26.5",
+        "viewportWidthCssPx": 390,
+        "phaseSampleDegrees": [
+          148.476,
+          152.932
+        ],
+        "fixedVisualBox": true,
+        "horizontalOverflowCssPx": 0
+      }
+    },
+    "localChecksPassed": [
+      "npm run check",
+      "npm run test:contract",
+      "npm run test:runtime",
+      "npm run build:lib",
+      "node scripts/test-text-lens-motion.mjs"
+    ]
+  },
+  "historical": {
+    "beforeNormalizedChamberAnchor": {
+      "candidate": "5198",
+      "mainJavaScript": "assets/main-QeLB9MNh.js",
+      "browser": "Chrome 156.0.8078.48",
+      "titlePositionAgainstLaterTarget": [
+        {
+          "viewportWidthCssPx": 1440,
+          "titleMinusLaterTargetCssPx": [
+            32.5226,
+            -64.378648
+          ]
+        },
+        {
+          "viewportWidthCssPx": 768,
+          "titleMinusLaterTargetCssPx": [
+            19.969587,
+            -50.035227
+          ]
+        },
+        {
+          "viewportWidthCssPx": 390,
+          "titleMinusLaterTargetCssPx": [
+            -67.26,
+            150.661428
+          ]
+        }
+      ]
+    },
+    "explicitLinearAndNearestSamplerComparison": {
+      "mainJavaScript": "assets/main-rExwyUh5.js",
+      "browser": "Chromium 151.0.7922.34",
+      "edgeBandExcludedFromOutsideMeasurement": true,
+      "insideLinearVersusZeroDisplacementChannelThreshold": 12,
+      "outsideComparisonChannelThreshold": 4,
+      "cases": [
+        {
+          "case": "desktop-1x",
+          "insidePixelsOverThreshold": 8869,
+          "outsidePixelsOverThreshold": 0,
+          "outsideLinearVersusNearestPixelsOverThreshold": 0
+        },
+        {
+          "case": "desktop-2x",
+          "insidePixelsOverThreshold": 32327,
+          "outsidePixelsOverThreshold": 0,
+          "outsideLinearVersusNearestPixelsOverThreshold": 0
+        },
+        {
+          "case": "narrow-1x",
+          "insidePixelsOverThreshold": 4282,
+          "outsidePixelsOverThreshold": 0,
+          "outsideLinearVersusNearestPixelsOverThreshold": 0
+        },
+        {
+          "case": "narrow-2x",
+          "insidePixelsOverThreshold": 15004,
+          "outsidePixelsOverThreshold": 0,
+          "outsideLinearVersusNearestPixelsOverThreshold": 0
+        }
+      ],
+      "desktop1xIntermediateTones": {
+        "linearShare": 0.945074,
+        "nearestShare": 0.918131
+      }
+    },
+    "gaussianPrefilterHarness": {
+      "browser": "Chrome 156.0.8078.48",
+      "scope": "Earlier source-module harness on a synthetic one-sided alpha edge. The stronger version expands the source plateau and sample window to capture the full transition.",
+      "alphaRangeForEdgeWidth": [
+        0.1,
+        0.9
+      ],
+      "legacyNarrowKernel": [
+        {
+          "devicePixelRatio": 1,
+          "settings": [
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 0,
+              "shoulderEdgeWidthCssPx": 0,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            },
+            {
+              "blurLevel": 6,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 2,
+              "shoulderEdgeWidthCssPx": 2,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            },
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 6,
+              "centerEdgeWidthCssPx": 1,
+              "shoulderEdgeWidthCssPx": 1,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 0
+            }
+          ]
+        },
+        {
+          "devicePixelRatio": 2,
+          "settings": [
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 0,
+              "shoulderEdgeWidthCssPx": 0,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 0
+            },
+            {
+              "blurLevel": 6,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 2,
+              "shoulderEdgeWidthCssPx": 2,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            },
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 6,
+              "centerEdgeWidthCssPx": 0.5,
+              "shoulderEdgeWidthCssPx": 0.5,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            }
+          ]
+        }
+      ],
+      "expandedGaussianPrefilter": [
+        {
+          "devicePixelRatio": 1,
+          "settings": [
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 0,
+              "shoulderEdgeWidthCssPx": 0,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            },
+            {
+              "blurLevel": 6,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 14.5,
+              "shoulderEdgeWidthCssPx": 14.5,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            },
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 6,
+              "centerEdgeWidthCssPx": 0,
+              "shoulderEdgeWidthCssPx": 19,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            }
+          ]
+        },
+        {
+          "devicePixelRatio": 2,
+          "settings": [
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 0,
+              "shoulderEdgeWidthCssPx": 0,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 0
+            },
+            {
+              "blurLevel": 6,
+              "progressiveBlur": 0,
+              "centerEdgeWidthCssPx": 14.5,
+              "shoulderEdgeWidthCssPx": 14.5,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            },
+            {
+              "blurLevel": 0,
+              "progressiveBlur": 6,
+              "centerEdgeWidthCssPx": 0,
+              "shoulderEdgeWidthCssPx": 19,
+              "maximumAlphaChannelDeltaBetweenFreeLensAndBalanced": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "media": {
+    "chamber-title-desktop.png": {
+      "bytes": 137943,
+      "sha256": "f80c82b499d1a1958c5428d6477f2336c388aede036327d301365b5b84d353f5"
+    },
+    "chamber-title-narrow-390.png": {
+      "bytes": 32472,
+      "sha256": "6c3e588e1538902e06c78e513157208d2a0c060e0683ccdc8e723e9ab4b9c953"
+    },
+    "historical-1x-linear.png": {
+      "bytes": 127511,
+      "sha256": "79fba0ed8b30f9004368ef45ead61b3a79126730a74cb91b9b9d291cd19785cd"
+    },
+    "historical-1x-nearest.png": {
+      "bytes": 127244,
+      "sha256": "45aa9bd6842816234449ca15116053364783cf148a1d8d6436de08216d22ddf7"
+    },
+    "historical-blur-legacy.png": {
+      "bytes": 35790,
+      "sha256": "56cab07aee9b846ac5566069736b38bb96c92d71554d695e22e396227bc34544"
+    },
+    "historical-blur-prefilter.png": {
+      "bytes": 50156,
+      "sha256": "0c8eabb92a0cc5c0ce1544d22002058fc7fe896141f984d4abdef320824f86d4"
+    },
+    "menu-compact-890.png": {
+      "bytes": 43527,
+      "sha256": "4e5f3cacde394d9e5bfc0397fb344ad4e8d9a34e5a1306b62f0594ccbcab9bdf"
+    },
+    "menu-desktop.png": {
+      "bytes": 33074,
+      "sha256": "d6d11fa67ec64ecf292f6d3f46a066418e4739698e8a6ff847e7add3e97274e4"
+    },
+    "menu-narrow-390.png": {
+      "bytes": 35185,
+      "sha256": "5c81dd638b707df8dfc964219e234c7bd6354e0c325cc931a33561641ef0fefe"
+    },
+    "rail-light-phase-a.png": {
+      "bytes": 17209,
+      "sha256": "5622fa0a6ce62d34d2feb976baa7ecafc7d6e2602fce7dca10dd9214c7d5bbca"
+    },
+    "rail-light-phase-b.png": {
+      "bytes": 17179,
+      "sha256": "539a95923d6fa7f0d6a030d6d5a589867fcf8bd848e52b0ccce78a24ae52bfad"
+    },
+    "shared-light-controls.webm": {
+      "bytes": 585983,
+      "sha256": "77149534db5161a75b205399621fed6f418a1fac10ba1150a6da11854a6df20a"
+    }
+  }
+}

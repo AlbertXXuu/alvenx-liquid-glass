@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "status": "local-verified-with-cross-engine-gaps",
+  "published": false,
+  "pushed": false,
+  "committed": false,
+  "branch": "codex/continuous-magnifier-20261029",
+  "baseCommit": "7ffe6c0e02406054d46e4238cfe58610ee546398",
+  "source": [
+    {
+      "path": "showcase/mobile-review/ContinuousScene.tsx",
+      "sha256": "e26d8b3207be6095bb4de0ae95bff53b395868780b8149fe453d7903862b6f44"
+    },
+    {
+      "path": "showcase/mobile-review/refractionScene.tsx",
+      "sha256": "f2597481dfc1e7dcd64ce52a2831a0906c16a3ca5dffc1910a0877b48cb666c6"
+    },
+    {
+      "path": "showcase/mobile-review/main.tsx",
+      "sha256": "7689d62976ff66c8f8c03c7fb7b4f915442a46859afdd629442b95f42164008f"
+    },
+    {
+      "path": "showcase/mobile-review/review.css",
+      "sha256": "6ad3e8680dff8f04cc10af6e234d54f1433f7150a07e25d1871ef056ce5485b1"
+    },
+    {
+      "path": "src/LiquidControl.tsx",
+      "sha256": "d4b6c83f483477cdfe645ddf339d801ee35e00b2c0203624be8f14e7debd2c11"
+    }
+  ],
+  "results": {
+    "productionMatrixCases": 37,
+    "matrixReadinessSettingsAssertions": 297,
+    "lifecycleAssertions": 18,
+    "resourceFaultAssertions": 32,
+    "productionComparisonRuns": 12,
+    "webkitCases": 4
+  },
+  "blockers": [
+    "Windows WebKit Canvas2D blur unavailable: high blur retains old SVG path",
+    "Windows WebKit zero-blur captured output black or stale; visible output unverified"
+  ],
+  "evidence": [
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/production-compare.cjs",
+      "sha256": "93610537badcc33933fe2f9a60265becdd7dff4209e7d38290f14d21a8dab1eb",
+      "bytes": 4530
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/production-compare-results.txt",
+      "sha256": "89de6bc358f3e9eda3fe262e641a6dd91579dde852f932afd22ffdffe6f1b9bc",
+      "bytes": 43285
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/production-compare-summary.json",
+      "sha256": "e551b27feb1b0802bc9cd51991a813e6ccd7d179ed878fc479f4e1497fdb66d4",
+      "bytes": 7267
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/lifecycle-built.cjs",
+      "sha256": "8b1bc0dd5e9a33b8335905ec77ef1ae8414ad376199c5401525ac25bf4fb301d",
+      "bytes": 9447
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/lifecycle-built-results.json",
+      "sha256": "1ae06915d8b58162710f49894166bff5d1eafad0884ed2abce116b839f908e47",
+      "bytes": 17862
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/resource-faults.cjs",
+      "sha256": "9583d42b95cbb0a2f0304efb4487006b6a5b05e6776c251548339cd3aab4bee1",
+      "bytes": 2337
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/resource-faults-results.json",
+      "sha256": "faabd5b80f1989f417f891f11c93a357ced672da202372deeb83a4a86436cabf",
+      "bytes": 1852
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/scene-matrix-continuous.cjs",
+      "sha256": "9675874d60f45efe343cd4253d2fb212cefc527122e9cbb7f43821485e21dbf7",
+      "bytes": 4205
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/built-matrix-results.json",
+      "sha256": "be8ef79651af89afdbbeb6464e934801152848ebb92574fc3c3041451caf567f",
+      "bytes": 79020
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/webkit-built.cjs",
+      "sha256": "bd2f595d97ca1a864a6389f783117d99b867a52a0b2864bcc4f31782394745da",
+      "bytes": 2568
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/webkit-built-results.json",
+      "sha256": "2baeb35f5e666f8873a1d4375fd1ee6f54e0fe9b8fe18d1415d4343396de209f",
+      "bytes": 3601
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/local-candidate-1365-d2-sharp-3.png",
+      "sha256": "b1175c9c38e3e81bcd4489fe3b7bcb7104472b3717af440b5180badf761710f1",
+      "bytes": 339150
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/local-candidate-320-d3-sharp-3.png",
+      "sha256": "ae48dd10c3380538092dc21047970eb807548dea8b9c3448c138d823586c13d2",
+      "bytes": 207251
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/webkit-1365-blur0.png",
+      "sha256": "c2cfb2f6eb158e2ea510ec0c77f265782c749fe7f3e64019e9fed703f55a031b",
+      "bytes": 24536
+    },
+    {
+      "path": "output/playwright/refraction-fix-20261029/qa/webkit-320-blur0-zh.png",
+      "sha256": "82492a6242e30e93a816b8f8c9ee85e5797e5c2350d39033804318ef1b98c8db",
+      "bytes": 75463
+    }
+  ]
+}

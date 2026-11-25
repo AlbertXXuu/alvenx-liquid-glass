@@ -117,3 +117,24 @@ function renderContour(outline: Contour, sx = 1, sy = 1, ox = 0, oy = 0): string
 export function shellPath(shape: Shape): string {
   return valid(shape) ? renderContour(contour(shape)) : ''
 }
+
+/** Frame corners share the brand's two-cubic transition with zero curvature at either flat side. */
+export function cubicFramePath(width: number, height: number, corner: number, x = 0, y = 0, horizontalCorner?: number): string {
+  if (![width, height, corner, x, y, horizontalCorner ?? 0].every(Number.isFinite) || width <= 0 || height <= 0) return ''
+  const r = clamp(corner, 0, Math.min(width, height) / 2)
+  const rx = clamp(horizontalCorner ?? r, 0, width / 2)
+  const right = x + width, bottom = y + height
+  const curve = (startX: number, startY: number, dx: number, dy: number) => {
+    const point = (along: number, inward: number) => xy({
+      x: startX + (along * dx - inward * dy) * rx,
+      y: startY + (along * dy + inward * dx) * r
+    })
+    return `C ${point(.28, 0)} ${point(.64, 0)} ${point(.82, .18)} C ${point(1, .36)} ${point(1, .72)} ${point(1, 1)}`
+  }
+  return [
+    `M ${n(x + rx)} ${n(y)} L ${n(right - rx)} ${n(y)}`, curve(right - rx, y, 1, 0),
+    `L ${n(right)} ${n(bottom - r)}`, curve(right, bottom - r, 0, 1),
+    `L ${n(x + rx)} ${n(bottom)}`, curve(x + rx, bottom, -1, 0),
+    `L ${n(x)} ${n(y + r)}`, curve(x, y + r, 0, -1), 'Z'
+  ].join(' ')
+}

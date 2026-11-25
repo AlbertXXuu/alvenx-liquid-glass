@@ -1,6 +1,19 @@
 import { DEFAULT_SETTINGS, type MaterialParameters } from './reviewSettings';
 import type { GlassOpticsMode } from './opticalSupport';
 export const boundedFrameRate = (value?: number) => Number.isFinite(value) && value! > 0 ? Math.max(1, Math.min(240, value!)) : 60;
+export const studioLightPeriod = 48;
+export function studioLightDirection(seconds: number) {
+  const phase = seconds * Math.PI * 2 / studioLightPeriod;
+  const cos = Math.cos(phase), sin = Math.sin(phase);
+  return {
+    x: Math.max(0, Math.min(1, .5 - .28 * cos + .25 * sin)),
+    y: Math.max(0, Math.min(1, .5 - .28 * sin - .42 * cos)),
+  };
+}
+export type StudioLight = {
+  direction: { x: number; y: number };
+  gradients: { rim: string; spot: string; bounce: string };
+};
 /** One visible-frame clock for volume, local optics and control physics.
  * Construction is side-effect free; subscriptions own document listeners. */
 export class GlassClock {
@@ -14,6 +27,7 @@ export class GlassClock {
   reduced = false;
   strength = DEFAULT_SETTINGS.interactionStrength;
   material: MaterialParameters = DEFAULT_SETTINGS;
+  studioLight?: StudioLight;
   private frame = 0;
   private last = 0;
   private phase = 0;

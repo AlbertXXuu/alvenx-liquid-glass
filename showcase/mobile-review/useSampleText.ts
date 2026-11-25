@@ -43,7 +43,7 @@ function loadFace(font:string, text:string):Promise<void> {
  return request;
 }
 
-async function prepareText(text:string) {
+export async function prepareSampleText(text:string) {
  if(!document.fonts?.load) throw new Error('Font loading is unavailable.');
  const nonAscii = text.replace(/[\u0000-\u007f]/g, '');
  await Promise.all([
@@ -69,7 +69,7 @@ export function useSampleText(initial='Clarity') {
    return;
   }
   setStatus('loading');
-  void prepareText(text).then(()=>{
+  void prepareSampleText(text).then(()=>{
    if(!mounted.current || request!==sequence.current || composing.current) return;
    committed.current=text;
    setValue(text);

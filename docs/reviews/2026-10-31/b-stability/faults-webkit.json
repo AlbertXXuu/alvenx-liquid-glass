@@ -1,0 +1,97 @@
+{
+  "assertions": 50,
+  "results": [
+    {
+      "engine": "webkit",
+      "fault": "no-webgl",
+      "mode": "native",
+      "log": {
+        "created": {},
+        "deleted": {},
+        "contexts": 1
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "texture-allocation",
+      "mode": "native",
+      "log": {
+        "created": {
+          "Program": 2,
+          "Shader": 4,
+          "Buffer": 1,
+          "Framebuffer": 1,
+          "Texture": 1
+        },
+        "deleted": {
+          "Shader": 4,
+          "Texture": 1,
+          "Program": 2,
+          "Buffer": 1,
+          "Framebuffer": 1
+        },
+        "contexts": 1
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "upload",
+      "mode": "native",
+      "log": {
+        "created": {
+          "Program": 2,
+          "Shader": 4,
+          "Buffer": 1,
+          "Framebuffer": 1,
+          "Texture": 3
+        },
+        "deleted": {
+          "Shader": 4,
+          "Texture": 3,
+          "Program": 2,
+          "Buffer": 1,
+          "Framebuffer": 1
+        },
+        "contexts": 1
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "copy",
+      "mode": "native",
+      "log": {
+        "created": {},
+        "deleted": {},
+        "contexts": 1
+      },
+      "errors": []
+    },
+    {
+      "engine": "webkit",
+      "fault": "context-loss",
+      "mode": "native",
+      "log": {
+        "created": {
+          "Program": 2,
+          "Shader": 4,
+          "Buffer": 1,
+          "Framebuffer": 1,
+          "Texture": 15
+        },
+        "deleted": {
+          "Shader": 4,
+          "Texture": 15,
+          "Program": 2,
+          "Buffer": 1,
+          "Framebuffer": 1
+        },
+        "contexts": 1
+      },
+      "errors": []
+    }
+  ],
+  "at": "2026-10-31T09:26:16.037Z"
+}

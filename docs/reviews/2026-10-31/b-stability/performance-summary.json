@@ -1,0 +1,350 @@
+[
+  {
+    "repeat": 0,
+    "blur": 0,
+    "candidate": false,
+    "idle": {
+      "ms": 701.8,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 452.5,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "tune": {
+      "ms": 321.4,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "edit": {
+      "ms": 443.1,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    }
+  },
+  {
+    "repeat": 0,
+    "blur": 0,
+    "candidate": true,
+    "idle": {
+      "ms": 704.1,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 442.7,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 27
+    },
+    "tune": {
+      "ms": 318.3,
+      "longtasks": [],
+      "uploads": 19,
+      "draws": 45
+    },
+    "edit": {
+      "ms": 446.9,
+      "longtasks": [],
+      "uploads": 4,
+      "draws": 5
+    }
+  },
+  {
+    "repeat": 0,
+    "blur": 6,
+    "candidate": false,
+    "idle": {
+      "ms": 701.9,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 442.0,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "tune": {
+      "ms": 351.9,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "edit": {
+      "ms": 435.6,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    }
+  },
+  {
+    "repeat": 0,
+    "blur": 6,
+    "candidate": true,
+    "idle": {
+      "ms": 703.0,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 441.5,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 27
+    },
+    "tune": {
+      "ms": 319.6,
+      "longtasks": [],
+      "uploads": 18,
+      "draws": 46
+    },
+    "edit": {
+      "ms": 433.6,
+      "longtasks": [],
+      "uploads": 4,
+      "draws": 5
+    }
+  },
+  {
+    "repeat": 1,
+    "blur": 0,
+    "candidate": true,
+    "idle": {
+      "ms": 701.5,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 439.5,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 27
+    },
+    "tune": {
+      "ms": 316.9,
+      "longtasks": [],
+      "uploads": 19,
+      "draws": 46
+    },
+    "edit": {
+      "ms": 435.8,
+      "longtasks": [],
+      "uploads": 4,
+      "draws": 5
+    }
+  },
+  {
+    "repeat": 1,
+    "blur": 0,
+    "candidate": false,
+    "idle": {
+      "ms": 700.9,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 440.5,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "tune": {
+      "ms": 314.2,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "edit": {
+      "ms": 435.0,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    }
+  },
+  {
+    "repeat": 1,
+    "blur": 6,
+    "candidate": true,
+    "idle": {
+      "ms": 703.3,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 446.2,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 27
+    },
+    "tune": {
+      "ms": 327.7,
+      "longtasks": [],
+      "uploads": 27,
+      "draws": 60
+    },
+    "edit": {
+      "ms": 437.3,
+      "longtasks": [],
+      "uploads": 4,
+      "draws": 5
+    }
+  },
+  {
+    "repeat": 1,
+    "blur": 6,
+    "candidate": false,
+    "idle": {
+      "ms": 702.7,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 440.3,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "tune": {
+      "ms": 321.9,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "edit": {
+      "ms": 432.7,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    }
+  },
+  {
+    "repeat": 2,
+    "blur": 0,
+    "candidate": false,
+    "idle": {
+      "ms": 702.5,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 439.6,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "tune": {
+      "ms": 322.4,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "edit": {
+      "ms": 434.6,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    }
+  },
+  {
+    "repeat": 2,
+    "blur": 0,
+    "candidate": true,
+    "idle": {
+      "ms": 701.9,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 442.1,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 27
+    },
+    "tune": {
+      "ms": 317,
+      "longtasks": [],
+      "uploads": 19,
+      "draws": 44
+    },
+    "edit": {
+      "ms": 437.6,
+      "longtasks": [],
+      "uploads": 4,
+      "draws": 5
+    }
+  },
+  {
+    "repeat": 2,
+    "blur": 6,
+    "candidate": false,
+    "idle": {
+      "ms": 702.0,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 438.8,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "tune": {
+      "ms": 333.4,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "edit": {
+      "ms": 433.6,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    }
+  },
+  {
+    "repeat": 2,
+    "blur": 6,
+    "candidate": true,
+    "idle": {
+      "ms": 701.9,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 0
+    },
+    "drag": {
+      "ms": 445.7,
+      "longtasks": [],
+      "uploads": 0,
+      "draws": 27
+    },
+    "tune": {
+      "ms": 313.6,
+      "longtasks": [],
+      "uploads": 9,
+      "draws": 32
+    },
+    "edit": {
+      "ms": 432.7,
+      "longtasks": [],
+      "uploads": 4,
+      "draws": 5
+    }
+  }
+]

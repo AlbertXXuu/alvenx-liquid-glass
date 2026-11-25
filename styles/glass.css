@@ -45,6 +45,18 @@
 .alvenx-design .liquid-unit[data-visible="false"] { overflow:hidden; overflow:clip; }
 .alvenx-design .local-optical-defs, .alvenx-design .local-shadow, .alvenx-design .local-edge, .alvenx-design .local-backdrop { position:absolute; inset:0; pointer-events:none; overflow:visible; }
 .alvenx-design .local-backdrop { background:transparent; }
+.alvenx-design .local-ink:not([hidden]) { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.alvenx-design [data-glass-ink="linear"] > .glass-hit:not(:focus-within),
+.alvenx-design [data-glass-ink="linear"] > button.glass-hit,
+.alvenx-design [data-glass-ink="linear"] > .glass-hit:not(:focus-within) * { -webkit-text-fill-color:transparent; }
+.alvenx-design [data-glass-ink="linear"] > .field-hit:not(:focus-within) input::placeholder { -webkit-text-fill-color:transparent; }
+.alvenx-design [data-glass-ink="linear"]:has(.field-hit:focus-within) > .local-ink { visibility:hidden; }
+@media (forced-colors:active) {
+  .alvenx-design [data-glass-ink="linear"] > .glass-hit,
+  .alvenx-design [data-glass-ink="linear"] > .glass-hit * { -webkit-text-fill-color:currentColor; }
+  .alvenx-design [data-glass-ink="linear"] > .field-hit:not(:focus-within) input::placeholder { -webkit-text-fill-color:currentColor; }
+  .alvenx-design .local-ink { visibility:hidden; }
+}
 .alvenx-design .glass-hit { position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; border:0; outline:0; box-shadow:none; border-radius:0; background:transparent; padding:0; margin:0; }
 .alvenx-design .glass-hit:focus, .alvenx-design .glass-hit:focus-visible { outline:0; }
 .alvenx-design .glass-hit input { min-width:0; flex:1; border:0; outline:0; background:transparent; color:var(--ax-content); font-size:14px; line-height:1.55; }
@@ -75,8 +87,21 @@
 .alvenx-design .parameter-label { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; line-height:1.5; color:var(--ax-label); padding:0 0 12px 6px; min-height:52px; }
 .alvenx-design .range-rail { height:44px; position:relative; }
 /* Fixed rail insets are replaced by resting B geometry, never hover geometry. */
-.alvenx-design .range-track { position:absolute; left:14px; right:14px; top:17.5px; height:9px; border-radius:6px; background:linear-gradient(90deg,var(--ax-track-start),var(--ax-track-end)); overflow:hidden; }
-.alvenx-design .range-track span, .alvenx-design .switch-track span { display:block; height:100%; background:linear-gradient(90deg,var(--ax-progress-start),var(--ax-progress-end)); border-radius:inherit; }
+.alvenx-design .range-track { position:absolute; left:14px; right:14px; top:17.5px; height:9px; pointer-events:none; }
+.alvenx-design .glass-rail-paint { position:absolute; inset:0; width:100%; height:100%; overflow:hidden; pointer-events:none; }
+.alvenx-design .glass-rail-light {
+  position:absolute; inset:0; pointer-events:none;
+  opacity:var(--ax-glass-light-strength,0);
+  background:
+    radial-gradient(ellipse 46% 72% at var(--ax-glass-light-x,30%) var(--ax-glass-light-y,20%), rgb(255 255 255 / .46), transparent 78%),
+    linear-gradient(var(--ax-glass-light-angle,130deg), rgb(255 255 255 / .22), transparent 52%, rgb(79 70 229 / .075));
+}
+/* Draw the registered rail once, through the lens where its current path covers it. */
+.alvenx-design :is(.range-rail,.switch-visual):has([data-optical-ready=true]:is([data-optical-mode=balanced],[data-optical-mode=scene])) > :is([data-controlled-source],[data-controlled-raster],.glass-rail-light) {
+  mask-image:var(--ax-rail-cutout);
+}
+.alvenx-design .switch-body:has(.switch-native:disabled) .glass-rail-light { display:none; }
+@media (forced-colors:active) { .alvenx-design .glass-rail-light { display:none; } }
 .alvenx-design .range-thumb-position { position:absolute; top:0; width:64px; height:44px; pointer-events:none; }
 .alvenx-design .range-thumb { width:64px; height:44px; }
 .alvenx-design .glass-range { position:absolute; inset:0; width:100%; height:44px; min-width:0; margin:0; padding:0; appearance:none; -webkit-appearance:none; background:transparent; border:0; outline:0; box-shadow:none; cursor:ew-resize; opacity:0; z-index:2; touch-action:pan-y pinch-zoom; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
@@ -91,9 +116,7 @@
 .alvenx-design .switch-native { position:absolute; inset:0; width:100%; height:100%; padding:0; border:0; outline:0; background:transparent; border-radius:24px; appearance:none; -webkit-appearance:none; box-shadow:none; touch-action:pan-y pinch-zoom; user-select:none; -webkit-user-select:none; -webkit-touch-callout:none; }
 .alvenx-design .switch-native:focus-visible { outline:0; }
 .alvenx-design .switch-visual { position:absolute; left:5.88px; top:2.88px; width:86.24px; height:42.24px; pointer-events:none; }
-.alvenx-design .switch-track { position:absolute; left:6.16px; right:6.16px; top:11.44px; height:19.36px; border-radius:30px; background:linear-gradient(90deg,var(--ax-track-start),var(--ax-track-end)); overflow:hidden; }
-.alvenx-design .switch-track span { opacity:.78; }
-.alvenx-design .switch-track[data-checked=true] span { opacity:1; }
+.alvenx-design .switch-track { position:absolute; left:6.16px; right:6.16px; top:11.44px; height:19.36px; pointer-events:none; }
 .alvenx-design .switch-thumb-position { position:absolute; top:0; width:63.36px; height:42.24px; pointer-events:none; }
 .alvenx-design .switch-thumb { width:63.36px; height:42.24px; }
 
@@ -197,10 +220,38 @@
   .alvenx-design .ax-menu-toggle:focus-visible { outline-color:Highlight; }
   .alvenx-design .ax-menu-toggle[aria-expanded="true"] { border-color:ButtonText; }
 }
-.alvenx-design .glass-panel{height:360px;min-height:140px;min-width:0;isolation:isolate;background:#EDF0FA;overflow:hidden;border-radius:24px}
+.alvenx-design .glass-panel{height:360px;min-height:140px;min-width:0;isolation:isolate;background:#EDF0FA;overflow:hidden;--ax-panel-content-inset:clamp(20px,4vw,40px)}
 .alvenx-design .glass-panel-pixels{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.alvenx-design .glass-panel-content{position:absolute;inset:clamp(20px,4vw,40px);color:#40547B;font-family:var(--ax-font-family,'Instrument Sans',MiSans,sans-serif);font-size:16px;line-height:1.7;background:none;border:0;border-radius:8px;outline:none}
-.alvenx-design .glass-panel-scroll{overflow:auto;overscroll-behavior:contain;scrollbar-color:#9CAAD0 transparent;padding-right:10px}
-.alvenx-design .glass-panel-content:focus-visible,.alvenx-design .glass-panel-content:focus-within{outline:2px solid #8D9EC8;outline-offset:5px}
-.alvenx-design .glass-panel-content textarea{display:block;width:100%;height:100%;resize:none;border:0;outline:none;background:none;color:inherit;font:inherit;line-height:inherit;caret-color:#506FB1;padding:0 10px 0 0;scrollbar-color:#9CAAD0 transparent}
+.alvenx-design .glass-panel-content-frame{position:absolute;inset:var(--ax-panel-content-inset);border-radius:8px}
+.alvenx-design .glass-panel-content-frame:focus-within{outline:2px solid #8D9EC8;outline-offset:5px}
+.alvenx-design .glass-panel-content{position:absolute;inset:0;color:#40547B;font-family:var(--ax-font-family,'Instrument Sans',MiSans,sans-serif);font-size:16px;line-height:1.7;background:none;border:0;border-radius:inherit;outline:none}
+.alvenx-design .glass-panel-scroll{overflow:auto;overscroll-behavior:contain;scrollbar-color:#9CAAD0 transparent;padding-inline-end:10px}
+.alvenx-design .glass-panel-content textarea{display:block;width:100%;height:100%;resize:none;border:0;outline:none;background:none;color:inherit;font:inherit;line-height:inherit;caret-color:#506FB1;padding:0;padding-inline-end:10px;scrollbar-color:#9CAAD0 transparent}
 .alvenx-design .glass-panel-content::selection,.alvenx-design .glass-panel-content ::selection{background:#BCC7EE;color:#263B67}
+
+/* Fade native glyph coverage toward the clip, with opaque scrollbar gutters. */
+.alvenx-design [data-glass-panel-feather]{
+  --ax-panel-feather-clear-stop:.19;
+  --ax-panel-feather-low-stop:.38;
+  --ax-panel-feather-high-stop:.72;
+  mask-image:linear-gradient(to bottom,
+    transparent calc(var(--ax-panel-feather-start)*var(--ax-panel-feather-clear-stop)),
+    rgb(0 0 0 / .2) calc(var(--ax-panel-feather-start)*var(--ax-panel-feather-low-stop)),
+    rgb(0 0 0 / .76) calc(var(--ax-panel-feather-start)*var(--ax-panel-feather-high-stop)),
+    #000 var(--ax-panel-feather-start),#000 calc(100% - var(--ax-panel-feather-end)),
+    rgb(0 0 0 / .76) calc(100% - var(--ax-panel-feather-end)*var(--ax-panel-feather-high-stop)),
+    rgb(0 0 0 / .2) calc(100% - var(--ax-panel-feather-end)*var(--ax-panel-feather-low-stop)),
+    transparent calc(100% - var(--ax-panel-feather-end)*var(--ax-panel-feather-clear-stop))),
+    linear-gradient(#000,#000),linear-gradient(#000,#000),linear-gradient(#000,#000);
+  mask-size:100% 100%,var(--ax-panel-feather-left) 100%,var(--ax-panel-feather-right) 100%,100% var(--ax-panel-feather-bottom);
+  mask-position:left top,left top,right top,left bottom;
+  mask-repeat:no-repeat
+}
+/* Suppress the detached end of a wrapped textarea line at the clip. */
+.alvenx-design textarea[data-glass-panel-feather]{
+  --ax-panel-feather-clear-stop:.46;
+  --ax-panel-feather-low-stop:.59;
+  --ax-panel-feather-high-stop:.81
+}
+.alvenx-design textarea[data-glass-panel-feather]:focus{mask-image:none}
+@media(forced-colors:active){.alvenx-design [data-glass-panel-feather]{mask-image:none}}

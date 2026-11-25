@@ -9,17 +9,22 @@ export const SHOWCASE_LANGUAGE_STORAGE_KEY = 'alvenx-showcase-language-v1';
  * Deliberately do not infer language from the browser or the operating system. */
 export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'Published source':'已发布的源码',
+  'Design record':'设计档案',
+  'Fixed source and release':'固定源码与发布记录',
+  'Reproduction evidence':'复现证据',
+  'Shared light on the input and send button':'输入框与发送键的共用高光',
+  'Chamber on desktop':'桌面玻璃舱',
+  'Chamber on a narrow screen':'窄屏玻璃舱',
+  'Responsive menu':'响应式菜单',
   'READ AND WRITE':'阅读与书写',
   'A quiet center. A rounded edge.':'中央平缓，边缘圆润。',
   'Show background grid':'显示背景网格',
-  'Background bends at the edge. Your text, caret and selection stay clear.':'背景在边缘弯折，文字、光标与选区保持清晰。',
   'Multiline editor':'多行编辑器',
   'Reading panel':'阅读面板',
   'Room to read.':'自在阅读。',
   'End of the reading sample.':'阅读示例结束。',
   'A broad, quiet surface leaves room for your words. The background bends near the rounded edge while native text stays clear and editable.':'宽阔而安静的表面，为文字留出空间。背景在圆润边缘附近弯折，原生文字始终清晰，可以正常选择和编辑。',
   'Local validation':'本地验证版本',
-  'Large forms use a 2.5D lighting environment. B controls sample an explicit registered scene. Native editing stays above the optical layer. Unsupported graphics use native blur or a flat fallback. Physical iPhone and iPad acceptance remains separate.':'大型形体使用 2.5D 光照近似。B 控件采样明确注册的场景，原生编辑位于光学层上方。图形能力不足时降级为原生模糊或平面背景，实际 iPhone 与 iPad 验收仍需单独进行。',
   'Choose language': '选择语言',
   'Language': '语言',
   'Showcase language': '展示页语言',
@@ -35,6 +40,7 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'GitHub (opens in a new tab)': 'GitHub（在新标签页打开）',
   'ALVENX LIQUID GLASS · INTERACTIVE DESIGN SYSTEM': 'ALVENX 液态玻璃 · 交互设计系统',
   'ALVENX LIQUID GLASS': 'ALVENX 液态玻璃',
+  'Liquid Glass': '液态玻璃',
   'Glass that follows your hand.': '随手而动的玻璃。',
   'Glass that follows': '随手而动',
   'your hand.': '的玻璃。',
@@ -57,7 +63,6 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'Replay slow budding': '重播缓慢生长',
   'Touch the pearl form; swipe its surrounding background to scroll': '触摸珠体即可互动；滑动周围背景即可滚动页面',
   'Interactive preview': '交互预览',
-  'Touch and drag to shape the glass.': '触摸并拖动，改变玻璃形状。',
   'On the pearl: pull, hold, release.': '在珠体上：拖动、按住、松开。',
   'Outside the pearl: scroll freely.': '在珠体外：自由滚动页面。',
   'Try the glass': '体验玻璃',
@@ -67,7 +72,6 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'Reduced motion': '减弱动态效果',
   'Surface parameters': '材质参数',
   'Reset defaults': '恢复默认',
-  'Tune the material below. The pearl above and the glass controls share these settings.': '在下方调整参数，上方珠体与玻璃控件会同步呈现变化。',
   'Interaction strength': '交互强度',
   'Specular opacity': '高光不透明度',
   'Specular saturation': '高光饱和度',
@@ -87,6 +91,7 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'On': '开启',
   'Off': '关闭',
   'Sample text': '示例文字',
+  'Text refraction': '文字折射',
   'The sample font could not load. Your text is kept; edit to retry.': '示例字体未能载入，输入内容已保留。继续编辑即可重试。',
   'Preparing sample typography…': '正在准备示例字体…',
   'Finish choosing your text to update the sample.': '完成输入法选字后，示例会自动更新。',
@@ -95,7 +100,6 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   '03 / TYPE CLEARLY': '03 / 清晰输入',
   'The surface bends.': '光影随形而变，',
   'Your words stay clear.': '文字始终清晰。',
-  'Native text, selection and keyboard editing above the optical layer.': '文字位于光学效果上方，保留原生选择、输入与键盘编辑。',
   'Write a message before sending.': '输入内容后再发送。',
   'Preview message': '体验消息输入',
   'Ask anything…': '随便问点什么…',
@@ -113,7 +117,7 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'Continuous gestures, bounded resistance and a return after release preserve the movement of your hand.': '连续跟随手势，以适度阻力回应拖动，松手后自然回弹，让动作保留余韵。',
   '04 / TYPE': '04 / 文字',
   'Text stays text': '文字保持本真',
-  'Instrument Sans and MiSans stay readable, selectable and editable above the optical layer.': 'Instrument Sans 与 MiSans 位于光学效果上方，保持清晰，并可原生选择和编辑。',
+  'Instrument Sans and MiSans stay readable. Native editing preserves the caret and selection.': 'Instrument Sans 和 MiSans 保持清晰。原生编辑保留光标与选区。',
   'Room for a new idea.': '给新想法一点空间。',
   'Space for an idea to grow.': '给想法一个慢慢生长的空间。',
   'Instrument Sans / MiSans · Native, selectable text': 'Instrument Sans / MiSans · 原生文字，可自由选择',
@@ -130,7 +134,6 @@ export const SHOWCASE_CHINESE_COPY: Readonly<Record<string, string>> = {
   'DEVICE REVIEW': '设备体验',
   'Try it on your device.': '在你的设备上体验。',
   'Show input report': '显示输入报告',
-  'If a touch or trackpad drag fails, the local report shows which input and capture events reached this page. Frame timings describe scheduling, not physical display latency.': '如果触摸或触控板拖动出现问题，可通过本地报告查看页面收到的输入与指针捕获事件。帧耗时反映任务调度，不代表屏幕的实际显示延迟。',
   'Local input report': '本地输入报告',
   'Copy input report': '复制输入报告',
   'Report copied.': '报告已复制。',
@@ -263,11 +266,11 @@ export function LanguageControl({ language, onLanguageChange, busy = false, erro
     onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) close(); }}>
     <button ref={trigger} className="lab-language__toggle" type="button" aria-label={language === 'zh-CN' ? '选择语言' : 'Choose language'}
       aria-expanded={open} aria-controls={panelId} aria-busy={busy || undefined} onClick={() => setOpen(value => !value)}>
-      <span>{language === 'zh-CN' ? '语言' : 'Language'}</span><span aria-hidden="true">⌄</span>
+      <span className="lab-nav-label ax-cubic-surface"><span>{language === 'zh-CN' ? '语言' : 'Language'}</span><span aria-hidden="true">⌄</span></span>
     </button>
     {open && <div id={panelId} className="lab-language__panel" role="group" aria-label={language === 'zh-CN' ? '展示页语言' : 'Showcase language'}>
-      <button ref={english} type="button" lang="en" aria-pressed={language === 'en'} onClick={() => { onLanguageChange('en'); close(true); }}>English</button>
-      <button ref={chinese} type="button" lang="zh-CN" aria-pressed={language === 'zh-CN'} onClick={() => { onLanguageChange('zh-CN'); close(true); }}>简体中文</button>
+      <button ref={english} type="button" lang="en" aria-pressed={language === 'en'} onClick={() => { onLanguageChange('en'); close(true); }}><span className="lab-nav-label ax-cubic-surface">English</span></button>
+      <button ref={chinese} type="button" lang="zh-CN" aria-pressed={language === 'zh-CN'} onClick={() => { onLanguageChange('zh-CN'); close(true); }}><span className="lab-nav-label ax-cubic-surface">简体中文</span></button>
     </div>}
     <span className="lab-language__status" role="status" aria-live="polite">{busy ? 'Preparing Chinese…' : error ? 'Chinese fonts could not load. Please try again.' : ''}</span>
   </div>;
